@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
@@ -27,6 +27,7 @@ const App: React.FC = () => {
   const [aiQuery, setAiQuery] = useState('');
   const [aiResponse, setAiResponse] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   // --- Handlers ---
   const selectStream = (stream: Stream) => {
@@ -36,6 +37,8 @@ const App: React.FC = () => {
 
   const selectSubject = (subject: Subject) => {
     setSelectedSubject(subject);
+    setSelectedChapter(null);
+    setStudyMode(null);
     setView('SUBJECT_DETAIL');
   };
 
@@ -79,6 +82,105 @@ const App: React.FC = () => {
     const result = await explainConcept(aiQuery, context);
     setAiResponse(result || "Could not generate response.");
     setAiLoading(false);
+  };
+
+  // --- Sidebar Component ---
+  const Sidebar = () => {
+    if (!selectedStream) return null;
+    const subjects = MOCK_DATA[selectedStream].subjects;
+
+    return (
+      <>
+        {/* Toggle Button (Visible when sidebar is closed) */}
+        {!isSidebarOpen && (
+          <button 
+            onClick={() => setIsSidebarOpen(true)}
+            className="fixed top-4 right-4 z-[60] bg-white p-2 rounded-full shadow-lg text-slate-600 hover:text-indigo-600 border border-slate-100 transition-transform hover:scale-110"
+            title="Open Sidebar"
+          >
+             <PanelRightOpen size={24} />
+          </button>
+        )}
+
+        {/* Sidebar Container */}
+        <div 
+          className={`fixed inset-y-0 right-0 z-[50] bg-white/95 backdrop-blur-xl border-l border-slate-200 transition-all duration-300 ease-in-out flex flex-col ${
+            isSidebarOpen ? 'w-[80px] sm:w-[240px] translate-x-0' : 'w-0 translate-x-full opacity-0 overflow-hidden'
+          }`}
+        >
+           {/* Header with Close */}
+           <div className="p-4 flex items-center justify-between border-b border-slate-100">
+              <span className="font-black text-lg text-indigo-900 hidden sm:block">7k 12th</span>
+              <button 
+                onClick={() => setIsSidebarOpen(false)}
+                className="p-2 hover:bg-slate-100 rounded-lg text-slate-500 transition mx-auto sm:mx-0"
+              >
+                 <PanelRightClose size={20} />
+              </button>
+           </div>
+
+           {/* Main Navigation */}
+           <div className="flex-1 overflow-y-auto py-4 px-2 sm:px-4 space-y-6">
+              
+              {/* Core Actions */}
+              <div className="space-y-2">
+                 <button 
+                   onClick={() => { setView('DASHBOARD'); setSelectedSubject(null); }}
+                   className={`w-full p-3 rounded-xl flex items-center gap-3 transition-colors ${view === 'DASHBOARD' ? 'bg-indigo-50 text-indigo-600' : 'hover:bg-slate-50 text-slate-600'}`}
+                   title="Dashboard"
+                 >
+                    <LayoutGrid size={22} className="shrink-0" />
+                    <span className="font-semibold text-sm hidden sm:block">Dashboard</span>
+                 </button>
+
+                 <button 
+                   onClick={() => { setView('STREAM_SELECT'); setSelectedStream(null); }}
+                   className="w-full p-3 rounded-xl flex items-center gap-3 hover:bg-slate-50 text-slate-600 transition-colors"
+                   title="Switch Stream"
+                 >
+                    <Home size={22} className="shrink-0" />
+                    <span className="font-semibold text-sm hidden sm:block">Home</span>
+                 </button>
+              </div>
+
+              {/* Subject Quick Links */}
+              <div>
+                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 px-2 hidden sm:block">Quick Access</p>
+                 <div className="space-y-2">
+                    {subjects.map((sub) => {
+                       const Icon = sub.id === 'eco' ? TrendingUp : sub.id === 'ocm' ? Briefcase : sub.id === 'sp' ? PenTool : Calculator;
+                       const isActive = selectedSubject?.id === sub.id;
+                       return (
+                         <button 
+                           key={sub.id}
+                           onClick={() => selectSubject(sub)}
+                           className={`w-full p-3 rounded-xl flex items-center gap-3 transition-colors group ${isActive ? 'bg-indigo-50 border border-indigo-100' : 'hover:bg-slate-50 border border-transparent'}`}
+                           title={sub.name}
+                         >
+                            <div className={`p-1.5 rounded-lg text-white shrink-0 ${sub.color}`}>
+                               <Icon size={16} />
+                            </div>
+                            <span className={`font-medium text-sm hidden sm:block ${isActive ? 'text-indigo-900 font-bold' : 'text-slate-600'}`}>{sub.name}</span>
+                            {isActive && <div className="ml-auto w-1.5 h-1.5 bg-indigo-500 rounded-full hidden sm:block"></div>}
+                         </button>
+                       );
+                    })}
+                 </div>
+              </div>
+           </div>
+
+           {/* Footer */}
+           <div className="p-4 border-t border-slate-100 text-center sm:text-left">
+              <div className="text-[10px] text-slate-400 font-medium hidden sm:block">
+                 Version 2.4.0
+              </div>
+              <div className="flex justify-center sm:hidden">
+                 <div className="w-8 h-8 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center font-bold text-xs">7k</div>
+              </div>
+           </div>
+        </div>
+      </>
+    );
   };
 
   // --- Render Functions ---
@@ -191,7 +293,7 @@ const App: React.FC = () => {
             Your Subjects
           </h2>
           
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {data?.subjects.map((sub) => {
               const Icon = sub.id === 'eco' ? TrendingUp : sub.id === 'ocm' ? Briefcase : sub.id === 'sp' ? PenTool : Calculator;
               // Extract main color for border/text usage
@@ -201,7 +303,7 @@ const App: React.FC = () => {
                 <button 
                   key={sub.id}
                   onClick={() => selectSubject(sub)}
-                  className="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 active:scale-95 transition-all flex flex-col items-start gap-4 h-full"
+                  className="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 active:scale-95 transition-all flex flex-col items-start gap-4 h-full hover:border-indigo-100 hover:shadow-md"
                 >
                   <div className={`p-4 rounded-2xl ${sub.color} text-white shadow-md`}>
                     <Icon size={28} />
@@ -300,6 +402,8 @@ const App: React.FC = () => {
                    <div className="flex gap-2">
                       {chapter.reels.length > 0 && <span className="px-2 py-1 rounded bg-pink-50 text-pink-600 text-[10px] font-bold uppercase flex items-center gap-1"><Video size={10} /> Reels</span>}
                       {chapter.flashcards.length > 0 && <span className="px-2 py-1 rounded bg-orange-50 text-orange-600 text-[10px] font-bold uppercase flex items-center gap-1"><Layers size={10} /> Cards</span>}
+                      {/* Placeholder Indicator if no content yet */}
+                      {chapter.flashcards.length === 0 && <span className="px-2 py-1 rounded bg-slate-100 text-slate-400 text-[10px] font-bold uppercase flex items-center gap-1">Soon</span>}
                    </div>
                 </div>
                 <div className="h-full flex items-center text-slate-300 group-hover:text-indigo-400">
@@ -389,12 +493,15 @@ const App: React.FC = () => {
           <div className="grid grid-cols-2 gap-4 mb-8">
             <button 
               onClick={() => startStudy(ContentType.REELS)}
-              className="col-span-2 relative overflow-hidden bg-slate-900 p-5 rounded-2xl shadow-lg flex items-center justify-between group"
+              disabled={selectedChapter.reels.length === 0}
+              className={`col-span-2 relative overflow-hidden bg-slate-900 p-5 rounded-2xl shadow-lg flex items-center justify-between group ${selectedChapter.reels.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
             >
                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 opacity-90 group-hover:opacity-100 transition-opacity"></div>
                <div className="relative z-10 text-white text-left">
                   <h3 className="font-black text-xl italic">QUICK REELS</h3>
-                  <p className="text-xs text-white/80 font-medium">Swipe to learn in 60s</p>
+                  <p className="text-xs text-white/80 font-medium">
+                     {selectedChapter.reels.length > 0 ? "Swipe to learn in 60s" : "Coming Soon"}
+                  </p>
                </div>
                <div className="relative z-10 w-10 h-10 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white">
                  <PlayCircle size={24} fill="currentColor" className="opacity-90" />
@@ -403,7 +510,8 @@ const App: React.FC = () => {
 
             <button 
               onClick={() => startStudy(ContentType.SUMMARY)}
-              className="p-4 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-100 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3"
+              disabled={selectedChapter.summary === 'Pending...'}
+              className="p-4 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-100 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <div className="w-10 h-10 bg-white rounded-full shadow-sm text-blue-500 flex items-center justify-center"><BookOpen size={20} /></div>
               <span className="font-bold text-slate-700 text-sm">Notes</span>
@@ -412,7 +520,7 @@ const App: React.FC = () => {
             <button 
               onClick={() => startStudy(ContentType.FLASHCARDS)}
               disabled={selectedChapter.flashcards.length === 0}
-              className="p-4 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-100 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50"
+              className="p-4 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-100 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <div className="w-10 h-10 bg-white rounded-full shadow-sm text-orange-500 flex items-center justify-center"><Layers size={20} /></div>
               <span className="font-bold text-slate-700 text-sm">Cards</span>
@@ -421,7 +529,7 @@ const App: React.FC = () => {
             <button 
               onClick={() => startStudy(ContentType.MCQ)}
               disabled={selectedChapter.mcqs.length === 0}
-              className="p-4 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-100 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50"
+              className="p-4 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-100 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
             >
                <div className="w-10 h-10 bg-white rounded-full shadow-sm text-emerald-500 flex items-center justify-center"><Brain size={20} /></div>
               <span className="font-bold text-slate-700 text-sm">Quiz</span>
@@ -541,7 +649,7 @@ const App: React.FC = () => {
           </div>
           <button onClick={() => setAiModalOpen(false)} className="text-slate-400 hover:text-slate-600 p-2 hover:bg-slate-50 rounded-full transition">
              <div className="sr-only">Close</div>
-             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+             <X size={20} />
           </button>
         </div>
 
@@ -563,7 +671,7 @@ const App: React.FC = () => {
               {aiLoading ? (
                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
               ) : (
-                <ArrowLeft size={20} className="rotate-180" />
+                <ArrowRight size={20} />
               )}
             </button>
           </div>
@@ -592,15 +700,31 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className="antialiased text-slate-800 bg-slate-50 h-full selection:bg-indigo-100 selection:text-indigo-900">
-      {view === 'STREAM_SELECT' && renderStreamSelect()}
-      {view === 'DASHBOARD' && renderDashboard()}
-      {view === 'SUBJECT_DETAIL' && renderSubjectDetail()}
-      {view === 'SYLLABUS_VIEW' && renderResourcesView('SYLLABUS')}
-      {view === 'PAPER_PATTERN_VIEW' && renderResourcesView('PATTERN')}
-      {view === 'CHAPTER_DETAIL' && renderChapterDetail()}
-      {view === 'STUDY_MODE' && renderStudyMode()}
+    <div className="antialiased text-slate-800 bg-slate-50 h-full selection:bg-indigo-100 selection:text-indigo-900 flex overflow-hidden">
       
+      {/* Main Content Area */}
+      <div className={`flex-1 flex flex-col h-full overflow-hidden transition-all duration-300 ${selectedStream && isSidebarOpen ? 'mr-0 sm:mr-[240px]' : ''}`}>
+        
+        <div className="flex-1 overflow-y-auto relative no-scrollbar">
+           {view === 'STREAM_SELECT' && renderStreamSelect()}
+           {view === 'DASHBOARD' && renderDashboard()}
+           {view === 'SUBJECT_DETAIL' && renderSubjectDetail()}
+           {view === 'SYLLABUS_VIEW' && renderResourcesView('SYLLABUS')}
+           {view === 'PAPER_PATTERN_VIEW' && renderResourcesView('PATTERN')}
+           {view === 'CHAPTER_DETAIL' && renderChapterDetail()}
+           {view === 'STUDY_MODE' && renderStudyMode()}
+        </div>
+        
+      </div>
+
+      {/* Sidebar Overlay for Mobile */}
+      {selectedStream && isSidebarOpen && (
+         <div className="fixed inset-0 bg-black/20 z-40 sm:hidden" onClick={() => setIsSidebarOpen(false)}></div>
+      )}
+
+      {/* Right Sidebar */}
+      {selectedStream && <Sidebar />}
+
       {renderAiModal()}
     </div>
   );

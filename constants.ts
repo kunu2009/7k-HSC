@@ -229,16 +229,15 @@ Proposed by Gossen, detailed by **Alfred Marshall**.
               { id: 'ur3', title: 'Point of Satiety', content: 'When you are fully satisfied.\n\nMU = 0\nTU = Maximum', color: 'bg-green-500' }
             ]
           },
-          {
-            id: 'eco-ch3a',
-            title: '3A. Demand Analysis',
-            description: 'Demand = Desire + Ability to Pay + Willingness to Pay.',
-            summary: 'Pending...',
-            detailedNotes: 'Pending...',
-            flashcards: [],
-            mcqs: [],
-            reels: []
-          }
+          { id: 'eco-ch3a', title: '3A. Demand Analysis', description: 'Demand = Desire + Ability + Willingness. The Law of Demand explains consumer behavior.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'eco-ch3b', title: '3B. Elasticity of Demand', description: 'How much does demand change when price changes? Learn ED > 1, ED < 1, ED = 1.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'eco-ch4', title: '4. Supply Analysis', description: 'Seller behavior. Law of Supply: Higher Price = Higher Supply.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'eco-ch5', title: '5. Forms of Market', description: 'Perfect Competition, Monopoly, Oligopoly, and Monopolistic Competition.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'eco-ch6', title: '6. Index Numbers', description: 'Statistical tool to measure changes in variables over time (Laspeyre, Paasche).', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'eco-ch7', title: '7. National Income', description: 'GDP, GNP, NNP. Methods of measuring NI: Output, Income, Expenditure.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'eco-ch8', title: '8. Public Finance in India', description: 'Government Revenue, Expenditure, Debt and Budget.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'eco-ch9', title: '9. Money & Capital Market', description: 'RBI, Commercial Banks, Stock Exchange, SEBI.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'eco-ch10', title: '10. Foreign Trade of India', description: 'Import, Export, Balance of Payment vs Balance of Trade.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] }
         ]
       },
       {
@@ -359,13 +358,23 @@ Taylor focused on efficiency at the factory floor level.
 **Directing**: Instructing, guiding, motivating.
 **Controlling**: Comparing actual performance with standard. Last function.`,
             detailedNotes: 'Pending...',
-            flashcards: [],
+            flashcards: [
+               { id: 'f_posd1', front: 'First function of management', back: 'Planning' },
+               { id: 'f_posd2', front: 'Last function of management', back: 'Controlling' },
+               { id: 'f_posd3', front: 'Staffing', back: 'Right person at the right job.' }
+            ],
             mcqs: [],
             reels: [
                { id: 'rf1', title: 'First Function', content: 'Planning is the basic/first function of management.', color: 'bg-indigo-500' },
                { id: 'rf2', title: 'Last Function', content: 'Controlling is the end function.', color: 'bg-pink-500' }
             ]
-          }
+          },
+          { id: 'ocm-ch3', title: '3. Entrepreneurship Development', description: 'Characteristics of Entrepreneur. EDP. Intrapreneur.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'ocm-ch4', title: '4. Business Services', description: 'Banking, Insurance, Transport, Communication, Warehousing.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'ocm-ch5', title: '5. Emerging Modes of Business', description: 'E-Business, B2B, B2C, C2C. Outsourcing (BPO, KPO).', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'ocm-ch6', title: '6. Social Responsibility', description: 'Responsibility towards Owners, Employees, Consumers, Govt, Society.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'ocm-ch7', title: '7. Consumer Protection', description: 'Rights of Consumers (Safety, Information, Choice, Heard, Redressal, Education).', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'ocm-ch8', title: '8. Marketing', description: '4Ps of Marketing: Product, Price, Place, Promotion.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] }
         ]
       },
       {
@@ -459,7 +468,16 @@ It is a written agreement between partners. It contains:
                { id: 'br2', title: 'Trading Account', content: 'Direct Expenses -> Trading A/c.\n(Factory, Manufacturing, Wages)', color: 'bg-blue-600' },
                { id: 'br3', title: 'P&L Account', content: 'Indirect Expenses -> P&L A/c.\n(Office, Selling, Admin, Salaries)', color: 'bg-purple-600' }
             ]
-          }
+          },
+          { id: 'bk-ch2', title: '2. NPO (Not for Profit)', description: 'Receipts & Payments A/c -> Income & Expenditure A/c & Balance Sheet.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'bk-ch3', title: '3. Admission of Partner', description: 'New partner joins. Sacrifice Ratio. Goodwill valuation.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'bk-ch4', title: '4. Retirement of Partner', description: 'Partner leaves. Gain Ratio. Revaluation of Assets.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'bk-ch5', title: '5. Death of Partner', description: 'Partner dies. Executor Loan Account. Profit till date of death.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'bk-ch6', title: '6. Dissolution of Firm', description: 'Business closes. Realisation Account. All assets sold, liabilities paid.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'bk-ch7', title: '7. Bills of Exchange', description: 'Drawer, Drawee, Payee. Dishonour, Noting Charges, Endorsement.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'bk-ch8', title: '8. Company Accounts', description: 'Issue of Shares. IPO. Forfeiture of shares.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'bk-ch9', title: '9. Analysis of Financial Statements', description: 'Ratio Analysis. Current Ratio, Gross Profit Ratio.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'bk-ch10', title: '10. Computer in Accounting', description: 'CAS (Computerised Accounting System).', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] }
         ]
       },
       {
@@ -533,7 +551,18 @@ Net Working Capital = Current Assets - Current Liabilities.
                { id: 'sr1', title: 'Financing vs Investment', content: 'Financing = Getting Money.\nInvestment = Using Money.', color: 'bg-emerald-600' },
                { id: 'sr2', title: 'Working Capital', content: 'Also called "Circulating Capital" because it keeps changing forms (Cash -> Stock -> Debtors -> Cash).', color: 'bg-amber-600' }
             ]
-          }
+          },
+          { id: 'sp-ch2', title: '2. Sources of Corp Finance', description: 'Owned Capital (Shares) vs Borrowed Capital (Debentures, Loans).', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch3', title: '3. Issue of Shares', description: 'IPO, FPO, Rights Issue, Bonus Shares, ESOP.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch4', title: '4. Issue of Debentures', description: 'Procedure for issuing debentures. Debenture Trustees.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch5', title: '5. Deposits', description: 'Acceptance of public deposits. Terms and conditions.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch6', title: '6. Correspondence with Members', description: 'Letters to shareholders: Allotment, Dividend, Bonus.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch7', title: '7. Correspondence with Debenture Holders', description: 'Letters regarding interest payment, conversion, redemption.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch8', title: '8. Correspondence with Depositors', description: 'Letters regarding acceptance, renewal, repayment of deposits.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch9', title: '9. Depository System', description: 'Demat account. NSDL, CDSL. DP (Depository Participant).', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch10', title: '10. Dividend and Interest', description: 'Final Dividend vs Interim Dividend. Unpaid Dividend Account.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch11', title: '11. Financial Market', description: 'Money Market (Short term) vs Capital Market (Long term).', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] },
+          { id: 'sp-ch12', title: '12. Stock Exchange', description: 'BSE (Bombay Stock Exchange), NSE. Functions of SEBI.', summary: 'Pending...', detailedNotes: 'Pending...', flashcards: [], mcqs: [], reels: [] }
         ]
       }
     ]
