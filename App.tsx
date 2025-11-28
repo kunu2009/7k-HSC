@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
@@ -7,7 +7,7 @@ import MCQView from './components/MCQView';
 import ReelView from './components/ReelView';
 import { explainConcept } from './services/geminiService';
 
-// --- State Management ---
+// --- Types ---
 type ViewState = 
   | 'STREAM_SELECT'
   | 'DASHBOARD'
@@ -17,17 +17,76 @@ type ViewState =
   | 'SYLLABUS_VIEW'
   | 'PAPER_PATTERN_VIEW';
 
+// --- Markdown Renderer ---
+const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
+  if (!content) return null;
+
+  // Split content by newlines
+  const lines = content.split('\n');
+
+  return (
+    <div className="space-y-2">
+      {lines.map((line, index) => {
+        let processedLine: React.ReactNode = line;
+        
+        // Handle Headers (###)
+        if (line.startsWith('### ')) {
+          return <h3 key={index} className="text-xl font-bold text-indigo-900 dark:text-indigo-300 mt-6 mb-2">{line.replace('### ', '')}</h3>;
+        }
+
+        // Handle Bold (**text**)
+        // Simple regex split for **
+        const parts = line.split(/(\*\*.*?\*\*)/g);
+        processedLine = parts.map((part, i) => {
+          if (part.startsWith('**') && part.endsWith('**')) {
+            return <strong key={i} className="font-bold text-indigo-800 dark:text-indigo-200">{part.slice(2, -2)}</strong>;
+          }
+          return part;
+        });
+
+        // Handle Bullet Points
+        if (line.trim().startsWith('* ') || line.trim().startsWith('- ')) {
+           return (
+             <div key={index} className="flex gap-2 ml-2">
+               <span className="text-indigo-500">•</span>
+               <span className="text-slate-700 dark:text-slate-300">{processedLine.toString().replace(/^[*|-]\s/, '')}</span>
+             </div>
+           );
+        }
+
+        // Empty line
+        if (line.trim() === '') return <br key={index} />;
+
+        return <p key={index} className="text-slate-700 dark:text-slate-300 leading-relaxed">{processedLine}</p>;
+      })}
+    </div>
+  );
+};
+
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>('STREAM_SELECT');
   const [selectedStream, setSelectedStream] = useState<Stream | null>(null);
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
   const [selectedChapter, setSelectedChapter] = useState<Chapter | null>(null);
   const [studyMode, setStudyMode] = useState<ContentType | null>(null);
+  
+  const [chapterTab, setChapterTab] = useState<'OVERVIEW' | 'NOTES'>('OVERVIEW');
   const [aiModalOpen, setAiModalOpen] = useState(false);
   const [aiQuery, setAiQuery] = useState('');
   const [aiResponse, setAiResponse] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  
+  // Dark Mode State
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   // --- Handlers ---
   const selectStream = (stream: Stream) => {
@@ -44,6 +103,7 @@ const App: React.FC = () => {
 
   const selectChapter = (chapter: Chapter) => {
     setSelectedChapter(chapter);
+    setChapterTab('OVERVIEW');
     setView('CHAPTER_DETAIL');
   };
 
@@ -91,43 +151,36 @@ const App: React.FC = () => {
 
     return (
       <>
-        {/* Toggle Button (Visible when sidebar is closed) */}
         {!isSidebarOpen && (
           <button 
             onClick={() => setIsSidebarOpen(true)}
-            className="fixed top-4 right-4 z-[60] bg-white p-2 rounded-full shadow-lg text-slate-600 hover:text-indigo-600 border border-slate-100 transition-transform hover:scale-110"
+            className="fixed top-4 right-4 z-[60] bg-white dark:bg-slate-800 p-2 rounded-full shadow-lg text-slate-600 dark:text-slate-300 hover:text-indigo-600 border border-slate-100 dark:border-slate-700 transition-transform hover:scale-110"
             title="Open Sidebar"
           >
              <PanelRightOpen size={24} />
           </button>
         )}
 
-        {/* Sidebar Container */}
         <div 
-          className={`fixed inset-y-0 right-0 z-[50] bg-white/95 backdrop-blur-xl border-l border-slate-200 transition-all duration-300 ease-in-out flex flex-col ${
+          className={`fixed inset-y-0 right-0 z-[50] bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-l border-slate-200 dark:border-slate-800 transition-all duration-300 ease-in-out flex flex-col ${
             isSidebarOpen ? 'w-[80px] sm:w-[240px] translate-x-0' : 'w-0 translate-x-full opacity-0 overflow-hidden'
           }`}
         >
-           {/* Header with Close */}
-           <div className="p-4 flex items-center justify-between border-b border-slate-100">
-              <span className="font-black text-lg text-indigo-900 hidden sm:block">7k 12th</span>
+           <div className="p-4 flex items-center justify-between border-b border-slate-100 dark:border-slate-800">
+              <span className="font-black text-lg text-indigo-900 dark:text-indigo-100 hidden sm:block">7k 12th</span>
               <button 
                 onClick={() => setIsSidebarOpen(false)}
-                className="p-2 hover:bg-slate-100 rounded-lg text-slate-500 transition mx-auto sm:mx-0"
+                className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500 dark:text-slate-400 transition mx-auto sm:mx-0"
               >
                  <PanelRightClose size={20} />
               </button>
            </div>
 
-           {/* Main Navigation */}
            <div className="flex-1 overflow-y-auto py-4 px-2 sm:px-4 space-y-6">
-              
-              {/* Core Actions */}
               <div className="space-y-2">
                  <button 
                    onClick={() => { setView('DASHBOARD'); setSelectedSubject(null); }}
-                   className={`w-full p-3 rounded-xl flex items-center gap-3 transition-colors ${view === 'DASHBOARD' ? 'bg-indigo-50 text-indigo-600' : 'hover:bg-slate-50 text-slate-600'}`}
-                   title="Dashboard"
+                   className={`w-full p-3 rounded-xl flex items-center gap-3 transition-colors ${view === 'DASHBOARD' ? 'bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300' : 'hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300'}`}
                  >
                     <LayoutGrid size={22} className="shrink-0" />
                     <span className="font-semibold text-sm hidden sm:block">Dashboard</span>
@@ -135,17 +188,24 @@ const App: React.FC = () => {
 
                  <button 
                    onClick={() => { setView('STREAM_SELECT'); setSelectedStream(null); }}
-                   className="w-full p-3 rounded-xl flex items-center gap-3 hover:bg-slate-50 text-slate-600 transition-colors"
-                   title="Switch Stream"
+                   className="w-full p-3 rounded-xl flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors"
                  >
                     <Home size={22} className="shrink-0" />
                     <span className="font-semibold text-sm hidden sm:block">Home</span>
                  </button>
+
+                 {/* Dark Mode Toggle */}
+                 <button 
+                   onClick={() => setDarkMode(!darkMode)}
+                   className="w-full p-3 rounded-xl flex items-center gap-3 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition-colors"
+                 >
+                    {darkMode ? <Sun size={22} className="shrink-0 text-amber-400" /> : <Moon size={22} className="shrink-0 text-indigo-400" />}
+                    <span className="font-semibold text-sm hidden sm:block">{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
+                 </button>
               </div>
 
-              {/* Subject Quick Links */}
               <div>
-                 <p className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3 px-2 hidden sm:block">Quick Access</p>
+                 <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-3 px-2 hidden sm:block">Quick Access</p>
                  <div className="space-y-2">
                     {subjects.map((sub) => {
                        const Icon = sub.id === 'eco' ? TrendingUp : sub.id === 'ocm' ? Briefcase : sub.id === 'sp' ? PenTool : Calculator;
@@ -154,28 +214,16 @@ const App: React.FC = () => {
                          <button 
                            key={sub.id}
                            onClick={() => selectSubject(sub)}
-                           className={`w-full p-3 rounded-xl flex items-center gap-3 transition-colors group ${isActive ? 'bg-indigo-50 border border-indigo-100' : 'hover:bg-slate-50 border border-transparent'}`}
-                           title={sub.name}
+                           className={`w-full p-3 rounded-xl flex items-center gap-3 transition-colors group ${isActive ? 'bg-indigo-50 dark:bg-indigo-900/30 border border-indigo-100 dark:border-indigo-800' : 'hover:bg-slate-50 dark:hover:bg-slate-800 border border-transparent'}`}
                          >
                             <div className={`p-1.5 rounded-lg text-white shrink-0 ${sub.color}`}>
                                <Icon size={16} />
                             </div>
-                            <span className={`font-medium text-sm hidden sm:block ${isActive ? 'text-indigo-900 font-bold' : 'text-slate-600'}`}>{sub.name}</span>
-                            {isActive && <div className="ml-auto w-1.5 h-1.5 bg-indigo-500 rounded-full hidden sm:block"></div>}
+                            <span className={`font-medium text-sm hidden sm:block ${isActive ? 'text-indigo-900 dark:text-indigo-100 font-bold' : 'text-slate-600 dark:text-slate-400'}`}>{sub.name}</span>
                          </button>
                        );
                     })}
                  </div>
-              </div>
-           </div>
-
-           {/* Footer */}
-           <div className="p-4 border-t border-slate-100 text-center sm:text-left">
-              <div className="text-[10px] text-slate-400 font-medium hidden sm:block">
-                 Version 2.4.0
-              </div>
-              <div className="flex justify-center sm:hidden">
-                 <div className="w-8 h-8 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center font-bold text-xs">7k</div>
               </div>
            </div>
         </div>
@@ -187,7 +235,6 @@ const App: React.FC = () => {
 
   const renderStreamSelect = () => (
     <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center p-6 relative overflow-hidden font-sans">
-      {/* Dynamic Background */}
       <div className="absolute top-[-20%] left-[-20%] w-[500px] h-[500px] bg-indigo-600/30 rounded-full blur-[100px] animate-pulse"></div>
       <div className="absolute bottom-[-20%] right-[-20%] w-[500px] h-[500px] bg-emerald-600/20 rounded-full blur-[100px]"></div>
 
@@ -222,29 +269,8 @@ const App: React.FC = () => {
             </div>
           </div>
         </button>
-
-        {/* Coming Soon Streams */}
-        <div className="grid grid-cols-2 gap-4">
-           <div className="bg-slate-900/30 border border-slate-800 p-5 rounded-3xl flex flex-col items-center justify-center text-center opacity-60">
-             <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-500 mb-3">
-               <PenTool size={20} />
-             </div>
-             <span className="text-slate-400 font-bold">Arts</span>
-             <span className="text-xs text-slate-600 mt-1">Coming Soon</span>
-           </div>
-           <div className="bg-slate-900/30 border border-slate-800 p-5 rounded-3xl flex flex-col items-center justify-center text-center opacity-60">
-             <div className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center text-slate-500 mb-3">
-               <Zap size={20} />
-             </div>
-             <span className="text-slate-400 font-bold">Science</span>
-             <span className="text-xs text-slate-600 mt-1">Coming Soon</span>
-           </div>
-        </div>
       </div>
-      
-      <div className="mt-12 text-slate-600 text-xs text-center font-medium">
-        Made for HSC Maharashtra Board Students
-      </div>
+      <div className="mt-12 text-slate-600 text-xs text-center font-medium">Made for HSC Maharashtra Board Students</div>
     </div>
   );
 
@@ -252,64 +278,40 @@ const App: React.FC = () => {
     const data = selectedStream ? MOCK_DATA[selectedStream] : null;
     
     return (
-      <div className="min-h-screen bg-slate-50 pb-24 font-sans">
-        {/* Header */}
-        <div className="bg-white px-6 pt-6 pb-4 sticky top-0 z-20 shadow-sm border-b border-slate-100">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-24 font-sans transition-colors">
+        <div className="bg-white dark:bg-slate-900 px-6 pt-6 pb-4 sticky top-0 z-20 shadow-sm border-b border-slate-100 dark:border-slate-800">
            <div className="flex justify-between items-center mb-4">
-              <button onClick={goBack} className="p-2 -ml-2 hover:bg-slate-50 rounded-full text-slate-600">
+              <button onClick={goBack} className="p-2 -ml-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full text-slate-600 dark:text-slate-300">
                 <ArrowLeft size={22} />
               </button>
               <div className="flex items-center gap-2">
                  <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-xs">7k</div>
               </div>
            </div>
-           <h1 className="text-3xl font-black text-slate-800">Learning Hub</h1>
-           <p className="text-slate-500 font-medium">Let's crush those exams!</p>
+           <h1 className="text-3xl font-black text-slate-800 dark:text-white">Learning Hub</h1>
+           <p className="text-slate-500 dark:text-slate-400 font-medium">Let's crush those exams!</p>
         </div>
 
         <div className="p-6">
-          {/* Quick Stats */}
-          <div className="flex gap-4 mb-8 overflow-x-auto no-scrollbar pb-2">
-            <div className="min-w-[140px] bg-gradient-to-br from-orange-400 to-pink-500 p-4 rounded-2xl text-white shadow-lg shadow-orange-500/20">
-              <div className="flex items-center gap-2 mb-2 opacity-90">
-                 <Clock size={16} />
-                 <span className="text-xs font-bold uppercase">Study Time</span>
-              </div>
-              <p className="text-2xl font-black">2.5h</p>
-              <p className="text-xs opacity-80 mt-1">Today's Focus</p>
-            </div>
-            <div className="min-w-[140px] bg-gradient-to-br from-indigo-500 to-blue-600 p-4 rounded-2xl text-white shadow-lg shadow-indigo-500/20">
-               <div className="flex items-center gap-2 mb-2 opacity-90">
-                 <Zap size={16} />
-                 <span className="text-xs font-bold uppercase">Streak</span>
-              </div>
-              <p className="text-2xl font-black">5 Days</p>
-              <p className="text-xs opacity-80 mt-1">Keep it up!</p>
-            </div>
-          </div>
-
-          <h2 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
-            <BookOpen size={20} className="text-indigo-600" />
+          <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">
+            <BookOpen size={20} className="text-indigo-600 dark:text-indigo-400" />
             Your Subjects
           </h2>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {data?.subjects.map((sub) => {
               const Icon = sub.id === 'eco' ? TrendingUp : sub.id === 'ocm' ? Briefcase : sub.id === 'sp' ? PenTool : Calculator;
-              // Extract main color for border/text usage
-              const colorClass = sub.color.split(' ')[0]; 
-              
               return (
                 <button 
                   key={sub.id}
                   onClick={() => selectSubject(sub)}
-                  className="bg-white p-5 rounded-3xl shadow-sm border border-slate-100 active:scale-95 transition-all flex flex-col items-start gap-4 h-full hover:border-indigo-100 hover:shadow-md"
+                  className="bg-white dark:bg-slate-900 p-5 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 active:scale-95 transition-all flex flex-col items-start gap-4 h-full hover:border-indigo-100 dark:hover:border-indigo-900"
                 >
                   <div className={`p-4 rounded-2xl ${sub.color} text-white shadow-md`}>
                     <Icon size={28} />
                   </div>
                   <div className="text-left">
-                    <span className="font-bold text-slate-800 block text-lg leading-tight mb-1">{sub.name}</span>
+                    <span className="font-bold text-slate-800 dark:text-slate-200 block text-lg leading-tight mb-1">{sub.name}</span>
                     <span className="text-xs text-slate-400 font-medium">{sub.chapters.length} Chapters</span>
                   </div>
                 </button>
@@ -317,7 +319,7 @@ const App: React.FC = () => {
             })}
           </div>
 
-           <div className="mt-10 bg-indigo-900 rounded-3xl p-6 text-white relative overflow-hidden">
+           <div className="mt-10 bg-indigo-900 dark:bg-indigo-950 rounded-3xl p-6 text-white relative overflow-hidden shadow-xl">
               <div className="absolute top-0 right-0 p-10 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-3">
@@ -348,9 +350,8 @@ const App: React.FC = () => {
     if (!selectedSubject) return null;
     
     return (
-      <div className="min-h-screen bg-slate-50 font-sans">
-        {/* Header */}
-        <div className={`${selectedSubject.color} text-white pt-8 pb-10 px-6 rounded-b-[2.5rem] shadow-lg shadow-indigo-200 sticky top-0 z-30`}>
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 font-sans transition-colors">
+        <div className={`${selectedSubject.color} text-white pt-8 pb-10 px-6 rounded-b-[2.5rem] shadow-lg shadow-indigo-200 dark:shadow-none sticky top-0 z-30`}>
           <div className="flex items-center gap-3 mb-6">
              <button onClick={goBack} className="p-2 -ml-2 hover:bg-white/20 rounded-full transition backdrop-blur-sm">
                <ArrowLeft size={20} />
@@ -360,30 +361,27 @@ const App: React.FC = () => {
           <h1 className="text-4xl font-black mb-2 tracking-tight">{selectedSubject.name}</h1>
           <div className="flex items-center gap-4 text-white/80 text-sm font-medium">
              <span className="flex items-center gap-1"><Layers size={16}/> {selectedSubject.chapters.length} Chapters</span>
-             <span className="w-1 h-1 bg-white/50 rounded-full"></span>
-             <span className="flex items-center gap-1"><Star size={16}/> Exam Focused</span>
           </div>
         </div>
 
         <div className="px-6 -mt-6 pb-24 relative z-40">
-           {/* Exam Prep Card */}
-           <div className="bg-white p-2 rounded-2xl shadow-lg shadow-slate-200/50 border border-slate-100 mb-8 flex text-sm font-bold text-slate-600">
+           <div className="bg-white dark:bg-slate-900 p-2 rounded-2xl shadow-lg shadow-slate-200/50 dark:shadow-black/50 border border-slate-100 dark:border-slate-800 mb-8 flex text-sm font-bold text-slate-600 dark:text-slate-300">
               <button 
                 onClick={() => setView('SYLLABUS_VIEW')}
-                className="flex-1 py-3 rounded-xl hover:bg-slate-50 flex items-center justify-center gap-2 transition"
+                className="flex-1 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center justify-center gap-2 transition"
               >
                 <FileText size={18} className="text-indigo-500" /> Syllabus
               </button>
-              <div className="w-[1px] bg-slate-100 my-2"></div>
+              <div className="w-[1px] bg-slate-100 dark:bg-slate-700 my-2"></div>
               <button 
                 onClick={() => setView('PAPER_PATTERN_VIEW')}
-                className="flex-1 py-3 rounded-xl hover:bg-slate-50 flex items-center justify-center gap-2 transition"
+                className="flex-1 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center justify-center gap-2 transition"
               >
                 <GraduationCap size={18} className="text-emerald-500" /> Pattern
               </button>
            </div>
 
-           <h3 className="text-slate-800 font-bold text-lg mb-4 flex items-center gap-2">
+           <h3 className="text-slate-800 dark:text-slate-200 font-bold text-lg mb-4 flex items-center gap-2">
              <Layers size={20} className="text-slate-400" /> Chapters
            </h3>
            
@@ -392,46 +390,23 @@ const App: React.FC = () => {
               <button 
                 key={chapter.id}
                 onClick={() => selectChapter(chapter)}
-                className="w-full bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:border-indigo-200 active:scale-[0.98] transition-all flex items-start gap-4 group"
+                className="w-full bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-900 active:scale-[0.98] transition-all flex items-start gap-4 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-slate-50 text-slate-500 font-black text-lg flex items-center justify-center shrink-0 group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-black text-lg flex items-center justify-center shrink-0 group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/30 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                   {index + 1}
                 </div>
                 <div className="flex-1 text-left">
-                   <h3 className="font-bold text-slate-800 leading-tight mb-2 group-hover:text-indigo-700 transition-colors">{chapter.title}</h3>
+                   <h3 className="font-bold text-slate-800 dark:text-slate-200 leading-tight mb-2 group-hover:text-indigo-700 dark:group-hover:text-indigo-300 transition-colors">{chapter.title}</h3>
                    <div className="flex gap-2">
-                      {chapter.reels.length > 0 && <span className="px-2 py-1 rounded bg-pink-50 text-pink-600 text-[10px] font-bold uppercase flex items-center gap-1"><Video size={10} /> Reels</span>}
-                      {chapter.flashcards.length > 0 && <span className="px-2 py-1 rounded bg-orange-50 text-orange-600 text-[10px] font-bold uppercase flex items-center gap-1"><Layers size={10} /> Cards</span>}
-                      {/* Placeholder Indicator if no content yet */}
-                      {chapter.flashcards.length === 0 && <span className="px-2 py-1 rounded bg-slate-100 text-slate-400 text-[10px] font-bold uppercase flex items-center gap-1">Soon</span>}
+                      {chapter.reels.length > 0 && <span className="px-2 py-1 rounded bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 text-[10px] font-bold uppercase flex items-center gap-1"><Video size={10} /> Reels</span>}
+                      {chapter.flashcards.length > 0 && <span className="px-2 py-1 rounded bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase flex items-center gap-1"><Layers size={10} /> Cards</span>}
                    </div>
                 </div>
-                <div className="h-full flex items-center text-slate-300 group-hover:text-indigo-400">
+                <div className="h-full flex items-center text-slate-300 dark:text-slate-600 group-hover:text-indigo-400">
                   <ChevronRight size={20} />
                 </div>
               </button>
             ))}
-           </div>
-           
-           <div className="mt-10">
-             <h3 className="text-slate-800 font-bold text-lg mb-4">Past Board Papers</h3>
-             <div className="space-y-3">
-               {selectedSubject.previousPapers.length > 0 ? (
-                 selectedSubject.previousPapers.map((paper, i) => (
-                   <div key={i} className="bg-white p-4 rounded-xl border border-slate-100 flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2 bg-red-50 text-red-500 rounded-lg"><FileText size={18} /></div>
-                        <span className="font-semibold text-slate-700 text-sm">{paper.title}</span>
-                      </div>
-                      <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-3 py-1 rounded-full">View</span>
-                   </div>
-                 ))
-               ) : (
-                 <div className="p-6 text-center bg-slate-100 rounded-xl border border-dashed border-slate-300 text-slate-400 text-sm">
-                   Previous year papers being uploaded...
-                 </div>
-               )}
-             </div>
            </div>
         </div>
       </div>
@@ -444,18 +419,16 @@ const App: React.FC = () => {
     const title = type === 'SYLLABUS' ? 'Syllabus' : 'Paper Pattern';
 
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-        <div className="bg-white px-6 py-4 border-b border-slate-100 sticky top-0 flex items-center gap-3">
-          <button onClick={goBack} className="p-2 -ml-2 hover:bg-slate-50 rounded-full text-slate-600">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col font-sans">
+        <div className="bg-white dark:bg-slate-900 px-6 py-4 border-b border-slate-100 dark:border-slate-800 sticky top-0 flex items-center gap-3">
+          <button onClick={goBack} className="p-2 -ml-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full text-slate-600 dark:text-slate-300">
              <ArrowLeft size={20} />
           </button>
-          <h1 className="font-bold text-lg text-slate-800">{title}</h1>
+          <h1 className="font-bold text-lg text-slate-800 dark:text-white">{title}</h1>
         </div>
         <div className="p-6 flex-1 overflow-y-auto">
-          <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-             <pre className="font-sans text-slate-600 whitespace-pre-wrap leading-relaxed text-sm">
-               {content}
-             </pre>
+          <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
+             <MarkdownRenderer content={content} />
           </div>
         </div>
       </div>
@@ -466,8 +439,7 @@ const App: React.FC = () => {
     if (!selectedChapter) return null;
 
     return (
-      <div className="min-h-screen bg-white font-sans">
-        {/* Immersive Header with Reels Entry */}
+      <div className="min-h-screen bg-white dark:bg-slate-900 font-sans transition-colors">
         <div className="relative h-[35vh] bg-slate-900 overflow-hidden">
           <div className="absolute inset-0 z-0">
              <div className={`absolute inset-0 opacity-60 bg-gradient-to-br ${selectedSubject?.color.replace('bg-', 'from-').replace('500', '600')} to-slate-900`}></div>
@@ -488,8 +460,7 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative z-30 -mt-8 bg-white rounded-t-[2rem] px-6 pt-8 pb-24 min-h-[60vh]">
-          {/* Action Grid */}
+        <div className="relative z-30 -mt-8 bg-white dark:bg-slate-900 rounded-t-[2rem] px-6 pt-8 pb-24 min-h-[60vh] transition-colors">
           <div className="grid grid-cols-2 gap-4 mb-8">
             <button 
               onClick={() => startStudy(ContentType.REELS)}
@@ -511,44 +482,93 @@ const App: React.FC = () => {
             <button 
               onClick={() => startStudy(ContentType.SUMMARY)}
               disabled={selectedChapter.summary === 'Pending...'}
-              className="p-4 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-100 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="p-4 bg-slate-50 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 hover:border-indigo-100 dark:hover:border-indigo-800 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50"
             >
-              <div className="w-10 h-10 bg-white rounded-full shadow-sm text-blue-500 flex items-center justify-center"><BookOpen size={20} /></div>
-              <span className="font-bold text-slate-700 text-sm">Notes</span>
+              <div className="w-10 h-10 bg-white dark:bg-slate-700 rounded-full shadow-sm text-blue-500 dark:text-blue-400 flex items-center justify-center"><BookOpen size={20} /></div>
+              <span className="font-bold text-slate-700 dark:text-slate-300 text-sm">Notes</span>
             </button>
 
             <button 
               onClick={() => startStudy(ContentType.FLASHCARDS)}
               disabled={selectedChapter.flashcards.length === 0}
-              className="p-4 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-100 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="p-4 bg-slate-50 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 hover:border-indigo-100 dark:hover:border-indigo-800 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50"
             >
-              <div className="w-10 h-10 bg-white rounded-full shadow-sm text-orange-500 flex items-center justify-center"><Layers size={20} /></div>
-              <span className="font-bold text-slate-700 text-sm">Cards</span>
+              <div className="w-10 h-10 bg-white dark:bg-slate-700 rounded-full shadow-sm text-orange-500 dark:text-orange-400 flex items-center justify-center"><Layers size={20} /></div>
+              <span className="font-bold text-slate-700 dark:text-slate-300 text-sm">Cards</span>
             </button>
 
             <button 
               onClick={() => startStudy(ContentType.MCQ)}
               disabled={selectedChapter.mcqs.length === 0}
-              className="p-4 bg-slate-50 hover:bg-indigo-50 hover:border-indigo-100 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="p-4 bg-slate-50 dark:bg-slate-800 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 hover:border-indigo-100 dark:hover:border-indigo-800 border border-transparent rounded-2xl transition-all text-center flex flex-col items-center gap-3 disabled:opacity-50"
             >
-               <div className="w-10 h-10 bg-white rounded-full shadow-sm text-emerald-500 flex items-center justify-center"><Brain size={20} /></div>
-              <span className="font-bold text-slate-700 text-sm">Quiz</span>
+               <div className="w-10 h-10 bg-white dark:bg-slate-700 rounded-full shadow-sm text-emerald-500 dark:text-emerald-400 flex items-center justify-center"><Brain size={20} /></div>
+              <span className="font-bold text-slate-700 dark:text-slate-300 text-sm">Quiz</span>
             </button>
              
-             {/* AI Button */}
              <button 
                onClick={() => { setAiQuery(selectedChapter.title); setAiModalOpen(true); }}
-               className="p-4 bg-gradient-to-br from-indigo-100 to-violet-100 border border-indigo-200 rounded-2xl transition-all text-center flex flex-col items-center gap-3"
+               className="p-4 bg-gradient-to-br from-indigo-100 to-violet-100 dark:from-indigo-900/50 dark:to-violet-900/50 border border-indigo-200 dark:border-indigo-800 rounded-2xl transition-all text-center flex flex-col items-center gap-3"
              >
-                <div className="w-10 h-10 bg-white rounded-full shadow-sm text-indigo-600 flex items-center justify-center"><Sparkles size={20} /></div>
-                <span className="font-bold text-indigo-800 text-sm">Ask AI</span>
+                <div className="w-10 h-10 bg-white dark:bg-slate-700 rounded-full shadow-sm text-indigo-600 dark:text-indigo-300 flex items-center justify-center"><Sparkles size={20} /></div>
+                <span className="font-bold text-indigo-800 dark:text-indigo-200 text-sm">Ask AI</span>
              </button>
           </div>
 
-          <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
-            <h3 className="font-bold text-slate-800 mb-2">Chapter Overview</h3>
-            <p className="text-slate-500 text-sm leading-relaxed">{selectedChapter.description}</p>
-          </div>
+          <div className="mt-8">
+              <div className="flex bg-slate-100/80 dark:bg-slate-800 p-1 rounded-xl mb-6">
+                <button
+                  onClick={() => setChapterTab('OVERVIEW')}
+                  className={`flex-1 py-3 text-sm font-bold rounded-lg transition-all duration-200 ${
+                    chapterTab === 'OVERVIEW' 
+                      ? 'bg-white dark:bg-slate-700 text-indigo-900 dark:text-white shadow-md' 
+                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
+                  }`}
+                >
+                  Overview
+                </button>
+                <button
+                  onClick={() => setChapterTab('NOTES')}
+                  className={`flex-1 py-3 text-sm font-bold rounded-lg transition-all duration-200 ${
+                    chapterTab === 'NOTES' 
+                      ? 'bg-white dark:bg-slate-700 text-indigo-900 dark:text-white shadow-md' 
+                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'
+                  }`}
+                >
+                  Detailed Notes
+                </button>
+              </div>
+
+              <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-3xl border border-slate-100 dark:border-slate-700 min-h-[200px]">
+                {chapterTab === 'OVERVIEW' ? (
+                  <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+                    <h3 className="font-bold text-slate-800 dark:text-white mb-3 text-lg">About this Chapter</h3>
+                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{selectedChapter.description}</p>
+                    
+                    <div className="mt-6 flex flex-wrap gap-3">
+                       <span className="px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 rounded-full text-xs font-bold border border-indigo-100 dark:border-indigo-800">
+                         {selectedChapter.flashcards.length} Flashcards
+                       </span>
+                       <span className="px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded-full text-xs font-bold border border-emerald-100 dark:border-emerald-800">
+                         {selectedChapter.mcqs.length} MCQs
+                       </span>
+                       <span className="px-3 py-1 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 rounded-full text-xs font-bold border border-pink-100 dark:border-pink-800">
+                         {selectedChapter.reels.length} Reels
+                       </span>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+                    <h3 className="font-bold text-slate-800 dark:text-white mb-4 text-lg">Detailed Concepts</h3>
+                    <div className="max-w-none">
+                       {selectedChapter.detailedNotes === 'Pending...' 
+                          ? <div className="text-center py-10 text-slate-400 italic">Content coming soon for this chapter.</div> 
+                          : <MarkdownRenderer content={selectedChapter.detailedNotes} />}
+                    </div>
+                  </div>
+                )}
+              </div>
+           </div>
         </div>
       </div>
     );
@@ -562,14 +582,14 @@ const App: React.FC = () => {
     }
 
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col font-sans">
-        <header className="bg-white px-6 py-4 shadow-sm flex items-center justify-between sticky top-0 z-20">
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col font-sans transition-colors">
+        <header className="bg-white dark:bg-slate-900 px-6 py-4 shadow-sm flex items-center justify-between sticky top-0 z-20 border-b border-slate-100 dark:border-slate-800">
            <div className="flex items-center gap-3">
-             <button onClick={goBack} className="p-2 -ml-2 hover:bg-slate-100 rounded-full transition text-slate-600">
+             <button onClick={goBack} className="p-2 -ml-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full transition text-slate-600 dark:text-slate-300">
                <ArrowLeft size={20} />
              </button>
              <div>
-               <h1 className="text-lg font-bold text-slate-800">{studyMode === ContentType.FLASHCARDS ? 'Active Recall' : studyMode === ContentType.MCQ ? 'Practice Quiz' : 'Study Notes'}</h1>
+               <h1 className="text-lg font-bold text-slate-800 dark:text-white">{studyMode === ContentType.FLASHCARDS ? 'Active Recall' : studyMode === ContentType.MCQ ? 'Practice Quiz' : 'Study Notes'}</h1>
                <p className="text-xs text-slate-400 font-medium line-clamp-1 max-w-[200px]">{selectedChapter.title}</p>
              </div>
            </div>
@@ -579,7 +599,7 @@ const App: React.FC = () => {
                setAiQuery('');
                setAiModalOpen(true);
              }}
-             className="text-indigo-600 p-2 bg-indigo-50 rounded-full hover:bg-indigo-100"
+             className="text-indigo-600 dark:text-indigo-400 p-2 bg-indigo-50 dark:bg-indigo-900/30 rounded-full hover:bg-indigo-100 dark:hover:bg-indigo-900/50"
            >
              <Sparkles size={20} />
            </button>
@@ -607,22 +627,14 @@ const App: React.FC = () => {
 
           {studyMode === ContentType.SUMMARY && (
              <div className="max-w-3xl mx-auto p-6 pb-24">
-                <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 mb-6">
-                   <div className="inline-block px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-wider mb-4">Summary</div>
-                   <div className="prose prose-slate prose-headings:text-slate-800 prose-p:text-slate-600 prose-strong:text-indigo-900 prose-strong:font-bold">
-                    <div className="whitespace-pre-line leading-relaxed">
-                      {selectedChapter.summary}
-                    </div>
-                   </div>
+                <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 mb-6">
+                   <div className="inline-block px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded-full text-xs font-bold uppercase tracking-wider mb-4">Summary</div>
+                   <MarkdownRenderer content={selectedChapter.summary} />
                 </div>
                 
-                <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-                   <div className="inline-block px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-bold uppercase tracking-wider mb-4">Deep Dive</div>
-                   <div className="prose prose-slate prose-headings:font-bold prose-headings:text-slate-800 prose-p:text-slate-600 prose-li:text-slate-600 prose-li:marker:text-indigo-500">
-                     <div className="whitespace-pre-line leading-relaxed">
-                       {selectedChapter.detailedNotes}
-                     </div>
-                   </div>
+                <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800">
+                   <div className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded-full text-xs font-bold uppercase tracking-wider mb-4">Deep Dive</div>
+                   <MarkdownRenderer content={selectedChapter.detailedNotes} />
                 </div>
              </div>
           )}
@@ -631,42 +643,41 @@ const App: React.FC = () => {
     );
   };
 
-  // --- Modal for AI ---
   const renderAiModal = () => (
     <div className={`fixed inset-0 z-[60] flex items-end sm:items-center justify-center transition-opacity duration-300 ${aiModalOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
       <div className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" onClick={() => setAiModalOpen(false)}></div>
-      <div className={`bg-white w-full max-w-lg sm:rounded-3xl rounded-t-3xl p-6 relative z-10 transition-transform duration-300 ${aiModalOpen ? 'translate-y-0' : 'translate-y-full'}`}>
-        <div className="w-12 h-1 bg-slate-200 rounded-full mx-auto mb-6 sm:hidden"></div>
+      <div className={`bg-white dark:bg-slate-900 w-full max-w-lg sm:rounded-3xl rounded-t-3xl p-6 relative z-10 transition-transform duration-300 ${aiModalOpen ? 'translate-y-0' : 'translate-y-full'}`}>
+        <div className="w-12 h-1 bg-slate-200 dark:bg-slate-700 rounded-full mx-auto mb-6 sm:hidden"></div>
         <div className="flex justify-between items-center mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-indigo-100 text-indigo-600 rounded-xl">
+            <div className="p-2 bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-300 rounded-xl">
                <Sparkles size={24} />
             </div>
             <div>
-              <h2 className="text-xl font-bold text-slate-800">AI Tutor</h2>
+              <h2 className="text-xl font-bold text-slate-800 dark:text-white">AI Tutor</h2>
               <p className="text-xs text-slate-400">Powered by Gemini</p>
             </div>
           </div>
-          <button onClick={() => setAiModalOpen(false)} className="text-slate-400 hover:text-slate-600 p-2 hover:bg-slate-50 rounded-full transition">
+          <button onClick={() => setAiModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition">
              <div className="sr-only">Close</div>
              <X size={20} />
           </button>
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-bold text-slate-700 mb-2">Ask a question</label>
+          <label className="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">Ask a question</label>
           <div className="flex gap-2">
             <input 
               type="text" 
               value={aiQuery}
               onChange={(e) => setAiQuery(e.target.value)}
               placeholder="e.g. Explain 'Utility' with an example"
-              className="flex-1 p-4 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-slate-800 placeholder:text-slate-400"
+              className="flex-1 p-4 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white dark:focus:bg-slate-900 transition-all text-slate-800 dark:text-white placeholder:text-slate-400"
             />
             <button 
               onClick={handleAiExplain}
               disabled={aiLoading}
-              className="bg-indigo-600 text-white px-5 rounded-2xl font-bold hover:bg-indigo-700 disabled:opacity-50 transition shadow-lg shadow-indigo-200"
+              className="bg-indigo-600 dark:bg-indigo-500 text-white px-5 rounded-2xl font-bold hover:bg-indigo-700 dark:hover:bg-indigo-600 disabled:opacity-50 transition shadow-lg shadow-indigo-200 dark:shadow-none"
             >
               {aiLoading ? (
                  <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
@@ -677,20 +688,20 @@ const App: React.FC = () => {
           </div>
         </div>
 
-        <div className="bg-slate-50 p-6 rounded-2xl min-h-[150px] max-h-[40vh] overflow-y-auto border border-slate-100">
+        <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl min-h-[150px] max-h-[40vh] overflow-y-auto border border-slate-100 dark:border-slate-700">
           {aiLoading ? (
              <div className="flex flex-col items-center justify-center h-full text-slate-400 gap-3 py-8">
                 <Sparkles className="animate-pulse text-indigo-400" size={32} />
                 <span className="text-sm font-medium animate-pulse">Consulting the knowledge base...</span>
              </div>
           ) : aiResponse ? (
-             <div className="prose prose-sm prose-slate max-w-none">
-               <p className="text-slate-700 leading-relaxed whitespace-pre-wrap">{aiResponse}</p>
+             <div className="prose prose-sm prose-slate dark:prose-invert max-w-none">
+               <p className="text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-wrap">{aiResponse}</p>
              </div>
           ) : (
              <div className="flex flex-col items-center justify-center h-full text-slate-400 py-8 text-center">
                 <Brain size={48} className="mb-4 opacity-20" />
-                <p className="font-medium text-slate-500">I can explain any concept from this chapter.</p>
+                <p className="font-medium text-slate-500 dark:text-slate-400">I can explain any concept from this chapter.</p>
                 <p className="text-xs mt-1">Try asking for definitions, differences, or examples.</p>
              </div>
           )}
@@ -700,11 +711,8 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className="antialiased text-slate-800 bg-slate-50 h-full selection:bg-indigo-100 selection:text-indigo-900 flex overflow-hidden">
-      
-      {/* Main Content Area */}
+    <div className="antialiased text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-950 h-full selection:bg-indigo-100 dark:selection:bg-indigo-900 selection:text-indigo-900 dark:selection:text-indigo-100 flex overflow-hidden transition-colors duration-300">
       <div className={`flex-1 flex flex-col h-full overflow-hidden transition-all duration-300 ${selectedStream && isSidebarOpen ? 'mr-0 sm:mr-[240px]' : ''}`}>
-        
         <div className="flex-1 overflow-y-auto relative no-scrollbar">
            {view === 'STREAM_SELECT' && renderStreamSelect()}
            {view === 'DASHBOARD' && renderDashboard()}
@@ -714,17 +722,11 @@ const App: React.FC = () => {
            {view === 'CHAPTER_DETAIL' && renderChapterDetail()}
            {view === 'STUDY_MODE' && renderStudyMode()}
         </div>
-        
       </div>
-
-      {/* Sidebar Overlay for Mobile */}
       {selectedStream && isSidebarOpen && (
-         <div className="fixed inset-0 bg-black/20 z-40 sm:hidden" onClick={() => setIsSidebarOpen(false)}></div>
+         <div className="fixed inset-0 bg-black/50 z-40 sm:hidden" onClick={() => setIsSidebarOpen(false)}></div>
       )}
-
-      {/* Right Sidebar */}
       {selectedStream && <Sidebar />}
-
       {renderAiModal()}
     </div>
   );

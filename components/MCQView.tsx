@@ -34,17 +34,17 @@ const MCQView: React.FC<MCQViewProps> = ({ questions, onComplete }) => {
     }
   };
 
-  if (!currentQuestion) return <div className="p-8 text-center">No questions available.</div>;
+  if (!currentQuestion) return <div className="p-8 text-center text-slate-500 dark:text-slate-400">No questions available.</div>;
 
   return (
     <div className="flex flex-col h-full max-w-2xl mx-auto p-4">
       <div className="mb-6 flex justify-between items-center">
-        <span className="text-sm font-semibold text-gray-500">Question {currentIndex + 1}/{questions.length}</span>
-        <span className="text-sm font-bold text-indigo-600">Score: {score}</span>
+        <span className="text-sm font-semibold text-gray-500 dark:text-gray-400">Question {currentIndex + 1}/{questions.length}</span>
+        <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400">Score: {score}</span>
       </div>
 
-      <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-6 flex-grow">
-        <h3 className="text-xl font-bold text-gray-800 mb-6">{currentQuestion.question}</h3>
+      <div className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 mb-6 flex-grow transition-colors">
+        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-6">{currentQuestion.question}</h3>
         
         <div className="space-y-3">
           {currentQuestion.options.map((option, idx) => {
@@ -52,14 +52,14 @@ const MCQView: React.FC<MCQViewProps> = ({ questions, onComplete }) => {
             
             if (isAnswered) {
               if (idx === currentQuestion.correctIndex) {
-                btnClass += "border-green-500 bg-green-50 text-green-700";
+                btnClass += "border-green-500 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400";
               } else if (idx === selectedOption) {
-                btnClass += "border-red-500 bg-red-50 text-red-700";
+                btnClass += "border-red-500 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400";
               } else {
-                btnClass += "border-gray-100 text-gray-400";
+                btnClass += "border-gray-100 dark:border-slate-700 text-gray-400 dark:text-slate-500";
               }
             } else {
-              btnClass += "border-gray-100 hover:border-indigo-200 hover:bg-indigo-50 text-gray-700";
+              btnClass += "border-gray-100 dark:border-slate-700 hover:border-indigo-200 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900/20 text-gray-700 dark:text-slate-200";
             }
 
             return (
@@ -80,7 +80,7 @@ const MCQView: React.FC<MCQViewProps> = ({ questions, onComplete }) => {
         </div>
 
         {isAnswered && (
-          <div className="mt-6 p-4 bg-blue-50 rounded-xl text-blue-800 text-sm">
+          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-xl text-blue-800 dark:text-blue-200 text-sm">
             <span className="font-bold">Explanation:</span> {currentQuestion.explanation}
           </div>
         )}
@@ -89,7 +89,7 @@ const MCQView: React.FC<MCQViewProps> = ({ questions, onComplete }) => {
       {isAnswered && (
         <button 
           onClick={handleNext}
-          className="w-full py-4 bg-indigo-600 text-white rounded-xl font-bold text-lg shadow-lg hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
+          className="w-full py-4 bg-indigo-600 dark:bg-indigo-500 text-white rounded-xl font-bold text-lg shadow-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors flex items-center justify-center gap-2"
         >
           {currentIndex === questions.length - 1 ? "Finish Quiz" : "Next Question"}
           <ArrowRight size={20} />
