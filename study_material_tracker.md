@@ -6,7 +6,7 @@ This document tracks the volume of active recall study materials available for e
 | Subject | Chapters Ready | Total Flashcards | Total MCQs | Total Reels |
 |:---|:---:|:---:|:---:|:---:|
 | **Economics** | 10/10 | 155 | 95 | 35 |
-| **OCM** | 3/8 | 55 | 30 | 9 |
+| **OCM** | 6/8 | 115 | 60 | 18 |
 | **Accounts** | 0/10 | 0 | 0 | 0 |
 | **SP** | 0/12 | 0 | 0 | 0 |
 
@@ -35,11 +35,11 @@ This document tracks the volume of active recall study materials available for e
 | 1. Principles of Mgmt | 20 | 10 | 3 | ✅ Ready |
 | 2. Functions of Mgmt | 20 | 10 | 3 | ✅ Ready |
 | 3. Entrepreneurship | 15 | 10 | 3 | ✅ Ready |
-| 4. Business Services | 0 | 0 | 0 | ⏳ Pending |
-| 5. Emerging Modes | 0 | 0 | 0 | ⏳ Pending |
-| 6. Social Responsibility | 0 | 0 | 0 | ⏳ Pending |
+| 4. Business Services | 30 | 15 | 3 | ✅ Ready |
+| 5. Emerging Modes | 15 | 10 | 3 | ✅ Ready |
+| 6. Social Responsibility | 15 | 5 | 3 | ✅ Ready |
 | 7. Consumer Protection | 0 | 0 | 0 | ⏳ Pending |
 | 8. Marketing | 0 | 0 | 0 | ⏳ Pending |
 
 ---
-*Last Updated: Iteration 1 (OCM Start)*
+*Last Updated: Iteration 2 (OCM Ch 4-6)*
