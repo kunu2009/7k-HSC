@@ -203,7 +203,15 @@ const ch3a_flashcards: Flashcard[] = [
   { id: 'c3a-f19', front: 'Exception: Speculation', back: 'If people expect price to rise further, they buy more even at high price.' },
   { id: 'c3a-f20', front: 'Exception: Ignorance', back: 'Consumer buys more at high price thinking it is better quality.' },
   { id: 'c3a-f21', front: 'Market Demand', back: 'Sum of all individual demands in the market.' },
-  { id: 'c3a-f22', front: 'Demand Curve', back: 'Graphical representation of demand schedule.' }
+  { id: 'c3a-f22', front: 'Demand Curve', back: 'Graphical representation of demand schedule.' },
+  { id: 'c3a-f23', front: 'Slope of Demand Curve', back: 'Negative slope (Downward from left to right) due to Inverse relationship.' },
+  { id: 'c3a-f24', front: 'Determinant: Population', back: 'More population = More demand.' },
+  { id: 'c3a-f25', front: 'Determinant: Income', back: 'Rise in income increases purchasing power and demand.' },
+  { id: 'c3a-f26', front: 'Determinant: Advertisement', back: 'Effective salesmanship changes consumer preferences.' },
+  { id: 'c3a-f27', front: 'Determinant: Taxation', back: 'High taxes reduce purchasing power, decreasing demand.' },
+  { id: 'c3a-f28', front: 'Habitual Goods', back: 'Exception. Addiction makes people buy even at higher prices (Liquor).' },
+  { id: 'c3a-f29', front: 'Variation in Demand', back: 'Change in Qty Demanded due to PRICE alone. (Expansion/Contraction).' },
+  { id: 'c3a-f30', front: 'Change in Demand', back: 'Change in Demand due to OTHER factors. (Increase/Decrease).' }
 ];
 
 const ch3a_mcqs: Question[] = [
@@ -234,7 +242,6 @@ const ch3a_reels: Reel[] = [
 ];
 
 // --- CHAPTER 3B: Elasticity ---
-// (Preserving existing structure, will expand in next iteration)
 const ch3b_flashcards: Flashcard[] = [
   { id: 'c3b-f1', front: 'Elasticity of Demand', back: 'The degree of responsiveness of quantity demanded to a change in its determinants (Price, Income, etc).' },
   { id: 'c3b-f2', front: 'Price Elasticity (Ed)', back: '% Change in Qty Demanded / % Change in Price.' },
@@ -247,7 +254,25 @@ const ch3b_flashcards: Flashcard[] = [
   { id: 'c3b-f9', front: 'Relatively Inelastic (Ed < 1)', back: '% Change in Demand < % Change in Price. Curve: Steeper.' },
   { id: 'c3b-f10', front: 'Total Expenditure Method', back: 'Marshall\'s method. Compares Total Outlay (Price x Qty) before and after price change.' },
   { id: 'c3b-f11', front: 'Point Method', back: 'Geometric Method. Ed = Lower Segment / Upper Segment of the demand curve.' },
-  { id: 'c3b-f12', front: 'Determinants of Ed', back: 'Nature of good (Necessity/Luxury), Substitutes, Durability, Uses, Price Level.' }
+  { id: 'c3b-f12', front: 'Determinants of Ed', back: 'Nature of good (Necessity/Luxury), Substitutes, Durability, Uses, Price Level.' },
+  { id: 'c3b-f13', front: 'Ratio Method', back: 'Proportional method. Formula: (ΔQ / Q) ÷ (ΔP / P).' },
+  { id: 'c3b-f14', front: 'Substitute Effect on Ed', back: 'More substitutes = More Elastic. (If Tea price rises, people easily switch to Coffee).' },
+  { id: 'c3b-f15', front: 'Durability Effect on Ed', back: 'Durable goods (TV) = Elastic (Can postpone buying). Perishable goods (Milk) = Inelastic.' },
+  { id: 'c3b-f16', front: 'Habit Effect on Ed', back: 'Habitual goods (Cigarettes) = Inelastic (Addicted consumers buy at any price).' },
+  { id: 'c3b-f17', front: 'Nature of Commodity', back: 'Necessities (Salt) = Inelastic. Luxuries (Car) = Elastic.' },
+  { id: 'c3b-f18', front: 'Uses of Good', back: 'Single use = Inelastic. Multi-use (Coal, Electricity) = Elastic.' },
+  { id: 'c3b-f19', front: 'Time Period', back: 'Short run = Inelastic (Habits don\'t change). Long run = Elastic.' },
+  { id: 'c3b-f20', front: 'Income Level', back: 'Very rich/Very poor = Inelastic. Middle class = Elastic.' },
+  { id: 'c3b-f21', front: 'Importance: Monopolist', back: 'If demand is inelastic, monopolist can charge high price (Price Discrimination).' },
+  { id: 'c3b-f22', front: 'Importance: Taxation', back: 'Govt imposes tax on inelastic goods (Liquor) to generate revenue.' },
+  { id: 'c3b-f23', front: 'Geometric Mean: Ed=1', back: 'At the exact mid-point of a linear demand curve.' },
+  { id: 'c3b-f24', front: 'Geometric Mean: Ed=0', back: 'At the X-axis intercept.' },
+  { id: 'c3b-f25', front: 'Geometric Mean: Ed=∞', back: 'At the Y-axis intercept.' },
+  { id: 'c3b-f26', front: 'Complimentary Goods Cross Ed', back: 'Negative. (Petrol Price Up -> Car Demand Down).' },
+  { id: 'c3b-f27', front: 'Substitute Goods Cross Ed', back: 'Positive. (Tea Price Up -> Coffee Demand Up).' },
+  { id: 'c3b-f28', front: 'Unrelated Goods Cross Ed', back: 'Zero. (Tea Price -> Car Demand).' },
+  { id: 'c3b-f29', front: 'Positive Income Elasticity', back: 'Normal Goods. Income Up -> Demand Up.' },
+  { id: 'c3b-f30', front: 'Negative Income Elasticity', back: 'Inferior Goods. Income Up -> Demand Down (Switch to better quality).' }
 ];
 
 const ch3b_mcqs: Question[] = [
@@ -260,7 +285,12 @@ const ch3b_mcqs: Question[] = [
   { id: 'c3b-q7', question: 'Ratio method is also known as ______.', options: ['Percentage Method', 'Outlay Method', 'Geometric Method', 'Visual Method'], correctIndex: 0, explanation: 'Flux method / Arithmetic method.' },
   { id: 'c3b-q8', question: 'For durable goods, demand is ______.', options: ['Elastic', 'Inelastic', 'Zero', 'Unitary'], correctIndex: 0, explanation: 'Purchase can be postponed.' },
   { id: 'c3b-q9', question: 'Ed = 1 at the ______ of a linear demand curve.', options: ['Top', 'Bottom', 'Mid-point', 'Origin'], correctIndex: 2, explanation: 'Lower segment = Upper segment.' },
-  { id: 'c3b-q10', question: 'Demand for medicines is ______.', options: ['Elastic', 'Inelastic', 'Perfectly Elastic', 'Unitary'], correctIndex: 1, explanation: 'Life saving necessity.' }
+  { id: 'c3b-q10', question: 'Demand for medicines is ______.', options: ['Elastic', 'Inelastic', 'Perfectly Elastic', 'Unitary'], correctIndex: 1, explanation: 'Life saving necessity.' },
+  { id: 'c3b-q11', question: 'Elasticity is infinite in ______ market.', options: ['Monopoly', 'Perfect Competition', 'Oligopoly', 'None'], correctIndex: 1, explanation: 'Sellers have no control over price.' },
+  { id: 'c3b-q12', question: 'Point method measures elasticity at ______.', options: ['A specific point', 'Whole curve', 'Start point', 'End point'], correctIndex: 0, explanation: 'Used for linear demand curves.' },
+  { id: 'c3b-q13', question: 'If % Change in Qty < % Change in Price, it is ______.', options: ['Relatively Elastic', 'Relatively Inelastic', 'Unitary', 'Perfect'], correctIndex: 1, explanation: 'Demand is less responsive.' },
+  { id: 'c3b-q14', question: 'Total Outlay Method was given by ______.', options: ['Marshall', 'Keynes', 'Smith', 'Ricardo'], correctIndex: 0, explanation: 'Alfred Marshall.' },
+  { id: 'c3b-q15', question: 'Demand for habits is ______.', options: ['Elastic', 'Inelastic', 'Unitary', 'Zero'], correctIndex: 1, explanation: 'Addiction.' }
 ];
 
 const ch3b_reels: Reel[] = [
@@ -271,10 +301,126 @@ const ch3b_reels: Reel[] = [
   { id: 'c3b-r5', title: 'Infinite Elasticity', content: 'A horizontal line.\n\nAt price $10, you sell infinite amount.\nAt price $10.01, you sell ZERO.\nDoes it exist? Only in Perfect Competition theory.', color: getReelColor(4) }
 ];
 
+// --- CHAPTER 4 DATA: Supply Analysis ---
+const ch4_flashcards: Flashcard[] = [
+  { id: 'c4-f1', front: 'Total Output', back: 'Sum total of quantity produced by all firms in a given time.' },
+  { id: 'c4-f2', front: 'Stock', back: 'Total quantity available for sale at a specific point of time. Stock is the Source of Supply.' },
+  { id: 'c4-f3', front: 'Supply', back: 'Part of stock offered for sale at a given price and time. Flow concept.' },
+  { id: 'c4-f4', front: 'Supply Equation', back: 'Sx = f(Px). Supply is a function of Price.' },
+  { id: 'c4-f5', front: 'Law of Supply', back: 'Direct relationship between Price and Supply. "Higher the price, larger the supply".' },
+  { id: 'c4-f6', front: 'Supply Curve Slope', back: 'Upward sloping from left to right (Positive slope).' },
+  { id: 'c4-f7', front: 'Assumption: Cost of Production', back: 'Must remain constant. If cost rises, supply decreases even at same price.' },
+  { id: 'c4-f8', front: 'Assumption: Technology', back: 'No change in production techniques.' },
+  { id: 'c4-f9', front: 'Assumption: Transport', back: 'Transport costs and facilities remain unchanged.' },
+  { id: 'c4-f10', front: 'Assumption: Future Prices', back: 'Seller does not expect future price changes.' },
+  { id: 'c4-f11', front: 'Exception: Labour Supply', back: 'Backward bending supply curve. After a point, higher wages lead to LESS work (preference for leisure).' },
+  { id: 'c4-f12', front: 'Exception: Agricultural Goods', back: 'Supply depends on weather, not just price.' },
+  { id: 'c4-f13', front: 'Exception: Perishable Goods', back: 'Seller sells at any price to avoid spoilage (Milk, Fish).' },
+  { id: 'c4-f14', front: 'Exception: Rare Goods', back: 'Supply of antique paintings cannot be increased even if price rises.' },
+  { id: 'c4-f15', front: 'Expansion of Supply', back: 'Rise in supply due to Rise in Price alone. Upward movement on same curve.' },
+  { id: 'c4-f16', front: 'Contraction of Supply', back: 'Fall in supply due to Fall in Price alone. Downward movement on same curve.' },
+  { id: 'c4-f17', front: 'Increase in Supply', back: 'Supply rises due to lower cost/better tech (Price constant). Curve shifts Right.' },
+  { id: 'c4-f18', front: 'Decrease in Supply', back: 'Supply falls due to higher cost/bad weather (Price constant). Curve shifts Left.' },
+  { id: 'c4-f19', front: 'Total Cost (TC)', back: 'Total Fixed Cost (TFC) + Total Variable Cost (TVC).' },
+  { id: 'c4-f20', front: 'Average Cost (AC)', back: 'Cost per unit. TC / Total Quantity.' },
+  { id: 'c4-f21', front: 'Marginal Cost (MC)', back: 'Net addition to TC by producing one more unit.' },
+  { id: 'c4-f22', front: 'Total Revenue (TR)', back: 'Total sales proceeds. Price x Quantity.' },
+  { id: 'c4-f23', front: 'Average Revenue (AR)', back: 'Revenue per unit. TR / Q. (AR is also the Price).' },
+  { id: 'c4-f24', front: 'Marginal Revenue (MR)', back: 'Net addition to TR by selling one more unit.' },
+  { id: 'c4-f25', front: 'Determinant: Technology', back: 'Better tech -> Lower Cost -> More Supply.' },
+  { id: 'c4-f26', front: 'Determinant: Govt Policy', back: 'Subsidies increase supply. Taxes decrease supply.' },
+  { id: 'c4-f27', front: 'Determinant: Infrastructure', back: 'Better roads/power -> More Supply.' },
+  { id: 'c4-f28', front: 'Reservation Price', back: 'Minimum price below which seller refuses to sell.' },
+  { id: 'c4-f29', front: 'Individual Supply', back: 'Supply by a single firm.' },
+  { id: 'c4-f30', front: 'Market Supply', back: 'Sum of all individual supplies.' }
+];
 
-// --- EXPORT (Rest of the file remains similar but truncated for brevity in this response, assume FULL Ch4-10 content from previous context is preserved here) ---
+const ch4_mcqs: Question[] = [
+  { id: 'c4-q1', question: 'Supply is a ______ concept.', options: ['Stock', 'Flow', 'Static', 'Fixed'], correctIndex: 1, explanation: 'It is measured over a period of time.' },
+  { id: 'c4-q2', question: 'Stock is always ______ Supply.', options: ['Less than', 'Equal to', 'More than or Equal to', 'None'], correctIndex: 2, explanation: 'Supply comes out of Stock. Stock >= Supply.' },
+  { id: 'c4-q3', question: 'Supply curve of labour is ______.', options: ['Upward sloping', 'Downward sloping', 'Backward bending', 'Vertical'], correctIndex: 2, explanation: 'Workers prefer leisure over work at very high wages.' },
+  { id: 'c4-q4', question: 'Expansion of supply is caused by ______.', options: ['Lower Cost', 'Better Tech', 'Rise in Price', 'Fall in Price'], correctIndex: 2, explanation: 'Movement along the curve.' },
+  { id: 'c4-q5', question: 'Average Cost = ______.', options: ['TC + Q', 'TC - Q', 'TC * Q', 'TC / Q'], correctIndex: 3, explanation: 'Cost per unit.' },
+  { id: 'c4-q6', question: 'Perishable goods have ______ elasticity of supply.', options: ['High', 'Low (Inelastic)', 'Infinite', 'Unitary'], correctIndex: 1, explanation: 'Cannot be stored, must be sold.' },
+  { id: 'c4-q7', question: 'Stock of potential supply is ______.', options: ['Production', 'Output', 'Inventory', 'Stock'], correctIndex: 3, explanation: 'Source of supply.' },
+  { id: 'c4-q8', question: 'Vertical supply curve represents ______ supply.', options: ['Perfectly Elastic', 'Perfectly Inelastic', 'Unitary', 'Relative'], correctIndex: 1, explanation: 'Supply cannot change (e.g. Old paintings).' },
+  { id: 'c4-q9', question: 'Increase in supply shifts curve to ______.', options: ['Left', 'Right', 'Up', 'Down'], correctIndex: 1, explanation: 'More supply at same price.' },
+  { id: 'c4-q10', question: 'Revenue per unit is called ______.', options: ['TR', 'MR', 'AR', 'PR'], correctIndex: 2, explanation: 'Average Revenue.' },
+  { id: 'c4-q11', question: 'Relationship between Price and Supply is ______.', options: ['Inverse', 'Direct', 'Negative', 'None'], correctIndex: 1, explanation: 'Producers sell more at high price.' },
+  { id: 'c4-q12', question: 'Determinant of supply includes ______.', options: ['Income of Consumer', 'Cost of Production', 'Population', 'Tastes'], correctIndex: 1, explanation: 'Others are demand determinants.' },
+  { id: 'c4-q13', question: 'Rare goods are an exception because ______.', options: ['Supply can be increased', 'Supply is fixed', 'Demand is low', 'Price is low'], correctIndex: 1, explanation: 'Scarcity.' },
+  { id: 'c4-q14', question: 'Marginal Revenue is addition to ______.', options: ['TC', 'AC', 'TR', 'AR'], correctIndex: 2, explanation: 'Total Revenue.' },
+  { id: 'c4-q15', question: 'Supply of agricultural goods depends on ______.', options: ['Price', 'Natural Conditions', 'Fashion', 'Income'], correctIndex: 1, explanation: 'Weather, rain etc.' }
+];
 
-// ... (Assuming standard content for Ch4-10 is kept as is to avoid truncation)
+const ch4_reels: Reel[] = [
+  { id: 'c4-r1', title: 'Stock vs Supply', content: 'Stock: Total water in the reservoir.\nSupply: Water flowing through the tap.\n\nStock is Potential. Supply is Actual.', color: getReelColor(0) },
+  { id: 'c4-r2', title: 'Backward Bending Curve', content: 'Labour Supply is weird!\n\nWage $10 -> Work 8 hrs.\nWage $50 -> Work 12 hrs.\nWage $500 -> Work 4 hrs?!\n\nWhy? Because at very high income, you want LEISURE to enjoy the money!', color: getReelColor(1) },
+  { id: 'c4-r3', title: 'Law of Supply', content: 'Seller\'s Psychology:\nPrice High -> Profit High -> Sell MORE.\nPrice Low -> Profit Low -> Sell LESS.', color: getReelColor(2) },
+  { id: 'c4-r4', title: 'Cost Concepts', content: 'Fixed Cost: Rent (Pay even if output is 0).\nVariable Cost: Raw Material (Change with output).\nTotal Cost = Fixed + Variable.', color: getReelColor(3) },
+  { id: 'c4-r5', title: 'Revenue Concepts', content: 'TR = Price x Qty.\nAR = Price (TR/Q).\nMR = Extra money from last unit.\n\nFor a firm, AR is the Price Line.', color: getReelColor(4) }
+];
+
+// --- CHAPTER 5 DATA: Forms of Market ---
+const ch5_flashcards: Flashcard[] = [
+  { id: 'c5-f1', front: 'Market', back: 'An arrangement where buyers and sellers come in contact (directly/indirectly) for exchange of goods.' },
+  { id: 'c5-f2', front: 'Perfect Competition', back: 'Ideal market. Many sellers, Homogeneous product, Single price, Free entry/exit.' },
+  { id: 'c5-f3', front: 'Feature: Large number of sellers', back: 'In Perfect Competition, single seller is a "Price Taker". Cannot influence market price.' },
+  { id: 'c5-f4', front: 'Feature: Homogeneous Product', back: 'Products are identical in size, shape, color, quality. Perfect substitutes.' },
+  { id: 'c5-f5', front: 'Feature: Free Entry & Exit', back: 'No barriers. Any firm can join or leave the industry.' },
+  { id: 'c5-f6', front: 'Feature: Perfect Knowledge', back: 'Buyers and sellers know the market price. No advertising needed.' },
+  { id: 'c5-f7', front: 'Feature: Perfect Mobility', back: 'Factors of production can move freely.' },
+  { id: 'c5-f8', front: 'Feature: No Transport Cost', back: 'Assumed to ensure single price.' },
+  { id: 'c5-f9', front: 'Price Determination (PC)', back: 'By interaction of Market Demand and Market Supply (Equilibrium Price).' },
+  { id: 'c5-f10', front: 'Monopoly', back: 'Mono (Single) + Poly (Seller). Single seller controls the entire supply.' },
+  { id: 'c5-f11', front: 'Feature: Single Seller', back: 'Monopolist is a "Price Maker".' },
+  { id: 'c5-f12', front: 'Feature: No Close Substitutes', back: 'Cross elasticity is zero or negative. Buyer has no choice.' },
+  { id: 'c5-f13', front: 'Feature: Barriers to Entry', back: 'Legal, natural or technical barriers prevent competitors.' },
+  { id: 'c5-f14', front: 'Feature: Price Discrimination', back: 'Charging different prices to different consumers for same product (e.g. Doctors, Railways).' },
+  { id: 'c5-f15', front: 'Natural Monopoly', back: 'Created by nature (e.g. Climate for specific crop).' },
+  { id: 'c5-f16', front: 'Legal Monopoly', back: 'Patents, Trademarks, Copyrights.' },
+  { id: 'c5-f17', front: 'Public Monopoly', back: 'Owned by Govt (Indian Railways).' },
+  { id: 'c5-f18', front: 'Oligopoly', back: 'Oligo (Few) + Poly (Seller). Few sellers dominate the market (e.g. Mobile Service Providers).' },
+  { id: 'c5-f19', front: 'Feature: Interdependence', back: 'Oligopolists watch competitors closely. Price war is common.' },
+  { id: 'c5-f20', front: 'Feature: Advertising', back: 'Crucial for Oligopoly to capture share.' },
+  { id: 'c5-f21', front: 'Feature: Indeterminate Demand Curve', back: 'Cannot predict sales due to rival reactions (Kinked Demand Curve).' },
+  { id: 'c5-f22', front: 'Monopolistic Competition', back: 'Realistic market. Many sellers, Differentiated products. Blend of Perfect Competition & Monopoly.' },
+  { id: 'c5-f23', front: 'Product Differentiation', back: 'Products are similar but not identical (Brand, packing, taste). e.g. Soaps (Lux vs Dove).' },
+  { id: 'c5-f24', front: 'Selling Cost', back: 'Expenditure on advertisement and marketing to persuade buyers.' },
+  { id: 'c5-f25', front: 'Chamberlin', back: 'Prof. E.H. Chamberlin coined concept of Monopolistic Competition in 1933.' },
+  { id: 'c5-f26', front: 'Close Substitutes', back: 'In Monopolistic Comp, cross elasticity is high.' },
+  { id: 'c5-f27', front: 'Concept of Group', back: 'Chamberlin used "Group" instead of "Industry" for firms producing differentiated goods.' },
+  { id: 'c5-f28', front: 'Very Short Period', back: 'Supply is fixed. Price determined by demand.' },
+  { id: 'c5-f29', front: 'Long Period', back: 'All factors are variable.' },
+  { id: 'c5-f30', front: 'Duopoly', back: 'Market with exactly two sellers.' }
+];
+
+const ch5_mcqs: Question[] = [
+  { id: 'c5-q1', question: 'Single seller means ______.', options: ['Perfect Competition', 'Monopoly', 'Oligopoly', 'Duopoly'], correctIndex: 1, explanation: 'Mono = Single.' },
+  { id: 'c5-q2', question: 'Product differentiation is the main feature of ______.', options: ['Monopoly', 'Perfect Competition', 'Monopolistic Competition', 'Oligopoly'], correctIndex: 2, explanation: 'Same product, different brands (Soaps, Toothpaste).' },
+  { id: 'c5-q3', question: 'Price Taker is a feature of ______.', options: ['Monopoly', 'Perfect Competition', 'Oligopoly', 'None'], correctIndex: 1, explanation: 'Seller accepts market price.' },
+  { id: 'c5-q4', question: 'Selling cost is essential in ______.', options: ['Perfect Competition', 'Monopoly', 'Monopolistic Competition', 'None'], correctIndex: 2, explanation: 'To differentiate product.' },
+  { id: 'c5-q5', question: 'Kinked demand curve is found in ______.', options: ['Monopoly', 'Oligopoly', 'Perfect Competition', 'Monopolistic'], correctIndex: 1, explanation: 'Due to price rigidity and interdependence.' },
+  { id: 'c5-q6', question: 'In perfect competition, products are ______.', options: ['Differentiated', 'Homogeneous', 'Heterogeneous', 'Unique'], correctIndex: 1, explanation: 'Identical.' },
+  { id: 'c5-q7', question: 'Indian Railways is a ______ monopoly.', options: ['Private', 'Public', 'Legal', 'Natural'], correctIndex: 1, explanation: 'Owned by Government.' },
+  { id: 'c5-q8', question: 'Entry barriers exist in ______.', options: ['Perfect Competition', 'Monopolistic Competition', 'Monopoly', 'None'], correctIndex: 2, explanation: 'Prevents competition.' },
+  { id: 'c5-q9', question: 'Few sellers means ______.', options: ['Monopoly', 'Oligopoly', 'Duopoly', 'Perfect'], correctIndex: 1, explanation: 'Oligopoly.' },
+  { id: 'c5-q10', question: 'Price Discrimination is possible in ______.', options: ['Perfect Competition', 'Monopoly', 'Monopolistic', 'Oligopoly'], correctIndex: 1, explanation: 'Seller controls supply and price.' },
+  { id: 'c5-q11', question: 'Free entry and exit is feature of ______.', options: ['Monopoly', 'Oligopoly', 'Perfect Competition', 'None'], correctIndex: 2, explanation: 'No restrictions.' },
+  { id: 'c5-q12', question: 'Demand curve of perfect competition is ______.', options: ['Downward', 'Upward', 'Horizontal', 'Vertical'], correctIndex: 2, explanation: 'Perfectly elastic.' },
+  { id: 'c5-q13', question: 'Monopolistic competition concept given by ______.', options: ['Marshall', 'Keynes', 'Chamberlin', 'Joan Robinson'], correctIndex: 2, explanation: 'In 1933.' },
+  { id: 'c5-q14', question: 'OPEC is an example of ______.', options: ['Monopoly', 'Cartel/Oligopoly', 'Perfect', 'Monopolistic'], correctIndex: 1, explanation: 'Group of few oil producers.' },
+  { id: 'c5-q15', question: 'Equilibrium price is where ______.', options: ['Demand > Supply', 'Demand < Supply', 'Demand = Supply', 'None'], correctIndex: 2, explanation: 'Market clears.' }
+];
+
+const ch5_reels: Reel[] = [
+  { id: 'c5-r1', title: 'Perfect Competition', content: 'Does it exist? NO.\nIt\'s a myth/ideal.\n\nImagine a market where every potato is IDENTICAL, price is SAME everywhere, and everyone knows EVERYTHING.\nImpossible!', color: getReelColor(0) },
+  { id: 'c5-r2', title: 'Monopoly Power', content: 'Price Maker.\n\nSince I am the ONLY seller, I decide the price.\nIf you want electricity, you MUST buy from me (Adani/Tata). I can charge whatever I want (subject to demand).', color: getReelColor(1) },
+  { id: 'c5-r3', title: 'Oligopoly Wars', content: 'Few Sellers (Jio, Airtel, Vi).\n\nIf Jio cuts price, Airtel MUST cut price.\nInterdependence.\nThey fight with ads, not just price.', color: getReelColor(2) },
+  { id: 'c5-r4', title: 'Monopolistic Comp', content: 'Real Life.\n\nLux vs Dove vs Pears.\nAll are soaps (Substitutes).\nBut they are DIFFERENT (Smell, Wrapper).\n\nThey compete on "Selling Cost" (Ads).', color: getReelColor(3) },
+  { id: 'c5-r5', title: 'Price Discrimination', content: 'Same product, different price.\n\nTrain Ticket:\nSenior Citizen: Low Price.\nAdult: High Price.\n\nOnly a Monopolist can do this!', color: getReelColor(4) }
+];
+
 
 export const MOCK_DATA: Record<Stream, StreamData> = {
   [Stream.COMMERCE]: {
@@ -362,33 +508,32 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
           {
             id: 'eco-3b',
             title: '3B. Elasticity of Demand',
-            description: 'Responsiveness of demand.',
-            summary: '**Ed**: Elasticity of Demand.\n**Types**: Price, Income, Cross.',
-            detailedNotes: '### Types of Price Elasticity\n* **Perfectly Elastic** (Infinite)\n* **Perfectly Inelastic** (Zero)\n* **Unitary** (One)\n* **Relatively Elastic** (>1)\n* **Relatively Inelastic** (<1)',
+            description: 'Responsiveness of demand to change in price.',
+            summary: '**Ed**: Elasticity of Demand.\n**Types**: Price, Income, Cross.\n**Methods**: Ratio, Outlay, Point.',
+            detailedNotes: '### 1. Types of Price Elasticity\n* **Perfectly Elastic (∞)**: Horizontal curve.\n* **Perfectly Inelastic (0)**: Vertical curve.\n* **Unitary (1)**: Rectangular Hyperbola.\n* **Relatively Elastic (>1)**: Flatter curve.\n* **Relatively Inelastic (<1)**: Steeper curve.\n\n### 2. Methods of Measurement\n* **Ratio Method**: % Change in Q / % Change in P.\n* **Expenditure Method**: Relation between Price and Outlay.\n* **Point Method**: Geometric measurement.',
             flashcards: ch3b_flashcards,
             mcqs: ch3b_mcqs,
             reels: ch3b_reels
           },
-          // ... (Placeholder for Ch4-10 to match existing structure or previous generation)
-           {
+          {
             id: 'eco-4',
             title: '4. Supply Analysis',
-            description: 'Production and Supply.',
-            summary: '**Supply**: Offered for sale.\n**Law**: Direct relation.',
-            detailedNotes: '### Law of Supply\nDirect relationship between Price and Supply.',
-            flashcards: [],
-            mcqs: [],
-            reels: []
+            description: 'Production, Stock and Supply.',
+            summary: '**Supply**: Part of stock offered for sale.\n**Law of Supply**: Direct relationship (Price Up -> Supply Up).',
+            detailedNotes: '### Concepts\n* **Total Output**: Production.\n* **Stock**: Potential supply.\n* **Supply**: Actual supply.\n\n### Law of Supply\n"Other things being constant, higher the price, greater is the quantity supplied."\n\n**Exceptions**:\n* Supply of Labour (Backward bending).\n* Agricultural Goods.\n* Rare articles.',
+            flashcards: ch4_flashcards,
+            mcqs: ch4_mcqs,
+            reels: ch4_reels
           },
-           {
+          {
             id: 'eco-5',
             title: '5. Forms of Market',
-            description: 'Market structures.',
-            summary: 'Perfect Competition, Monopoly, Oligopoly.',
-            detailedNotes: '### Perfect Competition\nHomogeneous product, Single price.\n\n### Monopoly\nSingle seller, Price maker.',
-            flashcards: [],
-            mcqs: [],
-            reels: []
+            description: 'Market structures: Perfect Competition, Monopoly, Oligopoly.',
+            summary: '**Perfect Competition**: Price Taker.\n**Monopoly**: Price Maker.\n**Monopolistic**: Product Differentiation.',
+            detailedNotes: '### 1. Perfect Competition\n* Large number of buyers/sellers.\n* Homogeneous product.\n* Single Price.\n\n### 2. Monopoly\n* Single Seller.\n* Price Discrimination.\n* No substitutes.\n\n### 3. Monopolistic Competition\n* Product Differentiation (Brand, Pack).\n* Selling Cost (Ads).\n\n### 4. Oligopoly\n* Few sellers.\n* Interdependence.',
+            flashcards: ch5_flashcards,
+            mcqs: ch5_mcqs,
+            reels: ch5_reels
           },
            {
             id: 'eco-6',
