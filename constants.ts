@@ -14,6 +14,10 @@ const REEL_COLORS = [
 
 const getReelColor = (index: number) => REEL_COLORS[index % REEL_COLORS.length];
 
+// ==========================================
+//               ECONOMICS DATA
+// ==========================================
+
 // --- CHAPTER 1 DATA: Intro to Micro & Macro ---
 const ch1_flashcards: Flashcard[] = [
   { id: 'c1-f1', front: 'Micro Economics', back: 'Derived from Greek "Mikros" (Small). Studies individual units: consumer, firm, price of particular commodity.' },
@@ -410,6 +414,135 @@ const ch10_reels: Reel[] = [
 ];
 
 
+// ==========================================
+//                  OCM DATA
+// ==========================================
+
+// --- OCM CHAPTER 1: Principles of Management ---
+const ocm_ch1_flashcards: Flashcard[] = [
+  { id: 'ocm-c1-f1', front: 'Management', back: 'The art of getting things done through others. A set of principles to coordinate resources.' },
+  { id: 'ocm-c1-f2', front: 'Henri Fayol', back: 'Father of Modern Management. Proposed 14 Principles of Management in "General and Industrial Administration" (1916).' },
+  { id: 'ocm-c1-f3', front: 'F.W. Taylor', back: 'Father of Scientific Management. Proposed scientific approach to work to increase efficiency.' },
+  { id: 'ocm-c1-f4', front: 'Principle of Division of Work', back: 'Work should be divided into small tasks to achieve specialization and efficiency.' },
+  { id: 'ocm-c1-f5', front: 'Principle of Authority & Responsibility', back: 'Authority is the right to give orders. Responsibility is the obligation to perform. They must go hand in hand.' },
+  { id: 'ocm-c1-f6', front: 'Principle of Discipline', back: 'Obedience, respect for authority, and observance of rules are essential for smooth running.' },
+  { id: 'ocm-c1-f7', front: 'Principle of Unity of Command', back: 'One employee should receive orders from ONE boss only to avoid confusion.' },
+  { id: 'ocm-c1-f8', front: 'Principle of Unity of Direction', back: '"One Head, One Plan". All activities with same objective should be directed by one manager.' },
+  { id: 'ocm-c1-f9', front: 'Scalar Chain', back: 'The chain of command/authority from top level to lower level. Communication flows through this chain.' },
+  { id: 'ocm-c1-f10', front: 'Gang Plank', back: 'A shortcut in Scalar Chain for quick communication between employees of same level during emergency.' },
+  { id: 'ocm-c1-f11', front: 'Esprit de Corps', back: 'Team spirit. Management should promote harmony and unity among employees.' },
+  { id: 'ocm-c1-f12', front: 'Time Study', back: 'Technique to observe and record the time required to do a specific task.' },
+  { id: 'ocm-c1-f13', front: 'Motion Study', back: 'Study of movements of a worker to eliminate unnecessary motions.' },
+  { id: 'ocm-c1-f14', front: 'Differential Piece Wage Rate', back: 'Taylor\'s technique: Higher rate for efficient workers, Lower rate for inefficient workers.' },
+  { id: 'ocm-c1-f15', front: 'Mental Revolution', back: 'Change in attitude of management and workers towards each other (Cooperation instead of conflict).' },
+  { id: 'ocm-c1-f16', front: 'Principle of Equity', back: 'Fair and kind treatment to all employees. No discrimination.' },
+  { id: 'ocm-c1-f17', front: 'Principle of Order', back: '"A place for everything and everything in its place". (Material and Social Order).' },
+  { id: 'ocm-c1-f18', front: 'Principle of Remuneration', back: 'Fair pay to workers. It should be satisfactory to both employer and employee.' },
+  { id: 'ocm-c1-f19', front: 'Principle of Initiative', back: 'Employees should be encouraged to think and execute plans. It boosts morale.' },
+  { id: 'ocm-c1-f20', front: 'Principle of Stability of Tenure', back: 'Job security. Frequent turnover of employees is bad for organization.' }
+];
+
+const ocm_ch1_mcqs: Question[] = [
+  { id: 'ocm-c1-q1', question: 'Who is called the Father of Modern Management?', options: ['F.W. Taylor', 'Henri Fayol', 'Peter Drucker', 'Elton Mayo'], correctIndex: 1, explanation: 'French mining engineer who gave 14 principles.' },
+  { id: 'ocm-c1-q2', question: 'Principle of Unity of Command insists on ______.', options: ['One Plan', 'One Boss', 'One Department', 'One Salary'], correctIndex: 1, explanation: 'Orders from only one superior to avoid conflict.' },
+  { id: 'ocm-c1-q3', question: 'Scalar Chain means the hierarchy of ______.', options: ['Authority', 'Salary', 'Machinery', 'Time'], correctIndex: 0, explanation: 'Line of authority from top to bottom.' },
+  { id: 'ocm-c1-q4', question: 'The shortcut in Scalar Chain is called ______.', options: ['Short Circuit', 'Gang Plank', 'Cross Talk', 'Direct Line'], correctIndex: 1, explanation: 'For direct communication without delay.' },
+  { id: 'ocm-c1-q5', question: 'Taylor recommended ______ wage rate system.', options: ['Uniform', 'Standard', 'Differential Piece', 'Time based'], correctIndex: 2, explanation: 'To motivate workers to produce more.' },
+  { id: 'ocm-c1-q6', question: 'Esprit de corps means ______.', options: ['Division of Work', 'Team Spirit', 'Discipline', 'Authority'], correctIndex: 1, explanation: 'Unity is strength.' },
+  { id: 'ocm-c1-q7', question: 'Scientific Management theory was proposed by ______.', options: ['F.W. Taylor', 'Fayol', 'Maslow', 'Mayo'], correctIndex: 0, explanation: 'Fredrick Winslow Taylor.' },
+  { id: 'ocm-c1-q8', question: 'Fatigue study is done to determine ______.', options: ['Salary', 'Rest Intervals', 'Speed', 'Tools'], correctIndex: 1, explanation: 'To maintain efficiency and reduce tiredness.' },
+  { id: 'ocm-c1-q9', question: 'Which is NOT a principle of Fayol?', options: ['Division of Work', 'Equity', 'Mental Revolution', 'Order'], correctIndex: 2, explanation: 'Mental Revolution is Taylor\'s concept.' },
+  { id: 'ocm-c1-q10', question: 'Management principles are ______ in nature.', options: ['Rigid', 'Flexible', 'Absolute', 'Static'], correctIndex: 1, explanation: 'Can be modified according to situation.' }
+];
+
+const ocm_ch1_reels: Reel[] = [
+  { id: 'ocm-c1-r1', title: 'Fayol vs Taylor', content: 'Fayol: Top Level Management. "Administrative Theory". Focus on Manager.\n\nTaylor: Shop Floor Level. "Scientific Management". Focus on Worker/Efficiency.', color: getReelColor(0) },
+  { id: 'ocm-c1-r2', title: 'Unity of Command', content: 'Imagine having 2 bosses.\nBoss A: "Do this report now!"\nBoss B: "Go to meeting now!"\n\nConfusion? Chaos?\nThat\'s why Fayol said: ONE Employee = ONE Boss.', color: getReelColor(1) },
+  { id: 'ocm-c1-r3', title: 'Gang Plank', content: 'Scalar Chain is long (A->B->C->D...).\nEmergency?\nUse Gang Plank!\nDirect communication between D and G (same level) to save time.', color: getReelColor(2) }
+];
+
+// --- OCM CHAPTER 2: Functions of Management ---
+const ocm_ch2_flashcards: Flashcard[] = [
+  { id: 'ocm-c2-f1', front: 'Planning', back: 'Basic function. Deciding in advance what to do, how to do, when to do and who is to do it. Bridging gap between where we are and where we want to go.' },
+  { id: 'ocm-c2-f2', front: 'Organizing', back: 'Process of identifying and grouping the work to be performed, defining and delegating responsibility and authority.' },
+  { id: 'ocm-c2-f3', front: 'Staffing', back: 'Recruiting, selecting, developing, promoting and compensating personnel. "Right person at the right job".' },
+  { id: 'ocm-c2-f4', front: 'Directing', back: 'Instructing, guiding, communicating, inspiring, motivating and supervising the employees.' },
+  { id: 'ocm-c2-f5', front: 'Coordinating', back: 'Synchronization of efforts of all group members to achieve common goals. Harmonizing activities.' },
+  { id: 'ocm-c2-f6', front: 'Controlling', back: 'Comparing actual performance with standard performance and taking corrective measures if any deviation.' },
+  { id: 'ocm-c2-f7', front: 'POSDCORB', back: 'Acronym by Luther Gulick: Planning, Organizing, Staffing, Directing, COordinating, Reporting, Budgeting.' },
+  { id: 'ocm-c2-f8', front: 'Importance of Planning', back: 'Provides direction, reduces risk of uncertainty, reduces overlapping/wasteful activities.' },
+  { id: 'ocm-c2-f9', front: 'Importance of Organizing', back: 'Facilitates administration, optimum utilization of resources, defines authority relationships.' },
+  { id: 'ocm-c2-f10', front: 'Importance of Staffing', back: 'Helps in finding competent personnel, improves performance, continuous survival and growth.' },
+  { id: 'ocm-c2-f11', front: 'Importance of Directing', back: 'Initiates action, integrates efforts, motivates employees, provides stability.' },
+  { id: 'ocm-c2-f12', front: 'Importance of Coordinating', back: 'Encourages team spirit, gives proper direction, motivates employees, optimum utilization.' },
+  { id: 'ocm-c2-f13', front: 'Importance of Controlling', back: 'Accomplishment of goals, judging accuracy of standards, efficient use of resources, ensures order and discipline.' },
+  { id: 'ocm-c2-f14', front: 'Recruitment', back: 'Process of searching for prospective employees and stimulating them to apply for jobs.' },
+  { id: 'ocm-c2-f15', front: 'Selection', back: 'Process of choosing the best person out of the pool of prospective candidates.' },
+  { id: 'ocm-c2-f16', front: 'Leadership', back: 'Ability to influence others to do work willingly. Part of Directing.' },
+  { id: 'ocm-c2-f17', front: 'Motivation', back: 'Process of stimulating people to action to accomplish desired goals. (Maslow\'s Theory).' },
+  { id: 'ocm-c2-f18', front: 'Communication', back: 'Exchange of ideas, facts, opinions, emotions between two or more persons.' },
+  { id: 'ocm-c2-f19', front: 'Standards', back: 'Criteria against which actual performance is measured in Controlling.' },
+  { id: 'ocm-c2-f20', front: 'Feedback', back: 'Information about the result of an activity. Essential for Control.' }
+];
+
+const ocm_ch2_mcqs: Question[] = [
+  { id: 'ocm-c2-q1', question: 'The function of management that initiates action is ______.', options: ['Planning', 'Directing', 'Staffing', 'Controlling'], correctIndex: 1, explanation: 'Planning is thinking, Directing is doing.' },
+  { id: 'ocm-c2-q2', question: '______ is the last function of management.', options: ['Planning', 'Organizing', 'Controlling', 'Staffing'], correctIndex: 2, explanation: 'It completes the cycle.' },
+  { id: 'ocm-c2-q3', question: 'Right person at the right job is the goal of ______.', options: ['Planning', 'Organizing', 'Staffing', 'Directing'], correctIndex: 2, explanation: 'Human Resource function.' },
+  { id: 'ocm-c2-q4', question: 'Corrective action is taken in ______ function.', options: ['Planning', 'Coordinating', 'Controlling', 'Selection'], correctIndex: 2, explanation: 'To fix deviations.' },
+  { id: 'ocm-c2-q5', question: 'Luther Gulick gave the keyword ______.', options: ['PODSCORB', 'POSDCORB', 'PSODCORB', 'None'], correctIndex: 1, explanation: 'Standard acronym.' },
+  { id: 'ocm-c2-q6', question: 'Planning is a ______ process.', options: ['Physical', 'Mental', 'Social', 'Legal'], correctIndex: 1, explanation: 'Intellectual process.' },
+  { id: 'ocm-c2-q7', question: 'Coordination is the ______ of management.', options: ['Function', 'Essence', 'Steps', 'Objective'], correctIndex: 1, explanation: 'It binds all functions together.' },
+  { id: 'ocm-c2-q8', question: 'Comparing actual with standard is part of ______.', options: ['Planning', 'Controlling', 'Directing', 'Organizing'], correctIndex: 1, explanation: 'Performance evaluation.' },
+  { id: 'ocm-c2-q9', question: 'Organization charts show ______.', options: ['Salary', 'Authority Structure', 'Profits', 'Assets'], correctIndex: 1, explanation: 'Hierarchy and relationships.' },
+  { id: 'ocm-c2-q10', question: 'Directing flows from ______.', options: ['Bottom to Top', 'Top to Bottom', 'Horizontal', 'Diagonal'], correctIndex: 1, explanation: 'Superior to Subordinate.' }
+];
+
+const ocm_ch2_reels: Reel[] = [
+  { id: 'ocm-c2-r1', title: 'The Cycle', content: '1. Plan (Think)\n2. Organize (Group)\n3. Staff (Hire)\n4. Direct (Lead)\n5. Control (Check)\n\nIt never stops!', color: getReelColor(3) },
+  { id: 'ocm-c2-r2', title: 'Planning vs Controlling', content: 'Planning: Looking Ahead.\n(Setting targets for next year).\n\nControlling: Looking Back.\n(Checking if we hit last year\'s targets).', color: getReelColor(4) },
+  { id: 'ocm-c2-r3', title: 'Staffing Motto', content: 'Put a Singer in the Accounts dept?\nDisaster!\n\nStaffing is purely about "Right Person @ Right Job".', color: getReelColor(5) }
+];
+
+// --- OCM CHAPTER 3: Entrepreneurship Development ---
+const ocm_ch3_flashcards: Flashcard[] = [
+  { id: 'ocm-c3-f1', front: 'Entrepreneur', back: 'A person who starts a business, takes risk, innovates and organizes resources to make profit. Derived from French \'Entreprendre\'.' },
+  { id: 'ocm-c3-f2', front: 'Characteristics: Innovator', back: 'Introduction of new combinations (New product, new method, new market).' },
+  { id: 'ocm-c3-f3', front: 'Characteristics: Risk Bearer', back: 'Willingness to assume the risk of loss. "No Risk, No Gain".' },
+  { id: 'ocm-c3-f4', front: 'Characteristics: Visionary', back: 'Ability to foresee future market trends and opportunities.' },
+  { id: 'ocm-c3-f5', front: 'Function: Innovation', back: 'Schumpeter said innovation is the main function. Doing something new or differently.' },
+  { id: 'ocm-c3-f6', front: 'Function: Decision Making', back: 'Taking prompt and correct decisions regarding production, marketing, finance.' },
+  { id: 'ocm-c3-f7', front: 'Entrepreneurship Development', back: 'Process of enhancing entrepreneurial skills and knowledge through structured training and programs.' },
+  { id: 'ocm-c3-f8', front: 'EDP (Entrepreneurship Dev Program)', back: 'Structured training program to identify and nurture potential entrepreneurs.' },
+  { id: 'ocm-c3-f9', front: 'Startup India', back: 'Govt initiative (2016) to build a strong ecosystem for nurturing innovation and startups.' },
+  { id: 'ocm-c3-f10', front: 'Stand Up India', back: 'Govt scheme to facilitate bank loans between 10 lakh and 1 Crore to SC/ST and Women borrowers.' },
+  { id: 'ocm-c3-f11', front: 'Intrapreneur', back: 'An employee within a large organization who acts like an entrepreneur (Innovates without risking own capital).' },
+  { id: 'ocm-c3-f12', front: 'Agro-Entrepreneurship', back: 'Entrepreneurship related to agriculture and allied activities.' },
+  { id: 'ocm-c3-f13', front: 'Characteristics: Self Confidence', back: 'Belief in one\'s own ability to achieve goals.' },
+  { id: 'ocm-c3-f14', front: 'Characteristics: Hard Work', back: 'Ready to work for long hours to achieve success.' },
+  { id: 'ocm-c3-f15', front: 'Function: Management', back: 'Planning, organizing and controlling the enterprise.' }
+];
+
+const ocm_ch3_mcqs: Question[] = [
+  { id: 'ocm-c3-q1', question: 'The word Entrepreneur is derived from ______ language.', options: ['Latin', 'Greek', 'French', 'German'], correctIndex: 2, explanation: '\'Entreprendre\' means to undertake.' },
+  { id: 'ocm-c3-q2', question: '______ is a function of an entrepreneur.', options: ['Innovation', 'Risk Bearing', 'Decision Making', 'All of the above'], correctIndex: 3, explanation: 'Core functions.' },
+  { id: 'ocm-c3-q3', question: 'Startup India initiative was launched in ______.', options: ['2014', '2015', '2016', '2018'], correctIndex: 2, explanation: '16th Jan 2016.' },
+  { id: 'ocm-c3-q4', question: 'Stand Up India focuses on ______.', options: ['Large Industries', 'SC/ST & Women', 'Foreigners', 'Farmers only'], correctIndex: 1, explanation: 'To promote inclusivity.' },
+  { id: 'ocm-c3-q5', question: 'An employee who innovates within a company is called ______.', options: ['Manager', 'Intrapreneur', 'Owner', 'Director'], correctIndex: 1, explanation: 'Corporate entrepreneurship.' },
+  { id: 'ocm-c3-q6', question: 'Schumpeter emphasized on ______ function.', options: ['Innovation', 'Risk', 'Management', 'Finance'], correctIndex: 0, explanation: 'Creative Destruction.' },
+  { id: 'ocm-c3-q7', question: 'EDP stands for ______.', options: ['Economic Dev Program', 'Entrepreneurship Dev Program', 'Energy Dev Program', 'None'], correctIndex: 1, explanation: 'Training for entrepreneurs.' },
+  { id: 'ocm-c3-q8', question: 'Entrepreneurs are ______.', options: ['Born only', 'Made only', 'Born and Made', 'None'], correctIndex: 2, explanation: 'Some traits are innate, skills can be learnt.' },
+  { id: 'ocm-c3-q9', question: 'Detailed project report is prepared by ______.', options: ['Bank', 'Govt', 'Entrepreneur', 'Customer'], correctIndex: 2, explanation: 'For planning and loan application.' },
+  { id: 'ocm-c3-q10', question: 'Agro entrepreneurship relates to ______.', options: ['IT', 'Agriculture', 'Textile', 'Mining'], correctIndex: 1, explanation: 'Farming business.' }
+];
+
+const ocm_ch3_reels: Reel[] = [
+  { id: 'ocm-c3-r1', title: 'Entrepreneur vs Manager', content: 'Entrepreneur: Owner. Risk Taker. Innovator. Profit is reward.\n\nManager: Employee. Salaried. Executes orders. Salary is reward.', color: getReelColor(6) },
+  { id: 'ocm-c3-r2', title: 'Intrapreneur?', content: 'Think of the guy who invented "Gmail" working at Google.\nHe didn\'t start his own company.\nHe used Google\'s resources to create something new.\nThat\'s an INTRAPRENEUR.', color: getReelColor(0) },
+  { id: 'ocm-c3-r3', title: 'Startup India', content: 'Launched 2016.\nGoal: Create Jobs (Job Creator vs Job Seeker).\nBenefits: Tax holiday, Easy patent, Funding support.', color: getReelColor(1) }
+];
+
+
 export const MOCK_DATA: Record<Stream, StreamData> = {
   [Stream.COMMERCE]: {
     id: Stream.COMMERCE,
@@ -575,7 +708,79 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
           }
         ]
       },
-      { id: 'ocm', name: 'O.C.M.', icon: 'Briefcase', color: 'bg-emerald-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: [] },
+      { 
+        id: 'ocm', 
+        name: 'O.C.M.', 
+        icon: 'Briefcase', 
+        color: 'bg-emerald-500', 
+        syllabus: `### OCM Syllabus (12th HSC)
+
+**1. Principles of Management**
+* **Concepts**: 14 Principles of Fayol, Scientific Management.
+
+**2. Functions of Management**
+* **Concepts**: Planning, Organizing, Staffing, Directing, Coordinating, Controlling.
+
+**3. Entrepreneurship Development**
+* **Concepts**: Characteristics, Functions, Startup India.
+
+**4. Business Services**
+* **Concepts**: Banking, Insurance, Transport, Communication.
+
+**5. Emerging Modes of Business**
+* **Concepts**: E-business, Outsourcing (BPO/KPO).
+
+**6. Social Responsibility of Business**
+* **Concepts**: CSR, Responsibility towards different groups.
+
+**7. Consumer Protection**
+* **Concepts**: Rights of Consumer, Consumer Protection Act.
+
+**8. Marketing**
+* **Concepts**: 4Ps of Marketing, Marketing Mix.`,
+        paperPattern: `### Paper Pattern (80 Marks)
+* **Q1. Objective** (20 Marks)
+* **Q2. Terms/Concepts** (12 Marks)
+* **Q3. Case Study** (6 Marks)
+* **Q4. Distinguish Between** (12 Marks)
+* **Q5. Short Answer** (8 Marks)
+* **Q6. Justify Statement** (8 Marks)
+* **Q7. Attempt Any 2** (10 Marks)
+* **Q8. Long Answer** (8 Marks)`,
+        previousPapers: [], 
+        chapters: [
+          {
+            id: 'ocm-1',
+            title: '1. Principles of Mgmt',
+            description: 'Understanding the fundamental principles by Fayol and Taylor.',
+            summary: '**Management**: Art of getting things done.\n**Fayol**: 14 Principles (Unity of Command, Division of Work).\n**Taylor**: Scientific Management (Time/Motion Study).',
+            detailedNotes: '### 1. Henry Fayol (Modern Management)\nProposed 14 Principles:\n* **Division of Work**: Specialization.\n* **Authority & Responsibility**: Balance needed.\n* **Discipline**: Obedience.\n* **Unity of Command**: One Boss.\n* **Scalar Chain**: Hierarchy (Gang Plank).\n* **Esprit de Corps**: Team Spirit.\n\n### 2. F.W. Taylor (Scientific Management)\n* **Science not Rule of Thumb**: Systematic approach.\n* **Harmony not Discord**: Mental Revolution.\n* **Scientific Selection**: Training.\n* **Techniques**: Time Study, Motion Study, Fatigue Study.',
+            flashcards: ocm_ch1_flashcards,
+            mcqs: ocm_ch1_mcqs,
+            reels: ocm_ch1_reels
+          },
+          {
+            id: 'ocm-2',
+            title: '2. Functions of Mgmt',
+            description: 'The core functions: Planning, Organizing, Staffing, Directing, Controlling.',
+            summary: '**Planning**: Deciding in advance.\n**Organizing**: Grouping activities.\n**Staffing**: Recruitment.\n**Directing**: Guiding.\n**Controlling**: Checking result.',
+            detailedNotes: '### 1. Planning\n* Primary function.\n* Intellectual process.\n* Goal oriented.\n\n### 2. Organizing\n* Identifying and grouping work.\n* Establishing authority relationships.\n\n### 3. Staffing\n* "Right person at right job".\n* Recruitment, Selection, Training.\n\n### 4. Directing\n* Executive function.\n* Includes Leadership, Communication, Motivation.\n\n### 5. Coordinating\n* Unifying efforts.\n* Essence of management.\n\n### 6. Controlling\n* Comparing Actual vs Standard.\n* Taking corrective action.',
+            flashcards: ocm_ch2_flashcards,
+            mcqs: ocm_ch2_mcqs,
+            reels: ocm_ch2_reels
+          },
+          {
+            id: 'ocm-3',
+            title: '3. Entrepreneurship',
+            description: 'Concept of Entrepreneur and Entrepreneurship Development Programs.',
+            summary: '**Entrepreneur**: Innovator, Risk Taker.\n**Functions**: Innovation, Decision Making.\n**EDP**: Training program.',
+            detailedNotes: '### Characteristics of Entrepreneur\n* **Intellectual Capabilities**: Creative thinking.\n* **Future Vision**: Foresight.\n* **Hard Work**: Dedication.\n* **Risk Bearing**: "No Risk No Gain".\n\n### Functions\n* **Innovation**: New product/market.\n* **Determination of Objectives**.\n* **Market Research**.\n\n### Entrepreneurship Development\n* **EDP**: Training process.\n* **Startup India**: 2016 Initiative.\n* **Intrapreneur**: Innovator within a company.',
+            flashcards: ocm_ch3_flashcards,
+            mcqs: ocm_ch3_mcqs,
+            reels: ocm_ch3_reels
+          }
+        ] 
+      },
       { id: 'bk', name: 'Accounts', icon: 'Calculator', color: 'bg-rose-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: [] },
       { id: 'sp', name: 'Secretarial Practice', icon: 'PenTool', color: 'bg-purple-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: [] }
     ]
