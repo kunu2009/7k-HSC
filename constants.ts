@@ -282,30 +282,84 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
         icon: 'TrendingUp',
         color: 'bg-indigo-500',
         syllabus: `
-### Economics Syllabus (12th HSC)
-1. **Introduction to Micro and Macro Economics**
-   * Meaning, Definition, Scope, Features.
-2. **Utility Analysis**
-   * Features, Types, Law of DMU, Relationship TU/MU.
-3. **A) Demand Analysis**
-   * Definition, Law of Demand, Determinants.
-   **B) Elasticity of Demand**
-   * Types, Methods of Measurement, Importance.
-4. **Supply Analysis**
-   * Law of Supply, Cost and Revenue Concepts.
-5. **Forms of Market**
-   * Perfect Competition, Monopoly, Oligopoly, Monopolistic.
-6. **Index Numbers**
-   * Meaning, Steps, Methods (Laspeyre, Paasche).
-7. **National Income**
-   * Concepts (GDP, GNP), Methods of Measurement.
-8. **Public Finance in India**
-   * Revenue, Expenditure, Debt, Budget.
-9. **Money Market and Capital Market in India**
-   * RBI, Commercial Banks, Stock Exchange.
-10. **Foreign Trade of India**
-   * Composition, Direction, Trends.
-        `,
+### Economics Syllabus (12th HSC) - Detailed Breakdown
+
+**1. Introduction to Micro and Macro Economics**
+* **Micro Economics**: Meaning, Definitions (Maurice Dobb, AP Lerner), Scope (Product Pricing, Factor Pricing, Welfare), Features, Importance.
+* **Macro Economics**: Meaning, Definitions (J.L. Hansen, Carl Shapiro), Scope (Income & Employment, General Price Level, Growth), Features, Importance.
+
+**2. Utility Analysis**
+* **Concepts**: Utility, Total Utility (TU), Marginal Utility (MU).
+* **Relationship**: Relationship between TU and MU.
+* **Law of Diminishing Marginal Utility (DMU)**: Statement, Assumptions, Exceptions, Criticisms.
+* **Significance**: Importance of the Law of DMU.
+
+**3. A) Demand Analysis**
+* **Concept**: Meaning and Definition of Demand.
+* **Demand Schedule**: Individual and Market Demand Schedule & Curve.
+* **Determinants**: Factors affecting demand.
+* **Law of Demand**: Statement, Assumptions, Exceptions.
+* **Variations & Changes**: Expansion/Contraction vs Increase/Decrease.
+
+**3. B) Elasticity of Demand**
+* **Concept**: Definition.
+* **Types**: Price, Income, Cross Elasticity.
+* **Types of Price Elasticity**: Perfectly Elastic, Perfectly Inelastic, Unitary, Relatively Elastic, Relatively Inelastic.
+* **Measurement**: Ratio Method, Total Expenditure Method, Point (Geometric) Method.
+* **Factors**: Factors influencing elasticity.
+* **Importance**: Practical importance of elasticity.
+
+**4. Supply Analysis**
+* **Concepts**: Total Output, Stock, Supply.
+* **Supply Schedule**: Individual and Market.
+* **Determinants**: Factors affecting supply.
+* **Law of Supply**: Statement, Assumptions, Exceptions.
+* **Cost Concepts**: Total Cost, Average Cost, Marginal Cost.
+* **Revenue Concepts**: Total Revenue, Average Revenue, Marginal Revenue.
+
+**5. Forms of Market**
+* **Classification**: Place, Time, Competition.
+* **Perfect Competition**: Meaning, Features, Price Determination.
+* **Monopoly**: Meaning, Features, Types.
+* **Oligopoly**: Meaning, Features.
+* **Monopolistic Competition**: Meaning, Features.
+
+**6. Index Numbers**
+* **Concept**: Meaning, Definitions, Features.
+* **Types**: Price, Quantity, Value, Special Purpose.
+* **Significance**: Importance in economics.
+* **Construction**: Steps involved.
+* **Methods**: Simple Aggregate, Weighted Aggregate (Laspeyre’s, Paasche’s).
+* **Limitations**: Limitations of Index Numbers.
+
+**7. National Income**
+* **Meaning**: Definitions, Features.
+* **Circular Flow**: Two-sector model.
+* **Concepts**: GDP, NDP, GNP, NNP (Market Price & Factor Cost).
+* **Measurement Methods**: Output (Product), Income, Expenditure.
+* **Difficulties**: Theoretical and Practical difficulties.
+* **Importance**: Significance of NI data.
+
+**8. Public Finance in India**
+* **Concept**: Meaning, Nature, Public vs Private Finance.
+* **Public Expenditure**: Classification, Reasons for growth.
+* **Public Revenue**: Taxes (Direct/Indirect), Non-Tax Revenue.
+* **Public Debt**: Internal vs External.
+* **Fiscal Policy**: Concept.
+* **Budget**: Meaning, Types (Balanced, Surplus, Deficit).
+
+**9. Money Market and Capital Market in India**
+* **Money Market**: Meaning, Structure (Organized/Unorganized), Instruments, Functions.
+* **Capital Market**: Meaning, Structure (Gilt-edged, Industrial, DFIs), Role.
+* **RBI**: Functions of Reserve Bank of India.
+* **Commercial Banks**: Functions.
+
+**10. Foreign Trade of India**
+* **Concept**: Internal vs Foreign Trade.
+* **Types**: Import, Export, Entrepot.
+* **Trade Balance**: Balance of Trade vs Balance of Payments.
+* **Trends**: Composition and Direction of India's Foreign Trade (Recent trends).
+`,
         paperPattern: `
 ### Board Paper Pattern (80 Marks)
 * **Q.1 Objective Questions (20 Marks)**

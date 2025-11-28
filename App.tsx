@@ -365,19 +365,26 @@ const App: React.FC = () => {
         </div>
 
         <div className="px-6 -mt-6 pb-24 relative z-40">
-           <div className="bg-white dark:bg-slate-900 p-2 rounded-2xl shadow-lg shadow-slate-200/50 dark:shadow-black/50 border border-slate-100 dark:border-slate-800 mb-8 flex text-sm font-bold text-slate-600 dark:text-slate-300">
+           {/* Navigation Cards for Syllabus & Pattern */}
+           <div className="grid grid-cols-2 gap-4 mb-8">
               <button 
                 onClick={() => setView('SYLLABUS_VIEW')}
-                className="flex-1 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center justify-center gap-2 transition"
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col items-center gap-3 hover:border-indigo-200 dark:hover:border-indigo-800 transition group"
               >
-                <FileText size={18} className="text-indigo-500" /> Syllabus
+                <div className="w-12 h-12 rounded-full bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <FileText size={24} />
+                </div>
+                <span className="font-bold text-slate-700 dark:text-slate-200 text-sm">Full Syllabus</span>
               </button>
-              <div className="w-[1px] bg-slate-100 dark:bg-slate-700 my-2"></div>
+
               <button 
                 onClick={() => setView('PAPER_PATTERN_VIEW')}
-                className="flex-1 py-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-800 flex items-center justify-center gap-2 transition"
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col items-center gap-3 hover:border-emerald-200 dark:hover:border-emerald-800 transition group"
               >
-                <GraduationCap size={18} className="text-emerald-500" /> Pattern
+                 <div className="w-12 h-12 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <GraduationCap size={24} />
+                </div>
+                <span className="font-bold text-slate-700 dark:text-slate-200 text-sm">Paper Pattern</span>
               </button>
            </div>
 
