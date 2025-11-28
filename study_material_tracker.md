@@ -6,9 +6,9 @@ This document tracks the volume of active recall study materials available for e
 | Subject | Chapters Ready | Total Flashcards | Total MCQs | Total Reels |
 |:---|:---:|:---:|:---:|:---:|
 | **Economics** | 10/10 | 155 | 95 | 35 |
-| **OCM** | 6/8 | 115 | 60 | 18 |
+| **OCM** | 8/8 | 170 | 90 | 25 |
+| **SP** | 1/12 | 15 | 10 | 3 |
 | **Accounts** | 0/10 | 0 | 0 | 0 |
-| **SP** | 0/12 | 0 | 0 | 0 |
 
 ---
 
@@ -38,8 +38,13 @@ This document tracks the volume of active recall study materials available for e
 | 4. Business Services | 30 | 15 | 3 | ✅ Ready |
 | 5. Emerging Modes | 15 | 10 | 3 | ✅ Ready |
 | 6. Social Responsibility | 15 | 5 | 3 | ✅ Ready |
-| 7. Consumer Protection | 0 | 0 | 0 | ⏳ Pending |
-| 8. Marketing | 0 | 0 | 0 | ⏳ Pending |
+| 7. Consumer Protection | 25 | 15 | 4 | ✅ Ready |
+| 8. Marketing | 30 | 15 | 3 | ✅ Ready |
+
+### 🏛️ SP (Commerce)
+| Chapter | Flashcards | MCQs | Reels | Status |
+|:---|:---:|:---:|:---:|:---:|
+| 1. Intro to Corp Finance | 15 | 10 | 3 | ✅ Ready |
 
 ---
-*Last Updated: Iteration 2 (OCM Ch 4-6)*
+*Last Updated: Iteration 3 (OCM Complete, SP Started)*
