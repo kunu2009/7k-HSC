@@ -1,3 +1,4 @@
+
 import { Stream, StreamData, Question, Flashcard, Reel } from './types';
 
 // --- Data Helpers ---
@@ -222,7 +223,15 @@ const ch5_flashcards: Flashcard[] = [
   { id: 'c5-f9', front: 'Interdependence', back: 'Feature of Oligopoly. Firms watch each other closely. If one cuts price, others follow.' },
   { id: 'c5-f10', front: 'Monopolistic Competition', back: 'Real world market. Many sellers selling differentiated products. (e.g., Soaps, Toothpaste, Shampoos).' },
   { id: 'c5-f11', front: 'Product Differentiation', back: 'Feature of Monopolistic Competition. Products are substitutes but different in brand, packing, shape.' },
-  { id: 'c5-f12', front: 'Selling Cost', back: 'Expenditure on advertisement and sales promotion. Essential in Monopolistic Competition.' }
+  { id: 'c5-f12', front: 'Selling Cost', back: 'Expenditure on advertisement and sales promotion. Essential in Monopolistic Competition.' },
+  { id: 'c5-f13', front: 'Legal Monopoly', back: 'Monopoly created by law (Patents, Copyrights, Trademarks).' },
+  { id: 'c5-f14', front: 'Natural Monopoly', back: 'Created due to natural advantages like specific location or resources (e.g. Tea from Assam).' },
+  { id: 'c5-f15', front: 'Free Entry & Exit', back: 'Feature of Perfect Competition & Monopolistic Competition. No barriers to start business.' },
+  { id: 'c5-f16', front: 'Perfect Mobility', back: 'Factors of production can move freely. Feature of Perfect Competition.' },
+  { id: 'c5-f17', front: 'Absence of Transport Cost', back: 'Assumption in Perfect Competition to ensure single price.' },
+  { id: 'c5-f18', front: 'Group Behavior', back: 'Feature of Oligopoly. Firms act like a group/cartel.' },
+  { id: 'c5-f19', front: 'Concept of Monopolistic Comp', back: 'Introduced by Prof. E.H. Chamberlin in "Theory of Monopolistic Competition" (1933).' },
+  { id: 'c5-f20', front: 'Equilibrium Price', back: 'The price at which Quantity Demanded equals Quantity Supplied.' }
 ];
 
 const ch5_mcqs: Question[] = [
@@ -235,7 +244,12 @@ const ch5_mcqs: Question[] = [
   { id: 'c5-q7', question: 'Indian Railways is a ______ monopoly.', options: ['Private', 'Public/Statutory', 'Discriminating', 'Voluntary'], correctIndex: 1, explanation: 'Owned by Government.' },
   { id: 'c5-q8', question: 'Kinked demand curve is associated with ______.', options: ['Oligopoly', 'Monopoly', 'Perfect Comp', 'Monopolistic'], correctIndex: 0, explanation: 'Due to price rigidity and interdependence.' },
   { id: 'c5-q9', question: 'Price Taker is ______.', options: ['Monopolist', 'Oligopolist', 'Perfect Competitive Firm', 'Government'], correctIndex: 2, explanation: 'Market forces decide price.' },
-  { id: 'c5-q10', question: 'Concept of Monopolistic Competition was introduced by ______.', options: ['Chamberlin', 'Marshall', 'Keynes', 'Joan Robinson'], correctIndex: 0, explanation: 'E.H. Chamberlin in 1933.' }
+  { id: 'c5-q10', question: 'Concept of Monopolistic Competition was introduced by ______.', options: ['Chamberlin', 'Marshall', 'Keynes', 'Joan Robinson'], correctIndex: 0, explanation: 'E.H. Chamberlin in 1933.' },
+  { id: 'c5-q11', question: 'Laissez-faire policy is associated with ______.', options: ['Mixed Economy', 'Perfect Competition', 'Monopoly', 'Socialism'], correctIndex: 1, explanation: 'No government intervention.' },
+  { id: 'c5-q12', question: 'In Monopoly, cross elasticity of demand is ______.', options: ['Zero', 'Infinite', 'One', 'High'], correctIndex: 0, explanation: 'No close substitutes.' },
+  { id: 'c5-q13', question: 'Patent rights create ______ monopoly.', options: ['Natural', 'Legal', 'Public', 'Simple'], correctIndex: 1, explanation: 'Protected by law.' },
+  { id: 'c5-q14', question: 'Demand curve of Monopoly slopes ______.', options: ['Upward', 'Downward', 'Horizontal', 'Vertical'], correctIndex: 1, explanation: 'Inverse relation between Price and Qty.' },
+  { id: 'c5-q15', question: 'Price discrimination is possible in ______.', options: ['Monopoly', 'Perfect Competition', 'Monopolistic', 'All'], correctIndex: 0, explanation: 'Seller has control over supply.' }
 ];
 
 const ch5_reels: Reel[] = [
@@ -243,7 +257,9 @@ const ch5_reels: Reel[] = [
   { id: 'c5-r2', title: 'Monopoly Power', content: 'Single Seller.\nNo close substitutes.\nBarriers to entry.\n\nExample: Indian Railways.\nThey set the price. They are the King.', color: getReelColor(4) },
   { id: 'c5-r3', title: 'Oligopoly', content: 'The War of the Few.\nOnly a few big players.\n\nExample: Telecom in India (Jio, Airtel, Vi).\nHigh barriers to entry. Fierce competition.', color: getReelColor(5) },
   { id: 'c5-r4', title: 'Monopolistic Comp', content: 'The Real World.\n\nMany brands of soap (Lux, Dove, Pears).\nAre they same? No.\nAre they different? Slightly.\n\nHeavy Ads required!', color: getReelColor(6) },
-  { id: 'c5-r5', title: 'Price Discrimination', content: 'Charging different rates for same service.\n\nDoctors charge rich more, poor less.\nRailways charge Seniors less, Adults more.\n\nPossible only in Monopoly.', color: getReelColor(0) }
+  { id: 'c5-r5', title: 'Price Discrimination', content: 'Charging different rates for same service.\n\nDoctors charge rich more, poor less.\nRailways charge Seniors less, Adults more.\n\nPossible only in Monopoly.', color: getReelColor(0) },
+  { id: 'c5-r6', title: 'Kinked Demand Curve', content: 'In Oligopoly, if you cut price, rivals follow (Price War).\nIf you raise price, rivals DON\'T follow.\n\nThis creates a KINK in the curve. Sticky Prices!', color: getReelColor(1) },
+  { id: 'c5-r7', title: 'Legal vs Natural', content: 'Legal Monopoly: Govt gives you a Patent (Vaccine).\nNatural Monopoly: Nature gives you advantage (Lion in Gir forest).\nPublic Monopoly: Govt owned (Railways).', color: getReelColor(2) }
 ];
 
 // --- CHAPTER 6 DATA: Index Numbers ---
@@ -259,7 +275,15 @@ const ch6_flashcards: Flashcard[] = [
   { id: 'c6-f9', front: 'Fisher\'s Ideal Index', back: 'Geometric mean of Laspeyre\'s and Paasche\'s index numbers. Removes bias.' },
   { id: 'c6-f10', front: 'Simple Aggregate Method', back: 'Sum of Current Prices / Sum of Base Prices * 100.' },
   { id: 'c6-f11', front: 'Cost of Living Index', back: 'Consumer Price Index (CPI). Measures impact of price changes on cost of living of a specific class.' },
-  { id: 'c6-f12', front: 'Limitations of Index Numbers', back: 'Based on samples, Ignore quality changes, Mathematical errors, Bias in weights.' }
+  { id: 'c6-f12', front: 'Limitations of Index Numbers', back: 'Based on samples, Ignore quality changes, Mathematical errors, Bias in weights.' },
+  { id: 'c6-f13', front: 'Weighting', back: 'Assigning relative importance to commodities. (e.g. Food gets higher weight than Cinema).' },
+  { id: 'c6-f14', front: 'Deflating', back: 'Process of adjusting nominal wages/income for inflation using Index Numbers to find Real Income.' },
+  { id: 'c6-f15', front: 'Splicing', back: 'Connecting two series of index numbers with different base years.' },
+  { id: 'c6-f16', front: 'Univariate Index', back: 'Index constructed for a single variable.' },
+  { id: 'c6-f17', front: 'Composite Index', back: 'Index constructed for a group of variables.' },
+  { id: 'c6-f18', front: 'Special Purpose Index', back: 'Constructed for specific purpose (Import-Export Index, Labour Productivity Index).' },
+  { id: 'c6-f19', front: 'Dorbish-Bowley', back: 'Arithmetic mean of Laspeyre and Paasche methods.' },
+  { id: 'c6-f20', front: 'Real Income', back: 'Money Income / Cost of Living Index * 100.' }
 ];
 
 const ch6_mcqs: Question[] = [
@@ -272,7 +296,12 @@ const ch6_mcqs: Question[] = [
   { id: 'c6-q7', question: 'Index number for Base Year is always assumed to be ______.', options: ['0', '1', '100', '1000'], correctIndex: 2, explanation: 'Standard reference value.' },
   { id: 'c6-q8', question: ' ______ is used to calculate Dearness Allowance (DA).', options: ['Wholesale Price Index', 'Cost of Living Index', 'Quantity Index', 'Value Index'], correctIndex: 1, explanation: 'Adjusts wages for inflation.' },
   { id: 'c6-q9', question: 'Fisher\'s Index is the ______ mean of Laspeyre and Paasche.', options: ['Arithmetic', 'Geometric', 'Harmonic', 'Weighted'], correctIndex: 1, explanation: 'Square root of L x P.' },
-  { id: 'c6-q10', question: 'Stock market index (SENSEX) is an example of ______.', options: ['Price Index', 'Qty Index', 'Special Purpose Index', 'Value Index'], correctIndex: 0, explanation: 'Measures share prices.' }
+  { id: 'c6-q10', question: 'Stock market index (SENSEX) is an example of ______.', options: ['Price Index', 'Qty Index', 'Special Purpose Index', 'Value Index'], correctIndex: 0, explanation: 'Measures share prices.' },
+  { id: 'c6-q11', question: 'Formula for Real Income is ______.', options: ['Money Income - Inflation', 'Money Income / Price Index', 'Money Income x Price Index', 'None'], correctIndex: 1, explanation: 'Deflating money income.' },
+  { id: 'c6-q12', question: 'Index numbers are ______ expressed in percentage.', options: ['Always', 'Never', 'Sometimes', 'Rarely'], correctIndex: 0, explanation: 'Comparison base 100.' },
+  { id: 'c6-q13', question: 'Sample selection in Index numbers is done by ______ sampling.', options: ['Random', 'Deliberate', 'Quota', 'Stratified'], correctIndex: 1, explanation: 'Commodities are selected based on importance.' },
+  { id: 'c6-q14', question: 'WPI stands for ______.', options: ['World Price Index', 'Wholesale Price Index', 'Wage Price Index', 'Wheat Price Index'], correctIndex: 1, explanation: 'Measures wholesale prices.' },
+  { id: 'c6-q15', question: 'Limitation of Index Number includes ______.', options: ['Mathematical accuracy', 'Reliable data', 'Bias in weights', 'Universal applicability'], correctIndex: 2, explanation: 'Weights are arbitrary.' }
 ];
 
 const ch6_reels: Reel[] = [
@@ -280,7 +309,9 @@ const ch6_reels: Reel[] = [
   { id: 'c6-r2', title: 'Base Year vs Current Year', content: 'Base Year (0): The past normal year.\nCurrent Year (1): Today.\n\nWe compare Price of 1 (p1) with Price of 0 (p0).', color: getReelColor(1) },
   { id: 'c6-r3', title: 'Laspeyre vs Paasche', content: 'Laspeyre loves the PAST (Base Year Quantities - q0).\nPaasche loves the PRESENT (Current Year Quantities - q1).', color: getReelColor(2) },
   { id: 'c6-r4', title: 'Why 100?', content: 'Index numbers are expressed in Percentages.\nBase year index is always 100.\nIf Current Index is 120, it means 20% Inflation.', color: getReelColor(3) },
-  { id: 'c6-r5', title: 'CPI vs WPI', content: 'WPI: Wholesale Price Index (Bulk trade).\nCPI: Consumer Price Index (Retail/What YOU pay).\n\nDA is calculated on CPI.', color: getReelColor(4) }
+  { id: 'c6-r5', title: 'CPI vs WPI', content: 'WPI: Wholesale Price Index (Bulk trade).\nCPI: Consumer Price Index (Retail/What YOU pay).\n\nDA is calculated on CPI.', color: getReelColor(4) },
+  { id: 'c6-r6', title: 'Fisher Ideal Index', content: 'Why is Fisher "Ideal"?\nBecause it takes the Geometric Mean of Laspeyre and Paasche.\nIt fixes the bias of both methods!', color: getReelColor(5) },
+  { id: 'c6-r7', title: 'Deflating Income', content: 'Salary = ₹50k. Inflation = 10%.\nReal Salary = ₹45.4k.\n\nIndex numbers tell you your ACTUAL purchasing power.', color: getReelColor(6) }
 ];
 
 // --- CHAPTER 7 DATA: National Income ---
@@ -296,7 +327,15 @@ const ch7_flashcards: Flashcard[] = [
   { id: 'c7-f9', front: 'Income Method', back: 'Factor Cost Method. Sum of Rent, Wages, Interest, Profit (NI = R+W+I+P).' },
   { id: 'c7-f10', front: 'Expenditure Method', back: 'Outlay Method. Sum of C + I + G + (X-M).' },
   { id: 'c7-f11', front: 'Depreciation', back: 'Wear and tear of capital assets. Deducted to get "Net" value.' },
-  { id: 'c7-f12', front: 'Green GNP', back: 'GNP adjusted for environmental degradation/depletion of resources.' }
+  { id: 'c7-f12', front: 'Green GNP', back: 'GNP adjusted for environmental degradation/depletion of resources.' },
+  { id: 'c7-f13', front: 'CSO', back: 'Central Statistical Organization. Responsible for measuring NI in India.' },
+  { id: 'c7-f14', front: 'Fiscal Year', back: 'In India, 1st April to 31st March.' },
+  { id: 'c7-f15', front: 'Consumption Function', back: 'Relationship between Income and Consumption.' },
+  { id: 'c7-f16', front: 'Investment', back: 'Net addition to capital stock.' },
+  { id: 'c7-f17', front: 'Per Capita Income', back: 'National Income / Total Population. Average income of a citizen.' },
+  { id: 'c7-f18', front: 'Theoretical Difficulty', back: 'Transfer payments, unpaid services, illegal income valuation problems.' },
+  { id: 'c7-f19', front: 'Practical Difficulty', back: 'Lack of reliable data, illiteracy, non-monetized sector.' },
+  { id: 'c7-f20', front: 'Net Factor Income from Abroad', back: 'Income received from abroad - Income paid to abroad.' }
 ];
 
 const ch7_mcqs: Question[] = [
@@ -309,7 +348,12 @@ const ch7_mcqs: Question[] = [
   { id: 'c7-q7', question: 'Unpaid services of a housewife are ______ in NI.', options: ['Included', 'Excluded', 'Added', 'Multiplied'], correctIndex: 1, explanation: 'Theoretical difficulty: Hard to value love and affection.' },
   { id: 'c7-q8', question: 'In India, NI is estimated by ______.', options: ['RBI', 'CSO', 'Planning Commission', 'Finance Ministry'], correctIndex: 1, explanation: 'Central Statistical Organization.' },
   { id: 'c7-q9', question: 'Flow of goods and services is called ______ flow.', options: ['Money', 'Real', 'Capital', 'Nominal'], correctIndex: 1, explanation: 'Product flow between sectors.' },
-  { id: 'c7-q10', question: 'Value Added Method avoids ______.', options: ['Underestimation', 'Overestimation', 'Double Counting', 'Inflation'], correctIndex: 2, explanation: 'Counts only the addition at each stage.' }
+  { id: 'c7-q10', question: 'Value Added Method avoids ______.', options: ['Underestimation', 'Overestimation', 'Double Counting', 'Inflation'], correctIndex: 2, explanation: 'Counts only the addition at each stage.' },
+  { id: 'c7-q11', question: 'Per Capita Income = ______.', options: ['NI / Population', 'NI x Population', 'Population / NI', 'GNP / GDP'], correctIndex: 0, explanation: 'Average income per head.' },
+  { id: 'c7-q12', question: 'Illegal income from gambling is ______.', options: ['Included', 'Excluded', 'Taxed', 'Added'], correctIndex: 1, explanation: 'Black money is excluded.' },
+  { id: 'c7-q13', question: 'Rent, Wages, Interest are ______ incomes.', options: ['Transfer', 'Factor', 'Disposable', 'Private'], correctIndex: 1, explanation: 'Rewards for factors of production.' },
+  { id: 'c7-q14', question: 'Expenditure Method includes ______.', options: ['C+I+G', 'C+S', 'I+S', 'X-M'], correctIndex: 0, explanation: 'Consumption + Investment + Govt Exp.' },
+  { id: 'c7-q15', question: 'Depreciation is also called ______.', options: ['Capital formation', 'Capital consumption allowance', 'Investment', 'Savings'], correctIndex: 1, explanation: 'Consumption of fixed capital.' }
 ];
 
 const ch7_reels: Reel[] = [
@@ -317,7 +361,9 @@ const ch7_reels: Reel[] = [
   { id: 'c7-r2', title: 'Circular Flow', content: 'Firms pay Households (Wages).\nHouseholds pay Firms (Consumption).\n\nMoney keeps rotating in a circle. That is the economy!', color: getReelColor(6) },
   { id: 'c7-r3', title: 'Avoid Double Counting', content: 'Wheat -> Flour -> Bread.\n\nDon\'t count value of Wheat AND Flour AND Bread.\nOnly count the FINAL Bread value.\nOr use Value Added method.', color: getReelColor(0) },
   { id: 'c7-r4', title: 'The Problem of Housewives', content: 'Mom cooks food -> Not in GDP (Love).\nChef cooks food -> In GDP (Salary).\n\nNational Income ignores unpaid work!', color: getReelColor(1) },
-  { id: 'c7-r5', title: 'Gross vs Net', content: 'Gross means "Total".\nNet means "Gross minus Depreciation".\n\nThink: Gross Salary (CTC) vs Net Salary (In hand).', color: getReelColor(2) }
+  { id: 'c7-r5', title: 'Gross vs Net', content: 'Gross means "Total".\nNet means "Gross minus Depreciation".\n\nThink: Gross Salary (CTC) vs Net Salary (In hand).', color: getReelColor(2) },
+  { id: 'c7-r6', title: 'Green GDP', content: 'Standard GDP ignores Pollution.\nGreen GDP subtracts environmental damage.\n\nHigh GDP but dirty air? Low Green GDP.', color: getReelColor(3) },
+  { id: 'c7-r7', title: 'Black Economy', content: 'Money hidden from Tax (Smuggling, Bribes).\nIt exists but is NOT counted in National Income.\nIndia has a huge parallel economy.', color: getReelColor(4) }
 ];
 
 // --- CHAPTER 8 DATA: Public Finance in India ---
@@ -334,7 +380,14 @@ const ch8_flashcards: Flashcard[] = [
   { id: 'c8-f10', front: 'Public Debt', back: 'Loans taken by Govt. Internal (Citizens/Banks) vs External (IMF/World Bank).' },
   { id: 'c8-f11', front: 'Deficit Budget', back: 'Govt Expenditure > Govt Receipts. Good for developing countries/Depression.' },
   { id: 'c8-f12', front: 'Surplus Budget', back: 'Govt Receipts > Govt Expenditure. Used to control inflation.' },
-  { id: 'c8-f13', front: 'Fiscal Policy', back: 'Govt policy regarding Taxation, Public Expenditure and Public Debt.' }
+  { id: 'c8-f13', front: 'Fiscal Policy', back: 'Govt policy regarding Taxation, Public Expenditure and Public Debt.' },
+  { id: 'c8-f14', front: 'Proportional Tax', back: 'Rate of tax remains same regardless of income.' },
+  { id: 'c8-f15', front: 'Progressive Tax', back: 'Rate of tax increases as income increases (Rich pay more). Used in India.' },
+  { id: 'c8-f16', front: 'Regressive Tax', back: 'Rate of tax falls as income rises. Burden more on poor.' },
+  { id: 'c8-f17', front: 'GST', back: 'Goods and Service Tax. One Nation One Tax. Implemented 1st July 2017.' },
+  { id: 'c8-f18', front: 'Special Assessment', back: 'Payment by citizens in return for specific benefit (e.g. Property value rise due to Metro).' },
+  { id: 'c8-f19', front: 'Democratic Govt', back: 'Increases public expenditure due to welfare nature.' },
+  { id: 'c8-f20', front: 'Balanced Budget', back: 'Rev = Exp. Ideal in classical view, but rare in reality.' }
 ];
 
 const ch8_mcqs: Question[] = [
@@ -347,7 +400,12 @@ const ch8_mcqs: Question[] = [
   { id: 'c8-q7', question: 'External debt is raised from ______.', options: ['RBI', 'Citizens', 'World Bank', 'SBI'], correctIndex: 2, explanation: 'Outside the country.' },
   { id: 'c8-q8', question: 'Balanced Budget means ______.', options: ['Rev > Exp', 'Exp > Rev', 'Rev = Exp', 'Zero Rev'], correctIndex: 2, explanation: 'Income equals Expenditure.' },
   { id: 'c8-q9', question: 'Special Assessment is paid by ______.', options: ['All citizens', 'Criminals', 'Beneficiaries of govt projects', 'Govt employees'], correctIndex: 2, explanation: 'e.g. Property value up due to new road.' },
-  { id: 'c8-q10', question: 'Financial Year in India is ______.', options: ['Jan-Dec', 'Apr-Mar', 'July-June', 'Oct-Sep'], correctIndex: 1, explanation: '1st April to 31st March.' }
+  { id: 'c8-q10', question: 'Financial Year in India is ______.', options: ['Jan-Dec', 'Apr-Mar', 'July-June', 'Oct-Sep'], correctIndex: 1, explanation: '1st April to 31st March.' },
+  { id: 'c8-q11', question: 'Primary Deficit = Fiscal Deficit - ______.', options: ['Interest Payments', 'Revenue Deficit', 'Tax Revenue', 'Loans'], correctIndex: 0, explanation: 'Core borrowing requirement.' },
+  { id: 'c8-q12', question: 'Burden of ______ tax can be shifted.', options: ['Direct', 'Indirect', 'Income', 'Wealth'], correctIndex: 1, explanation: 'Shopkeeper shifts to Customer.' },
+  { id: 'c8-q13', question: 'Fine is paid for ______.', options: ['Service', 'Violating Law', 'Profit', 'Purchase'], correctIndex: 1, explanation: 'Penalty.' },
+  { id: 'c8-q14', question: 'Disinvestment is ______ receipt.', options: ['Revenue', 'Capital', 'Tax', 'None'], correctIndex: 1, explanation: 'Selling assets reduces liability/asset.' },
+  { id: 'c8-q15', question: 'Surplus budget is used during ______.', options: ['Inflation', 'Deflation', 'Depression', 'Normal times'], correctIndex: 0, explanation: 'To reduce money supply.' }
 ];
 
 const ch8_reels: Reel[] = [
@@ -355,7 +413,9 @@ const ch8_reels: Reel[] = [
   { id: 'c8-r2', title: 'Direct vs Indirect Tax', content: 'Direct Tax: Hits YOU directly (Income Tax).\nIndirect Tax: Hits the shopkeeper, but he passes it to YOU (GST).', color: getReelColor(4) },
   { id: 'c8-r3', title: 'The Budget', content: 'Annual Financial Statement (Article 112).\n\nSurplus: Earn > Spend (Controls Inflation)\nDeficit: Spend > Earn (Boosts Growth).', color: getReelColor(5) },
   { id: 'c8-r4', title: 'GST', content: 'One Nation, One Tax.\nReplaced VAT, Service Tax, Excise.\nCame on 1st July 2017.', color: getReelColor(6) },
-  { id: 'c8-r5', title: 'Why Deficit?', content: 'Why does Govt spend more than it earns?\nTo build roads, schools, defense.\nDeveloping nations NEED Deficit Budgets.', color: getReelColor(0) }
+  { id: 'c8-r5', title: 'Why Deficit?', content: 'Why does Govt spend more than it earns?\nTo build roads, schools, defense.\nDeveloping nations NEED Deficit Budgets.', color: getReelColor(0) },
+  { id: 'c8-r6', title: 'Rupee Come/Go', content: 'Where does Rupee come from? Borrowing & Liabilities (Top source).\nWhere does it go? Interest Payments (Top expense).', color: getReelColor(1) },
+  { id: 'c8-r7', title: 'Fiscal Policy', content: 'The Govt\'s tool to control economy.\nHigh Inflation? Increase Tax (Suck money out).\nRecession? Increase Spending (Pump money in).', color: getReelColor(2) }
 ];
 
 // --- CHAPTER 9 DATA: Money Market & Capital Market ---
@@ -371,7 +431,15 @@ const ch9_flashcards: Flashcard[] = [
   { id: 'c9-f9', front: 'Commercial Paper (CP)', back: 'Unsecured promissory note issued by Corporates with high credit rating.' },
   { id: 'c9-f10', front: 'Organized Sector', back: 'Regulated by RBI. Includes Banks, Co-operative banks, DFIs.' },
   { id: 'c9-f11', front: 'Unorganized Sector', back: 'Not regulated. Moneylenders, Indigenous Bankers, Chit funds.' },
-  { id: 'c9-f12', front: 'Gilt-edged Market', back: 'Market for Government Securities. Risk-free market.' }
+  { id: 'c9-f12', front: 'Gilt-edged Market', back: 'Market for Government Securities. Risk-free market.' },
+  { id: 'c9-f13', front: 'Repo Rate', back: 'Rate at which RBI lends short-term money to commercial banks.' },
+  { id: 'c9-f14', front: 'Reverse Repo Rate', back: 'Rate at which RBI borrows money from commercial banks.' },
+  { id: 'c9-f15', front: 'CRR', back: 'Cash Reserve Ratio. % of deposits banks must keep with RBI as cash.' },
+  { id: 'c9-f16', front: 'SLR', back: 'Statutory Liquidity Ratio. % of deposits banks must keep with themselves (Gold/Cash).' },
+  { id: 'c9-f17', front: 'Primary Market', back: 'New Issue Market. Companies sell new shares to public (IPO).' },
+  { id: 'c9-f18', front: 'Secondary Market', back: 'Stock Exchange. Buying and selling of existing securities.' },
+  { id: 'c9-f19', front: 'NIFTY', back: 'Index of National Stock Exchange (NSE). Top 50 companies.' },
+  { id: 'c9-f20', front: 'SENSEX', back: 'Index of Bombay Stock Exchange (BSE). Top 30 companies.' }
 ];
 
 const ch9_mcqs: Question[] = [
@@ -384,7 +452,12 @@ const ch9_mcqs: Question[] = [
   { id: 'c9-q7', question: 'Commercial Banks create ______.', options: ['Paper money', 'Credit money', 'Metallic coins', 'Crypto'], correctIndex: 1, explanation: 'Through deposit-loan mechanism.' },
   { id: 'c9-q8', question: 'Moneylenders belong to ______ sector.', options: ['Organized', 'Unorganized', 'Public', 'Foreign'], correctIndex: 1, explanation: 'High interest rates, no regulation.' },
   { id: 'c9-q9', question: 'Tenure of Call Money is ______.', options: ['1 day', '1 year', '5 years', '10 years'], correctIndex: 0, explanation: 'Overnight to 14 days.' },
-  { id: 'c9-q10', question: 'Apex bank for Agriculture is ______.', options: ['SBI', 'RBI', 'NABARD', 'IDBI'], correctIndex: 2, explanation: 'National Bank for Agriculture and Rural Development.' }
+  { id: 'c9-q10', question: 'Apex bank for Agriculture is ______.', options: ['SBI', 'RBI', 'NABARD', 'IDBI'], correctIndex: 2, explanation: 'National Bank for Agriculture and Rural Development.' },
+  { id: 'c9-q11', question: 'IPO stands for ______.', options: ['Initial Public Offer', 'Indian Police Org', 'Interest Payment Order', 'Internal Public Office'], correctIndex: 0, explanation: 'First time selling shares to public.' },
+  { id: 'c9-q12', question: 'Oldest Stock Exchange in Asia is ______.', options: ['NSE', 'BSE', 'Tokyo', 'Singapore'], correctIndex: 1, explanation: 'Bombay Stock Exchange (1875).' },
+  { id: 'c9-q13', question: 'Demat account is related to ______.', options: ['Bank saving', 'Share trading', 'Loan', 'Pension'], correctIndex: 1, explanation: 'Dematerialized account for securities.' },
+  { id: 'c9-q14', question: 'Quantitative tool of RBI includes ______.', options: ['Bank Rate', 'Moral Suasion', 'Publicity', 'Direct Action'], correctIndex: 0, explanation: 'Controls volume of credit.' },
+  { id: 'c9-q15', question: 'Commercial Banks accept deposits in form of ______.', options: ['Savings', 'Current', 'Fixed', 'All of above'], correctIndex: 3, explanation: 'Primary function.' }
 ];
 
 const ch9_reels: Reel[] = [
@@ -392,7 +465,9 @@ const ch9_reels: Reel[] = [
   { id: 'c9-r2', title: 'The RBI', content: 'Banker to the Banks.\nBanker to the Govt.\nIssuer of Currency.\n\nThe Boss of the Indian Money Market.', color: getReelColor(2) },
   { id: 'c9-r3', title: 'SEBI', content: 'The Watchdog.\nSEBI protects investors in the Stock Market.\nNo scams allowed!', color: getReelColor(3) },
   { id: 'c9-r4', title: 'Indigenous Bankers', content: 'Hundis & Moneylenders.\nThey charge super high interest.\nPart of Unorganized Sector (RBI can\'t control them fully).', color: getReelColor(4) },
-  { id: 'c9-r5', title: 'Credit Creation', content: 'Banks are Magic.\nYou deposit ₹100.\nBank keeps ₹10, lends ₹90.\nBorrower deposits ₹90.\nBank lends ₹81...\nMoney Multiplies!', color: getReelColor(5) }
+  { id: 'c9-r5', title: 'Credit Creation', content: 'Banks are Magic.\nYou deposit ₹100.\nBank keeps ₹10, lends ₹90.\nBorrower deposits ₹90.\nBank lends ₹81...\nMoney Multiplies!', color: getReelColor(5) },
+  { id: 'c9-r6', title: 'Repo vs Reverse Repo', content: 'Repo: Bank borrows from RBI (Rate high = Loans expensive).\nReverse Repo: Bank parks money with RBI (Earns interest).', color: getReelColor(6) },
+  { id: 'c9-r7', title: 'Bull vs Bear', content: 'Bull: Optimistic. Thinks prices will go UP (Attacks horns up).\nBear: Pessimistic. Thinks prices will go DOWN (Attacks paws down).', color: getReelColor(0) }
 ];
 
 // --- CHAPTER 10 DATA: Foreign Trade of India ---
@@ -408,7 +483,15 @@ const ch10_flashcards: Flashcard[] = [
   { id: 'c10-f9', front: 'Trade Deficit', back: 'Import Value > Export Value. Unfavorable BOT.' },
   { id: 'c10-f10', front: 'Trade Surplus', back: 'Export Value > Import Value. Favorable BOT.' },
   { id: 'c10-f11', front: 'Composition of Trade', back: 'What we trade (Items). Recent trend: Rise in Ready-made garments, Decline in traditional agri exports.' },
-  { id: 'c10-f12', front: 'Direction of Trade', back: 'Whom we trade with (Countries). Recent trend: Rise in trade with Asian countries, Decline in share of UK/USA.' }
+  { id: 'c10-f12', front: 'Direction of Trade', back: 'Whom we trade with (Countries). Recent trend: Rise in trade with Asian countries, Decline in share of UK/USA.' },
+  { id: 'c10-f13', front: 'FERA', back: 'Foreign Exchange Regulation Act (1973). Restrictive.' },
+  { id: 'c10-f14', front: 'FEMA', back: 'Foreign Exchange Management Act (1999). Liberal. Replaced FERA.' },
+  { id: 'c10-f15', front: 'SEZ', back: 'Special Economic Zone. Duty free enclaves to promote exports.' },
+  { id: 'c10-f16', front: 'Internal Trade', back: 'Trade within the boundaries of the country.' },
+  { id: 'c10-f17', front: 'Terms of Trade', back: 'Ratio of Export Prices to Import Prices.' },
+  { id: 'c10-f18', front: 'POL', back: 'Petroleum, Oil and Lubricants. Major import item of India.' },
+  { id: 'c10-f19', front: 'Gems & Jewelry', back: 'Major export item of India.' },
+  { id: 'c10-f20', front: 'Globalization', back: 'Integration of domestic economy with world economy.' }
 ];
 
 const ch10_mcqs: Question[] = [
@@ -421,7 +504,12 @@ const ch10_mcqs: Question[] = [
   { id: 'c10-q7', question: 'Processing imported goods and exporting them is ______.', options: ['Entrepot', 'Import', 'Internal', 'Retail'], correctIndex: 0, explanation: 'Re-export trade.' },
   { id: 'c10-q8', question: 'India has a ______ Balance of Trade usually.', options: ['Surplus', 'Deficit', 'Balanced', 'Zero'], correctIndex: 1, explanation: 'We import more than we export (Oil/Gold).' },
   { id: 'c10-q9', question: 'Top export partner of India recently is ______.', options: ['UK', 'USA', 'Russia', 'Pakistan'], correctIndex: 1, explanation: 'USA is a major market.' },
-  { id: 'c10-q10', question: 'Gold is a major item of India\'s ______.', options: ['Export', 'Import', 'Production', 'Aid'], correctIndex: 1, explanation: 'Indians love gold.' }
+  { id: 'c10-q10', question: 'Gold is a major item of India\'s ______.', options: ['Export', 'Import', 'Production', 'Aid'], correctIndex: 1, explanation: 'Indians love gold.' },
+  { id: 'c10-q11', question: 'FEMA replaced ______.', options: ['MRTP', 'FERA', 'SEBI', 'GST'], correctIndex: 1, explanation: 'In 1999.' },
+  { id: 'c10-q12', question: 'Rise in exports of software is ______ trade.', options: ['Visible', 'Invisible', 'Local', 'Internal'], correctIndex: 1, explanation: 'Service sector.' },
+  { id: 'c10-q13', question: 'Protectionist policy encourages ______.', options: ['Imports', 'Exports', 'Domestic Industries', 'Foreign Competition'], correctIndex: 2, explanation: 'Shields locals from foreign comp.' },
+  { id: 'c10-q14', question: 'Globalisation leads to ______.', options: ['Closed Economy', 'Free Trade', 'Restricted Trade', 'No Trade'], correctIndex: 1, explanation: 'Removal of barriers.' },
+  { id: 'c10-q15', question: 'OPEC deals with ______.', options: ['Rice', 'Oil', 'Gold', 'Cars'], correctIndex: 1, explanation: 'Organization of Petroleum Exporting Countries.' }
 ];
 
 const ch10_reels: Reel[] = [
@@ -429,7 +517,9 @@ const ch10_reels: Reel[] = [
   { id: 'c10-r2', title: 'Entrepot Trade', content: 'Importing NOT for using, but for Selling again.\n\nExample: Japan imports raw material, makes electronics, exports to India.', color: getReelColor(0) },
   { id: 'c10-r3', title: 'India\'s Trade', content: 'We Export: Gems, Jewelry, IT Services, Pharma.\nWe Import: Oil, Gold, Electronics.\n\nWe usually have a Trade Deficit (Import > Export).', color: getReelColor(1) },
   { id: 'c10-r4', title: 'Invisible Trade', content: 'Shipping, Tourism, Banking, Software.\n\nWhen a foreigner visits Taj Mahal, it is an Invisible Export for India!', color: getReelColor(2) },
-  { id: 'c10-r5', title: 'Oil', content: 'Why is Petrol expensive?\nBecause it is our #1 Import.\nWhen Global Oil Price goes up, India\'s Import Bill explodes.', color: getReelColor(3) }
+  { id: 'c10-r5', title: 'Oil', content: 'Why is Petrol expensive?\nBecause it is our #1 Import.\nWhen Global Oil Price goes up, India\'s Import Bill explodes.', color: getReelColor(3) },
+  { id: 'c10-r6', title: 'SEZ', content: 'Special Economic Zones.\nTax-free zones in India to boost exports.\nIf you set up a factory here, you pay less tax!', color: getReelColor(4) },
+  { id: 'c10-r7', title: 'Make in India', content: 'Govt campaign to encourage companies to manufacture HERE.\nGoal: Increase Exports, Reduce Imports, Create Jobs.', color: getReelColor(5) }
 ];
 
 
@@ -595,7 +685,7 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             title: '5. Forms of Market',
             description: 'Classification of markets based on competition: Perfect, Monopoly, Oligopoly.',
             summary: '**Perfect Competition**: Homogeneous products, single price.\n**Monopoly**: Single seller, price maker.\n**Oligopoly**: Few sellers.',
-            detailedNotes: '### Perfect Competition\n* Large number of buyers/sellers.\n* Free entry and exit.\n* Perfect knowledge.\n* Homogeneous Product.\n* Single Price.\n\n### Monopoly\n* Single seller.\n* No close substitutes.\n* Barriers to entry.\n* Price Maker.\n* Price Discrimination.\n\n### Monopolistic Competition\n* Many sellers.\n* **Product Differentiation**.\n* Selling Costs (Ads).',
+            detailedNotes: '### Perfect Competition\n* Large number of buyers/sellers.\n* Free entry and exit.\n* Perfect knowledge.\n* Homogeneous Product.\n* Single Price (P=AR=MR).\n\n### Monopoly\n* Single seller.\n* No close substitutes.\n* Barriers to entry.\n* Price Maker.\n* Price Discrimination.\n\n### Monopolistic Competition\n* Many sellers.\n* **Product Differentiation** (Brand/Pack).\n* Selling Costs (Ads).\n* Concept by E.H. Chamberlin.',
             flashcards: ch5_flashcards,
             mcqs: ch5_mcqs,
             reels: ch5_reels
@@ -605,7 +695,7 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             title: '6. Index Numbers',
             description: 'Statistical tools to measure economic changes over time.',
             summary: '**Index Number**: Economic Barometer.\n**Types**: Price Index, Quantity Index, Value Index.\n**Methods**: Simple & Weighted.',
-            detailedNotes: '### Features\n* Statistical Device.\n* Measure of Net Change.\n* Expressed in Percentage (Base=100).\n\n### Construction Steps\n1. Purpose of Index.\n2. Selection of Base Year.\n3. Selection of Commodities.\n4. Selection of Prices.\n5. Choice of Average.\n6. Choice of Weights.\n\n### Methods\n* **Laspeyre**: Uses Base Year Qty (q0).\n* **Paasche**: Uses Current Year Qty (q1).',
+            detailedNotes: '### Features\n* Statistical Device.\n* Measure of Net Change.\n* Expressed in Percentage (Base=100).\n\n### Construction Steps\n1. Purpose of Index.\n2. Selection of Base Year.\n3. Selection of Commodities.\n4. Selection of Prices.\n5. Choice of Average.\n6. Choice of Weights.\n\n### Formulae\n* **Simple Aggregate**: Σp1 / Σp0 * 100\n* **Laspeyre**: Σp1q0 / Σp0q0 * 100 (Base wts)\n* **Paasche**: Σp1q1 / Σp0q1 * 100 (Current wts)',
             flashcards: ch6_flashcards,
             mcqs: ch6_mcqs,
             reels: ch6_reels
@@ -615,7 +705,7 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             title: '7. National Income',
             description: 'Measurement of aggregate economic activity of the nation.',
             summary: '**NI**: Net National Product at Factor Cost.\n**Methods**: Output, Income, Expenditure.\n**GDP vs GNP**: Domestic vs National.',
-            detailedNotes: '### Concepts\n* **GDP**: Within domestic territory.\n* **GNP**: GDP + Net Factor Income from Abroad.\n* **NNP**: GNP - Depreciation.\n\n### Circular Flow\nHouseholds provide Factors -> Firms provide Goods.\nMoney flows in reverse (Wages -> Consumption).\n\n### Methods\n1. **Output Method**: Inventory.\n2. **Income Method**: Factor Cost.\n3. **Expenditure Method**: C+I+G+(X-M).',
+            detailedNotes: '### Concepts\n* **GDP**: Within domestic territory.\n* **GNP**: GDP + Net Factor Income from Abroad.\n* **NNP**: GNP - Depreciation.\n\n### Difficulties in Measurement\n**Theoretical**:\n* Transfer Payments (Pension).\n* Illegal Income (Black Money).\n* Unpaid Services (Housewife).\n\n**Practical**:\n* Illiteracy.\n* Non-monetized sector.\n* Lack of reliable data.\n\n### Methods\n1. **Output Method**: Inventory.\n2. **Income Method**: Factor Cost (R+W+I+P).\n3. **Expenditure Method**: C+I+G+(X-M).',
             flashcards: ch7_flashcards,
             mcqs: ch7_mcqs,
             reels: ch7_reels
@@ -625,7 +715,7 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             title: '8. Public Finance in India',
             description: 'Role of Government in the economy, Budget, Taxes.',
             summary: '**Public Finance**: Govt Income & Exp.\n**Revenue**: Tax (Direct/Indirect) & Non-Tax.\n**Budget**: Balanced, Surplus, Deficit.',
-            detailedNotes: '### Public Revenue\n* **Tax**: Compulsory contribution.\n* **Direct Tax**: Income Tax (Impact on same person).\n* **Indirect Tax**: GST (Impact shifted).\n* **Non-Tax**: Fees, Fines, Grants.\n\n### Public Expenditure\n* Revenue Exp (Salaries).\n* Capital Exp (Assets).\n\n### Budget Types\n* **Balanced**: Rev = Exp.\n* **Surplus**: Rev > Exp.\n* **Deficit**: Exp > Rev (Common in India).',
+            detailedNotes: '### Public Revenue\n* **Tax**: Compulsory contribution.\n* **Direct Tax**: Income Tax (Impact on same person).\n* **Indirect Tax**: GST (Impact shifted).\n* **Non-Tax**: Fees, Fines, Grants, Special Assessment.\n\n### Public Expenditure\n* Revenue Exp (Salaries, Interest).\n* Capital Exp (Assets, Loans).\n\n### Budget Types\n* **Balanced**: Rev = Exp.\n* **Surplus**: Rev > Exp. (Used in Inflation).\n* **Deficit**: Exp > Rev. (Used in Depression/Growth).\n\n### Fiscal Policy\nGovt policy regarding Taxation, Debt, and Expenditure.',
             flashcards: ch8_flashcards,
             mcqs: ch8_mcqs,
             reels: ch8_reels
@@ -635,7 +725,7 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             title: '9. Money & Capital Market',
             description: 'Financial system of India: RBI, Banks, Stock Markets.',
             summary: '**Money Market**: Short term funds.\n**Capital Market**: Long term funds.\n**RBI**: Central Bank.\n**SEBI**: Regulator.',
-            detailedNotes: '### Money Market\n* Short term ( < 1 year).\n* Instruments: Call Money, T-Bills, CP, CD.\n* **RBI**: Central Bank, Issuer of currency, Banker to Govt, Controller of Credit.\n\n### Capital Market\n* Long term ( > 1 year).\n* Instruments: Shares, Debentures, Bonds.\n* **SEBI**: Regulatory body.\n* Types: Gilt-edged (Govt), Industrial Securities.',
+            detailedNotes: '### Money Market\n* Short term ( < 1 year).\n* Instruments: Call Money, T-Bills, CP, CD.\n* **RBI Functions**: Issue Currency, Banker to Govt, Banker to Banks, Credit Control, Forex Custodian.\n\n### Capital Market\n* Long term ( > 1 year).\n* Instruments: Shares, Debentures, Bonds.\n* **SEBI**: Regulatory body.\n* Types: Gilt-edged (Govt), Industrial Securities.\n\n### Commercial Banks\nFunctions: Accepting Deposits (Savings, Current, FD) and Granting Loans.',
             flashcards: ch9_flashcards,
             mcqs: ch9_mcqs,
             reels: ch9_reels
@@ -645,7 +735,7 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             title: '10. Foreign Trade of India',
             description: 'Trends in Imports and Exports, Balance of Payments.',
             summary: '**Trade**: Import, Export.\n**BOT**: Visible goods only.\n**BOP**: All transactions.\n**Trend**: India exports Engineering goods, Imports Oil.',
-            detailedNotes: '### Types of Trade\n* **Import**: Inflow of goods.\n* **Export**: Outflow of goods.\n* **Entrepot**: Re-export.\n\n### Concepts\n* **BOT**: Export - Import (Goods).\n* **BOP**: Systematic record of all transactions.\n\n### Trends in India\n* **Exports**: Engg goods, Gems, Chemicals, Textiles.\n* **Imports**: Petroleum, Gold, Electronics.\n* **Partners**: USA, UAE, China.',
+            detailedNotes: '### Types of Trade\n* **Import**: Inflow of goods.\n* **Export**: Outflow of goods.\n* **Entrepot**: Re-export.\n\n### Concepts\n* **BOT**: Export - Import (Goods).\n* **BOP**: Systematic record of all transactions (Current + Capital).\n\n### Trends in India\n* **Exports**: Engg goods, Gems, Chemicals, Textiles.\n* **Imports**: Petroleum (POL), Gold, Electronics.\n* **Direction**: Shift from UK/USA to Asian countries/OPEC.\n\n### Policy\n* **Import Substitution**: Producing internally.\n* **Export Promotion**: SEZs, Tax holidays.',
             flashcards: ch10_flashcards,
             mcqs: ch10_mcqs,
             reels: ch10_reels
