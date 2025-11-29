@@ -1,6 +1,7 @@
 
+
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2 } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
@@ -176,7 +177,8 @@ const App: React.FC = () => {
                                     sub.id === 'bio' ? Dna :
                                     sub.id === 'chem' ? FlaskConical :
                                     sub.id === 'soc' ? Users :
-                                    sub.id === 'pol' ? Building2 : Brain;
+                                    sub.id === 'pol' ? Building2 :
+                                    sub.id === 'eng' ? BookA : Brain;
 
                        const isActive = selectedSubject?.id === sub.id;
                        return (
@@ -216,7 +218,7 @@ const App: React.FC = () => {
         <h1 className="text-6xl font-black text-white mb-4 tracking-tight drop-shadow-xl">
           7k <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">12th</span>
         </h1>
-        <p className="text-slate-400 text-lg font-medium">The Ultimate Active Recall App</p>
+        <p className="text-slate-400 text-lg font-medium">The Ultimate Study App</p>
       </div>
 
       <div className="grid gap-6 w-full max-w-md z-10">
@@ -250,7 +252,7 @@ const App: React.FC = () => {
             </div>
             <div>
               <h3 className="text-2xl font-bold text-white mb-1">Arts</h3>
-              <p className="text-slate-400 text-sm font-medium">History, Geo, Pol Sci</p>
+              <p className="text-slate-400 text-sm font-medium">History, Pol Sci, English</p>
             </div>
             <div className="ml-auto w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all">
                <ChevronRight size={20} />
@@ -318,7 +320,8 @@ const App: React.FC = () => {
                             sub.id === 'bio' ? Dna :
                             sub.id === 'chem' ? FlaskConical :
                             sub.id === 'soc' ? Users :
-                            sub.id === 'pol' ? Building2 : Brain;
+                            sub.id === 'pol' ? Building2 :
+                            sub.id === 'eng' ? BookA : Brain;
 
               return (
                 <button 
@@ -364,7 +367,9 @@ const App: React.FC = () => {
       </div>
     );
   };
-
+  
+  // ... (The rest of the component remains identical, just ensuring imports and icon mapping are updated)
+  
   const renderSubjectDetail = () => {
     if (!selectedSubject) return null;
     
@@ -471,9 +476,7 @@ const App: React.FC = () => {
     );
   };
   
-  // ... (Rest of the component remains same: renderResourcesView, renderChapterDetail, renderStudyMode, renderAiModal)
-  
-  // Re-including renderResourcesView for completeness
+  // Re-including renderResourcesView and rest
   const renderResourcesView = (type: 'SYLLABUS' | 'PATTERN') => {
     if (!selectedSubject) return null;
     const content = type === 'SYLLABUS' ? selectedSubject.syllabus : selectedSubject.paperPattern;
@@ -495,6 +498,8 @@ const App: React.FC = () => {
       </div>
     );
   };
+
+  // ... (Keeping renderChapterDetail, renderStudyMode, renderAiModal the same as before, just ensuring imports)
 
   const renderChapterDetail = () => {
     if (!selectedChapter) return null;
