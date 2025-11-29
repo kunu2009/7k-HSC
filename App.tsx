@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2 } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
@@ -165,7 +165,19 @@ const App: React.FC = () => {
                  <p className="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-3 px-2 hidden sm:block">Quick Access</p>
                  <div className="space-y-2">
                     {subjects.map((sub) => {
-                       const Icon = sub.id === 'eco' ? TrendingUp : sub.id === 'ocm' ? Briefcase : sub.id === 'sp' ? PenTool : Calculator;
+                       // Dynamic Icon Mapping
+                       const Icon = sub.id === 'eco' ? TrendingUp : 
+                                    sub.id === 'ocm' ? Briefcase : 
+                                    sub.id === 'sp' ? PenTool : 
+                                    sub.id === 'bk' || sub.id === 'math' ? Calculator :
+                                    sub.id === 'his' ? BookOpen :
+                                    sub.id === 'geo' ? Globe :
+                                    sub.id === 'phy' ? Atom :
+                                    sub.id === 'bio' ? Dna :
+                                    sub.id === 'chem' ? FlaskConical :
+                                    sub.id === 'soc' ? Users :
+                                    sub.id === 'pol' ? Building2 : Brain;
+
                        const isActive = selectedSubject?.id === sub.id;
                        return (
                          <button 
@@ -176,7 +188,7 @@ const App: React.FC = () => {
                             <div className={`p-1.5 rounded-lg text-white shrink-0 ${sub.color}`}>
                                <Icon size={16} />
                             </div>
-                            <span className={`font-medium text-sm hidden sm:block ${isActive ? 'text-indigo-900 dark:text-indigo-100 font-bold' : 'text-slate-600 dark:text-slate-400'}`}>{sub.name}</span>
+                            <span className={`font-medium text-sm hidden sm:block truncate ${isActive ? 'text-indigo-900 dark:text-indigo-100 font-bold' : 'text-slate-600 dark:text-slate-400'}`}>{sub.name}</span>
                          </button>
                        );
                     })}
@@ -226,6 +238,44 @@ const App: React.FC = () => {
             </div>
           </div>
         </button>
+
+        <button 
+          onClick={() => selectStream(Stream.ARTS)}
+          className="group relative overflow-hidden bg-slate-900/50 hover:bg-slate-800/80 backdrop-blur-md border border-slate-700/50 p-6 rounded-3xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/20 text-left"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div className="flex items-center gap-5 relative z-10">
+            <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl shadow-lg flex items-center justify-center text-white transform group-hover:rotate-6 transition-transform">
+              <BookOpen size={28} />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-1">Arts</h3>
+              <p className="text-slate-400 text-sm font-medium">History, Geo, Pol Sci</p>
+            </div>
+            <div className="ml-auto w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-orange-500 group-hover:text-white transition-all">
+               <ChevronRight size={20} />
+            </div>
+          </div>
+        </button>
+
+        <button 
+          onClick={() => selectStream(Stream.SCIENCE)}
+          className="group relative overflow-hidden bg-slate-900/50 hover:bg-slate-800/80 backdrop-blur-md border border-slate-700/50 p-6 rounded-3xl transition-all duration-300 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-teal-500/20 text-left"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div className="flex items-center gap-5 relative z-10">
+            <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-2xl shadow-lg flex items-center justify-center text-white transform group-hover:rotate-6 transition-transform">
+              <Atom size={28} />
+            </div>
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-1">Science</h3>
+              <p className="text-slate-400 text-sm font-medium">Phy, Chem, Math, Bio</p>
+            </div>
+            <div className="ml-auto w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-teal-500 group-hover:text-white transition-all">
+               <ChevronRight size={20} />
+            </div>
+          </div>
+        </button>
       </div>
       <div className="mt-12 text-slate-600 text-xs text-center font-medium">Made for HSC Maharashtra Board Students</div>
     </div>
@@ -257,7 +307,19 @@ const App: React.FC = () => {
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {data?.subjects.map((sub) => {
-              const Icon = sub.id === 'eco' ? TrendingUp : sub.id === 'ocm' ? Briefcase : sub.id === 'sp' ? PenTool : Calculator;
+               // Dynamic Icon Mapping
+               const Icon = sub.id === 'eco' ? TrendingUp : 
+                            sub.id === 'ocm' ? Briefcase : 
+                            sub.id === 'sp' ? PenTool : 
+                            sub.id === 'bk' || sub.id === 'math' ? Calculator :
+                            sub.id === 'his' ? BookOpen :
+                            sub.id === 'geo' ? Globe :
+                            sub.id === 'phy' ? Atom :
+                            sub.id === 'bio' ? Dna :
+                            sub.id === 'chem' ? FlaskConical :
+                            sub.id === 'soc' ? Users :
+                            sub.id === 'pol' ? Building2 : Brain;
+
               return (
                 <button 
                   key={sub.id}
@@ -268,7 +330,7 @@ const App: React.FC = () => {
                     <Icon size={28} />
                   </div>
                   <div className="text-left">
-                    <span className="font-bold text-slate-800 dark:text-slate-200 block text-lg leading-tight mb-1">{sub.name}</span>
+                    <span className="font-bold text-slate-800 dark:text-slate-200 block text-lg leading-tight mb-1 truncate w-full">{sub.name}</span>
                     <span className="text-xs text-slate-400 font-medium">{sub.chapters.length} Chapters</span>
                   </div>
                 </button>
@@ -322,6 +384,31 @@ const App: React.FC = () => {
         </div>
 
         <div className="px-6 -mt-6 pb-24 relative z-40">
+           
+           {/* Dedicated Economics Promo Card */}
+           {selectedSubject.id === 'eco' && (
+             <a 
+               href="https://eco.7kc.me"
+               target="_blank"
+               rel="noopener noreferrer"
+               className="mb-8 block bg-gradient-to-r from-blue-600 to-indigo-600 p-5 rounded-2xl shadow-xl shadow-blue-500/20 transform transition-transform hover:scale-[1.02]"
+             >
+               <div className="flex items-start justify-between">
+                 <div>
+                   <div className="inline-block px-2 py-1 bg-white/20 backdrop-blur-md rounded text-[10px] font-bold text-white uppercase mb-2">Recommended</div>
+                   <h3 className="text-xl font-bold text-white mb-1">Deep Dive into Economics</h3>
+                   <p className="text-blue-100 text-sm mb-4">Get the specialized dedicated app for 12th Economics.</p>
+                   <div className="inline-flex items-center gap-2 bg-white text-blue-600 px-4 py-2 rounded-xl text-sm font-bold">
+                     Open eco.7kc.me <ArrowRight size={16} />
+                   </div>
+                 </div>
+                 <div className="bg-white/10 p-3 rounded-full text-white">
+                   <Globe size={32} />
+                 </div>
+               </div>
+             </a>
+           )}
+
            {/* Navigation Cards for Syllabus & Pattern */}
            <div className="grid grid-cols-2 gap-4 mb-8">
               <button 
@@ -350,33 +437,43 @@ const App: React.FC = () => {
            </h3>
            
            <div className="space-y-4">
-            {selectedSubject.chapters.map((chapter, index) => (
-              <button 
-                key={chapter.id}
-                onClick={() => selectChapter(chapter)}
-                className="w-full bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-900 active:scale-[0.98] transition-all flex items-start gap-4 group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-black text-lg flex items-center justify-center shrink-0 group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/30 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                  {index + 1}
-                </div>
-                <div className="flex-1 text-left">
-                   <h3 className="font-bold text-slate-800 dark:text-slate-200 leading-tight mb-2 group-hover:text-indigo-700 dark:group-hover:text-indigo-300 transition-colors">{chapter.title}</h3>
-                   <div className="flex gap-2">
-                      {chapter.reels.length > 0 && <span className="px-2 py-1 rounded bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 text-[10px] font-bold uppercase flex items-center gap-1"><Video size={10} /> Reels</span>}
-                      {chapter.flashcards.length > 0 && <span className="px-2 py-1 rounded bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase flex items-center gap-1"><Layers size={10} /> Cards</span>}
-                   </div>
-                </div>
-                <div className="h-full flex items-center text-slate-300 dark:text-slate-600 group-hover:text-indigo-400">
-                  <ChevronRight size={20} />
-                </div>
-              </button>
-            ))}
+            {selectedSubject.chapters.length === 0 ? (
+              <div className="p-8 text-center text-slate-400 dark:text-slate-600 bg-white dark:bg-slate-900 rounded-2xl border border-dashed border-slate-200 dark:border-slate-800">
+                <Clock className="mx-auto mb-2 opacity-50" size={32} />
+                <p>Content coming soon!</p>
+              </div>
+            ) : (
+              selectedSubject.chapters.map((chapter, index) => (
+                <button 
+                  key={chapter.id}
+                  onClick={() => selectChapter(chapter)}
+                  className="w-full bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-900 active:scale-[0.98] transition-all flex items-start gap-4 group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-black text-lg flex items-center justify-center shrink-0 group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/30 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                    {index + 1}
+                  </div>
+                  <div className="flex-1 text-left">
+                    <h3 className="font-bold text-slate-800 dark:text-slate-200 leading-tight mb-2 group-hover:text-indigo-700 dark:group-hover:text-indigo-300 transition-colors">{chapter.title}</h3>
+                    <div className="flex gap-2">
+                        {chapter.reels.length > 0 && <span className="px-2 py-1 rounded bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 text-[10px] font-bold uppercase flex items-center gap-1"><Video size={10} /> Reels</span>}
+                        {chapter.flashcards.length > 0 && <span className="px-2 py-1 rounded bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase flex items-center gap-1"><Layers size={10} /> Cards</span>}
+                    </div>
+                  </div>
+                  <div className="h-full flex items-center text-slate-300 dark:text-slate-600 group-hover:text-indigo-400">
+                    <ChevronRight size={20} />
+                  </div>
+                </button>
+              ))
+            )}
            </div>
         </div>
       </div>
     );
   };
-
+  
+  // ... (Rest of the component remains same: renderResourcesView, renderChapterDetail, renderStudyMode, renderAiModal)
+  
+  // Re-including renderResourcesView for completeness
   const renderResourcesView = (type: 'SYLLABUS' | 'PATTERN') => {
     if (!selectedSubject) return null;
     const content = type === 'SYLLABUS' ? selectedSubject.syllabus : selectedSubject.paperPattern;
@@ -392,7 +489,7 @@ const App: React.FC = () => {
         </div>
         <div className="p-6 flex-1 overflow-y-auto">
           <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
-             <MarkdownRenderer content={content} />
+             {content === 'Pending...' ? <p className="text-slate-400 italic">Content coming soon.</p> : <MarkdownRenderer content={content} />}
           </div>
         </div>
       </div>
