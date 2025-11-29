@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
 import MCQView from './components/MCQView';
 import ReelView from './components/ReelView';
+import LongAnswerView from './components/LongAnswerView';
+import MarkdownRenderer from './components/MarkdownRenderer';
 import { explainConcept } from './services/geminiService';
 
 // --- Types ---
@@ -17,66 +19,6 @@ type ViewState =
   | 'STUDY_MODE'
   | 'SYLLABUS_VIEW'
   | 'PAPER_PATTERN_VIEW';
-
-// --- Markdown Renderer ---
-const MarkdownRenderer: React.FC<{ content: string }> = ({ content }) => {
-  if (!content) return null;
-
-  const lines = content.split('\n');
-
-  return (
-    <div className="space-y-3">
-      {lines.map((line, index) => {
-        // 1. Identify type and clean content
-        let type = 'p';
-        let cleanText = line;
-
-        if (line.trim().startsWith('### ')) {
-          type = 'h3';
-          cleanText = line.trim().replace(/^###\s+/, '');
-        } else if (line.trim().startsWith('#### ')) {
-          type = 'h4';
-          cleanText = line.trim().replace(/^####\s+/, '');
-        } else if (line.trim().startsWith('* ') || line.trim().startsWith('- ')) {
-          type = 'li';
-          cleanText = line.trim().replace(/^[*|-]\s+/, '');
-        } else if (line.trim() === '') {
-          return <br key={index} className="block content-[''] my-2" />;
-        }
-
-        // 2. Process Inline Formatting (Bold) on the cleaned text
-        // Split by **text**
-        const parts = cleanText.split(/(\*\*.*?\*\*)/g);
-        const children = parts.map((part, i) => {
-          if (part.startsWith('**') && part.endsWith('**')) {
-            return <strong key={i} className="font-bold text-indigo-800 dark:text-indigo-200">{part.slice(2, -2)}</strong>;
-          }
-          return part;
-        });
-
-        // 3. Render based on type
-        if (type === 'h3') {
-           return <h3 key={index} className="text-xl font-bold text-indigo-900 dark:text-indigo-300 mt-6 mb-2">{children}</h3>;
-        }
-        
-        if (type === 'h4') {
-           return <h4 key={index} className="text-lg font-bold text-slate-800 dark:text-slate-200 mt-4 mb-1">{children}</h4>;
-        }
-        
-        if (type === 'li') {
-           return (
-             <div key={index} className="flex gap-3 ml-1 items-start">
-               <span className="text-indigo-500 shrink-0 mt-1.5">•</span>
-               <span className="text-slate-700 dark:text-slate-300 leading-relaxed">{children}</span>
-             </div>
-           );
-        }
-
-        return <p key={index} className="text-slate-700 dark:text-slate-300 leading-relaxed">{children}</p>;
-      })}
-    </div>
-  );
-};
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>('STREAM_SELECT');
@@ -501,6 +443,27 @@ const App: React.FC = () => {
                </div>
             </button>
 
+            {/* NEW 8-MARK BUTTON FOR OCM */}
+            {selectedChapter.longAnswers && selectedChapter.longAnswers.length > 0 && (
+              <button 
+                onClick={() => startStudy(ContentType.EIGHT_MARKER)}
+                className="col-span-2 p-4 bg-gradient-to-r from-amber-200 to-yellow-400 dark:from-amber-700 dark:to-yellow-700 rounded-2xl shadow-md border border-yellow-300 dark:border-yellow-600 flex items-center justify-between group hover:scale-[1.01] transition-transform"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2 bg-white/30 rounded-full text-amber-900 dark:text-white">
+                    <Award size={24} />
+                  </div>
+                  <div className="text-left">
+                     <h3 className="font-black text-amber-900 dark:text-white text-lg">8-Marks (Sure Shot)</h3>
+                     <p className="text-amber-800 dark:text-amber-100 text-xs font-bold">Important Long Answers</p>
+                  </div>
+                </div>
+                <div className="bg-white/30 p-2 rounded-full text-amber-900 dark:text-white">
+                   <ChevronRight size={20} />
+                </div>
+              </button>
+            )}
+
             <button 
               onClick={() => startStudy(ContentType.SUMMARY)}
               disabled={selectedChapter.summary === 'Pending...'}
@@ -601,6 +564,10 @@ const App: React.FC = () => {
 
     if (studyMode === ContentType.REELS) {
       return <ReelView reels={selectedChapter.reels} onClose={goBack} />;
+    }
+
+    if (studyMode === ContentType.EIGHT_MARKER && selectedChapter.longAnswers) {
+      return <LongAnswerView answers={selectedChapter.longAnswers} onBack={goBack} />;
     }
 
     return (

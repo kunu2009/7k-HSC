@@ -1,3 +1,4 @@
+
 export enum Stream {
   ARTS = 'Arts',
   COMMERCE = 'Commerce',
@@ -10,7 +11,8 @@ export enum ContentType {
   FLASHCARDS = 'Flashcards',
   MCQ = 'MCQ',
   REELS = 'Reels',
-  PAPERS = 'Papers'
+  PAPERS = 'Papers',
+  EIGHT_MARKER = 'EightMarker'
 }
 
 export interface Flashcard {
@@ -31,8 +33,15 @@ export interface Reel {
   id: string;
   title: string;
   content: string;
-  color: string; // Tailwind color class snippet, e.g., 'bg-blue-500'
+  color: string; // Tailwind color class snippet
   icon?: string;
+}
+
+export interface LongAnswer {
+  id: string;
+  question: string;
+  mnemonic?: string;
+  answer: string; // Markdown supported content
 }
 
 export interface Chapter {
@@ -44,6 +53,7 @@ export interface Chapter {
   flashcards: Flashcard[];
   mcqs: Question[];
   reels: Reel[];
+  longAnswers?: LongAnswer[];
 }
 
 export interface Subject {
