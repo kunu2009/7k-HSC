@@ -10,6 +10,9 @@ const REEL_COLORS = [
   'bg-gradient-to-br from-amber-500 to-orange-600',
   'bg-gradient-to-br from-cyan-600 to-blue-700',
   'bg-gradient-to-br from-fuchsia-600 to-pink-700',
+  'bg-gradient-to-br from-lime-600 to-green-700',
+  'bg-gradient-to-br from-sky-600 to-blue-500',
+  'bg-gradient-to-br from-red-500 to-orange-500',
 ];
 
 const getReelColor = (index: number) => REEL_COLORS[index % REEL_COLORS.length];
@@ -134,7 +137,24 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
               { id: 'r2', title: 'Slicing Method', content: 'Micro cuts the economy into small slices to study them in depth.', color: getReelColor(1) },
               { id: 'r3', title: 'Scope of Micro', content: '1. Product Pricing\n2. Factor Pricing\n3. Economic Welfare', color: getReelColor(2) },
               { id: 'r4', title: 'Ragnar Frisch', content: 'The man who gave us the terms "Micro" and "Macro" in 1933.', color: getReelColor(3) },
-              { id: 'r5', title: 'Price Theory', content: 'Micro explains how prices of Apples, Mobiles, and Wages are determined.', color: getReelColor(4) }
+              { id: 'r5', title: 'Price Theory', content: 'Micro explains how prices of Apples, Mobiles, and Wages are determined.', color: getReelColor(4) },
+              { id: 'r6', title: 'Wealth of Nations', content: 'Adam Smith (1776). The Classical Economist.', color: getReelColor(5) },
+              { id: 'r7', title: 'Principles of Economics', content: 'Dr. Alfred Marshall (1890). The Neo-Classical Economist.', color: getReelColor(6) },
+              { id: 'r8', title: 'General Theory', content: 'Lord Keynes (1936). The Architect of Modern Macro Economics.', color: getReelColor(7) },
+              { id: 'r9', title: 'Feature: Individual Units', content: 'Micro studies behavior of ONE consumer, ONE firm.', color: getReelColor(8) },
+              { id: 'r10', title: 'Feature: Free Market', content: 'Micro helps understanding working of Free Market Economy.', color: getReelColor(9) },
+              { id: 'r11', title: 'Feature: Market Structure', content: 'Micro analyses Perfect Competition, Monopoly, Oligopoly.', color: getReelColor(0) },
+              { id: 'r12', title: 'Feature: Limited Scope', content: 'Micro does not deal with Inflation, Poverty, Unemployment.', color: getReelColor(1) },
+              { id: 'r13', title: 'Macro: Aggregates', content: 'Macro deals with Total Employment, National Income, Total Investment.', color: getReelColor(2) },
+              { id: 'r14', title: 'Macro: Income Theory', content: 'Macro is also known as Income and Employment Theory.', color: getReelColor(3) },
+              { id: 'r15', title: 'Macro: Lumping', content: 'Studying the whole economy as one big lump.', color: getReelColor(4) },
+              { id: 'r16', title: 'Macro: Gen Equilibrium', content: 'Everything depends on everything else. Interdependence.', color: getReelColor(5) },
+              { id: 'r17', title: 'Macro: Policy Oriented', content: 'Helps govt formulate economic policies for growth.', color: getReelColor(6) },
+              { id: 'r18', title: 'Imp: Business Decisions', content: 'Micro helps businessmen fix prices and maximize profit.', color: getReelColor(7) },
+              { id: 'r19', title: 'Imp: Economic Fluctuation', content: 'Macro analyses causes of fluctuations in income and employment.', color: getReelColor(8) },
+              { id: 'r20', title: 'Imp: National Income', content: 'Macro helps in measurement of National Income.', color: getReelColor(9) },
+              { id: 'r21', title: 'Welfare Economics', content: 'Micro explains how to maximize economic welfare.', color: getReelColor(0) },
+              { id: 'r22', title: 'Comparison: Tool', content: 'Micro uses Individual Demand/Supply.\nMacro uses Aggregate Demand/Supply.', color: getReelColor(1) }
             ]
           },
           {
@@ -171,7 +191,27 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
               { id: 'r1', title: 'Point of Satiety', content: 'Stop eating when MU = 0.\nBeyond this, satisfaction turns into dissatisfaction!', color: getReelColor(3) },
               { id: 'r2', title: 'DMU in Daily Life', content: 'The first glass of water implies high utility.\nThe 5th glass? Not so much.', color: getReelColor(4) },
               { id: 'r3', title: 'Exceptions to DMU', content: '1. Money\n2. Hobbies\n3. Addictions\n4. Power', color: getReelColor(5) },
-              { id: 'r4', title: 'Form Utility', content: 'Clay -> Pot\nWood -> Chair\nValue added by changing shape.', color: getReelColor(6) }
+              { id: 'r4', title: 'Form Utility', content: 'Clay -> Pot\nWood -> Chair\nValue added by changing shape.', color: getReelColor(6) },
+              { id: 'r5', title: 'Place Utility', content: 'Woolen clothes in Kashmir > Mumbai.\nTransport creates Place Utility.', color: getReelColor(7) },
+              { id: 'r6', title: 'Service Utility', content: 'Knowledge and skills of professionals.\nDoctors, Lawyers, Teachers.', color: getReelColor(8) },
+              { id: 'r7', title: 'Knowledge Utility', content: 'Grandma learns to use a Smartphone.\nUtility increases with knowledge.', color: getReelColor(9) },
+              { id: 'r8', title: 'Possession Utility', content: 'Transfer of ownership.\nShopkeeper -> Buyer.', color: getReelColor(0) },
+              { id: 'r9', title: 'Time Utility', content: 'Storing grain for the lean season.\nBlood Banks.', color: getReelColor(1) },
+              { id: 'r10', title: 'Relative Concept', content: 'Utility changes with time and place.\nUmbrella in rains vs winter.', color: getReelColor(2) },
+              { id: 'r11', title: 'Subjective Concept', content: 'Utility is in the mind.\nA book has utility for literate, none for illiterate.', color: getReelColor(3) },
+              { id: 'r12', title: 'Ethically Neutral', content: 'A knife can cut fruit or kill.\nUtility has no morals.', color: getReelColor(4) },
+              { id: 'r13', title: 'Utility vs Pleasure', content: 'Bitter medicine has utility (cures you) but NO pleasure.', color: getReelColor(5) },
+              { id: 'r14', title: 'Utility vs Usefulness', content: 'Liquor has utility for an addict, but it is harmful (not useful).', color: getReelColor(6) },
+              { id: 'r15', title: 'Assumption: Rationality', content: 'Consumer is normal and wants to maximize satisfaction.', color: getReelColor(7) },
+              { id: 'r16', title: 'Assumption: Cardinal', content: 'Utility can be counted in numbers (10, 20, 30).', color: getReelColor(8) },
+              { id: 'r17', title: 'Assumption: Homogeneity', content: 'All units consumed are identical in size, shape, color.', color: getReelColor(9) },
+              { id: 'r18', title: 'Assumption: Continuity', content: 'Consumption is quick and continuous. No breaks.', color: getReelColor(0) },
+              { id: 'r19', title: 'Assumption: Reasonability', content: 'Units are of standard size. Not a spoon of water, a glass.', color: getReelColor(1) },
+              { id: 'r20', title: 'Exception: Hobbies', content: 'Collecting stamps/coins.\nMU increases with collection.', color: getReelColor(2) },
+              { id: 'r21', title: 'Exception: Miser', content: 'Every additional rupee gives him MORE satisfaction.', color: getReelColor(3) },
+              { id: 'r22', title: 'Exception: Addictions', content: 'A drunkard\'s MU increases with every drink (Irrational).', color: getReelColor(4) },
+              { id: 'r23', title: 'Exception: Power', content: 'Lust for power increases with every victory.', color: getReelColor(5) },
+              { id: 'r24', title: 'Significance of Law', content: 'Helps Govt in taxation (Progressive Tax).\nHelps Monopolist in pricing.', color: getReelColor(6) }
             ]
           },
           {
@@ -208,7 +248,25 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
               { id: 'r1', title: 'Demand Rule', content: 'Price UP ⬆️\nDemand DOWN ⬇️\n(Inverse Relationship)', color: getReelColor(5) },
               { id: 'r2', title: 'Giffen Paradox', content: 'In inferior goods, when price drops, people buy LESS to shift to better goods.', color: getReelColor(6) },
               { id: 'r3', title: 'Composite Demand', content: 'One thing, Many uses.\nMilk: Tea, Curd, Cheese, Sweets.', color: getReelColor(0) },
-              { id: 'r4', title: 'Expansion vs Increase', content: 'Expansion: Due to Price (Same curve).\nIncrease: Due to Income/Taste (Shift curve).', color: getReelColor(1) }
+              { id: 'r4', title: 'Expansion vs Increase', content: 'Expansion: Due to Price (Same curve).\nIncrease: Due to Income/Taste (Shift curve).', color: getReelColor(1) },
+              { id: 'r5', title: 'Direct Demand', content: 'Demand for Clothes, Food, Mobile.\nDirectly satisfies need.', color: getReelColor(2) },
+              { id: 'r6', title: 'Indirect Demand', content: 'Demand for Land, Labor, Capital.\nDerived from demand for goods.', color: getReelColor(3) },
+              { id: 'r7', title: 'Joint Demand', content: 'Ink and Pen.\nCar and Petrol.\nTwo things needed together.', color: getReelColor(4) },
+              { id: 'r8', title: 'Competitive Demand', content: 'Coke vs Pepsi.\nTea vs Coffee.\nSubstitutes compete.', color: getReelColor(5) },
+              { id: 'r9', title: 'Determinant: Price', content: 'The biggest factor affecting demand.', color: getReelColor(6) },
+              { id: 'r10', title: 'Determinant: Income', content: 'More money = More shopping.\nPositive relationship (usually).', color: getReelColor(7) },
+              { id: 'r11', title: 'Determinant: Population', content: 'More people = More demand for food/housing.', color: getReelColor(8) },
+              { id: 'r12', title: 'Determinant: Tastes', content: 'Fashion changes.\nJeans in, Bell-bottoms out.', color: getReelColor(9) },
+              { id: 'r13', title: 'Exception: Prestige', content: 'Diamonds/Luxury Cars.\nRich buy MORE when price is HIGH.', color: getReelColor(0) },
+              { id: 'r14', title: 'Exception: Speculation', content: 'Stock Market.\nPrice rising? Buy MORE before it rises further!', color: getReelColor(1) },
+              { id: 'r15', title: 'Exception: Price Illusion', content: '"It\'s expensive, so it must be good quality!"', color: getReelColor(2) },
+              { id: 'r16', title: 'Exception: Habit', content: 'Addicted people buy even if price rises.', color: getReelColor(3) },
+              { id: 'r17', title: 'Individual Demand', content: 'Demand by ONE consumer.', color: getReelColor(4) },
+              { id: 'r18', title: 'Market Demand', content: 'Sum of ALL individual demands.', color: getReelColor(5) },
+              { id: 'r19', title: 'Demand Schedule', content: 'Table showing Price vs Quantity.', color: getReelColor(6) },
+              { id: 'r20', title: 'Demand Curve', content: 'Graphical representation of demand schedule.', color: getReelColor(7) },
+              { id: 'r21', title: 'Shift in Demand', content: 'Curve moves Left or Right.\nPrice remains same.', color: getReelColor(8) },
+              { id: 'r22', title: 'Movement along Curve', content: 'Expansion or Contraction.\nDue to Price change.', color: getReelColor(9) }
             ]
           },
           {
@@ -242,7 +300,25 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
               { id: 'r1', title: 'Ed = 0', content: 'No matter the price, I need my medicine.\n(Perfectly Inelastic)', color: getReelColor(0) },
               { id: 'r2', title: 'Ed > 1', content: 'Small discount on iPhone -> Huge sales jump!\n(Relatively Elastic)', color: getReelColor(1) },
               { id: 'r3', title: 'Rectangular Hyperbola', content: 'The shape of the curve when Ed = 1.\nUniform elasticity.', color: getReelColor(2) },
-              { id: 'r4', title: 'Point Method', content: 'L / U\nLower segment / Upper segment.', color: getReelColor(3) }
+              { id: 'r4', title: 'Point Method', content: 'L / U\nLower segment / Upper segment.', color: getReelColor(3) },
+              { id: 'r5', title: 'Ed < 1', content: 'Price doubles, but demand falls only slightly.\n(Salt/Milk).', color: getReelColor(4) },
+              { id: 'r6', title: 'Ed = Infinity', content: 'Imaginary situation.\nSlight price rise, demand becomes zero.', color: getReelColor(5) },
+              { id: 'r7', title: 'Income Elasticity', content: 'Responsiveness to change in Income.\nNormal Goods (+), Inferior (-).', color: getReelColor(6) },
+              { id: 'r8', title: 'Cross Elasticity', content: 'Tea Price vs Coffee Demand.\nSubstitutes (+), Complements (-).', color: getReelColor(7) },
+              { id: 'r9', title: 'Ratio Method', content: '% Change in Q / % Change in P.\nMost common formula.', color: getReelColor(8) },
+              { id: 'r10', title: 'Total Outlay Method', content: 'Price x Quantity.\nIf P rises and Exp rises -> Inelastic.', color: getReelColor(9) },
+              { id: 'r11', title: 'Geometric Method', content: 'Used when demand curve is a straight line.', color: getReelColor(0) },
+              { id: 'r12', title: 'Factor: Nature of Goods', content: 'Necessities = Inelastic.\nLuxuries = Elastic.', color: getReelColor(1) },
+              { id: 'r13', title: 'Factor: Substitutes', content: 'More substitutes available = More Elastic.', color: getReelColor(2) },
+              { id: 'r14', title: 'Factor: Number of Uses', content: 'Coal/Electricity = Elastic (Multiple uses).', color: getReelColor(3) },
+              { id: 'r15', title: 'Factor: Habits', content: 'Addicted goods = Inelastic.', color: getReelColor(4) },
+              { id: 'r16', title: 'Factor: Durability', content: 'Durable goods (TV/Fridge) = Elastic.\nPerishable = Inelastic.', color: getReelColor(5) },
+              { id: 'r17', title: 'Factor: Income Level', content: 'Super rich = Inelastic demand.', color: getReelColor(6) },
+              { id: 'r18', title: 'Factor: Time Period', content: 'Long run = Elastic.\nShort run = Inelastic.', color: getReelColor(7) },
+              { id: 'r19', title: 'Importance: Producer', content: 'Helps fix prices.\nInelastic demand? Charge more.', color: getReelColor(8) },
+              { id: 'r20', title: 'Importance: Govt', content: 'Tax goods with Inelastic demand (Cigarettes/Liquor).', color: getReelColor(9) },
+              { id: 'r21', title: 'Importance: Factors', content: 'Factor pricing.\nSkilled labor (scarce) = Inelastic supply.', color: getReelColor(0) },
+              { id: 'r22', title: 'Importance: Foreign Trade', content: 'Devaluation policy depends on elasticity of exports.', color: getReelColor(1) }
             ]
           },
           {
@@ -274,7 +350,26 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             reels: [
               { id: 'r1', title: 'Supply Rule', content: 'Price UP ⬆️\nSupply UP ⬆️\n(Direct Relationship)', color: getReelColor(2) },
               { id: 'r2', title: 'Stock > Supply', content: 'Stock is what is in the godown.\nSupply is what is on the shop shelf.', color: getReelColor(3) },
-              { id: 'r3', title: 'Backward Bending', content: 'Initially work more for money.\nLater work less for leisure.', color: getReelColor(4) }
+              { id: 'r3', title: 'Backward Bending', content: 'Initially work more for money.\nLater work less for leisure.', color: getReelColor(4) },
+              { id: 'r4', title: 'Output', content: 'Result of production process.\nRaw Material -> Finished Good.', color: getReelColor(5) },
+              { id: 'r5', title: 'Individual Supply', content: 'Supply by ONE firm.', color: getReelColor(6) },
+              { id: 'r6', title: 'Market Supply', content: 'Sum of all firms\' supply.', color: getReelColor(7) },
+              { id: 'r7', title: 'Supply Schedule', content: 'Table showing Price vs Supply.', color: getReelColor(8) },
+              { id: 'r8', title: 'Determinant: Cost', content: 'Cost UP -> Profit DOWN -> Supply DOWN.', color: getReelColor(9) },
+              { id: 'r9', title: 'Determinant: Tech', content: 'Better Tech -> Cost DOWN -> Supply UP.', color: getReelColor(0) },
+              { id: 'r10', title: 'Determinant: Transport', content: 'Better roads -> Faster supply -> Supply UP.', color: getReelColor(1) },
+              { id: 'r11', title: 'Exception: Perishable', content: 'Fish/Milk. Seller sells quickly even at low price.', color: getReelColor(2) },
+              { id: 'r12', title: 'Exception: Rare Goods', content: 'Mona Lisa painting. Supply cannot be increased.', color: getReelColor(3) },
+              { id: 'r13', title: 'Total Cost', content: 'Fixed Cost (Rent) + Variable Cost (Raw Material).', color: getReelColor(4) },
+              { id: 'r14', title: 'Fixed Cost', content: 'Does not change with output.\nRent, Salaries.', color: getReelColor(5) },
+              { id: 'r15', title: 'Variable Cost', content: 'Changes with output.\nFuel, Raw Material.', color: getReelColor(6) },
+              { id: 'r16', title: 'Average Cost', content: 'Cost per unit.\nTC divided by Quantity.', color: getReelColor(7) },
+              { id: 'r17', title: 'Marginal Cost', content: 'Net addition to Total Cost by producing one more unit.', color: getReelColor(8) },
+              { id: 'r18', title: 'Total Revenue', content: 'Money earned from sales.\nP x Q.', color: getReelColor(9) },
+              { id: 'r19', title: 'Average Revenue', content: 'Revenue per unit.\nUsually same as Price.', color: getReelColor(0) },
+              { id: 'r20', title: 'Marginal Revenue', content: 'Net addition to TR by selling one more unit.', color: getReelColor(1) },
+              { id: 'r21', title: 'Extension of Supply', content: 'Upward movement on same curve.\nDue to Price rise.', color: getReelColor(2) },
+              { id: 'r22', title: 'Increase in Supply', content: 'Shift to Right.\nDue to good tech/subsidy.', color: getReelColor(3) }
             ]
           },
           {
@@ -306,7 +401,26 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             reels: [
               { id: 'r1', title: 'Monopoly', content: 'I am the only one.\nI set the price.\n(Indian Railways)', color: getReelColor(4) },
               { id: 'r2', title: 'Oligopoly', content: 'Few Giants.\nTelecom: Jio, Airtel, Vi.\nIntense competition.', color: getReelColor(5) },
-              { id: 'r3', title: 'Product Differentiation', content: 'Lux vs Dove.\nSame soap, different smell/pack.', color: getReelColor(6) }
+              { id: 'r3', title: 'Product Differentiation', content: 'Lux vs Dove.\nSame soap, different smell/pack.', color: getReelColor(6) },
+              { id: 'r4', title: 'Perfect Comp: Many Sellers', content: 'Seller is a drop in the ocean.\nCannot influence price.', color: getReelColor(7) },
+              { id: 'r5', title: 'Perfect Comp: Homogeneous', content: 'Identical in size, shape, color, taste.', color: getReelColor(8) },
+              { id: 'r6', title: 'Perfect Comp: Single Price', content: 'Determined by market demand and supply.', color: getReelColor(9) },
+              { id: 'r7', title: 'Perfect Knowledge', content: 'Buyers know the price everywhere.\nNo cheating.', color: getReelColor(0) },
+              { id: 'r8', title: 'No Transport Cost', content: 'Assumed in Perfect Competition.', color: getReelColor(1) },
+              { id: 'r9', title: 'Price Taker', content: 'Firm in Perfect Competition accepts market price.', color: getReelColor(2) },
+              { id: 'r10', title: 'Types of Monopoly: Natural', content: 'Specific raw material available at one place.', color: getReelColor(3) },
+              { id: 'r11', title: 'Types of Monopoly: Legal', content: 'Patents, Copyrights, Trademarks.', color: getReelColor(4) },
+              { id: 'r12', title: 'Types of Monopoly: Public', content: 'Govt owned.\nIndian Railways.', color: getReelColor(5) },
+              { id: 'r13', title: 'Price Discrimination', content: 'Charging different rates.\nElectricity (Home vs Factory).', color: getReelColor(6) },
+              { id: 'r14', title: 'Oligopoly: Interdependence', content: 'Jio changes plan -> Airtel must react.', color: getReelColor(7) },
+              { id: 'r15', title: 'Oligopoly: Uncertainty', content: 'Rivals behavior cannot be predicted.', color: getReelColor(8) },
+              { id: 'r16', title: 'Monopolistic Comp', content: 'Blend of Monopoly and Perfect Competition.', color: getReelColor(9) },
+              { id: 'r17', title: 'Concept: Selling Cost', content: 'Ads, Free Samples, Discounts.\nCrucial for Monopolistic Comp.', color: getReelColor(0) },
+              { id: 'r18', title: 'Close Substitutes', content: 'Colgate vs Pepsodent.\nHigh cross elasticity.', color: getReelColor(1) },
+              { id: 'r19', title: 'Free Entry/Exit', content: 'Allowed in Perfect & Monopolistic Comp.\nRestricted in Monopoly.', color: getReelColor(2) },
+              { id: 'r20', title: 'Market Structure', content: 'Based on Place, Time, Competition.', color: getReelColor(3) },
+              { id: 'r21', title: 'Very Short Period', content: 'Supply is fixed. Price determined by Demand.', color: getReelColor(4) },
+              { id: 'r22', title: 'Long Period', content: 'All factors are variable. Supply can adjust fully.', color: getReelColor(5) }
             ]
           },
           {
@@ -338,7 +452,26 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             reels: [
               { id: 'r1', title: 'What is Index No?', content: 'A tool to measure change.\nInflation = CPI Index.', color: getReelColor(6) },
               { id: 'r2', title: 'Base Year', content: 'Always denoted by suffix "0".\nPrice = p0, Qty = q0.', color: getReelColor(0) },
-              { id: 'r3', title: 'Laspeyres vs Paasche', content: 'Laspeyres likes the PAST (q0).\nPaasche likes the PRESENT (q1).', color: getReelColor(1) }
+              { id: 'r3', title: 'Laspeyres vs Paasche', content: 'Laspeyres likes the PAST (q0).\nPaasche likes the PRESENT (q1).', color: getReelColor(1) },
+              { id: 'r4', title: 'Feature: Statistical Tool', content: 'Uses math to quantify economic changes.', color: getReelColor(2) },
+              { id: 'r5', title: 'Feature: Specialized Average', content: 'Not simple average, but capable of averaging different units.', color: getReelColor(3) },
+              { id: 'r6', title: 'Type: Price Index', content: 'Measures inflation/value of money.', color: getReelColor(4) },
+              { id: 'r7', title: 'Type: Quantity Index', content: 'Measures industrial/agri production changes.', color: getReelColor(5) },
+              { id: 'r8', title: 'Type: Value Index', content: 'Combines Price x Quantity changes.', color: getReelColor(6) },
+              { id: 'r9', title: 'Step 1: Purpose', content: 'Why are we making this index?\nDefining scope is crucial.', color: getReelColor(7) },
+              { id: 'r10', title: 'Step 2: Base Year', content: 'Must be normal, recent, and free from calamities.', color: getReelColor(8) },
+              { id: 'r11', title: 'Step 3: Basket', content: 'Selection of commodities representing the group.', color: getReelColor(9) },
+              { id: 'r12', title: 'Simple Aggregate Method', content: 'Sum of p1 / Sum of p0 x 100.', color: getReelColor(0) },
+              { id: 'r13', title: 'Weighted Aggregate', content: 'Assigning importance (weights) to items.', color: getReelColor(1) },
+              { id: 'r14', title: 'Fisher\'s Index', content: 'The IDEAL index.\nGeometric mean of L and P.', color: getReelColor(2) },
+              { id: 'r15', title: 'Limitations', content: 'Based on samples.\nIgnores quality changes.\nMathematical errors.', color: getReelColor(3) },
+              { id: 'r16', title: 'CPI', content: 'Consumer Price Index.\nAlso called Cost of Living Index.', color: getReelColor(4) },
+              { id: 'r17', title: 'WPI', content: 'Wholesale Price Index.\nUsed for measuring inflation at wholesale level.', color: getReelColor(5) },
+              { id: 'r18', title: 'Sensex/Nifty', content: 'Index numbers for Stock Market.', color: getReelColor(6) },
+              { id: 'r19', title: 'Human Development Index', content: 'HDI.\nMeasures quality of life (Health, Education, Income).', color: getReelColor(7) },
+              { id: 'r20', title: 'Uses: Wage Fixation', content: 'Dearness Allowance (DA) is linked to Cost of Living Index.', color: getReelColor(8) },
+              { id: 'r21', title: 'Uses: Forecasting', content: 'Predicting future business trends.', color: getReelColor(9) },
+              { id: 'r22', title: 'Uses: Policy', content: 'Helping Govt decide tax and trade policies.', color: getReelColor(0) }
             ]
           },
           {
@@ -370,7 +503,26 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             reels: [
               { id: 'r1', title: 'GDP vs GNP', content: 'GDP = Where produced (India).\nGNP = Who produced (Indian).', color: getReelColor(1) },
               { id: 'r2', title: 'Double Counting', content: 'Counting flour AND bread?\nNo! Only final goods.', color: getReelColor(2) },
-              { id: 'r3', title: 'Circular Flow', content: 'Money flows from House to Firm (Spending) and back (Wages).', color: getReelColor(3) }
+              { id: 'r3', title: 'Circular Flow', content: 'Money flows from House to Firm (Spending) and back (Wages).', color: getReelColor(3) },
+              { id: 'r4', title: 'Feature: Macro', content: 'NI is a macro concept.\nAggregate of all incomes.', color: getReelColor(4) },
+              { id: 'r5', title: 'Feature: Flow', content: 'Measured over a period (1 year).\nNot a stock concept.', color: getReelColor(5) },
+              { id: 'r6', title: 'Feature: Money Value', content: 'Only goods exchanged for money are counted.', color: getReelColor(6) },
+              { id: 'r7', title: 'Net Factor Income', content: 'Income from Abroad (X-M).\nDifference between GNP and GDP.', color: getReelColor(7) },
+              { id: 'r8', title: 'Output Method', content: 'Sum of market value of all final goods produced.', color: getReelColor(8) },
+              { id: 'r9', title: 'Value Added Approach', content: 'Value of Output - Value of Intermediate Input.', color: getReelColor(9) },
+              { id: 'r10', title: 'Income Method', content: 'Rent + Wages + Interest + Profit + Mixed Income.', color: getReelColor(0) },
+              { id: 'r11', title: 'Expenditure Method', content: 'Consumption + Investment + Govt Exp + Net Exports.', color: getReelColor(1) },
+              { id: 'r12', title: 'Theoretical Difficulty', content: 'Transfer Payments.\nPension/Gifts are not income from production.', color: getReelColor(2) },
+              { id: 'r13', title: 'Theoretical Difficulty', content: 'Unpaid Services.\nHousewife work, hobby gardening.', color: getReelColor(3) },
+              { id: 'r14', title: 'Theoretical Difficulty', content: 'Black Money.\nIllegal income is hidden.', color: getReelColor(4) },
+              { id: 'r15', title: 'Practical Difficulty', content: 'Problem of Double Counting.\nEvaluating intermediate goods.', color: getReelColor(5) },
+              { id: 'r16', title: 'Practical Difficulty', content: 'Depreciation.\nHard to calculate exact wear and tear.', color: getReelColor(6) },
+              { id: 'r17', title: 'Importance: Economy', content: 'Indicates economic growth and standard of living.', color: getReelColor(7) },
+              { id: 'r18', title: 'Importance: Policy', content: 'Helps in planning budget and tax policies.', color: getReelColor(8) },
+              { id: 'r19', title: 'Importance: Comparison', content: 'Compare standard of living between countries.', color: getReelColor(9) },
+              { id: 'r20', title: 'Green GDP', content: 'Sustainability.\nDeducting environmental cost from GDP.', color: getReelColor(0) },
+              { id: 'r21', title: 'Per Capita Income', content: 'Average income per person.\nNI / Population.', color: getReelColor(1) },
+              { id: 'r22', title: 'NI Committee', content: 'Est 1949.\nP.C. Mahalanobis, D.R. Gadgil, V.K.R.V. Rao.', color: getReelColor(2) }
             ]
           },
           {
@@ -402,7 +554,26 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             reels: [
               { id: 'r1', title: 'Direct vs Indirect', content: 'Direct: Hits YOU directly (Income Tax).\nIndirect: Hits you via products (GST).', color: getReelColor(3) },
               { id: 'r2', title: 'Deficit Budget', content: 'Spending more than earning?\nGood for developing economy growth!', color: getReelColor(4) },
-              { id: 'r3', title: 'GST', content: 'One Nation, One Tax.\nUnified the Indirect Tax structure.', color: getReelColor(5) }
+              { id: 'r3', title: 'GST', content: 'One Nation, One Tax.\nUnified the Indirect Tax structure.', color: getReelColor(5) },
+              { id: 'r4', title: 'Public Finance', content: 'Govt adjusts Income to Expenditure.\n(Opposite of Private Finance).', color: getReelColor(6) },
+              { id: 'r5', title: 'Private Finance', content: 'Individual adjusts Expenditure to Income.', color: getReelColor(7) },
+              { id: 'r6', title: 'Obligatory Function', content: 'Protection from external attack, internal order.\nMust do.', color: getReelColor(8) },
+              { id: 'r7', title: 'Optional Function', content: 'Education, Health, Social Security.\nWelfare state activities.', color: getReelColor(9) },
+              { id: 'r8', title: 'Reason for Growth', content: 'Population Explosion.\nNeed for more services.', color: getReelColor(0) },
+              { id: 'r9', title: 'Reason for Growth', content: 'Urbanization.\nNeed for water, roads, electricity.', color: getReelColor(1) },
+              { id: 'r10', title: 'Reason for Growth', content: 'Defense.\nWar threats require modern equipment.', color: getReelColor(2) },
+              { id: 'r11', title: 'Tax', content: 'Compulsory Contribution.\nNo direct benefit in return.', color: getReelColor(3) },
+              { id: 'r12', title: 'Fees', content: 'Payment for service.\nEducation fees, Registration fees.', color: getReelColor(4) },
+              { id: 'r13', title: 'Fines', content: 'Penalty for breaking law.\nNot for revenue, but for order.', color: getReelColor(5) },
+              { id: 'r14', title: 'Special Assessment', content: 'Tax on property that gained value due to govt work (Road/Park).', color: getReelColor(6) },
+              { id: 'r15', title: 'Internal Debt', content: 'Govt borrowing from citizens/banks within India.', color: getReelColor(7) },
+              { id: 'r16', title: 'External Debt', content: 'Govt borrowing from World Bank/IMF.', color: getReelColor(8) },
+              { id: 'r17', title: 'Fiscal Policy', content: 'Budgetary policy of Govt.\nTaxation and Expenditure.', color: getReelColor(9) },
+              { id: 'r18', title: 'Financial Year', content: '1st April to 31st March.', color: getReelColor(0) },
+              { id: 'r19', title: 'Revenue Receipt', content: 'Tax and Non-tax revenue.\nRecurring in nature.', color: getReelColor(1) },
+              { id: 'r20', title: 'Capital Receipt', content: 'Loans, Disinvestment.\nCreates liability or reduces asset.', color: getReelColor(2) },
+              { id: 'r21', title: 'Budget', content: 'French word "Bougette" (Leather Bag).', color: getReelColor(3) },
+              { id: 'r22', title: 'Surplus Budget', content: 'Rev > Exp.\nUsed to control Inflation.', color: getReelColor(4) }
             ]
           },
           {
@@ -435,7 +606,26 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             reels: [
               { id: 'r1', title: 'Bull vs Bear', content: 'Bull: Expects Price Rise 📈\nBear: Expects Price Fall 📉', color: getReelColor(5) },
               { id: 'r2', title: 'RBI Role', content: 'The Boss of all Banks.\nControls money supply.', color: getReelColor(6) },
-              { id: 'r3', title: 'Repo Rate', content: 'RBI lends to Banks.\nIf Repo ^, Loan Interest ^.', color: getReelColor(0) }
+              { id: 'r3', title: 'Repo Rate', content: 'RBI lends to Banks.\nIf Repo ^, Loan Interest ^.', color: getReelColor(0) },
+              { id: 'r4', title: 'Monetary Policy', content: 'Policy of Central Bank to control money supply.', color: getReelColor(1) },
+              { id: 'r5', title: 'Function: Issue Currency', content: 'RBI issues all notes except Re 1 note/coins.', color: getReelColor(2) },
+              { id: 'r6', title: 'Function: Banker to Govt', content: 'RBI manages govt accounts and debt.', color: getReelColor(3) },
+              { id: 'r7', title: 'Function: Banker\'s Bank', content: 'Lender of last resort for commercial banks.', color: getReelColor(4) },
+              { id: 'r8', title: 'Function: Forex', content: 'Custodian of Foreign Exchange Reserves.', color: getReelColor(5) },
+              { id: 'r9', title: 'Quantitative Tool: CRR', content: 'Cash Reserve Ratio.\n% of deposits banks MUST keep with RBI.', color: getReelColor(6) },
+              { id: 'r10', title: 'Quantitative Tool: SLR', content: 'Statutory Liquidity Ratio.\n% banks keep with THEMSELVES (Gold/Cash).', color: getReelColor(7) },
+              { id: 'r11', title: 'Qualitative Tool', content: 'Moral Suasion, Margin Requirements.\nSelective control.', color: getReelColor(8) },
+              { id: 'r12', title: 'Money Market Instrument', content: 'Treasury Bills (T-Bills).\nIssued by Govt for 91/182/364 days.', color: getReelColor(9) },
+              { id: 'r13', title: 'Commercial Paper', content: 'Unsecured note issued by top companies.', color: getReelColor(0) },
+              { id: 'r14', title: 'Certificate of Deposit', content: 'Issued by Banks.\nNegotiable instrument.', color: getReelColor(1) },
+              { id: 'r15', title: 'Capital Market: Primary', content: 'New Issue Market.\nIPO (Initial Public Offering).', color: getReelColor(2) },
+              { id: 'r16', title: 'Capital Market: Secondary', content: 'Stock Exchange.\nTrading of existing shares.', color: getReelColor(3) },
+              { id: 'r17', title: 'NSE', content: 'National Stock Exchange.\nLocated in Mumbai.', color: getReelColor(4) },
+              { id: 'r18', title: 'BSE', content: 'Bombay Stock Exchange.\nOldest in Asia.', color: getReelColor(5) },
+              { id: 'r19', title: 'Mutual Funds', content: 'Pool money from public to invest in market.', color: getReelColor(6) },
+              { id: 'r20', title: 'Unorganized Sector', content: 'Moneylenders, Indigenous Bankers.\nNot regulated by RBI.', color: getReelColor(7) },
+              { id: 'r21', title: 'Problem: Dual Control', content: 'Co-op banks controlled by RBI and State Govt.', color: getReelColor(8) },
+              { id: 'r22', title: 'Problem: Cash Economy', content: 'Large part of India still uses cash.\nHard to regulate.', color: getReelColor(9) }
             ]
           },
           {
@@ -466,7 +656,26 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
             reels: [
               { id: 'r1', title: 'BOP > BOT', content: 'BOP is the big picture.\nIt includes Tourism, Software, Loans.', color: getReelColor(0) },
               { id: 'r2', title: 'Oil', content: 'India\'s biggest bill?\nImporting Crude Oil.', color: getReelColor(1) },
-              { id: 'r3', title: 'Entrepot', content: 'Buy raw, Make finished, Sell abroad.\nValue Addition!', color: getReelColor(2) }
+              { id: 'r3', title: 'Entrepot', content: 'Buy raw, Make finished, Sell abroad.\nValue Addition!', color: getReelColor(2) },
+              { id: 'r4', title: 'Role: Earns Forex', content: 'Foreign trade earns foreign currency for imports.', color: getReelColor(3) },
+              { id: 'r5', title: 'Role: Technology', content: 'Importing advanced tech helps development.', color: getReelColor(4) },
+              { id: 'r6', title: 'Role: Resource Allocation', content: 'Sell what you are good at making (Comparative Advantage).', color: getReelColor(5) },
+              { id: 'r7', title: 'Type: Import', content: 'Buying goods from USA/China.', color: getReelColor(6) },
+              { id: 'r8', title: 'Type: Export', content: 'Selling goods to UK/Dubai.', color: getReelColor(7) },
+              { id: 'r9', title: 'Composition of Exports', content: 'Used to be Tea/Jute.\nNow Engineering/Software.', color: getReelColor(8) },
+              { id: 'r10', title: 'Composition of Imports', content: 'Petroleum, Gold, Fertilizers, Machinery.', color: getReelColor(9) },
+              { id: 'r11', title: 'Direction of Trade', content: 'Whom do we trade with?\nUSA is our top partner.', color: getReelColor(0) },
+              { id: 'r12', title: 'Visible Trade', content: 'Trade in Goods (Cars, Wheat).', color: getReelColor(1) },
+              { id: 'r13', title: 'Invisible Trade', content: 'Trade in Services (IT, Banking, Tourism).', color: getReelColor(2) },
+              { id: 'r14', title: 'Current Account', content: 'Records imports/exports of goods and services.', color: getReelColor(3) },
+              { id: 'r15', title: 'Capital Account', content: 'Records investments and loans (FDI).', color: getReelColor(4) },
+              { id: 'r16', title: 'Deficit', content: 'Imports > Exports.\nWe owe the world money.', color: getReelColor(5) },
+              { id: 'r17', title: 'Surplus', content: 'Exports > Imports.\nThe world owes us money.', color: getReelColor(6) },
+              { id: 'r18', title: 'Ocean Trade', content: 'Most foreign trade happens via Sea Transport.', color: getReelColor(7) },
+              { id: 'r19', title: 'Policy: Liberalization', content: '1991 Reform.\nRemoved restrictions on trade.', color: getReelColor(8) },
+              { id: 'r20', title: 'SEZ', content: 'Special Economic Zone.\nTax-free zones to boost exports.', color: getReelColor(9) },
+              { id: 'r21', title: 'WTO', content: 'World Trade Organization.\nRegulates global trade rules.', color: getReelColor(0) },
+              { id: 'r22', title: 'Make in India', content: 'Campaign to boost domestic manufacturing and exports.', color: getReelColor(1) }
             ]
           }
         ]
