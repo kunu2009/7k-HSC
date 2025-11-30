@@ -125,8 +125,284 @@ const ECONOMICS_SUBJECT: Subject = {
         { id: 'r5', title: 'Income Theory', content: 'Macro Economics is also called Income Theory.', color: getReelColor(4) }
       ]
     },
-    // Note: Assuming Chapters 2-10 are populated here as per previous context. 
-    // They are preserved in the background logic of the app even if shortened here for display.
+    {
+      id: 'eco2',
+      title: '2. Utility Analysis',
+      description: 'Cardinal and Ordinal approaches to measuring satisfaction.',
+      summary: '**Utility**: Satisfaction derived from consumption.\n**Types**: Total Utility (TU), Marginal Utility (MU).\n**Laws**: Law of DMU, Law of Equi-Marginal Utility.',
+      detailedNotes: '### 1. Concept of Utility\n**Utility** = Want satisfying power of a commodity.\nIt is subjective - varies person to person.\n\n### 2. Types of Utility\n* **Total Utility (TU)**: Sum of all utilities from all units consumed.\n* **Marginal Utility (MU)**: Utility from consuming ONE additional unit.\n* **Formula**: MU = TUn - TUn-1 OR MU = ΔTU/ΔQ\n\n### 3. Law of Diminishing Marginal Utility (DMU)\n**Statement**: As consumption increases, MU decreases (other things constant).\n**Assumptions**: Homogeneous units, Continuous consumption, No time gap, Normal consumer.\n**Exceptions**: Hobbies (Stamp collecting), Misers (Money), Drunkards.\n\n### 4. Cardinal Utility\n* Utility can be measured in numbers (Utils).\n* Given by Alfred Marshall.\n* Used in Law of DMU, Equi-Marginal Utility.\n\n### 5. Ordinal Utility\n* Utility can only be ranked (1st, 2nd, 3rd...).\n* Given by Hicks and Allen.\n* Used in Indifference Curve Analysis.\n\n### 6. Law of Equi-Marginal Utility\n**Statement**: Consumer maximizes satisfaction when MU per rupee spent is equal for all goods.\n**Formula**: MUx/Px = MUy/Py = MUm (Marginal Utility of Money)',
+      flashcards: [
+        { id: 'f1', front: 'What is Utility?', back: 'Want satisfying power of a commodity.' },
+        { id: 'f2', front: 'Formula for MU?', back: 'MU = TUn - TUn-1 OR MU = ΔTU/ΔQ' },
+        { id: 'f3', front: 'Cardinal Utility given by?', back: 'Alfred Marshall.' },
+        { id: 'f4', front: 'Ordinal Utility given by?', back: 'J.R. Hicks and R.G.D. Allen.' },
+        { id: 'f5', front: 'When is TU maximum?', back: 'When MU = 0 (Point of Satiety).' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'When TU is maximum, MU is _______.', options: ['Maximum', 'Zero', 'Negative', 'Positive'], correctIndex: 1, explanation: 'At saturation point, MU becomes zero.' },
+        { id: 'q2', question: 'Cardinal utility was introduced by _______.', options: ['Hicks', 'Allen', 'Marshall', 'Keynes'], correctIndex: 2, explanation: 'Alfred Marshall gave the cardinal approach.' },
+        { id: 'q3', question: 'Law of DMU does NOT apply to _______.', options: ['Food', 'Water', 'Money (Misers)', 'Clothes'], correctIndex: 2, explanation: 'Misers never feel satisfied with money.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Utility', content: 'Want satisfying power.\nSubjective = Person to person different.', color: getReelColor(0) },
+        { id: 'r2', title: 'TU vs MU', content: 'TU = Total satisfaction.\nMU = Extra satisfaction from ONE more unit.', color: getReelColor(1) },
+        { id: 'r3', title: 'MU Formula', content: 'MU = TUn - TUn-1\nOR MU = ΔTU/ΔQ', color: getReelColor(2) },
+        { id: 'r4', title: 'Law of DMU', content: 'More you consume,\nLess satisfaction from each extra unit.', color: getReelColor(3) },
+        { id: 'r5', title: 'TU Max Point', content: 'When MU = 0\nPoint of Satiety.', color: getReelColor(4) },
+        { id: 'r6', title: 'TU Falls', content: 'When MU becomes Negative.\nOver-consumption!', color: getReelColor(5) },
+        { id: 'r7', title: 'Cardinal', content: 'Marshall: Utility can be measured in Utils (numbers).', color: getReelColor(6) },
+        { id: 'r8', title: 'Ordinal', content: 'Hicks-Allen: Utility can only be ranked (1st, 2nd...).', color: getReelColor(7) }
+      ]
+    },
+    {
+      id: 'eco3a',
+      title: '3A. Demand Analysis',
+      description: 'Law of Demand, Demand Schedule, Demand Curve.',
+      summary: '**Demand**: Desire + Ability + Willingness to buy.\n**Law of Demand**: Price ↑ = Demand ↓ (Inverse relationship).\n**Exceptions**: Giffen goods, Veblen goods, Emergencies.',
+      detailedNotes: '### 1. Meaning of Demand\n**Demand** = Desire backed by:\n* Ability to pay\n* Willingness to pay\n* At a given price, at a given time.\n\n### 2. Demand Function\nDx = f(Px, Pr, Y, T, E, N, G)\nWhere:\n* Px = Price of commodity X\n* Pr = Price of related goods\n* Y = Income\n* T = Tastes & preferences\n* E = Expectations\n* N = Number of consumers\n* G = Government policy\n\n### 3. Law of Demand\n**Statement**: "Other things remaining constant, when price rises, quantity demanded falls and vice versa."\n**Assumptions**: Income constant, Tastes constant, Prices of related goods constant.\n\n### 4. Demand Schedule\n**Individual Demand Schedule**: One consumer\'s demand at different prices.\n**Market Demand Schedule**: Total demand of all consumers.\n\n### 5. Demand Curve\n* Slopes downward from left to right (Negative slope).\n* Shows inverse relationship between price and quantity.\n\n### 6. Exceptions to Law of Demand\n* **Giffen Goods**: Inferior goods (Increase in price → Increase in demand). Example: Coarse grains.\n* **Veblen Goods**: Prestige/Status goods. Example: Diamonds, Luxury cars.\n* **Speculation**: Expected future price rise.\n* **Emergency**: War, Pandemic.\n* **Necessities**: Medicine, Essential goods.',
+      flashcards: [
+        { id: 'f1', front: 'What is Demand?', back: 'Desire + Ability + Willingness to pay at a given price & time.' },
+        { id: 'f2', front: 'Law of Demand states?', back: 'Price ↑ = Quantity Demanded ↓ (Other things constant).' },
+        { id: 'f3', front: 'What are Giffen Goods?', back: 'Inferior goods where demand increases with price. E.g., Coarse grains.' },
+        { id: 'f4', front: 'What are Veblen Goods?', back: 'Prestige goods bought for status. E.g., Diamonds, Luxury items.' },
+        { id: 'f5', front: 'Demand Curve slope?', back: 'Downward sloping (Negative slope) from left to right.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'Demand curve slopes _______ due to inverse relation.', options: ['Upward', 'Downward', 'Horizontal', 'Vertical'], correctIndex: 1, explanation: 'Shows price and quantity move in opposite directions.' },
+        { id: 'q2', question: '_______ goods are an exception to law of demand.', options: ['Normal', 'Inferior', 'Giffen', 'All'], correctIndex: 2, explanation: 'Giffen goods show positive relationship.' },
+        { id: 'q3', question: 'Diamonds are _______ goods.', options: ['Giffen', 'Veblen', 'Normal', 'Inferior'], correctIndex: 1, explanation: 'Bought for prestige/status.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Demand', content: 'Desire + Ability + Willingness.\nAt given price & time.', color: getReelColor(0) },
+        { id: 'r2', title: 'Law of Demand', content: 'Price ↑ Demand ↓\nPrice ↓ Demand ↑\n(Inverse Relationship)', color: getReelColor(1) },
+        { id: 'r3', title: 'Demand Curve', content: 'Slopes Downward.\nLeft to Right.\nNegative Slope.', color: getReelColor(2) },
+        { id: 'r4', title: 'Giffen Goods', content: 'Price ↑ Demand ↑\nInferior essential goods.\nExample: Bajra, Jowar.', color: getReelColor(3) },
+        { id: 'r5', title: 'Veblen Goods', content: 'Prestige/Snob goods.\nBought for status.\nExample: Diamonds.', color: getReelColor(4) },
+        { id: 'r6', title: 'Exceptions', content: 'Giffen, Veblen, Emergency, Speculation, Necessities.', color: getReelColor(5) }
+      ]
+    },
+    {
+      id: 'eco3b',
+      title: '3B. Elasticity of Demand',
+      description: 'Price, Income, and Cross Elasticity explained.',
+      summary: '**Elasticity**: Responsiveness of demand to change in price/income.\n**Types**: Price (Ed), Income (Ey), Cross (Ec).\n**Formula**: Ed = %ΔQd / %ΔP',
+      detailedNotes: '### 1. Meaning of Elasticity\n**Elasticity of Demand** = Degree of responsiveness of quantity demanded to change in its determinants.\n\n### 2. Price Elasticity of Demand (Ed)\n**Formula**: Ed = %ΔQd / %ΔP = (ΔQ/Q) / (ΔP/P)\n\n**Types**:\n* **Perfectly Elastic (Ed = ∞)**: Horizontal demand curve.\n* **Perfectly Inelastic (Ed = 0)**: Vertical demand curve.\n* **Unitary Elastic (Ed = 1)**: Rectangular hyperbola.\n* **Relatively Elastic (Ed > 1)**: Flatter curve. Luxury goods.\n* **Relatively Inelastic (Ed < 1)**: Steeper curve. Necessities.\n\n### 3. Income Elasticity (Ey)\n**Formula**: Ey = %ΔQd / %ΔY\n* **Positive (Ey > 0)**: Normal goods.\n* **Negative (Ey < 0)**: Inferior goods.\n* **Zero (Ey = 0)**: Neutral goods.\n\n### 4. Cross Elasticity (Ec)\n**Formula**: Ec = %ΔQx / %ΔPy\n* **Positive**: Substitute goods (Tea & Coffee).\n* **Negative**: Complementary goods (Car & Petrol).\n* **Zero**: Unrelated goods.\n\n### 5. Factors Affecting Elasticity\n* Nature of commodity (Necessity vs Luxury)\n* Availability of substitutes\n* Proportion of income spent\n* Time period\n* Habits',
+      flashcards: [
+        { id: 'f1', front: 'Formula for Price Elasticity?', back: 'Ed = %ΔQd / %ΔP' },
+        { id: 'f2', front: 'Ed = ∞ means?', back: 'Perfectly Elastic demand (Horizontal curve).' },
+        { id: 'f3', front: 'Ed = 0 means?', back: 'Perfectly Inelastic demand (Vertical curve).' },
+        { id: 'f4', front: 'Positive Cross Elasticity indicates?', back: 'Substitute goods (e.g., Tea and Coffee).' },
+        { id: 'f5', front: 'Negative Income Elasticity indicates?', back: 'Inferior goods.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'Elasticity of demand for salt is _______.', options: ['Highly elastic', 'Unitary', 'Inelastic', 'Zero'], correctIndex: 2, explanation: 'Salt is a necessity with no close substitutes.' },
+        { id: 'q2', question: 'Perfectly inelastic demand curve is _______.', options: ['Horizontal', 'Vertical', 'Downward', 'Upward'], correctIndex: 1, explanation: 'Quantity remains same regardless of price.' },
+        { id: 'q3', question: 'Tea and Coffee have _______ cross elasticity.', options: ['Positive', 'Negative', 'Zero', 'Infinite'], correctIndex: 0, explanation: 'They are substitutes.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Elasticity', content: 'Responsiveness of Demand to Price Change.', color: getReelColor(0) },
+        { id: 'r2', title: 'Ed Formula', content: 'Ed = %ΔQd / %ΔP\nOR (ΔQ/Q) ÷ (ΔP/P)', color: getReelColor(1) },
+        { id: 'r3', title: 'Ed = ∞', content: 'Perfectly Elastic.\nHorizontal line.\nSlightest price change = huge demand change.', color: getReelColor(2) },
+        { id: 'r4', title: 'Ed = 0', content: 'Perfectly Inelastic.\nVertical line.\nPrice change = No demand change.', color: getReelColor(3) },
+        { id: 'r5', title: 'Ed = 1', content: 'Unitary Elastic.\nRectangular Hyperbola.\n%ΔP = %ΔQd', color: getReelColor(4) },
+        { id: 'r6', title: 'Ed > 1', content: 'Elastic.\nFlatter curve.\nLuxury goods.', color: getReelColor(5) },
+        { id: 'r7', title: 'Ed < 1', content: 'Inelastic.\nSteeper curve.\nNecessities.', color: getReelColor(6) },
+        { id: 'r8', title: 'Income Ey', content: 'Ey > 0 = Normal good.\nEy < 0 = Inferior good.', color: getReelColor(7) },
+        { id: 'r9', title: 'Cross Ec', content: 'Ec > 0 = Substitutes.\nEc < 0 = Complements.', color: getReelColor(8) }
+      ]
+    },
+    {
+      id: 'eco4',
+      title: '4. Supply Analysis',
+      description: 'Law of Supply, Supply Schedule, Supply Curve.',
+      summary: '**Supply**: Quantity a seller is willing to sell.\n**Law of Supply**: Price ↑ = Supply ↑ (Direct relationship).\n**Supply Curve**: Upward sloping.',
+      detailedNotes: '### 1. Meaning of Supply\n**Supply** = Quantity of a commodity that a producer is willing and able to offer for sale at different prices during a given period.\n\n### 2. Supply Function\nSx = f(Px, Pf, T, Gp, N, E, G)\nWhere:\n* Px = Price of commodity\n* Pf = Price of factors (Inputs)\n* T = Technology\n* Gp = Government policy\n* N = Number of firms\n* E = Expectations\n* G = Goals of firm\n\n### 3. Law of Supply\n**Statement**: "Other things remaining constant, when price rises, quantity supplied also rises and vice versa."\n**Assumptions**: Cost of production constant, Technology unchanged, No change in government policy.\n\n### 4. Supply Schedule\n* **Individual Supply Schedule**: One producer\'s supply at different prices.\n* **Market Supply Schedule**: Total supply of all producers.\n\n### 5. Supply Curve\n* Slopes upward from left to right (Positive slope).\n* Shows direct relationship between price and quantity supplied.\n\n### 6. Exceptions to Law of Supply\n* **Agricultural Products**: Supply depends on weather.\n* **Rare/Antique Items**: Fixed supply.\n* **Labor Supply**: After a point, higher wages may reduce labor supply (Backward bending).\n* **Perishable Goods**: Must be sold regardless of price.',
+      flashcards: [
+        { id: 'f1', front: 'What is Supply?', back: 'Quantity a producer is willing and able to sell at given prices.' },
+        { id: 'f2', front: 'Law of Supply states?', back: 'Price ↑ = Quantity Supplied ↑ (Direct relationship).' },
+        { id: 'f3', front: 'Supply Curve slope?', back: 'Upward sloping (Positive slope) from left to right.' },
+        { id: 'f4', front: 'Exception: Labor Supply curve?', back: 'Backward bending at higher wage levels.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'Supply curve slopes _______ due to direct relation.', options: ['Upward', 'Downward', 'Horizontal', 'Vertical'], correctIndex: 0, explanation: 'Price and quantity move in same direction.' },
+        { id: 'q2', question: 'Supply of perishable goods is _______.', options: ['Elastic', 'Inelastic', 'Unitary', 'Zero'], correctIndex: 1, explanation: 'Must be sold quickly regardless of price.' },
+        { id: 'q3', question: 'At higher wages, labor supply curve becomes _______.', options: ['Vertical', 'Backward bending', 'Horizontal', 'Steeper'], correctIndex: 1, explanation: 'Workers prefer leisure over extra income.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Supply', content: 'Quantity seller is willing to sell.\nAt given price & time.', color: getReelColor(0) },
+        { id: 'r2', title: 'Law of Supply', content: 'Price ↑ Supply ↑\nPrice ↓ Supply ↓\n(Direct Relationship)', color: getReelColor(1) },
+        { id: 'r3', title: 'Supply Curve', content: 'Slopes Upward.\nLeft to Right.\nPositive Slope.', color: getReelColor(2) },
+        { id: 'r4', title: 'vs Demand Curve', content: 'Demand: Downward ↘\nSupply: Upward ↗', color: getReelColor(3) },
+        { id: 'r5', title: 'Exceptions', content: 'Agriculture, Antiques, Labor (backward), Perishables.', color: getReelColor(4) }
+      ]
+    },
+    {
+      id: 'eco5',
+      title: '5. Forms of Market',
+      description: 'Perfect Competition, Monopoly, Monopolistic Competition, Oligopoly.',
+      summary: '**Market**: Place where buyers and sellers interact.\n**Types**: Perfect Competition, Monopoly, Monopolistic Competition, Oligopoly.',
+      detailedNotes: '### 1. Meaning of Market\n**Market** = Arrangement where buyers and sellers come in contact for exchange of goods/services.\n\n### 2. Perfect Competition\n**Features**:\n* Large number of buyers and sellers\n* Homogeneous product\n* Free entry and exit\n* Perfect knowledge\n* No transportation cost\n* Price taker (firm accepts market price)\n* AR = MR = Price (Horizontal demand curve)\n\n### 3. Monopoly\n**Features**:\n* Single seller, many buyers\n* No close substitutes\n* Entry barriers\n* Price maker\n* AR > MR\n* Downward sloping demand curve\n\n**Types**: Natural, Legal, Voluntary.\n\n### 4. Monopolistic Competition\n**Features** (E.H. Chamberlin):\n* Large number of sellers\n* Product differentiation (Brand, Quality)\n* Free entry and exit\n* Selling costs (Advertising)\n* AR > MR\n* Downward sloping demand curve\n\n### 5. Oligopoly\n**Features**:\n* Few large sellers\n* Interdependence in decision making\n* Barriers to entry\n* Products may be homogeneous or differentiated\n* Price rigidity (Kinked demand curve)\n\n**Types**: Pure Oligopoly, Differentiated Oligopoly, Collusive, Non-collusive.',
+      flashcards: [
+        { id: 'f1', front: 'What is Perfect Competition?', back: 'Many buyers & sellers, homogeneous product, price taker.' },
+        { id: 'f2', front: 'What is Monopoly?', back: 'Single seller, no substitutes, price maker.' },
+        { id: 'f3', front: 'Who gave Monopolistic Competition theory?', back: 'E.H. Chamberlin.' },
+        { id: 'f4', front: 'Feature of Oligopoly?', back: 'Few sellers, interdependence, price rigidity.' },
+        { id: 'f5', front: 'In Perfect Competition, firm is?', back: 'Price Taker (accepts market price).' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'In perfect competition, AR = MR = _______.', options: ['TC', 'AC', 'Price', 'Profit'], correctIndex: 2, explanation: 'Horizontal demand curve means price is constant.' },
+        { id: 'q2', question: 'Monopoly has _______ seller(s).', options: ['Many', 'Few', 'Single', 'Two'], correctIndex: 2, explanation: 'Mono = One.' },
+        { id: 'q3', question: 'Kinked demand curve is found in _______.', options: ['Perfect Competition', 'Monopoly', 'Monopolistic', 'Oligopoly'], correctIndex: 3, explanation: 'Due to price rigidity in oligopoly.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Perfect Competition', content: 'Many sellers.\nHomogeneous product.\nPrice Taker.', color: getReelColor(0) },
+        { id: 'r2', title: 'Monopoly', content: 'Single seller.\nNo substitutes.\nPrice Maker.', color: getReelColor(1) },
+        { id: 'r3', title: 'Monopolistic', content: 'Many sellers.\nDifferentiated products.\nSelling costs (Ads).', color: getReelColor(2) },
+        { id: 'r4', title: 'Oligopoly', content: 'Few large sellers.\nInterdependence.\nKinked Demand Curve.', color: getReelColor(3) },
+        { id: 'r5', title: 'AR = MR', content: 'Only in Perfect Competition.\nHorizontal demand curve.', color: getReelColor(4) },
+        { id: 'r6', title: 'AR > MR', content: 'In Monopoly, Monopolistic, Oligopoly.\nDownward sloping demand.', color: getReelColor(5) }
+      ]
+    },
+    {
+      id: 'eco6',
+      title: '6. Index Numbers',
+      description: 'Construction, Types, and Uses of Index Numbers.',
+      summary: '**Index Number**: Statistical measure showing relative change.\n**Base Year**: Reference year (value = 100).\n**Methods**: Simple, Weighted (Laspeyre, Paasche, Fisher).',
+      detailedNotes: '### 1. Meaning\n**Index Number** = Statistical device to measure relative change in a variable or group of variables over time, place, or other characteristics.\n\n### 2. Features\n* Expressed in percentages\n* Specialized averages\n* Measure relative changes\n* Time reversal and factor reversal tests\n\n### 3. Types of Index Numbers\n* **Price Index**: Measures change in prices.\n* **Quantity Index**: Measures change in quantity.\n* **Value Index**: Measures change in value (P × Q).\n\n### 4. Methods of Construction\n**A. Simple/Unweighted Methods**:\n1. Simple Aggregate Method: Σp1/Σp0 × 100\n2. Simple Average of Price Relatives: ΣR/N where R = p1/p0 × 100\n\n**B. Weighted Methods**:\n1. **Laspeyre\'s Index**: Uses Base year quantities (q0). Formula: Σp1q0/Σp0q0 × 100\n2. **Paasche\'s Index**: Uses Current year quantities (q1). Formula: Σp1q1/Σp0q1 × 100\n3. **Fisher\'s Ideal Index**: Geometric mean of Laspeyre & Paasche. Formula: √(L × P) × 100\n\n### 5. Uses\n* Measures inflation\n* Policy formulation\n* Wage adjustment (Dearness Allowance)\n* Deflating money values\n* Comparing living standards',
+      flashcards: [
+        { id: 'f1', front: 'What is Index Number?', back: 'Statistical measure of relative change over time/place.' },
+        { id: 'f2', front: 'Laspeyre\'s Index uses?', back: 'Base year quantities (q0).' },
+        { id: 'f3', front: 'Paasche\'s Index uses?', back: 'Current year quantities (q1).' },
+        { id: 'f4', front: 'Fisher\'s Ideal Index is?', back: 'Geometric mean of Laspeyre and Paasche.' },
+        { id: 'f5', front: 'CPI stands for?', back: 'Consumer Price Index.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'Laspeyre\'s index uses _______ year quantities.', options: ['Base', 'Current', 'Both', 'None'], correctIndex: 0, explanation: 'q0 = base year quantities.' },
+        { id: 'q2', question: 'Fisher\'s Index is called _______ because it satisfies tests.', options: ['Ideal', 'Simple', 'Basic', 'Complex'], correctIndex: 0, explanation: 'Satisfies time and factor reversal tests.' },
+        { id: 'q3', question: 'Index numbers are _______ averages.', options: ['Simple', 'Specialized', 'Arithmetic', 'Geometric'], correctIndex: 1, explanation: 'They are specialized measures.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Index Number', content: 'Measures relative change.\nBase year = 100.', color: getReelColor(0) },
+        { id: 'r2', title: 'Laspeyre', content: 'Uses Base year quantities (q0).\nΣp1q0/Σp0q0 × 100', color: getReelColor(1) },
+        { id: 'r3', title: 'Paasche', content: 'Uses Current year quantities (q1).\nΣp1q1/Σp0q1 × 100', color: getReelColor(2) },
+        { id: 'r4', title: 'Fisher\'s Ideal', content: '√(Laspeyre × Paasche)\nSatisfies both tests.', color: getReelColor(3) },
+        { id: 'r5', title: 'CPI', content: 'Consumer Price Index.\nMeasures cost of living.\nUsed for DA calculation.', color: getReelColor(4) },
+        { id: 'r6', title: 'WPI', content: 'Wholesale Price Index.\nMeasures wholesale prices.\nUsed for inflation.', color: getReelColor(5) }
+      ]
+    },
+    {
+      id: 'eco7',
+      title: '7. National Income',
+      description: 'Concepts, Methods, and Importance of National Income.',
+      summary: '**National Income**: Total value of goods & services produced in a year.\n**Methods**: Product, Income, Expenditure.\n**Concepts**: GDP, GNP, NNP, NI, PI, DI.',
+      detailedNotes: '### 1. Meaning\n**National Income** = Sum total of all goods and services produced in a country during one year, measured in money terms.\n\n### 2. Important Concepts\n* **GDP (Gross Domestic Product)**: Total value within domestic territory.\n* **GNP (Gross National Product)**: GDP + Net Factor Income from Abroad (NFIA).\n* **NNP (Net National Product)**: GNP - Depreciation.\n* **NI (National Income)**: NNP at Factor Cost.\n* **PI (Personal Income)**: Income received by individuals.\n* **DI (Disposable Income)**: PI - Direct Taxes.\n\n### 3. Methods of Calculation\n**A. Product/Output Method**:\nNI = Σ(Value of output of all sectors) - Intermediate Consumption\n\n**B. Income Method**:\nNI = Wages + Rent + Interest + Profit\n\n**C. Expenditure Method**:\nNI = C + I + G + (X - M)\nWhere: C = Consumption, I = Investment, G = Govt Expenditure, X = Exports, M = Imports\n\n### 4. Importance\n* Measures economic progress\n* Basis for planning\n* International comparisons\n* Per capita income calculation\n* Distribution of income',
+      flashcards: [
+        { id: 'f1', front: 'GDP stands for?', back: 'Gross Domestic Product.' },
+        { id: 'f2', front: 'GNP = GDP + ?', back: 'Net Factor Income from Abroad (NFIA).' },
+        { id: 'f3', front: 'NNP = GNP - ?', back: 'Depreciation.' },
+        { id: 'f4', front: 'Three methods of calculating NI?', back: 'Product, Income, Expenditure methods.' },
+        { id: 'f5', front: 'Disposable Income = ?', back: 'Personal Income - Direct Taxes.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'GDP + NFIA = _______.', options: ['NNP', 'GNP', 'NI', 'DI'], correctIndex: 1, explanation: 'GNP includes income from abroad.' },
+        { id: 'q2', question: 'GNP - Depreciation = _______.', options: ['GDP', 'NNP', 'NI', 'PI'], correctIndex: 1, explanation: 'Net = Gross - Depreciation.' },
+        { id: 'q3', question: 'Expenditure method: NI = C + I + G + _______.', options: ['(X-M)', '(M-X)', 'X', 'M'], correctIndex: 0, explanation: 'Net exports = Exports - Imports.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'GDP', content: 'Gross Domestic Product.\nWithin domestic territory.\nBy residents & non-residents.', color: getReelColor(0) },
+        { id: 'r2', title: 'GNP', content: 'GDP + NFIA.\nIncludes income from abroad.', color: getReelColor(1) },
+        { id: 'r3', title: 'NNP', content: 'GNP - Depreciation.\nNet = after wear & tear.', color: getReelColor(2) },
+        { id: 'r4', title: '3 Methods', content: 'Product Method.\nIncome Method.\nExpenditure Method.', color: getReelColor(3) },
+        { id: 'r5', title: 'Income Method', content: 'Wages + Rent + Interest + Profit.', color: getReelColor(4) },
+        { id: 'r6', title: 'Expenditure', content: 'C + I + G + (X - M)\nConsumption + Investment + Govt + Net Exports.', color: getReelColor(5) }
+      ]
+    },
+    {
+      id: 'eco8',
+      title: '8. Public Finance in India',
+      description: 'Government Budget, Revenue, Expenditure, and Fiscal Policy.',
+      summary: '**Public Finance**: Study of government\'s income & expenditure.\n**Budget**: Annual financial statement.\n**Revenue**: Tax & Non-tax. **Expenditure**: Revenue & Capital.',
+      detailedNotes: '### 1. Meaning\n**Public Finance** = Study of how government raises revenue and incurs expenditure for the welfare of society.\n\n### 2. Government Budget\n**Budget** = Annual financial statement of estimated receipts and expenditure.\nPresented on 1st February.\n\n### 3. Types of Revenue\n**A. Tax Revenue**:\n* Direct Tax: Income Tax, Corporate Tax, Wealth Tax.\n* Indirect Tax: GST, Customs Duty, Excise Duty.\n\n**B. Non-Tax Revenue**:\n* Fees, Fines, Licenses, Dividends, Interest.\n\n### 4. Types of Expenditure\n**A. Revenue Expenditure**:\n* Day-to-day running expenses.\n* No asset creation.\n* Examples: Salaries, Subsidies, Interest payments.\n\n**B. Capital Expenditure**:\n* Asset creation.\n* Long-term benefits.\n* Examples: Construction, Machinery, Loans given.\n\n### 5. Types of Deficit\n* **Revenue Deficit**: Revenue Expenditure - Revenue Receipts.\n* **Fiscal Deficit**: Total Expenditure - Total Receipts (except borrowings).\n* **Primary Deficit**: Fiscal Deficit - Interest Payments.\n\n### 6. Fiscal Policy\nGovernment\'s policy regarding revenue and expenditure to achieve economic goals.',
+      flashcards: [
+        { id: 'f1', front: 'When is Union Budget presented?', back: '1st February.' },
+        { id: 'f2', front: 'Examples of Direct Tax?', back: 'Income Tax, Corporate Tax, Wealth Tax.' },
+        { id: 'f3', front: 'Revenue Deficit = ?', back: 'Revenue Expenditure - Revenue Receipts.' },
+        { id: 'f4', front: 'Fiscal Deficit = ?', back: 'Total Expenditure - Total Receipts (excluding borrowings).' },
+        { id: 'f5', front: 'Primary Deficit = ?', back: 'Fiscal Deficit - Interest Payments.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'Union Budget is presented on _______.', options: ['Jan 1', 'Feb 1', 'Mar 1', 'Apr 1'], correctIndex: 1, explanation: 'Changed from last day of February.' },
+        { id: 'q2', question: 'GST is a _______ tax.', options: ['Direct', 'Indirect', 'Progressive', 'Regressive'], correctIndex: 1, explanation: 'Tax burden can be shifted.' },
+        { id: 'q3', question: 'Fiscal Deficit - Interest = _______ Deficit.', options: ['Revenue', 'Primary', 'Budget', 'Trade'], correctIndex: 1, explanation: 'Primary shows borrowing for non-interest purposes.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Public Finance', content: 'Govt income & expenditure.\nFor public welfare.', color: getReelColor(0) },
+        { id: 'r2', title: 'Budget', content: 'Annual Financial Statement.\nPresented: 1st February.', color: getReelColor(1) },
+        { id: 'r3', title: 'Direct Tax', content: 'Cannot be shifted.\nIncome Tax, Corporate Tax.', color: getReelColor(2) },
+        { id: 'r4', title: 'Indirect Tax', content: 'Can be shifted.\nGST, Customs, Excise.', color: getReelColor(3) },
+        { id: 'r5', title: 'Revenue Exp', content: 'Day-to-day expenses.\nNo asset creation.\nSalaries, Subsidies.', color: getReelColor(4) },
+        { id: 'r6', title: 'Capital Exp', content: 'Asset creation.\nLong-term.\nConstruction, Loans.', color: getReelColor(5) },
+        { id: 'r7', title: 'Deficits', content: 'Revenue Deficit\nFiscal Deficit\nPrimary Deficit', color: getReelColor(6) }
+      ]
+    },
+    {
+      id: 'eco9',
+      title: '9. Money Market and Capital Market',
+      description: 'Financial markets for short-term and long-term funds.',
+      summary: '**Money Market**: Short-term funds (<1 year).\n**Capital Market**: Long-term funds (>1 year).\n**Instruments**: T-Bills, CP, CD (Money); Shares, Debentures (Capital).',
+      detailedNotes: '### 1. Money Market\n**Definition**: Market for short-term funds (less than 1 year).\n\n**Features**:\n* Short-term lending/borrowing\n* High liquidity\n* Low risk\n* No fixed location\n* Regulated by RBI\n\n**Instruments**:\n* **Treasury Bills (T-Bills)**: Govt securities (91, 182, 364 days).\n* **Commercial Paper (CP)**: Unsecured promissory note by companies.\n* **Certificate of Deposit (CD)**: Issued by banks.\n* **Call Money**: Overnight lending between banks.\n* **Repo Rate**: Rate at which RBI lends to banks.\n* **Reverse Repo**: Rate at which RBI borrows from banks.\n\n### 2. Capital Market\n**Definition**: Market for long-term funds (more than 1 year).\n\n**Components**:\n**A. Primary Market (New Issues)**:\n* IPO, FPO, Rights Issue, Private Placement.\n\n**B. Secondary Market (Stock Exchange)**:\n* BSE (Bombay Stock Exchange) - Oldest in Asia.\n* NSE (National Stock Exchange).\n* SEBI regulates capital market.\n\n**Instruments**:\n* Equity Shares, Preference Shares, Debentures, Bonds.\n\n### 3. Difference\n| Money Market | Capital Market |\n|-------------|----------------|\n| Short-term | Long-term |\n| RBI regulates | SEBI regulates |\n| Low risk | Higher risk |\n| Banks, RBI | Stock exchanges |',
+      flashcards: [
+        { id: 'f1', front: 'Money Market is for?', back: 'Short-term funds (less than 1 year).' },
+        { id: 'f2', front: 'Capital Market is for?', back: 'Long-term funds (more than 1 year).' },
+        { id: 'f3', front: 'Who regulates Money Market?', back: 'RBI (Reserve Bank of India).' },
+        { id: 'f4', front: 'Who regulates Capital Market?', back: 'SEBI (Securities and Exchange Board of India).' },
+        { id: 'f5', front: 'Oldest Stock Exchange in Asia?', back: 'BSE (Bombay Stock Exchange) - 1875.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'T-Bills are _______ market instruments.', options: ['Capital', 'Money', 'Foreign', 'Commodity'], correctIndex: 1, explanation: 'Short-term govt securities.' },
+        { id: 'q2', question: 'IPO is part of _______ market.', options: ['Primary', 'Secondary', 'Money', 'Tertiary'], correctIndex: 0, explanation: 'Initial Public Offering - new issue.' },
+        { id: 'q3', question: 'SEBI regulates _______ market.', options: ['Money', 'Capital', 'Foreign Exchange', 'Commodity'], correctIndex: 1, explanation: 'Securities market regulator.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Money Market', content: 'Short-term funds.\n< 1 year.\nRBI regulates.', color: getReelColor(0) },
+        { id: 'r2', title: 'Capital Market', content: 'Long-term funds.\n> 1 year.\nSEBI regulates.', color: getReelColor(1) },
+        { id: 'r3', title: 'T-Bills', content: 'Treasury Bills.\nGovt securities.\n91, 182, 364 days.', color: getReelColor(2) },
+        { id: 'r4', title: 'Repo Rate', content: 'RBI lends to banks.\nBorrowing rate for banks.', color: getReelColor(3) },
+        { id: 'r5', title: 'Primary Market', content: 'New Issues.\nIPO, FPO, Rights Issue.', color: getReelColor(4) },
+        { id: 'r6', title: 'Secondary Market', content: 'Existing securities.\nBSE, NSE.\nStock trading.', color: getReelColor(5) },
+        { id: 'r7', title: 'BSE', content: 'Bombay Stock Exchange.\nOldest in Asia (1875).\nSensex index.', color: getReelColor(6) },
+        { id: 'r8', title: 'NSE', content: 'National Stock Exchange.\nNifty 50 index.\nElectronic trading.', color: getReelColor(7) }
+      ]
+    },
+    {
+      id: 'eco10',
+      title: '10. Foreign Trade of India',
+      description: 'Imports, Exports, Balance of Trade, and Trade Policy.',
+      summary: '**Foreign Trade**: Exchange of goods/services across borders.\n**Balance of Trade**: Exports - Imports.\n**India\'s Trade Partners**: USA, China, UAE, Saudi Arabia.',
+      detailedNotes: '### 1. Meaning\n**Foreign Trade** = Exchange of goods and services between countries.\n\n**Types**:\n* **Import Trade**: Buying from other countries.\n* **Export Trade**: Selling to other countries.\n* **Entrepot Trade**: Import for re-export.\n\n### 2. Balance of Trade (BOT)\n**BOT = Exports - Imports** (Visible items only)\n* **Favorable/Surplus**: Exports > Imports\n* **Unfavorable/Deficit**: Imports > Exports\n\n### 3. Balance of Payments (BOP)\nRecord of all economic transactions with rest of world.\n* Current Account: Trade in goods, services, transfers.\n* Capital Account: Capital flows, investments.\n\n### 4. India\'s Major Exports\n* Petroleum products\n* Gems & Jewelry\n* Pharmaceuticals\n* IT Services\n* Textiles & Garments\n* Agricultural products\n\n### 5. India\'s Major Imports\n* Crude Oil\n* Gold & Precious metals\n* Electronic goods\n* Machinery\n* Chemicals\n\n### 6. Trade Policy\n* Export Promotion: SEZ, Duty Drawback, Export subsidies.\n* Import Substitution: Make in India.\n* Free Trade Agreements (FTAs).\n\n### 7. Major Trade Partners\nUSA, China, UAE, Saudi Arabia, Germany, Singapore.',
+      flashcards: [
+        { id: 'f1', front: 'Balance of Trade = ?', back: 'Exports - Imports (Visible items only).' },
+        { id: 'f2', front: 'Favorable BOT means?', back: 'Exports > Imports (Trade Surplus).' },
+        { id: 'f3', front: 'India\'s largest import?', back: 'Crude Oil / Petroleum.' },
+        { id: 'f4', front: 'What is Entrepot Trade?', back: 'Import goods for re-export to another country.' },
+        { id: 'f5', front: 'SEZ stands for?', back: 'Special Economic Zone.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'India\'s BOT is generally _______.', options: ['Favorable', 'Unfavorable', 'Zero', 'Positive'], correctIndex: 1, explanation: 'India imports more than it exports.' },
+        { id: 'q2', question: 'Entrepot trade involves _______.', options: ['Only import', 'Only export', 'Import for re-export', 'Domestic trade'], correctIndex: 2, explanation: 'Singapore is famous for entrepot trade.' },
+        { id: 'q3', question: 'India\'s largest trading partner is _______.', options: ['USA', 'China', 'UAE', 'UK'], correctIndex: 0, explanation: 'USA is the largest trade partner by value.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Foreign Trade', content: 'Exchange between countries.\nImport + Export.', color: getReelColor(0) },
+        { id: 'r2', title: 'BOT', content: 'Balance of Trade.\nExports - Imports.\nVisible items only.', color: getReelColor(1) },
+        { id: 'r3', title: 'Favorable', content: 'Exports > Imports.\nTrade Surplus.\nGood for economy.', color: getReelColor(2) },
+        { id: 'r4', title: 'Unfavorable', content: 'Imports > Exports.\nTrade Deficit.\nIndia\'s usual position.', color: getReelColor(3) },
+        { id: 'r5', title: 'Major Exports', content: 'Petroleum products.\nGems & Jewelry.\nIT Services.\nPharma.', color: getReelColor(4) },
+        { id: 'r6', title: 'Major Imports', content: 'Crude Oil.\nGold.\nElectronics.\nMachinery.', color: getReelColor(5) },
+        { id: 'r7', title: 'Trade Partners', content: 'USA, China, UAE.\nSaudi Arabia, Germany.', color: getReelColor(6) },
+        { id: 'r8', title: 'SEZ', content: 'Special Economic Zone.\nExport promotion.\nTax benefits.', color: getReelColor(7) }
+      ]
+    }
   ]
 };
 

@@ -1,14 +1,22 @@
 import React from 'react';
 import { Reel } from '../types';
-import { Share2, Bookmark, Heart, X, ArrowLeft } from 'lucide-react';
+import { Share2, Bookmark, Heart, ArrowLeft, CheckCircle } from 'lucide-react';
 
 interface ReelViewProps {
   reels: Reel[];
   onClose: () => void;
+  onComplete?: (viewed: number, total: number) => void;
 }
 
-const ReelView: React.FC<ReelViewProps> = ({ reels, onClose }) => {
+const ReelView: React.FC<ReelViewProps> = ({ reels, onClose, onComplete }) => {
   if (reels.length === 0) return <div className="p-10 text-center text-white">No Reels Available</div>;
+
+  const handleComplete = () => {
+    if (onComplete) {
+      onComplete(reels.length, reels.length);
+    }
+    onClose();
+  };
 
   return (
     <div className="fixed inset-0 z-50 bg-black flex flex-col font-sans">
@@ -20,6 +28,13 @@ const ReelView: React.FC<ReelViewProps> = ({ reels, onClose }) => {
           <ArrowLeft size={24} />
         </button>
         <div className="text-white font-bold tracking-widest text-sm opacity-80 pt-2">REELS MODE</div>
+        <button 
+          onClick={handleComplete}
+          className="text-white bg-emerald-500/80 p-3 rounded-full backdrop-blur-md hover:bg-emerald-500 transition-colors flex items-center gap-2"
+          title="Mark all viewed"
+        >
+          <CheckCircle size={20} />
+        </button>
       </div>
 
       <div className="flex-1 overflow-y-scroll snap-y snap-mandatory no-scrollbar h-screen w-full">

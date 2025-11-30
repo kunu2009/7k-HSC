@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
@@ -9,6 +9,12 @@ import MCQView from './components/MCQView';
 import ReelView from './components/ReelView';
 import LongAnswerView from './components/LongAnswerView';
 import MarkdownRenderer from './components/MarkdownRenderer';
+import CountdownTimer from './components/CountdownTimer';
+import ProgressDashboard from './components/ProgressDashboard';
+import StudyPlanner from './components/StudyPlanner';
+import PreviousMarksInput from './components/PreviousMarksInput';
+import WeaknessAnalysis from './components/WeaknessAnalysis';
+import { useProgress } from './hooks/useProgress';
 import { explainConcept } from './services/geminiService';
 
 // --- Types ---
@@ -19,7 +25,9 @@ type ViewState =
   | 'CHAPTER_DETAIL'
   | 'STUDY_MODE'
   | 'SYLLABUS_VIEW'
-  | 'PAPER_PATTERN_VIEW';
+  | 'PAPER_PATTERN_VIEW'
+  | 'PROGRESS_VIEW'
+  | 'STUDY_PLANNER';
 
 const App: React.FC = () => {
   const [view, setView] = useState<ViewState>('STREAM_SELECT');
@@ -37,6 +45,18 @@ const App: React.FC = () => {
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(false);
+  
+  // Progress Tracking
+  const { 
+    getChapterProgress, 
+    updateMCQProgress, 
+    updateFlashcardProgress,
+    updateReelsProgress,
+    markSummaryRead,
+    markNotesRead,
+    getSubjectCompletion,
+    getStudyStats 
+  } = useProgress();
 
   useEffect(() => {
     if (darkMode) {
@@ -84,10 +104,19 @@ const App: React.FC = () => {
     } else if (view === 'SUBJECT_DETAIL') {
       setView('DASHBOARD');
       setSelectedSubject(null);
-    } else if (view === 'DASHBOARD') {
+    } else if (view === 'DASHBOARD' || view === 'PROGRESS_VIEW' || view === 'STUDY_PLANNER') {
       setView('STREAM_SELECT');
       setSelectedStream(null);
     }
+  };
+
+  // MCQ completion handler
+  const handleMCQComplete = (score: number, total: number) => {
+    if (selectedChapter && selectedSubject) {
+      updateMCQProgress(selectedChapter.id, selectedSubject.id, score, total);
+    }
+    setView('CHAPTER_DETAIL');
+    setStudyMode(null);
   };
 
   const handleAiExplain = async () => {
@@ -150,6 +179,24 @@ const App: React.FC = () => {
                  >
                     <Home size={22} className="shrink-0" />
                     <span className="font-semibold text-sm hidden sm:block">Home</span>
+                 </button>
+
+                 {/* Progress View */}
+                 <button 
+                   onClick={() => setView('PROGRESS_VIEW')}
+                   className={`w-full p-3 rounded-xl flex items-center gap-3 transition-colors ${view === 'PROGRESS_VIEW' ? 'bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300' : 'hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300'}`}
+                 >
+                    <BarChart3 size={22} className="shrink-0" />
+                    <span className="font-semibold text-sm hidden sm:block">Progress</span>
+                 </button>
+
+                 {/* Study Planner */}
+                 <button 
+                   onClick={() => setView('STUDY_PLANNER')}
+                   className={`w-full p-3 rounded-xl flex items-center gap-3 transition-colors ${view === 'STUDY_PLANNER' ? 'bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-300' : 'hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300'}`}
+                 >
+                    <ClipboardList size={22} className="shrink-0" />
+                    <span className="font-semibold text-sm hidden sm:block">Study Plan</span>
                  </button>
 
                  {/* Dark Mode Toggle */}
@@ -302,6 +349,15 @@ const App: React.FC = () => {
         </div>
 
         <div className="p-6">
+          {/* Countdown Timer */}
+          <CountdownTimer />
+
+          {/* Previous Marks Input Section */}
+          <PreviousMarksInput />
+
+          {/* Weakness Analysis Section */}
+          <WeaknessAnalysis />
+
           <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">
             <BookOpen size={20} className="text-indigo-600 dark:text-indigo-400" />
             Your Subjects
@@ -665,7 +721,17 @@ const App: React.FC = () => {
     if (!selectedChapter || !studyMode) return null;
 
     if (studyMode === ContentType.REELS) {
-      return <ReelView reels={selectedChapter.reels} onClose={goBack} />;
+      return (
+        <ReelView 
+          reels={selectedChapter.reels} 
+          onClose={goBack} 
+          onComplete={(viewed, total) => {
+            if (selectedChapter && selectedSubject) {
+              updateReelsProgress(selectedChapter.id, selectedSubject.id, viewed, total);
+            }
+          }}
+        />
+      );
     }
 
     if (studyMode === ContentType.EIGHT_MARKER && selectedChapter.longAnswers) {
@@ -702,17 +768,40 @@ const App: React.FC = () => {
                <div className="w-full max-w-md space-y-8">
                  <div className="text-center mb-4">
                    <p className="text-slate-400 text-sm font-medium">Tap card to flip • Scroll for next</p>
+                   <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">
+                     {selectedChapter.flashcards.length} cards to review
+                   </p>
                  </div>
                  {selectedChapter.flashcards.map((card) => (
                    <Flashcard key={card.id} card={card} />
                  ))}
+                 
+                 {/* Complete Flashcards Button */}
+                 <div className="pt-8 text-center">
+                   <button
+                     onClick={() => {
+                       if (selectedChapter && selectedSubject) {
+                         updateFlashcardProgress(
+                           selectedChapter.id, 
+                           selectedSubject.id, 
+                           selectedChapter.flashcards.length, 
+                           selectedChapter.flashcards.length
+                         );
+                       }
+                       goBack();
+                     }}
+                     className="px-8 py-4 bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-bold rounded-2xl shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all transform hover:scale-105"
+                   >
+                     ✅ Mark All Reviewed
+                   </button>
+                 </div>
                </div>
             </div>
           )}
 
           {studyMode === ContentType.MCQ && (
              <div className="h-full">
-               <MCQView questions={selectedChapter.mcqs} onComplete={() => goBack()} />
+               <MCQView questions={selectedChapter.mcqs} onComplete={handleMCQComplete} />
              </div>
           )}
 
@@ -723,9 +812,25 @@ const App: React.FC = () => {
                    <MarkdownRenderer content={selectedChapter.summary} />
                 </div>
                 
-                <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800">
+                <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 mb-6">
                    <div className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded-full text-xs font-bold uppercase tracking-wider mb-4">Deep Dive</div>
                    <MarkdownRenderer content={selectedChapter.detailedNotes} />
+                </div>
+                
+                {/* Mark as Read Button */}
+                <div className="text-center pt-4">
+                  <button
+                    onClick={() => {
+                      if (selectedChapter && selectedSubject) {
+                        markSummaryRead(selectedChapter.id, selectedSubject.id);
+                        markNotesRead(selectedChapter.id, selectedSubject.id);
+                      }
+                      goBack();
+                    }}
+                    className="px-8 py-4 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-bold rounded-2xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 transition-all transform hover:scale-105"
+                  >
+                    📚 Mark as Read
+                  </button>
                 </div>
              </div>
           )}
@@ -801,6 +906,120 @@ const App: React.FC = () => {
     </div>
   );
 
+  const renderProgressView = () => {
+    const stats = getStudyStats();
+    
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-24 font-sans transition-colors">
+        <div className="bg-white dark:bg-slate-900 px-6 pt-6 pb-4 sticky top-0 z-20 shadow-sm border-b border-slate-100 dark:border-slate-800">
+          <div className="flex justify-between items-center mb-4">
+            <button onClick={goBack} className="p-2 -ml-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full text-slate-600 dark:text-slate-300">
+              <ArrowLeft size={22} />
+            </button>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center">
+                <BarChart3 size={16} />
+              </div>
+            </div>
+          </div>
+          <h1 className="text-3xl font-black text-slate-800 dark:text-white">Your Progress</h1>
+          <p className="text-slate-500 dark:text-slate-400 font-medium">Track your study journey</p>
+        </div>
+
+        <div className="p-6">
+          <ProgressDashboard stats={stats} />
+          
+          {/* Subject-wise Progress */}
+          {selectedStream && MOCK_DATA[selectedStream] && (
+            <div className="mt-8">
+              <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4">Subject Progress</h2>
+              <div className="space-y-4">
+                {MOCK_DATA[selectedStream].subjects.map((sub) => {
+                  const completion = getSubjectCompletion(sub.id);
+                  const progressPercent = Math.round(completion * 100);
+                  
+                  // Dynamic Icon Mapping
+                  const Icon = sub.id === 'eco' ? TrendingUp : 
+                               sub.id === 'ocm' ? Briefcase : 
+                               sub.id === 'sp' ? PenTool : 
+                               sub.id === 'bk' || sub.id === 'math' ? Calculator :
+                               sub.id === 'his' ? BookOpen :
+                               sub.id === 'geo' ? Globe :
+                               sub.id === 'phy' ? Atom :
+                               sub.id === 'bio' ? Dna :
+                               sub.id === 'chem' ? FlaskConical :
+                               sub.id === 'soc' ? Users :
+                               sub.id === 'pol' ? Building2 :
+                               sub.id === 'eng' ? BookA : Brain;
+                  
+                  return (
+                    <div 
+                      key={sub.id}
+                      className="bg-white dark:bg-slate-900 p-4 rounded-2xl border border-slate-100 dark:border-slate-800"
+                    >
+                      <div className="flex items-center gap-4 mb-3">
+                        <div className={`p-3 rounded-xl ${sub.color} text-white`}>
+                          <Icon size={20} />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="font-bold text-slate-800 dark:text-white">{sub.name}</h3>
+                          <p className="text-sm text-slate-500 dark:text-slate-400">{sub.chapters.length} chapters</p>
+                        </div>
+                        <div className="text-right">
+                          <span className="text-2xl font-black text-emerald-600 dark:text-emerald-400">{progressPercent}%</span>
+                        </div>
+                      </div>
+                      <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                        <div 
+                          className={`h-full ${sub.color} transition-all duration-500`}
+                          style={{ width: `${progressPercent}%` }}
+                        />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  const renderStudyPlanner = () => {
+    const data = selectedStream ? MOCK_DATA[selectedStream] : null;
+    const prelimsDate = new Date('2026-01-15');
+    
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-24 font-sans transition-colors">
+        <div className="bg-white dark:bg-slate-900 px-6 pt-6 pb-4 sticky top-0 z-20 shadow-sm border-b border-slate-100 dark:border-slate-800">
+          <div className="flex justify-between items-center mb-4">
+            <button onClick={goBack} className="p-2 -ml-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full text-slate-600 dark:text-slate-300">
+              <ArrowLeft size={22} />
+            </button>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center">
+                <ClipboardList size={16} />
+              </div>
+            </div>
+          </div>
+          <h1 className="text-3xl font-black text-slate-800 dark:text-white">Study Planner</h1>
+          <p className="text-slate-500 dark:text-slate-400 font-medium">Track your syllabus coverage</p>
+        </div>
+
+        <div className="p-6">
+          {data && (
+            <StudyPlanner 
+              subjects={data.subjects} 
+              examDate={prelimsDate} 
+              examName="Prelims"
+            />
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="antialiased text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-950 h-full selection:bg-indigo-100 dark:selection:bg-indigo-900 selection:text-indigo-900 dark:selection:text-indigo-100 flex overflow-hidden transition-colors duration-300">
       <div className={`flex-1 flex flex-col h-full overflow-hidden transition-all duration-300 ${selectedStream && isSidebarOpen ? 'mr-0 sm:mr-[240px]' : ''}`}>
@@ -812,6 +1031,8 @@ const App: React.FC = () => {
            {view === 'PAPER_PATTERN_VIEW' && renderResourcesView('PATTERN')}
            {view === 'CHAPTER_DETAIL' && renderChapterDetail()}
            {view === 'STUDY_MODE' && renderStudyMode()}
+           {view === 'PROGRESS_VIEW' && renderProgressView()}
+           {view === 'STUDY_PLANNER' && renderStudyPlanner()}
         </div>
       </div>
       {selectedStream && isSidebarOpen && (

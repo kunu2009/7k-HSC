@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Question } from '../types';
-import { CheckCircle, XCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle, XCircle, ArrowRight, Trophy } from 'lucide-react';
 
 interface MCQViewProps {
   questions: Question[];
-  onComplete: () => void;
+  onComplete: (score: number, total: number) => void;
 }
 
 const MCQView: React.FC<MCQViewProps> = ({ questions, onComplete }) => {
@@ -12,6 +12,7 @@ const MCQView: React.FC<MCQViewProps> = ({ questions, onComplete }) => {
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [score, setScore] = useState(0);
+  const [showResults, setShowResults] = useState(false);
 
   const currentQuestion = questions[currentIndex];
 
@@ -30,11 +31,61 @@ const MCQView: React.FC<MCQViewProps> = ({ questions, onComplete }) => {
       setSelectedOption(null);
       setIsAnswered(false);
     } else {
-      onComplete();
+      setShowResults(true);
     }
   };
 
-  if (!currentQuestion) return <div className="p-8 text-center text-slate-500 dark:text-slate-400">No questions available.</div>;
+  const handleFinish = () => {
+    onComplete(score, questions.length);
+  };
+
+  if (!currentQuestion && !showResults) {
+    return <div className="p-8 text-center text-slate-500 dark:text-slate-400">No questions available.</div>;
+  }
+
+  // Results Screen
+  if (showResults) {
+    const percentage = Math.round((score / questions.length) * 100);
+    const getMessage = () => {
+      if (percentage >= 90) return { text: "Outstanding! 🏆", color: "text-emerald-500" };
+      if (percentage >= 70) return { text: "Great job! 🎉", color: "text-blue-500" };
+      if (percentage >= 50) return { text: "Good effort! 💪", color: "text-yellow-500" };
+      return { text: "Keep practicing! 📚", color: "text-orange-500" };
+    };
+    const message = getMessage();
+
+    return (
+      <div className="flex flex-col items-center justify-center h-full max-w-md mx-auto p-6 text-center">
+        <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full p-6 mb-6">
+          <Trophy size={48} className="text-white" />
+        </div>
+        <h2 className="text-2xl font-black text-slate-800 dark:text-white mb-2">Quiz Complete!</h2>
+        <p className={`text-xl font-bold mb-6 ${message.color}`}>{message.text}</p>
+        
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 w-full shadow-lg border border-slate-100 dark:border-slate-700 mb-6">
+          <div className="text-5xl font-black text-indigo-600 dark:text-indigo-400 mb-2">
+            {score}/{questions.length}
+          </div>
+          <div className="text-slate-500 dark:text-slate-400 font-medium">
+            {percentage}% Accuracy
+          </div>
+          <div className="mt-4 h-3 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all duration-1000"
+              style={{ width: `${percentage}%` }}
+            />
+          </div>
+        </div>
+
+        <button 
+          onClick={handleFinish}
+          className="w-full py-4 bg-indigo-600 dark:bg-indigo-500 text-white rounded-xl font-bold text-lg shadow-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transition-colors"
+        >
+          Continue
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col h-full max-w-2xl mx-auto p-4">
