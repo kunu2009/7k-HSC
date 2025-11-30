@@ -418,18 +418,257 @@ const ENGLISH_SUBJECT: Subject = {
     {
       id: 'eng1',
       title: '1.1 An Astrologer\'s Day',
-      description: 'By R.K. Narayan.',
-      summary: 'A story about an astrologer who hides a dark past.',
-      detailedNotes: '### Theme\nIrony of life. The astrologer meets the man he thought he had killed years ago.\n\n### Characters\n* **The Astrologer**: Shrewd, observant, practical.\n* **Guru Nayak**: The antagonist, seeking revenge.',
+      description: 'By R.K. Narayan - A story of fate and irony.',
+      summary: '**Genre**: Short Story\n**Author**: R.K. Narayan\n**Theme**: Irony of fate, guilt, redemption\n\nAn astrologer who is actually a fraud meets a customer who turns out to be the man he thought he had killed years ago. Through clever manipulation, the astrologer saves himself and finds peace from his guilt.',
+      detailedNotes: '### About the Author\nR.K. Narayan (1906-2001) was one of the most famous Indian writers in English. His stories are set in the fictional town of Malgudi.\n\n### Setting\n* Town Hall Road at night\n* Under a tamarind tree\n* Near a municipal boundary\n\n### Characters\n* **The Astrologer**: Shrewd, observant, practical, carries guilt from his past.\n* **Guru Nayak**: The antagonist, seeking revenge for attempted murder.\n* **The Wife**: Represents the astrologer\'s present peaceful life.\n\n### Plot Summary\n1. The astrologer sets up his business at night under artificial lighting.\n2. He has no real knowledge of astrology but uses psychology and intuition.\n3. Guru Nayak comes as a customer challenging his abilities.\n4. Through the conversation, we learn the astrologer stabbed Guru Nayak years ago and fled his village.\n5. The astrologer cleverly tells Guru Nayak that the attacker died in an accident.\n6. Guru Nayak leaves satisfied, and the astrologer finally finds peace.\n\n### Themes\n1. **Irony**: A fake astrologer predicts real truth about his own past.\n2. **Guilt and Redemption**: Years of guilt finally resolved.\n3. **Fate vs. Free Will**: The chance meeting seems destined.\n4. **Appearance vs. Reality**: The astrologer appears knowledgeable but is actually a fraud.\n\n### Literary Devices\n* **Situational Irony**: The astrologer meets his would-be victim.\n* **Suspense**: Built throughout the encounter with Guru Nayak.\n* **Foreshadowing**: The unusual gleam in Guru Nayak\'s eyes.\n* **Characterization**: Revealed through dialogue and actions.',
       flashcards: [
         { id: 'f1', front: 'Author of An Astrologer\'s Day?', back: 'R.K. Narayan.' },
-        { id: 'f2', front: 'Name of the antagonist?', back: 'Guru Nayak.' }
+        { id: 'f2', front: 'Name of the antagonist?', back: 'Guru Nayak.' },
+        { id: 'f3', front: 'What is the fictional town in R.K. Narayan\'s stories?', back: 'Malgudi.' },
+        { id: 'f4', front: 'Under which tree did the astrologer sit?', back: 'Tamarind tree.' },
+        { id: 'f5', front: 'What did the astrologer tell Guru Nayak about his attacker?', back: 'That the attacker died in an accident four months ago.' },
+        { id: 'f6', front: 'What is the main theme of the story?', back: 'Irony of fate and redemption from guilt.' },
+        { id: 'f7', front: 'How much money did Guru Nayak give the astrologer?', back: 'A rupee.' },
+        { id: 'f8', front: 'Why did the astrologer leave his village?', back: 'He had stabbed a man (Guru Nayak) and thought he had killed him.' }
       ],
       mcqs: [
-        { id: 'q1', question: 'The astrologer carried out his business under a ______ tree.', options: ['Banyan', 'Tamarind', 'Neem', 'Peepal'], correctIndex: 1, explanation: 'He sat under the boughs of a spreading tamarind tree.' }
+        { id: 'q1', question: 'The astrologer carried out his business under a ______ tree.', options: ['Banyan', 'Tamarind', 'Neem', 'Peepal'], correctIndex: 1, explanation: 'He sat under the boughs of a spreading tamarind tree.' },
+        { id: 'q2', question: 'The astrologer told Guru Nayak that his attacker had died ______ months ago.', options: ['Two', 'Three', 'Four', 'Six'], correctIndex: 2, explanation: 'He said the attacker was crushed under a lorry four months ago.' },
+        { id: 'q3', question: 'R.K. Narayan\'s stories are set in the fictional town of:', options: ['Malgudi', 'Mangalore', 'Mysore', 'Mumbai'], correctIndex: 0, explanation: 'Malgudi is a fictional South Indian town created by R.K. Narayan.' },
+        { id: 'q4', question: 'The predominant literary device in this story is:', options: ['Metaphor', 'Simile', 'Irony', 'Personification'], correctIndex: 2, explanation: 'The story is built around situational irony - a fake astrologer reveals real truth.' },
+        { id: 'q5', question: 'How did the astrologer feel after Guru Nayak left?', options: ['Scared', 'Relieved', 'Angry', 'Sad'], correctIndex: 1, explanation: 'He felt relieved that his past was finally resolved and Guru Nayak would stop searching.' }
       ],
       reels: [
-        { id: 'r1', title: 'Irony', content: 'He pretended to know the future, but couldn\'t predict his own past catching up!', color: getReelColor(0) }
+        { id: 'r1', title: 'Fake Astrologer', content: 'He had NO knowledge of astrology!\nJust psychology & intuition.', color: getReelColor(0) },
+        { id: 'r2', title: 'Past Crime', content: 'Years ago, he stabbed a man & fled.\nThat man was Guru Nayak!', color: getReelColor(1) },
+        { id: 'r3', title: 'Twist of Fate', content: 'The "dead" victim came as a customer.\nPure irony!', color: getReelColor(2) },
+        { id: 'r4', title: 'Clever Escape', content: '"Your attacker died 4 months ago."\nGuru Nayak believed it!', color: getReelColor(3) },
+        { id: 'r5', title: 'Theme', content: 'Irony + Guilt + Redemption.\nFate brings closure.', color: getReelColor(4) },
+        { id: 'r6', title: 'Setting', content: 'Under a tamarind tree.\nTown Hall Road at night.', color: getReelColor(5) },
+        { id: 'r7', title: 'Author', content: 'R.K. Narayan\nMalgudi Days fame\n1906-2001', color: getReelColor(6) }
+      ]
+    },
+    {
+      id: 'eng2',
+      title: '1.2 On Saying Please',
+      description: 'By A.G. Gardiner - Essay on courtesy and manners.',
+      summary: '**Genre**: Essay\n**Author**: A.G. Gardiner\n**Theme**: Importance of courtesy and good manners in daily life.\n\nThe essay discusses how small courtesies like saying "please" and "thank you" make social life pleasant, even though discourtesy is not legally punishable.',
+      detailedNotes: '### About the Author\nAlfred George Gardiner (1865-1946) was a British journalist and author. He wrote under the pen name "Alpha of the Plough."\n\n### Central Theme\nThe essay argues that while law punishes physical assault, there is no legal remedy for moral assault (rudeness). Yet, courtesy and good manners are essential for a civilized society.\n\n### Key Arguments\n1. **Law vs. Morality**: Physical assault is punishable, but rudeness is not.\n2. **Impact of Rudeness**: Discourtesy can ruin someone\'s entire day.\n3. **Chain Reaction**: Bad behavior spreads like infection.\n4. **Small Words Matter**: "Please" and "Thank you" are lubricants of social life.\n5. **Everyone Deserves Respect**: From a lift-man to a celebrity.\n\n### The Lift-Man Incident\n* A lift-man threw out a passenger who didn\'t say "Top please."\n* The passenger only said "Top" without courtesy.\n* Law sided with the passenger (physical assault).\n* But morally, the passenger was equally wrong.\n\n### The Conductor Example\n* A cheerful bus conductor spread positivity.\n* His pleasant manners made everyone\'s journey enjoyable.\n* Small courtesies create a pleasant atmosphere.\n\n### Important Quotes\n* "A civil tongue is the lubricant of social life."\n* "Courtesy costs nothing but pays well."\n* "Bad manners probably do more to poison the stream of general life than all the crimes."\n\n### Life Lessons\n1. Always use polite words.\n2. Treat everyone with respect regardless of status.\n3. Your behavior affects others\' mood.\n4. Courtesy is contagious - spread it!',
+      flashcards: [
+        { id: 'f1', front: 'Author of On Saying Please?', back: 'A.G. Gardiner (Alfred George Gardiner).' },
+        { id: 'f2', front: 'Pen name of A.G. Gardiner?', back: 'Alpha of the Plough.' },
+        { id: 'f3', front: 'What is the "lubricant of social life" according to the essay?', back: 'A civil tongue / Courtesy.' },
+        { id: 'f4', front: 'Who threw a passenger out for not saying "please"?', back: 'The lift-man.' },
+        { id: 'f5', front: 'What does the essay say about law and rudeness?', back: 'Law cannot punish rudeness (moral assault), only physical assault.' },
+        { id: 'f6', front: 'What example shows positive effect of courtesy?', back: 'The cheerful bus conductor who spread positivity.' },
+        { id: 'f7', front: 'Genre of On Saying Please?', back: 'Essay (Informal/Personal Essay).' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'A.G. Gardiner wrote under the pen name:', options: ['Beta of the Plough', 'Alpha of the Plough', 'Gamma of the Stars', 'Delta of the Moon'], correctIndex: 1, explanation: 'Alpha of the Plough was his famous pen name.' },
+        { id: 'q2', question: 'The lift-man threw out the passenger because:', options: ['He was rude', 'He didn\'t pay', 'He didn\'t say please', 'He was late'], correctIndex: 2, explanation: 'The passenger said only "Top" without adding "please."' },
+        { id: 'q3', question: 'According to the essay, courtesy is:', options: ['A legal requirement', 'A moral necessity', 'Unnecessary', 'Only for educated people'], correctIndex: 1, explanation: 'Courtesy is not legally required but morally essential.' },
+        { id: 'q4', question: 'The essay compares good manners to:', options: ['Money', 'Lubricant', 'Medicine', 'Food'], correctIndex: 1, explanation: 'Civil tongue is the lubricant of social life.' },
+        { id: 'q5', question: 'The bus conductor example shows:', options: ['How to earn money', 'Positive effect of courtesy', 'How to drive', 'Legal requirements'], correctIndex: 1, explanation: 'His cheerful behavior made everyone\'s journey pleasant.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'The Lift-Man', content: 'Threw out a passenger\nwho didn\'t say "Please".\nLaw punished him, not the rude passenger.', color: getReelColor(0) },
+        { id: 'r2', title: 'Law vs Morality', content: 'Physical assault = Punishable\nMoral assault = No legal remedy\nBut equally damaging!', color: getReelColor(1) },
+        { id: 'r3', title: 'The Bus Conductor', content: 'Cheerful & polite.\nMade everyone\'s day better.\nCourtesy is contagious!', color: getReelColor(2) },
+        { id: 'r4', title: 'Magic Words', content: '"Please" and "Thank you"\nCost nothing.\nPay everything!', color: getReelColor(3) },
+        { id: 'r5', title: 'Chain Reaction', content: 'Rudeness spreads like disease.\nSo does kindness.\nChoose wisely!', color: getReelColor(4) },
+        { id: 'r6', title: 'Key Quote', content: '"A civil tongue is the\nlubricant of social life."', color: getReelColor(5) },
+        { id: 'r7', title: 'Author', content: 'A.G. Gardiner\nPen name: Alpha of the Plough\nBritish journalist', color: getReelColor(6) }
+      ]
+    },
+    {
+      id: 'eng3',
+      title: '1.3 The Cop and the Anthem',
+      description: 'By O. Henry - A story of ironic twists.',
+      summary: '**Genre**: Short Story\n**Author**: O. Henry (William Sydney Porter)\n**Theme**: Irony of fate, reformation vs. circumstances\n\nSoapy, a homeless man, tries to get arrested to spend winter in jail but fails repeatedly. When he finally decides to reform his life, he gets arrested for loitering.',
+      detailedNotes: '### About the Author\nO. Henry (1862-1910) was an American short story writer known for his surprise endings. Real name: William Sydney Porter.\n\n### Setting\n* New York City\n* Madison Square\n* A church\n\n### Main Character\n**Soapy**: A homeless man (tramp) who wants to spend winter in Blackwell\'s Island prison where he\'ll get food and shelter.\n\n### Plot Summary\n**Soapy\'s attempts to get arrested:**\n1. **Restaurant**: Eats without paying - thrown out, not arrested.\n2. **Breaks window**: Runs away but cop doesn\'t suspect him.\n3. **Another restaurant**: Same result - kicked out.\n4. **Pretends to be drunk**: Cop thinks he\'s a Yale student celebrating.\n5. **Flirts with a woman**: She turns out to be willing!\n6. **Disturbs peace**: Cop thinks he\'s a celebrating fan.\n\n**The Turning Point:**\n* Passes a church, hears anthem (hymn).\n* Music reminds him of his better past.\n* Decides to reform - get a job, live honestly.\n\n**Ironic Ending:**\n* Just as he decides to change, a cop arrests him for loitering.\n* Sentenced to three months on Blackwell\'s Island.\n\n### Themes\n1. **Irony**: Gets what he wanted when he no longer wants it.\n2. **Fate vs. Free Will**: Circumstances overpower intentions.\n3. **Appearance vs. Reality**: Nothing is as it seems.\n4. **Power of Music**: The anthem triggers transformation.\n\n### O. Henry\'s Style\n* Surprise/Twist endings\n* Ironic situations\n* Sympathetic portrayal of common people\n* Humor mixed with pathos',
+      flashcards: [
+        { id: 'f1', front: 'Author of The Cop and the Anthem?', back: 'O. Henry (William Sydney Porter).' },
+        { id: 'f2', front: 'Real name of O. Henry?', back: 'William Sydney Porter.' },
+        { id: 'f3', front: 'What is Soapy trying to do throughout the story?', back: 'Get arrested to spend winter in Blackwell\'s Island prison.' },
+        { id: 'f4', front: 'How many times does Soapy try to get arrested?', back: 'Six times.' },
+        { id: 'f5', front: 'What triggers Soapy\'s desire to reform?', back: 'The church anthem (hymn/music).' },
+        { id: 'f6', front: 'What is the ironic twist at the end?', back: 'He gets arrested for loitering just when he decides to reform.' },
+        { id: 'f7', front: 'O. Henry is famous for what type of endings?', back: 'Surprise/Twist endings.' },
+        { id: 'f8', front: 'Where is the story set?', back: 'New York City (Madison Square).' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'Soapy wanted to get arrested to:', options: ['Escape enemies', 'Get shelter in winter', 'Meet a friend', 'Get famous'], correctIndex: 1, explanation: 'He wanted food and shelter at Blackwell\'s Island prison during winter.' },
+        { id: 'q2', question: 'How many attempts did Soapy make to get arrested?', options: ['Four', 'Five', 'Six', 'Seven'], correctIndex: 2, explanation: 'He tried six different methods to get arrested.' },
+        { id: 'q3', question: 'What made Soapy want to reform?', options: ['A sermon', 'A policeman', 'Church anthem', 'A friend'], correctIndex: 2, explanation: 'The anthem reminded him of his better past.' },
+        { id: 'q4', question: 'O. Henry stories are known for:', options: ['Happy endings', 'Twist endings', 'Sad endings', 'No endings'], correctIndex: 1, explanation: 'O. Henry\'s signature style is the surprise/twist ending.' },
+        { id: 'q5', question: 'At the end, Soapy is arrested for:', options: ['Theft', 'Fighting', 'Loitering', 'Drinking'], correctIndex: 2, explanation: 'He was arrested for loitering outside the church.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Soapy\'s Goal', content: 'Get arrested!\nWinter is coming.\nJail = Food + Shelter', color: getReelColor(0) },
+        { id: 'r2', title: 'Attempt #1', content: 'Ate at restaurant without paying.\nResult: Kicked out, not arrested!', color: getReelColor(1) },
+        { id: 'r3', title: 'Attempt #2', content: 'Broke a shop window.\nResult: Cop didn\'t suspect him!', color: getReelColor(2) },
+        { id: 'r4', title: 'The Anthem', content: 'Church music played.\nMemories of better days.\nSoapy decides to REFORM!', color: getReelColor(3) },
+        { id: 'r5', title: 'TWIST!', content: 'Finally arrested!\nFor just standing there.\nIRONY at its best.', color: getReelColor(4) },
+        { id: 'r6', title: 'O. Henry Style', content: 'Surprise endings!\nIronic situations.\nCommon people as heroes.', color: getReelColor(5) },
+        { id: 'r7', title: 'Theme', content: 'When you want something = Can\'t get it.\nWhen you don\'t want = You get it!', color: getReelColor(6) }
+      ]
+    },
+    {
+      id: 'eng4',
+      title: '2.1 Song of the Open Road',
+      description: 'By Walt Whitman - A poem celebrating freedom.',
+      summary: '**Genre**: Poetry (Free Verse)\n**Poet**: Walt Whitman\n**Theme**: Freedom, journey of life, optimism, self-reliance\n\nThe poem celebrates the joy of traveling on the open road, symbolizing life\'s journey with freedom, adventure, and self-discovery.',
+      detailedNotes: '### About the Poet\nWalt Whitman (1819-1892) was an American poet, often called the "Father of Free Verse." His famous collection: "Leaves of Grass."\n\n### Form and Style\n* **Free Verse**: No regular meter or rhyme scheme.\n* **Cataloguing**: Lists of images and ideas.\n* **Repetition**: For emphasis.\n* **First Person**: Personal, intimate tone.\n\n### Central Idea\nThe "open road" is a metaphor for life\'s journey. The poet celebrates:\n* Freedom from constraints\n* Joy of traveling/exploring\n* Self-reliance and independence\n* Living in the present moment\n\n### Key Lines Explained\n1. **"Afoot and light-hearted I take to the open road"**\n   - Starting the journey with joy and no burden.\n\n2. **"Healthy, free, the world before me"**\n   - Optimism and endless possibilities.\n\n3. **"I carry them with me wherever I go"**\n   - Experiences and memories travel with us.\n\n4. **"Strong and content I travel the open road"**\n   - Self-confidence and inner peace.\n\n### Themes\n1. **Freedom**: Liberation from society\'s restrictions.\n2. **Optimism**: Positive outlook on life.\n3. **Self-reliance**: Independence and inner strength.\n4. **Journey of Life**: Road as a metaphor for life.\n5. **Democracy**: Equal opportunity for all to travel.\n\n### Literary Devices\n* **Metaphor**: Open road = life\'s journey.\n* **Repetition**: "I" - emphasizes individuality.\n* **Imagery**: Visual pictures of travel.\n* **Free Verse**: Reflects freedom of theme.',
+      flashcards: [
+        { id: 'f1', front: 'Poet of Song of the Open Road?', back: 'Walt Whitman.' },
+        { id: 'f2', front: 'What is Walt Whitman called?', back: 'Father of Free Verse.' },
+        { id: 'f3', front: 'What does the "open road" symbolize?', back: 'Life\'s journey / Freedom.' },
+        { id: 'f4', front: 'Famous poetry collection by Walt Whitman?', back: 'Leaves of Grass.' },
+        { id: 'f5', front: 'What is free verse?', back: 'Poetry without regular meter or rhyme scheme.' },
+        { id: 'f6', front: 'Main theme of the poem?', back: 'Freedom, self-reliance, and joy of life\'s journey.' },
+        { id: 'f7', front: 'What literary device is "open road = life"?', back: 'Metaphor.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'Walt Whitman is called the "Father of ______."', options: ['Poetry', 'Free Verse', 'American Literature', 'Romanticism'], correctIndex: 1, explanation: 'He pioneered free verse poetry.' },
+        { id: 'q2', question: 'The "open road" in the poem symbolizes:', options: ['A highway', 'Life\'s journey', 'A trail', 'Death'], correctIndex: 1, explanation: 'It\'s a metaphor for life\'s journey and freedom.' },
+        { id: 'q3', question: 'Walt Whitman\'s famous collection is:', options: ['Paradise Lost', 'Leaves of Grass', 'The Waste Land', 'Songs of Innocence'], correctIndex: 1, explanation: 'Leaves of Grass is his most famous work.' },
+        { id: 'q4', question: 'The poem is written in:', options: ['Sonnet form', 'Free verse', 'Ballad form', 'Haiku'], correctIndex: 1, explanation: 'It has no regular meter or rhyme scheme.' },
+        { id: 'q5', question: 'The dominant mood of the poem is:', options: ['Sad', 'Angry', 'Optimistic', 'Fearful'], correctIndex: 2, explanation: 'The poem celebrates freedom and possibilities with optimism.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'The Open Road', content: 'Not just a road!\nIt\'s LIFE itself.\nA journey of freedom.', color: getReelColor(0) },
+        { id: 'r2', title: 'Walt Whitman', content: 'Father of Free Verse.\n"Leaves of Grass" fame.\n1819-1892', color: getReelColor(1) },
+        { id: 'r3', title: 'Free Verse', content: 'No rhyme needed.\nNo meter required.\nFreedom in form = Freedom in theme!', color: getReelColor(2) },
+        { id: 'r4', title: 'Themes', content: 'Freedom\nSelf-reliance\nOptimism\nLife as a journey', color: getReelColor(3) },
+        { id: 'r5', title: 'Key Line', content: '"Afoot and light-hearted\nI take to the open road."\nNo burden, just joy!', color: getReelColor(4) },
+        { id: 'r6', title: 'Metaphor', content: 'Road = Life\nTraveling = Living\nDestination = Self-discovery', color: getReelColor(5) }
+      ]
+    },
+    {
+      id: 'eng5',
+      title: '2.2 Indian Weavers',
+      description: 'By Sarojini Naidu - Symbolism of life stages.',
+      summary: '**Genre**: Poetry\n**Poet**: Sarojini Naidu (Nightingale of India)\n**Theme**: Life cycle through weaving imagery\n\nThe poem uses weavers creating different garments at different times of day to symbolize the three stages of life: birth, youth, and death.',
+      detailedNotes: '### About the Poet\nSarojini Naidu (1879-1949) was called the "Nightingale of India." She was a freedom fighter and the first Indian woman to become a state governor.\n\n### Structure\n* Three stanzas (tercets)\n* Each stanza represents a stage of life\n* Question-answer format\n\n### Stanza-by-Stanza Analysis\n\n**Stanza 1: Birth (Morning)**\n* Time: Break of day (early morning)\n* Color: Blue (like the wing of a halcyon bird)\n* Garment: Robes for a newborn child\n* Symbolism: Blue represents hope, purity, new beginnings\n\n**Stanza 2: Youth/Marriage (Evening)**\n* Time: Fall of night (evening)\n* Color: Purple and green (like peacock feathers)\n* Garment: Marriage veils for a queen\n* Symbolism: Vibrant colors represent joy, celebration, love\n\n**Stanza 3: Death (Moonlight)**\n* Time: Still/chill moonlight (night)\n* Color: White (like a feather and cloud)\n* Garment: Shroud for a dead man\n* Symbolism: White represents purity, peace, end of life\n\n### Key Literary Devices\n* **Symbolism**: Colors and times of day represent life stages.\n* **Imagery**: Visual images of colors and birds.\n* **Metaphor**: Weaving = Life\'s journey.\n* **Repetition**: Question structure in each stanza.\n\n### Themes\n1. **Cycle of Life**: Birth → Marriage → Death\n2. **Indian Culture**: Traditional weaving, ceremonies\n3. **Transience**: Life passes like day to night\n4. **Dignity**: Each stage has its own beauty',
+      flashcards: [
+        { id: 'f1', front: 'Poet of Indian Weavers?', back: 'Sarojini Naidu (Nightingale of India).' },
+        { id: 'f2', front: 'What are the three stages of life in the poem?', back: 'Birth (morning), Marriage (evening), Death (night).' },
+        { id: 'f3', front: 'What color represents birth in the poem?', back: 'Blue (like halcyon\'s wing).' },
+        { id: 'f4', front: 'What color represents marriage?', back: 'Purple and green (like peacock feathers).' },
+        { id: 'f5', front: 'What color represents death?', back: 'White (like feather and cloud).' },
+        { id: 'f6', front: 'What title was given to Sarojini Naidu?', back: 'Nightingale of India.' },
+        { id: 'f7', front: 'What is the halcyon?', back: 'A kingfisher bird.' },
+        { id: 'f8', front: 'What garment is woven for death?', back: 'A shroud (burial cloth).' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'Sarojini Naidu is called:', options: ['Rose of India', 'Nightingale of India', 'Queen of Poetry', 'Mother of India'], correctIndex: 1, explanation: 'She was known as the Nightingale of India.' },
+        { id: 'q2', question: 'Blue color in the poem symbolizes:', options: ['Death', 'Marriage', 'Birth', 'Old age'], correctIndex: 2, explanation: 'Blue (like halcyon\'s wing) represents newborn/birth.' },
+        { id: 'q3', question: 'Marriage veils are described with colors:', options: ['White and blue', 'Purple and green', 'Red and gold', 'Black and white'], correctIndex: 1, explanation: 'Marriage veils are purple and green like peacock feathers.' },
+        { id: 'q4', question: 'The poem has how many stanzas?', options: ['Two', 'Three', 'Four', 'Five'], correctIndex: 1, explanation: 'Three stanzas representing birth, marriage, and death.' },
+        { id: 'q5', question: 'A shroud is a garment for:', options: ['Newborn', 'Bride', 'Dead person', 'King'], correctIndex: 2, explanation: 'The shroud is woven for a dead man in moonlight.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Three Stages', content: 'BIRTH = Morning = Blue\nMARRIAGE = Evening = Purple/Green\nDEATH = Night = White', color: getReelColor(0) },
+        { id: 'r2', title: 'Sarojini Naidu', content: 'Nightingale of India\nFreedom Fighter\n1st Woman Governor', color: getReelColor(1) },
+        { id: 'r3', title: 'Symbolism', content: 'Weavers = Life\nGarments = Life Events\nColors = Emotions', color: getReelColor(2) },
+        { id: 'r4', title: 'Birth (Blue)', content: 'Break of day.\nBlue like halcyon\'s wing.\nRobes for newborn child.', color: getReelColor(3) },
+        { id: 'r5', title: 'Marriage', content: 'Fall of night.\nPurple & green (peacock).\nVeils for a queen!', color: getReelColor(4) },
+        { id: 'r6', title: 'Death (White)', content: 'Chill moonlight.\nWhite like feather & cloud.\nShroud for the dead.', color: getReelColor(5) },
+        { id: 'r7', title: 'Life Cycle', content: 'Day → Evening → Night\nBirth → Marriage → Death\nAll beautiful in their own way.', color: getReelColor(6) }
+      ]
+    },
+    {
+      id: 'eng6',
+      title: '2.3 The Inchcape Rock',
+      description: 'By Robert Southey - A ballad about karma.',
+      summary: '**Genre**: Ballad\n**Poet**: Robert Southey\n**Theme**: "As you sow, so shall you reap" (Karma)\n\nThe ballad tells the story of the Abbot of Aberbrothok who places a bell on the Inchcape Rock to warn sailors. The pirate Ralph the Rover cuts the bell for evil purposes and later dies when his own ship hits the same rock.',
+      detailedNotes: '### About the Poet\nRobert Southey (1774-1843) was an English Romantic poet who served as Poet Laureate.\n\n### What is a Ballad?\n* A narrative poem that tells a story\n* Usually has a regular rhyme scheme\n* Often deals with dramatic events\n* Meant to be sung or recited\n\n### Setting\n* Inchcape Rock: A reef off the coast of Scotland\n* North Sea\n* Medieval period\n\n### Characters\n1. **The Abbot of Aberbrothok**: Good, wise, helpful monk who places the warning bell.\n2. **Ralph the Rover**: Evil pirate, jealous, ultimately punished.\n\n### Plot Summary\n1. **The Good Deed**: The Abbot places a bell on Inchcape Rock to warn sailors of danger.\n2. **The Evil Act**: Pirate Ralph the Rover, out of spite and wickedness, cuts the bell and sinks it.\n3. **The Punishment**: Years later, Ralph\'s ship, loaded with plunder, hits the Inchcape Rock in darkness and sinks. Ralph dies.\n\n### Key Stanzas\n* Stanzas 1-4: Peaceful sea, the bell rings.\n* Stanzas 5-8: The Abbot\'s good work.\n* Stanzas 9-14: Ralph\'s evil act.\n* Stanzas 15-17: Ralph\'s punishment.\n\n### Themes\n1. **Karma**: What goes around comes around.\n2. **Good vs. Evil**: Good deeds vs. wicked acts.\n3. **Divine Justice**: Evil is eventually punished.\n4. **Human Nature**: Jealousy and greed lead to downfall.\n\n### Literary Devices\n* **Poetic Justice**: The villain is punished fittingly.\n* **Imagery**: Visual and auditory images.\n* **Personification**: "The sea-birds screamed."\n* **Foreshadowing**: Ralph\'s laugh hints at his fate.',
+      flashcards: [
+        { id: 'f1', front: 'Poet of The Inchcape Rock?', back: 'Robert Southey.' },
+        { id: 'f2', front: 'Who placed the bell on the rock?', back: 'The Abbot of Aberbrothok.' },
+        { id: 'f3', front: 'Who cut the bell?', back: 'Ralph the Rover (the pirate).' },
+        { id: 'f4', front: 'What is the theme of the poem?', back: '"As you sow, so shall you reap" (Karma/Poetic Justice).' },
+        { id: 'f5', front: 'What is a ballad?', back: 'A narrative poem that tells a story, often meant to be sung.' },
+        { id: 'f6', front: 'Where is Inchcape Rock located?', back: 'Off the coast of Scotland in the North Sea.' },
+        { id: 'f7', front: 'How did Ralph the Rover die?', back: 'His ship hit the Inchcape Rock and sank.' },
+        { id: 'f8', front: 'What was the purpose of the bell?', back: 'To warn sailors of the dangerous rock.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'The Inchcape Rock is a:', options: ['Mountain', 'Reef/Rock', 'Ship', 'Bell'], correctIndex: 1, explanation: 'It\'s a dangerous reef off Scotland\'s coast.' },
+        { id: 'q2', question: 'The Abbot placed the bell to:', options: ['Celebrate festivals', 'Warn sailors', 'Call for prayer', 'Attract tourists'], correctIndex: 1, explanation: 'The bell warned sailors of the dangerous rock.' },
+        { id: 'q3', question: 'Ralph the Rover was a:', options: ['Monk', 'King', 'Pirate', 'Sailor'], correctIndex: 2, explanation: 'He was an evil pirate.' },
+        { id: 'q4', question: 'The theme "As you sow, so shall you reap" represents:', options: ['Agriculture', 'Karma', 'Religion', 'Science'], correctIndex: 1, explanation: 'It means your actions have consequences.' },
+        { id: 'q5', question: 'Robert Southey was a ______ poet.', options: ['American', 'English', 'Irish', 'Scottish'], correctIndex: 1, explanation: 'He was an English Romantic poet.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'The Rock', content: 'Inchcape Rock\nOff Scotland\'s coast\nDangerous for ships!', color: getReelColor(0) },
+        { id: 'r2', title: 'The Good Abbot', content: 'Placed a warning bell.\nTo save sailors\' lives.\nBlessed by all!', color: getReelColor(1) },
+        { id: 'r3', title: 'Ralph the Rover', content: 'Evil pirate.\nJealous of the Abbot.\nCut the bell!', color: getReelColor(2) },
+        { id: 'r4', title: 'KARMA!', content: 'Years later...\nRalph\'s ship hits the rock.\nHe drowns in darkness!', color: getReelColor(3) },
+        { id: 'r5', title: 'Theme', content: '"As you sow,\nso shall you reap."\nPoetic Justice!', color: getReelColor(4) },
+        { id: 'r6', title: 'Ballad', content: 'Narrative poem.\nTells a story.\nMeant to be sung.', color: getReelColor(5) },
+        { id: 'r7', title: 'Lesson', content: 'Good deeds are rewarded.\nEvil is punished.\nKarma always wins!', color: getReelColor(6) }
+      ]
+    },
+    {
+      id: 'eng7',
+      title: '2.4 Father Returning Home',
+      description: 'By Dilip Chitre - Modern poem on alienation.',
+      summary: '**Genre**: Poetry (Free Verse)\n**Poet**: Dilip Chitre\n**Theme**: Alienation, urban loneliness, generation gap\n\nThe poem depicts a father\'s lonely commute home after work, highlighting the isolation and disconnection in modern urban life and within families.',
+      detailedNotes: '### About the Poet\nDilip Chitre (1938-2009) was a Marathi poet, painter, and filmmaker. This poem is a translation of his own Marathi poem.\n\n### Form\n* Free verse (no regular rhyme or meter)\n* Two stanzas\n* Conversational, matter-of-fact tone\n\n### Stanza 1: The Journey Home\n* Father travels in a crowded suburban train.\n* He\'s unnoticed, invisible among commuters.\n* His face is gray, clothes are stained.\n* Rain, mud, darkness add to the bleak imagery.\n* He gets off at the station "like a word dropped from a sentence."\n\n### Stanza 2: At Home\n* At home, he\'s still alone.\n* Family is busy in their own worlds.\n* He eats alone, reads incomprehensible letters.\n* Goes to toilet, contemplates words.\n* Falls asleep thinking of his ancestors and grandchildren.\n* Dreams and thoughts are his only companions.\n\n### Key Images\n* **"Like a word dropped from a sentence"**: Insignificance\n* **"Stained and crumpled face"**: Worn out by life\n* **"His eyes dimmed by age"**: Loss of vitality\n* **"Thinking of his ancestors and grandchildren"**: Disconnection from present\n\n### Themes\n1. **Alienation**: Isolation in modern life.\n2. **Urban Loneliness**: City life lacks warmth.\n3. **Generation Gap**: No communication with family.\n4. **Working Class Struggle**: Tiresome daily routine.\n5. **Identity Crisis**: Father feels insignificant.\n\n### Literary Devices\n* **Simile**: "Like a word dropped from a sentence."\n* **Imagery**: Visual images of rain, mud, gray face.\n* **Symbolism**: Train journey = life\'s monotonous journey.',
+      flashcards: [
+        { id: 'f1', front: 'Poet of Father Returning Home?', back: 'Dilip Chitre.' },
+        { id: 'f2', front: 'What is the main theme?', back: 'Alienation, urban loneliness, generation gap.' },
+        { id: 'f3', front: 'What famous simile is used for the father?', back: '"Like a word dropped from a sentence."' },
+        { id: 'f4', front: 'How does the father travel?', back: 'In a crowded suburban train.' },
+        { id: 'f5', front: 'What does the father dream about?', back: 'His ancestors and grandchildren (past and future, not present).' },
+        { id: 'f6', front: 'What is the tone of the poem?', back: 'Melancholic, matter-of-fact, detached.' },
+        { id: 'f7', front: 'Dilip Chitre was originally a ______ poet.', back: 'Marathi poet (he translated his own poem).' }
+      ],
+      mcqs: [
+        { id: 'q1', question: '"Like a word dropped from a sentence" suggests the father is:', options: ['Important', 'Insignificant', 'Happy', 'Angry'], correctIndex: 1, explanation: 'It shows how he feels unimportant and ignored.' },
+        { id: 'q2', question: 'The father dreams about:', options: ['His office', 'His wife', 'Ancestors and grandchildren', 'Money'], correctIndex: 2, explanation: 'He thinks of past and future, feeling disconnected from present.' },
+        { id: 'q3', question: 'The poem highlights:', options: ['Joy of family', 'Urban alienation', 'Rural life', 'Success'], correctIndex: 1, explanation: 'The poem shows loneliness in urban modern life.' },
+        { id: 'q4', question: 'The father\'s face is described as:', options: ['Bright', 'Gray', 'Red', 'Young'], correctIndex: 1, explanation: 'His face is stained and gray, worn out by life.' },
+        { id: 'q5', question: 'The poem is written in:', options: ['Sonnet form', 'Free verse', 'Ballad', 'Haiku'], correctIndex: 1, explanation: 'It has no regular rhyme or meter - free verse.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'The Father', content: 'Gray face.\nWorn clothes.\n"Like a word dropped from a sentence."', color: getReelColor(0) },
+        { id: 'r2', title: 'The Journey', content: 'Crowded train.\nRain & mud.\nUnnoticed by all.', color: getReelColor(1) },
+        { id: 'r3', title: 'At Home', content: 'Eats alone.\nReads alone.\nFamily is busy.', color: getReelColor(2) },
+        { id: 'r4', title: 'His Dreams', content: 'Ancestors & Grandchildren.\nPast & Future.\nNever the Present!', color: getReelColor(3) },
+        { id: 'r5', title: 'Theme', content: 'ALIENATION\nUrban loneliness.\nGeneration gap.', color: getReelColor(4) },
+        { id: 'r6', title: 'Modern Life', content: 'Work all day.\nCome home tired.\nNo one cares.', color: getReelColor(5) },
+        { id: 'r7', title: 'Dilip Chitre', content: 'Marathi poet.\nTranslated his own work.\n1938-2009', color: getReelColor(6) }
+      ]
+    },
+    {
+      id: 'eng8',
+      title: '3. Writing Skills',
+      description: 'Essay, Report, Letter writing formats.',
+      summary: '**Writing Skills Section (16 Marks)**\n\n* Essay Writing (5-6 Marks)\n* Report Writing (5-6 Marks)\n* Letter Writing (5-6 Marks)\n* Leaflet/Pamphlet Making',
+      detailedNotes: '### 1. ESSAY WRITING\n\n**Format:**\n```\nTitle\n\nIntroduction (Opening paragraph - Hook the reader)\n\nBody (2-3 paragraphs with main points)\n\nConclusion (Summary and final thoughts)\n```\n\n**Types of Essays:**\n* Narrative: Tells a story\n* Descriptive: Describes something\n* Argumentative: Presents an argument\n* Expository: Explains a topic\n\n**Tips:**\n1. Start with an interesting hook.\n2. Use paragraphs for different points.\n3. Support arguments with examples.\n4. End with a strong conclusion.\n5. Word limit: Usually 300-350 words.\n\n---\n\n### 2. REPORT WRITING\n\n**Format for Newspaper Report:**\n```\nHeadline (Catchy title)\nBy [Reporter Name]\n\n[Place, Date]: Lead paragraph (5 W\'s - Who, What, When, Where, Why)\n\nBody paragraphs (Details, quotes, background)\n\nConclusion (Future implications)\n```\n\n**Format for Event Report:**\n```\nREPORT ON [EVENT NAME]\n\nIntroduction: Brief overview\n\nDetails: Date, venue, organizers, participants\n\nDescription: What happened, activities\n\nConclusion: Success of event, feedback\n\nPrepared by: [Name]\nDate: [Date]\n```\n\n**Tips:**\n1. Use past tense.\n2. Be objective and factual.\n3. Include relevant details.\n4. Proper heading and subheadings.\n\n---\n\n### 3. LETTER WRITING\n\n**Formal Letter Format:**\n```\nSender\'s Address\nDate\n\nReceiver\'s Designation\nReceiver\'s Address\n\nSubject: ____________\n\nSalutation (Sir/Madam),\n\nBody (Introduction, Main Content, Conclusion)\n\nThanking you,\nYours faithfully/sincerely,\n[Signature]\n[Name]\n```\n\n**Types:**\n* Complaint Letter\n* Application Letter\n* Letter to Editor\n* Inquiry Letter\n\n---\n\n### 4. LEAFLET/PAMPHLET\n\n**Format:**\n* Catchy Title/Headline\n* Attractive visuals (drawn)\n* Key points in bullets\n* Contact information\n* Call to action\n\n**Tips:**\n1. Keep it brief and eye-catching.\n2. Use persuasive language.\n3. Include important dates/details.\n4. Add slogans if appropriate.',
+      flashcards: [
+        { id: 'f1', front: 'What are the 5 W\'s in report writing?', back: 'Who, What, When, Where, Why.' },
+        { id: 'f2', front: 'Parts of a formal letter?', back: 'Sender\'s address, Date, Receiver\'s address, Subject, Salutation, Body, Closing.' },
+        { id: 'f3', front: 'Closing for formal letters?', back: '"Yours faithfully" (unknown recipient) or "Yours sincerely" (known recipient).' },
+        { id: 'f4', front: 'Types of essays?', back: 'Narrative, Descriptive, Argumentative, Expository.' },
+        { id: 'f5', front: 'Word limit for HSC essay?', back: 'Usually 300-350 words.' },
+        { id: 'f6', front: 'What tense is used in reports?', back: 'Past tense.' }
+      ],
+      mcqs: [
+        { id: 'q1', question: 'A formal letter ends with:', options: ['Yours lovingly', 'Yours faithfully', 'See you', 'Take care'], correctIndex: 1, explanation: 'Formal letters end with "Yours faithfully" or "Yours sincerely."' },
+        { id: 'q2', question: 'The 5 W\'s in journalism are:', options: ['Who, What, When, Where, Why', 'Who, Which, What, Where, Why', 'Who, What, When, Where, Whom', 'None of these'], correctIndex: 0, explanation: 'These are the basic questions answered in a news report.' },
+        { id: 'q3', question: 'Reports are written in ______ tense.', options: ['Present', 'Past', 'Future', 'Any'], correctIndex: 1, explanation: 'Reports describe events that have already happened.' },
+        { id: 'q4', question: 'Which is NOT a type of essay?', options: ['Narrative', 'Descriptive', 'Mathematical', 'Argumentative'], correctIndex: 2, explanation: 'Mathematical is not a type of essay.' }
+      ],
+      reels: [
+        { id: 'r1', title: 'Essay Structure', content: 'Introduction (Hook)\n2-3 Body Paragraphs\nConclusion (Summary)', color: getReelColor(0) },
+        { id: 'r2', title: '5 W\'s', content: 'Who?\nWhat?\nWhen?\nWhere?\nWhy?', color: getReelColor(1) },
+        { id: 'r3', title: 'Formal Letter', content: 'Address → Date → Subject\nSalutation → Body\nClosing → Signature', color: getReelColor(2) },
+        { id: 'r4', title: 'Closing Lines', content: 'Unknown person: Yours faithfully\nKnown person: Yours sincerely', color: getReelColor(3) },
+        { id: 'r5', title: 'Report Tips', content: 'Use past tense.\nBe objective.\nInclude facts only.', color: getReelColor(4) },
+        { id: 'r6', title: 'Leaflet', content: 'Catchy title.\nBullet points.\nCall to action!', color: getReelColor(5) }
       ]
     }
   ]
@@ -780,19 +1019,157 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
         chapters: [
            { 
             id: 'sp1', 
-            title: '1. Intro to Corporate Finance', 
+            title: '1. Introduction to Corporate Finance', 
             description: 'Financing and Investment decisions.', 
-            summary: 'Meaning, Importance.\nFixed Capital vs Working Capital.', 
-            detailedNotes: '### Meaning\nDealing with raising and using of finance by a corporation.\n\n### Decisions\n1. **Financing**: Equity or Debt?\n2. **Investment**: Which asset to buy?\n\n### Capital\n* **Fixed**: Land, Building (Long term).\n* **Working**: Cash, Inventory (Short term).',
+            summary: '**Corporate Finance**: Raising and using funds.\n**Decisions**: Financing, Investment, Dividend.\n**Capital**: Fixed (Long-term) vs Working (Short-term).', 
+            detailedNotes: '### 1. Meaning of Corporate Finance\nDealing with raising and using of finance by a corporation. It involves managing the financial activities and decisions.\n\n### 2. Financial Decisions\n1. **Financing Decision**: Should we use Equity or Debt?\n2. **Investment Decision**: Which assets to acquire?\n3. **Dividend Decision**: How much profit to distribute?\n\n### 3. Types of Capital\n**Fixed Capital (Block Capital)**:\n* Long-term assets.\n* Land, Building, Machinery, Furniture.\n* Stay in business for long period.\n\n**Working Capital (Circulating Capital)**:\n* Short-term assets.\n* Cash, Inventory, Receivables.\n* Circulates in business operations.\n\n### 4. Sources of Finance\n* **Owned Capital**: Equity shares, Retained earnings.\n* **Borrowed Capital**: Debentures, Loans, Bonds.\n\n### 5. Importance of Corporate Finance\n* Ensures smooth functioning.\n* Helps in expansion and modernization.\n* Maintains liquidity and solvency.',
             flashcards: [
               { id: 'f1', front: 'Corporate Finance deals with?', back: 'Acquisition and Use of Capital.' },
-              { id: 'f2', front: 'Fixed Capital', back: 'Stay in business for long period.' }
+              { id: 'f2', front: 'Fixed Capital is also called?', back: 'Block Capital (Long-term assets).' },
+              { id: 'f3', front: 'Working Capital is also called?', back: 'Circulating Capital (Short-term assets).' },
+              { id: 'f4', front: 'Three main financial decisions?', back: 'Financing, Investment, and Dividend decisions.' }
             ],
             mcqs: [
-              { id: 'q1', question: 'Fixed capital is also known as ______ capital.', options: ['Circulating', 'Block', 'Working', 'Liquid'], correctIndex: 1, explanation: 'Permanent assets.' }
+              { id: 'q1', question: 'Fixed capital is also known as ______ capital.', options: ['Circulating', 'Block', 'Working', 'Liquid'], correctIndex: 1, explanation: 'Permanent assets that stay long in business.' },
+              { id: 'q2', question: 'Working capital is required for ______ needs.', options: ['Long-term', 'Short-term', 'Permanent', 'Fixed'], correctIndex: 1, explanation: 'Day-to-day operations.' },
+              { id: 'q3', question: 'Land and Building are examples of ______ capital.', options: ['Working', 'Circulating', 'Fixed', 'Liquid'], correctIndex: 2, explanation: 'They stay in business for long.' }
             ],
             reels: [
-               { id: 'r1', title: 'Finance', content: 'Lifeblood of business.', color: getReelColor(1) }
+               { id: 'r1', title: 'Corporate Finance', content: 'Raising and using funds.\nLifeblood of business.', color: getReelColor(0) },
+               { id: 'r2', title: 'Fixed Capital', content: 'Long-term assets.\nLand, Building, Machinery.', color: getReelColor(1) },
+               { id: 'r3', title: 'Working Capital', content: 'Short-term assets.\nCash, Stock, Debtors.', color: getReelColor(2) },
+               { id: 'r4', title: '3 Decisions', content: 'Financing (Where to get money?)\nInvestment (Where to use?)\nDividend (How much to distribute?)', color: getReelColor(3) },
+               { id: 'r5', title: 'Owned vs Borrowed', content: 'Owned: Equity, Profits.\nBorrowed: Loans, Debentures.', color: getReelColor(4) }
+            ]
+          },
+          { 
+            id: 'sp2', 
+            title: '2. Sources of Corporate Finance', 
+            description: 'Equity, Preference, Debentures, Retained Earnings.', 
+            summary: '**Equity Shares**: Ownership, Risk.\n**Preference Shares**: Fixed dividend, Priority.\n**Debentures**: Loan, Interest.\n**Retained Earnings**: Ploughing back profits.', 
+            detailedNotes: '### 1. Equity Shares\n**Meaning**: Ownership capital. Shareholders are owners.\n**Features**:\n* Voting rights.\n* No fixed dividend.\n* Risk bearing capital.\n* Permanent capital.\n\n### 2. Preference Shares\n**Meaning**: Priority in dividend and repayment.\n**Types**:\n* Cumulative / Non-cumulative.\n* Participating / Non-participating.\n* Convertible / Non-convertible.\n* Redeemable / Irredeemable.\n\n### 3. Debentures\n**Meaning**: Borrowed capital. Loan taken from public.\n**Features**:\n* Fixed rate of interest.\n* No voting rights.\n* Priority in repayment.\n* Can be secured or unsecured.\n\n### 4. Retained Earnings (Ploughing Back)\n**Meaning**: Profits kept in business instead of distributing.\n**Advantages**: No cost, No dilution of control.\n\n### 5. Other Sources\n* Public Deposits.\n* Term Loans from Banks.\n* Commercial Paper.\n* Inter-corporate Deposits.',
+            flashcards: [
+              { id: 'f1', front: 'Equity shareholders are?', back: 'Real owners of the company with voting rights.' },
+              { id: 'f2', front: 'Preference shares have?', back: 'Fixed dividend and priority in repayment.' },
+              { id: 'f3', front: 'Debenture holders are?', back: 'Creditors of the company (Lenders).' },
+              { id: 'f4', front: 'Retained Earnings means?', back: 'Ploughing back profits into business.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Equity shareholders have ______ rights.', options: ['Voting', 'Fixed dividend', 'Priority', 'Interest'], correctIndex: 0, explanation: 'They elect directors.' },
+              { id: 'q2', question: 'Debenture holders receive ______.', options: ['Dividend', 'Interest', 'Bonus', 'Profit'], correctIndex: 1, explanation: 'Fixed rate of interest.' },
+              { id: 'q3', question: 'Ploughing back of profits is ______.', options: ['Dividend', 'Retained Earnings', 'Bonus', 'Split'], correctIndex: 1, explanation: 'Keeping profits in business.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'Equity Shares', content: 'Ownership capital.\nVoting rights.\nResidual claim.', color: getReelColor(5) },
+               { id: 'r2', title: 'Preference Shares', content: 'Fixed dividend.\nPriority over equity.\nNo voting rights.', color: getReelColor(6) },
+               { id: 'r3', title: 'Debentures', content: 'Loan from public.\nFixed Interest.\nCreditors of company.', color: getReelColor(7) },
+               { id: 'r4', title: 'Retained Earnings', content: 'Ploughing back profits.\nNo cost of capital.\nNo dilution.', color: getReelColor(8) },
+               { id: 'r5', title: 'Cumulative Pref', content: 'Unpaid dividend accumulates.\nMust be paid before equity.', color: getReelColor(9) },
+               { id: 'r6', title: 'Convertible Deb', content: 'Can be converted into equity shares.', color: getReelColor(0) }
+            ]
+          },
+          { 
+            id: 'sp3', 
+            title: '3. Issue of Shares', 
+            description: 'Procedure, Types of Issue, SEBI Guidelines.', 
+            summary: '**IPO**: First issue to public.\n**FPO**: Further Public Offer.\n**Rights Issue**: To existing shareholders.\n**Bonus Issue**: Free shares from reserves.', 
+            detailedNotes: '### 1. Types of Share Issue\n**A. Initial Public Offer (IPO)**:\n* First time issue to public.\n* Company becomes listed.\n* DRHP filed with SEBI.\n\n**B. Further Public Offer (FPO)**:\n* Subsequent issue by listed company.\n\n**C. Rights Issue**:\n* Offered to existing shareholders.\n* Right to buy before public.\n* Can renounce the right.\n\n**D. Bonus Issue**:\n* Free shares from reserves.\n* No cash received.\n* Capitalization of profits.\n\n**E. Private Placement**:\n* Issue to select group of investors.\n* Less than 50 people.\n\n### 2. Procedure of Issue\n1. Board Resolution.\n2. DRHP to SEBI.\n3. RHP (Red Herring Prospectus).\n4. Applications and Allotment.\n5. Listing on Stock Exchange.\n\n### 3. SEBI Guidelines\n* Minimum promoter contribution: 20%.\n* Lock-in period: 3 years for promoters.\n* Disclosure requirements.',
+            flashcards: [
+              { id: 'f1', front: 'IPO stands for?', back: 'Initial Public Offer - First issue to public.' },
+              { id: 'f2', front: 'Rights Issue is for?', back: 'Existing shareholders at preferential price.' },
+              { id: 'f3', front: 'Bonus Issue means?', back: 'Free shares from reserves - No cash involved.' },
+              { id: 'f4', front: 'DRHP stands for?', back: 'Draft Red Herring Prospectus.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'First issue of shares to public is called ______.', options: ['FPO', 'IPO', 'Rights', 'Bonus'], correctIndex: 1, explanation: 'Initial Public Offer.' },
+              { id: 'q2', question: 'Bonus shares are issued from ______.', options: ['Cash', 'Reserves', 'Loans', 'Debentures'], correctIndex: 1, explanation: 'Capitalization of reserves.' },
+              { id: 'q3', question: 'Rights issue is offered to ______ shareholders.', options: ['New', 'Existing', 'Foreign', 'Government'], correctIndex: 1, explanation: 'Priority to current holders.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'IPO', content: 'Initial Public Offer.\nFirst time to public.\nCompany gets listed.', color: getReelColor(1) },
+               { id: 'r2', title: 'FPO', content: 'Further Public Offer.\nAlready listed company.', color: getReelColor(2) },
+               { id: 'r3', title: 'Rights Issue', content: 'To existing shareholders.\nCan renounce rights.', color: getReelColor(3) },
+               { id: 'r4', title: 'Bonus Issue', content: 'Free shares.\nFrom reserves.\nNo cash received.', color: getReelColor(4) },
+               { id: 'r5', title: 'Private Placement', content: 'Issue to select few (<50 people).', color: getReelColor(5) },
+               { id: 'r6', title: 'SEBI', content: 'Regulates share issues.\nProtects investors.', color: getReelColor(6) },
+               { id: 'r7', title: 'Prospectus', content: 'Invitation to subscribe.\nContains all details.', color: getReelColor(7) }
+            ]
+          },
+          { 
+            id: 'sp4', 
+            title: '4. Issue of Debentures', 
+            description: 'Types, Procedure, Redemption.', 
+            summary: '**Secured/Unsecured**.\n**Convertible/Non-Convertible**.\n**Redemption**: Repayment at maturity.', 
+            detailedNotes: '### 1. Meaning of Debenture\nA debenture is a written acknowledgment of debt. Company issues debentures to raise borrowed capital.\n\n### 2. Types of Debentures\n**A. Based on Security**:\n* Secured (Mortgage) - Backed by assets.\n* Unsecured (Naked) - No asset backing.\n\n**B. Based on Convertibility**:\n* Convertible - Can be converted to shares.\n* Non-Convertible - Remain as debt.\n\n**C. Based on Redemption**:\n* Redeemable - Repaid after fixed period.\n* Irredeemable - Perpetual debentures.\n\n**D. Based on Registration**:\n* Registered - In name of holder.\n* Bearer - Transferable by delivery.\n\n### 3. Issue Procedure\n1. Board Resolution.\n2. Debenture Trust Deed.\n3. Filing with ROC.\n4. Issue and Allotment.\n\n### 4. Redemption Methods\n* Lump sum payment at maturity.\n* Installments.\n* Purchase from market.\n* Conversion into shares.',
+            flashcards: [
+              { id: 'f1', front: 'Secured Debentures are backed by?', back: 'Company assets as collateral.' },
+              { id: 'f2', front: 'Convertible Debentures can become?', back: 'Equity shares after specified period.' },
+              { id: 'f3', front: 'Debenture holders are?', back: 'Creditors of the company.' },
+              { id: 'f4', front: 'Debenture Trust Deed is executed with?', back: 'A Trustee for debenture holders.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Secured debentures are also called ______.', options: ['Naked', 'Mortgage', 'Bearer', 'Registered'], correctIndex: 1, explanation: 'Backed by mortgage of assets.' },
+              { id: 'q2', question: 'Convertible debentures become ______ after period.', options: ['Bonds', 'Loans', 'Shares', 'Deposits'], correctIndex: 2, explanation: 'Can be converted to equity.' },
+              { id: 'q3', question: 'Irredeemable debentures are also called ______.', options: ['Perpetual', 'Bearer', 'Naked', 'Registered'], correctIndex: 0, explanation: 'No fixed repayment date.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'Debenture', content: 'Acknowledgment of debt.\nFixed interest.\nCreditor status.', color: getReelColor(8) },
+               { id: 'r2', title: 'Secured', content: 'Backed by assets.\nMortgage Debentures.', color: getReelColor(9) },
+               { id: 'r3', title: 'Unsecured', content: 'No asset backing.\nNaked Debentures.', color: getReelColor(0) },
+               { id: 'r4', title: 'Convertible', content: 'Can become equity.\nAfter specified period.', color: getReelColor(1) },
+               { id: 'r5', title: 'Redemption', content: 'Repayment of debentures.\nAt maturity.', color: getReelColor(2) },
+               { id: 'r6', title: 'Trust Deed', content: 'Agreement with trustee.\nProtects debenture holders.', color: getReelColor(3) }
+            ]
+          },
+          { 
+            id: 'sp5', 
+            title: '5. Deposits', 
+            description: 'Public Deposits, Rules, Acceptance.', 
+            summary: '**Public Deposits**: Short-term borrowing from public.\n**Period**: 6 months to 3 years.\n**Interest**: Higher than bank FD.', 
+            detailedNotes: '### 1. Meaning of Deposits\nShort-term borrowing by company from public. An unsecured loan for working capital needs.\n\n### 2. Features\n* Period: Minimum 6 months, Maximum 3 years.\n* Interest rate: Higher than bank rates.\n* Unsecured: No collateral.\n* Regulated by Companies Act and RBI.\n\n### 3. Types of Deposits\n* **Public Deposits**: From general public.\n* **Shareholder Deposits**: From shareholders.\n* **Inter-Corporate Deposits**: From other companies.\n\n### 4. Rules (Companies Act 2013)\n* Maximum limit: 35% of paid-up capital + free reserves.\n* From members: Additional 10%.\n* Credit rating mandatory for public deposits.\n* Deposit Insurance (optional).\n\n### 5. Advantages\n* No voting rights dilution.\n* Lower cost than equity.\n* Flexible terms.\n\n### 6. Disadvantages\n* Fixed payment obligation.\n* Credit rating required.\n* RBI regulations.',
+            flashcards: [
+              { id: 'f1', front: 'Maximum period of public deposits?', back: '3 years (36 months).' },
+              { id: 'f2', front: 'Minimum period of public deposits?', back: '6 months.' },
+              { id: 'f3', front: 'Public deposits limit?', back: '35% of paid-up capital + free reserves.' },
+              { id: 'f4', front: 'Public deposits are?', back: 'Unsecured short-term borrowings.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Maximum period for public deposits is ______ years.', options: ['1', '2', '3', '5'], correctIndex: 2, explanation: '36 months maximum.' },
+              { id: 'q2', question: 'Public deposits are ______ in nature.', options: ['Secured', 'Unsecured', 'Guaranteed', 'Insured'], correctIndex: 1, explanation: 'No collateral required.' },
+              { id: 'q3', question: 'Deposits limit is ______% of paid-up capital + reserves.', options: ['25', '35', '45', '50'], correctIndex: 1, explanation: 'As per Companies Act.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'Public Deposits', content: 'Short-term borrowing.\n6 months to 3 years.', color: getReelColor(4) },
+               { id: 'r2', title: 'Interest', content: 'Higher than bank FD.\nAttracts investors.', color: getReelColor(5) },
+               { id: 'r3', title: 'Unsecured', content: 'No collateral.\nRisk for depositors.', color: getReelColor(6) },
+               { id: 'r4', title: 'Limit 35%', content: 'Of paid-up capital + free reserves.', color: getReelColor(7) },
+               { id: 'r5', title: 'Credit Rating', content: 'Mandatory for public deposits.\nCRISIL, ICRA, CARE.', color: getReelColor(8) }
+            ]
+          },
+          { 
+            id: 'sp6', 
+            title: '6. Dividend', 
+            description: 'Types, Declaration, Payment.', 
+            summary: '**Dividend**: Distribution of profits to shareholders.\n**Types**: Interim, Final, Stock Dividend.\n**From**: Profits only (Not capital).', 
+            detailedNotes: '### 1. Meaning of Dividend\nDividend is the distribution of profits to shareholders. It is the return on investment for equity holders.\n\n### 2. Types of Dividend\n**A. Cash Dividend**: Paid in cash.\n**B. Stock Dividend**: Paid in shares (Bonus).\n**C. Interim Dividend**: Before AGM.\n**D. Final Dividend**: Declared at AGM.\n\n### 3. Sources of Dividend\n* Current year profits.\n* Accumulated profits (Reserves).\n* Money provided by Government (for govt companies).\n\n### 4. Declaration Process\n1. Board recommends dividend.\n2. Shareholders approve at AGM.\n3. Transfer to Unpaid Dividend Account.\n4. Payment within 30 days.\n\n### 5. Unpaid Dividend\n* If unclaimed for 7 years → Transferred to IEPF (Investor Education and Protection Fund).\n\n### 6. Dividend Tax\n* DDT abolished from April 2020.\n* Now taxable in hands of shareholders.',
+            flashcards: [
+              { id: 'f1', front: 'Dividend is paid from?', back: 'Profits only (Current or Accumulated).' },
+              { id: 'f2', front: 'Interim Dividend is declared?', back: 'Before the Annual General Meeting.' },
+              { id: 'f3', front: 'Final Dividend is declared at?', back: 'Annual General Meeting (AGM).' },
+              { id: 'f4', front: 'Unclaimed dividend after 7 years goes to?', back: 'IEPF (Investor Education and Protection Fund).' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Dividend can only be paid from ______.', options: ['Capital', 'Profits', 'Loans', 'Deposits'], correctIndex: 1, explanation: 'Only from earned profits.' },
+              { id: 'q2', question: 'Final dividend is declared at ______.', options: ['Board Meeting', 'AGM', 'EGM', 'Any time'], correctIndex: 1, explanation: 'Shareholders approve at AGM.' },
+              { id: 'q3', question: 'Dividend must be paid within ______ days.', options: ['15', '30', '45', '60'], correctIndex: 1, explanation: 'From date of declaration.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'Dividend', content: 'Share of profits.\nReturn on investment.', color: getReelColor(9) },
+               { id: 'r2', title: 'Interim', content: 'Before AGM.\nBoard declares.', color: getReelColor(0) },
+               { id: 'r3', title: 'Final', content: 'At AGM.\nShareholders approve.', color: getReelColor(1) },
+               { id: 'r4', title: 'Stock Dividend', content: 'Bonus shares.\nNo cash paid.', color: getReelColor(2) },
+               { id: 'r5', title: 'IEPF', content: 'Unclaimed dividend after 7 years.\nInvestor Protection Fund.', color: getReelColor(3) },
+               { id: 'r6', title: 'Within 30 Days', content: 'Dividend must be paid.\nFrom declaration.', color: getReelColor(4) }
             ]
           }
         ],
@@ -803,9 +1180,142 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
         name: 'Accounts (BK)',
         icon: 'Calculator',
         color: 'bg-rose-500',
-        syllabus: 'Pending...',
-        paperPattern: 'Pending...',
-        chapters: [],
+        syllabus: '1. Accounts from Incomplete Records\n2. Single Entry System\n3. Accounts of Not-for-Profit Concerns\n4. Partnership Accounts\n5. Reconstitution of Partnership\n6. Dissolution of Partnership Firm\n7. Company Accounts',
+        paperPattern: '### Book Keeping Paper Pattern (80 Marks)\n\n* **Q.1 Objective Questions (20 Marks)**: MCQs, Fill in blanks, Match.\n* **Q.2 Practical Problems (12 Marks)**: (Any 2 out of 3)\n* **Q.3 Practical Problems (12 Marks)**: (Any 2 out of 3)\n* **Q.4 Practical Problems (14 Marks)**: (Any 2 out of 3)\n* **Q.5 Practical Problems (14 Marks)**: (Any 2 out of 3)\n* **Q.6 Theory Questions (8 Marks)**: (Any 2 out of 3)',
+        chapters: [
+          { 
+            id: 'bk1', 
+            title: '1. Accounts from Incomplete Records', 
+            description: 'Single Entry System, Statement of Affairs.', 
+            summary: '**Single Entry**: Only personal accounts maintained.\n**Statement of Affairs**: Like Balance Sheet (Assets - Liabilities = Capital).\n**Profit = Closing Capital - Opening Capital + Drawings - Additional Capital.', 
+            detailedNotes: '### 1. Meaning of Incomplete Records\nRecords which are not maintained according to double entry system. Also called Single Entry System.\n\n### 2. Reasons for Incomplete Records\n* Lack of accounting knowledge.\n* Small size of business.\n* To hide profits (Tax evasion).\n* Saves time and cost.\n\n### 3. Limitations\n* Accuracy cannot be verified.\n* No trial balance possible.\n* Financial position unclear.\n* Fraud may remain undetected.\n\n### 4. Statement of Affairs\nStatement showing Assets and Liabilities at a particular date.\n**Capital = Assets - Liabilities**\n\n### 5. Calculation of Profit\n**Profit = Closing Capital - Opening Capital + Drawings - Additional Capital**\n\nOR\n\n**Profit = Closing Net Worth - Opening Net Worth - Fresh Capital + Drawings**\n\n### 6. Conversion to Double Entry\n1. Prepare Statement of Affairs (Opening).\n2. Prepare Statement of Affairs (Closing).\n3. Prepare Trading and P&L Account.\n4. Prepare Balance Sheet.',
+            flashcards: [
+              { id: 'f1', front: 'Single Entry maintains which accounts?', back: 'Only Personal Accounts (Debtors & Creditors).' },
+              { id: 'f2', front: 'Formula for Profit in Single Entry?', back: 'Closing Capital - Opening Capital + Drawings - Additional Capital.' },
+              { id: 'f3', front: 'Statement of Affairs shows?', back: 'Assets and Liabilities at a particular date.' },
+              { id: 'f4', front: 'Capital in Statement of Affairs?', back: 'Capital = Total Assets - Total Liabilities.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Single entry system maintains only ______ accounts.', options: ['Real', 'Personal', 'Nominal', 'All'], correctIndex: 1, explanation: 'Only debtors and creditors.' },
+              { id: 'q2', question: 'Statement of Affairs is similar to ______.', options: ['Trial Balance', 'P&L Account', 'Balance Sheet', 'Cash Book'], correctIndex: 2, explanation: 'Shows assets and liabilities.' },
+              { id: 'q3', question: 'In single entry, ______ cannot be prepared.', options: ['Cash Book', 'Trial Balance', 'Statement of Affairs', 'Debtors list'], correctIndex: 1, explanation: 'No double entry, no trial balance.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'Single Entry', content: 'Only Personal accounts.\nNo Real, No Nominal.', color: getReelColor(0) },
+               { id: 'r2', title: 'Statement of Affairs', content: 'Assets - Liabilities = Capital.\nLike Balance Sheet.', color: getReelColor(1) },
+               { id: 'r3', title: 'Profit Formula', content: 'Closing Cap - Opening Cap\n+ Drawings\n- Additional Capital', color: getReelColor(2) },
+               { id: 'r4', title: 'Why Single Entry?', content: 'Small business.\nLack of knowledge.\nSaves time/cost.', color: getReelColor(3) },
+               { id: 'r5', title: 'Limitation', content: 'No Trial Balance.\nFraud may go undetected.', color: getReelColor(4) },
+               { id: 'r6', title: 'Conversion', content: 'Opening Statement.\nClosing Statement.\nTrading & P&L.\nBalance Sheet.', color: getReelColor(5) }
+            ]
+          },
+          { 
+            id: 'bk2', 
+            title: '2. Accounts of Not-for-Profit Concerns', 
+            description: 'Receipts & Payments, Income & Expenditure.', 
+            summary: '**NPO**: Clubs, Schools, Hospitals (No profit motive).\n**Receipts & Payments A/c**: Cash basis, All receipts.\n**Income & Expenditure A/c**: Accrual basis, Revenue items only.', 
+            detailedNotes: '### 1. Meaning of NPO\nOrganizations formed for providing service to members/public, not for earning profit.\n**Examples**: Clubs, Schools, Hospitals, Libraries, NGOs.\n\n### 2. Receipts and Payments Account\n**Features**:\n* Summary of Cash Book.\n* All cash receipts and payments.\n* Capital and Revenue items both.\n* Opening balance = Cash/Bank (Dr).\n* Closing balance = Cash/Bank at end.\n\n### 3. Income and Expenditure Account\n**Features**:\n* Like Profit & Loss Account.\n* Only Revenue items.\n* Accrual basis (outstanding included).\n* Difference = Surplus (Cr) or Deficit (Dr).\n\n### 4. Balance Sheet\nShows Assets, Liabilities, and Capital Fund.\n**Capital Fund = Assets - Liabilities**\n\n### 5. Important Adjustments\n* Subscriptions: Add outstanding, deduct advance.\n* Depreciation on fixed assets.\n* Stock of consumables (stationery, medicines).\n* Life membership fees: Capital item → Balance Sheet.',
+            flashcards: [
+              { id: 'f1', front: 'Examples of NPO?', back: 'Clubs, Schools, Hospitals, Libraries, NGOs.' },
+              { id: 'f2', front: 'Receipts & Payments A/c is based on?', back: 'Cash basis (Actual receipts and payments).' },
+              { id: 'f3', front: 'Income & Expenditure A/c is based on?', back: 'Accrual basis (Outstanding included).' },
+              { id: 'f4', front: 'Surplus in NPO is like?', back: 'Profit in business (Credit balance in I&E A/c).' },
+              { id: 'f5', front: 'Life Membership Fee is?', back: 'Capital Receipt → Shown in Balance Sheet.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'NPO prepares ______ instead of P&L Account.', options: ['Trading A/c', 'Income & Expenditure A/c', 'Cash A/c', 'Capital A/c'], correctIndex: 1, explanation: 'Shows surplus or deficit.' },
+              { id: 'q2', question: 'Receipts & Payments Account includes ______ items.', options: ['Only Revenue', 'Only Capital', 'Both Revenue & Capital', 'Neither'], correctIndex: 2, explanation: 'All cash items.' },
+              { id: 'q3', question: 'Life membership fee is a ______ receipt.', options: ['Revenue', 'Capital', 'Nominal', 'Fictitious'], correctIndex: 1, explanation: 'Not recurring, capital in nature.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'NPO', content: 'Not for Profit.\nClubs, Schools, NGOs.\nService motive.', color: getReelColor(6) },
+               { id: 'r2', title: 'R&P Account', content: 'Cash basis.\nAll receipts & payments.\nCapital + Revenue items.', color: getReelColor(7) },
+               { id: 'r3', title: 'I&E Account', content: 'Accrual basis.\nRevenue items only.\nLike P&L Account.', color: getReelColor(8) },
+               { id: 'r4', title: 'Surplus', content: 'When Income > Expenditure.\nLike Profit.', color: getReelColor(9) },
+               { id: 'r5', title: 'Deficit', content: 'When Expenditure > Income.\nLike Loss.', color: getReelColor(0) },
+               { id: 'r6', title: 'Capital Fund', content: 'Assets - Liabilities.\nLike Capital in business.', color: getReelColor(1) },
+               { id: 'r7', title: 'Subscription', content: 'Main income of NPO.\nAdd outstanding, deduct advance.', color: getReelColor(2) }
+            ]
+          },
+          { 
+            id: 'bk3', 
+            title: '3. Partnership Accounts - Fundamentals', 
+            description: 'Partnership Deed, Capital, P&L Appropriation.', 
+            summary: '**Partnership**: 2+ persons carrying business.\n**Partnership Deed**: Written agreement.\n**P&L Appropriation**: Distribution of profits (Interest, Salary, Share).', 
+            detailedNotes: '### 1. Meaning of Partnership\nRelation between persons who agree to share profits of business carried on by all or any of them acting for all. (Section 4, Partnership Act 1932)\n\n### 2. Partnership Deed\nWritten agreement containing:\n* Name of firm and partners.\n* Capital contribution.\n* Profit sharing ratio.\n* Interest on capital, drawings.\n* Salary/Commission to partners.\n\n### 3. In Absence of Deed\n* Profit sharing: Equal.\n* Interest on capital: Nil.\n* Interest on drawings: Nil.\n* Salary/Commission: Nil.\n* Interest on loan by partner: 6% p.a.\n\n### 4. Profit & Loss Appropriation Account\nShows how profits are distributed:\n1. Interest on Capital (Dr).\n2. Salary/Commission to partners (Dr).\n3. Interest on Drawings (Cr).\n4. Balance transferred to Capital/Current A/c.\n\n### 5. Capital Accounts\n**Fixed Capital Method**:\n* Capital A/c: Only capital transactions.\n* Current A/c: All other items.\n\n**Fluctuating Capital Method**:\n* All items in Capital A/c.\n* Capital keeps changing.',
+            flashcards: [
+              { id: 'f1', front: 'Minimum partners in a firm?', back: '2 (Maximum 50 for other businesses, 10 for banking).' },
+              { id: 'f2', front: 'Interest on loan by partner (no deed)?', back: '6% per annum.' },
+              { id: 'f3', front: 'Profit sharing ratio (no deed)?', back: 'Equal ratio.' },
+              { id: 'f4', front: 'P&L Appropriation A/c shows?', back: 'Distribution of profits among partners.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'In absence of deed, profits are shared ______.', options: ['In capital ratio', 'Equally', 'Randomly', 'As decided by one partner'], correctIndex: 1, explanation: 'Equal sharing when no agreement.' },
+              { id: 'q2', question: 'Interest on loan by partner without deed is ______%.', options: ['5', '6', '8', '10'], correctIndex: 1, explanation: 'As per Partnership Act.' },
+              { id: 'q3', question: 'Fixed Capital Method has ______ accounts for partner.', options: ['One', 'Two', 'Three', 'Four'], correctIndex: 1, explanation: 'Capital A/c and Current A/c.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'Partnership', content: 'Min 2 partners.\nMax 50 (10 for banking).', color: getReelColor(3) },
+               { id: 'r2', title: 'Partnership Deed', content: 'Written agreement.\nContains all terms.', color: getReelColor(4) },
+               { id: 'r3', title: 'No Deed Rules', content: 'Profit = Equal.\nInterest on Capital = Nil.\nSalary = Nil.', color: getReelColor(5) },
+               { id: 'r4', title: 'P&L Appropriation', content: 'Distribution of profits.\nInterest, Salary, Share.', color: getReelColor(6) },
+               { id: 'r5', title: 'Fixed Capital', content: '2 Accounts.\nCapital A/c + Current A/c.', color: getReelColor(7) },
+               { id: 'r6', title: 'Fluctuating Capital', content: '1 Account only.\nCapital keeps changing.', color: getReelColor(8) },
+               { id: 'r7', title: '6% Interest', content: 'On loan by partner.\nWhen no deed exists.', color: getReelColor(9) }
+            ]
+          },
+          { 
+            id: 'bk4', 
+            title: '4. Reconstitution of Partnership', 
+            description: 'Admission, Retirement, Death of Partner.', 
+            summary: '**Admission**: New partner joins.\n**Retirement**: Partner leaves.\n**Goodwill**: Compensation for reputation.\n**Revaluation**: Assets & Liabilities adjusted.', 
+            detailedNotes: '### 1. Admission of Partner\n**Steps**:\n1. Calculate new profit sharing ratio.\n2. Calculate sacrificing ratio.\n3. Treatment of Goodwill.\n4. Revaluation of Assets & Liabilities.\n5. Distribution of accumulated profits.\n6. Adjust Capital (if required).\n\n**Sacrificing Ratio = Old Ratio - New Ratio**\n\n### 2. Retirement of Partner\n**Steps**:\n1. Calculate new profit sharing ratio.\n2. Calculate gaining ratio.\n3. Treatment of Goodwill.\n4. Revaluation of Assets & Liabilities.\n5. Settlement of retiring partner.\n\n**Gaining Ratio = New Ratio - Old Ratio**\n\n### 3. Death of Partner\nSimilar to retirement. Additional:\n* Share of profit till date of death.\n* Joint Life Policy (if any).\n\n### 4. Goodwill\n**Methods of Valuation**:\n* Average Profit Method.\n* Super Profit Method.\n* Capitalization Method.\n\n### 5. Revaluation Account\n* Increase in Asset = Credit.\n* Decrease in Asset = Debit.\n* Increase in Liability = Debit.\n* Decrease in Liability = Credit.\n* Profit/Loss distributed in Old Ratio.',
+            flashcards: [
+              { id: 'f1', front: 'Sacrificing Ratio?', back: 'Old Ratio - New Ratio (For Admission).' },
+              { id: 'f2', front: 'Gaining Ratio?', back: 'New Ratio - Old Ratio (For Retirement).' },
+              { id: 'f3', front: 'Revaluation profit distributed in?', back: 'Old Profit Sharing Ratio.' },
+              { id: 'f4', front: 'Goodwill is?', back: 'Value of business reputation.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Sacrificing ratio is calculated at time of ______.', options: ['Retirement', 'Admission', 'Dissolution', 'All'], correctIndex: 1, explanation: 'Old partners sacrifice for new partner.' },
+              { id: 'q2', question: 'Revaluation profit is shared in ______ ratio.', options: ['New', 'Old', 'Equal', 'Capital'], correctIndex: 1, explanation: 'Belongs to old partners.' },
+              { id: 'q3', question: 'Gaining ratio is New Ratio minus ______ Ratio.', options: ['Old', 'Sacrificing', 'Capital', 'Equal'], correctIndex: 0, explanation: 'What partners gain after retirement.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'Admission', content: 'New partner joins.\nPays for Goodwill.\nGets share of profits.', color: getReelColor(0) },
+               { id: 'r2', title: 'Retirement', content: 'Partner leaves.\nGets settlement.\nReceives Goodwill share.', color: getReelColor(1) },
+               { id: 'r3', title: 'Sacrificing Ratio', content: 'Old Ratio - New Ratio.\nFor Admission.', color: getReelColor(2) },
+               { id: 'r4', title: 'Gaining Ratio', content: 'New Ratio - Old Ratio.\nFor Retirement.', color: getReelColor(3) },
+               { id: 'r5', title: 'Goodwill', content: 'Business reputation.\nValued by profits method.', color: getReelColor(4) },
+               { id: 'r6', title: 'Revaluation A/c', content: 'Adjust Assets & Liabilities.\nProfit/Loss in Old Ratio.', color: getReelColor(5) }
+            ]
+          },
+          { 
+            id: 'bk5', 
+            title: '5. Dissolution of Partnership Firm', 
+            description: 'Dissolution vs Reconstitution, Realisation A/c.', 
+            summary: '**Dissolution**: Firm closes down.\n**Realisation A/c**: Shows profit/loss on dissolution.\n**Order of Payment**: Outside creditors first.', 
+            detailedNotes: '### 1. Meaning of Dissolution\nComplete closure of partnership business. All assets sold, liabilities paid, surplus distributed.\n\n### 2. Dissolution vs Reconstitution\n| Dissolution | Reconstitution |\n|-------------|----------------|\n| Business ends | Business continues |\n| All assets sold | Only adjustments |\n| Books closed | Books continue |\n\n### 3. Realisation Account\n* Transfer all Assets (except Cash) → Debit.\n* Transfer all Liabilities (except Partner Loans) → Credit.\n* Realisation expenses → Debit.\n* Amount realized from assets → Credit.\n* Profit/Loss transferred to Partner Capital A/c.\n\n### 4. Order of Payment (Garner vs Murray Rule)\n1. Realisation expenses.\n2. Outside creditors.\n3. Partners\' loans.\n4. Partners\' capital (in capital ratio).\n\n### 5. Treatment of Unrecorded Items\n* Unrecorded Asset → Credit Realisation A/c when sold.\n* Unrecorded Liability → Debit Realisation A/c when paid.',
+            flashcards: [
+              { id: 'f1', front: 'Dissolution means?', back: 'Complete closure of partnership firm.' },
+              { id: 'f2', front: 'Realisation Account shows?', back: 'Profit or Loss on dissolution.' },
+              { id: 'f3', front: 'First payment on dissolution?', back: 'Outside creditors (after realisation expenses).' },
+              { id: 'f4', front: 'Garner vs Murray Rule applies when?', back: 'Partner is insolvent and has debit capital balance.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'On dissolution, assets are transferred to ______ A/c.', options: ['Capital', 'Realisation', 'Cash', 'P&L'], correctIndex: 1, explanation: 'All assets go to Realisation A/c.' },
+              { id: 'q2', question: 'First priority in payment is to ______.', options: ['Partners', 'Outside Creditors', 'Banks', 'Government'], correctIndex: 1, explanation: 'External parties first.' },
+              { id: 'q3', question: 'Realisation expenses are ______ to Realisation A/c.', options: ['Credited', 'Debited', 'Not recorded', 'Ignored'], correctIndex: 1, explanation: 'Expense = Debit.' }
+            ],
+            reels: [
+               { id: 'r1', title: 'Dissolution', content: 'Firm closes down.\nAll assets sold.\nLiabilities paid.', color: getReelColor(6) },
+               { id: 'r2', title: 'Realisation A/c', content: 'Assets → Debit.\nLiabilities → Credit.\nProfit/Loss to Capital.', color: getReelColor(7) },
+               { id: 'r3', title: 'Payment Order', content: '1. Outside Creditors.\n2. Partner Loans.\n3. Partner Capital.', color: getReelColor(8) },
+               { id: 'r4', title: 'vs Reconstitution', content: 'Dissolution = End.\nReconstitution = Continue.', color: getReelColor(9) },
+               { id: 'r5', title: 'Garner vs Murray', content: 'When partner is insolvent.\nLoss borne by solvent partners.', color: getReelColor(0) }
+            ]
+          }
+        ],
         previousPapers: []
       }
     ]
