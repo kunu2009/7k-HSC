@@ -78,6 +78,12 @@ const PreviousMarksInput: React.FC = () => {
     );
   };
 
+  const updateMaxMark = (subjectId: string, maxMarks: number) => {
+    setSubjectMarks(prev => 
+      prev.map(s => s.subjectId === subjectId ? { ...s, maxMarks: maxMarks || 100 } : s)
+    );
+  };
+
   const calculateTotal = () => {
     const filled = subjectMarks.filter(s => s.marks !== null);
     const total = filled.reduce((acc, s) => acc + (s.marks || 0), 0);
@@ -166,7 +172,7 @@ const PreviousMarksInput: React.FC = () => {
                   <div className="mt-2 flex flex-wrap gap-1">
                     {exam.subjects.map(s => (
                       <span key={s.subjectId} className="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-1 rounded-full text-slate-600 dark:text-slate-300">
-                        {s.subjectName}: {s.marks}
+                        {s.subjectName}: {s.marks}/{s.maxMarks}
                       </span>
                     ))}
                   </div>
@@ -223,18 +229,27 @@ const PreviousMarksInput: React.FC = () => {
 
               {/* Subject Marks */}
               <div className="space-y-2 mb-4">
-                <label className="text-xs font-medium text-slate-500 dark:text-slate-400">Marks (out of 100)</label>
+                <label className="text-xs font-medium text-slate-500 dark:text-slate-400">Enter marks obtained and max marks</label>
                 {subjectMarks.map(subject => (
                   <div key={subject.subjectId} className="flex items-center gap-2">
                     <span className="flex-1 text-sm text-slate-600 dark:text-slate-300">{subject.subjectName}</span>
                     <input
                       type="number"
                       min="0"
-                      max="100"
+                      max={subject.maxMarks}
                       value={subject.marks ?? ''}
                       onChange={(e) => updateMark(subject.subjectId, e.target.value ? parseInt(e.target.value) : null)}
                       placeholder="--"
-                      className="w-16 p-2 text-center bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg text-slate-800 dark:text-white font-semibold text-sm"
+                      className="w-14 p-2 text-center bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg text-slate-800 dark:text-white font-semibold text-sm"
+                    />
+                    <span className="text-slate-400 text-sm">/</span>
+                    <input
+                      type="number"
+                      min="1"
+                      max="200"
+                      value={subject.maxMarks}
+                      onChange={(e) => updateMaxMark(subject.subjectId, e.target.value ? parseInt(e.target.value) : 100)}
+                      className="w-14 p-2 text-center bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-lg text-slate-800 dark:text-white font-semibold text-sm"
                     />
                   </div>
                 ))}

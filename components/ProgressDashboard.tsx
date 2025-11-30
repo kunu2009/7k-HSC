@@ -12,7 +12,7 @@ interface ProgressDashboardProps {
     longestStreak: number;
     totalStudyDays: number;
   };
-  subjectProgress: { name: string; completion: number; color: string }[];
+  subjectProgress?: { name: string; completion: number; color: string }[];
 }
 
 const ProgressDashboard: React.FC<ProgressDashboardProps> = ({ stats, subjectProgress }) => {
@@ -92,7 +92,7 @@ const ProgressDashboard: React.FC<ProgressDashboardProps> = ({ stats, subjectPro
       </div>
 
       {/* Subject Progress */}
-      {subjectProgress.length > 0 && (
+      {subjectProgress && subjectProgress.length > 0 && (
         <div className="bg-white dark:bg-slate-800 rounded-xl p-4 shadow-sm border border-slate-100 dark:border-slate-700">
           <div className="flex items-center gap-2 mb-4">
             <TrendingUp size={16} className="text-indigo-500" />

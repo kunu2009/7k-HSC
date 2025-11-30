@@ -1326,7 +1326,182 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
       ENGLISH_SUBJECT,
       ECONOMICS_SUBJECT,
       {
-        id: 'his', name: 'History', icon: 'BookOpen', color: 'bg-orange-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: []
+        id: 'his', 
+        name: 'History', 
+        icon: 'BookOpen', 
+        color: 'bg-orange-500', 
+        syllabus: '1. Renaissance\n2. Reformation\n3. Industrial Revolution\n4. American Revolution\n5. French Revolution\n6. Imperialism and Colonialism\n7. World War I\n8. World War II\n9. Cold War\n10. Emergence of Third World',
+        paperPattern: '### History Paper Pattern (80 Marks)\n\n* **Q.1 Multiple Choice (20 Marks)**\n* **Q.2 Answer in Brief (12 Marks)**\n* **Q.3 Short Notes (12 Marks)**\n* **Q.4 Long Answers (16 Marks)**\n* **Q.5 Map Work (8 Marks)**\n* **Q.6 Project (Internal - 20 Marks)**',
+        previousPapers: [], 
+        chapters: [
+          {
+            id: 'his1',
+            title: '1. Renaissance',
+            description: 'Rebirth of learning in Europe (14th-17th century).',
+            summary: '**Renaissance** = "Rebirth"\n**Period**: 14th-17th century\n**Origin**: Italy (Florence)\n**Key Features**: Humanism, Art, Science, Literature\n**Impact**: End of Dark Ages, Beginning of Modern Era',
+            detailedNotes: '### 1. Meaning of Renaissance\n* Renaissance means "Rebirth" or "Revival"\n* Revival of Greek and Roman learning\n* Transition from Medieval to Modern Era\n* Started in Italy, spread to Europe\n\n### 2. Causes of Renaissance\n1. **Fall of Constantinople (1453)**: Greek scholars fled to Italy with manuscripts\n2. **Crusades**: Exposed Europeans to Eastern knowledge\n3. **Printing Press**: Gutenberg\'s invention spread ideas\n4. **Geographical Discoveries**: New trade routes, wealth\n5. **Rise of Wealthy Merchants**: Patronized art and learning\n6. **Decline of Feudalism**: New social class emerged\n\n### 3. Why Italy?\n* Central location for trade\n* Wealthy city-states (Florence, Venice, Rome)\n* Roman heritage and ruins\n* Medici family patronage\n\n### 4. Main Features\n**A. Humanism**\n* Focus on human beings, not just religion\n* "Man is the measure of all things"\n* Study of classical literature\n\n**B. Art & Architecture**\n* Perspective in painting\n* Realistic human figures\n* Great artists: Leonardo, Michelangelo, Raphael\n\n**C. Science**\n* Observation and experiment\n* Copernicus: Heliocentric theory\n* Galileo: Telescope, laws of motion\n\n### 5. Key Personalities\n* **Leonardo da Vinci**: Mona Lisa, The Last Supper (Painter, Scientist, Inventor)\n* **Michelangelo**: Sistine Chapel, David statue\n* **Raphael**: School of Athens\n* **Dante**: Divine Comedy\n* **Petrarch**: Father of Humanism\n* **Machiavelli**: The Prince (Political philosophy)\n* **Erasmus**: Praise of Folly\n\n### 6. Impact of Renaissance\n* End of blind faith\n* Beginning of scientific inquiry\n* Growth of vernacular literature\n* Rise of nation-states\n* Foundation for Reformation',
+            flashcards: [
+              { id: 'f1', front: 'What does Renaissance mean?', back: 'Rebirth - Revival of Greek and Roman learning.' },
+              { id: 'f2', front: 'Where did Renaissance begin?', back: 'Italy (Florence).' },
+              { id: 'f3', front: 'When was the Renaissance period?', back: '14th to 17th century.' },
+              { id: 'f4', front: 'Who invented the Printing Press?', back: 'Johannes Gutenberg (1440).' },
+              { id: 'f5', front: 'Who is called the Father of Humanism?', back: 'Petrarch.' },
+              { id: 'f6', front: 'Who painted the Mona Lisa?', back: 'Leonardo da Vinci.' },
+              { id: 'f7', front: 'Who painted the Sistine Chapel ceiling?', back: 'Michelangelo.' },
+              { id: 'f8', front: 'What did Copernicus propose?', back: 'Heliocentric theory - Sun is the center of universe.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Renaissance started in which country?', options: ['France', 'England', 'Italy', 'Germany'], correctIndex: 2, explanation: 'Italy, specifically Florence, was the birthplace of Renaissance.' },
+              { id: 'q2', question: '"Mona Lisa" was painted by:', options: ['Michelangelo', 'Raphael', 'Leonardo da Vinci', 'Botticelli'], correctIndex: 2, explanation: 'Leonardo da Vinci painted the famous Mona Lisa.' },
+              { id: 'q3', question: 'The Printing Press was invented by:', options: ['Caxton', 'Gutenberg', 'Erasmus', 'Luther'], correctIndex: 1, explanation: 'Johannes Gutenberg invented the movable type printing press around 1440.' },
+              { id: 'q4', question: 'Which event in 1453 helped spread Renaissance?', options: ['Crusades end', 'Fall of Constantinople', 'Discovery of America', 'Reformation'], correctIndex: 1, explanation: 'Greek scholars fled Constantinople bringing manuscripts to Italy.' },
+              { id: 'q5', question: 'Who wrote "The Prince"?', options: ['Dante', 'Petrarch', 'Machiavelli', 'Erasmus'], correctIndex: 2, explanation: 'Machiavelli wrote The Prince, a book on political philosophy.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Renaissance', content: '"Rebirth" of learning.\n14th-17th century.\nStarted in Italy.', color: getReelColor(0) },
+              { id: 'r2', title: 'Why Italy?', content: 'Trade center.\nWealthy merchants.\nRoman heritage.', color: getReelColor(1) },
+              { id: 'r3', title: 'Humanism', content: 'Focus on HUMANS.\nNot just religion.\n"Man is the measure of all things."', color: getReelColor(2) },
+              { id: 'r4', title: 'Printing Press', content: 'Gutenberg - 1440.\nBooks became cheap.\nIdeas spread fast!', color: getReelColor(3) },
+              { id: 'r5', title: 'Leonardo', content: 'Painter + Scientist.\nMona Lisa.\nThe Last Supper.', color: getReelColor(4) },
+              { id: 'r6', title: 'Michelangelo', content: 'Sistine Chapel ceiling.\nDavid statue.\nMaster sculptor!', color: getReelColor(5) },
+              { id: 'r7', title: 'Constantinople', content: 'Fell in 1453.\nScholars fled to Italy.\nBrought Greek knowledge.', color: getReelColor(6) },
+              { id: 'r8', title: 'Impact', content: 'End of blind faith.\nStart of science.\nModern Era begins!', color: getReelColor(7) }
+            ]
+          },
+          {
+            id: 'his2',
+            title: '2. Reformation',
+            description: 'Religious movement against Catholic Church (16th century).',
+            summary: '**Reformation**: Religious reform movement\n**Period**: 16th century\n**Leader**: Martin Luther (1517)\n**Cause**: Corruption in Church, Sale of Indulgences\n**Result**: Rise of Protestantism',
+            detailedNotes: '### 1. Meaning of Reformation\n* Religious movement to reform the Catholic Church\n* Broke the unity of Western Christianity\n* Led to creation of Protestant churches\n* Started by Martin Luther in 1517\n\n### 2. Causes of Reformation\n**A. Religious Causes**\n* Sale of Indulgences (pardons for sins)\n* Corruption in Church\n* Simony (buying/selling religious positions)\n* Nepotism (favoring relatives)\n* Immorality of clergy\n\n**B. Political Causes**\n* Kings wanted independence from Pope\n* Church interference in state matters\n* Heavy taxation by Church\n\n**C. Economic Causes**\n* Church\'s vast wealth\n* Peter\'s Pence (tax to Pope)\n* Confiscation of property\n\n**D. Intellectual Causes**\n* Renaissance promoted questioning\n* Printing Press spread new ideas\n* Translation of Bible into local languages\n\n### 3. Martin Luther (Germany)\n* Augustinian monk and professor\n* **95 Theses (1517)**: Criticism of indulgences\n* Nailed to church door in Wittenberg\n* Excommunicated by Pope\n* Protected by German princes\n* Founded Lutheran Church\n* Beliefs: "Faith alone, Scripture alone, Grace alone"\n\n### 4. Other Reformers\n* **John Calvin (Switzerland)**: Calvinism, Predestination\n* **Zwingli (Switzerland)**: Reformed Church\n* **Henry VIII (England)**: Anglican Church (Act of Supremacy 1534)\n* **John Knox (Scotland)**: Presbyterian Church\n\n### 5. Counter-Reformation\n* Catholic Church\'s response\n* Council of Trent (1545-1563)\n* Society of Jesus (Jesuits) by Ignatius Loyola\n* Inquisition strengthened\n\n### 6. Impact of Reformation\n* Division of Christianity (Catholic vs Protestant)\n* Rise of nation-states\n* Growth of vernacular languages\n* Religious wars in Europe\n* Education for all promoted',
+            flashcards: [
+              { id: 'f1', front: 'Who started the Reformation?', back: 'Martin Luther in 1517.' },
+              { id: 'f2', front: 'What are the 95 Theses?', back: 'Martin Luther\'s criticism of Church practices, especially sale of indulgences.' },
+              { id: 'f3', front: 'What are Indulgences?', back: 'Pardons for sins sold by the Church for money.' },
+              { id: 'f4', front: 'Who founded the Anglican Church?', back: 'Henry VIII of England (Act of Supremacy 1534).' },
+              { id: 'f5', front: 'What is Counter-Reformation?', back: 'Catholic Church\'s response to reform itself and counter Protestantism.' },
+              { id: 'f6', front: 'Who founded the Jesuits?', back: 'Ignatius Loyola.' },
+              { id: 'f7', front: 'What did Calvin believe in?', back: 'Predestination - God has already decided who will be saved.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Martin Luther nailed 95 Theses in which year?', options: ['1415', '1517', '1534', '1545'], correctIndex: 1, explanation: '1517 is considered the start of Reformation.' },
+              { id: 'q2', question: 'Sale of ______ was criticized by Luther.', options: ['Land', 'Books', 'Indulgences', 'Weapons'], correctIndex: 2, explanation: 'Indulgences were pardons for sins sold for money.' },
+              { id: 'q3', question: 'Anglican Church was established by:', options: ['Luther', 'Calvin', 'Henry VIII', 'Zwingli'], correctIndex: 2, explanation: 'Henry VIII broke from Rome and established the Church of England.' },
+              { id: 'q4', question: 'Council of Trent was part of:', options: ['Reformation', 'Counter-Reformation', 'Renaissance', 'Revolution'], correctIndex: 1, explanation: 'It was Catholic Church\'s response to Reformation.' },
+              { id: 'q5', question: 'Society of Jesus (Jesuits) was founded by:', options: ['Calvin', 'Luther', 'Ignatius Loyola', 'Henry VIII'], correctIndex: 2, explanation: 'Ignatius Loyola founded the Jesuits in 1540.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Reformation', content: 'Religious reform.\n16th century.\nAgainst Catholic Church.', color: getReelColor(0) },
+              { id: 'r2', title: 'Martin Luther', content: '95 Theses - 1517.\nCriticized indulgences.\nFounder of Lutheranism.', color: getReelColor(1) },
+              { id: 'r3', title: 'Indulgences', content: 'Pardons for sins.\nSold for money.\n"Pay and your sins are forgiven!"', color: getReelColor(2) },
+              { id: 'r4', title: 'Luther\'s Beliefs', content: 'Faith ALONE.\nScripture ALONE.\nGrace ALONE.', color: getReelColor(3) },
+              { id: 'r5', title: 'Henry VIII', content: 'King of England.\nWanted divorce.\nCreated Anglican Church!', color: getReelColor(4) },
+              { id: 'r6', title: 'Calvin', content: 'Swiss reformer.\nPredestination.\nGod already decided!', color: getReelColor(5) },
+              { id: 'r7', title: 'Counter-Reform', content: 'Catholic response.\nCouncil of Trent.\nJesuits formed.', color: getReelColor(6) },
+              { id: 'r8', title: 'Impact', content: 'Christianity divided.\nProtestants vs Catholics.\nReligious wars.', color: getReelColor(7) }
+            ]
+          },
+          {
+            id: 'his3',
+            title: '3. Industrial Revolution',
+            description: 'Transformation from agrarian to industrial economy (18th-19th century).',
+            summary: '**Industrial Revolution**: Shift from hand production to machines\n**Period**: 1760-1840\n**Origin**: England\n**Key Inventions**: Steam Engine, Spinning Jenny, Power Loom\n**Impact**: Urbanization, Factory System, Social Changes',
+            detailedNotes: '### 1. Meaning\n* Transition from hand production to machine manufacturing\n* Agricultural society to industrial society\n* Started in England around 1760\n* "Revolution" because changes were rapid and dramatic\n\n### 2. Why England First?\n1. **Geographical Factors**\n   - Rich coal and iron deposits\n   - Many rivers for water power and transport\n   - Island nation - safe from wars\n   - Good natural harbors\n\n2. **Economic Factors**\n   - Colonial wealth\n   - Strong banking system\n   - Growing trade\n   - Accumulated capital\n\n3. **Political Factors**\n   - Stable government\n   - No internal wars\n   - Patent laws protected inventors\n\n4. **Social Factors**\n   - Scientific temperament\n   - Skilled workers\n   - Agricultural Revolution freed labor\n\n### 3. Key Inventions\n**Textile Industry**\n* Flying Shuttle (John Kay, 1733)\n* Spinning Jenny (Hargreaves, 1764)\n* Water Frame (Arkwright, 1769)\n* Spinning Mule (Crompton, 1779)\n* Power Loom (Cartwright, 1785)\n\n**Steam Power**\n* Steam Engine (James Watt, 1769)\n* Revolutionized factories and transport\n\n**Iron & Steel**\n* Coke smelting (Darby)\n* Bessemer process (1856)\n\n**Transport**\n* Railways (Stephenson\'s Rocket, 1829)\n* Steamships\n\n### 4. Impact\n**A. Economic**\n* Factory system replaced cottage industry\n* Mass production, lower prices\n* Rise of capitalism\n\n**B. Social**\n* Urbanization (cities grew)\n* New social classes (bourgeoisie, proletariat)\n* Child labor, poor working conditions\n* Trade unions formed\n\n**C. Political**\n* Rise of socialism and Marxism\n* Labor laws enacted\n* Reform movements',
+            flashcards: [
+              { id: 'f1', front: 'Where did Industrial Revolution begin?', back: 'England (around 1760).' },
+              { id: 'f2', front: 'Who invented the Steam Engine?', back: 'James Watt (improved version, 1769).' },
+              { id: 'f3', front: 'Who invented the Spinning Jenny?', back: 'James Hargreaves (1764).' },
+              { id: 'f4', front: 'Who invented the Power Loom?', back: 'Edmund Cartwright (1785).' },
+              { id: 'f5', front: 'Which industry was first to industrialize?', back: 'Textile (Cotton) Industry.' },
+              { id: 'f6', front: 'What is Factory System?', back: 'Production in large buildings with machines, replacing cottage industry.' },
+              { id: 'f7', front: 'Who built the first railway locomotive?', back: 'George Stephenson (Rocket, 1829).' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Industrial Revolution began in:', options: ['France', 'Germany', 'England', 'USA'], correctIndex: 2, explanation: 'England was first due to coal, iron, and capital.' },
+              { id: 'q2', question: 'Steam Engine was improved by:', options: ['Arkwright', 'Watt', 'Hargreaves', 'Cartwright'], correctIndex: 1, explanation: 'James Watt made steam engine efficient.' },
+              { id: 'q3', question: 'First industry to be mechanized:', options: ['Iron', 'Textile', 'Coal', 'Steel'], correctIndex: 1, explanation: 'Cotton textile industry was first.' },
+              { id: 'q4', question: '"Rocket" was invented by:', options: ['Watt', 'Stephenson', 'Fulton', 'Morse'], correctIndex: 1, explanation: 'George Stephenson built the famous Rocket locomotive.' },
+              { id: 'q5', question: 'Spinning Jenny was invented by:', options: ['Arkwright', 'Crompton', 'Hargreaves', 'Cartwright'], correctIndex: 2, explanation: 'James Hargreaves invented Spinning Jenny in 1764.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Industrial Rev', content: 'Hand → Machine.\nAgriculture → Industry.\nStarted in ENGLAND.', color: getReelColor(0) },
+              { id: 'r2', title: 'Why England?', content: 'Coal + Iron.\nCapital + Colonies.\nStable government.', color: getReelColor(1) },
+              { id: 'r3', title: 'Steam Engine', content: 'James Watt - 1769.\nPowered factories.\nChanged everything!', color: getReelColor(2) },
+              { id: 'r4', title: 'Textile First', content: 'Cotton industry.\nSpinning Jenny.\nPower Loom.', color: getReelColor(3) },
+              { id: 'r5', title: 'Railways', content: 'Stephenson\'s Rocket.\n1829.\nTransport revolution.', color: getReelColor(4) },
+              { id: 'r6', title: 'Factory System', content: 'Cottage → Factory.\nMass production.\nDivision of labor.', color: getReelColor(5) },
+              { id: 'r7', title: 'Social Impact', content: 'Urbanization.\nChild labor.\nTrade unions.', color: getReelColor(6) },
+              { id: 'r8', title: 'New Classes', content: 'Bourgeoisie = Factory owners.\nProletariat = Workers.', color: getReelColor(7) }
+            ]
+          },
+          {
+            id: 'his4',
+            title: '4. French Revolution',
+            description: 'Overthrow of monarchy in France (1789-1799).',
+            summary: '**French Revolution**: Overthrow of absolute monarchy\n**Period**: 1789-1799\n**Motto**: Liberty, Equality, Fraternity\n**Key Event**: Storming of Bastille (July 14, 1789)\n**Result**: End of feudalism, Rise of Napoleon',
+            detailedNotes: '### 1. Background\n* France under absolute monarchy of Louis XVI\n* Queen Marie Antoinette\'s extravagance\n* Severe economic crisis\n* Society divided into Three Estates\n\n### 2. The Three Estates\n**First Estate**: Clergy (Church)\n* 1% of population\n* Owned 10% of land\n* No taxes\n\n**Second Estate**: Nobility\n* 2% of population\n* Owned 25% of land\n* No taxes\n\n**Third Estate**: Everyone else\n* 97% of population\n* Paid all taxes\n* Included bourgeoisie, peasants, workers\n\n### 3. Causes\n**A. Social Inequality**\n* Privileges of First and Second Estate\n* Heavy taxes on Third Estate\n* Feudal dues and tithes\n\n**B. Economic Crisis**\n* Empty treasury\n* Cost of American Revolution\n* Bad harvests, bread shortage\n* Rising prices\n\n**C. Intellectual Causes**\n* Enlightenment philosophers\n* Rousseau: Social Contract\n* Voltaire: Freedom of speech\n* Montesquieu: Separation of powers\n\n### 4. Key Events\n1. **Estates-General** (May 1789): Meeting after 175 years\n2. **National Assembly** (June 1789): Third Estate\'s own assembly\n3. **Tennis Court Oath** (June 20, 1789): Vow to draft constitution\n4. **Storming of Bastille** (July 14, 1789): Symbol of revolution\n5. **Declaration of Rights** (August 1789): Rights of Man\n6. **Reign of Terror** (1793-94): Robespierre\'s rule, guillotine\n7. **Rise of Napoleon** (1799): Military takeover\n\n### 5. Impact\n* End of absolute monarchy\n* Abolition of feudalism\n* Declaration of Rights of Man\n* Rise of nationalism\n* Spread of revolutionary ideas in Europe',
+            flashcards: [
+              { id: 'f1', front: 'When did French Revolution begin?', back: '1789 (Storming of Bastille: July 14, 1789).' },
+              { id: 'f2', front: 'What was the motto of French Revolution?', back: 'Liberty, Equality, Fraternity.' },
+              { id: 'f3', front: 'Who was the King during French Revolution?', back: 'Louis XVI.' },
+              { id: 'f4', front: 'What was the Third Estate?', back: 'Common people - 97% of population who paid all taxes.' },
+              { id: 'f5', front: 'What was the Tennis Court Oath?', back: 'Third Estate\'s vow to not disperse until a constitution was written.' },
+              { id: 'f6', front: 'What was the Reign of Terror?', back: 'Period of mass executions under Robespierre (1793-94).' },
+              { id: 'f7', front: 'Who wrote "The Social Contract"?', back: 'Jean-Jacques Rousseau.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Storming of Bastille occurred on:', options: ['July 4, 1776', 'July 14, 1789', 'August 26, 1789', 'January 21, 1793'], correctIndex: 1, explanation: 'July 14, 1789 is celebrated as Bastille Day in France.' },
+              { id: 'q2', question: 'Third Estate comprised ______ of population.', options: ['1%', '2%', '50%', '97%'], correctIndex: 3, explanation: 'Everyone except clergy and nobility.' },
+              { id: 'q3', question: 'Reign of Terror was led by:', options: ['Napoleon', 'Louis XVI', 'Robespierre', 'Voltaire'], correctIndex: 2, explanation: 'Robespierre led the Committee of Public Safety.' },
+              { id: 'q4', question: '"The Social Contract" was written by:', options: ['Voltaire', 'Montesquieu', 'Rousseau', 'Diderot'], correctIndex: 2, explanation: 'Rousseau\'s famous work on political philosophy.' },
+              { id: 'q5', question: 'French Revolution ended with the rise of:', options: ['Louis XVII', 'Robespierre', 'Napoleon', 'Monarchy'], correctIndex: 2, explanation: 'Napoleon Bonaparte seized power in 1799.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'The Three Estates', content: '1st: Clergy (1%)\n2nd: Nobility (2%)\n3rd: Everyone else (97%)', color: getReelColor(0) },
+              { id: 'r2', title: 'The Problem', content: '97% paid taxes.\n3% paid nothing.\nUnfair system!', color: getReelColor(1) },
+              { id: 'r3', title: 'Bastille Day', content: 'July 14, 1789.\nPrison stormed.\nRevolution begins!', color: getReelColor(2) },
+              { id: 'r4', title: 'The Motto', content: 'LIBERTY\nEQUALITY\nFRATERNITY', color: getReelColor(3) },
+              { id: 'r5', title: 'Philosophers', content: 'Rousseau: Social Contract.\nVoltaire: Free speech.\nMontesquieu: Separation of powers.', color: getReelColor(4) },
+              { id: 'r6', title: 'Reign of Terror', content: 'Robespierre\'s rule.\nGuillotine!\n40,000 executed.', color: getReelColor(5) },
+              { id: 'r7', title: 'Impact', content: 'End of monarchy.\nEnd of feudalism.\nRights of Man.', color: getReelColor(6) },
+              { id: 'r8', title: 'Napoleon', content: 'Military general.\nSeized power 1799.\nEmperor of France.', color: getReelColor(7) }
+            ]
+          },
+          {
+            id: 'his5',
+            title: '5. World War I',
+            description: 'The Great War (1914-1918).',
+            summary: '**World War I**: 1914-1918\n**Trigger**: Assassination of Archduke Franz Ferdinand\n**Alliances**: Allied Powers vs Central Powers\n**Result**: Allied victory, Treaty of Versailles, League of Nations',
+            detailedNotes: '### 1. Background\n* Also called "The Great War"\n* First truly global conflict\n* 1914-1918 (4 years)\n* Over 17 million deaths\n\n### 2. Causes (M.A.I.N.)\n**M - Militarism**\n* Arms race, especially naval (Britain vs Germany)\n* Glorification of military power\n\n**A - Alliances**\n* Triple Alliance: Germany, Austria-Hungary, Italy\n* Triple Entente: Britain, France, Russia\n\n**I - Imperialism**\n* Competition for colonies in Africa and Asia\n* Clash of interests\n\n**N - Nationalism**\n* Extreme patriotism\n* Pan-Slavism, Pan-Germanism\n* Balkans called "Powder Keg of Europe"\n\n### 3. Immediate Cause\n* Assassination of Archduke Franz Ferdinand of Austria-Hungary\n* Shot by Gavrilo Princip (Serbian nationalist)\n* June 28, 1914, in Sarajevo\n* Austria declared war on Serbia\n* Alliances activated - war spread\n\n### 4. The Two Sides\n**Allied Powers (Entente)**\n* Britain, France, Russia\n* Later: USA, Italy, Japan\n\n**Central Powers**\n* Germany, Austria-Hungary\n* Ottoman Empire, Bulgaria\n\n### 5. Key Events\n* Trench Warfare on Western Front\n* Use of new weapons: tanks, poison gas, aircraft\n* Sinking of Lusitania (1915)\n* USA enters war (1917)\n* Russia withdraws (1917 - Revolution)\n* Germany surrenders (November 11, 1918)\n\n### 6. Treaty of Versailles (1919)\n* Peace treaty with Germany\n* Germany accepted "War Guilt"\n* Lost colonies and territory\n* Military reduced\n* Heavy reparations (compensation)\n* Seeds of World War II\n\n### 7. Consequences\n* Collapse of empires (Ottoman, Austro-Hungarian, Russian, German)\n* League of Nations formed\n* Map of Europe redrawn\n* Rise of USA as world power\n* Economic devastation\n* Seeds of WWII planted',
+            flashcards: [
+              { id: 'f1', front: 'When was World War I?', back: '1914-1918.' },
+              { id: 'f2', front: 'What triggered WWI?', back: 'Assassination of Archduke Franz Ferdinand in Sarajevo.' },
+              { id: 'f3', front: 'Who assassinated Franz Ferdinand?', back: 'Gavrilo Princip (Serbian nationalist).' },
+              { id: 'f4', front: 'What does M.A.I.N. stand for (causes of WWI)?', back: 'Militarism, Alliances, Imperialism, Nationalism.' },
+              { id: 'f5', front: 'Who were the Allied Powers?', back: 'Britain, France, Russia (later USA, Italy).' },
+              { id: 'f6', front: 'Who were the Central Powers?', back: 'Germany, Austria-Hungary, Ottoman Empire.' },
+              { id: 'f7', front: 'What was the Treaty of Versailles?', back: 'Peace treaty ending WWI, blamed Germany.' },
+              { id: 'f8', front: 'What organization was formed after WWI?', back: 'League of Nations.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'World War I was fought during:', options: ['1904-1908', '1914-1918', '1939-1945', '1950-1953'], correctIndex: 1, explanation: 'WWI lasted from 1914 to 1918.' },
+              { id: 'q2', question: 'Franz Ferdinand was assassinated in:', options: ['Vienna', 'Berlin', 'Sarajevo', 'Paris'], correctIndex: 2, explanation: 'Sarajevo, capital of Bosnia, on June 28, 1914.' },
+              { id: 'q3', question: 'USA entered WWI in:', options: ['1914', '1915', '1917', '1918'], correctIndex: 2, explanation: 'USA entered after German submarine attacks.' },
+              { id: 'q4', question: 'Treaty of Versailles was signed in:', options: ['1918', '1919', '1920', '1921'], correctIndex: 1, explanation: 'Signed on June 28, 1919.' },
+              { id: 'q5', question: 'Balkans was called:', options: ['Heart of Europe', 'Powder Keg of Europe', 'Garden of Europe', 'Workshop of World'], correctIndex: 1, explanation: 'Due to nationalist tensions that could explode into war.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'M.A.I.N. Causes', content: 'Militarism\nAlliances\nImperialism\nNationalism', color: getReelColor(0) },
+              { id: 'r2', title: 'The Trigger', content: 'Franz Ferdinand shot.\nJune 28, 1914.\nSarajevo, Bosnia.', color: getReelColor(1) },
+              { id: 'r3', title: 'The Alliances', content: 'Allied: Britain, France, Russia.\nCentral: Germany, Austria-Hungary.', color: getReelColor(2) },
+              { id: 'r4', title: 'Trench Warfare', content: 'Soldiers in trenches.\nYears of stalemate.\nMud, blood, death.', color: getReelColor(3) },
+              { id: 'r5', title: 'New Weapons', content: 'Tanks\nPoison Gas\nAirplanes\nSubmarine', color: getReelColor(4) },
+              { id: 'r6', title: 'USA Enters', content: '1917.\nLusitania sinking.\nTurned the tide!', color: getReelColor(5) },
+              { id: 'r7', title: 'Treaty of Versailles', content: 'Germany blamed.\nLost territory.\nHeavy fines.', color: getReelColor(6) },
+              { id: 'r8', title: 'Aftermath', content: '17 million dead.\nEmpires collapsed.\nLeague of Nations.', color: getReelColor(7) }
+            ]
+          }
+        ]
       },
       {
         id: 'pol', name: 'Political Science', icon: 'Building2', color: 'bg-red-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: []
@@ -1341,7 +1516,172 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
     subjects: [
       ENGLISH_SUBJECT,
       {
-        id: 'phy', name: 'Physics', icon: 'Atom', color: 'bg-blue-600', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: []
+        id: 'phy', 
+        name: 'Physics', 
+        icon: 'Atom', 
+        color: 'bg-blue-600', 
+        syllabus: '1. Rotational Dynamics\n2. Mechanical Properties of Fluids\n3. Kinetic Theory of Gases\n4. Thermodynamics\n5. Oscillations\n6. Superposition of Waves\n7. Wave Optics\n8. Electrostatics\n9. Current Electricity\n10. Magnetic Effects of Electric Current\n11. Magnetic Materials\n12. Electromagnetic Induction\n13. AC Circuits\n14. Dual Nature of Radiation & Matter\n15. Structure of Atom\n16. Semiconductor Devices',
+        paperPattern: '### Physics Paper Pattern (70 Marks)\n\n* **Section A (14 Marks)**: 7 MCQs (2 marks each)\n* **Section B (18 Marks)**: Very short answers\n* **Section C (12 Marks)**: Short answers\n* **Section D (8 Marks)**: Long answers (Any 2 out of 3)\n* **Section E (18 Marks)**: Numericals\n* **Internal Assessment (30 Marks)**: Practical',
+        previousPapers: [], 
+        chapters: [
+          {
+            id: 'phy1',
+            title: '1. Rotational Dynamics',
+            description: 'Angular momentum, Moment of inertia, Torque.',
+            summary: '**Rotational Motion**: Motion about a fixed axis\n**Torque (τ)**: τ = r × F = Iα\n**Moment of Inertia (I)**: Rotational mass\n**Angular Momentum (L)**: L = Iω\n**Conservation**: L = constant when τ = 0',
+            detailedNotes: '### 1. Rotational Motion\nMotion of a rigid body about a fixed axis.\n\n### 2. Angular Quantities\n* **Angular Displacement (θ)**: Angle rotated (in radians)\n* **Angular Velocity (ω)**: ω = dθ/dt (rad/s)\n* **Angular Acceleration (α)**: α = dω/dt (rad/s²)\n\n### 3. Relation with Linear Motion\n* s = rθ\n* v = rω\n* a = rα\n\n### 4. Torque (τ)\n* Rotational equivalent of force\n* τ = r × F = rF sin θ\n* τ = Iα (Newton\'s second law for rotation)\n* Unit: N·m\n\n### 5. Moment of Inertia (I)\n* Rotational equivalent of mass\n* I = Σmr² (for particles)\n* I = ∫r² dm (for continuous body)\n* Depends on axis of rotation\n\n**Common MOI Values:**\n* Ring (axis through center): I = MR²\n* Disc (axis through center): I = ½MR²\n* Solid Sphere: I = ⅖MR²\n* Hollow Sphere: I = ⅔MR²\n* Rod (center): I = ML²/12\n* Rod (end): I = ML²/3\n\n### 6. Theorems\n**Parallel Axis Theorem:**\nI = Icm + Md²\n\n**Perpendicular Axis Theorem:**\nIz = Ix + Iy (for laminar bodies)\n\n### 7. Angular Momentum (L)\n* L = Iω\n* L = r × p\n* τ = dL/dt\n\n### 8. Conservation of Angular Momentum\nIf τ = 0, then L = constant\nI₁ω₁ = I₂ω₂\n\nExamples: Ice skater spinning, diver somersaulting\n\n### 9. Rotational Kinetic Energy\nKE = ½Iω²\nTotal KE = ½mv² + ½Iω² (rolling)',
+            flashcards: [
+              { id: 'f1', front: 'Formula for Torque?', back: 'τ = r × F = Iα' },
+              { id: 'f2', front: 'Moment of Inertia of a Disc?', back: 'I = ½MR² (axis through center)' },
+              { id: 'f3', front: 'Moment of Inertia of a Ring?', back: 'I = MR² (axis through center)' },
+              { id: 'f4', front: 'Angular Momentum formula?', back: 'L = Iω = r × p' },
+              { id: 'f5', front: 'Parallel Axis Theorem?', back: 'I = Icm + Md² (d = distance from CM axis)' },
+              { id: 'f6', front: 'When is Angular Momentum conserved?', back: 'When external torque is zero (τ = 0).' },
+              { id: 'f7', front: 'Rotational KE formula?', back: 'KE = ½Iω²' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'SI unit of torque is:', options: ['Joule', 'Newton', 'N·m', 'Watt'], correctIndex: 2, explanation: 'Torque = Force × Distance = N × m = N·m' },
+              { id: 'q2', question: 'Moment of inertia of a solid sphere is:', options: ['MR²', '½MR²', '⅖MR²', '⅔MR²'], correctIndex: 2, explanation: 'Solid sphere: I = ⅖MR² about diameter.' },
+              { id: 'q3', question: 'Angular momentum is conserved when:', options: ['Force is zero', 'Torque is zero', 'Velocity is zero', 'Acceleration is zero'], correctIndex: 1, explanation: 'L = constant when τ = 0.' },
+              { id: 'q4', question: 'Perpendicular axis theorem applies to:', options: ['3D bodies', 'Laminar bodies', 'All bodies', 'Point masses'], correctIndex: 1, explanation: 'Only for flat (2D) bodies.' },
+              { id: 'q5', question: 'An ice skater spins faster when arms are pulled in because:', options: ['Mass decreases', 'I decreases', 'Torque increases', 'Energy increases'], correctIndex: 1, explanation: 'I decreases, so ω increases (L = Iω constant).' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Torque', content: 'τ = r × F\nτ = Iα\nRotational force!', color: getReelColor(0) },
+              { id: 'r2', title: 'MOI', content: 'Moment of Inertia.\nRotational mass.\nI = Σmr²', color: getReelColor(1) },
+              { id: 'r3', title: 'Disc vs Ring', content: 'Ring: I = MR²\nDisc: I = ½MR²\nDisc has less MOI!', color: getReelColor(2) },
+              { id: 'r4', title: 'Angular Momentum', content: 'L = Iω\nConserved when τ = 0.\nIce skater example!', color: getReelColor(3) },
+              { id: 'r5', title: 'Parallel Axis', content: 'I = Icm + Md²\nShift axis by d.\nI increases!', color: getReelColor(4) },
+              { id: 'r6', title: 'Rolling Motion', content: 'KE = ½mv² + ½Iω²\nTranslation + Rotation.', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'phy2',
+            title: '2. Mechanical Properties of Fluids',
+            description: 'Viscosity, Surface Tension, Fluid Flow.',
+            summary: '**Fluid**: Substance that can flow (liquid/gas)\n**Viscosity**: Internal friction of fluid\n**Surface Tension**: Force per unit length on liquid surface\n**Bernoulli\'s Principle**: P + ½ρv² + ρgh = constant',
+            detailedNotes: '### 1. Pressure in Fluids\n* Pressure = Force/Area = F/A\n* SI Unit: Pascal (Pa) = N/m²\n* Atmospheric Pressure: 1.013 × 10⁵ Pa\n\n### 2. Pascal\'s Law\nPressure applied to enclosed fluid is transmitted equally in all directions.\n**Applications**: Hydraulic lift, hydraulic brakes\n\n### 3. Viscosity\n* Internal friction in fluids\n* **Newton\'s Law of Viscosity**: F = ηA(dv/dx)\n* η = coefficient of viscosity\n* SI Unit: Pa·s or Poiseuille\n* CGS Unit: Poise (1 Pa·s = 10 Poise)\n\n**Stokes\' Law**:\nF = 6πηrv (for sphere in fluid)\n\n**Terminal Velocity**:\nvₜ = 2r²(ρ-σ)g / 9η\n\n### 4. Surface Tension\n* Force per unit length on liquid surface\n* T = F/L\n* SI Unit: N/m\n* Due to cohesive forces\n\n**Applications**:\n* Water droplets are spherical\n* Insects walking on water\n* Capillary action\n\n**Excess Pressure**:\n* Soap bubble: ΔP = 4T/r\n* Liquid drop: ΔP = 2T/r\n\n### 5. Capillarity\n* Rise or fall of liquid in narrow tube\n* h = 2T cos θ / ρgr\n* Water rises (θ < 90°), Mercury falls (θ > 90°)\n\n### 6. Fluid Dynamics\n**Equation of Continuity**:\nA₁v₁ = A₂v₂ (for incompressible fluid)\n\n**Bernoulli\'s Theorem**:\nP + ½ρv² + ρgh = constant\n\n**Applications**:\n* Airplane wings (lift)\n* Venturi meter\n* Atomizer\n* Magnus effect',
+            flashcards: [
+              { id: 'f1', front: 'What is Pascal\'s Law?', back: 'Pressure in enclosed fluid is transmitted equally in all directions.' },
+              { id: 'f2', front: 'Formula for Stokes\' Law?', back: 'F = 6πηrv (viscous drag on sphere)' },
+              { id: 'f3', front: 'Bernoulli\'s Equation?', back: 'P + ½ρv² + ρgh = constant' },
+              { id: 'f4', front: 'Excess pressure in soap bubble?', back: 'ΔP = 4T/r (two surfaces)' },
+              { id: 'f5', front: 'Excess pressure in liquid drop?', back: 'ΔP = 2T/r (one surface)' },
+              { id: 'f6', front: 'Capillary rise formula?', back: 'h = 2T cos θ / ρgr' },
+              { id: 'f7', front: 'Equation of Continuity?', back: 'A₁v₁ = A₂v₂ (mass conservation)' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'SI unit of viscosity is:', options: ['Poise', 'Pa·s', 'N/m', 'Pa'], correctIndex: 1, explanation: 'Pascal-second or Poiseuille.' },
+              { id: 'q2', question: 'Excess pressure in soap bubble is:', options: ['2T/r', '4T/r', 'T/r', 'T/2r'], correctIndex: 1, explanation: 'Soap bubble has two surfaces, so 4T/r.' },
+              { id: 'q3', question: 'Terminal velocity is proportional to:', options: ['r', 'r²', '1/r', '1/r²'], correctIndex: 1, explanation: 'vₜ ∝ r² from Stokes\' law.' },
+              { id: 'q4', question: 'Water rises in capillary because:', options: ['Cohesion > Adhesion', 'Adhesion > Cohesion', 'Surface tension', 'Viscosity'], correctIndex: 1, explanation: 'Water wets glass (contact angle < 90°).' },
+              { id: 'q5', question: 'Bernoulli\'s theorem is based on:', options: ['Mass conservation', 'Energy conservation', 'Momentum conservation', 'Charge conservation'], correctIndex: 1, explanation: 'It\'s essentially energy conservation for fluids.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Pascal\'s Law', content: 'Pressure transmits equally.\nHydraulic lift.\nHydraulic brakes.', color: getReelColor(0) },
+              { id: 'r2', title: 'Viscosity', content: 'Internal friction.\nThick fluids = High η.\nHoney > Water.', color: getReelColor(1) },
+              { id: 'r3', title: 'Stokes\' Law', content: 'F = 6πηrv\nDrag on sphere.\nTerminal velocity!', color: getReelColor(2) },
+              { id: 'r4', title: 'Surface Tension', content: 'T = F/L\nDroplets are spherical.\nInsects walk on water.', color: getReelColor(3) },
+              { id: 'r5', title: 'Soap vs Drop', content: 'Soap bubble: ΔP = 4T/r\nDrop: ΔP = 2T/r\n(2 surfaces vs 1)', color: getReelColor(4) },
+              { id: 'r6', title: 'Bernoulli', content: 'P + ½ρv² + ρgh = const.\nFast flow = Low pressure.\nAirplane lift!', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'phy3',
+            title: '3. Kinetic Theory of Gases',
+            description: 'Behavior of gases at molecular level.',
+            summary: '**Ideal Gas**: PV = nRT\n**Kinetic Energy**: KE = 3/2 kT per molecule\n**RMS Velocity**: vrms = √(3RT/M)\n**Degrees of Freedom**: Ways a molecule can store energy',
+            detailedNotes: '### 1. Ideal Gas Equation\nPV = nRT = NkT\n* P = Pressure\n* V = Volume\n* n = Number of moles\n* R = Universal gas constant = 8.314 J/(mol·K)\n* k = Boltzmann constant = 1.38 × 10⁻²³ J/K\n* N = Number of molecules\n\n### 2. Assumptions of Kinetic Theory\n1. Gas molecules are point masses\n2. No intermolecular forces (except during collision)\n3. Collisions are perfectly elastic\n4. Molecules are in random motion\n5. Time of collision << Time between collisions\n\n### 3. Pressure from Kinetic Theory\nP = ⅓ρv²rms = ⅓(nm/V)v²rms\n\n### 4. Kinetic Energy\n* Per molecule: KE = ½mv²rms = 3/2 kT\n* Per mole: KE = 3/2 RT\n* KE depends only on temperature\n\n### 5. Molecular Speeds\n* **RMS Speed**: vrms = √(3RT/M) = √(3kT/m)\n* **Average Speed**: vavg = √(8RT/πM)\n* **Most Probable Speed**: vmp = √(2RT/M)\n* Relation: vmp < vavg < vrms\n\n### 6. Degrees of Freedom (f)\n* Monoatomic (He, Ne): f = 3 (translation only)\n* Diatomic (O₂, N₂): f = 5 (3 trans + 2 rot)\n* Triatomic (CO₂): f = 6 or 7\n\n**Equipartition of Energy**:\nEnergy per degree of freedom = ½kT\nTotal energy = (f/2)kT per molecule\n\n### 7. Specific Heats\n* Cv = (f/2)R\n* Cp = Cv + R = ((f+2)/2)R\n* γ = Cp/Cv = (f+2)/f\n\n**Values:**\n* Monoatomic: γ = 5/3 = 1.67\n* Diatomic: γ = 7/5 = 1.4',
+            flashcards: [
+              { id: 'f1', front: 'Ideal Gas Equation?', back: 'PV = nRT (n = moles, R = 8.314 J/mol·K)' },
+              { id: 'f2', front: 'Average KE per molecule?', back: 'KE = 3/2 kT' },
+              { id: 'f3', front: 'RMS velocity formula?', back: 'vrms = √(3RT/M) = √(3kT/m)' },
+              { id: 'f4', front: 'Degrees of freedom for diatomic gas?', back: 'f = 5 (3 translational + 2 rotational)' },
+              { id: 'f5', front: 'Relation between molecular speeds?', back: 'vmp < vavg < vrms' },
+              { id: 'f6', front: 'γ for monoatomic gas?', back: 'γ = Cp/Cv = 5/3 = 1.67' },
+              { id: 'f7', front: 'Boltzmann constant value?', back: 'k = 1.38 × 10⁻²³ J/K' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Average KE of gas molecule depends on:', options: ['Pressure', 'Volume', 'Temperature', 'Mass'], correctIndex: 2, explanation: 'KE = 3/2 kT, depends only on T.' },
+              { id: 'q2', question: 'RMS speed of gas molecule is proportional to:', options: ['T', '√T', 'T²', '1/T'], correctIndex: 1, explanation: 'vrms = √(3RT/M), so vrms ∝ √T.' },
+              { id: 'q3', question: 'γ for diatomic gas is:', options: ['1.33', '1.4', '1.67', '2'], correctIndex: 1, explanation: 'γ = 7/5 = 1.4 for diatomic.' },
+              { id: 'q4', question: 'Degrees of freedom for monoatomic gas:', options: ['3', '5', '6', '7'], correctIndex: 0, explanation: 'Only 3 translational DOF.' },
+              { id: 'q5', question: 'Which is greatest among molecular speeds?', options: ['vmp', 'vavg', 'vrms', 'All equal'], correctIndex: 2, explanation: 'vrms > vavg > vmp.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Ideal Gas', content: 'PV = nRT\nR = 8.314 J/mol·K\nn = number of moles', color: getReelColor(0) },
+              { id: 'r2', title: 'KE of Gas', content: 'Per molecule: 3/2 kT\nPer mole: 3/2 RT\nDepends on T only!', color: getReelColor(1) },
+              { id: 'r3', title: 'RMS Speed', content: 'vrms = √(3RT/M)\nvrms ∝ √T\nvrms ∝ 1/√M', color: getReelColor(2) },
+              { id: 'r4', title: 'Speed Order', content: 'vmp < vavg < vrms\nMost Probable < Average < RMS', color: getReelColor(3) },
+              { id: 'r5', title: 'DOF', content: 'Monoatomic: f = 3\nDiatomic: f = 5\nEnergy = f/2 kT', color: getReelColor(4) },
+              { id: 'r6', title: 'γ Values', content: 'Monoatomic: γ = 5/3\nDiatomic: γ = 7/5\nγ = Cp/Cv', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'phy4',
+            title: '4. Thermodynamics',
+            description: 'Heat, Work, Laws of Thermodynamics.',
+            summary: '**First Law**: ΔQ = ΔU + ΔW (Energy conservation)\n**Second Law**: Heat cannot flow from cold to hot spontaneously\n**Entropy**: Measure of disorder\n**Carnot Efficiency**: η = 1 - T₂/T₁',
+            detailedNotes: '### 1. Thermodynamic Terms\n* **System**: Part under study\n* **Surroundings**: Everything outside system\n* **State Variables**: P, V, T, U (not Q, W)\n\n### 2. Zeroth Law\nIf A is in thermal equilibrium with B, and B with C, then A is in equilibrium with C.\n(Foundation for temperature measurement)\n\n### 3. First Law of Thermodynamics\n**ΔQ = ΔU + ΔW**\n* ΔQ = Heat added to system\n* ΔU = Change in internal energy\n* ΔW = Work done by system\n\nFor ideal gas: ΔU = nCvΔT\nWork done: W = ∫PdV\n\n### 4. Thermodynamic Processes\n**A. Isothermal (T = constant)**\n* PV = constant\n* ΔU = 0, so Q = W\n* W = nRT ln(V₂/V₁)\n\n**B. Adiabatic (Q = 0)**\n* PVᵞ = constant\n* TVᵞ⁻¹ = constant\n* W = (P₁V₁ - P₂V₂)/(γ-1)\n\n**C. Isobaric (P = constant)**\n* W = PΔV = nRΔT\n* Q = nCpΔT\n\n**D. Isochoric (V = constant)**\n* W = 0\n* Q = ΔU = nCvΔT\n\n### 5. Second Law\n**Kelvin-Planck**: No engine can convert all heat to work.\n**Clausius**: Heat cannot flow from cold to hot without external work.\n\n### 6. Heat Engines\nEfficiency: η = W/Q₁ = (Q₁-Q₂)/Q₁ = 1 - Q₂/Q₁\n\n**Carnot Engine** (Most efficient):\nη = 1 - T₂/T₁\n\n### 7. Entropy\n* S = Q/T\n* ΔS ≥ 0 for isolated system\n* Measure of disorder/randomness',
+            flashcards: [
+              { id: 'f1', front: 'First Law of Thermodynamics?', back: 'ΔQ = ΔU + ΔW (Energy conservation)' },
+              { id: 'f2', front: 'In isothermal process?', back: 'T = constant, ΔU = 0, Q = W' },
+              { id: 'f3', front: 'In adiabatic process?', back: 'Q = 0, PVᵞ = constant' },
+              { id: 'f4', front: 'Carnot efficiency?', back: 'η = 1 - T₂/T₁ (T in Kelvin)' },
+              { id: 'f5', front: 'Work in isobaric process?', back: 'W = PΔV = nRΔT' },
+              { id: 'f6', front: 'Second Law (Clausius)?', back: 'Heat cannot flow from cold to hot spontaneously.' },
+              { id: 'f7', front: 'What is Entropy?', back: 'Measure of disorder, S = Q/T, always increases in isolated system.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'In isothermal process, internal energy:', options: ['Increases', 'Decreases', 'Remains constant', 'Becomes zero'], correctIndex: 2, explanation: 'ΔU = nCvΔT = 0 since T is constant.' },
+              { id: 'q2', question: 'Adiabatic process follows:', options: ['PV = constant', 'PVᵞ = constant', 'P/V = constant', 'TV = constant'], correctIndex: 1, explanation: 'PVᵞ = constant for adiabatic process.' },
+              { id: 'q3', question: 'Carnot engine operates between 500K and 300K. Efficiency is:', options: ['20%', '40%', '60%', '80%'], correctIndex: 1, explanation: 'η = 1 - 300/500 = 1 - 0.6 = 0.4 = 40%' },
+              { id: 'q4', question: 'Work done in isochoric process:', options: ['Maximum', 'Minimum', 'Zero', 'Negative'], correctIndex: 2, explanation: 'W = PΔV = 0 since V is constant.' },
+              { id: 'q5', question: 'Entropy of isolated system:', options: ['Decreases', 'Increases or constant', 'Always constant', 'Becomes zero'], correctIndex: 1, explanation: 'ΔS ≥ 0 for isolated system.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'First Law', content: 'ΔQ = ΔU + ΔW\nHeat = Internal Energy + Work\nEnergy conservation!', color: getReelColor(0) },
+              { id: 'r2', title: 'Isothermal', content: 'T = constant.\nΔU = 0.\nQ = W.', color: getReelColor(1) },
+              { id: 'r3', title: 'Adiabatic', content: 'Q = 0.\nPVᵞ = constant.\nNo heat exchange.', color: getReelColor(2) },
+              { id: 'r4', title: 'Isobaric', content: 'P = constant.\nW = PΔV.\nQ = nCpΔT.', color: getReelColor(3) },
+              { id: 'r5', title: 'Isochoric', content: 'V = constant.\nW = 0.\nQ = ΔU.', color: getReelColor(4) },
+              { id: 'r6', title: 'Carnot', content: 'Most efficient engine.\nη = 1 - T₂/T₁\nIdeal, not real.', color: getReelColor(5) },
+              { id: 'r7', title: 'Entropy', content: 'S = Q/T\nMeasure of disorder.\nAlways increases!', color: getReelColor(6) }
+            ]
+          },
+          {
+            id: 'phy5',
+            title: '5. Oscillations',
+            description: 'Simple Harmonic Motion, Springs, Pendulum.',
+            summary: '**SHM**: a = -ω²x\n**Spring**: T = 2π√(m/k)\n**Pendulum**: T = 2π√(L/g)\n**Energy**: Total E = ½mω²A² = constant',
+            detailedNotes: '### 1. Simple Harmonic Motion (SHM)\n* Motion where restoring force ∝ displacement\n* F = -kx (opposite to displacement)\n* a = -ω²x\n\n### 2. Equations of SHM\n* x = A sin(ωt + φ) or A cos(ωt + φ)\n* v = Aω cos(ωt + φ) = ω√(A² - x²)\n* a = -Aω² sin(ωt + φ) = -ω²x\n\nWhere:\n* A = Amplitude\n* ω = Angular frequency = 2πf = 2π/T\n* φ = Phase constant\n\n### 3. Time Period\n**General**: T = 2π/ω = 2π√(m/k)\n\n**Spring-mass**: T = 2π√(m/k)\n* k = spring constant\n* Independent of amplitude!\n\n**Simple Pendulum**: T = 2π√(L/g)\n* L = length\n* g = acceleration due to gravity\n* Valid for small angles only\n\n### 4. Energy in SHM\n* KE = ½mv² = ½mω²(A² - x²)\n* PE = ½kx² = ½mω²x²\n* Total E = ½mω²A² = ½kA²\n* Energy oscillates between KE and PE\n\n### 5. Phase Difference\n* Displacement and velocity: 90° (π/2)\n* Velocity and acceleration: 90° (π/2)\n* Displacement and acceleration: 180° (π)\n\n### 6. Types of Oscillations\n* **Free**: No external force (ideal)\n* **Damped**: Friction reduces amplitude\n* **Forced**: External periodic force applied\n* **Resonance**: Maximum amplitude when f = natural frequency',
+            flashcards: [
+              { id: 'f1', front: 'Condition for SHM?', back: 'a ∝ -x (acceleration proportional and opposite to displacement)' },
+              { id: 'f2', front: 'Time period of spring-mass system?', back: 'T = 2π√(m/k)' },
+              { id: 'f3', front: 'Time period of simple pendulum?', back: 'T = 2π√(L/g)' },
+              { id: 'f4', front: 'Total energy in SHM?', back: 'E = ½mω²A² = ½kA² (constant)' },
+              { id: 'f5', front: 'Phase difference between x and a?', back: '180° or π (they are opposite)' },
+              { id: 'f6', front: 'What is resonance?', back: 'Maximum amplitude when driving frequency equals natural frequency.' },
+              { id: 'f7', front: 'Velocity at mean position?', back: 'Maximum: v = Aω' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'In SHM, acceleration is maximum at:', options: ['Mean position', 'Extreme position', 'Between mean and extreme', 'Never maximum'], correctIndex: 1, explanation: 'a = -ω²x, maximum when x = A (extreme).' },
+              { id: 'q2', question: 'Time period of spring depends on:', options: ['Mass only', 'Spring constant only', 'Both mass and k', 'Amplitude'], correctIndex: 2, explanation: 'T = 2π√(m/k), depends on m and k.' },
+              { id: 'q3', question: 'Phase difference between v and a in SHM:', options: ['0°', '90°', '180°', '45°'], correctIndex: 1, explanation: 'v and a are 90° out of phase.' },
+              { id: 'q4', question: 'Energy at extreme position is:', options: ['All KE', 'All PE', 'Half KE, half PE', 'Zero'], correctIndex: 1, explanation: 'At extreme, v = 0, so KE = 0, all PE.' },
+              { id: 'q5', question: 'If length of pendulum is doubled, T becomes:', options: ['Half', 'Double', '√2 times', '2√2 times'], correctIndex: 2, explanation: 'T ∝ √L, so T becomes √2 times.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'SHM', content: 'a = -ω²x\nAcceleration opposite to displacement.\nRestoring force!', color: getReelColor(0) },
+              { id: 'r2', title: 'Spring', content: 'T = 2π√(m/k)\nDepends on mass & stiffness.\nNOT on amplitude!', color: getReelColor(1) },
+              { id: 'r3', title: 'Pendulum', content: 'T = 2π√(L/g)\nDepends on length & g.\nSmall angles only!', color: getReelColor(2) },
+              { id: 'r4', title: 'Energy', content: 'E = ½kA² = constant.\nKE ↔ PE.\nConserved!', color: getReelColor(3) },
+              { id: 'r5', title: 'At Mean', content: 'x = 0.\nv = maximum (Aω).\na = 0.', color: getReelColor(4) },
+              { id: 'r6', title: 'At Extreme', content: 'x = A (max).\nv = 0.\na = maximum.', color: getReelColor(5) },
+              { id: 'r7', title: 'Resonance', content: 'Driving freq = Natural freq.\nAmplitude MAXIMUM!\nCan be destructive.', color: getReelColor(6) }
+            ]
+          }
+        ]
       },
       {
         id: 'chem', name: 'Chemistry', icon: 'FlaskConical', color: 'bg-teal-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: []
