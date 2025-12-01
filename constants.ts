@@ -1504,10 +1504,1820 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
         ]
       },
       {
-        id: 'pol', name: 'Political Science', icon: 'Building2', color: 'bg-red-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: []
+        id: 'pol', 
+        name: 'Political Science', 
+        icon: 'Building2', 
+        color: 'bg-red-500', 
+        syllabus: '1. Indian Constitution\n2. The State\n3. Citizenship\n4. Fundamental Rights & Duties\n5. Directive Principles\n6. Union Legislature\n7. Union Executive\n8. State Legislature & Executive\n9. Judiciary\n10. Local Self Government',
+        paperPattern: '### Political Science Paper Pattern (80 Marks)\n\n* **Q.1 MCQs (20 Marks)**\n* **Q.2-Q.5 Short Answers (40 Marks)**\n* **Q.6 Long Answers (20 Marks)**',
+        previousPapers: [], 
+        chapters: [
+          {
+            id: 'pol1',
+            title: '1. Indian Constitution',
+            description: 'Making, Features, Preamble of Constitution.',
+            summary: '**Constitution**: Supreme law of land\n**Enacted**: 26 Nov 1949\n**Came into force**: 26 Jan 1950\n**Preamble**: Soul of Constitution',
+            detailedNotes: '### 1. Making of Constitution\n* **Constituent Assembly**: Formed in 1946\n* **Chairman**: Dr. Rajendra Prasad\n* **Drafting Committee Chairman**: Dr. B.R. Ambedkar\n* **Time taken**: 2 years, 11 months, 18 days\n* **Sessions**: 11 sessions\n* **Adopted**: 26 November 1949\n* **Came into force**: 26 January 1950\n\n### 2. Preamble\n"WE, THE PEOPLE OF INDIA, having solemnly resolved to constitute India into a SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC..."\n\n**Key Words**:\n* **Sovereign**: Independent, supreme authority\n* **Socialist**: Added by 42nd Amendment (1976)\n* **Secular**: Added by 42nd Amendment (1976)\n* **Democratic**: Government by the people\n* **Republic**: Elected head of state\n\n### 3. Features of Indian Constitution\n* **Lengthiest written constitution**\n* **Blend of rigidity and flexibility**\n* **Federal with unitary bias**\n* **Parliamentary form of government**\n* **Fundamental Rights and Duties**\n* **Directive Principles**\n* **Independent Judiciary**\n* **Single Citizenship**\n* **Universal Adult Franchise**\n\n### 4. Sources\n* **UK**: Parliamentary system, Rule of law\n* **USA**: Fundamental Rights, Judicial Review\n* **Ireland**: DPSP, Election of President\n* **Canada**: Federal structure\n* **Australia**: Concurrent List',
+            flashcards: [
+              { id: 'f1', front: 'When was Constitution adopted?', back: '26 November 1949' },
+              { id: 'f2', front: 'When did Constitution come into force?', back: '26 January 1950' },
+              { id: 'f3', front: 'Chairman of Drafting Committee?', back: 'Dr. B.R. Ambedkar' },
+              { id: 'f4', front: 'Which amendment added Socialist & Secular?', back: '42nd Amendment (1976)' },
+              { id: 'f5', front: 'Father of Indian Constitution?', back: 'Dr. B.R. Ambedkar' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Constitution was adopted on:', options: ['26 Jan 1950', '15 Aug 1947', '26 Nov 1949', '26 Jan 1949'], correctIndex: 2, explanation: 'Adopted on 26 November 1949.' },
+              { id: 'q2', question: 'Preamble is called:', options: ['Body of Constitution', 'Soul of Constitution', 'Head of Constitution', 'Foot of Constitution'], correctIndex: 1, explanation: 'It reflects the philosophy and objectives.' },
+              { id: 'q3', question: 'DPSP borrowed from:', options: ['USA', 'UK', 'Ireland', 'Canada'], correctIndex: 2, explanation: 'Irish Constitution inspired DPSP.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Constitution', content: 'Supreme Law of India.\nAdopted: 26 Nov 1949.\nEnforced: 26 Jan 1950.', color: getReelColor(0) },
+              { id: 'r2', title: 'Ambedkar', content: 'Father of Constitution.\nDrafting Committee Chairman.\nArchitect!', color: getReelColor(1) },
+              { id: 'r3', title: 'Preamble', content: 'Soul of Constitution.\nSovereign, Socialist, Secular.\nDemocratic Republic.', color: getReelColor(2) },
+              { id: 'r4', title: '42nd Amendment', content: 'Added Socialist & Secular.\n1976.\nMini Constitution!', color: getReelColor(3) },
+              { id: 'r5', title: 'Sources', content: 'UK: Parliament.\nUSA: Rights.\nIreland: DPSP.', color: getReelColor(4) }
+            ]
+          },
+          {
+            id: 'pol2',
+            title: '2. Fundamental Rights',
+            description: 'Part III of Constitution, Articles 12-35.',
+            summary: '**6 Fundamental Rights** (Originally 7)\n**Right to Property**: Removed by 44th Amendment\n**Enforceable**: Through Supreme Court (Art 32) or High Court (Art 226)',
+            detailedNotes: '### 1. Introduction\nFundamental Rights are basic human rights guaranteed to all citizens. They are justiciable (enforceable by courts).\n\n### 2. Six Fundamental Rights\n\n**1. Right to Equality (Art 14-18)**\n* Art 14: Equality before law\n* Art 15: No discrimination\n* Art 16: Equal opportunity in employment\n* Art 17: Abolition of Untouchability\n* Art 18: Abolition of Titles\n\n**2. Right to Freedom (Art 19-22)**\n* Art 19: Six freedoms (Speech, Assembly, Association, Movement, Residence, Profession)\n* Art 20: Protection against conviction\n* Art 21: Right to Life and Personal Liberty\n* Art 21A: Right to Education (6-14 years)\n* Art 22: Protection against arrest\n\n**3. Right against Exploitation (Art 23-24)**\n* Art 23: Prohibition of human trafficking\n* Art 24: No child labor below 14 years\n\n**4. Right to Freedom of Religion (Art 25-28)**\n* Art 25: Freedom of conscience\n* Art 26: Freedom to manage religious affairs\n* Art 27: No tax for religious promotion\n* Art 28: No religious instruction in state schools\n\n**5. Cultural & Educational Rights (Art 29-30)**\n* Art 29: Protection of minorities\n* Art 30: Right to establish educational institutions\n\n**6. Right to Constitutional Remedies (Art 32)**\n* Ambedkar called it "Heart and Soul of Constitution"\n* 5 Writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo Warranto',
+            flashcards: [
+              { id: 'f1', front: 'How many Fundamental Rights now?', back: '6 (Right to Property removed)' },
+              { id: 'f2', front: 'Article 21 provides?', back: 'Right to Life and Personal Liberty' },
+              { id: 'f3', front: 'Article 32 called by Ambedkar?', back: 'Heart and Soul of Constitution' },
+              { id: 'f4', front: 'Right to Education added by?', back: '86th Amendment (Article 21A)' },
+              { id: 'f5', front: 'Minimum age for child labor ban?', back: '14 years (Article 24)' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Right to Property was removed by:', options: ['42nd Amendment', '44th Amendment', '86th Amendment', '91st Amendment'], correctIndex: 1, explanation: '44th Amendment (1978) removed it.' },
+              { id: 'q2', question: 'Article 17 deals with:', options: ['Equality', 'Untouchability', 'Education', 'Religion'], correctIndex: 1, explanation: 'Abolition of Untouchability.' },
+              { id: 'q3', question: 'Writ for personal liberty is:', options: ['Mandamus', 'Habeas Corpus', 'Certiorari', 'Prohibition'], correctIndex: 1, explanation: 'Habeas Corpus = "produce the body".' }
+            ],
+            reels: [
+              { id: 'r1', title: '6 Rights', content: 'Equality, Freedom, Against Exploitation.\nReligion, Cultural, Remedies.', color: getReelColor(0) },
+              { id: 'r2', title: 'Article 21', content: 'Right to Life.\nMost important!\nExpanded by courts.', color: getReelColor(1) },
+              { id: 'r3', title: 'Article 32', content: 'Constitutional Remedies.\nHeart & Soul.\n5 Writs available.', color: getReelColor(2) },
+              { id: 'r4', title: 'Writs', content: 'Habeas Corpus\nMandamus\nProhibition\nCertiorari\nQuo Warranto', color: getReelColor(3) },
+              { id: 'r5', title: 'Art 21A', content: 'Right to Education.\n6-14 years.\n86th Amendment.', color: getReelColor(4) }
+            ]
+          },
+          {
+            id: 'pol3',
+            title: '3. Directive Principles',
+            description: 'Part IV, Articles 36-51, Guidelines for State.',
+            summary: '**DPSP**: Guidelines for governance\n**Not Justiciable**: Cannot be enforced by courts\n**Borrowed from**: Ireland\n**Goal**: Welfare State',
+            detailedNotes: '### 1. Introduction\nDirective Principles of State Policy (DPSP) are guidelines for the government to create a welfare state. They are in Part IV (Articles 36-51).\n\n### 2. Features\n* **Non-justiciable**: Cannot be enforced by courts\n* **Fundamental in governance**: State should apply them\n* **Borrowed from**: Irish Constitution\n* **Complement to Fundamental Rights**\n\n### 3. Classification\n\n**A. Socialistic Principles**\n* Art 38: Social order for welfare\n* Art 39: Equal pay for equal work\n* Art 39A: Free legal aid\n* Art 41: Right to work, education\n* Art 42: Just and humane work conditions\n* Art 43: Living wage for workers\n* Art 43A: Worker participation in management\n\n**B. Gandhian Principles**\n* Art 40: Panchayati Raj\n* Art 43: Cottage industries\n* Art 46: SC/ST welfare\n* Art 47: Prohibition of intoxicants\n* Art 48: Protect cows, cattle\n\n**C. Liberal-Intellectual Principles**\n* Art 44: Uniform Civil Code\n* Art 45: Early childhood care (0-6 years)\n* Art 48: Environment, forests, wildlife\n* Art 48A: Agriculture modernization\n* Art 49: Protect monuments\n* Art 50: Separation of Judiciary from Executive\n* Art 51: International peace\n\n### 4. Difference from Fundamental Rights\n| Fundamental Rights | DPSP |\n|-------------------|------|\n| Justiciable | Non-justiciable |\n| Negative (restrictions on state) | Positive (directions to state) |\n| Political democracy | Social & economic democracy |',
+            flashcards: [
+              { id: 'f1', front: 'DPSP are in which Part?', back: 'Part IV (Articles 36-51)' },
+              { id: 'f2', front: 'Are DPSP justiciable?', back: 'No, they cannot be enforced by courts.' },
+              { id: 'f3', front: 'DPSP borrowed from?', back: 'Irish Constitution' },
+              { id: 'f4', front: 'Article 44 provides for?', back: 'Uniform Civil Code' },
+              { id: 'f5', front: 'Article 40 deals with?', back: 'Panchayati Raj (Village level governance)' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'DPSP are:', options: ['Justiciable', 'Non-justiciable', 'Partially justiciable', 'None'], correctIndex: 1, explanation: 'Cannot be enforced by courts.' },
+              { id: 'q2', question: 'Uniform Civil Code is in Article:', options: ['40', '44', '48', '50'], correctIndex: 1, explanation: 'Article 44 - UCC for all citizens.' },
+              { id: 'q3', question: 'Panchayati Raj is a ______ principle.', options: ['Socialistic', 'Gandhian', 'Liberal', 'None'], correctIndex: 1, explanation: 'Gandhi advocated village self-governance.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'DPSP', content: 'Directive Principles.\nPart IV.\nGuidelines for State.', color: getReelColor(0) },
+              { id: 'r2', title: 'Non-Justiciable', content: 'Cannot go to court.\nBut fundamental in governance.\nMoral obligation.', color: getReelColor(1) },
+              { id: 'r3', title: 'From Ireland', content: 'Borrowed from Irish Constitution.\nWelfare State goal.', color: getReelColor(2) },
+              { id: 'r4', title: 'Gandhian', content: 'Panchayati Raj (40).\nCottage industries (43).\nProhibition (47).', color: getReelColor(3) },
+              { id: 'r5', title: 'Article 44', content: 'Uniform Civil Code.\nOne law for all.\nStill pending!', color: getReelColor(4) }
+            ]
+          },
+          {
+            id: 'pol4',
+            title: '4. Union Legislature - Parliament',
+            description: 'Lok Sabha, Rajya Sabha, Law Making.',
+            summary: '**Parliament**: Lok Sabha + Rajya Sabha + President\n**Lok Sabha**: 545 members, 5 years\n**Rajya Sabha**: 250 members, 6 years (1/3 retire every 2 years)',
+            detailedNotes: '### 1. Composition of Parliament\nParliament = President + Lok Sabha + Rajya Sabha\n\n### 2. Lok Sabha (House of People)\n* **Maximum Members**: 552 (530 States + 20 UTs + 2 Anglo-Indian nominated - now discontinued)\n* **Current**: 543 elected members\n* **Term**: 5 years (can be dissolved earlier)\n* **Presiding Officer**: Speaker\n* **Quorum**: 1/10th of total members\n* **Money Bills**: Can only be introduced here\n\n### 3. Rajya Sabha (Council of States)\n* **Maximum Members**: 250 (238 elected + 12 nominated)\n* **Term**: 6 years (1/3 retire every 2 years)\n* **Permanent House**: Cannot be dissolved\n* **Presiding Officer**: Vice-President (ex-officio Chairman)\n* **Special Power**: Can declare a subject as national importance (Art 249)\n\n### 4. Sessions of Parliament\n* **Budget Session**: Feb-May\n* **Monsoon Session**: July-Aug\n* **Winter Session**: Nov-Dec\n\n### 5. Law Making Process\n1. First Reading: Introduction of Bill\n2. Second Reading: Discussion and voting\n3. Third Reading: Final voting\n4. Sent to other House\n5. Presidential Assent\n\n### 6. Types of Bills\n* **Ordinary Bill**: Simple majority\n* **Money Bill**: Only in Lok Sabha\n* **Constitutional Amendment Bill**: Special majority',
+            flashcards: [
+              { id: 'f1', front: 'Term of Lok Sabha?', back: '5 years' },
+              { id: 'f2', front: 'Term of Rajya Sabha member?', back: '6 years' },
+              { id: 'f3', front: 'Chairman of Rajya Sabha?', back: 'Vice-President of India (ex-officio)' },
+              { id: 'f4', front: 'Money Bill can be introduced in?', back: 'Lok Sabha only' },
+              { id: 'f5', front: 'Maximum members in Lok Sabha?', back: '552 (currently 543 elected)' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Rajya Sabha is also called:', options: ['Lower House', 'Upper House', 'People\'s House', 'State House'], correctIndex: 1, explanation: 'Council of States - Upper House.' },
+              { id: 'q2', question: 'How many members retire from RS every 2 years?', options: ['1/2', '1/3', '1/4', '1/5'], correctIndex: 1, explanation: '1/3 members retire every 2 years.' },
+              { id: 'q3', question: 'Presiding officer of Lok Sabha is:', options: ['President', 'Vice-President', 'Speaker', 'PM'], correctIndex: 2, explanation: 'Speaker presides over Lok Sabha.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Parliament', content: 'President + Lok Sabha + Rajya Sabha.\nBicameral legislature.', color: getReelColor(0) },
+              { id: 'r2', title: 'Lok Sabha', content: 'Lower House.\n543 members.\n5 year term.', color: getReelColor(1) },
+              { id: 'r3', title: 'Rajya Sabha', content: 'Upper House.\n250 members max.\n6 year term.', color: getReelColor(2) },
+              { id: 'r4', title: 'Money Bill', content: 'Only in Lok Sabha.\nRS can delay 14 days only.\nLS has final say.', color: getReelColor(3) },
+              { id: 'r5', title: 'Permanent House', content: 'Rajya Sabha.\nCannot be dissolved.\n1/3 retire every 2 years.', color: getReelColor(4) }
+            ]
+          },
+          {
+            id: 'pol5',
+            title: '5. Union Executive',
+            description: 'President, Vice-President, Prime Minister, Council of Ministers.',
+            summary: '**President**: Head of State (nominal)\n**Prime Minister**: Head of Government (real power)\n**President elected by**: Electoral College\n**Term**: 5 years',
+            detailedNotes: '### 1. President of India\n* **Article**: 52-62\n* **Qualification**: Citizen, 35+ years, qualified for LS\n* **Term**: 5 years (can be re-elected)\n* **Election**: Electoral College (MPs + MLAs)\n* **Removal**: Impeachment (Art 61)\n\n**Powers**:\n* Executive, Legislative, Judicial\n* Emergency powers (Art 352, 356, 360)\n* Appoints PM, Governors, Judges\n* Commander of Armed Forces\n\n### 2. Vice-President\n* **Article**: 63-71\n* **Term**: 5 years\n* **Election**: MPs of both Houses\n* **Role**: Chairman of Rajya Sabha\n* **Acting President**: When President\'s office is vacant\n\n### 3. Prime Minister\n* **Article**: 74-75\n* **Real Executive**: Head of Government\n* **Appointment**: By President (leader of majority party)\n* **Powers**: \n  - Presides over Cabinet\n  - Advises President\n  - Leader of Lok Sabha\n  - Allocates portfolios\n\n### 4. Council of Ministers\n* **Three Tiers**:\n  1. Cabinet Ministers (important portfolios)\n  2. Ministers of State (independent charge or attached)\n  3. Deputy Ministers (assist Cabinet Ministers)\n* **Collective Responsibility**: To Lok Sabha\n* **Max Size**: 15% of Lok Sabha (91st Amendment)',
+            flashcards: [
+              { id: 'f1', front: 'Minimum age for President?', back: '35 years' },
+              { id: 'f2', front: 'President elected by?', back: 'Electoral College (MPs + MLAs of States)' },
+              { id: 'f3', front: 'Vice-President is Chairman of?', back: 'Rajya Sabha' },
+              { id: 'f4', front: 'PM is appointed by?', back: 'President (leader of majority party in LS)' },
+              { id: 'f5', front: 'Max size of Council of Ministers?', back: '15% of Lok Sabha strength (91st Amendment)' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'President is removed by:', options: ['Resignation', 'Impeachment', 'Vote of no confidence', 'All'], correctIndex: 1, explanation: 'Article 61 - Impeachment process.' },
+              { id: 'q2', question: 'Real executive power lies with:', options: ['President', 'PM', 'Governor', 'Speaker'], correctIndex: 1, explanation: 'PM is head of government with real power.' },
+              { id: 'q3', question: 'Emergency under Article 356 is:', options: ['National', 'State', 'Financial', 'All'], correctIndex: 1, explanation: 'President\'s Rule in State.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'President', content: 'Head of State.\nNominal executive.\nElected by Electoral College.', color: getReelColor(0) },
+              { id: 'r2', title: 'PM', content: 'Head of Government.\nReal executive.\nLeader of majority party.', color: getReelColor(1) },
+              { id: 'r3', title: 'Vice-President', content: 'Chairman of RS.\nActing President.\nElected by MPs only.', color: getReelColor(2) },
+              { id: 'r4', title: 'Emergency', content: 'Art 352: National.\nArt 356: State.\nArt 360: Financial.', color: getReelColor(3) },
+              { id: 'r5', title: '91st Amendment', content: 'Council of Ministers.\nMax 15% of LS.\nAnti-defection.', color: getReelColor(4) }
+            ]
+          }
+        ]
       },
       {
-        id: 'soc', name: 'Sociology', icon: 'Users', color: 'bg-pink-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: []
+        id: 'soc', 
+        name: 'Sociology', 
+        icon: 'Users', 
+        color: 'bg-pink-500', 
+        syllabus: '1. Introduction to Sociology\n2. Social Groups\n3. Social Stratification\n4. Social Change\n5. Indian Society',
+        paperPattern: '### Sociology Paper Pattern (80 Marks)\n\n* **Q.1 MCQs (20 Marks)**\n* **Q.2-Q.5 Short Answers (40 Marks)**\n* **Q.6 Long Answers (20 Marks)**',
+        previousPapers: [], 
+        chapters: [
+          {
+            id: 'soc1',
+            title: '1. Introduction to Sociology',
+            description: 'Meaning, Scope, Importance of Sociology.',
+            summary: '**Sociology**: Study of society\n**Father**: Auguste Comte (1838)\n**Word Origin**: Latin "Socius" + Greek "Logos"\n**Focus**: Social relationships, institutions, behavior',
+            detailedNotes: '### 1. Meaning of Sociology\n**Definition**: Systematic study of society, social relationships, and social institutions.\n\n**Etymology**:\n* Socius (Latin) = Companion/Society\n* Logos (Greek) = Study/Science\n* Sociology = Science of Society\n\n### 2. Founders & Thinkers\n* **Auguste Comte**: Father of Sociology (coined term in 1838)\n* **Emile Durkheim**: Father of Modern Sociology\n* **Max Weber**: Verstehen (understanding) approach\n* **Karl Marx**: Class conflict theory\n* **Herbert Spencer**: Social Darwinism\n\n### 3. Nature of Sociology\n* **Social Science**: Studies human society\n* **Empirical**: Based on observation\n* **Generalizing**: Finds patterns\n* **Pure Science**: Knowledge for its own sake\n* **Abstract**: Concepts, not concrete\n\n### 4. Scope of Sociology\n**A. Formalistic School** (Simmel, Wiese):\n* Study only forms of social relationships\n* Narrow scope\n\n**B. Synthetic School** (Durkheim, Sorokin):\n* Study all aspects of society\n* Broader scope\n\n### 5. Importance of Sociology\n* Understand social problems\n* Policy making\n* Social planning\n* Self-awareness\n* Career opportunities',
+            flashcards: [
+              { id: 'f1', front: 'Father of Sociology?', back: 'Auguste Comte (coined term in 1838)' },
+              { id: 'f2', front: 'Father of Modern Sociology?', back: 'Emile Durkheim' },
+              { id: 'f3', front: 'Meaning of Socius?', back: 'Companion or Society (Latin)' },
+              { id: 'f4', front: 'Max Weber is known for?', back: 'Verstehen (understanding) approach' },
+              { id: 'f5', front: 'Karl Marx theory?', back: 'Class conflict theory' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Term "Sociology" was coined by:', options: ['Durkheim', 'Weber', 'Comte', 'Marx'], correctIndex: 2, explanation: 'Auguste Comte coined it in 1838.' },
+              { id: 'q2', question: 'Sociology is derived from:', options: ['Greek only', 'Latin only', 'Latin + Greek', 'French'], correctIndex: 2, explanation: 'Socius (Latin) + Logos (Greek).' },
+              { id: 'q3', question: 'Synthetic School advocates:', options: ['Narrow scope', 'Broader scope', 'No scope', 'Limited scope'], correctIndex: 1, explanation: 'Study all aspects of society.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Sociology', content: 'Socius + Logos.\nScience of Society.\nStudy of social life.', color: getReelColor(0) },
+              { id: 'r2', title: 'Auguste Comte', content: 'Father of Sociology.\nCoined term in 1838.\nFrench philosopher.', color: getReelColor(1) },
+              { id: 'r3', title: 'Durkheim', content: 'Father of Modern Sociology.\nSocial Facts.\nSuicide study.', color: getReelColor(2) },
+              { id: 'r4', title: 'Weber', content: 'Verstehen approach.\nUnderstanding.\nInterpretive sociology.', color: getReelColor(3) },
+              { id: 'r5', title: 'Marx', content: 'Class conflict.\nBourgeoisie vs Proletariat.\nCommunism.', color: getReelColor(4) }
+            ]
+          },
+          {
+            id: 'soc2',
+            title: '2. Social Groups',
+            description: 'Primary, Secondary, In-group, Out-group.',
+            summary: '**Social Group**: 2+ people with interaction\n**Primary Group**: Family, friends (intimate)\n**Secondary Group**: Organizations (formal)\n**Reference Group**: For comparison/aspiration',
+            detailedNotes: '### 1. Meaning of Social Group\nA collection of two or more individuals who interact with each other and share common identity.\n\n**Characteristics**:\n* Mutual awareness\n* Interaction\n* Common interest/goal\n* Sense of unity\n* Group norms\n\n### 2. Types of Groups\n\n**A. Primary Groups** (C.H. Cooley)\n* Small, intimate, face-to-face\n* Examples: Family, Play group, Neighborhood\n* Features: Personal, Informal, Permanent\n\n**B. Secondary Groups**\n* Large, formal, impersonal\n* Examples: Political party, Trade union, School\n* Features: Formal, Goal-oriented, Temporary\n\n**C. In-group vs Out-group** (W.G. Sumner)\n* In-group: "We" feeling (our family, our team)\n* Out-group: "They" feeling (others, rivals)\n\n**D. Reference Group** (Merton)\n* Group we compare ourselves with\n* May or may not be member\n* Examples: Celebrities, Role models\n\n### 3. Importance of Groups\n* Socialization\n* Identity formation\n* Social control\n* Emotional support\n* Division of labor',
+            flashcards: [
+              { id: 'f1', front: 'Who gave concept of Primary Group?', back: 'C.H. Cooley' },
+              { id: 'f2', front: 'Example of Primary Group?', back: 'Family, Friends, Play group' },
+              { id: 'f3', front: 'Who gave In-group/Out-group concept?', back: 'W.G. Sumner' },
+              { id: 'f4', front: 'Reference Group concept by?', back: 'Robert K. Merton' },
+              { id: 'f5', front: 'Secondary groups are?', back: 'Large, formal, impersonal (e.g., Organizations)' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Family is a ______ group.', options: ['Secondary', 'Primary', 'Reference', 'Out-group'], correctIndex: 1, explanation: 'Small, intimate, face-to-face relations.' },
+              { id: 'q2', question: 'Trade Union is a ______ group.', options: ['Primary', 'Secondary', 'Informal', 'None'], correctIndex: 1, explanation: 'Formal organization with specific goals.' },
+              { id: 'q3', question: '"We" feeling indicates:', options: ['Out-group', 'In-group', 'Reference group', 'Secondary group'], correctIndex: 1, explanation: 'Sense of belonging to one\'s own group.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Social Group', content: '2+ people.\nInteraction.\nCommon identity.', color: getReelColor(0) },
+              { id: 'r2', title: 'Primary', content: 'Family, Friends.\nIntimate, Personal.\nCooley\'s concept.', color: getReelColor(1) },
+              { id: 'r3', title: 'Secondary', content: 'Organizations.\nFormal, Impersonal.\nGoal-oriented.', color: getReelColor(2) },
+              { id: 'r4', title: 'In-group', content: '"We" feeling.\nOur team, Our family.\nSumner\'s concept.', color: getReelColor(3) },
+              { id: 'r5', title: 'Reference', content: 'Compare ourselves.\nAspirational.\nMerton\'s concept.', color: getReelColor(4) }
+            ]
+          },
+          {
+            id: 'soc3',
+            title: '3. Social Stratification',
+            description: 'Caste, Class, Inequality in society.',
+            summary: '**Stratification**: Layers in society\n**Types**: Caste (closed), Class (open)\n**Caste**: Birth-based, rigid\n**Class**: Economic-based, flexible',
+            detailedNotes: '### 1. Meaning\nSocial Stratification is the division of society into layers or strata based on inequality.\n\n### 2. Forms of Stratification\n\n**A. Caste System**\n* Based on birth (ascribed status)\n* Rigid, closed system\n* Hindu society: Brahmin, Kshatriya, Vaishya, Shudra\n* Features: Hereditary, Endogamy, Hierarchy, Occupation fixed\n\n**B. Class System**\n* Based on economic factors (achieved status)\n* Flexible, open system\n* Classes: Upper, Middle, Lower\n* Features: Acquired, Exogamy allowed, Mobility possible\n\n**C. Estate System**\n* Medieval Europe\n* Three estates: Clergy, Nobility, Commoners\n\n**D. Slavery**\n* Most extreme form\n* Person as property\n* Abolished worldwide\n\n### 3. Theories\n* **Functionalist** (Davis & Moore): Inequality is functional, motivates people\n* **Conflict** (Marx): Exploitation by dominant class\n* **Weber**: Class + Status + Power\n\n### 4. Social Mobility\n* **Vertical**: Moving up or down\n* **Horizontal**: Same level, different position\n* **Intergenerational**: Across generations\n* **Intragenerational**: Within one\'s lifetime',
+            flashcards: [
+              { id: 'f1', front: 'Caste system is based on?', back: 'Birth (ascribed status) - rigid, closed' },
+              { id: 'f2', front: 'Class system is based on?', back: 'Economic factors (achieved status) - flexible, open' },
+              { id: 'f3', front: 'Four Varnas in Hindu society?', back: 'Brahmin, Kshatriya, Vaishya, Shudra' },
+              { id: 'f4', front: 'Weber\'s three dimensions?', back: 'Class, Status, Power' },
+              { id: 'f5', front: 'Vertical mobility means?', back: 'Moving up or down in social hierarchy' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Caste system is a ______ system.', options: ['Open', 'Closed', 'Flexible', 'Modern'], correctIndex: 1, explanation: 'Based on birth, no mobility possible traditionally.' },
+              { id: 'q2', question: 'Class is based on:', options: ['Birth', 'Religion', 'Economic factors', 'Caste'], correctIndex: 2, explanation: 'Wealth, income, occupation determine class.' },
+              { id: 'q3', question: 'Weber added ______ to class analysis.', options: ['Caste', 'Status & Power', 'Religion', 'None'], correctIndex: 1, explanation: 'Three dimensions: Class, Status, Power.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Stratification', content: 'Layers in society.\nBased on inequality.\nHierarchy.', color: getReelColor(0) },
+              { id: 'r2', title: 'Caste', content: 'Birth-based.\nClosed system.\nRigid hierarchy.', color: getReelColor(1) },
+              { id: 'r3', title: 'Class', content: 'Economic-based.\nOpen system.\nMobility possible.', color: getReelColor(2) },
+              { id: 'r4', title: 'Varnas', content: 'Brahmin (Priests).\nKshatriya (Warriors).\nVaishya (Traders).\nShudra (Servants).', color: getReelColor(3) },
+              { id: 'r5', title: 'Weber', content: 'Class + Status + Power.\nMulti-dimensional.\nBeyond just money.', color: getReelColor(4) }
+            ]
+          },
+          {
+            id: 'soc4',
+            title: '4. Social Change',
+            description: 'Meaning, Factors, Types of Change.',
+            summary: '**Social Change**: Transformation in society\n**Factors**: Technology, Economy, Culture, Politics\n**Types**: Evolution, Revolution, Reform\n**Agents**: Education, Media, Legislation',
+            detailedNotes: '### 1. Meaning\nSocial Change refers to alterations in the social structure, culture, and behavior patterns of society over time.\n\n### 2. Characteristics\n* Universal: Happens everywhere\n* Continuous: Never stops\n* Temporal: Takes time\n* Community change: Not individual\n* Chain reaction: One change leads to another\n\n### 3. Factors of Change\n\n**A. Internal Factors**\n* Demographic: Population changes\n* Technological: New inventions\n* Economic: Industrialization, Globalization\n* Cultural: New values, ideas\n\n**B. External Factors**\n* Cultural diffusion\n* War and conflict\n* Natural disasters\n* Contact with other societies\n\n### 4. Types of Social Change\n* **Evolution**: Gradual, slow change\n* **Revolution**: Sudden, radical change\n* **Reform**: Deliberate, planned change\n\n### 5. Theories of Change\n* **Linear** (Comte): Society progresses in stages\n* **Cyclical** (Spengler): Rise and fall patterns\n* **Evolutionary** (Spencer): Simple to complex\n* **Conflict** (Marx): Change through class struggle\n\n### 6. Agents of Change\n* Education\n* Mass media\n* Legislation\n* Social movements\n* Globalization',
+            flashcards: [
+              { id: 'f1', front: 'What is social change?', back: 'Alterations in social structure, culture, and behavior over time' },
+              { id: 'f2', front: 'Revolution is what type of change?', back: 'Sudden and radical change' },
+              { id: 'f3', front: 'Evolution is what type of change?', back: 'Gradual and slow change' },
+              { id: 'f4', front: 'Marx\'s theory of change?', back: 'Change through class struggle/conflict' },
+              { id: 'f5', front: 'Name agents of social change.', back: 'Education, Media, Legislation, Social movements' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Social change is:', options: ['Individual', 'Community-based', 'Temporary', 'Rare'], correctIndex: 1, explanation: 'Affects the whole community, not just individuals.' },
+              { id: 'q2', question: 'French Revolution is an example of:', options: ['Evolution', 'Reform', 'Revolution', 'None'], correctIndex: 2, explanation: 'Sudden radical change in society.' },
+              { id: 'q3', question: 'Cyclical theory was given by:', options: ['Comte', 'Marx', 'Spencer', 'Spengler'], correctIndex: 3, explanation: 'Oswald Spengler - rise and fall of civilizations.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Social Change', content: 'Transformation in society.\nUniversal & Continuous.\nAlways happening!', color: getReelColor(0) },
+              { id: 'r2', title: 'Factors', content: 'Technology, Economy.\nCulture, Politics.\nDemography.', color: getReelColor(1) },
+              { id: 'r3', title: 'Evolution', content: 'Slow & Gradual.\nNatural process.\nOver generations.', color: getReelColor(2) },
+              { id: 'r4', title: 'Revolution', content: 'Sudden & Radical.\nFrench Revolution.\nComplete overhaul.', color: getReelColor(3) },
+              { id: 'r5', title: 'Agents', content: 'Education, Media.\nLaws, Movements.\nGlobalization.', color: getReelColor(4) }
+            ]
+          },
+          {
+            id: 'soc5',
+            title: '5. Indian Society',
+            description: 'Unity in Diversity, Family, Marriage.',
+            summary: '**Unity in Diversity**: Many cultures, one nation\n**Joint Family**: Traditional, extended\n**Nuclear Family**: Modern, parents + children\n**Marriage Types**: Monogamy, Polygyny, Polyandry',
+            detailedNotes: '### 1. Unity in Diversity\nIndia has diverse religions, languages, cultures, but remains united as one nation.\n\n**Factors of Unity**:\n* Constitution\n* National symbols (Flag, Anthem)\n* Common history\n* Festivals\n* Pilgrimages\n\n### 2. Indian Family System\n\n**A. Joint Family**\n* Three or more generations\n* Common property\n* Common kitchen\n* Patriarchal authority\n* Declining now\n\n**B. Nuclear Family**\n* Parents + children only\n* Separate residence\n* Individual property\n* Growing in cities\n\n### 3. Marriage in India\n\n**Types**:\n* **Monogamy**: One spouse\n* **Polygyny**: One husband, multiple wives\n* **Polyandry**: One wife, multiple husbands (rare)\n\n**Forms**:\n* **Arranged Marriage**: Family decides\n* **Love Marriage**: Individual choice\n* **Endogamy**: Within same group (caste)\n* **Exogamy**: Outside the group (gotra)\n\n### 4. Changes in Indian Society\n* Urbanization\n* Industrialization\n* Women empowerment\n* Education spread\n* Nuclear families increasing\n* Inter-caste marriages\n* Legal reforms (dowry prohibition, divorce laws)',
+            flashcards: [
+              { id: 'f1', front: 'Unity in Diversity means?', back: 'Many cultures, religions, languages but one nation' },
+              { id: 'f2', front: 'Joint family has?', back: 'Three or more generations living together' },
+              { id: 'f3', front: 'Nuclear family has?', back: 'Parents and their children only' },
+              { id: 'f4', front: 'Endogamy means?', back: 'Marriage within same group (caste)' },
+              { id: 'f5', front: 'Exogamy means?', back: 'Marriage outside one\'s group (gotra)' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Joint family is:', options: ['Modern', 'Traditional', 'Western', 'Urban'], correctIndex: 1, explanation: 'Traditional Indian family system.' },
+              { id: 'q2', question: 'Marrying within same caste is:', options: ['Exogamy', 'Endogamy', 'Monogamy', 'Polygyny'], correctIndex: 1, explanation: 'Endo = within, gamy = marriage.' },
+              { id: 'q3', question: 'One husband, multiple wives is:', options: ['Polyandry', 'Monogamy', 'Polygyny', 'Endogamy'], correctIndex: 2, explanation: 'Poly = many, gyny = women.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Unity in Diversity', content: 'Many religions.\nMany languages.\nOne Nation!', color: getReelColor(0) },
+              { id: 'r2', title: 'Joint Family', content: '3+ generations.\nCommon property.\nTraditional.', color: getReelColor(1) },
+              { id: 'r3', title: 'Nuclear Family', content: 'Parents + Kids.\nModern.\nUrban trend.', color: getReelColor(2) },
+              { id: 'r4', title: 'Endogamy', content: 'Marry within group.\nSame caste.\nTraditional norm.', color: getReelColor(3) },
+              { id: 'r5', title: 'Changes', content: 'Urbanization.\nWomen empowerment.\nInter-caste marriage.', color: getReelColor(4) }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'geo',
+        name: 'Geography',
+        icon: 'Globe',
+        color: 'bg-teal-500',
+        syllabus: '1. Population Geography\n2. Migration\n3. Human Settlements\n4. Human Development\n5. Primary Activities',
+        paperPattern: '### Geography Paper Pattern (80 Marks)\n\n* **Q.1 MCQs (20 Marks)**\n* **Q.2 Short Answers (16 Marks)**\n* **Q.3 Distinguish Between (12 Marks)**\n* **Q.4 Long Answers (16 Marks)**\n* **Q.5 Map Work (16 Marks)**',
+        previousPapers: ['2024 Geography Paper', '2023 Geography Paper'],
+        chapters: [
+          {
+            id: 'geo-ch1',
+            title: 'Chapter 1: Population Geography',
+            description: 'Distribution, density, and growth of population',
+            summary: `
+# Population Geography
+
+## Key Concepts
+
+### Population Distribution
+- **Densely Populated**: Ganga plains, coastal areas, deltas
+- **Sparsely Populated**: Deserts, mountains, dense forests
+- 90% population on 10% land area
+
+### Factors Affecting Distribution
+1. **Physical**: Climate, water, soil, relief, minerals
+2. **Economic**: Industries, agriculture, transport
+3. **Social**: Historical, political, cultural
+
+### Population Density
+- Persons per sq. km
+- India: ~382 persons/sq km (2011)
+- Highest: Bihar (1106)
+- Lowest: Arunachal Pradesh (17)
+
+### Population Growth
+- Birth Rate - Death Rate = Natural Growth
+- India: 1.2% annual growth
+- Demographic Transition: High→Transitional→Low
+
+### Age Structure
+- 0-14 years: Young/Dependent
+- 15-64 years: Working/Productive
+- 65+ years: Elderly/Dependent
+- Dependency Ratio = (Young + Old) / Working × 100
+            `,
+            detailedNotes: `
+# Detailed Notes: Population Geography
+
+## Population Distribution Patterns
+
+### World Distribution
+- Asia: 60% of world population
+- Most populated countries: China, India, USA
+- Northern Hemisphere: 90% population
+- Coastal areas: 66% within 500 km of coast
+
+### Factors Affecting Distribution
+
+#### Physical Factors
+| Factor | Favorable | Unfavorable |
+|--------|-----------|-------------|
+| Climate | Moderate temp, adequate rainfall | Extreme hot/cold, very dry/wet |
+| Relief | Plains, plateaus | Mountains, steep slopes |
+| Soil | Fertile alluvial, black soil | Rocky, sandy, marshy |
+| Water | Rivers, lakes nearby | Arid regions |
+| Minerals | Mineral-rich areas attract | Absence discourages |
+
+#### Economic Factors
+- Industrial centers: Dense population
+- Agricultural regions: Rural settlements
+- Trade centers: Urban growth
+- Transport networks: Accessibility
+
+## Population Density
+
+### Calculation
+Density = Total Population / Total Area
+
+### Categories
+- Very High: >500/sq km
+- High: 200-500/sq km
+- Moderate: 50-200/sq km
+- Low: <50/sq km
+
+### India's Density Pattern
+- Most dense: Indo-Gangetic Plain
+- Least dense: Himalayan region, Thar Desert
+- Increasing trend due to population growth
+
+## Population Growth
+
+### Measures of Growth
+1. **Birth Rate**: Births per 1000 population per year
+2. **Death Rate**: Deaths per 1000 population per year
+3. **Natural Growth**: Birth Rate - Death Rate
+4. **Growth Rate**: Including migration effects
+
+### Demographic Transition Theory
+| Stage | Birth Rate | Death Rate | Growth |
+|-------|------------|------------|--------|
+| Stage 1 | High | High | Low/Stable |
+| Stage 2 | High | Declining | Rapid increase |
+| Stage 3 | Declining | Low | Slowing |
+| Stage 4 | Low | Low | Stable/Decline |
+
+### India's Demographic Transition
+- Pre-1921: Stage 1 (Stagnant growth)
+- 1921-1971: Stage 2 (Rapid growth)
+- Post-1971: Stage 3 (Declining growth)
+
+## Age Structure Pyramid
+
+### Types
+1. **Expanding**: Wide base, narrow top (developing countries)
+2. **Stationary**: Uniform width (developed countries)
+3. **Contracting**: Narrow base (aging population)
+
+### Significance
+- Planning for education, healthcare
+- Labor force availability
+- Social security needs
+            `,
+            flashcards: [
+              { front: 'What is population density?', back: 'Number of persons living per square kilometer of area. Formula: Total Population ÷ Total Area.' },
+              { front: 'Which Indian state has highest population density?', back: 'Bihar with 1106 persons per sq km (Census 2011).' },
+              { front: 'What is Demographic Transition?', back: 'Theory explaining population change from high birth/death rates to low birth/death rates as country develops.' },
+              { front: 'What is dependency ratio?', back: 'Ratio of dependent population (0-14 and 65+) to working age population (15-64). Shows burden on workers.' },
+              { front: 'What is natural growth of population?', back: 'Difference between birth rate and death rate, excluding migration. Natural Growth = Birth Rate - Death Rate.' }
+            ],
+            mcqs: [
+              { question: 'Which factor is NOT a physical factor affecting population distribution?', options: ['Climate', 'Relief', 'Industries', 'Water'], correctAnswer: 2 },
+              { question: 'Highest population density in India is in:', options: ['Kerala', 'West Bengal', 'Bihar', 'UP'], correctAnswer: 2 },
+              { question: 'In demographic transition, Stage 2 has:', options: ['High birth, high death', 'High birth, declining death', 'Low birth, low death', 'Declining birth, low death'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'Population Density Formula', content: 'Density = Population ÷ Area | India ≈ 382/sq km 📊' },
+              { title: 'Dense vs Sparse', content: 'Dense: Plains, Rivers, Fertile | Sparse: Mountains, Deserts, Forests 🏔️🏜️' },
+              { title: 'Demographic Transition', content: 'Stage 1: High-High | Stage 2: High-Low | Stage 3: Low-Low | Stage 4: Stable 📉' },
+              { title: 'Age Pyramid Types', content: 'Expanding: Young country 🔺 | Stationary: Balanced 🔷 | Contracting: Aging 🔻' }
+            ]
+          },
+          {
+            id: 'geo-ch2',
+            title: 'Chapter 2: Migration',
+            description: 'Types, causes, and consequences of migration',
+            summary: `
+# Migration
+
+## Key Concepts
+
+### Definition
+Movement of people from one place to another with intention to settle
+
+### Types of Migration
+1. **Internal**: Within country
+   - Rural to Urban
+   - Urban to Urban
+   - Rural to Rural
+2. **International**: Across countries
+   - Immigration (into country)
+   - Emigration (out of country)
+
+### Push Factors (Why leave?)
+- Unemployment, poverty
+- Natural disasters
+- War, conflict
+- Lack of facilities
+
+### Pull Factors (Why go there?)
+- Better jobs, higher wages
+- Better education, healthcare
+- Peace and security
+- Family reunion
+
+### Consequences
+**Positive**: Remittances, skill transfer, cultural exchange
+**Negative**: Brain drain, family separation, exploitation
+            `,
+            detailedNotes: `
+# Detailed Notes: Migration
+
+## Classification of Migration
+
+### Based on Distance
+- **Short Distance**: Within district/state
+- **Long Distance**: Inter-state, international
+
+### Based on Duration
+- **Permanent**: Settle permanently
+- **Temporary**: Seasonal, short-term
+- **Circular**: Regular back-and-forth
+
+### Based on Decision
+- **Voluntary**: By choice
+- **Forced**: Refugees, displaced persons
+
+## Causes of Migration
+
+### Push Factors
+| Category | Examples |
+|----------|----------|
+| Economic | Unemployment, low wages, poverty |
+| Social | Discrimination, family disputes |
+| Political | War, persecution, instability |
+| Environmental | Drought, floods, disasters |
+| Demographic | Overpopulation, land shortage |
+
+### Pull Factors
+| Category | Examples |
+|----------|----------|
+| Economic | Jobs, higher wages, opportunities |
+| Social | Education, healthcare, family |
+| Political | Safety, freedom, rights |
+| Environmental | Better climate, amenities |
+
+## Consequences of Migration
+
+### For Origin Area
+**Positive:**
+- Reduces population pressure
+- Remittances boost economy
+- Return migrants bring skills
+
+**Negative:**
+- Brain drain (skilled leave)
+- Labor shortage
+- Family disruption
+
+### For Destination Area
+**Positive:**
+- Labor supply increases
+- Cultural diversity
+- Economic contribution
+
+**Negative:**
+- Overcrowding
+- Strain on infrastructure
+- Social tensions
+
+## Migration in India
+
+### Major Streams
+1. **Rural to Urban**: Most common, for jobs
+2. **Rural to Rural**: Marriage (females)
+3. **Urban to Urban**: Job transfers, education
+4. **Urban to Rural**: Rare, retirement
+
+### Key Statistics
+- Maharashtra, Delhi, Gujarat: Major destinations
+- UP, Bihar: Major source states
+- Female migration: Mostly for marriage
+            `,
+            flashcards: [
+              { front: 'What are push factors in migration?', back: 'Factors that force people to leave origin: unemployment, poverty, war, disasters, discrimination.' },
+              { front: 'What are pull factors in migration?', back: 'Factors that attract people to destination: jobs, education, safety, better facilities, family.' },
+              { front: 'What is brain drain?', back: 'Emigration of skilled and educated people from developing to developed countries, causing loss of human capital.' },
+              { front: 'What is the most common migration stream in India?', back: 'Rural to Urban migration, mainly for employment opportunities in cities.' },
+              { front: 'What are remittances?', back: 'Money sent by migrants back to their families in origin area. Important source of income for developing countries.' }
+            ],
+            mcqs: [
+              { question: 'Which is a push factor?', options: ['Better jobs', 'Higher wages', 'Unemployment', 'Good schools'], correctAnswer: 2 },
+              { question: 'Brain drain refers to:', options: ['Import of skills', 'Export of educated people', 'Return migration', 'Rural migration'], correctAnswer: 1 },
+              { question: 'Female migration in India is mainly due to:', options: ['Employment', 'Education', 'Marriage', 'Business'], correctAnswer: 2 }
+            ],
+            reels: [
+              { title: 'Push vs Pull', content: 'PUSH: Problems at home 👎 | PULL: Opportunities elsewhere 👍' },
+              { title: 'Migration Types', content: 'Internal: Within country | International: Across borders 🌍' },
+              { title: 'Brain Drain', content: 'Skilled workers leave → Origin loses talent → Destination gains! 🧠✈️' },
+              { title: 'India Migration Pattern', content: 'UP/Bihar → Mumbai/Delhi/Gujarat | For jobs & better life 🏙️' }
+            ]
+          },
+          {
+            id: 'geo-ch3',
+            title: 'Chapter 3: Human Settlements',
+            description: 'Types and patterns of human settlements',
+            summary: `
+# Human Settlements
+
+## Key Concepts
+
+### Definition
+Places where people build homes and live together
+
+### Types of Settlements
+1. **Rural Settlements**
+   - Compact/Nucleated: Houses clustered
+   - Dispersed/Scattered: Houses spread out
+   - Linear: Along roads/rivers
+
+2. **Urban Settlements**
+   - Town: 5,000-1,00,000 population
+   - City: 1,00,000+ population
+   - Metropolis: 10,00,000+ (10 lakh)
+   - Megacity: 1,00,00,000+ (1 crore)
+
+### Site vs Situation
+- **Site**: Actual location features (land, water)
+- **Situation**: Location relative to surroundings
+
+### Urbanization
+- Increase in urban population percentage
+- Causes: Industrialization, migration, natural growth
+- India: 31% urban (2011) → projected 40% by 2030
+            `,
+            detailedNotes: `
+# Detailed Notes: Human Settlements
+
+## Rural Settlement Patterns
+
+### Compact/Nucleated
+- Houses close together
+- Found in fertile plains
+- Common kitchen, well, temple
+- Examples: Villages in Ganga plain
+
+### Dispersed/Scattered
+- Houses spread apart
+- Found in hilly, forested areas
+- Individual water sources
+- Examples: Himalayan villages
+
+### Linear
+- Along roads, rivers, canals
+- Easy access to transport
+- Examples: Coastal villages
+
+### Semi-clustered
+- Mix of compact and dispersed
+- Fragmented clusters
+- Examples: Gujarat villages
+
+## Urban Settlement Classification
+
+### By Population (India)
+| Category | Population |
+|----------|------------|
+| Town | 5,000 - 99,999 |
+| City | 1,00,000 - 9,99,999 |
+| Metropolitan | 10,00,000 - 49,99,999 |
+| Megacity | 50,00,000+ |
+
+### By Function
+- **Administrative**: Capitals (Delhi, state capitals)
+- **Industrial**: Manufacturing centers (Jamshedpur)
+- **Commercial**: Trade hubs (Mumbai)
+- **Cultural**: Religious, educational (Varanasi, Pune)
+- **Transport**: Ports, junctions (Chennai, Mughal Sarai)
+
+## Site Factors
+
+### Favorable Site Conditions
+- Flat land for construction
+- Water availability (river, groundwater)
+- Good drainage
+- Building materials nearby
+- Fertile land for agriculture
+
+### Historical Site Selection
+- Defense: Hilltops, river islands
+- Trade routes: Crossroads, ports
+- Religious: Sacred sites
+
+## Urbanization
+
+### Causes
+1. Rural push: Poverty, lack of jobs
+2. Urban pull: Employment, education
+3. Natural increase: Births in cities
+4. Reclassification: Villages becoming towns
+
+### Problems of Urbanization
+- Housing shortage, slums
+- Traffic congestion
+- Pollution
+- Water and sanitation issues
+- Crime and social issues
+
+### Solutions
+- Smart city development
+- Satellite towns
+- Urban planning
+- Improved public transport
+            `,
+            flashcards: [
+              { front: 'What is a nucleated settlement?', back: 'Settlement where houses are clustered together around a central point like temple, well, or marketplace. Common in fertile plains.' },
+              { front: 'What is the difference between site and situation?', back: 'Site: Physical characteristics of actual location. Situation: Location relative to surrounding areas and accessibility.' },
+              { front: 'What is a megacity?', back: 'Urban agglomeration with population of 10 million (1 crore) or more. Examples: Mumbai, Delhi, Kolkata.' },
+              { front: 'What is urbanization?', back: 'Process of increase in proportion of population living in urban areas. India is about 31% urban (2011).' },
+              { front: 'Name types of rural settlements.', back: 'Compact/Nucleated, Dispersed/Scattered, Linear, and Semi-clustered settlements.' }
+            ],
+            mcqs: [
+              { question: 'Houses clustered together is called:', options: ['Dispersed', 'Nucleated', 'Linear', 'Scattered'], correctAnswer: 1 },
+              { question: 'A city with 10 million+ population is:', options: ['Town', 'City', 'Metropolitan', 'Megacity'], correctAnswer: 3 },
+              { question: 'Urbanization in India (2011) was about:', options: ['21%', '31%', '41%', '51%'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'Settlement Types', content: 'Nucleated: Together 🏘️ | Dispersed: Spread out 🏡 | Linear: In a line 📏' },
+              { title: 'Urban Hierarchy', content: 'Town < City < Metro < Megacity | By population size 📊' },
+              { title: 'Site vs Situation', content: 'Site: What IS there | Situation: WHERE it is relative to others 📍' },
+              { title: 'Urbanization Issues', content: 'Slums + Traffic + Pollution + Water crisis = Urban problems 🏙️😷' }
+            ]
+          },
+          {
+            id: 'geo-ch4',
+            title: 'Chapter 4: Human Development',
+            description: 'Human Development Index and quality of life',
+            summary: `
+# Human Development
+
+## Key Concepts
+
+### Definition
+Expanding choices and capabilities of people to live a dignified life
+
+### Human Development Index (HDI)
+Developed by UNDP, measures:
+1. **Health**: Life expectancy at birth
+2. **Education**: Mean & expected years of schooling
+3. **Income**: GNI per capita (PPP)
+
+### HDI Categories
+- Very High: 0.800+
+- High: 0.700-0.799
+- Medium: 0.550-0.699
+- Low: Below 0.550
+
+### India's HDI
+- Rank: ~132 out of 191 countries
+- Category: Medium Human Development
+- HDI Value: ~0.633
+
+### Other Indices
+- **GDI**: Gender Development Index
+- **GII**: Gender Inequality Index
+- **MPI**: Multidimensional Poverty Index
+            `,
+            detailedNotes: `
+# Detailed Notes: Human Development
+
+## Concept of Human Development
+
+### Definition
+"Human development is about expanding choices and capabilities of people to lead lives they value" - UNDP
+
+### Key Aspects
+1. **Longevity**: Long and healthy life
+2. **Knowledge**: Access to education
+3. **Decent Living**: Resources for dignified life
+4. **Participation**: Social and political freedom
+
+### Human Development vs Economic Growth
+| Economic Growth | Human Development |
+|-----------------|-------------------|
+| Focus on GDP | Focus on people |
+| Quantitative | Qualitative |
+| Means | End goal |
+| Income-centric | Well-being centric |
+
+## Human Development Index (HDI)
+
+### Components
+1. **Health Dimension**
+   - Indicator: Life expectancy at birth
+   - Min: 20 years, Max: 85 years
+
+2. **Education Dimension**
+   - Mean years of schooling (adults)
+   - Expected years of schooling (children)
+
+3. **Living Standard**
+   - GNI per capita (PPP $)
+   - Min: $100, Max: $75,000
+
+### HDI Calculation
+Each dimension index = (Actual - Min) / (Max - Min)
+HDI = Geometric mean of three indices
+
+### HDI Categories
+| Category | HDI Value | Examples |
+|----------|-----------|----------|
+| Very High | 0.800+ | Norway, Switzerland, Ireland |
+| High | 0.700-0.799 | Sri Lanka, Brazil, Thailand |
+| Medium | 0.550-0.699 | India, Bangladesh, Kenya |
+| Low | <0.550 | Niger, Chad, Mali |
+
+## Related Indices
+
+### Gender Development Index (GDI)
+- Ratio of female to male HDI
+- Measures gender gap in development
+- Higher value = less inequality
+
+### Gender Inequality Index (GII)
+- Measures gender disadvantage
+- Components: Health, empowerment, labor
+- Lower value = less inequality
+
+### Multidimensional Poverty Index (MPI)
+- Beyond income poverty
+- 10 indicators across 3 dimensions
+- Health, education, living standards
+
+## India's Human Development
+
+### Current Status
+- HDI Rank: ~132/191
+- HDI Value: ~0.633
+- Category: Medium
+
+### Challenges
+- Gender inequality
+- Regional disparities
+- Education quality
+- Healthcare access
+
+### State-level Variations
+- Highest: Kerala, Goa, Himachal Pradesh
+- Lowest: Bihar, Jharkhand, UP
+            `,
+            flashcards: [
+              { front: 'What is Human Development Index (HDI)?', back: 'Composite index measuring human development through: 1) Life expectancy (health), 2) Years of schooling (education), 3) GNI per capita (income). Developed by UNDP.' },
+              { front: 'What are the 3 dimensions of HDI?', back: '1) Health - Life expectancy at birth, 2) Education - Mean and expected years of schooling, 3) Standard of living - GNI per capita (PPP).' },
+              { front: 'What is India\'s HDI rank?', back: 'India ranks around 132 out of 191 countries with HDI value of ~0.633, falling in Medium Human Development category.' },
+              { front: 'Which Indian state has highest HDI?', back: 'Kerala has the highest HDI in India, followed by Goa and Himachal Pradesh.' },
+              { front: 'What is Gender Inequality Index (GII)?', back: 'Index measuring gender-based disadvantage in reproductive health, empowerment, and labor market. Lower value means less inequality.' }
+            ],
+            mcqs: [
+              { question: 'HDI was developed by:', options: ['World Bank', 'IMF', 'UNDP', 'WHO'], correctAnswer: 2 },
+              { question: 'Which is NOT a component of HDI?', options: ['Life expectancy', 'Education', 'Per capita income', 'Population growth'], correctAnswer: 3 },
+              { question: 'India falls in which HDI category?', options: ['Very High', 'High', 'Medium', 'Low'], correctAnswer: 2 }
+            ],
+            reels: [
+              { title: 'HDI Components', content: 'Health (Life expectancy) + Education (Schooling) + Income (GNI) = HDI 📊' },
+              { title: 'HDI Categories', content: 'Very High: 0.8+ | High: 0.7+ | Medium: 0.55+ | Low: <0.55 📈' },
+              { title: 'India HDI', content: 'Rank ~132 | Value ~0.633 | Category: Medium | Best state: Kerala 🇮🇳' },
+              { title: 'HD vs Economic Growth', content: 'Growth = More money 💰 | Development = Better life 🌟' }
+            ]
+          },
+          {
+            id: 'geo-ch5',
+            title: 'Chapter 5: Primary Activities',
+            description: 'Agriculture, mining, fishing, forestry',
+            summary: `
+# Primary Activities
+
+## Key Concepts
+
+### Definition
+Activities directly using natural resources
+- Agriculture, Mining, Fishing, Forestry, Animal husbandry
+
+### Types of Agriculture
+1. **Subsistence**: For self-consumption
+   - Primitive (shifting cultivation)
+   - Intensive (rice farming)
+2. **Commercial**: For sale in market
+   - Plantation (tea, coffee, rubber)
+   - Mixed farming
+   - Dairy farming
+
+### Green Revolution
+- 1960s in India
+- High Yielding Varieties (HYV)
+- Punjab, Haryana leading states
+- Increased wheat and rice production
+
+### Mining
+- **Surface Mining**: Open pit, quarrying
+- **Underground Mining**: Shaft, drift mining
+- Major minerals: Coal, iron, petroleum
+            `,
+            detailedNotes: `
+# Detailed Notes: Primary Activities
+
+## Types of Economic Activities
+
+### Classification
+1. **Primary**: Direct use of nature (agriculture, mining)
+2. **Secondary**: Manufacturing, processing
+3. **Tertiary**: Services (trade, transport)
+4. **Quaternary**: Knowledge-based (IT, research)
+
+## Agriculture
+
+### Subsistence Agriculture
+| Type | Features | Examples |
+|------|----------|----------|
+| Primitive Shifting | Slash and burn, migrate | Jhum (NE India) |
+| Intensive Subsistence | Small plots, labor-intensive | Rice in Asia |
+| Pastoral Nomadism | Herding animals, migrate | Gujjars, Bakkarwals |
+
+### Commercial Agriculture
+| Type | Features | Crops |
+|------|----------|-------|
+| Plantation | Large estates, single crop | Tea, coffee, rubber |
+| Mixed Farming | Crops + livestock | Europe, USA |
+| Dairy Farming | Milk production | Denmark, Netherlands |
+| Market Gardening | Vegetables for cities | Near urban areas |
+
+### Factors Affecting Agriculture
+1. **Physical**: Climate, soil, relief, water
+2. **Economic**: Market, transport, labor, capital
+3. **Institutional**: Land tenure, government policy
+
+## Green Revolution
+
+### Features
+- High Yielding Variety (HYV) seeds
+- Chemical fertilizers
+- Irrigation expansion
+- Mechanization
+
+### Impacts
+**Positive:**
+- Increased food production
+- Self-sufficiency in food grains
+- Improved farmer income
+
+**Negative:**
+- Regional disparity
+- Groundwater depletion
+- Soil degradation
+- Small farmer marginalization
+
+## Mining
+
+### Types of Mining
+1. **Surface Mining**
+   - Open-pit: Large deposits near surface
+   - Quarrying: Building materials
+   - Placer: River deposits
+
+2. **Underground Mining**
+   - Shaft mining: Vertical access
+   - Drift mining: Horizontal tunnels
+
+### Major Minerals in India
+| Mineral | Major Producing States |
+|---------|----------------------|
+| Coal | Jharkhand, Odisha, Chhattisgarh |
+| Iron Ore | Odisha, Jharkhand, Karnataka |
+| Petroleum | Mumbai High, Gujarat, Assam |
+| Bauxite | Odisha, Gujarat, Jharkhand |
+
+### Mining and Environment
+- Land degradation
+- Water pollution
+- Air pollution
+- Displacement of people
+- Rehabilitation issues
+            `,
+            flashcards: [
+              { front: 'What are primary activities?', back: 'Economic activities that directly extract or harvest resources from nature: agriculture, mining, fishing, forestry, animal husbandry.' },
+              { front: 'What is shifting cultivation?', back: 'Primitive subsistence farming where forests are cleared by slash and burn, crops grown for few years, then area abandoned. Called Jhum in NE India.' },
+              { front: 'What was Green Revolution?', back: 'Agricultural transformation in 1960s using HYV seeds, fertilizers, irrigation. Made India self-sufficient in food grains. Punjab, Haryana led.' },
+              { front: 'Difference between surface and underground mining?', back: 'Surface: Minerals near surface extracted by open-pit/quarrying. Underground: Deep minerals accessed through shafts and tunnels.' },
+              { front: 'What is plantation agriculture?', back: 'Commercial farming on large estates growing single cash crop (tea, coffee, rubber) for export. Labor-intensive, colonial origin.' }
+            ],
+            mcqs: [
+              { question: 'Jhum cultivation is practiced in:', options: ['Punjab', 'Northeast India', 'Rajasthan', 'Maharashtra'], correctAnswer: 1 },
+              { question: 'Green Revolution was most successful in:', options: ['Kerala', 'Bihar', 'Punjab-Haryana', 'Odisha'], correctAnswer: 2 },
+              { question: 'Largest coal producing state in India:', options: ['West Bengal', 'Jharkhand', 'Maharashtra', 'Tamil Nadu'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'Primary Activities', content: 'Agriculture + Mining + Fishing + Forestry = Primary (From nature directly) 🌾⛏️🐟🌲' },
+              { title: 'Agriculture Types', content: 'Subsistence: For self | Commercial: For sale | Plantation: Single crop export 🌱' },
+              { title: 'Green Revolution', content: 'HYV + Fertilizers + Irrigation = Food surplus 🌾 | Punjab-Haryana leaders!' },
+              { title: 'Mining Types', content: 'Surface: Open pit (near surface) | Underground: Shafts (deep) ⛏️' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'psy',
+        name: 'Psychology',
+        icon: 'Brain',
+        color: 'bg-pink-500',
+        syllabus: '1. Introduction to Psychology\n2. Biological Basis of Behavior\n3. Learning\n4. Memory\n5. Intelligence & Aptitude',
+        paperPattern: '### Psychology Paper Pattern (80 Marks)\n\n* **Q.1 MCQs (16 Marks)**\n* **Q.2 Answer in Brief (16 Marks)**\n* **Q.3 Short Notes (16 Marks)**\n* **Q.4 Long Answers (16 Marks)**\n* **Q.5 Case Study (16 Marks)**',
+        previousPapers: ['2024 Psychology Paper', '2023 Psychology Paper'],
+        chapters: [
+          {
+            id: 'psy-ch1',
+            title: 'Chapter 1: Introduction to Psychology',
+            description: 'Nature, scope, and methods of psychology',
+            summary: `
+# Introduction to Psychology
+
+## Key Concepts
+
+### What is Psychology?
+- Scientific study of behavior and mental processes
+- Word origin: Psyche (soul) + Logos (study)
+- Modern definition: Scientific study of mind and behavior
+
+### Goals of Psychology
+1. **Describe**: What is happening?
+2. **Explain**: Why is it happening?
+3. **Predict**: What will happen next?
+4. **Control**: How can behavior be changed?
+
+### Schools of Psychology
+| School | Focus | Founder |
+|--------|-------|---------|
+| Structuralism | Basic elements of consciousness | Wundt |
+| Functionalism | Purpose of mental processes | William James |
+| Behaviorism | Observable behavior only | Watson, Skinner |
+| Psychoanalysis | Unconscious mind | Freud |
+| Humanistic | Self-actualization | Maslow, Rogers |
+| Cognitive | Mental processes, thinking | Piaget |
+
+### Branches of Psychology
+- **Clinical**: Mental disorders treatment
+- **Counseling**: Life problems, adjustment
+- **Educational**: Learning, teaching
+- **Industrial/Organizational**: Workplace
+- **Social**: Group behavior, attitudes
+- **Developmental**: Lifespan changes
+            `,
+            detailedNotes: `
+# Detailed Notes: Introduction to Psychology
+
+## Definition and Nature
+
+### Etymology
+- Psyche = Soul/Mind (Greek)
+- Logos = Study/Science
+- Earlier: Study of soul → Study of mind → Study of behavior
+
+### Modern Definition
+"Psychology is the scientific study of behavior and mental processes"
+- **Scientific**: Uses systematic methods
+- **Behavior**: Observable actions
+- **Mental processes**: Thoughts, feelings, emotions
+
+### Characteristics
+- Empirical: Based on observation
+- Systematic: Follows scientific method
+- Objective: Minimizes bias
+
+## Historical Development
+
+### Pre-Scientific Era
+- Philosophy and religion
+- Soul, mind-body problem
+- Introspection method
+
+### Scientific Era (1879)
+- Wilhelm Wundt: First psychology lab (Leipzig, Germany)
+- Father of Experimental Psychology
+
+## Schools of Psychology
+
+### Structuralism (Wundt, Titchener)
+- Goal: Analyze structure of consciousness
+- Method: Introspection
+- Break experience into basic elements (sensations, images, feelings)
+
+### Functionalism (William James)
+- Goal: Understand function of consciousness
+- Influenced by Darwin's evolution
+- How behavior helps adaptation
+
+### Behaviorism (Watson, Skinner)
+- Focus only on observable behavior
+- Reject study of mind/consciousness
+- Stimulus → Response
+- Environment shapes behavior
+
+### Psychoanalysis (Freud)
+- Unconscious mind influences behavior
+- Childhood experiences important
+- Id, Ego, Superego
+- Dream analysis, free association
+
+### Humanistic (Maslow, Rogers)
+- Focus on positive growth
+- Self-actualization
+- Free will and choice
+- Client-centered therapy
+
+### Cognitive (Piaget, Chomsky)
+- Mental processes: thinking, memory, problem-solving
+- Information processing model
+- Computer metaphor for mind
+
+## Research Methods
+
+### Experimental Method
+- Independent and dependent variables
+- Control group vs experimental group
+- Cause-effect relationship
+
+### Observation
+- Naturalistic: In natural setting
+- Participant: Researcher joins group
+- Non-participant: Observer only
+
+### Survey/Questionnaire
+- Large sample data
+- Attitudes, opinions, behaviors
+- Self-report method
+
+### Case Study
+- In-depth study of individual
+- Qualitative data
+- Limited generalization
+
+### Correlation
+- Relationship between variables
+- Positive, negative, zero correlation
+- Does not prove causation
+
+## Branches of Psychology
+
+| Branch | Focus Area |
+|--------|------------|
+| Clinical | Diagnosis and treatment of mental disorders |
+| Counseling | Personal, social, vocational problems |
+| Educational | Learning, teaching, classroom |
+| Developmental | Changes across lifespan |
+| Social | Group behavior, attitudes, influence |
+| Industrial/Organizational | Workplace, productivity, selection |
+| Cognitive | Thinking, memory, language |
+| Sports | Performance, motivation in sports |
+| Forensic | Law and criminal behavior |
+| Health | Health behaviors, stress, coping |
+            `,
+            flashcards: [
+              { front: 'What is psychology?', back: 'Scientific study of behavior and mental processes. From Greek: Psyche (soul/mind) + Logos (study).' },
+              { front: 'Who is the father of psychology?', back: 'Wilhelm Wundt - established first psychology laboratory in Leipzig, Germany in 1879.' },
+              { front: 'What are the 4 goals of psychology?', back: 'Describe (what), Explain (why), Predict (future), Control (change behavior).' },
+              { front: 'What is behaviorism?', back: 'School of psychology focusing only on observable behavior, ignoring mental processes. Founded by Watson. S-R (Stimulus-Response) approach.' },
+              { front: 'Who founded psychoanalysis?', back: 'Sigmund Freud - emphasized unconscious mind, childhood experiences, Id-Ego-Superego structure.' }
+            ],
+            mcqs: [
+              { question: 'First psychology lab was established by:', options: ['Freud', 'Watson', 'Wundt', 'Skinner'], correctAnswer: 2 },
+              { question: 'Behaviorism focuses on:', options: ['Unconscious mind', 'Observable behavior', 'Dreams', 'Self-actualization'], correctAnswer: 1 },
+              { question: 'Hierarchy of needs was given by:', options: ['Freud', 'Maslow', 'Watson', 'Wundt'], correctAnswer: 1 },
+              { question: 'Psychology is derived from Greek words meaning:', options: ['Mind and body', 'Soul and study', 'Brain and science', 'Thought and logic'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'Psychology Definition', content: 'Scientific study of BEHAVIOR + MENTAL PROCESSES 🧠' },
+              { title: '4 Goals of Psychology', content: 'Describe → Explain → Predict → Control 🎯' },
+              { title: 'Schools Timeline', content: 'Structuralism → Functionalism → Behaviorism → Psychoanalysis → Humanistic → Cognitive 📚' },
+              { title: 'Father of Psychology', content: 'Wilhelm Wundt | 1879 | Leipzig, Germany | First Lab 🔬' }
+            ]
+          },
+          {
+            id: 'psy-ch2',
+            title: 'Chapter 2: Biological Basis of Behavior',
+            description: 'Brain, nervous system, and behavior',
+            summary: `
+# Biological Basis of Behavior
+
+## Key Concepts
+
+### Neuron (Nerve Cell)
+- Basic unit of nervous system
+- Parts: Dendrites, Cell body, Axon, Synapse
+- Types: Sensory, Motor, Interneurons
+
+### Nervous System Structure
+1. **Central Nervous System (CNS)**
+   - Brain
+   - Spinal Cord
+
+2. **Peripheral Nervous System (PNS)**
+   - Somatic (voluntary)
+   - Autonomic (involuntary)
+     - Sympathetic (arousal)
+     - Parasympathetic (calm)
+
+### Brain Structure
+- **Forebrain**: Cerebrum, Thalamus, Hypothalamus
+- **Midbrain**: Relay station
+- **Hindbrain**: Cerebellum, Pons, Medulla
+
+### Cerebral Lobes
+| Lobe | Function |
+|------|----------|
+| Frontal | Thinking, planning, personality |
+| Parietal | Touch, spatial awareness |
+| Temporal | Hearing, memory |
+| Occipital | Vision |
+
+### Endocrine System
+- Glands secreting hormones
+- Pituitary: Master gland
+- Thyroid, Adrenal, Pancreas, Gonads
+            `,
+            detailedNotes: `
+# Detailed Notes: Biological Basis of Behavior
+
+## The Neuron
+
+### Structure
+1. **Dendrites**: Receive messages from other neurons
+2. **Cell Body (Soma)**: Contains nucleus, maintains cell
+3. **Axon**: Carries impulse away from cell body
+4. **Myelin Sheath**: Insulates axon, speeds transmission
+5. **Terminal Buttons**: Release neurotransmitters
+6. **Synapse**: Gap between neurons
+
+### Neural Transmission
+- Electrical within neuron
+- Chemical across synapse
+- Neurotransmitters: Dopamine, Serotonin, Acetylcholine
+
+### Types of Neurons
+| Type | Function | Direction |
+|------|----------|-----------|
+| Sensory (Afferent) | Carry info to brain | Receptor → CNS |
+| Motor (Efferent) | Carry commands | CNS → Muscles |
+| Interneurons | Connect neurons | Within CNS |
+
+## Nervous System
+
+### Central Nervous System (CNS)
+**Brain:**
+- Control center
+- Protected by skull, meninges, CSF
+
+**Spinal Cord:**
+- Connects brain to PNS
+- Reflex actions
+- Protected by vertebrae
+
+### Peripheral Nervous System (PNS)
+
+**Somatic Nervous System:**
+- Voluntary control
+- Skeletal muscles
+- Conscious movements
+
+**Autonomic Nervous System:**
+- Involuntary control
+- Internal organs
+
+| Sympathetic | Parasympathetic |
+|-------------|-----------------|
+| Fight or flight | Rest and digest |
+| Increases heart rate | Decreases heart rate |
+| Dilates pupils | Constricts pupils |
+| Inhibits digestion | Stimulates digestion |
+| Emergency response | Normal maintenance |
+
+## Brain Structure
+
+### Hindbrain
+- **Medulla Oblongata**: Vital functions (breathing, heart)
+- **Pons**: Bridge, sleep, arousal
+- **Cerebellum**: Balance, coordination, motor learning
+
+### Midbrain
+- Relay station for sensory info
+- Eye movement, auditory reflexes
+- Contains reticular formation (alertness)
+
+### Forebrain
+- **Thalamus**: Sensory relay station
+- **Hypothalamus**: Hunger, thirst, temperature, emotions
+- **Limbic System**: Emotions, memory (Amygdala, Hippocampus)
+- **Cerebrum**: Largest part, higher functions
+
+### Cerebral Cortex (Lobes)
+
+| Lobe | Location | Functions |
+|------|----------|-----------|
+| Frontal | Front | Planning, decision, personality, motor |
+| Parietal | Top-back | Touch, pressure, spatial |
+| Temporal | Sides | Hearing, language, memory |
+| Occipital | Back | Vision |
+
+### Hemispheres
+- Left: Language, logic, analytical (controls right body)
+- Right: Spatial, creativity, holistic (controls left body)
+- Connected by Corpus Callosum
+
+## Endocrine System
+
+### Major Glands
+| Gland | Hormones | Functions |
+|-------|----------|-----------|
+| Pituitary | Growth hormone, etc. | Master gland, controls others |
+| Thyroid | Thyroxine | Metabolism |
+| Adrenal | Adrenaline, Cortisol | Stress response |
+| Pancreas | Insulin, Glucagon | Blood sugar |
+| Gonads | Testosterone, Estrogen | Sexual development |
+            `,
+            flashcards: [
+              { front: 'What are the parts of a neuron?', back: 'Dendrites (receive), Cell body (nucleus), Axon (transmit), Synapse (gap). Myelin sheath speeds transmission.' },
+              { front: 'What is the function of sympathetic nervous system?', back: 'Fight or flight response - increases heart rate, dilates pupils, releases adrenaline. Prepares body for emergency.' },
+              { front: 'Name the 4 lobes of cerebrum.', back: 'Frontal (thinking), Parietal (touch), Temporal (hearing), Occipital (vision). Mnemonic: FPTO.' },
+              { front: 'Which gland is called master gland?', back: 'Pituitary gland - controls other endocrine glands. Located at base of brain, controlled by hypothalamus.' },
+              { front: 'What is the function of cerebellum?', back: 'Balance, coordination, and motor learning. Located in hindbrain. Damage causes ataxia (uncoordinated movement).' }
+            ],
+            mcqs: [
+              { question: 'Which carries impulse away from cell body?', options: ['Dendrite', 'Axon', 'Synapse', 'Soma'], correctAnswer: 1 },
+              { question: 'Fight or flight response is controlled by:', options: ['Parasympathetic', 'Sympathetic', 'Somatic', 'Central'], correctAnswer: 1 },
+              { question: 'Vision is processed in which lobe?', options: ['Frontal', 'Parietal', 'Temporal', 'Occipital'], correctAnswer: 3 },
+              { question: 'Master gland is:', options: ['Thyroid', 'Pituitary', 'Adrenal', 'Pancreas'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'Neuron Parts', content: 'Dendrites (receive) → Cell body → Axon (send) → Synapse (gap) 🔗' },
+              { title: 'Sympathetic vs Para', content: 'Sympathetic: Fight/Flight 💪 | Parasympathetic: Rest/Digest 😌' },
+              { title: 'Brain Lobes', content: 'Frontal: Think 🤔 | Parietal: Touch ✋ | Temporal: Hear 👂 | Occipital: See 👁️' },
+              { title: 'Left vs Right Brain', content: 'Left: Logic, Language, Math 📐 | Right: Creativity, Spatial, Art 🎨' }
+            ]
+          },
+          {
+            id: 'psy-ch3',
+            title: 'Chapter 3: Learning',
+            description: 'Types and theories of learning',
+            summary: `
+# Learning
+
+## Key Concepts
+
+### What is Learning?
+- Relatively permanent change in behavior
+- Due to experience or practice
+- Not due to maturation, fatigue, or drugs
+
+### Types of Learning
+
+1. **Classical Conditioning (Pavlov)**
+   - Learning by association
+   - Neutral stimulus + Unconditioned stimulus
+   - Dog salivation experiment
+   - Terms: UCS, UCR, CS, CR
+
+2. **Operant Conditioning (Skinner)**
+   - Learning by consequences
+   - Reinforcement increases behavior
+   - Punishment decreases behavior
+   - Skinner Box experiment
+
+3. **Observational Learning (Bandura)**
+   - Learning by watching others
+   - Modeling, imitation
+   - Bobo doll experiment
+   - Attention → Retention → Reproduction → Motivation
+
+### Key Terms
+- **Reinforcement**: Strengthens behavior (positive/negative)
+- **Punishment**: Weakens behavior
+- **Extinction**: Response disappears when not reinforced
+- **Generalization**: Similar stimuli evoke response
+- **Discrimination**: Respond to specific stimulus only
+            `,
+            detailedNotes: `
+# Detailed Notes: Learning
+
+## Definition
+Learning is a relatively permanent change in behavior or knowledge that results from experience or practice.
+
+### Characteristics
+- Relatively permanent (not temporary)
+- Change in behavior or potential
+- Results from experience/practice
+- Not due to maturation, drugs, fatigue
+
+## Classical Conditioning
+
+### Pavlov's Experiment
+1. Before conditioning:
+   - Food (UCS) → Salivation (UCR)
+   - Bell (Neutral) → No salivation
+
+2. During conditioning:
+   - Bell + Food → Salivation
+   - Repeated pairings
+
+3. After conditioning:
+   - Bell (CS) → Salivation (CR)
+
+### Key Terms
+| Term | Meaning | Example |
+|------|---------|---------|
+| UCS (Unconditioned Stimulus) | Natural trigger | Food |
+| UCR (Unconditioned Response) | Natural response | Salivation to food |
+| CS (Conditioned Stimulus) | Learned trigger | Bell |
+| CR (Conditioned Response) | Learned response | Salivation to bell |
+
+### Principles
+- **Acquisition**: Learning the association
+- **Extinction**: CR disappears without UCS
+- **Spontaneous Recovery**: CR returns after rest
+- **Generalization**: Similar stimuli cause CR
+- **Discrimination**: Only specific CS causes CR
+
+### Applications
+- Phobias (Little Albert experiment)
+- Advertising (product + pleasant images)
+- Therapy (systematic desensitization)
+
+## Operant Conditioning
+
+### Skinner's Approach
+- Behavior shaped by consequences
+- Skinner Box: Animal presses lever for food
+
+### Types of Consequences
+
+**Reinforcement** (Increases behavior):
+| Type | Action | Example |
+|------|--------|---------|
+| Positive | Add pleasant | Praise for good work |
+| Negative | Remove unpleasant | Turn off alarm by waking |
+
+**Punishment** (Decreases behavior):
+| Type | Action | Example |
+|------|--------|---------|
+| Positive | Add unpleasant | Scolding for misbehavior |
+| Negative | Remove pleasant | Take away phone |
+
+### Schedules of Reinforcement
+| Schedule | Description | Example |
+|----------|-------------|---------|
+| Continuous | Every response rewarded | Vending machine |
+| Fixed Ratio | After set number | Piece-rate work |
+| Variable Ratio | After variable number | Slot machines |
+| Fixed Interval | After set time | Monthly salary |
+| Variable Interval | After variable time | Surprise tests |
+
+### Shaping
+- Reinforcing successive approximations
+- Step-by-step toward target behavior
+- Used in animal training
+
+## Observational Learning
+
+### Bandura's Theory
+Learning by observing and imitating others (models)
+
+### Bobo Doll Experiment
+- Children watched adult hit Bobo doll
+- Children imitated aggressive behavior
+- Proved learning without direct reinforcement
+
+### Four Processes
+1. **Attention**: Notice model's behavior
+2. **Retention**: Remember what observed
+3. **Reproduction**: Able to perform behavior
+4. **Motivation**: Reason to imitate
+
+### Factors Affecting
+- Model characteristics (status, similarity)
+- Observer characteristics (self-efficacy)
+- Consequences to model (vicarious reinforcement)
+
+## Cognitive Learning
+
+### Insight Learning (Köhler)
+- Sudden understanding
+- Ape problem-solving with sticks
+- "Aha!" experience
+
+### Latent Learning (Tolman)
+- Learning without immediate reward
+- Cognitive maps
+- Shown when motivation present
+            `,
+            flashcards: [
+              { front: 'What is classical conditioning?', back: 'Learning by association. Neutral stimulus paired with unconditioned stimulus becomes conditioned stimulus. Discovered by Pavlov with dog salivation.' },
+              { front: 'Difference between positive and negative reinforcement?', back: 'Both INCREASE behavior. Positive: Add pleasant stimulus (praise). Negative: Remove unpleasant stimulus (turn off alarm).' },
+              { front: 'What is observational learning?', back: 'Learning by watching others (models). Bandura\'s theory. Steps: Attention → Retention → Reproduction → Motivation. Bobo doll experiment.' },
+              { front: 'What is extinction in conditioning?', back: 'Gradual weakening and disappearance of conditioned response when conditioned stimulus is presented without unconditioned stimulus.' },
+              { front: 'What is shaping in operant conditioning?', back: 'Reinforcing successive approximations toward target behavior. Used to teach complex behaviors step by step.' }
+            ],
+            mcqs: [
+              { question: 'Pavlov is associated with:', options: ['Operant conditioning', 'Classical conditioning', 'Observational learning', 'Insight learning'], correctAnswer: 1 },
+              { question: 'Skinner Box is used for:', options: ['Classical conditioning', 'Operant conditioning', 'Cognitive learning', 'Social learning'], correctAnswer: 1 },
+              { question: 'Bobo doll experiment was conducted by:', options: ['Pavlov', 'Skinner', 'Bandura', 'Kohler'], correctAnswer: 2 },
+              { question: 'Removing unpleasant stimulus to increase behavior is:', options: ['Positive reinforcement', 'Negative reinforcement', 'Positive punishment', 'Negative punishment'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'Classical Conditioning', content: 'Bell + Food → Bell alone = Salivation | Learning by ASSOCIATION 🔔🐕' },
+              { title: 'Reinforcement vs Punishment', content: 'Reinforcement: ↑ behavior | Punishment: ↓ behavior 📈📉' },
+              { title: 'Positive vs Negative', content: 'Positive: ADD something | Negative: REMOVE something ➕➖' },
+              { title: 'Observational Learning', content: 'Attention → Retention → Reproduction → Motivation | Watch & Learn! 👀' }
+            ]
+          },
+          {
+            id: 'psy-ch4',
+            title: 'Chapter 4: Memory',
+            description: 'Memory processes and types',
+            summary: `
+# Memory
+
+## Key Concepts
+
+### What is Memory?
+- Ability to encode, store, and retrieve information
+- Essential for learning and identity
+
+### Memory Processes
+1. **Encoding**: Converting info to storable form
+2. **Storage**: Maintaining info over time
+3. **Retrieval**: Accessing stored info
+
+### Types of Memory (Duration)
+| Type | Duration | Capacity |
+|------|----------|----------|
+| Sensory | <1 second | Large |
+| Short-term (STM) | 15-30 seconds | 7±2 items |
+| Long-term (LTM) | Unlimited | Unlimited |
+
+### Types of LTM
+- **Explicit (Declarative)**
+  - Episodic: Personal events
+  - Semantic: Facts, concepts
+- **Implicit (Non-declarative)**
+  - Procedural: Skills (cycling)
+  - Priming, conditioning
+
+### Forgetting
+- **Decay**: Memory fades over time
+- **Interference**: Other memories block
+- **Retrieval Failure**: Cue-dependent
+- **Motivated Forgetting**: Repression
+            `,
+            detailedNotes: `
+# Detailed Notes: Memory
+
+## Definition
+Memory is the mental process of encoding, storing, and retrieving information.
+
+## Memory Processes
+
+### 1. Encoding
+Converting sensory input into storable form
+- **Visual**: Images
+- **Acoustic**: Sounds
+- **Semantic**: Meaning (most durable)
+
+### 2. Storage
+Maintaining encoded information
+- Structural changes in brain
+- Neural connections
+
+### 3. Retrieval
+Accessing stored information
+- Recall: Reproduce from memory
+- Recognition: Identify previously learned
+
+## Multi-Store Model (Atkinson & Shiffrin)
+
+### Sensory Memory
+- Duration: Fraction of second
+- Capacity: Very large
+- Types:
+  - Iconic: Visual (<0.5 sec)
+  - Echoic: Auditory (3-4 sec)
+
+### Short-Term Memory (STM)
+- Duration: 15-30 seconds (without rehearsal)
+- Capacity: 7±2 items (Miller's magic number)
+- Working memory: Active processing
+
+**Improving STM:**
+- Rehearsal (repetition)
+- Chunking (grouping items)
+
+### Long-Term Memory (LTM)
+- Duration: Potentially permanent
+- Capacity: Unlimited
+- Requires meaningful encoding
+
+## Types of Long-Term Memory
+
+### Explicit (Declarative) Memory
+Conscious, intentional recall
+
+| Type | Content | Example |
+|------|---------|---------|
+| Episodic | Personal experiences | Birthday party |
+| Semantic | Facts, concepts | Capital of India |
+
+### Implicit (Non-declarative) Memory
+Unconscious, automatic
+
+| Type | Content | Example |
+|------|---------|---------|
+| Procedural | Skills, habits | Riding bicycle |
+| Priming | Previous exposure effect | Word completion |
+| Conditioning | Learned associations | Fear response |
+
+## Forgetting
+
+### Theories of Forgetting
+
+**1. Decay Theory**
+- Memory trace fades over time
+- Disuse leads to forgetting
+
+**2. Interference Theory**
+- Proactive: Old interferes with new
+- Retroactive: New interferes with old
+
+**3. Retrieval Failure**
+- Information stored but cannot access
+- Tip-of-tongue phenomenon
+- Need appropriate cues
+
+**4. Motivated Forgetting**
+- Repression: Unconscious blocking
+- Suppression: Conscious avoiding
+- Traumatic memories
+
+### Ebbinghaus Forgetting Curve
+- Rapid initial forgetting
+- Slows over time
+- Most forgotten in first hour
+
+## Improving Memory
+
+### Encoding Strategies
+- **Elaboration**: Connect to existing knowledge
+- **Visual imagery**: Create mental pictures
+- **Organization**: Categorize information
+- **Mnemonic devices**: Memory aids
+
+### Common Mnemonics
+- Acronyms: VIBGYOR for colors
+- Method of loci: Mental walk
+- Pegword: Number-word associations
+- Chunking: Group into units
+
+### Study Techniques
+- Spaced practice (vs massed)
+- Testing effect (retrieval practice)
+- Sleep consolidation
+- Minimize interference
+            `,
+            flashcards: [
+              { front: 'What are the 3 processes of memory?', back: 'Encoding (convert to storable form), Storage (maintain over time), Retrieval (access stored info).' },
+              { front: 'What is the capacity of short-term memory?', back: '7±2 items (Miller\'s magic number). Duration: 15-30 seconds without rehearsal. Can be improved by chunking.' },
+              { front: 'Difference between episodic and semantic memory?', back: 'Episodic: Personal experiences, events (your birthday). Semantic: Facts, concepts, general knowledge (India\'s capital).' },
+              { front: 'What is proactive interference?', back: 'Old information interferes with learning new information. Example: Old phone number interferes with remembering new one.' },
+              { front: 'What is procedural memory?', back: 'Implicit memory for skills and how to do things. Example: Riding bicycle, typing. Doesn\'t require conscious recall.' }
+            ],
+            mcqs: [
+              { question: 'Capacity of STM is:', options: ['5±2', '7±2', '9±2', 'Unlimited'], correctAnswer: 1 },
+              { question: 'Memory for personal events is:', options: ['Semantic', 'Episodic', 'Procedural', 'Implicit'], correctAnswer: 1 },
+              { question: 'Old memories interfering with new is:', options: ['Retroactive', 'Proactive', 'Decay', 'Repression'], correctAnswer: 1 },
+              { question: 'Riding a bicycle involves which memory?', options: ['Episodic', 'Semantic', 'Procedural', 'Sensory'], correctAnswer: 2 }
+            ],
+            reels: [
+              { title: 'Memory Processes', content: 'Encode (input) → Store (save) → Retrieve (access) 💾' },
+              { title: 'Memory Stores', content: 'Sensory (<1s) → STM (30s, 7±2) → LTM (forever, unlimited) 📦' },
+              { title: 'Explicit vs Implicit', content: 'Explicit: Conscious (facts, events) | Implicit: Unconscious (skills) 🧠' },
+              { title: 'Interference', content: 'Proactive: Old blocks new | Retroactive: New blocks old 🚫' }
+            ]
+          },
+          {
+            id: 'psy-ch5',
+            title: 'Chapter 5: Intelligence & Aptitude',
+            description: 'Understanding intelligence and its measurement',
+            summary: `
+# Intelligence & Aptitude
+
+## Key Concepts
+
+### What is Intelligence?
+- Ability to learn, understand, adapt
+- Problem-solving capacity
+- Multiple definitions by psychologists
+
+### IQ (Intelligence Quotient)
+- IQ = (Mental Age / Chronological Age) × 100
+- Average IQ = 100
+- Developed by Stern
+
+### Intelligence Tests
+- **Binet-Simon**: First IQ test (1905)
+- **Stanford-Binet**: American version
+- **Wechsler**: WAIS (adults), WISC (children)
+
+### Theories of Intelligence
+1. **Spearman**: g-factor (general) + s-factor (specific)
+2. **Thurstone**: 7 Primary Mental Abilities
+3. **Gardner**: Multiple Intelligences (8 types)
+4. **Sternberg**: Triarchic (Analytical, Creative, Practical)
+5. **Goleman**: Emotional Intelligence
+
+### Multiple Intelligences (Gardner)
+1. Linguistic
+2. Logical-Mathematical
+3. Spatial
+4. Musical
+5. Bodily-Kinesthetic
+6. Interpersonal
+7. Intrapersonal
+8. Naturalistic
+            `,
+            detailedNotes: `
+# Detailed Notes: Intelligence & Aptitude
+
+## Definition of Intelligence
+
+### Various Definitions
+- **Binet**: Ability to judge, understand, reason
+- **Wechsler**: Global capacity to act purposefully, think rationally, deal effectively with environment
+- **Gardner**: Ability to solve problems or create products valued in culture
+
+### Characteristics
+- Abstract thinking
+- Learning from experience
+- Adapting to environment
+- Problem-solving
+
+## Measurement of Intelligence
+
+### IQ Formula (Ratio IQ)
+IQ = (Mental Age / Chronological Age) × 100
+
+### IQ Classification
+| IQ Range | Classification |
+|----------|----------------|
+| Above 140 | Genius |
+| 120-140 | Superior |
+| 110-119 | Above average |
+| 90-109 | Average |
+| 80-89 | Below average |
+| 70-79 | Borderline |
+| Below 70 | Intellectually disabled |
+
+### Major IQ Tests
+
+**Binet-Simon Scale (1905)**
+- First intelligence test
+- Developed in France
+- Measured mental age
+
+**Stanford-Binet (1916)**
+- American revision by Terman
+- Introduced IQ concept
+- Ages 2-adult
+
+**Wechsler Scales**
+- WAIS: Wechsler Adult Intelligence Scale
+- WISC: Wechsler Intelligence Scale for Children
+- WPPSI: Wechsler Preschool and Primary Scale
+- Verbal + Performance IQ
+
+## Theories of Intelligence
+
+### Spearman's Two-Factor Theory
+- **g-factor**: General intelligence (common to all tasks)
+- **s-factor**: Specific abilities (unique to each task)
+
+### Thurstone's Primary Mental Abilities
+1. Verbal comprehension
+2. Word fluency
+3. Number facility
+4. Spatial visualization
+5. Associative memory
+6. Perceptual speed
+7. Reasoning
+
+### Gardner's Multiple Intelligences
+| Type | Description | Career Example |
+|------|-------------|----------------|
+| Linguistic | Words, language | Writer, lawyer |
+| Logical-Mathematical | Numbers, reasoning | Scientist, accountant |
+| Spatial | Visual thinking | Artist, architect |
+| Musical | Rhythm, melody | Musician, composer |
+| Bodily-Kinesthetic | Physical skills | Athlete, dancer |
+| Interpersonal | Understanding others | Teacher, salesperson |
+| Intrapersonal | Self-understanding | Philosopher |
+| Naturalistic | Nature patterns | Biologist, farmer |
+
+### Sternberg's Triarchic Theory
+1. **Analytical**: Academic problem-solving
+2. **Creative**: Novel solutions
+3. **Practical**: Street smart, adapting
+
+### Emotional Intelligence (Goleman)
+- Self-awareness
+- Self-regulation
+- Motivation
+- Empathy
+- Social skills
+
+## Aptitude
+
+### Definition
+Potential ability to learn or perform in specific area
+
+### Types of Aptitude
+- Verbal
+- Numerical
+- Spatial
+- Mechanical
+- Clerical
+- Musical
+- Artistic
+
+### Aptitude vs Achievement
+| Aptitude | Achievement |
+|----------|-------------|
+| Potential ability | Actual performance |
+| What you CAN do | What you HAVE done |
+| Predictive | Evaluative |
+
+### Aptitude Tests
+- Differential Aptitude Test (DAT)
+- General Aptitude Test Battery (GATB)
+- Used for career guidance, selection
+            `,
+            flashcards: [
+              { front: 'What is the IQ formula?', back: 'IQ = (Mental Age / Chronological Age) × 100. Average IQ is 100. Developed by William Stern.' },
+              { front: 'What are Gardner\'s 8 Multiple Intelligences?', back: 'Linguistic, Logical-Mathematical, Spatial, Musical, Bodily-Kinesthetic, Interpersonal, Intrapersonal, Naturalistic.' },
+              { front: 'What is Spearman\'s g-factor?', back: 'General intelligence factor common to all mental abilities. Spearman believed g-factor underlies performance on all cognitive tasks.' },
+              { front: 'What is Sternberg\'s Triarchic Theory?', back: 'Three types of intelligence: Analytical (academic), Creative (novel ideas), Practical (street smart, adaptation).' },
+              { front: 'Difference between aptitude and achievement?', back: 'Aptitude: Potential, what you CAN do, predictive. Achievement: Performance, what you HAVE done, evaluative.' }
+            ],
+            mcqs: [
+              { question: 'First intelligence test was developed by:', options: ['Wechsler', 'Terman', 'Binet-Simon', 'Spearman'], correctAnswer: 2 },
+              { question: 'Average IQ is:', options: ['90', '100', '110', '120'], correctAnswer: 1 },
+              { question: 'Multiple Intelligences theory was given by:', options: ['Spearman', 'Sternberg', 'Gardner', 'Thurstone'], correctAnswer: 2 },
+              { question: 'Emotional Intelligence concept was popularized by:', options: ['Gardner', 'Goleman', 'Sternberg', 'Binet'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'IQ Formula', content: 'IQ = (Mental Age ÷ Chronological Age) × 100 | Average = 100 📊' },
+              { title: 'Gardner\'s 8', content: 'Linguistic | Logical | Spatial | Musical | Bodily | Inter | Intra | Naturalistic 🧠' },
+              { title: 'Sternberg Triarchic', content: 'Analytical (academic) + Creative (new ideas) + Practical (street smart) = Success! 🎯' },
+              { title: 'Aptitude vs Achievement', content: 'Aptitude: What you CAN do (potential) | Achievement: What you DID (performance) 📈' }
+            ]
+          }
+        ]
       }
     ] 
   },
@@ -1684,13 +3494,2100 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
         ]
       },
       {
-        id: 'chem', name: 'Chemistry', icon: 'FlaskConical', color: 'bg-teal-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: []
+        id: 'chem', 
+        name: 'Chemistry', 
+        icon: 'FlaskConical', 
+        color: 'bg-teal-500', 
+        syllabus: '1. Solid State\n2. Solutions\n3. Electrochemistry\n4. Chemical Kinetics\n5. Surface Chemistry\n6. p-Block Elements\n7. d and f Block Elements\n8. Coordination Compounds\n9. Haloalkanes\n10. Alcohols, Phenols, Ethers\n11. Aldehydes, Ketones\n12. Carboxylic Acids\n13. Amines\n14. Biomolecules\n15. Polymers\n16. Chemistry in Everyday Life',
+        paperPattern: '### Chemistry Paper Pattern (70 Marks)\n\n* **Section A (14 Marks)**: 7 MCQs\n* **Section B (18 Marks)**: Very short answers\n* **Section C (12 Marks)**: Short answers\n* **Section D (8 Marks)**: Long answers\n* **Section E (18 Marks)**: Numericals\n* **Internal (30 Marks)**: Practical',
+        previousPapers: [], 
+        chapters: [
+          {
+            id: 'chem1',
+            title: '1. Solid State',
+            description: 'Crystal structures, Unit cells, Defects.',
+            summary: '**Solids**: Fixed shape and volume\n**Crystalline**: Regular arrangement (NaCl, Diamond)\n**Amorphous**: Irregular arrangement (Glass, Rubber)\n**Unit Cell**: Smallest repeating unit\n**Defects**: Schottky, Frenkel',
+            detailedNotes: '### 1. Types of Solids\n**A. Crystalline Solids**\n* Regular, repeating 3D arrangement\n* Sharp melting point\n* Anisotropic (different properties in different directions)\n* Examples: NaCl, Diamond, Ice\n\n**B. Amorphous Solids**\n* Irregular arrangement\n* No sharp melting point (range)\n* Isotropic (same properties in all directions)\n* Examples: Glass, Rubber, Plastic\n\n### 2. Classification of Crystalline Solids\n| Type | Particles | Bonding | Properties | Examples |\n|------|-----------|---------|------------|----------|\n| Ionic | Ions | Electrostatic | Hard, brittle, high MP | NaCl, MgO |\n| Covalent | Atoms | Covalent bonds | Very hard, very high MP | Diamond, SiO₂ |\n| Metallic | Metal ions + electrons | Metallic | Malleable, conductive | Fe, Cu, Ag |\n| Molecular | Molecules | Van der Waals | Soft, low MP | Ice, I₂, CO₂ |\n\n### 3. Unit Cell\nSmallest repeating unit of crystal lattice.\n\n**Types of Unit Cells:**\n* **Simple/Primitive**: Atoms only at corners (Z = 1)\n* **Body-Centered (BCC)**: Corner + center (Z = 2)\n* **Face-Centered (FCC)**: Corner + face centers (Z = 4)\n\n**Contribution of atoms:**\n* Corner: 1/8\n* Edge: 1/4\n* Face: 1/2\n* Body center: 1\n\n### 4. Packing Efficiency\n* Simple cubic: 52.4%\n* BCC: 68%\n* FCC/HCP: 74%\n\n### 5. Crystal Defects\n**A. Point Defects**\n\n*Stoichiometric:*\n* **Schottky**: Equal cations & anions missing (NaCl)\n* **Frenkel**: Ion displaced to interstitial site (AgCl, ZnS)\n\n*Non-stoichiometric:*\n* Metal excess (F-centers)\n* Metal deficiency\n\n**B. Impurity Defects**\n* n-type: Doping with Group 15 (excess electrons)\n* p-type: Doping with Group 13 (electron holes)',
+            flashcards: [
+              { id: 'f1', front: 'Crystalline vs Amorphous?', back: 'Crystalline: Regular arrangement, sharp MP. Amorphous: Irregular, no sharp MP.' },
+              { id: 'f2', front: 'Coordination number in FCC?', back: '12' },
+              { id: 'f3', front: 'Packing efficiency of FCC?', back: '74%' },
+              { id: 'f4', front: 'Schottky defect?', back: 'Equal number of cations and anions missing from lattice.' },
+              { id: 'f5', front: 'Frenkel defect?', back: 'Ion displaced from lattice site to interstitial site.' },
+              { id: 'f6', front: 'Z value for BCC?', back: 'Z = 2 (1/8 × 8 corners + 1 center)' },
+              { id: 'f7', front: 'n-type semiconductor?', back: 'Doped with Group 15 element (extra electrons).' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Packing efficiency of FCC is:', options: ['52.4%', '68%', '74%', '90%'], correctIndex: 2, explanation: 'FCC has the highest packing (74%).' },
+              { id: 'q2', question: 'Schottky defect is found in:', options: ['AgCl', 'NaCl', 'ZnS', 'AgBr'], correctIndex: 1, explanation: 'NaCl shows Schottky defect.' },
+              { id: 'q3', question: 'Number of atoms in BCC unit cell:', options: ['1', '2', '4', '6'], correctIndex: 1, explanation: 'BCC: 8×(1/8) + 1 = 2' },
+              { id: 'q4', question: 'Glass is:', options: ['Crystalline', 'Amorphous', 'Polycrystalline', 'Ionic'], correctIndex: 1, explanation: 'Glass has no regular structure.' },
+              { id: 'q5', question: 'Coordination number in simple cubic:', options: ['4', '6', '8', '12'], correctIndex: 1, explanation: 'Each atom touches 6 neighbors.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Solid Types', content: 'Crystalline = Regular.\nAmorphous = Irregular.\nSharp MP vs Range.', color: getReelColor(0) },
+              { id: 'r2', title: 'Unit Cells', content: 'Simple: Z = 1\nBCC: Z = 2\nFCC: Z = 4', color: getReelColor(1) },
+              { id: 'r3', title: 'Packing', content: 'Simple: 52%\nBCC: 68%\nFCC: 74% (best!)', color: getReelColor(2) },
+              { id: 'r4', title: 'Schottky', content: 'Cation + Anion BOTH missing.\nFound in NaCl.\nDensity decreases.', color: getReelColor(3) },
+              { id: 'r5', title: 'Frenkel', content: 'Ion moves to interstitial site.\nFound in AgCl, ZnS.\nDensity same.', color: getReelColor(4) },
+              { id: 'r6', title: 'Semiconductors', content: 'n-type: Group 15 dopant.\np-type: Group 13 dopant.\nSilicon base.', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'chem2',
+            title: '2. Solutions',
+            description: 'Concentration, Colligative properties, Raoult\'s Law.',
+            summary: '**Solution**: Homogeneous mixture\n**Molarity (M)**: moles/L\n**Molality (m)**: moles/kg solvent\n**Raoult\'s Law**: P = P°X (for ideal solutions)\n**Colligative**: Depends on number of particles',
+            detailedNotes: '### 1. Types of Solutions\n* Solid in liquid (Sugar in water)\n* Liquid in liquid (Alcohol in water)\n* Gas in liquid (CO₂ in water)\n\n### 2. Concentration Terms\n| Term | Formula | Unit |\n|------|---------|------|\n| Molarity (M) | moles/L solution | mol/L |\n| Molality (m) | moles/kg solvent | mol/kg |\n| Mole fraction (X) | n₁/(n₁+n₂) | no unit |\n| Mass % | (mass solute/total)×100 | % |\n| ppm | (mass/total)×10⁶ | ppm |\n\n### 3. Henry\'s Law\nFor gas dissolved in liquid:\n**p = KH × X**\n* p = partial pressure of gas\n* KH = Henry\'s constant\n* X = mole fraction\n\nApplications: Carbonated drinks, Scuba diving (bends)\n\n### 4. Raoult\'s Law\nFor ideal solutions:\n**P = P°X**\n* P = vapor pressure of solution\n* P° = vapor pressure of pure solvent\n* X = mole fraction of solvent\n\n**Ideal Solution**: ΔHmix = 0, ΔVmix = 0\n\n### 5. Colligative Properties\nDepend only on NUMBER of solute particles.\n\n**A. Relative Lowering of Vapor Pressure**\n(P° - P)/P° = X₂ (mole fraction of solute)\n\n**B. Elevation of Boiling Point**\nΔTb = Kb × m\n* Kb = molal elevation constant\n\n**C. Depression of Freezing Point**\nΔTf = Kf × m\n* Kf = molal depression constant\n\n**D. Osmotic Pressure**\nπ = CRT = (n/V)RT\n\n### 6. Van\'t Hoff Factor (i)\nFor electrolytes: i = observed value / calculated value\n* NaCl: i ≈ 2\n* CaCl₂: i ≈ 3\n* Glucose: i = 1 (non-electrolyte)',
+            flashcards: [
+              { id: 'f1', front: 'Raoult\'s Law?', back: 'P = P°X (Vapor pressure = Pure VP × mole fraction)' },
+              { id: 'f2', front: 'Henry\'s Law?', back: 'p = KH × X (Gas solubility ∝ partial pressure)' },
+              { id: 'f3', front: 'Boiling point elevation formula?', back: 'ΔTb = Kb × m' },
+              { id: 'f4', front: 'Freezing point depression formula?', back: 'ΔTf = Kf × m' },
+              { id: 'f5', front: 'Osmotic pressure formula?', back: 'π = CRT' },
+              { id: 'f6', front: 'Van\'t Hoff factor for NaCl?', back: 'i ≈ 2 (Na⁺ and Cl⁻)' },
+              { id: 'f7', front: 'What are colligative properties?', back: 'Properties that depend on NUMBER of solute particles, not their nature.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Molality is expressed in:', options: ['mol/L', 'mol/kg', 'g/L', 'no unit'], correctIndex: 1, explanation: 'Molality = moles of solute / kg of solvent.' },
+              { id: 'q2', question: 'Which is NOT a colligative property?', options: ['Osmotic pressure', 'Boiling point elevation', 'Optical activity', 'Freezing point depression'], correctIndex: 2, explanation: 'Optical activity depends on structure, not particle number.' },
+              { id: 'q3', question: 'Van\'t Hoff factor for glucose is:', options: ['0', '1', '2', '3'], correctIndex: 1, explanation: 'Glucose doesn\'t dissociate.' },
+              { id: 'q4', question: 'Ideal solution follows:', options: ['Henry\'s law', 'Raoult\'s law', 'Boyle\'s law', 'Charles\' law'], correctIndex: 1, explanation: 'Ideal solutions obey Raoult\'s law.' },
+              { id: 'q5', question: 'Henry\'s law is applicable to:', options: ['Solid solutions', 'Gas in liquid', 'Liquid in liquid', 'All solutions'], correctIndex: 1, explanation: 'Henry\'s law is for gas solubility.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Molarity vs Molality', content: 'Molarity: mol/L solution.\nMolality: mol/kg solvent.\nMolality doesn\'t change with T!', color: getReelColor(0) },
+              { id: 'r2', title: 'Raoult\'s Law', content: 'P = P°X\nVapor pressure lowered.\nBy adding solute.', color: getReelColor(1) },
+              { id: 'r3', title: 'Henry\'s Law', content: 'p = KH × X\nGas solubility.\nPressure dependent!', color: getReelColor(2) },
+              { id: 'r4', title: 'Colligative', content: 'Number matters, not nature!\nΔTb, ΔTf, π\nVan\'t Hoff factor.', color: getReelColor(3) },
+              { id: 'r5', title: 'BP & FP', content: 'ΔTb = Kb × m (increases).\nΔTf = Kf × m (decreases).\nSalt on roads!', color: getReelColor(4) },
+              { id: 'r6', title: 'Osmosis', content: 'π = CRT.\nSolvent flows to solution.\nReverse osmosis = purification.', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'chem3',
+            title: '3. Electrochemistry',
+            description: 'Electrolysis, Galvanic cells, Nernst equation.',
+            summary: '**Electrochemistry**: Study of electricity-chemical reactions\n**Galvanic Cell**: Chemical → Electrical\n**Electrolytic Cell**: Electrical → Chemical\n**Nernst Equation**: E = E° - (RT/nF)ln Q',
+            detailedNotes: '### 1. Types of Cells\n**Galvanic (Voltaic) Cell**\n* Spontaneous reaction produces electricity\n* ΔG < 0, E > 0\n* Anode (-), Cathode (+)\n* Example: Daniel cell, batteries\n\n**Electrolytic Cell**\n* Electricity drives non-spontaneous reaction\n* ΔG > 0, requires external voltage\n* Anode (+), Cathode (-)\n* Example: Electroplating, electrolysis\n\n### 2. Electrode Reactions\n* **Anode**: Oxidation (loss of electrons)\n* **Cathode**: Reduction (gain of electrons)\n\nRemember: **AN OX** (Anode Oxidation), **RED CAT** (Reduction Cathode)\n\n### 3. Standard Electrode Potential (E°)\n* Measured against SHE (Standard Hydrogen Electrode)\n* SHE: E° = 0.00 V\n* Positive E° = good oxidizing agent\n* Negative E° = good reducing agent\n\n### 4. EMF of Cell\nE°cell = E°cathode - E°anode\n\n### 5. Nernst Equation\n**E = E° - (RT/nF) ln Q**\n\nAt 25°C:\n**E = E° - (0.059/n) log Q**\n\nAt equilibrium: E = 0, so E° = (0.059/n) log K\n\n### 6. Relationship with ΔG\nΔG° = -nFE°\n* E° positive → ΔG° negative → spontaneous\n\n### 7. Faraday\'s Laws\n**First Law**: m = ZIt = (M×I×t)/(n×F)\n* m = mass deposited\n* Z = electrochemical equivalent\n* F = 96500 C/mol\n\n**Second Law**: m₁/m₂ = E₁/E₂ (equivalent weights)\n\n### 8. Conductivity\n* **Conductance (G)**: 1/R (siemens, S)\n* **Conductivity (κ)**: G × (l/A) (S/m)\n* **Molar conductivity (Λm)**: κ/c (S·m²/mol)',
+            flashcards: [
+              { id: 'f1', front: 'Anode reaction?', back: 'Oxidation (loss of electrons). AN OX.' },
+              { id: 'f2', front: 'Cathode reaction?', back: 'Reduction (gain of electrons). RED CAT.' },
+              { id: 'f3', front: 'EMF of cell formula?', back: 'E°cell = E°cathode - E°anode' },
+              { id: 'f4', front: 'Nernst equation at 25°C?', back: 'E = E° - (0.059/n) log Q' },
+              { id: 'f5', front: 'Faraday constant value?', back: 'F = 96500 C/mol' },
+              { id: 'f6', front: 'Relationship: ΔG and E°?', back: 'ΔG° = -nFE°' },
+              { id: 'f7', front: 'In galvanic cell, anode is?', back: 'Negative (-) electrode.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'In galvanic cell, anode is:', options: ['Positive', 'Negative', 'Neutral', 'Variable'], correctIndex: 1, explanation: 'In galvanic cell, anode is negative.' },
+              { id: 'q2', question: 'Faraday constant is:', options: ['96500 J', '96500 C', '96500 V', '96500 A'], correctIndex: 1, explanation: 'F = 96500 Coulombs per mole.' },
+              { id: 'q3', question: 'For spontaneous reaction:', options: ['E° < 0', 'E° > 0', 'E° = 0', 'E° = 1'], correctIndex: 1, explanation: 'Positive E° means spontaneous.' },
+              { id: 'q4', question: 'SHE potential is:', options: ['-1 V', '0 V', '+1 V', '+0.5 V'], correctIndex: 1, explanation: 'Standard Hydrogen Electrode = 0.00 V by definition.' },
+              { id: 'q5', question: 'Oxidation occurs at:', options: ['Cathode', 'Anode', 'Both', 'Neither'], correctIndex: 1, explanation: 'AN OX - Anode is for Oxidation.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'AN OX', content: 'Anode = Oxidation.\nLoss of electrons.\nRemember: AN OX!', color: getReelColor(0) },
+              { id: 'r2', title: 'RED CAT', content: 'Cathode = Reduction.\nGain of electrons.\nRemember: RED CAT!', color: getReelColor(1) },
+              { id: 'r3', title: 'Galvanic Cell', content: 'Chemical → Electrical.\nSpontaneous.\nAnode (-), Cathode (+).', color: getReelColor(2) },
+              { id: 'r4', title: 'Electrolytic', content: 'Electrical → Chemical.\nNon-spontaneous.\nAnode (+), Cathode (-).', color: getReelColor(3) },
+              { id: 'r5', title: 'Nernst Eq', content: 'E = E° - (0.059/n)logQ\nAt 25°C.\nConcentration effect!', color: getReelColor(4) },
+              { id: 'r6', title: 'Faraday', content: 'm = ZIt.\nF = 96500 C/mol.\nMass ∝ Current × Time.', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'chem4',
+            title: '4. Chemical Kinetics',
+            description: 'Reaction rates, Order, Arrhenius equation.',
+            summary: '**Rate**: Change in concentration per unit time\n**Order**: Power of concentration in rate law\n**Rate Law**: Rate = k[A]ⁿ\n**Arrhenius**: k = Ae^(-Ea/RT)',
+            detailedNotes: '### 1. Rate of Reaction\nRate = -d[R]/dt = +d[P]/dt\n\nFactors affecting rate:\n* Concentration\n* Temperature\n* Catalyst\n* Surface area\n* Nature of reactants\n\n### 2. Rate Law\n**Rate = k[A]^m[B]^n**\n* k = rate constant\n* m, n = orders (found experimentally)\n* Overall order = m + n\n\n### 3. Order of Reaction\n| Order | Rate Law | Integrated | Half-life | Units of k |\n|-------|----------|------------|-----------|------------|\n| 0 | k | [A] = [A]₀ - kt | [A]₀/2k | mol/L·s |\n| 1 | k[A] | ln[A] = ln[A]₀ - kt | 0.693/k | s⁻¹ |\n| 2 | k[A]² | 1/[A] = 1/[A]₀ + kt | 1/k[A]₀ | L/mol·s |\n\n### 4. First Order Kinetics\n* ln[A] = ln[A]₀ - kt\n* t₁/₂ = 0.693/k (independent of [A]₀)\n* Examples: Radioactive decay, many reactions\n\n### 5. Arrhenius Equation\n**k = Ae^(-Ea/RT)**\n\nLogarithmic form:\n**ln k = ln A - Ea/RT**\n\n* A = pre-exponential factor (frequency factor)\n* Ea = activation energy\n* R = gas constant (8.314 J/mol·K)\n\nTwo-point form:\n**ln(k₂/k₁) = (Ea/R)(1/T₁ - 1/T₂)**\n\n### 6. Collision Theory\n* Molecules must collide\n* With sufficient energy (≥ Ea)\n* With proper orientation\n\n### 7. Catalyst\n* Increases rate without being consumed\n* Lowers activation energy\n* Doesn\'t change ΔH or equilibrium\n* Provides alternative pathway',
+            flashcards: [
+              { id: 'f1', front: 'First order half-life?', back: 't₁/₂ = 0.693/k (independent of initial concentration)' },
+              { id: 'f2', front: 'Arrhenius equation?', back: 'k = Ae^(-Ea/RT)' },
+              { id: 'f3', front: 'Units of k for first order?', back: 's⁻¹ (or min⁻¹, hr⁻¹)' },
+              { id: 'f4', front: 'What does a catalyst do?', back: 'Lowers activation energy, provides alternative pathway.' },
+              { id: 'f5', front: 'Zero order half-life?', back: 't₁/₂ = [A]₀/2k (depends on initial concentration)' },
+              { id: 'f6', front: 'What is activation energy?', back: 'Minimum energy required for reaction to occur.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Half-life of first order reaction:', options: ['Depends on [A]₀', 'Independent of [A]₀', 'Depends on temperature only', 'Is always 1 second'], correctIndex: 1, explanation: 't₁/₂ = 0.693/k, no [A]₀ term.' },
+              { id: 'q2', question: 'Unit of rate constant for zero order:', options: ['s⁻¹', 'mol/L·s', 'L/mol·s', 'L²/mol²·s'], correctIndex: 1, explanation: 'Rate = k, so k has same units as rate.' },
+              { id: 'q3', question: 'Catalyst changes:', options: ['ΔH', 'Equilibrium constant', 'Activation energy', 'Enthalpy'], correctIndex: 2, explanation: 'Catalyst lowers Ea only.' },
+              { id: 'q4', question: 'Arrhenius equation relates k to:', options: ['Pressure', 'Volume', 'Temperature', 'Concentration'], correctIndex: 2, explanation: 'k = Ae^(-Ea/RT), T is temperature.' },
+              { id: 'q5', question: 'For first order: plot of ln[A] vs t is:', options: ['Parabola', 'Straight line', 'Exponential', 'Hyperbola'], correctIndex: 1, explanation: 'ln[A] = ln[A]₀ - kt is linear.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Rate Law', content: 'Rate = k[A]^m[B]^n.\nk = rate constant.\nm, n found experimentally.', color: getReelColor(0) },
+              { id: 'r2', title: 'First Order', content: 't₁/₂ = 0.693/k.\nIndependent of [A]₀.\nMost common!', color: getReelColor(1) },
+              { id: 'r3', title: 'Arrhenius', content: 'k = Ae^(-Ea/RT).\nHigher T = Higher k.\nFaster reaction!', color: getReelColor(2) },
+              { id: 'r4', title: 'Ea', content: 'Activation Energy.\nEnergy barrier.\nCatalyst lowers it!', color: getReelColor(3) },
+              { id: 'r5', title: 'Catalyst', content: 'Lowers Ea.\nNot consumed.\nDoesn\'t change ΔH!', color: getReelColor(4) },
+              { id: 'r6', title: 'Collision Theory', content: 'Collide + Energy + Orientation.\nAll three needed!', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'chem5',
+            title: '5. Organic: Haloalkanes & Haloarenes',
+            description: 'Alkyl and Aryl halides, SN1, SN2, Elimination.',
+            summary: '**Haloalkanes**: R-X (alkyl halides)\n**Haloarenes**: Ar-X (aryl halides)\n**SN1**: Unimolecular, carbocation, racemization\n**SN2**: Bimolecular, inversion, backside attack',
+            detailedNotes: '### 1. Classification\n**By Halogen**: Fluoro, Chloro, Bromo, Iodo\n**By Carbon**: Primary (1°), Secondary (2°), Tertiary (3°)\n\n### 2. Preparation\n* From alcohols: R-OH + HX → R-X + H₂O\n* From alkenes: Addition of HX, X₂\n* Halogen exchange: Finkelstein, Swarts\n\n### 3. Physical Properties\n* Higher BP than alkanes (dipole-dipole)\n* Insoluble in water\n* Denser than water (CHCl₃, CCl₄)\n\n### 4. Nucleophilic Substitution\n**SN1 (Substitution Nucleophilic Unimolecular)**\n* Two steps: (1) Carbocation formation (slow), (2) Attack by nucleophile (fast)\n* Rate = k[R-X]\n* Favored by: 3° > 2° > 1°, polar protic solvents\n* Gives racemization (+ some inversion)\n\n**SN2 (Substitution Nucleophilic Bimolecular)**\n* One step: Backside attack\n* Rate = k[R-X][Nu⁻]\n* Favored by: 1° > 2° > 3°, polar aprotic solvents\n* Gives complete inversion (Walden inversion)\n\n### 5. Elimination Reactions\n**E1**: Two steps, carbocation, Zaitsev product\n**E2**: One step, anti-periplanar, Zaitsev product\n\nZaitsev Rule: More substituted alkene is major product.\n\n### 6. Haloarenes (Ar-X)\n* Less reactive than haloalkanes\n* C-X bond has partial double bond character (resonance)\n* Undergo electrophilic substitution (not nucleophilic)\n\n### 7. Important Reactions\n* Wurtz: 2R-X + 2Na → R-R + 2NaX\n* Grignard: R-X + Mg → R-MgX\n* Williamson: R-X + R\'O⁻ → R-O-R\'',
+            flashcards: [
+              { id: 'f1', front: 'SN1 vs SN2: Which gives inversion?', back: 'SN2 gives complete inversion (Walden inversion).' },
+              { id: 'f2', front: 'SN1 is favored by?', back: '3° halides, polar protic solvents.' },
+              { id: 'f3', front: 'SN2 is favored by?', back: '1° halides, polar aprotic solvents, strong nucleophiles.' },
+              { id: 'f4', front: 'Zaitsev rule?', back: 'More substituted (stable) alkene is the major product.' },
+              { id: 'f5', front: 'Wurtz reaction?', back: '2R-X + 2Na → R-R (coupling of alkyl halides)' },
+              { id: 'f6', front: 'Grignard reagent formula?', back: 'R-MgX (organomagnesium halide)' },
+              { id: 'f7', front: 'Why are haloarenes less reactive?', back: 'C-X bond has partial double bond character due to resonance.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'SN2 mechanism gives:', options: ['Retention', 'Racemization', 'Inversion', 'No change'], correctIndex: 2, explanation: 'Backside attack causes Walden inversion.' },
+              { id: 'q2', question: 'SN1 is favored by:', options: ['1° halides', '2° halides', '3° halides', 'All equally'], correctIndex: 2, explanation: '3° carbocation is most stable.' },
+              { id: 'q3', question: 'Grignard reagent is prepared using:', options: ['Na', 'Mg', 'Zn', 'Fe'], correctIndex: 1, explanation: 'R-X + Mg → R-MgX in dry ether.' },
+              { id: 'q4', question: 'Zaitsev rule predicts formation of:', options: ['Less substituted alkene', 'More substituted alkene', 'Alcohol', 'Ether'], correctIndex: 1, explanation: 'More stable alkene is major product.' },
+              { id: 'q5', question: 'Rate of SN2 depends on:', options: ['[R-X] only', '[Nu] only', 'Both [R-X] and [Nu]', 'Neither'], correctIndex: 2, explanation: 'Rate = k[R-X][Nu], bimolecular.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'SN1', content: 'Unimolecular.\nCarbocation formed.\n3° > 2° > 1°', color: getReelColor(0) },
+              { id: 'r2', title: 'SN2', content: 'Bimolecular.\nBackside attack.\n1° > 2° > 3°', color: getReelColor(1) },
+              { id: 'r3', title: 'Inversion', content: 'SN2 = Complete inversion.\nSN1 = Racemization.\nWalden inversion!', color: getReelColor(2) },
+              { id: 'r4', title: 'Zaitsev', content: 'More substituted alkene.\nMore stable.\nMajor product.', color: getReelColor(3) },
+              { id: 'r5', title: 'Grignard', content: 'R-X + Mg → R-MgX.\nDry ether solvent.\nVery reactive!', color: getReelColor(4) },
+              { id: 'r6', title: 'Haloarenes', content: 'Less reactive.\nResonance stabilized.\nElectrophilic substitution.', color: getReelColor(5) }
+            ]
+          }
+        ]
       },
       {
-        id: 'math', name: 'Mathematics', icon: 'Calculator', color: 'bg-indigo-600', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: []
+        id: 'math', 
+        name: 'Mathematics', 
+        icon: 'Calculator', 
+        color: 'bg-indigo-600', 
+        syllabus: '1. Mathematical Logic\n2. Matrices\n3. Trigonometric Functions\n4. Pair of Straight Lines\n5. Vectors\n6. Three Dimensional Geometry\n7. Linear Programming\n8. Continuity\n9. Differentiation\n10. Applications of Derivatives\n11. Integration\n12. Applications of Integration\n13. Differential Equations\n14. Probability\n15. Binomial Distribution',
+        paperPattern: '### Mathematics Paper Pattern (80 Marks)\n\n* **Section A (10 Marks)**: MCQs (2 marks each)\n* **Section B (16 Marks)**: Very short answers (2 marks each)\n* **Section C (18 Marks)**: Short answers (3 marks each)\n* **Section D (36 Marks)**: Long answers (4 marks each)',
+        previousPapers: [], 
+        chapters: [
+          {
+            id: 'math1',
+            title: '1. Mathematical Logic',
+            description: 'Statements, Connectives, Truth Tables.',
+            summary: '**Statement**: Sentence that is either true or false\n**Connectives**: ∧ (and), ∨ (or), ¬ (not), → (implies), ↔ (biconditional)\n**Tautology**: Always true\n**Contradiction**: Always false',
+            detailedNotes: '### 1. Statements\n* A declarative sentence that is either TRUE or FALSE\n* Not both, not neither\n* Denoted by p, q, r...\n\n### 2. Logical Connectives\n| Symbol | Name | Meaning |\n|--------|------|--------|\n| ¬ | Negation | NOT p |\n| ∧ | Conjunction | p AND q |\n| ∨ | Disjunction | p OR q |\n| → | Conditional | If p then q |\n| ↔ | Biconditional | p if and only if q |\n\n### 3. Truth Tables\n**Negation (¬p)**\n| p | ¬p |\n|---|----|\n| T | F |\n| F | T |\n\n**Conjunction (p ∧ q)**: True only when BOTH are true.\n**Disjunction (p ∨ q)**: False only when BOTH are false.\n\n### 4. Conditional (p → q)\n| p | q | p → q |\n|---|---|-------|\n| T | T | T |\n| T | F | F |\n| F | T | T |\n| F | F | T |\n\n"If p then q" is false ONLY when p is true and q is false.\n\n### 5. Related Statements\n* **Converse**: q → p\n* **Inverse**: ¬p → ¬q\n* **Contrapositive**: ¬q → ¬p\n\nOriginal ≡ Contrapositive\nConverse ≡ Inverse\n\n### 6. Tautology & Contradiction\n* **Tautology**: Always TRUE (p ∨ ¬p)\n* **Contradiction**: Always FALSE (p ∧ ¬p)\n* **Contingency**: Sometimes true, sometimes false\n\n### 7. Logical Equivalence\np ≡ q means p and q have same truth values\n\n### 8. Laws\n* **De Morgan\'s**: ¬(p ∧ q) ≡ ¬p ∨ ¬q; ¬(p ∨ q) ≡ ¬p ∧ ¬q\n* **Distributive**: p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)',
+            flashcards: [
+              { id: 'f1', front: 'When is p → q false?', back: 'Only when p is TRUE and q is FALSE.' },
+              { id: 'f2', front: 'Contrapositive of p → q?', back: '¬q → ¬p (logically equivalent to original)' },
+              { id: 'f3', front: 'What is a tautology?', back: 'A statement that is ALWAYS true. Example: p ∨ ¬p' },
+              { id: 'f4', front: 'De Morgan\'s Law for ¬(p ∧ q)?', back: '¬(p ∧ q) ≡ ¬p ∨ ¬q' },
+              { id: 'f5', front: 'When is p ∧ q true?', back: 'Only when BOTH p and q are true.' },
+              { id: 'f6', front: 'When is p ∨ q false?', back: 'Only when BOTH p and q are false.' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'Contrapositive of p → q is:', options: ['q → p', '¬p → ¬q', '¬q → ¬p', 'p → ¬q'], correctIndex: 2, explanation: 'Contrapositive: negate both and reverse.' },
+              { id: 'q2', question: 'p ∨ ¬p is:', options: ['Tautology', 'Contradiction', 'Contingency', 'None'], correctIndex: 0, explanation: 'Always true regardless of p.' },
+              { id: 'q3', question: 'p ∧ ¬p is:', options: ['Tautology', 'Contradiction', 'Contingency', 'None'], correctIndex: 1, explanation: 'Always false regardless of p.' },
+              { id: 'q4', question: '¬(p ∨ q) ≡', options: ['¬p ∨ ¬q', '¬p ∧ ¬q', 'p ∧ q', 'p ∨ q'], correctIndex: 1, explanation: 'De Morgan\'s law.' },
+              { id: 'q5', question: 'If p is false, then p → q is:', options: ['True', 'False', 'Depends on q', 'Undefined'], correctIndex: 0, explanation: 'p → q is true when p is false.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Connectives', content: '∧ = AND\n∨ = OR\n¬ = NOT\n→ = IF-THEN', color: getReelColor(0) },
+              { id: 'r2', title: 'Conditional', content: 'p → q\nFalse ONLY when:\np = T, q = F', color: getReelColor(1) },
+              { id: 'r3', title: 'Contrapositive', content: 'p → q ≡ ¬q → ¬p\nAlways equivalent!\nImportant for proofs.', color: getReelColor(2) },
+              { id: 'r4', title: 'De Morgan', content: '¬(p ∧ q) = ¬p ∨ ¬q\n¬(p ∨ q) = ¬p ∧ ¬q\nBreak the bracket, flip!', color: getReelColor(3) },
+              { id: 'r5', title: 'Tautology', content: 'Always TRUE.\np ∨ ¬p\nNo matter what!', color: getReelColor(4) },
+              { id: 'r6', title: 'Contradiction', content: 'Always FALSE.\np ∧ ¬p\nImpossible!', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'math2',
+            title: '2. Matrices',
+            description: 'Types, Operations, Inverse, Determinants.',
+            summary: '**Matrix**: Rectangular array of numbers\n**Determinant**: |A| (only for square matrices)\n**Inverse**: A⁻¹ = (1/|A|) × adj(A)\n**Singular**: |A| = 0 (no inverse)',
+            detailedNotes: '### 1. Types of Matrices\n* **Row Matrix**: 1 × n\n* **Column Matrix**: m × 1\n* **Square Matrix**: m × m\n* **Diagonal Matrix**: Non-zero only on diagonal\n* **Scalar Matrix**: Diagonal with same elements\n* **Identity Matrix**: Diagonal with all 1s\n* **Zero Matrix**: All elements are 0\n* **Symmetric**: A = Aᵀ\n* **Skew-symmetric**: A = -Aᵀ\n\n### 2. Matrix Operations\n**Addition/Subtraction**: Same order, element-wise\n**Scalar Multiplication**: Multiply each element\n**Matrix Multiplication**: (m×n) × (n×p) = (m×p)\n\nProperties:\n* AB ≠ BA (generally)\n* A(BC) = (AB)C\n* A(B+C) = AB + AC\n\n### 3. Transpose (Aᵀ)\n* Rows become columns\n* (AB)ᵀ = BᵀAᵀ\n* (Aᵀ)ᵀ = A\n\n### 4. Determinant\nFor 2×2: |a b; c d| = ad - bc\n\nFor 3×3: Expand along row/column (cofactor expansion)\n\nProperties:\n* |AB| = |A||B|\n* |Aᵀ| = |A|\n* |kA| = kⁿ|A| (n = order)\n* If row/column has all zeros, |A| = 0\n\n### 5. Adjoint\nadj(A) = transpose of cofactor matrix\n\n### 6. Inverse\nA⁻¹ = (1/|A|) × adj(A)\n\nConditions:\n* A must be square\n* |A| ≠ 0 (non-singular)\n\nProperties:\n* AA⁻¹ = A⁻¹A = I\n* (AB)⁻¹ = B⁻¹A⁻¹\n* (A⁻¹)⁻¹ = A\n\n### 7. Solving Linear Equations\nAX = B → X = A⁻¹B (Cramer\'s rule)',
+            flashcards: [
+              { id: 'f1', front: 'Condition for matrix multiplication?', back: 'Number of columns of A = Number of rows of B.' },
+              { id: 'f2', front: 'Determinant of 2×2 matrix?', back: '|a b; c d| = ad - bc' },
+              { id: 'f3', front: 'Formula for inverse?', back: 'A⁻¹ = (1/|A|) × adj(A)' },
+              { id: 'f4', front: 'When does inverse not exist?', back: 'When |A| = 0 (singular matrix).' },
+              { id: 'f5', front: '(AB)⁻¹ = ?', back: 'B⁻¹A⁻¹ (reverse order)' },
+              { id: 'f6', front: 'Symmetric matrix condition?', back: 'A = Aᵀ (equal to its transpose)' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'If A is 3×2 and B is 2×4, then AB is:', options: ['3×2', '2×4', '3×4', 'Not possible'], correctIndex: 2, explanation: '(3×2) × (2×4) = 3×4' },
+              { id: 'q2', question: 'For singular matrix:', options: ['|A| = 1', '|A| = 0', '|A| = -1', '|A| > 0'], correctIndex: 1, explanation: 'Singular means determinant is zero.' },
+              { id: 'q3', question: '|kA| for 3×3 matrix:', options: ['k|A|', 'k²|A|', 'k³|A|', '|A|/k'], correctIndex: 2, explanation: '|kA| = kⁿ|A| where n is order.' },
+              { id: 'q4', question: 'If A = Aᵀ, then A is:', options: ['Symmetric', 'Skew-symmetric', 'Diagonal', 'Singular'], correctIndex: 0, explanation: 'Symmetric matrix equals its transpose.' },
+              { id: 'q5', question: '(AB)ᵀ = ?', options: ['AᵀBᵀ', 'BᵀAᵀ', 'AB', 'BA'], correctIndex: 1, explanation: 'Transpose reverses the order.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Matrix Types', content: 'Symmetric: A = Aᵀ.\nSkew: A = -Aᵀ.\nIdentity: I (diagonal 1s).', color: getReelColor(0) },
+              { id: 'r2', title: 'Multiplication', content: '(m×n) × (n×p) = (m×p).\nInner dimensions must match.\nAB ≠ BA!', color: getReelColor(1) },
+              { id: 'r3', title: '2×2 Determinant', content: '|a b|\n|c d|\n= ad - bc', color: getReelColor(2) },
+              { id: 'r4', title: 'Inverse', content: 'A⁻¹ = adj(A)/|A|.\n|A| ≠ 0 required.\nAA⁻¹ = I.', color: getReelColor(3) },
+              { id: 'r5', title: 'Transpose Rules', content: '(AB)ᵀ = BᵀAᵀ.\n(A⁻¹)ᵀ = (Aᵀ)⁻¹.\nReverse order!', color: getReelColor(4) },
+              { id: 'r6', title: 'Singular', content: '|A| = 0.\nNo inverse exists.\nInfinite or no solutions.', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'math3',
+            title: '3. Differentiation',
+            description: 'Derivatives, Rules, Applications.',
+            summary: '**Derivative**: Rate of change, dy/dx\n**Product Rule**: (uv)\' = u\'v + uv\'\n**Quotient Rule**: (u/v)\' = (u\'v - uv\')/v²\n**Chain Rule**: dy/dx = (dy/du)(du/dx)',
+            detailedNotes: '### 1. Definition\nf\'(x) = lim[h→0] [f(x+h) - f(x)]/h\n\n### 2. Basic Derivatives\n| f(x) | f\'(x) |\n|------|-------|\n| xⁿ | nxⁿ⁻¹ |\n| eˣ | eˣ |\n| aˣ | aˣ ln a |\n| ln x | 1/x |\n| log_a x | 1/(x ln a) |\n| sin x | cos x |\n| cos x | -sin x |\n| tan x | sec²x |\n| sec x | sec x tan x |\n| csc x | -csc x cot x |\n| cot x | -csc²x |\n\n### 3. Inverse Trigonometric\n| f(x) | f\'(x) |\n|------|-------|\n| sin⁻¹x | 1/√(1-x²) |\n| cos⁻¹x | -1/√(1-x²) |\n| tan⁻¹x | 1/(1+x²) |\n\n### 4. Rules\n**Sum/Difference**: (u ± v)\' = u\' ± v\'\n**Product Rule**: (uv)\' = u\'v + uv\'\n**Quotient Rule**: (u/v)\' = (u\'v - uv\')/v²\n**Chain Rule**: dy/dx = (dy/du) × (du/dx)\n\n### 5. Implicit Differentiation\nDifferentiate both sides, treating y as function of x.\nd/dx(y²) = 2y(dy/dx)\n\n### 6. Logarithmic Differentiation\nFor y = uᵛ type:\nln y = v ln u\nDifferentiate both sides.\n\n### 7. Parametric Differentiation\nIf x = f(t), y = g(t):\ndy/dx = (dy/dt)/(dx/dt)\n\n### 8. Higher Derivatives\nd²y/dx² = d/dx(dy/dx)\nSecond derivative = rate of change of slope.',
+            flashcards: [
+              { id: 'f1', front: 'd/dx(sin x)?', back: 'cos x' },
+              { id: 'f2', front: 'd/dx(cos x)?', back: '-sin x' },
+              { id: 'f3', front: 'd/dx(eˣ)?', back: 'eˣ' },
+              { id: 'f4', front: 'd/dx(ln x)?', back: '1/x' },
+              { id: 'f5', front: 'Product rule?', back: '(uv)\' = u\'v + uv\'' },
+              { id: 'f6', front: 'Chain rule?', back: 'dy/dx = (dy/du)(du/dx)' },
+              { id: 'f7', front: 'd/dx(tan⁻¹x)?', back: '1/(1+x²)' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'd/dx(x⁵) = ?', options: ['5x⁴', '4x⁵', 'x⁴', '5x⁵'], correctIndex: 0, explanation: 'Power rule: nxⁿ⁻¹' },
+              { id: 'q2', question: 'd/dx(tan x) = ?', options: ['sec x', 'sec²x', 'cot x', '-sec²x'], correctIndex: 1, explanation: 'Derivative of tan x is sec²x.' },
+              { id: 'q3', question: 'd/dx(eˣ) = ?', options: ['xeˣ⁻¹', 'eˣ', 'eˣ⁺¹', 'e'], correctIndex: 1, explanation: 'eˣ is its own derivative.' },
+              { id: 'q4', question: 'If y = sin(2x), dy/dx = ?', options: ['cos(2x)', '2cos(2x)', '-2cos(2x)', 'sin(2x)'], correctIndex: 1, explanation: 'Chain rule: cos(2x) × 2' },
+              { id: 'q5', question: 'd/dx(ln(x²)) = ?', options: ['1/x²', '2/x', '2x', '1/2x'], correctIndex: 1, explanation: 'Chain rule: (1/x²) × 2x = 2/x' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Power Rule', content: 'd/dx(xⁿ) = nxⁿ⁻¹.\nBring power down.\nReduce by 1.', color: getReelColor(0) },
+              { id: 'r2', title: 'Trig Derivatives', content: 'sin → cos.\ncos → -sin.\ntan → sec².', color: getReelColor(1) },
+              { id: 'r3', title: 'Exponential', content: 'd/dx(eˣ) = eˣ.\nd/dx(aˣ) = aˣ ln a.\nln derivative = 1/x.', color: getReelColor(2) },
+              { id: 'r4', title: 'Product Rule', content: '(uv)\' = u\'v + uv\'.\nFirst times derivative of second.\nPlus second times derivative of first.', color: getReelColor(3) },
+              { id: 'r5', title: 'Chain Rule', content: 'dy/dx = dy/du × du/dx.\nOutside × Inside.\nComposite functions!', color: getReelColor(4) },
+              { id: 'r6', title: 'Quotient Rule', content: '(u/v)\' = (u\'v - uv\')/v².\nLo d-Hi minus Hi d-Lo.\nOver Lo squared.', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'math4',
+            title: '4. Integration',
+            description: 'Antiderivatives, Definite integrals, Methods.',
+            summary: '**Integration**: Reverse of differentiation\n**Indefinite**: ∫f(x)dx + C\n**Definite**: ∫[a to b]f(x)dx = F(b) - F(a)\n**Methods**: Substitution, Parts, Partial fractions',
+            detailedNotes: '### 1. Basic Integrals\n| f(x) | ∫f(x)dx |\n|------|--------|\n| xⁿ | xⁿ⁺¹/(n+1) + C (n≠-1) |\n| 1/x | ln|x| + C |\n| eˣ | eˣ + C |\n| aˣ | aˣ/ln a + C |\n| sin x | -cos x + C |\n| cos x | sin x + C |\n| sec²x | tan x + C |\n| csc²x | -cot x + C |\n| sec x tan x | sec x + C |\n\n### 2. Substitution Method\nIf ∫f(g(x))g\'(x)dx, let u = g(x)\ndu = g\'(x)dx\n∫f(u)du\n\n### 3. Integration by Parts\n∫u dv = uv - ∫v du\n\nILATE rule for choosing u:\n* I - Inverse trig\n* L - Logarithmic\n* A - Algebraic\n* T - Trigonometric\n* E - Exponential\n\n### 4. Partial Fractions\nFor rational functions:\n* Linear: A/(x-a)\n* Repeated linear: A/(x-a) + B/(x-a)²\n* Quadratic: (Ax+B)/(x²+bx+c)\n\n### 5. Definite Integrals\n∫[a to b]f(x)dx = F(b) - F(a)\n\nProperties:\n* ∫[a to a] = 0\n* ∫[a to b] = -∫[b to a]\n* ∫[a to b] = ∫[a to c] + ∫[c to b]\n\n### 6. Important Results\n∫1/(x²+a²)dx = (1/a)tan⁻¹(x/a) + C\n∫1/√(a²-x²)dx = sin⁻¹(x/a) + C\n∫1/(x²-a²)dx = (1/2a)ln|(x-a)/(x+a)| + C',
+            flashcards: [
+              { id: 'f1', front: '∫xⁿdx = ?', back: 'xⁿ⁺¹/(n+1) + C (n ≠ -1)' },
+              { id: 'f2', front: '∫sin x dx = ?', back: '-cos x + C' },
+              { id: 'f3', front: '∫cos x dx = ?', back: 'sin x + C' },
+              { id: 'f4', front: '∫eˣdx = ?', back: 'eˣ + C' },
+              { id: 'f5', front: 'Integration by parts formula?', back: '∫u dv = uv - ∫v du' },
+              { id: 'f6', front: 'ILATE stands for?', back: 'Inverse, Logarithmic, Algebraic, Trigonometric, Exponential' },
+              { id: 'f7', front: '∫1/x dx = ?', back: 'ln|x| + C' }
+            ],
+            mcqs: [
+              { id: 'q1', question: '∫x³dx = ?', options: ['x⁴ + C', 'x⁴/4 + C', '3x² + C', '4x⁴ + C'], correctIndex: 1, explanation: 'x³⁺¹/(3+1) = x⁴/4 + C' },
+              { id: 'q2', question: '∫cos x dx = ?', options: ['sin x + C', '-sin x + C', 'cos x + C', '-cos x + C'], correctIndex: 0, explanation: 'Integral of cos is sin.' },
+              { id: 'q3', question: '∫sec²x dx = ?', options: ['sec x + C', 'tan x + C', 'cot x + C', '-tan x + C'], correctIndex: 1, explanation: 'd/dx(tan x) = sec²x.' },
+              { id: 'q4', question: '∫[0 to π]sin x dx = ?', options: ['0', '1', '2', '-1'], correctIndex: 2, explanation: '[-cos x] from 0 to π = -(-1) - (-1) = 2' },
+              { id: 'q5', question: '∫e²ˣdx = ?', options: ['e²ˣ + C', '2e²ˣ + C', 'e²ˣ/2 + C', 'e²ˣ⁺¹ + C'], correctIndex: 2, explanation: 'Chain rule: divide by 2.' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Power Rule', content: '∫xⁿdx = xⁿ⁺¹/(n+1).\nAdd 1 to power.\nDivide by new power.', color: getReelColor(0) },
+              { id: 'r2', title: 'Trig Integrals', content: '∫sin = -cos.\n∫cos = sin.\n∫sec² = tan.', color: getReelColor(1) },
+              { id: 'r3', title: 'By Parts', content: '∫u dv = uv - ∫v du.\nILATE rule.\nFor products!', color: getReelColor(2) },
+              { id: 'r4', title: 'Substitution', content: 'Let u = inside function.\ndu = derivative × dx.\nSimplify and integrate.', color: getReelColor(3) },
+              { id: 'r5', title: 'Definite', content: '∫[a,b] = F(b) - F(a).\nNo + C needed.\nActual number!', color: getReelColor(4) },
+              { id: 'r6', title: 'Special', content: '∫1/x = ln|x|.\n∫eˣ = eˣ.\n∫1/(1+x²) = tan⁻¹x.', color: getReelColor(5) }
+            ]
+          },
+          {
+            id: 'math5',
+            title: '5. Probability',
+            description: 'Basic probability, Conditional, Bayes theorem.',
+            summary: '**Probability**: P(A) = n(A)/n(S)\n**Conditional**: P(A|B) = P(A∩B)/P(B)\n**Bayes Theorem**: P(A|B) = P(B|A)P(A)/P(B)\n**Independent**: P(A∩B) = P(A)P(B)',
+            detailedNotes: '### 1. Basic Probability\nP(A) = Number of favorable outcomes / Total outcomes\nP(A) = n(A)/n(S)\n\nProperties:\n* 0 ≤ P(A) ≤ 1\n* P(S) = 1 (certain event)\n* P(∅) = 0 (impossible event)\n* P(A\') = 1 - P(A) (complement)\n\n### 2. Addition Rule\nP(A ∪ B) = P(A) + P(B) - P(A ∩ B)\n\nFor mutually exclusive events:\nP(A ∪ B) = P(A) + P(B)\n\n### 3. Conditional Probability\nP(A|B) = P(A ∩ B)/P(B)\n\n"Probability of A given B has occurred"\n\n### 4. Multiplication Rule\nP(A ∩ B) = P(B) × P(A|B) = P(A) × P(B|A)\n\n### 5. Independent Events\nA and B are independent if:\nP(A ∩ B) = P(A) × P(B)\n\nOr equivalently: P(A|B) = P(A)\n\n### 6. Bayes\' Theorem\nP(Aᵢ|B) = P(B|Aᵢ) × P(Aᵢ) / ΣP(B|Aⱼ)P(Aⱼ)\n\nUsed when:\n* We know P(B|A)\n* We want P(A|B)\n\n### 7. Random Variables\n* **Discrete**: Countable values\n* **Continuous**: Any value in range\n\nExpected Value: E(X) = ΣxᵢP(xᵢ)\nVariance: Var(X) = E(X²) - [E(X)]²\n\n### 8. Binomial Distribution\nP(X = r) = ⁿCᵣ pʳ qⁿ⁻ʳ\n\nWhere:\n* n = number of trials\n* p = probability of success\n* q = 1 - p\n* Mean = np\n* Variance = npq',
+            flashcards: [
+              { id: 'f1', front: 'Conditional probability formula?', back: 'P(A|B) = P(A∩B)/P(B)' },
+              { id: 'f2', front: 'Addition rule?', back: 'P(A∪B) = P(A) + P(B) - P(A∩B)' },
+              { id: 'f3', front: 'When are events independent?', back: 'When P(A∩B) = P(A) × P(B)' },
+              { id: 'f4', front: 'Bayes theorem?', back: 'P(A|B) = P(B|A)P(A)/P(B)' },
+              { id: 'f5', front: 'Mean of binomial distribution?', back: 'μ = np' },
+              { id: 'f6', front: 'Variance of binomial distribution?', back: 'σ² = npq' },
+              { id: 'f7', front: 'Binomial probability formula?', back: 'P(X=r) = ⁿCᵣ pʳ qⁿ⁻ʳ' }
+            ],
+            mcqs: [
+              { id: 'q1', question: 'If P(A) = 0.3, P(A\') = ?', options: ['0.3', '0.7', '0', '1'], correctIndex: 1, explanation: 'P(A\') = 1 - P(A) = 0.7' },
+              { id: 'q2', question: 'For mutually exclusive events:', options: ['P(A∩B) = P(A)P(B)', 'P(A∩B) = 0', 'P(A|B) = P(A)', 'P(A∪B) = 0'], correctIndex: 1, explanation: 'No overlap, so intersection is empty.' },
+              { id: 'q3', question: 'Mean of binomial distribution:', options: ['np', 'npq', 'n/p', 'p/n'], correctIndex: 0, explanation: 'μ = np for binomial.' },
+              { id: 'q4', question: 'For independent events, P(A|B) = ?', options: ['P(B)', 'P(A)', 'P(A)P(B)', '0'], correctIndex: 1, explanation: 'If independent, B doesn\'t affect A.' },
+              { id: 'q5', question: 'If P(A∩B) = 0.2, P(B) = 0.5, then P(A|B) = ?', options: ['0.1', '0.4', '0.25', '0.7'], correctIndex: 1, explanation: 'P(A|B) = 0.2/0.5 = 0.4' }
+            ],
+            reels: [
+              { id: 'r1', title: 'Basic Probability', content: 'P(A) = favorable/total.\n0 ≤ P(A) ≤ 1.\nP(A\') = 1 - P(A).', color: getReelColor(0) },
+              { id: 'r2', title: 'Addition Rule', content: 'P(A∪B) = P(A) + P(B) - P(A∩B).\nMutually exclusive: no overlap.\nP(A∪B) = P(A) + P(B).', color: getReelColor(1) },
+              { id: 'r3', title: 'Conditional', content: 'P(A|B) = P(A∩B)/P(B).\nGiven B has occurred.\nRestricted sample space.', color: getReelColor(2) },
+              { id: 'r4', title: 'Independent', content: 'P(A∩B) = P(A)×P(B).\nOne doesn\'t affect other.\nP(A|B) = P(A).', color: getReelColor(3) },
+              { id: 'r5', title: 'Bayes', content: 'P(A|B) = P(B|A)P(A)/P(B).\nReverse conditional.\nVery useful!', color: getReelColor(4) },
+              { id: 'r6', title: 'Binomial', content: 'P(X=r) = ⁿCᵣ pʳ qⁿ⁻ʳ.\nMean = np.\nVariance = npq.', color: getReelColor(5) }
+            ]
+          }
+        ]
       },
       {
-        id: 'bio', name: 'Biology', icon: 'Dna', color: 'bg-green-500', syllabus: 'Pending...', paperPattern: 'Pending...', previousPapers: [], chapters: []
+        id: 'bio', name: 'Biology', icon: 'Dna', color: 'bg-green-500',
+        syllabus: 'Reproduction, Genetics, Biotechnology, Evolution, Ecology & Environment',
+        paperPattern: '70 marks theory (MCQ + Short + Long answers), 30 marks practical',
+        previousPapers: ['2024 Biology Paper', '2023 Biology Paper', '2022 Biology Paper'],
+        chapters: [
+          {
+            id: 'bio-ch1',
+            title: 'Chapter 1: Reproduction in Organisms',
+            description: 'Modes of reproduction in living organisms',
+            summary: `
+# Reproduction in Organisms
+
+## Key Concepts
+
+### Types of Reproduction
+1. **Asexual Reproduction**
+   - Binary fission (bacteria, amoeba)
+   - Budding (yeast, hydra)
+   - Fragmentation (Spirogyra)
+   - Vegetative propagation (plants)
+   - Spore formation (fungi)
+
+2. **Sexual Reproduction**
+   - Involves fusion of gametes
+   - Creates genetic variation
+   - Pre-fertilization, fertilization, post-fertilization events
+
+### Life Span and Reproduction
+- Every organism has definite life span
+- Reproduction ensures continuity of species
+- Clone: Morphologically and genetically similar individuals
+
+### Events in Sexual Reproduction
+1. **Pre-fertilization**
+   - Gametogenesis (formation of gametes)
+   - Gamete transfer
+
+2. **Fertilization (Syngamy)**
+   - External fertilization (aquatic organisms)
+   - Internal fertilization (terrestrial organisms)
+
+3. **Post-fertilization**
+   - Zygote formation
+   - Embryogenesis
+   - Development of offspring
+
+### Plant Reproduction
+- **Vegetative**: Rhizomes, tubers, runners
+- **Asexual**: Zoospores, conidia
+- **Sexual**: Flowers, seeds, fruits
+
+### Embryo Development
+- Zygote → Embryo → Organism
+- Oviparous: Lay eggs (birds, reptiles)
+- Viviparous: Give birth (mammals)
+            `,
+            detailedNotes: `
+# Detailed Notes: Reproduction in Organisms
+
+## Asexual Reproduction
+
+### Binary Fission
+- Parent cell divides into two daughter cells
+- Example: Amoeba (simple), Paramecium (transverse)
+- In bacteria: rapid multiplication under favorable conditions
+
+### Budding
+- Small outgrowth develops on parent body
+- Yeast: Single-celled budding
+- Hydra: Multicellular budding
+- Bud may detach or remain attached (colony)
+
+### Fragmentation
+- Body breaks into fragments
+- Each fragment grows into complete organism
+- Examples: Spirogyra, sea star
+
+### Regeneration
+- Ability to regenerate lost parts
+- Planaria: Specialized cells dedifferentiate
+- Hydra: High regeneration capacity
+
+### Vegetative Propagation in Plants
+| Structure | Examples |
+|-----------|----------|
+| Runner | Strawberry, grass |
+| Rhizome | Ginger, turmeric |
+| Tuber | Potato |
+| Bulb | Onion, garlic |
+| Offset | Pistia, water hyacinth |
+
+### Advantages of Asexual Reproduction
+- Rapid multiplication
+- Single parent required
+- Identical offspring (clones)
+- Useful for propagating plants
+
+## Sexual Reproduction
+
+### Gametogenesis
+- **Spermatogenesis**: Formation of male gametes (sperm)
+- **Oogenesis**: Formation of female gametes (ova)
+- Meiosis reduces chromosome number by half
+
+### Types of Gametes
+- **Isogametes**: Similar in appearance (some algae)
+- **Heterogametes**: Different - sperm (small, motile) and ovum (large, non-motile)
+
+### Fertilization
+1. **External Fertilization**
+   - Occurs outside body
+   - Aquatic environment required
+   - Large number of gametes produced
+   - Examples: Fish, frogs, starfish
+
+2. **Internal Fertilization**
+   - Occurs inside female body
+   - Fewer gametes needed
+   - Higher success rate
+   - Examples: Reptiles, birds, mammals
+
+### Post-fertilization Events
+- **Zygote**: First cell of new organism
+- **Embryogenesis**: Development of embryo from zygote
+- **Cell division**: Mitotic divisions
+- **Differentiation**: Cells develop specialized functions
+
+### Oviparous vs Viviparous
+| Oviparous | Viviparous |
+|-----------|------------|
+| Lay eggs | Give birth to young |
+| Development outside body | Development inside body |
+| Birds, reptiles, fish | Most mammals |
+| Less parental care | More parental care |
+
+## Important Terms
+- **Clone**: Genetically identical individuals
+- **Parthenogenesis**: Development without fertilization (honey bees, some lizards)
+- **Hermaphrodite**: Both male and female organs in same individual
+            `,
+            flashcards: [
+              { front: 'What is binary fission?', back: 'Type of asexual reproduction where parent cell divides into two equal daughter cells. Example: Amoeba, bacteria.' },
+              { front: 'Difference between oviparous and viviparous?', back: 'Oviparous lay eggs (birds, reptiles). Viviparous give birth to young ones with development inside mother (mammals).' },
+              { front: 'What is parthenogenesis?', back: 'Development of organism from unfertilized egg without fusion of gametes. Example: Honey bees, some lizards.' },
+              { front: 'Name 5 methods of vegetative propagation.', back: 'Runner (strawberry), Rhizome (ginger), Tuber (potato), Bulb (onion), Offset (water hyacinth).' },
+              { front: 'What is gametogenesis?', back: 'The process of formation of gametes - spermatogenesis (male gametes) and oogenesis (female gametes) through meiosis.' },
+              { front: 'What are isogametes?', back: 'Gametes that are similar in appearance, found in some lower organisms like certain algae. Heterogametes are different (sperm and ovum).' }
+            ],
+            mcqs: [
+              { question: 'Which is NOT a method of asexual reproduction?', options: ['Binary fission', 'Budding', 'Syngamy', 'Fragmentation'], correctAnswer: 2 },
+              { question: 'Vegetative propagation by tubers is seen in:', options: ['Potato', 'Ginger', 'Onion', 'Strawberry'], correctAnswer: 0 },
+              { question: 'In which organisms does external fertilization occur?', options: ['Birds', 'Frogs', 'Mammals', 'Reptiles'], correctAnswer: 1 },
+              { question: 'Parthenogenesis is observed in:', options: ['Honey bee', 'Dog', 'Human', 'Crow'], correctAnswer: 0 }
+            ],
+            reels: [
+              { title: 'Asexual vs Sexual Reproduction', content: 'Asexual = 1 parent, clones, fast | Sexual = 2 parents, variation, slow 🧬' },
+              { title: 'Binary Fission Steps', content: 'DNA replication → Cell elongates → Plasma membrane pinches → 2 daughter cells 🔬' },
+              { title: 'Vegetative Propagation Mnemonics', content: 'RRTBO: Runner-Strawberry, Rhizome-Ginger, Tuber-Potato, Bulb-Onion, Offset-Pistia 🌱' },
+              { title: 'Fertilization Types', content: 'External = Fish, Frog (water needed) | Internal = Birds, Mammals (inside body) 🐟🐦' },
+              { title: 'Oviparous vs Viviparous', content: 'Eggs outside = Oviparous (Birds) | Birth to young = Viviparous (Mammals) 🥚👶' }
+            ]
+          },
+          {
+            id: 'bio-ch2',
+            title: 'Chapter 2: Genetics and Heredity',
+            description: 'Principles of inheritance and variation',
+            summary: `
+# Genetics and Heredity
+
+## Key Concepts
+
+### Mendel's Laws
+1. **Law of Dominance**
+   - One allele is dominant over another
+   - Dominant character expressed in heterozygote
+
+2. **Law of Segregation**
+   - Alleles separate during gamete formation
+   - Each gamete receives one allele
+
+3. **Law of Independent Assortment**
+   - Different pairs of alleles assort independently
+   - Applies to genes on different chromosomes
+
+### Important Terms
+- **Genotype**: Genetic makeup (AA, Aa, aa)
+- **Phenotype**: Physical expression
+- **Homozygous**: Same alleles (AA, aa)
+- **Heterozygous**: Different alleles (Aa)
+- **Allele**: Alternate forms of gene
+
+### Inheritance Patterns
+1. **Complete Dominance**: One allele masks other (Mendel's pea)
+2. **Incomplete Dominance**: Intermediate phenotype (pink snapdragon)
+3. **Codominance**: Both alleles express (AB blood group)
+4. **Multiple Alleles**: More than 2 alleles (ABO blood group)
+
+### Chromosomal Theory
+- Genes located on chromosomes
+- Chromosomes occur in pairs
+- Linkage: Genes on same chromosome
+- Crossing over: Exchange of genetic material
+
+### Sex Determination
+- **XX-XY System**: Mammals, humans
+- **ZW-ZZ System**: Birds
+- Female: XX, Male: XY (in humans)
+- Sex-linked inheritance: Color blindness, hemophilia
+
+### DNA Structure
+- Double helix (Watson & Crick)
+- Nucleotides: Sugar + Phosphate + Base
+- Bases: A-T, G-C pairing
+- Central Dogma: DNA → RNA → Protein
+            `,
+            detailedNotes: `
+# Detailed Notes: Genetics and Heredity
+
+## Gregor Mendel's Experiments
+
+### Reasons for Mendel's Success
+- Chose contrasting characters
+- Considered one character at a time
+- Used statistical analysis
+- Maintained accurate records
+- Pure breeding varieties used
+
+### Monohybrid Cross
+- Cross between organisms differing in one character
+- Example: Tall × Dwarf pea plants
+- F1: All tall (Tt)
+- F2: 3 Tall : 1 Dwarf (3:1 ratio)
+- Genotypic ratio: 1TT : 2Tt : 1tt
+
+### Dihybrid Cross
+- Cross between organisms differing in two characters
+- Example: Round Yellow × Wrinkled Green
+- F2 ratio: 9:3:3:1
+- 9 Round Yellow, 3 Round Green, 3 Wrinkled Yellow, 1 Wrinkled Green
+
+### Punnett Square
+Used to predict offspring genotypes and phenotypes
+```
+        T       t
+   +--------+--------+
+T  |   TT   |   Tt   |
+   +--------+--------+
+t  |   Tt   |   tt   |
+   +--------+--------+
+```
+
+## Deviations from Mendelian Ratios
+
+### Incomplete Dominance
+- Heterozygote shows intermediate phenotype
+- Example: Snapdragon flowers
+- Red × White = Pink
+- F2: 1 Red : 2 Pink : 1 White
+
+### Codominance
+- Both alleles fully express
+- Example: ABO blood group
+- I^A I^B genotype = AB blood group
+- Both A and B antigens present
+
+### Multiple Alleles
+- More than 2 alleles for a gene in population
+- ABO blood group: I^A, I^B, i
+- Possible genotypes: I^A I^A, I^A i, I^B I^B, I^B i, I^A I^B, ii
+
+## Linkage and Crossing Over
+
+### Linkage
+- Genes on same chromosome inherited together
+- Complete linkage: Genes very close, no crossing over
+- Incomplete linkage: Some crossing over occurs
+
+### Crossing Over
+- Exchange of segments between homologous chromosomes
+- Occurs during prophase I of meiosis
+- Results in genetic recombination
+- Frequency depends on distance between genes
+
+## Sex Determination
+
+### Human Sex Chromosomes
+| Sex | Chromosomes | Gametes |
+|-----|-------------|---------|
+| Female | 44 + XX | 22 + X only |
+| Male | 44 + XY | 22 + X or 22 + Y |
+
+### Sex-Linked Inheritance
+- **Color Blindness**: X-linked recessive
+- **Hemophilia**: X-linked recessive
+- Carrier female × Normal male
+- Sons: 50% affected, Daughters: 50% carriers
+
+## DNA Structure and Function
+
+### DNA Composition
+- Deoxyribose sugar
+- Phosphate group
+- Nitrogenous bases: Adenine, Thymine, Guanine, Cytosine
+- A=T (2 hydrogen bonds), G≡C (3 hydrogen bonds)
+
+### DNA Replication
+- Semi-conservative replication
+- Enzymes: Helicase, DNA polymerase, Ligase
+- Leading and lagging strands
+- Okazaki fragments on lagging strand
+
+### Central Dogma
+DNA → (Transcription) → RNA → (Translation) → Protein
+            `,
+            flashcards: [
+              { front: 'State Mendel\'s Law of Segregation.', back: 'During gamete formation, the alleles of a gene separate so that each gamete receives only one allele. Also called Law of Purity of Gametes.' },
+              { front: 'What is the difference between genotype and phenotype?', back: 'Genotype is genetic makeup (AA, Aa, aa). Phenotype is physical/observable expression of genes (tall, dwarf, color).' },
+              { front: 'What is codominance?', back: 'Both alleles express fully in heterozygote. Example: AB blood group where both A and B antigens are present.' },
+              { front: 'How is sex determined in humans?', back: 'XX-XY system. Females have XX chromosomes, males have XY. Father determines sex of child by contributing X or Y.' },
+              { front: 'What is crossing over?', back: 'Exchange of genetic material between homologous chromosomes during prophase I of meiosis, leading to genetic recombination.' },
+              { front: 'State the base pairing rule in DNA.', back: 'Adenine pairs with Thymine (A=T, 2 H-bonds). Guanine pairs with Cytosine (G≡C, 3 H-bonds).' }
+            ],
+            mcqs: [
+              { question: 'The phenotypic ratio of monohybrid cross is:', options: ['1:2:1', '3:1', '9:3:3:1', '1:1'], correctAnswer: 1 },
+              { question: 'Color blindness is:', options: ['Autosomal dominant', 'X-linked recessive', 'Y-linked', 'Autosomal recessive'], correctAnswer: 1 },
+              { question: 'Which blood group is universal donor?', options: ['A', 'B', 'AB', 'O'], correctAnswer: 3 },
+              { question: 'How many hydrogen bonds are there between G and C?', options: ['1', '2', '3', '4'], correctAnswer: 2 }
+            ],
+            reels: [
+              { title: 'Mendel\'s 3 Laws', content: '1. Dominance: One masks other | 2. Segregation: Alleles separate | 3. Independent Assortment: Different genes = separate 🧬' },
+              { title: 'Monohybrid Ratio', content: 'F2 Phenotypic = 3:1 | Genotypic = 1:2:1 | TT:Tt:tt 📊' },
+              { title: 'Blood Group Genetics', content: 'A = I^A I^A or I^A i | B = I^B I^B or I^B i | AB = I^A I^B | O = ii 🩸' },
+              { title: 'DNA Base Pairing', content: 'A=T (2 bonds) | G≡C (3 bonds) | Chargaff\'s rule: A=T, G=C 🔬' },
+              { title: 'Sex Determination', content: 'XX = Female ♀️ | XY = Male ♂️ | Father gives X or Y → determines sex 👶' }
+            ]
+          },
+          {
+            id: 'bio-ch3',
+            title: 'Chapter 3: Biotechnology',
+            description: 'Principles and applications of biotechnology',
+            summary: `
+# Biotechnology
+
+## Key Concepts
+
+### What is Biotechnology?
+- Technology using biological systems
+- Manipulating living organisms for human benefit
+- Modern biotechnology: Genetic engineering + bioprocess technology
+
+### Core Techniques
+
+1. **Genetic Engineering (rDNA Technology)**
+   - Cutting DNA with restriction enzymes
+   - Joining DNA with ligase
+   - Cloning genes in vectors
+   - Expressing foreign genes
+
+2. **Polymerase Chain Reaction (PCR)**
+   - Amplifying DNA segments
+   - Requires: Template, primers, Taq polymerase
+   - Steps: Denaturation, Annealing, Extension
+
+3. **Gel Electrophoresis**
+   - Separating DNA fragments by size
+   - Smaller fragments move faster
+   - Used in DNA fingerprinting
+
+### Tools of rDNA Technology
+- **Restriction Enzymes**: Molecular scissors (EcoRI, HindIII)
+- **Vectors**: Plasmids, bacteriophages, cosmids
+- **Ligase**: Joins DNA fragments
+- **Host Organisms**: E. coli, yeast, plant cells
+
+### Applications
+1. **Medicine**
+   - Insulin production (Humulin)
+   - Gene therapy
+   - Vaccines (Hepatitis B)
+
+2. **Agriculture**
+   - Bt crops (insect resistance)
+   - Golden rice (Vitamin A)
+   - Herbicide resistance
+
+3. **Industry**
+   - Enzymes production
+   - Biofuels
+   - Bioremediation
+
+### Bioethics
+- GMO safety concerns
+- Human cloning debates
+- Gene patenting issues
+            `,
+            detailedNotes: `
+# Detailed Notes: Biotechnology
+
+## Recombinant DNA Technology
+
+### Steps in rDNA Technology
+1. **Isolation of DNA**
+   - Break cells (lysozyme for bacteria)
+   - Remove RNA (RNase)
+   - Remove proteins (protease)
+   - Precipitate DNA (ethanol)
+
+2. **Cutting DNA (Restriction Digestion)**
+   - Restriction endonucleases cut at specific sites
+   - Palindromic sequences recognized
+   - Creates sticky or blunt ends
+   - Example: EcoRI cuts at GAATTC
+
+3. **Joining DNA (Ligation)**
+   - DNA ligase joins fragments
+   - Sticky ends join more efficiently
+   - Creates recombinant DNA
+
+4. **Introduction into Host**
+   - Transformation: DNA uptake (CaCl₂ treatment)
+   - Transfection: Virus-mediated
+   - Electroporation: Electric pulse
+
+5. **Selection of Recombinants**
+   - Antibiotic resistance markers
+   - Blue-white screening (lac operon)
+   - PCR confirmation
+
+### Vectors
+
+| Vector | Features | Insert Size |
+|--------|----------|-------------|
+| Plasmid | Circular, self-replicating | Up to 10 kb |
+| Bacteriophage | Viral DNA | Up to 25 kb |
+| Cosmid | Plasmid + phage features | Up to 45 kb |
+| BAC | Bacterial artificial chromosome | Up to 300 kb |
+
+### Features of Good Vector
+- Origin of replication (ori)
+- Selectable marker (antibiotic resistance)
+- Cloning sites (restriction sites)
+- Small size for easy manipulation
+
+## PCR (Polymerase Chain Reaction)
+
+### Components Required
+- Template DNA
+- Two primers (forward and reverse)
+- Taq DNA polymerase (thermostable)
+- dNTPs (nucleotides)
+- Buffer and MgCl₂
+
+### PCR Steps
+1. **Denaturation** (94-98°C): DNA strands separate
+2. **Annealing** (50-65°C): Primers bind to template
+3. **Extension** (72°C): Taq polymerase synthesizes DNA
+
+### Applications of PCR
+- DNA fingerprinting
+- Disease diagnosis
+- Forensic science
+- Paternity testing
+- Ancient DNA analysis
+
+## Applications of Biotechnology
+
+### Medical Applications
+1. **Insulin Production**
+   - Human insulin gene inserted in E. coli
+   - Humulin: First FDA-approved rDNA product (1982)
+   - A and B chains produced separately, combined
+
+2. **Gene Therapy**
+   - Replacing defective genes
+   - ADA deficiency first treated (1990)
+   - Viral vectors used for delivery
+
+3. **Vaccines**
+   - Recombinant Hepatitis B vaccine
+   - Safer than traditional vaccines
+   - No risk of infection
+
+### Agricultural Applications
+1. **Bt Crops**
+   - Bacillus thuringiensis gene inserted
+   - Produces Cry protein (insecticidal)
+   - Bt cotton, Bt brinjal
+   - Reduces pesticide use
+
+2. **Golden Rice**
+   - Produces beta-carotene (Vitamin A precursor)
+   - Addresses Vitamin A deficiency
+   - Contains genes from daffodil and bacteria
+
+3. **Herbicide Resistant Crops**
+   - Roundup Ready soybeans
+   - Tolerate glyphosate herbicide
+
+## Bioethics and Biosafety
+
+### Concerns
+- Environmental impact of GMOs
+- Gene flow to wild relatives
+- Allergenicity of GM foods
+- Antibiotic resistance spread
+
+### Regulations
+- Institutional Biosafety Committee (IBSC)
+- Genetic Engineering Approval Committee (GEAC)
+- Cartagena Protocol on Biosafety
+            `,
+            flashcards: [
+              { front: 'What are restriction enzymes?', back: 'Molecular scissors that cut DNA at specific recognition sequences. Examples: EcoRI cuts at GAATTC. Also called restriction endonucleases.' },
+              { front: 'What is PCR and its 3 steps?', back: 'Polymerase Chain Reaction - amplifies DNA. Steps: 1) Denaturation (94°C) 2) Annealing (50-65°C) 3) Extension (72°C)' },
+              { front: 'What is a vector in biotechnology?', back: 'DNA molecule that carries foreign DNA into host cell. Examples: Plasmids, bacteriophages, cosmids. Must have ori, selectable marker, cloning sites.' },
+              { front: 'What are Bt crops?', back: 'Crops containing gene from Bacillus thuringiensis that produces Cry protein (insecticidal). Example: Bt cotton, Bt brinjal. Reduces pesticide use.' },
+              { front: 'What is Humulin?', back: 'Human insulin produced by recombinant DNA technology using E. coli. First FDA-approved rDNA product (1982). Revolutionized diabetes treatment.' },
+              { front: 'What is gene therapy?', back: 'Treatment of genetic disorders by replacing defective genes with functional ones. First success: ADA deficiency (1990). Uses viral vectors.' }
+            ],
+            mcqs: [
+              { question: 'Which enzyme cuts DNA at specific sites?', options: ['Ligase', 'Polymerase', 'Restriction endonuclease', 'Helicase'], correctAnswer: 2 },
+              { question: 'Bt toxin gene comes from:', options: ['E. coli', 'Bacillus thuringiensis', 'Agrobacterium', 'Yeast'], correctAnswer: 1 },
+              { question: 'PCR was developed by:', options: ['Watson', 'Crick', 'Kary Mullis', 'Cohen'], correctAnswer: 2 },
+              { question: 'Golden rice is rich in:', options: ['Iron', 'Protein', 'Beta-carotene', 'Vitamin C'], correctAnswer: 2 }
+            ],
+            reels: [
+              { title: 'rDNA Steps', content: 'Isolate → Cut (restriction enzyme) → Join (ligase) → Insert in host → Select recombinants 🧬' },
+              { title: 'PCR Cycle', content: 'Denature 94°C → Anneal 55°C → Extend 72°C → Repeat 30x = Millions of copies! 🔬' },
+              { title: 'Vector Features', content: 'Ori (replication) + Marker (selection) + MCS (cloning) = Good Vector 📦' },
+              { title: 'Bt Cotton Action', content: 'Cry protein → Bollworm eats → Gut becomes alkaline → Toxin activated → Pest dies 🐛❌' },
+              { title: 'Biotechnology Products', content: 'Medicine: Insulin, Vaccines | Agri: Bt crops, Golden Rice | Industry: Enzymes, Biofuel 🏭' }
+            ]
+          },
+          {
+            id: 'bio-ch4',
+            title: 'Chapter 4: Evolution',
+            description: 'Origin of life and evolution of organisms',
+            summary: `
+# Evolution
+
+## Key Concepts
+
+### Origin of Life
+- **Abiogenesis**: Life from non-living matter
+- **Oparin-Haldane Hypothesis**: Chemical evolution
+- **Miller-Urey Experiment**: Simulated primitive earth
+- First molecules: RNA (RNA world hypothesis)
+
+### Evidence of Evolution
+1. **Fossil Evidence**
+   - Preserved remains of ancient organisms
+   - Shows gradual changes over time
+   - Transitional forms (Archaeopteryx)
+
+2. **Anatomical Evidence**
+   - Homologous organs: Same origin, different function
+   - Analogous organs: Different origin, same function
+   - Vestigial organs: Reduced, functionless
+
+3. **Molecular Evidence**
+   - DNA/protein sequence similarities
+   - Cytochrome c comparison
+   - More similar = more closely related
+
+### Theories of Evolution
+1. **Lamarckism**
+   - Inheritance of acquired characters
+   - Use and disuse theory
+   - Disproved (Weismann's experiment)
+
+2. **Darwinism (Natural Selection)**
+   - Overproduction of offspring
+   - Struggle for existence
+   - Survival of the fittest
+   - Variation and inheritance
+
+3. **Modern Synthetic Theory**
+   - Combines genetics with Darwin's theory
+   - Gene mutations as source of variation
+   - Natural selection acts on genetic variation
+
+### Mechanisms of Evolution
+- **Gene Flow**: Movement of genes between populations
+- **Genetic Drift**: Random changes in gene frequency
+- **Natural Selection**: Differential survival and reproduction
+- **Mutation**: Source of new variations
+            `,
+            detailedNotes: `
+# Detailed Notes: Evolution
+
+## Origin of Life Theories
+
+### Abiogenesis (Chemical Evolution)
+- Life originated from non-living organic molecules
+- Primitive earth conditions were different
+- No oxygen (reducing atmosphere)
+- Energy sources: UV radiation, lightning
+
+### Oparin-Haldane Hypothesis
+- Proposed independently (1920s)
+- Primitive atmosphere: CH₄, NH₃, H₂O, H₂
+- Energy from lightning, UV radiation
+- Simple organic molecules formed
+- Coacervates: Aggregates of organic molecules
+
+### Miller-Urey Experiment (1953)
+- Simulated primitive earth conditions
+- Used CH₄, NH₃, H₂O, H₂
+- Electric sparks for energy
+- Produced amino acids (glycine, alanine)
+- Proved organic molecules can form abiotically
+
+### First Life Forms
+- Chemoheterotrophs: Used organic molecules
+- Autotrophs evolved later
+- Prokaryotes first (bacteria)
+- Eukaryotes evolved ~2 billion years ago
+
+## Evidence of Evolution
+
+### Fossil Evidence
+| Fossil Type | Description | Example |
+|-------------|-------------|---------|
+| Preserved | Original remains | Frozen mammoth |
+| Mold | Impression in rock | Leaf imprint |
+| Cast | Filled mold | Shell cast |
+| Petrified | Minerals replace tissue | Petrified wood |
+
+### Transitional Fossils
+- **Archaeopteryx**: Reptile-bird link (feathers + reptilian teeth, tail)
+- **Tiktaalik**: Fish-amphibian transition
+- **Australopithecus**: Ape-human ancestor
+
+### Homologous Organs
+- Same basic structure, different functions
+- Indicate common ancestry
+- Examples:
+  - Forelimbs: Human arm, whale flipper, bat wing, dog leg
+  - All have humerus, radius, ulna, carpals
+
+### Analogous Organs
+- Similar function, different origin
+- Result of convergent evolution
+- Examples:
+  - Wings of insect vs bird
+  - Eye of octopus vs mammal
+
+### Vestigial Organs
+- Reduced or non-functional organs
+- Evidence of evolutionary past
+- Human examples: Appendix, wisdom teeth, tailbone, ear muscles
+
+## Theories of Evolution
+
+### Lamarckism
+- **Use and Disuse**: Organs develop/degenerate based on use
+- **Inheritance of Acquired Characters**: Acquired traits passed to offspring
+- Example: Giraffe's long neck from stretching
+- **Disproved**: Weismann cut mice tails for 20 generations - no effect on offspring
+
+### Darwin's Natural Selection
+1. **Overproduction**: More offspring than can survive
+2. **Variation**: Individuals differ in traits
+3. **Struggle for Existence**: Competition for resources
+4. **Survival of the Fittest**: Better adapted survive
+5. **Inheritance**: Favorable traits passed on
+6. **Speciation**: New species evolve over time
+
+### Examples of Natural Selection
+- Industrial melanism in peppered moth
+- Antibiotic resistance in bacteria
+- Pesticide resistance in insects
+
+### Modern Synthetic Theory (Neo-Darwinism)
+- Combines Mendelian genetics + Darwinism
+- **Population** is unit of evolution (not individual)
+- Sources of variation:
+  - Gene mutations
+  - Chromosomal mutations
+  - Genetic recombination
+
+## Types of Natural Selection
+1. **Stabilizing**: Favors intermediate phenotype
+2. **Directional**: Favors one extreme
+3. **Disruptive**: Favors both extremes
+
+## Hardy-Weinberg Equilibrium
+- Gene frequencies remain constant if:
+  - Large population
+  - Random mating
+  - No selection
+  - No mutation
+  - No migration
+- Equation: p² + 2pq + q² = 1
+            `,
+            flashcards: [
+              { front: 'What did Miller-Urey experiment prove?', back: 'Proved organic molecules (amino acids) can form from inorganic compounds under primitive earth conditions. Simulated atmosphere of CH₄, NH₃, H₂O, H₂ with electric sparks.' },
+              { front: 'What are homologous organs?', back: 'Organs with same basic structure and origin but different functions due to adaptation. Example: Forelimbs of human, whale, bat, dog. Evidence of common ancestry.' },
+              { front: 'State Darwin\'s theory of natural selection.', back: 'Overproduction → Variation → Struggle for existence → Survival of fittest → Inheritance of favorable traits → Speciation' },
+              { front: 'Why was Lamarckism rejected?', back: 'Weismann\'s experiment: Cut mice tails for 20 generations - offspring still had tails. Acquired characters are not inherited.' },
+              { front: 'What is Archaeopteryx?', back: 'Transitional fossil (link between reptiles and birds). Had feathers like bird but teeth, clawed wings, and bony tail like reptile.' },
+              { front: 'What is genetic drift?', back: 'Random changes in gene frequency in small populations, not due to natural selection. Can lead to loss of genetic variation.' }
+            ],
+            mcqs: [
+              { question: 'Miller-Urey experiment demonstrated formation of:', options: ['DNA', 'Amino acids', 'Proteins', 'Cells'], correctAnswer: 1 },
+              { question: 'Homologous organs indicate:', options: ['Convergent evolution', 'Common ancestry', 'Parallel evolution', 'No relation'], correctAnswer: 1 },
+              { question: 'Who proposed natural selection?', options: ['Lamarck', 'Oparin', 'Darwin', 'Mendel'], correctAnswer: 2 },
+              { question: 'Vestigial organ in humans:', options: ['Heart', 'Appendix', 'Kidney', 'Lung'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'Miller-Urey Setup', content: 'CH₄ + NH₃ + H₂O + H₂ + ⚡ = Amino acids! Proved life chemicals can form naturally 🧪' },
+              { title: 'Homologous vs Analogous', content: 'Homologous: Same origin, different function (arm, flipper) | Analogous: Different origin, same function (insect wing, bird wing) 🦅' },
+              { title: 'Darwin\'s Theory in 5 Words', content: 'Overproduction → Variation → Struggle → Survival → Inheritance 🌿' },
+              { title: 'Human Vestigial Organs', content: 'Appendix + Wisdom teeth + Tailbone + Ear muscles = Evidence of our evolutionary past! 🧬' },
+              { title: 'Lamarck vs Darwin', content: 'Lamarck: Giraffe stretched neck → Got longer (WRONG) | Darwin: Longer necks survived better → More offspring (RIGHT) 🦒' }
+            ]
+          },
+          {
+            id: 'bio-ch5',
+            title: 'Chapter 5: Ecology and Environment',
+            description: 'Organisms and their environment',
+            summary: `
+# Ecology and Environment
+
+## Key Concepts
+
+### Levels of Organization
+1. **Organism** → **Population** → **Community** → **Ecosystem** → **Biome** → **Biosphere**
+
+### Ecosystem
+- Functional unit of nature
+- Biotic (living) + Abiotic (non-living) components
+- Energy flow and nutrient cycling
+
+### Components of Ecosystem
+1. **Abiotic**: Light, temperature, water, soil, minerals
+2. **Biotic**:
+   - Producers (autotrophs)
+   - Consumers (heterotrophs)
+   - Decomposers (saprotrophs)
+
+### Energy Flow
+- Unidirectional flow
+- 10% Law: Only 10% energy transfers to next level
+- Food chain → Food web
+- Trophic levels: Producer → Primary → Secondary → Tertiary consumer
+
+### Ecological Pyramids
+1. **Pyramid of Numbers**: Number of organisms at each level
+2. **Pyramid of Biomass**: Total mass at each level
+3. **Pyramid of Energy**: Always upright, energy at each level
+
+### Biogeochemical Cycles
+1. **Carbon Cycle**: Photosynthesis, respiration, decomposition
+2. **Nitrogen Cycle**: Fixation, nitrification, denitrification
+3. **Water Cycle**: Evaporation, condensation, precipitation
+
+### Environmental Issues
+- **Pollution**: Air, water, soil, noise
+- **Global Warming**: Greenhouse effect, rising temperatures
+- **Ozone Depletion**: CFCs destroying ozone layer
+- **Biodiversity Loss**: Habitat destruction, overexploitation
+            `,
+            detailedNotes: `
+# Detailed Notes: Ecology and Environment
+
+## Ecosystem Structure
+
+### Abiotic Components
+| Factor | Description | Effect |
+|--------|-------------|--------|
+| Light | Energy source | Photosynthesis, behavior |
+| Temperature | Heat levels | Metabolic rate, distribution |
+| Water | Essential for life | Determines habitat type |
+| Soil | Substrate | Nutrient availability |
+
+### Biotic Components
+
+1. **Producers (Autotrophs)**
+   - Make own food
+   - Photosynthetic: Plants, algae, cyanobacteria
+   - Chemosynthetic: Some bacteria
+
+2. **Consumers (Heterotrophs)**
+   - Primary: Herbivores (deer, grasshopper)
+   - Secondary: Carnivores eating herbivores (frog, snake)
+   - Tertiary: Top predators (lion, eagle)
+
+3. **Decomposers (Saprotrophs)**
+   - Break down dead organic matter
+   - Bacteria and fungi
+   - Recycle nutrients
+
+## Energy Flow
+
+### Food Chain
+Producer → Primary Consumer → Secondary Consumer → Tertiary Consumer
+Grass → Grasshopper → Frog → Snake → Eagle
+
+### Food Web
+- Interconnected food chains
+- More realistic representation
+- Provides stability to ecosystem
+
+### 10% Law (Lindeman's Law)
+- Only 10% energy passes to next trophic level
+- 90% lost as heat, respiration, waste
+- Limits food chain length (usually 4-5 levels)
+
+### Energy Calculation
+If producer has 10,000 J energy:
+- Primary consumer: 1,000 J
+- Secondary consumer: 100 J
+- Tertiary consumer: 10 J
+
+## Ecological Pyramids
+
+### Pyramid of Numbers
+- **Upright**: Grassland (many producers, few consumers)
+- **Inverted**: Tree ecosystem (one tree supports many insects)
+
+### Pyramid of Biomass
+- **Upright**: Most terrestrial ecosystems
+- **Inverted**: Aquatic (phytoplankton less mass than zooplankton at any time)
+
+### Pyramid of Energy
+- **Always Upright**: Energy decreases at each level
+- Most reliable pyramid
+
+## Biogeochemical Cycles
+
+### Carbon Cycle
+1. **Photosynthesis**: CO₂ → Organic carbon
+2. **Respiration**: Organic carbon → CO₂
+3. **Decomposition**: Dead matter → CO₂
+4. **Combustion**: Fossil fuels → CO₂
+5. **Ocean absorption**: Atmospheric CO₂ → Dissolved CO₂
+
+### Nitrogen Cycle
+| Process | Organism | Conversion |
+|---------|----------|------------|
+| Nitrogen Fixation | Rhizobium, Azotobacter | N₂ → NH₃ |
+| Nitrification | Nitrosomonas, Nitrobacter | NH₃ → NO₂⁻ → NO₃⁻ |
+| Assimilation | Plants | NO₃⁻ → Organic nitrogen |
+| Ammonification | Decomposers | Organic N → NH₃ |
+| Denitrification | Pseudomonas | NO₃⁻ → N₂ |
+
+## Environmental Issues
+
+### Pollution Types
+1. **Air Pollution**
+   - Sources: Vehicles, industries, burning
+   - Effects: Respiratory diseases, acid rain
+   - Pollutants: CO, SO₂, NOₓ, particulates
+
+2. **Water Pollution**
+   - Sources: Industrial effluents, sewage
+   - Effects: Eutrophication, disease
+   - Indicators: BOD, COD
+
+3. **Soil Pollution**
+   - Sources: Pesticides, fertilizers, waste
+   - Effects: Reduced fertility, bioaccumulation
+
+### Global Warming
+- Greenhouse gases: CO₂, CH₄, N₂O, CFCs
+- Effects:
+  - Rising sea levels
+  - Melting glaciers
+  - Climate change
+  - Species extinction
+
+### Ozone Depletion
+- Ozone layer in stratosphere
+- CFCs release chlorine atoms
+- Each Cl can destroy 100,000 O₃ molecules
+- UV radiation increases
+- Montreal Protocol: Phase out CFCs
+
+### Conservation
+1. **In-situ**: National parks, sanctuaries, biosphere reserves
+2. **Ex-situ**: Zoos, botanical gardens, seed banks, cryopreservation
+            `,
+            flashcards: [
+              { front: 'What is 10% Law?', back: 'Only 10% of energy transfers from one trophic level to the next. 90% is lost as heat, respiration, and waste. Given by Lindeman.' },
+              { front: 'What is nitrogen fixation?', back: 'Conversion of atmospheric N₂ to ammonia (NH₃) by bacteria like Rhizobium (in legume roots) and Azotobacter (free-living).' },
+              { front: 'Why is pyramid of energy always upright?', back: 'Because energy decreases at each successive trophic level due to 10% law. Cannot be inverted like biomass or numbers.' },
+              { front: 'What is eutrophication?', back: 'Excessive nutrient enrichment of water bodies causing algal bloom → O₂ depletion → death of aquatic life. Caused by fertilizer runoff.' },
+              { front: 'What causes ozone depletion?', back: 'CFCs (chlorofluorocarbons) release chlorine in stratosphere. One Cl atom can destroy 100,000 ozone molecules.' },
+              { front: 'Difference between in-situ and ex-situ conservation?', back: 'In-situ: Conservation in natural habitat (parks, sanctuaries). Ex-situ: Conservation outside natural habitat (zoos, seed banks).' }
+            ],
+            mcqs: [
+              { question: 'Primary consumers are:', options: ['Herbivores', 'Carnivores', 'Decomposers', 'Producers'], correctAnswer: 0 },
+              { question: 'Which pyramid is always upright?', options: ['Pyramid of numbers', 'Pyramid of biomass', 'Pyramid of energy', 'All of these'], correctAnswer: 2 },
+              { question: 'Nitrogen fixing bacteria in legumes:', options: ['Nitrobacter', 'Azotobacter', 'Rhizobium', 'Pseudomonas'], correctAnswer: 2 },
+              { question: 'Which gas is major greenhouse gas?', options: ['Oxygen', 'Nitrogen', 'Carbon dioxide', 'Argon'], correctAnswer: 2 }
+            ],
+            reels: [
+              { title: 'Trophic Levels', content: 'Producer (1) → Herbivore (2) → Carnivore (3) → Top Predator (4) | Each level = 10% energy 🌿🦗🐸🐍' },
+              { title: '10% Rule Example', content: '10,000 J → 1,000 J → 100 J → 10 J | That\'s why food chains are short! ⚡' },
+              { title: 'Nitrogen Cycle Steps', content: 'Fix (N₂→NH₃) → Nitrify (NH₃→NO₃⁻) → Assimilate → Ammonify → Denitrify (back to N₂) 🔄' },
+              { title: 'Greenhouse Gases', content: 'CO₂ + CH₄ + N₂O + CFCs = Global Warming | Earth\'s temperature rising! 🌡️🔥' },
+              { title: 'Conservation Types', content: 'In-situ: Parks, Sanctuaries (natural) | Ex-situ: Zoos, Seed banks (artificial) 🦁🌱' }
+            ]
+          }
+        ]
+      },
+      {
+        id: 'it',
+        name: 'Information Technology',
+        icon: 'Monitor',
+        color: 'bg-cyan-500',
+        syllabus: '1. Introduction to IT\n2. HTML & Web Design\n3. JavaScript Basics\n4. Networking & Internet\n5. Cyber Security',
+        paperPattern: '### IT Paper Pattern (50 Marks Theory + 50 Marks Practical)\n\n**Theory:**\n* MCQs (10 Marks)\n* Short Answers (20 Marks)\n* Long Answers (20 Marks)\n\n**Practical:**\n* HTML/CSS (20 Marks)\n* JavaScript (20 Marks)\n* Viva (10 Marks)',
+        previousPapers: ['2024 IT Paper', '2023 IT Paper'],
+        chapters: [
+          {
+            id: 'it-ch1',
+            title: 'Chapter 1: Introduction to IT',
+            description: 'Basics of Information Technology and Computers',
+            summary: `
+# Introduction to Information Technology
+
+## Key Concepts
+
+### What is IT?
+- Collection, storage, processing, and distribution of information
+- Uses computers, networks, software, and electronic devices
+
+### Components of Computer
+1. **Hardware**: Physical components
+   - Input: Keyboard, mouse, scanner
+   - Output: Monitor, printer, speaker
+   - Processing: CPU (Central Processing Unit)
+   - Storage: HDD, SSD, RAM, ROM
+
+2. **Software**: Programs and instructions
+   - System Software: OS (Windows, Linux, macOS)
+   - Application Software: MS Office, browsers, games
+
+### Types of Computers
+- **Supercomputer**: Fastest, weather forecasting (PARAM)
+- **Mainframe**: Large organizations, banks
+- **Minicomputer**: Medium businesses
+- **Microcomputer**: Personal computers, laptops
+- **Mobile**: Smartphones, tablets
+
+### Memory Units
+| Unit | Size |
+|------|------|
+| Bit | 0 or 1 |
+| Byte | 8 bits |
+| KB | 1024 bytes |
+| MB | 1024 KB |
+| GB | 1024 MB |
+| TB | 1024 GB |
+            `,
+            detailedNotes: `
+# Detailed Notes: Introduction to IT
+
+## Computer System Components
+
+### Central Processing Unit (CPU)
+The "brain" of computer, consists of:
+1. **ALU (Arithmetic Logic Unit)**: Mathematical & logical operations
+2. **CU (Control Unit)**: Controls all operations, fetches instructions
+3. **Registers**: Temporary storage in CPU
+
+### Memory Types
+
+#### Primary Memory
+| Type | Features |
+|------|----------|
+| RAM (Random Access Memory) | Volatile, temporary, fast |
+| ROM (Read Only Memory) | Non-volatile, permanent, firmware |
+| Cache | Very fast, between CPU and RAM |
+
+#### Secondary Memory
+- Hard Disk Drive (HDD): Magnetic storage
+- Solid State Drive (SSD): Flash memory, faster
+- Optical: CD, DVD, Blu-ray
+- Flash: Pen drive, SD card
+
+### Input Devices
+1. **Keyboard**: Text input, QWERTY layout
+2. **Mouse**: Pointing device, clicking
+3. **Scanner**: Digitize documents
+4. **Microphone**: Audio input
+5. **Webcam**: Video input
+6. **Barcode Reader**: Reads barcodes
+7. **Touchscreen**: Input + Output
+
+### Output Devices
+1. **Monitor**: Visual display (LCD, LED, OLED)
+2. **Printer**: Hard copy (Inkjet, Laser, Dot matrix)
+3. **Speaker**: Audio output
+4. **Projector**: Large display
+
+## Software Classification
+
+### System Software
+- **Operating System**: Interface between hardware and user
+  - Windows, macOS, Linux, Android, iOS
+- **Device Drivers**: Hardware-specific programs
+- **Utilities**: Antivirus, disk cleanup
+
+### Application Software
+- **Productivity**: MS Office, LibreOffice
+- **Browsers**: Chrome, Firefox, Edge
+- **Media**: VLC, Photoshop
+- **Communication**: Email, Zoom
+
+### Programming Languages
+- **Low Level**: Machine language, Assembly
+- **High Level**: C, C++, Java, Python
+
+## Number Systems
+| System | Base | Digits |
+|--------|------|--------|
+| Binary | 2 | 0, 1 |
+| Octal | 8 | 0-7 |
+| Decimal | 10 | 0-9 |
+| Hexadecimal | 16 | 0-9, A-F |
+
+### Conversions
+- Binary to Decimal: Multiply by powers of 2
+- Decimal to Binary: Divide by 2, take remainders
+            `,
+            flashcards: [
+              { front: 'What are the main components of CPU?', back: 'ALU (Arithmetic Logic Unit) - does calculations, CU (Control Unit) - controls operations, Registers - temporary storage.' },
+              { front: 'Difference between RAM and ROM?', back: 'RAM: Volatile, temporary, read/write, faster. ROM: Non-volatile, permanent, read-only, stores firmware.' },
+              { front: 'What is 1 KB equal to?', back: '1 KB = 1024 bytes. Memory hierarchy: Bit < Byte < KB < MB < GB < TB' },
+              { front: 'What is an Operating System?', back: 'System software that manages hardware and provides interface for users. Examples: Windows, macOS, Linux, Android.' },
+              { front: 'Name types of printers.', back: 'Impact: Dot matrix. Non-impact: Inkjet (color, home use), Laser (fast, office use), Thermal (receipts).' }
+            ],
+            mcqs: [
+              { question: 'Brain of computer is:', options: ['RAM', 'ROM', 'CPU', 'Hard Disk'], correctAnswer: 2 },
+              { question: '1 GB equals:', options: ['1024 MB', '1024 KB', '1024 TB', '1000 MB'], correctAnswer: 0 },
+              { question: 'Which is volatile memory?', options: ['ROM', 'Hard Disk', 'RAM', 'SSD'], correctAnswer: 2 },
+              { question: 'PARAM is a:', options: ['Mainframe', 'Supercomputer', 'Minicomputer', 'Microcomputer'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'CPU Components', content: 'ALU (Math) + CU (Control) + Registers (Storage) = CPU 🧠' },
+              { title: 'Memory Hierarchy', content: 'Bit → Byte → KB → MB → GB → TB | Each = 1024× previous 📊' },
+              { title: 'RAM vs ROM', content: 'RAM: Volatile, Temporary 💨 | ROM: Permanent, Firmware 💾' },
+              { title: 'Computer Types', content: 'Super > Mainframe > Mini > Micro > Mobile | Speed & Size decreases 🖥️📱' }
+            ]
+          },
+          {
+            id: 'it-ch2',
+            title: 'Chapter 2: HTML & Web Design',
+            description: 'Creating web pages with HTML and CSS',
+            summary: `
+# HTML & Web Design
+
+## Key Concepts
+
+### What is HTML?
+- HyperText Markup Language
+- Standard language for creating web pages
+- Uses tags enclosed in < >
+
+### Basic HTML Structure
+\`\`\`html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+  Content here
+</body>
+</html>
+\`\`\`
+
+### Common HTML Tags
+| Tag | Purpose |
+|-----|---------|
+| \`<h1>\` to \`<h6>\` | Headings |
+| \`<p>\` | Paragraph |
+| \`<a href="">\` | Hyperlink |
+| \`<img src="">\` | Image |
+| \`<ul>, <ol>, <li>\` | Lists |
+| \`<table>, <tr>, <td>\` | Tables |
+| \`<form>\` | User input forms |
+| \`<div>, <span>\` | Containers |
+
+### CSS (Cascading Style Sheets)
+- Styles the HTML elements
+- Colors, fonts, layouts
+- Can be inline, internal, or external
+            `,
+            detailedNotes: `
+# Detailed Notes: HTML & Web Design
+
+## HTML Document Structure
+
+### DOCTYPE Declaration
+\`<!DOCTYPE html>\` - Tells browser it's HTML5
+
+### Head Section
+- \`<title>\`: Browser tab title
+- \`<meta>\`: Metadata (charset, viewport)
+- \`<link>\`: External CSS
+- \`<style>\`: Internal CSS
+- \`<script>\`: JavaScript
+
+### Body Section
+Contains visible content
+
+## HTML Tags in Detail
+
+### Text Formatting
+| Tag | Effect |
+|-----|--------|
+| \`<b>\` or \`<strong>\` | Bold |
+| \`<i>\` or \`<em>\` | Italic |
+| \`<u>\` | Underline |
+| \`<br>\` | Line break |
+| \`<hr>\` | Horizontal line |
+
+### Links and Images
+\`\`\`html
+<a href="https://example.com" target="_blank">Link Text</a>
+<img src="image.jpg" alt="Description" width="200">
+\`\`\`
+
+### Lists
+**Unordered (bullets):**
+\`\`\`html
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+\`\`\`
+
+**Ordered (numbers):**
+\`\`\`html
+<ol>
+  <li>First</li>
+  <li>Second</li>
+</ol>
+\`\`\`
+
+### Tables
+\`\`\`html
+<table border="1">
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+  </tr>
+  <tr>
+    <td>Data 1</td>
+    <td>Data 2</td>
+  </tr>
+</table>
+\`\`\`
+
+### Forms
+\`\`\`html
+<form action="submit.php" method="POST">
+  <input type="text" name="username" placeholder="Name">
+  <input type="password" name="pass">
+  <input type="email" name="email">
+  <input type="submit" value="Submit">
+</form>
+\`\`\`
+
+## CSS Basics
+
+### Ways to Apply CSS
+1. **Inline**: \`<p style="color: red;">\`
+2. **Internal**: \`<style>\` in head
+3. **External**: \`<link rel="stylesheet" href="style.css">\`
+
+### CSS Syntax
+\`\`\`css
+selector {
+  property: value;
+}
+\`\`\`
+
+### Common CSS Properties
+| Property | Values |
+|----------|--------|
+| color | red, #FF0000, rgb(255,0,0) |
+| background-color | color values |
+| font-size | 16px, 1em, 100% |
+| font-family | Arial, sans-serif |
+| margin | 10px (outside space) |
+| padding | 10px (inside space) |
+| border | 1px solid black |
+
+### CSS Selectors
+- Element: \`p { }\`
+- Class: \`.classname { }\`
+- ID: \`#idname { }\`
+- Universal: \`* { }\`
+            `,
+            flashcards: [
+              { front: 'What does HTML stand for?', back: 'HyperText Markup Language - standard language for creating web pages using tags.' },
+              { front: 'What is the basic structure of HTML document?', back: '<!DOCTYPE html>, <html>, <head> (title, meta), <body> (content), </html>' },
+              { front: 'How to create a hyperlink in HTML?', back: '<a href="URL">Link Text</a>. Use target="_blank" to open in new tab.' },
+              { front: 'What is CSS used for?', back: 'Cascading Style Sheets - used to style HTML elements (colors, fonts, layouts). Can be inline, internal, or external.' },
+              { front: 'Difference between <div> and <span>?', back: '<div> is block-level (takes full width). <span> is inline (takes only needed width). Both are containers.' }
+            ],
+            mcqs: [
+              { question: 'HTML stands for:', options: ['Hyper Text Making Language', 'HyperText Markup Language', 'High Text Markup Language', 'Hyper Tool Markup Language'], correctAnswer: 1 },
+              { question: 'Which tag creates largest heading?', options: ['<h6>', '<h1>', '<heading>', '<head>'], correctAnswer: 1 },
+              { question: 'CSS stands for:', options: ['Cascading Style Sheets', 'Computer Style Sheets', 'Creative Style System', 'Colorful Style Sheets'], correctAnswer: 0 },
+              { question: 'Which is correct CSS syntax?', options: ['body:color=black', '{body;color:black}', 'body {color: black;}', 'body = color: black'], correctAnswer: 2 }
+            ],
+            reels: [
+              { title: 'HTML Structure', content: '<!DOCTYPE> → <html> → <head> + <body> → </html> 📄' },
+              { title: 'Common Tags', content: '<h1> Heading | <p> Paragraph | <a> Link | <img> Image | <div> Container 🏷️' },
+              { title: 'CSS Ways', content: 'Inline: style="" | Internal: <style> | External: .css file 🎨' },
+              { title: 'CSS Box Model', content: 'Content → Padding → Border → Margin (inside to outside) 📦' }
+            ]
+          },
+          {
+            id: 'it-ch3',
+            title: 'Chapter 3: JavaScript Basics',
+            description: 'Introduction to JavaScript programming',
+            summary: `
+# JavaScript Basics
+
+## Key Concepts
+
+### What is JavaScript?
+- Client-side scripting language
+- Makes web pages interactive
+- Runs in browser
+
+### Adding JavaScript
+1. **Inline**: \`onclick="alert('Hi')"\`
+2. **Internal**: \`<script>\` tag in HTML
+3. **External**: \`<script src="file.js">\`
+
+### Variables
+\`\`\`javascript
+var name = "John";    // old way
+let age = 25;         // block-scoped
+const PI = 3.14;      // constant
+\`\`\`
+
+### Data Types
+- String: \`"Hello"\`
+- Number: \`42, 3.14\`
+- Boolean: \`true, false\`
+- Array: \`[1, 2, 3]\`
+- Object: \`{name: "John", age: 25}\`
+
+### Operators
+- Arithmetic: \`+, -, *, /, %\`
+- Comparison: \`==, ===, !=, <, >\`
+- Logical: \`&&, ||, !\`
+
+### Functions
+\`\`\`javascript
+function greet(name) {
+  return "Hello " + name;
+}
+\`\`\`
+            `,
+            detailedNotes: `
+# Detailed Notes: JavaScript Basics
+
+## Introduction to JavaScript
+
+### Features
+- Interpreted language (no compilation)
+- Case-sensitive
+- Dynamic typing
+- Event-driven programming
+- Object-based
+
+### Adding to HTML
+\`\`\`html
+<!-- Internal -->
+<script>
+  alert("Hello World!");
+</script>
+
+<!-- External -->
+<script src="script.js"></script>
+\`\`\`
+
+## Variables and Data Types
+
+### Variable Declaration
+| Keyword | Scope | Reassign | Redeclare |
+|---------|-------|----------|-----------|
+| var | Function | Yes | Yes |
+| let | Block | Yes | No |
+| const | Block | No | No |
+
+### Data Types
+**Primitive:**
+- String: \`"Hello"\` or \`'Hello'\`
+- Number: \`10\`, \`3.14\`, \`NaN\`, \`Infinity\`
+- Boolean: \`true\`, \`false\`
+- Undefined: Variable declared but not assigned
+- Null: Intentionally empty
+
+**Non-Primitive:**
+- Array: \`let arr = [1, 2, 3];\`
+- Object: \`let obj = {key: value};\`
+
+## Operators
+
+### Arithmetic Operators
+| Operator | Operation |
+|----------|-----------|
+| + | Addition |
+| - | Subtraction |
+| * | Multiplication |
+| / | Division |
+| % | Modulus (remainder) |
+| ++ | Increment |
+| -- | Decrement |
+
+### Comparison Operators
+| Operator | Meaning |
+|----------|---------|
+| == | Equal (value) |
+| === | Strict equal (value + type) |
+| != | Not equal |
+| !== | Strict not equal |
+| > < >= <= | Comparisons |
+
+## Control Structures
+
+### If-Else
+\`\`\`javascript
+if (condition) {
+  // code
+} else if (condition2) {
+  // code
+} else {
+  // code
+}
+\`\`\`
+
+### Switch
+\`\`\`javascript
+switch (value) {
+  case 1: break;
+  case 2: break;
+  default: break;
+}
+\`\`\`
+
+### Loops
+\`\`\`javascript
+// For loop
+for (let i = 0; i < 5; i++) { }
+
+// While loop
+while (condition) { }
+
+// Do-while
+do { } while (condition);
+\`\`\`
+
+## Functions
+
+### Function Declaration
+\`\`\`javascript
+function add(a, b) {
+  return a + b;
+}
+\`\`\`
+
+### Arrow Function (ES6)
+\`\`\`javascript
+const add = (a, b) => a + b;
+\`\`\`
+
+## DOM Manipulation
+
+### Selecting Elements
+\`\`\`javascript
+document.getElementById("id");
+document.getElementsByClassName("class");
+document.querySelector(".class");
+\`\`\`
+
+### Changing Content
+\`\`\`javascript
+element.innerHTML = "New content";
+element.style.color = "red";
+\`\`\`
+
+### Events
+\`\`\`javascript
+element.onclick = function() { };
+element.addEventListener("click", function);
+\`\`\`
+
+Common events: click, mouseover, keydown, submit, load
+            `,
+            flashcards: [
+              { front: 'What is JavaScript used for?', back: 'Client-side scripting language that makes web pages interactive. Runs in browser, handles events, manipulates DOM.' },
+              { front: 'Difference between var, let, and const?', back: 'var: function-scoped, can redeclare. let: block-scoped, can reassign. const: block-scoped, cannot reassign (constant).' },
+              { front: 'Difference between == and ===?', back: '== checks value equality (with type coercion). === checks value AND type equality (strict comparison). Use === preferred.' },
+              { front: 'What is DOM?', back: 'Document Object Model - tree representation of HTML document. JavaScript uses it to access and manipulate page elements.' },
+              { front: 'How to declare a function in JavaScript?', back: 'function name(params) { return value; } or Arrow: const name = (params) => value;' }
+            ],
+            mcqs: [
+              { question: 'JavaScript is a:', options: ['Compiled language', 'Markup language', 'Scripting language', 'Database language'], correctAnswer: 2 },
+              { question: 'Which declares a constant?', options: ['var', 'let', 'const', 'constant'], correctAnswer: 2 },
+              { question: 'Correct way to write array?', options: ['var a = (1,2,3)', 'var a = [1,2,3]', 'var a = {1,2,3}', 'var a = "1,2,3"'], correctAnswer: 1 },
+              { question: 'DOM stands for:', options: ['Document Object Model', 'Data Object Model', 'Document Order Model', 'Digital Object Module'], correctAnswer: 0 }
+            ],
+            reels: [
+              { title: 'JS Data Types', content: 'String | Number | Boolean | Array | Object | Null | Undefined 📝' },
+              { title: 'var vs let vs const', content: 'var: old, function scope | let: new, block scope | const: constant, no change 🔒' },
+              { title: '== vs ===', content: '== Value only (5 == "5" ✓) | === Value + Type (5 === "5" ✗) 🎯' },
+              { title: 'DOM Methods', content: 'getElementById | querySelector | innerHTML | addEventListener 🌳' }
+            ]
+          },
+          {
+            id: 'it-ch4',
+            title: 'Chapter 4: Networking & Internet',
+            description: 'Computer networks and internet concepts',
+            summary: `
+# Networking & Internet
+
+## Key Concepts
+
+### What is a Network?
+- Connected computers sharing resources
+- LAN, WAN, MAN, PAN
+
+### Network Types
+| Type | Range | Example |
+|------|-------|---------|
+| PAN | Few meters | Bluetooth |
+| LAN | Building | Office network |
+| MAN | City | Cable TV network |
+| WAN | Country/World | Internet |
+
+### Network Topologies
+- **Bus**: Single cable, all connected
+- **Star**: Central hub/switch
+- **Ring**: Circular connection
+- **Mesh**: Every device connected
+
+### Internet Basics
+- Global network of networks
+- Uses TCP/IP protocol
+- Services: WWW, Email, FTP
+
+### IP Address
+- Unique address for each device
+- IPv4: 192.168.1.1 (32-bit)
+- IPv6: 128-bit (newer)
+
+### URL Components
+\`https://www.example.com/page.html\`
+- Protocol: https
+- Domain: www.example.com
+- Path: /page.html
+            `,
+            detailedNotes: `
+# Detailed Notes: Networking & Internet
+
+## Computer Networks
+
+### Definition
+Collection of interconnected computers and devices that share resources and communicate with each other.
+
+### Advantages
+- Resource sharing (printers, files)
+- Communication (email, chat)
+- Centralized data management
+- Cost effective
+
+### Network Types
+
+| Type | Full Form | Range | Speed | Example |
+|------|-----------|-------|-------|---------|
+| PAN | Personal Area Network | ~10m | Low | Bluetooth devices |
+| LAN | Local Area Network | Building | High | Office, school |
+| MAN | Metropolitan Area Network | City | Medium | Cable TV |
+| WAN | Wide Area Network | Global | Variable | Internet |
+
+## Network Topologies
+
+### Bus Topology
+- Single backbone cable
+- All devices connected to it
+- Cheap but single point of failure
+- Collision issues
+
+### Star Topology
+- Central switch/hub
+- All devices connect to center
+- Easy to add devices
+- If center fails, all fail
+
+### Ring Topology
+- Circular arrangement
+- Data travels in one direction
+- Token passing method
+- Difficult to troubleshoot
+
+### Mesh Topology
+- Every device connected to every other
+- Highly reliable, redundant
+- Expensive, complex
+
+## Internet Fundamentals
+
+### What is Internet?
+- Network of networks
+- Started as ARPANET (1969)
+- Uses TCP/IP protocol
+
+### Key Terms
+- **WWW**: World Wide Web, collection of websites
+- **HTTP/HTTPS**: Protocol for web pages (S = Secure)
+- **FTP**: File Transfer Protocol
+- **SMTP**: Email sending protocol
+- **DNS**: Domain Name System (converts URL to IP)
+
+### IP Addressing
+
+#### IPv4
+- 32-bit address
+- Format: xxx.xxx.xxx.xxx
+- Example: 192.168.1.1
+- Classes: A, B, C, D, E
+
+#### IPv6
+- 128-bit address
+- Hexadecimal format
+- More addresses available
+
+### URL Structure
+\`\`\`
+https://www.example.com:443/folder/page.html?id=1#section
+|____| |_______________|___| |________________| |___| |_____|
+Protocol    Domain      Port      Path         Query Fragment
+\`\`\`
+
+## Network Devices
+
+| Device | Function |
+|--------|----------|
+| Hub | Broadcasts to all ports |
+| Switch | Sends to specific port (MAC) |
+| Router | Connects different networks (IP) |
+| Modem | Modulator-Demodulator (analog-digital) |
+| Gateway | Connects different protocols |
+| Firewall | Security, filters traffic |
+
+## Network Models
+
+### OSI Model (7 Layers)
+1. Physical
+2. Data Link
+3. Network
+4. Transport
+5. Session
+6. Presentation
+7. Application
+
+**Mnemonic**: Please Do Not Throw Sausage Pizza Away
+
+### TCP/IP Model (4 Layers)
+1. Network Interface
+2. Internet
+3. Transport
+4. Application
+            `,
+            flashcards: [
+              { front: 'What is LAN?', back: 'Local Area Network - network within a building or small area. High speed, private ownership. Example: Office or school network.' },
+              { front: 'What is an IP address?', back: 'Internet Protocol address - unique numerical identifier for each device on network. IPv4: 32-bit (e.g., 192.168.1.1), IPv6: 128-bit.' },
+              { front: 'What is DNS?', back: 'Domain Name System - converts human-readable domain names (google.com) to IP addresses. Like phonebook of internet.' },
+              { front: 'Difference between Hub and Switch?', back: 'Hub: Broadcasts data to all ports (dumb). Switch: Sends data only to intended port using MAC address (smart, efficient).' },
+              { front: 'What are the 7 layers of OSI model?', back: 'Physical, Data Link, Network, Transport, Session, Presentation, Application. Mnemonic: Please Do Not Throw Sausage Pizza Away.' }
+            ],
+            mcqs: [
+              { question: 'LAN stands for:', options: ['Local Access Network', 'Local Area Network', 'Large Area Network', 'Long Area Network'], correctAnswer: 1 },
+              { question: 'Which topology has central hub?', options: ['Bus', 'Ring', 'Star', 'Mesh'], correctAnswer: 2 },
+              { question: 'IP address is:', options: ['8-bit', '16-bit', '32-bit (IPv4)', '64-bit'], correctAnswer: 2 },
+              { question: 'DNS converts:', options: ['IP to MAC', 'Domain to IP', 'MAC to IP', 'IP to Domain'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'Network Types', content: 'PAN (Bluetooth) < LAN (Building) < MAN (City) < WAN (World) 🌐' },
+              { title: 'Star Topology', content: 'All connect to CENTER | Easy to manage | Center fails = All fail ⭐' },
+              { title: 'OSI Layers', content: 'Please Do Not Throw Sausage Pizza Away | 7 layers bottom to top 📚' },
+              { title: 'Hub vs Switch', content: 'Hub: Broadcast to ALL 📢 | Switch: Send to SPECIFIC port 🎯' }
+            ]
+          },
+          {
+            id: 'it-ch5',
+            title: 'Chapter 5: Cyber Security',
+            description: 'Online threats and protection methods',
+            summary: `
+# Cyber Security
+
+## Key Concepts
+
+### What is Cyber Security?
+- Protecting computers, networks, data from attacks
+- Also called Information Security
+
+### Types of Cyber Threats
+1. **Virus**: Self-replicating malicious code
+2. **Worm**: Spreads without host file
+3. **Trojan**: Disguised as legitimate software
+4. **Ransomware**: Encrypts data, demands ransom
+5. **Spyware**: Secretly monitors activity
+6. **Phishing**: Fake emails/websites to steal data
+
+### Protection Methods
+- Antivirus software
+- Firewall
+- Strong passwords
+- Regular updates
+- Backup data
+- Be cautious with links/attachments
+
+### Password Best Practices
+- Minimum 8 characters
+- Mix of uppercase, lowercase, numbers, symbols
+- Don't use personal info
+- Change regularly
+- Use different passwords
+
+### Safe Internet Practices
+- Verify website authenticity (https, padlock)
+- Don't share personal info
+- Avoid public WiFi for banking
+- Log out after use
+            `,
+            detailedNotes: `
+# Detailed Notes: Cyber Security
+
+## Introduction
+
+### Definition
+Cyber security is the practice of protecting systems, networks, and programs from digital attacks.
+
+### Goals (CIA Triad)
+1. **Confidentiality**: Data accessible only to authorized
+2. **Integrity**: Data not altered without permission
+3. **Availability**: Systems accessible when needed
+
+## Types of Malware
+
+| Type | Description | Spread |
+|------|-------------|--------|
+| Virus | Attaches to files, replicates | User action needed |
+| Worm | Self-replicates, spreads alone | Network |
+| Trojan | Disguised as useful software | Downloads |
+| Ransomware | Encrypts files, demands payment | Email, downloads |
+| Spyware | Secretly monitors user | Bundled software |
+| Adware | Shows unwanted ads | Free software |
+| Rootkit | Hides in system, hard to detect | Various |
+
+## Cyber Attacks
+
+### Phishing
+- Fake emails/websites mimicking legitimate ones
+- Goal: Steal login credentials, personal info
+- Prevention: Check URL, don't click suspicious links
+
+### Social Engineering
+- Manipulating people to reveal information
+- Pretexting, baiting, quid pro quo
+- Prevention: Verify identity, be cautious
+
+### DoS/DDoS Attack
+- Denial of Service / Distributed DoS
+- Overwhelms system with requests
+- Makes service unavailable
+
+### Man-in-the-Middle
+- Attacker intercepts communication
+- Can read/modify messages
+- Prevention: Use HTTPS, VPN
+
+### SQL Injection
+- Inserting malicious SQL code
+- Targets databases through web forms
+- Prevention: Input validation
+
+## Protection Measures
+
+### Technical Measures
+1. **Antivirus**: Detects and removes malware
+2. **Firewall**: Filters network traffic
+3. **Encryption**: Scrambles data
+4. **Two-Factor Authentication**: Extra security layer
+5. **VPN**: Secure connection over internet
+6. **Regular Updates**: Patch vulnerabilities
+
+### Password Security
+**Strong Password Rules:**
+- Minimum 12 characters (8 minimum)
+- Uppercase + lowercase letters
+- Numbers and special characters
+- No dictionary words or personal info
+- Unique for each account
+
+**Password Manager:**
+- Stores passwords securely
+- Generates strong passwords
+- Examples: LastPass, 1Password
+
+### Safe Browsing
+- Check for HTTPS (padlock icon)
+- Verify website URL
+- Avoid clicking unknown links
+- Don't download from untrusted sources
+- Be careful on public WiFi
+
+## Cyber Laws in India
+
+### IT Act 2000
+- Legal recognition of electronic documents
+- Digital signatures
+- Cyber crimes and penalties
+
+### Common Cyber Crimes
+| Section | Crime |
+|---------|-------|
+| 43 | Unauthorized access, damage |
+| 66 | Computer hacking |
+| 66A | Offensive messages (struck down) |
+| 66B | Stolen computer/device |
+| 66C | Identity theft |
+| 66D | Cheating by personation |
+| 66E | Violation of privacy |
+| 67 | Publishing obscene content |
+
+### Reporting Cyber Crime
+- Cyber Crime Cell
+- www.cybercrime.gov.in
+- Helpline: 1930
+            `,
+            flashcards: [
+              { front: 'What is the CIA triad in cyber security?', back: 'Confidentiality (only authorized access), Integrity (data not altered), Availability (systems accessible when needed).' },
+              { front: 'Difference between virus and worm?', back: 'Virus: Needs host file, spreads by user action. Worm: No host needed, self-replicates and spreads automatically through network.' },
+              { front: 'What is phishing?', back: 'Fraudulent attempt to obtain sensitive information by disguising as trustworthy entity through fake emails or websites.' },
+              { front: 'What is ransomware?', back: 'Malware that encrypts victim\'s files and demands ransom payment for decryption key. Prevention: Backup, don\'t click unknown links.' },
+              { front: 'What is two-factor authentication?', back: 'Security method requiring two types of verification: something you know (password) + something you have (OTP on phone).' }
+            ],
+            mcqs: [
+              { question: 'Which spreads without user action?', options: ['Virus', 'Worm', 'Trojan', 'Adware'], correctAnswer: 1 },
+              { question: 'CIA in security stands for:', options: ['Computer Internet Access', 'Confidentiality Integrity Availability', 'Central Intelligence Agency', 'Computer Information Architecture'], correctAnswer: 1 },
+              { question: 'Phishing attacks through:', options: ['Direct hacking', 'Fake emails/websites', 'Physical access', 'USB drive'], correctAnswer: 1 },
+              { question: 'IT Act in India was passed in:', options: ['1995', '2000', '2005', '2008'], correctAnswer: 1 }
+            ],
+            reels: [
+              { title: 'CIA Triad', content: 'Confidentiality + Integrity + Availability = Security Goals 🔒' },
+              { title: 'Virus vs Worm', content: 'Virus: Needs host file 📎 | Worm: Spreads alone 🐛' },
+              { title: 'Strong Password', content: '12+ chars + Upper + Lower + Number + Symbol = Strong 💪🔐' },
+              { title: 'Phishing Signs', content: 'Urgent! + Spelling errors + Suspicious link + Too good = SCAM ⚠️' }
+            ]
+          }
+        ]
       },
       ECONOMICS_SUBJECT
     ] 
