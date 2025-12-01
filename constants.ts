@@ -105,24 +105,401 @@ const ECONOMICS_SUBJECT: Subject = {
       id: 'eco1',
       title: '1. Introduction to Micro and Macro Economics',
       description: 'Understanding the two main branches of Economics.',
-      summary: '**Micro Economics**: Study of individual units (Small). \n**Macro Economics**: Study of aggregates (Large). \n\n**Main Concepts**: \n* Micro: Slicing method, Partial Equilibrium. \n* Macro: Lumping method, General Equilibrium.',
-      detailedNotes: '### 1. Micro Economics\nDerived from Greek word "Mikros" meaning small.\nIt studies the behavior of individual economic units.\n\n#### Features of Micro Economics:\n* **Study of Individual Units**: Consumer, Firm.\n* **Price Theory**: Product & Factor Pricing.\n* **Slicing Method**: Splits economy into small parts.\n* **Partial Equilibrium**: Other things being constant (Ceteris Paribus).\n* **Limited Scope**: Does not deal with nationwide problems.\n* **Analysis of Market Structure**: Perfect Competition, Monopoly etc.\n\n### 2. Macro Economics\nDerived from "Makros" meaning large.\nIt deals with the functioning of the economy as a whole.\n\n#### Features of Macro Economics:\n* **Study of Aggregates**: National Income, Total Employment.\n* **Income Theory**: Determination of National Income.\n* **Lumping Method**: Studies the whole forest, not trees.\n* **General Equilibrium**: Interdependence of variables.\n* **Policy Oriented**: Helps in suggesting policies.\n\n### 3. Importance\n* **Micro**: Free Market Economy, Business Decisions, Model Building.\n* **Macro**: National Policy, Economic Fluctuations, Economic Development.',
+      summary: `
+# Introduction to Micro and Macro Economics
+
+## Key Concepts
+
+### What is Economics?
+- **Definition by Adam Smith**: Study of wealth and its creation
+- **Definition by Marshall**: Study of mankind in ordinary business of life
+- **Definition by Robbins**: Science of scarcity and choice
+- **Modern Definition**: Study of how society allocates scarce resources
+
+### Micro Economics (Greek: Mikros = Small)
+- Study of individual units
+- Also called **Price Theory**
+- **Father**: Alfred Marshall
+- Uses **Slicing Method** (divides economy into small parts)
+- **Partial Equilibrium Analysis** (Ceteris Paribus)
+
+### Macro Economics (Greek: Makros = Large)
+- Study of aggregates/economy as whole
+- Also called **Income Theory**
+- **Father**: John Maynard Keynes
+- Uses **Lumping Method** (studies whole economy)
+- **General Equilibrium Analysis**
+
+### Key Terms
+| Micro | Macro |
+|-------|-------|
+| Individual demand | Aggregate demand |
+| Firm's output | National output (GDP) |
+| Product pricing | General price level |
+| Factor pricing | National income |
+| Consumer behavior | Consumption function |
+
+### Scope of Economics
+1. **Consumption**: How consumers maximize satisfaction
+2. **Production**: How firms produce goods
+3. **Exchange**: How goods are bought and sold
+4. **Distribution**: How income is distributed
+5. **Public Finance**: Government revenue and expenditure
+      `,
+      detailedNotes: `
+# Detailed Notes: Introduction to Micro and Macro Economics
+
+## PART A: UNDERSTANDING ECONOMICS
+
+### 1. Origin and Evolution
+- **Ancient Period**: Kautilya's Arthashastra (Economics in India)
+- **Classical Period**: Adam Smith's "Wealth of Nations" (1776)
+- **Neo-Classical**: Alfred Marshall's "Principles of Economics" (1890)
+- **Modern**: Keynes' "General Theory" (1936)
+
+### 2. Definitions of Economics
+
+#### A. Wealth Definition (Adam Smith - 1776)
+- Economics is the study of nature and causes of wealth of nations
+- Focus: How to increase national wealth
+- **Criticism**: Too materialistic, ignores human welfare
+
+#### B. Welfare Definition (Alfred Marshall - 1890)
+- "Study of mankind in the ordinary business of life"
+- Economics examines how man earns income and uses it
+- Focus: Material welfare
+- **Criticism**: Only material welfare, ignores non-material
+
+#### C. Scarcity Definition (Lionel Robbins - 1932)
+- "Science which studies human behavior as a relationship between ends and scarce means which have alternative uses"
+- Key elements:
+  - Unlimited wants
+  - Limited resources
+  - Alternative uses
+  - Choice and prioritization
+- **Criticism**: Ignores macro problems like unemployment
+
+#### D. Growth Definition (Paul Samuelson - Modern)
+- "Study of how people and society choose to employ scarce resources that could have alternative uses"
+- Includes: Growth, development, dynamics
+
+### 3. Nature of Economics
+
+| Scientific | Art |
+|------------|-----|
+| Systematic body of knowledge | Practical application |
+| Uses scientific methods | Problem solving |
+| Cause-effect relationships | Policy making |
+| Verifiable theories | Implementation |
+
+**Conclusion**: Economics is both a Science and an Art
+
+### 4. Economics as Science
+
+#### Positive Economics
+- "What is" - Descriptive
+- Value-free statements
+- Can be verified
+- Example: "Inflation is 5%"
+
+#### Normative Economics
+- "What ought to be" - Prescriptive
+- Value judgments
+- Cannot be verified scientifically
+- Example: "Inflation should be reduced"
+
+---
+
+## PART B: MICRO ECONOMICS
+
+### 1. Definition
+The branch of economics that studies the behavior of individual economic units like consumers, firms, and factor owners.
+
+### 2. Characteristics of Micro Economics
+
+#### a) Study of Individual Units
+- Individual consumer behavior
+- Individual firm's decisions
+- Individual market analysis
+- Individual factor pricing
+
+#### b) Price Theory
+- Determination of prices of goods and services
+- Product pricing in different markets
+- Factor pricing (wages, rent, interest, profit)
+
+#### c) Slicing Method
+- Divides economy into small segments
+- Studies each segment separately
+- "Cannot see the forest for the trees"
+
+#### d) Partial Equilibrium
+- "Other things remaining constant" (Ceteris Paribus)
+- Assumes other variables don't change
+- Isolates one variable at a time
+
+#### e) Marginalism
+- Uses marginal concepts
+- Marginal utility, Marginal cost, Marginal revenue
+- Decision-making at the margin
+
+### 3. Scope of Micro Economics
+
+| Area | What it Studies |
+|------|-----------------|
+| Theory of Consumer Behavior | Utility analysis, Indifference curves, Consumer equilibrium |
+| Theory of Producer Behavior | Production function, Cost curves, Profit maximization |
+| Theory of Product Pricing | Price determination in Perfect competition, Monopoly, etc. |
+| Theory of Factor Pricing | Determination of wages, rent, interest, profit |
+| Theory of Economic Welfare | Pareto optimality, Market efficiency |
+
+### 4. Importance of Micro Economics
+
+1. **Understanding Market Mechanism**: How prices are determined
+2. **Business Decision Making**: Pricing, output, investment decisions
+3. **Resource Allocation**: How resources are distributed
+4. **Policy Formulation**: Tax policy, price controls
+5. **Welfare Economics**: Maximizing social welfare
+6. **International Trade**: Understanding comparative advantage
+
+### 5. Limitations of Micro Economics
+
+1. **Unrealistic Assumptions**: Ceteris paribus rarely holds
+2. **Ignores Aggregates**: Cannot explain economy-wide problems
+3. **Full Employment Assumption**: Assumes resources fully employed
+4. **Static Analysis**: Does not consider time changes
+5. **Neglects Macro Problems**: Unemployment, inflation ignored
+
+---
+
+## PART C: MACRO ECONOMICS
+
+### 1. Definition
+The branch of economics that studies the economy as a whole, including aggregate output, employment, price levels, and growth.
+
+### 2. Origin of Macro Economics
+- **The Great Depression (1929-1933)**: Classical economics failed
+- **J.M. Keynes (1936)**: "General Theory of Employment, Interest and Money"
+- Keynes is called **Father of Modern Macro Economics**
+
+### 3. Characteristics of Macro Economics
+
+#### a) Study of Aggregates
+- National Income (GDP, GNP)
+- Aggregate Demand and Supply
+- General Price Level
+- Total Employment
+
+#### b) Income Theory
+- Determination of national income
+- Consumption and saving functions
+- Investment and multiplier
+
+#### c) Lumping Method
+- Studies economy as a whole
+- "Sees the forest, not individual trees"
+- Aggregative approach
+
+#### d) General Equilibrium
+- All markets simultaneously in equilibrium
+- Interdependence of all economic variables
+- No isolation of variables
+
+#### e) Policy Oriented
+- Fiscal policy recommendations
+- Monetary policy suggestions
+- Economic planning guidance
+
+### 4. Scope of Macro Economics
+
+| Area | What it Studies |
+|------|-----------------|
+| National Income Analysis | GDP, GNP, NNP, Per Capita Income |
+| Employment Theory | Causes of unemployment, Full employment |
+| Money and Banking | Money supply, Credit creation, Central banking |
+| Price Level Theory | Inflation, Deflation, Price stability |
+| Trade Cycle Theory | Boom, Recession, Depression, Recovery |
+| Economic Growth | Growth models, Development strategies |
+| International Trade | Balance of payments, Exchange rates |
+
+### 5. Importance of Macro Economics
+
+1. **Understanding Economy's Functioning**: How overall economy works
+2. **Economic Policies**: Fiscal, monetary, trade policies
+3. **Solving Macro Problems**: Unemployment, inflation, poverty
+4. **Economic Planning**: Five-year plans, growth targets
+5. **International Comparisons**: Comparing economies
+6. **Business Forecasting**: Predicting economic trends
+
+### 6. Limitations of Macro Economics
+
+1. **Ignores Individual Differences**: Averages can be misleading
+2. **Aggregate Fallacy**: What's true for whole may not be true for parts
+3. **Statistical Difficulties**: Data collection problems
+4. **Heterogeneous Units**: Aggregating diverse items
+5. **Excessive Generalization**: Over-simplification of complex reality
+
+---
+
+## PART D: COMPARISON
+
+### Micro vs Macro Economics
+
+| Basis | Micro Economics | Macro Economics |
+|-------|-----------------|-----------------|
+| **Meaning** | Study of individual units | Study of aggregates |
+| **Also Called** | Price Theory | Income Theory |
+| **Method** | Slicing method | Lumping method |
+| **Equilibrium** | Partial equilibrium | General equilibrium |
+| **Scope** | Individual markets | Entire economy |
+| **Objective** | Price determination | Income determination |
+| **Assumption** | Full employment | Under-employment possible |
+| **Example** | Demand for rice | Aggregate demand |
+| **Father** | Alfred Marshall | J.M. Keynes |
+| **Approach** | Bottom-up | Top-down |
+
+### Interdependence
+
+1. **Micro is base for Macro**: National income = Sum of individual incomes
+2. **Macro affects Micro**: Inflation affects individual prices
+3. **Both are complementary**: Neither complete without other
+4. **Policy needs both**: Effective policy requires both approaches
+
+---
+
+## PART E: BASIC ECONOMIC CONCEPTS
+
+### 1. Scarcity and Choice
+- Resources are limited
+- Wants are unlimited
+- Must make choices
+- Every choice has opportunity cost
+
+### 2. Opportunity Cost
+- Value of next best alternative foregone
+- Real cost of any decision
+- Example: If you choose college, opportunity cost is the job income foregone
+
+### 3. Production Possibility Curve (PPC)
+- Shows maximum combinations of two goods
+- Illustrates scarcity and choice
+- Bowed outward due to increasing opportunity cost
+- Points on curve: Efficient
+- Points inside: Inefficient
+- Points outside: Unattainable
+
+### 4. Economic Systems
+
+| Capitalist | Socialist | Mixed |
+|------------|-----------|-------|
+| Private ownership | State ownership | Both private and public |
+| Price mechanism | Central planning | Both mechanisms |
+| Profit motive | Social welfare | Both motives |
+| USA, UK | Cuba, N. Korea | India, France |
+
+### 5. Central Problems of Economy
+1. **What to produce?**: Which goods, how much quantity
+2. **How to produce?**: Labor-intensive or Capital-intensive
+3. **For whom to produce?**: Distribution of national product
+4. **Economic efficiency**: Are resources used optimally?
+5. **Full employment**: Are all resources employed?
+6. **Economic growth**: Is the economy growing?
+      `,
       flashcards: [
         { id: 'f1', front: 'Micro Economics derived from?', back: 'Greek word "Mikros" meaning Small/Millionth part.' },
         { id: 'f2', front: 'Macro Economics derived from?', back: 'Greek word "Makros" meaning Large/Aggregate.' },
         { id: 'f3', front: 'Father of Economics?', back: 'Adam Smith (Wealth of Nations - 1776).' },
-        { id: 'f4', front: 'Coined terms Micro & Macro?', back: 'Ragnar Frisch (Oslo University) in 1933.' }
+        { id: 'f4', front: 'Coined terms Micro & Macro?', back: 'Ragnar Frisch (Oslo University) in 1933.' },
+        { id: 'f5', front: 'Father of Micro Economics?', back: 'Alfred Marshall - author of "Principles of Economics" (1890).' },
+        { id: 'f6', front: 'Father of Macro Economics?', back: 'John Maynard Keynes - author of "General Theory" (1936).' },
+        { id: 'f7', front: 'What is Ceteris Paribus?', back: 'Latin phrase meaning "Other things remaining constant" - used in Micro Economics.' },
+        { id: 'f8', front: 'Micro Economics is also called?', back: 'Price Theory - because it deals with determination of prices.' },
+        { id: 'f9', front: 'Macro Economics is also called?', back: 'Income Theory - because it deals with national income determination.' },
+        { id: 'f10', front: 'What is Slicing Method?', back: 'Method used in Micro Economics - divides economy into small parts for study.' },
+        { id: 'f11', front: 'What is Lumping Method?', back: 'Method used in Macro Economics - studies economy as a whole/aggregate.' },
+        { id: 'f12', front: 'Define Scarcity Definition of Economics.', back: 'Given by Robbins - Economics is science of scarcity and choice between unlimited wants and limited resources.' },
+        { id: 'f13', front: 'What is Opportunity Cost?', back: 'Value of the next best alternative foregone when making a choice.' },
+        { id: 'f14', front: 'What is PPC?', back: 'Production Possibility Curve - shows maximum combinations of two goods an economy can produce.' },
+        { id: 'f15', front: 'What is Positive Economics?', back: '"What is" - Factual, value-free statements that can be verified.' },
+        { id: 'f16', front: 'What is Normative Economics?', back: '"What ought to be" - Value judgments and opinions about economic policy.' },
+        { id: 'f17', front: 'What caused the birth of Macro Economics?', back: 'The Great Depression (1929-1933) - Classical economics failed to explain mass unemployment.' },
+        { id: 'f18', front: 'What is Partial Equilibrium?', back: 'Analysis of one market in isolation, assuming other markets unchanged. Used in Micro Economics.' },
+        { id: 'f19', front: 'What is General Equilibrium?', back: 'Simultaneous equilibrium in all markets, considering interdependence. Used in Macro Economics.' },
+        { id: 'f20', front: 'Name 3 central problems of economy.', back: '1) What to produce? 2) How to produce? 3) For whom to produce?' },
+        { id: 'f21', front: 'What is Wealth Definition of Economics?', back: 'Given by Adam Smith - Economics is the study of nature and causes of wealth of nations.' },
+        { id: 'f22', front: 'What is Welfare Definition of Economics?', back: 'Given by Marshall - Study of mankind in ordinary business of life, focusing on material welfare.' },
+        { id: 'f23', front: 'What is Growth Definition of Economics?', back: 'Given by Samuelson - Study of how society chooses to employ scarce resources with alternative uses.' },
+        { id: 'f24', front: 'Is Economics a Science or Art?', back: 'Both! Science (systematic knowledge) and Art (practical application).' },
+        { id: 'f25', front: 'What is Capitalism?', back: 'Economic system with private ownership, price mechanism, profit motive. Examples: USA, UK.' },
+        { id: 'f26', front: 'What is Socialism?', back: 'Economic system with state ownership, central planning, social welfare. Examples: Cuba, North Korea.' },
+        { id: 'f27', front: 'What is Mixed Economy?', back: 'Combination of capitalism and socialism, both private and public sectors. Examples: India, France.' },
+        { id: 'f28', front: 'What is Arthashastra?', back: 'Ancient Indian treatise on economics by Kautilya (Chanakya), advisor to Chandragupta Maurya.' },
+        { id: 'f29', front: 'What year was "Principles of Economics" published?', back: '1890 - by Alfred Marshall.' },
+        { id: 'f30', front: 'What is the shape of PPC and why?', back: 'Concave to origin (bowed outward) due to increasing opportunity cost.' }
       ],
       mcqs: [
         { id: 'q1', question: 'Micro economics is a _______ equilibrium analysis.', options: ['Partial', 'General', 'Total', 'Multi'], correctIndex: 0, explanation: 'Micro economics assumes "other things constant" and isolates a single unit.' },
-        { id: 'q2', question: 'Macro economics uses ______ method.', options: ['Slicing', 'Lumping', 'Cutting', 'Dividing'], correctIndex: 1, explanation: 'Macro studies the economy as a whole lump.' }
+        { id: 'q2', question: 'Macro economics uses ______ method.', options: ['Slicing', 'Lumping', 'Cutting', 'Dividing'], correctIndex: 1, explanation: 'Macro studies the economy as a whole lump.' },
+        { id: 'q3', question: 'Who is the Father of Economics?', options: ['Keynes', 'Marshall', 'Adam Smith', 'Robbins'], correctIndex: 2, explanation: 'Adam Smith wrote "Wealth of Nations" in 1776.' },
+        { id: 'q4', question: 'Terms Micro and Macro were coined by:', options: ['Marshall', 'Keynes', 'Ragnar Frisch', 'Adam Smith'], correctIndex: 2, explanation: 'Ragnar Frisch coined these terms in 1933.' },
+        { id: 'q5', question: 'Micro Economics is also called:', options: ['Income Theory', 'Price Theory', 'Welfare Theory', 'Growth Theory'], correctIndex: 1, explanation: 'Because it deals with price determination of goods and factors.' },
+        { id: 'q6', question: 'Father of Modern Macro Economics is:', options: ['Marshall', 'J.M. Keynes', 'Adam Smith', 'Robbins'], correctIndex: 1, explanation: 'Keynes wrote "General Theory" in 1936.' },
+        { id: 'q7', question: 'Scarcity definition of Economics was given by:', options: ['Marshall', 'Keynes', 'Robbins', 'Adam Smith'], correctIndex: 2, explanation: 'Lionel Robbins defined economics in terms of scarcity in 1932.' },
+        { id: 'q8', question: '"Wealth of Nations" was written in:', options: ['1776', '1890', '1932', '1936'], correctIndex: 0, explanation: 'Adam Smith published it in 1776.' },
+        { id: 'q9', question: 'Ceteris Paribus means:', options: ['Everything changes', 'Other things constant', 'All things equal', 'Nothing constant'], correctIndex: 1, explanation: 'Latin phrase used in Micro Economics.' },
+        { id: 'q10', question: 'General Equilibrium is feature of:', options: ['Micro Economics', 'Macro Economics', 'Both', 'Neither'], correctIndex: 1, explanation: 'Macro Economics studies interdependence of all variables.' },
+        { id: 'q11', question: 'Study of national income is part of:', options: ['Micro Economics', 'Macro Economics', 'Both', 'Neither'], correctIndex: 1, explanation: 'National income is an aggregate concept studied in Macro.' },
+        { id: 'q12', question: 'Welfare definition was given by:', options: ['Adam Smith', 'Marshall', 'Robbins', 'Keynes'], correctIndex: 1, explanation: 'Alfred Marshall gave the welfare definition in 1890.' },
+        { id: 'q13', question: 'The Great Depression occurred in:', options: ['1919-1923', '1929-1933', '1939-1945', '1950-1955'], correctIndex: 1, explanation: 'The Great Depression led to birth of Macro Economics.' },
+        { id: 'q14', question: '"General Theory" was written by:', options: ['Adam Smith', 'Marshall', 'Keynes', 'Robbins'], correctIndex: 2, explanation: 'J.M. Keynes wrote it in 1936.' },
+        { id: 'q15', question: 'Production Possibility Curve is:', options: ['Convex to origin', 'Concave to origin', 'Straight line', 'Horizontal line'], correctIndex: 1, explanation: 'PPC is concave due to increasing opportunity cost.' },
+        { id: 'q16', question: 'Opportunity cost is also called:', options: ['Money cost', 'Real cost', 'Transfer cost', 'Fixed cost'], correctIndex: 2, explanation: 'It represents what is sacrificed or transferred.' },
+        { id: 'q17', question: 'India follows which economic system?', options: ['Capitalism', 'Socialism', 'Mixed economy', 'Traditional economy'], correctIndex: 2, explanation: 'India has both public and private sectors.' },
+        { id: 'q18', question: 'Positive Economics deals with:', options: ['What ought to be', 'What is', 'Value judgments', 'Opinions'], correctIndex: 1, explanation: 'Positive economics is factual and value-free.' },
+        { id: 'q19', question: 'Normative Economics deals with:', options: ['Facts only', 'What ought to be', 'Scientific laws', 'Observations'], correctIndex: 1, explanation: 'Normative economics involves value judgments.' },
+        { id: 'q20', question: '"How to produce" is a problem of:', options: ['Consumption', 'Distribution', 'Production technique', 'Exchange'], correctIndex: 2, explanation: 'It asks whether to use labor-intensive or capital-intensive methods.' },
+        { id: 'q21', question: 'Arthashastra was written by:', options: ['Adam Smith', 'Kautilya', 'Marshall', 'Keynes'], correctIndex: 1, explanation: 'Kautilya (Chanakya) wrote this ancient Indian economics text.' },
+        { id: 'q22', question: 'Micro Economics studies:', options: ['Aggregates', 'Individual units', 'National income', 'General price level'], correctIndex: 1, explanation: 'Micro studies individual consumers, firms, markets.' },
+        { id: 'q23', question: 'Macro Economics does NOT study:', options: ['GDP', 'Inflation', 'Individual consumer', 'Unemployment'], correctIndex: 2, explanation: 'Individual consumer behavior is studied in Micro.' },
+        { id: 'q24', question: 'Points inside PPC indicate:', options: ['Efficiency', 'Inefficiency', 'Full employment', 'Maximum output'], correctIndex: 1, explanation: 'Points inside PPC show underutilization of resources.' },
+        { id: 'q25', question: 'Points on PPC indicate:', options: ['Inefficiency', 'Unattainable', 'Full efficiency', 'Unemployment'], correctIndex: 2, explanation: 'Points on the curve represent efficient use of all resources.' },
+        { id: 'q26', question: 'Points outside PPC are:', options: ['Efficient', 'Inefficient', 'Currently unattainable', 'Optimal'], correctIndex: 2, explanation: 'They represent output beyond current capacity.' },
+        { id: 'q27', question: 'The book "Principles of Economics" was written by:', options: ['Adam Smith', 'Marshall', 'Keynes', 'Robbins'], correctIndex: 1, explanation: 'Alfred Marshall wrote it in 1890.' },
+        { id: 'q28', question: 'Which is NOT a central problem of economy?', options: ['What to produce', 'How to produce', 'When to produce', 'For whom to produce'], correctIndex: 2, explanation: 'The three basic problems are What, How, and For Whom.' },
+        { id: 'q29', question: 'Capitalism is characterized by:', options: ['State ownership', 'Central planning', 'Private ownership', 'No profit motive'], correctIndex: 2, explanation: 'Capitalism features private ownership and profit motive.' },
+        { id: 'q30', question: 'Economics is called "Science of Scarcity" by:', options: ['Smith', 'Marshall', 'Robbins', 'Keynes'], correctIndex: 2, explanation: 'Robbins emphasized scarcity and choice in his 1932 definition.' }
       ],
       reels: [
         { id: 'r1', title: 'Micro vs Macro', content: 'Micro = Tree (Individual)\nMacro = Forest (Aggregate)', color: getReelColor(0) },
         { id: 'r2', title: 'Ragnar Frisch', content: 'Coined "Micro" and "Macro" in 1933.', color: getReelColor(1) },
         { id: 'r3', title: 'Adam Smith', content: 'Father of Economics.\nBook: Wealth of Nations (1776).', color: getReelColor(2) },
         { id: 'r4', title: 'Price Theory', content: 'Micro Economics is also called Price Theory.', color: getReelColor(3) },
-        { id: 'r5', title: 'Income Theory', content: 'Macro Economics is also called Income Theory.', color: getReelColor(4) }
+        { id: 'r5', title: 'Income Theory', content: 'Macro Economics is also called Income Theory.', color: getReelColor(4) },
+        { id: 'r6', title: 'Marshall', content: 'Father of Micro Economics\nPrinciples of Economics (1890)', color: getReelColor(5) },
+        { id: 'r7', title: 'Keynes', content: 'Father of Macro Economics\nGeneral Theory (1936)', color: getReelColor(6) },
+        { id: 'r8', title: 'Ceteris Paribus', content: 'Other things constant\nUsed in Micro Analysis', color: getReelColor(7) },
+        { id: 'r9', title: 'Slicing Method', content: 'Micro: Cuts economy into parts\nStudies each part separately', color: getReelColor(8) },
+        { id: 'r10', title: 'Lumping Method', content: 'Macro: Studies whole economy\nAggregate approach', color: getReelColor(9) },
+        { id: 'r11', title: 'Robbins Definition', content: 'Scarcity + Choice\nUnlimited wants, Limited resources', color: getReelColor(0) },
+        { id: 'r12', title: 'Opportunity Cost', content: 'Value of next best alternative\nReal cost of choice', color: getReelColor(1) },
+        { id: 'r13', title: 'PPC Shape', content: 'Bowed outward (concave)\nDue to increasing opportunity cost', color: getReelColor(2) },
+        { id: 'r14', title: 'Positive vs Normative', content: 'Positive: What IS\nNormative: What SHOULD BE', color: getReelColor(3) },
+        { id: 'r15', title: 'Central Problems', content: 'What? How? For Whom?\nEvery economy faces these', color: getReelColor(4) },
+        { id: 'r16', title: 'Great Depression', content: '1929-1933\nBirth of Macro Economics\nClassical theory failed', color: getReelColor(5) },
+        { id: 'r17', title: 'Wealth Definition', content: 'Adam Smith (1776)\nStudy of wealth creation\nCriticized: Too materialistic', color: getReelColor(6) },
+        { id: 'r18', title: 'Welfare Definition', content: 'Marshall (1890)\nOrdinary business of life\nMaterial welfare focus', color: getReelColor(7) },
+        { id: 'r19', title: 'Scarcity Definition', content: 'Robbins (1932)\nEnds are many, means are scarce\nChoice is necessary', color: getReelColor(8) },
+        { id: 'r20', title: 'Growth Definition', content: 'Samuelson (Modern)\nDynamic, includes growth\nMost comprehensive', color: getReelColor(9) },
+        { id: 'r21', title: 'Economics: Science', content: 'Systematic study\nCause-effect relationship\nVerifiable laws', color: getReelColor(0) },
+        { id: 'r22', title: 'Economics: Art', content: 'Practical application\nPolicy making\nProblem solving', color: getReelColor(1) },
+        { id: 'r23', title: 'Capitalism', content: 'Private ownership\nPrice mechanism\nProfit motive\nUSA, UK', color: getReelColor(2) },
+        { id: 'r24', title: 'Socialism', content: 'State ownership\nCentral planning\nSocial welfare\nCuba', color: getReelColor(3) },
+        { id: 'r25', title: 'Mixed Economy', content: 'Both private + public\nBoth mechanisms\nIndia, France', color: getReelColor(4) },
+        { id: 'r26', title: 'PPC Points', content: 'ON curve: Efficient\nINSIDE: Inefficient\nOUTSIDE: Unattainable', color: getReelColor(5) },
+        { id: 'r27', title: 'Partial Equilibrium', content: 'Micro Economics\nOne market isolated\nCeteris Paribus', color: getReelColor(6) },
+        { id: 'r28', title: 'General Equilibrium', content: 'Macro Economics\nAll markets together\nInterdependence', color: getReelColor(7) },
+        { id: 'r29', title: 'Arthashastra', content: 'Kautilya (Chanakya)\nAncient Indian Economics\nMaurya Empire advisor', color: getReelColor(8) },
+        { id: 'r30', title: 'Key Years to Remember', content: '1776: Wealth of Nations\n1890: Marshall\n1932: Robbins\n1936: Keynes', color: getReelColor(9) }
       ]
     },
     {
@@ -132,26 +509,100 @@ const ECONOMICS_SUBJECT: Subject = {
       summary: '**Utility**: Satisfaction derived from consumption.\n**Types**: Total Utility (TU), Marginal Utility (MU).\n**Laws**: Law of DMU, Law of Equi-Marginal Utility.',
       detailedNotes: '### 1. Concept of Utility\n**Utility** = Want satisfying power of a commodity.\nIt is subjective - varies person to person.\n\n### 2. Types of Utility\n* **Total Utility (TU)**: Sum of all utilities from all units consumed.\n* **Marginal Utility (MU)**: Utility from consuming ONE additional unit.\n* **Formula**: MU = TUn - TUn-1 OR MU = ΔTU/ΔQ\n\n### 3. Law of Diminishing Marginal Utility (DMU)\n**Statement**: As consumption increases, MU decreases (other things constant).\n**Assumptions**: Homogeneous units, Continuous consumption, No time gap, Normal consumer.\n**Exceptions**: Hobbies (Stamp collecting), Misers (Money), Drunkards.\n\n### 4. Cardinal Utility\n* Utility can be measured in numbers (Utils).\n* Given by Alfred Marshall.\n* Used in Law of DMU, Equi-Marginal Utility.\n\n### 5. Ordinal Utility\n* Utility can only be ranked (1st, 2nd, 3rd...).\n* Given by Hicks and Allen.\n* Used in Indifference Curve Analysis.\n\n### 6. Law of Equi-Marginal Utility\n**Statement**: Consumer maximizes satisfaction when MU per rupee spent is equal for all goods.\n**Formula**: MUx/Px = MUy/Py = MUm (Marginal Utility of Money)',
       flashcards: [
-        { id: 'f1', front: 'What is Utility?', back: 'Want satisfying power of a commodity.' },
-        { id: 'f2', front: 'Formula for MU?', back: 'MU = TUn - TUn-1 OR MU = ΔTU/ΔQ' },
-        { id: 'f3', front: 'Cardinal Utility given by?', back: 'Alfred Marshall.' },
-        { id: 'f4', front: 'Ordinal Utility given by?', back: 'J.R. Hicks and R.G.D. Allen.' },
-        { id: 'f5', front: 'When is TU maximum?', back: 'When MU = 0 (Point of Satiety).' }
+        { id: 'f1', front: 'What is Utility?', back: 'Want satisfying power of a commodity. It is the ability of a good to satisfy human wants.' },
+        { id: 'f2', front: 'Formula for Marginal Utility (MU)?', back: 'MU = TUn - TUn-1 OR MU = ΔTU/ΔQ (Change in TU divided by change in Quantity)' },
+        { id: 'f3', front: 'Who introduced Cardinal Utility?', back: 'Alfred Marshall - the neo-classical economist who believed utility can be measured in numbers (Utils).' },
+        { id: 'f4', front: 'Who introduced Ordinal Utility?', back: 'J.R. Hicks and R.G.D. Allen - they believed utility can only be ranked (1st, 2nd, 3rd) not measured.' },
+        { id: 'f5', front: 'When is Total Utility (TU) maximum?', back: 'When Marginal Utility (MU) = 0. This is called the Point of Satiety or Saturation Point.' },
+        { id: 'f6', front: 'What is Total Utility (TU)?', back: 'Sum total of utilities derived from consumption of all units of a commodity. TU = Σ MU.' },
+        { id: 'f7', front: 'What is Marginal Utility (MU)?', back: 'Additional utility derived from consuming ONE more unit of a commodity. It is the change in TU.' },
+        { id: 'f8', front: 'State the Law of Diminishing Marginal Utility.', back: 'As more units of a commodity are consumed, the utility derived from each successive unit goes on decreasing, other things remaining constant.' },
+        { id: 'f9', front: 'Who propounded the Law of DMU?', back: 'German economist H.H. Gossen (First law of Gossen). Also developed by Alfred Marshall.' },
+        { id: 'f10', front: 'What are the assumptions of Law of DMU?', back: '1. Homogeneous units 2. Continuous consumption 3. No time gap 4. Constant income 5. Normal consumer 6. Standard units' },
+        { id: 'f11', front: 'What happens when MU becomes negative?', back: 'Total Utility (TU) starts falling/decreasing. This indicates over-consumption or disutility.' },
+        { id: 'f12', front: 'What is Point of Satiety?', back: 'The point where TU is maximum and MU = 0. Consumer is fully satisfied and does not want more.' },
+        { id: 'f13', front: 'Name 3 exceptions to Law of DMU.', back: '1. Hobbies (stamp/coin collecting) 2. Misers (for money) 3. Drunkards (for alcohol) 4. Music lovers 5. Knowledge seekers' },
+        { id: 'f14', front: 'What is the relationship between TU and MU?', back: 'When MU > 0, TU rises. When MU = 0, TU is maximum. When MU < 0, TU falls.' },
+        { id: 'f15', front: 'What is Cardinal measurement of utility?', back: 'Utility measured in absolute numbers called Utils. E.g., Apple gives 10 utils, Orange gives 8 utils.' },
+        { id: 'f16', front: 'What is Ordinal measurement of utility?', back: 'Utility expressed in ranks/order. E.g., Apple is preferred to Orange (1st rank > 2nd rank). Cannot say "how much more".' },
+        { id: 'f17', front: 'What is Law of Equi-Marginal Utility?', back: 'Consumer gets maximum satisfaction when MU per rupee spent on all goods is equal: MUx/Px = MUy/Py = MUm' },
+        { id: 'f18', front: 'Who gave the Law of Equi-Marginal Utility?', back: 'H.H. Gossen (Second Law of Gossen). Also called Law of Substitution or Law of Maximum Satisfaction.' },
+        { id: 'f19', front: 'What is Marginal Utility of Money (MUm)?', back: 'The additional satisfaction derived from spending one more rupee. Marshall assumed MUm to be constant.' },
+        { id: 'f20', front: 'What is Consumer Equilibrium in Cardinal approach?', back: 'Consumer is in equilibrium when MUx/Px = MUy/Py = MUm. No reallocation of spending can increase satisfaction.' },
+        { id: 'f21', front: 'What is Utils?', back: 'Imaginary unit to measure utility in cardinal approach. E.g., 1 apple = 10 utils of satisfaction.' },
+        { id: 'f22', front: 'Why is utility subjective?', back: 'Because satisfaction varies from person to person. Same good gives different utility to different individuals.' },
+        { id: 'f23', front: 'Difference between Utility and Usefulness?', back: 'Utility = want satisfaction (even harmful goods have utility). Usefulness = beneficial quality only.' },
+        { id: 'f24', front: 'What is Initial Utility?', back: 'Utility derived from the first unit of consumption. It is usually highest and called Maximum MU.' },
+        { id: 'f25', front: 'What is Zero Utility?', back: 'When MU = 0 at point of satiety. Consumer neither gains nor loses satisfaction from consuming more.' },
+        { id: 'f26', front: 'What is Negative Utility or Disutility?', back: 'When MU becomes negative (MU < 0). Extra consumption causes dissatisfaction or harm.' },
+        { id: 'f27', front: 'What is the shape of TU curve?', back: 'Inverted U-shape. Rises at decreasing rate, reaches maximum, then falls.' },
+        { id: 'f28', front: 'What is the shape of MU curve?', back: 'Downward sloping (negative slope). Starts high, crosses zero at saturation, becomes negative.' },
+        { id: 'f29', front: 'Why does Law of DMU operate?', back: '1. Wants are satiable 2. Goods are imperfect substitutes 3. Different uses have different intensities 4. Psychological factor' },
+        { id: 'f30', front: 'What is Gossen\'s First Law?', back: 'Law of Diminishing Marginal Utility - as consumption increases, MU decreases. Named after Hermann Gossen.' }
       ],
       mcqs: [
-        { id: 'q1', question: 'When TU is maximum, MU is _______.', options: ['Maximum', 'Zero', 'Negative', 'Positive'], correctIndex: 1, explanation: 'At saturation point, MU becomes zero.' },
-        { id: 'q2', question: 'Cardinal utility was introduced by _______.', options: ['Hicks', 'Allen', 'Marshall', 'Keynes'], correctIndex: 2, explanation: 'Alfred Marshall gave the cardinal approach.' },
-        { id: 'q3', question: 'Law of DMU does NOT apply to _______.', options: ['Food', 'Water', 'Money (Misers)', 'Clothes'], correctIndex: 2, explanation: 'Misers never feel satisfied with money.' }
+        { id: 'q1', question: 'When TU is maximum, MU is _______.', options: ['Maximum', 'Zero', 'Negative', 'Positive'], correctIndex: 1, explanation: 'At the point of satiety, MU becomes zero while TU is at its peak.' },
+        { id: 'q2', question: 'Cardinal utility approach was given by _______.', options: ['Hicks', 'Allen', 'Marshall', 'Keynes'], correctIndex: 2, explanation: 'Alfred Marshall believed utility can be measured in numbers (Utils).' },
+        { id: 'q3', question: 'Law of DMU does NOT apply to _______.', options: ['Food', 'Water', 'Money (Misers)', 'Clothes'], correctIndex: 2, explanation: 'Misers never feel satisfied with money - MU doesn\'t diminish for them.' },
+        { id: 'q4', question: 'Utility is _______ in nature.', options: ['Objective', 'Subjective', 'Universal', 'Constant'], correctIndex: 1, explanation: 'Utility varies from person to person based on individual preferences.' },
+        { id: 'q5', question: 'The formula MU = TUn - TUn-1 shows MU as _______.', options: ['Sum of TU', 'Difference of TU', 'Product of TU', 'Ratio of TU'], correctIndex: 1, explanation: 'MU is the difference between current TU and previous TU.' },
+        { id: 'q6', question: 'Ordinal utility approach was given by _______.', options: ['Marshall', 'Hicks and Allen', 'Adam Smith', 'Keynes'], correctIndex: 1, explanation: 'J.R. Hicks and R.G.D. Allen developed the ordinal (ranking) approach.' },
+        { id: 'q7', question: 'When MU is negative, TU _______.', options: ['Increases', 'Decreases', 'Remains constant', 'Becomes zero'], correctIndex: 1, explanation: 'Negative MU means each additional unit reduces total satisfaction.' },
+        { id: 'q8', question: 'Point of Satiety occurs when MU = _______.', options: ['Maximum', 'Minimum', 'Zero', 'Infinity'], correctIndex: 2, explanation: 'At satiety, consumer is fully satisfied and MU of additional unit is zero.' },
+        { id: 'q9', question: 'TU curve is _______ shaped.', options: ['U-shaped', 'Inverted U-shaped', 'S-shaped', 'Linear'], correctIndex: 1, explanation: 'TU rises, reaches maximum (when MU=0), then falls (when MU<0).' },
+        { id: 'q10', question: 'MU curve slopes _______.', options: ['Upward', 'Downward', 'Horizontally', 'Vertically'], correctIndex: 1, explanation: 'Due to Law of DMU, MU decreases as consumption increases.' },
+        { id: 'q11', question: 'Utils is a unit of measuring utility in _______ approach.', options: ['Ordinal', 'Cardinal', 'Modern', 'Classical'], correctIndex: 1, explanation: 'Cardinal approach uses Utils as imaginary measurement unit.' },
+        { id: 'q12', question: 'Law of DMU is also called _______.', options: ['Gossen\'s First Law', 'Gossen\'s Second Law', 'Marshall\'s Law', 'Keynes Law'], correctIndex: 0, explanation: 'H.H. Gossen first propounded this law in 1854.' },
+        { id: 'q13', question: 'Law of Equi-Marginal Utility is also called _______.', options: ['First Law of Gossen', 'Second Law of Gossen', 'Law of Demand', 'Law of Supply'], correctIndex: 1, explanation: 'Gossen\'s Second Law deals with allocation of expenditure.' },
+        { id: 'q14', question: 'In ordinal approach, utility is _______.', options: ['Measured', 'Ranked', 'Calculated', 'Ignored'], correctIndex: 1, explanation: 'Ordinal utility only ranks preferences (1st, 2nd, 3rd).' },
+        { id: 'q15', question: 'Consumer equilibrium in cardinal approach: MUx/Px = _______.', options: ['MUy × Py', 'MUy/Py', 'TUx/Px', 'TUy/Py'], correctIndex: 1, explanation: 'MU per rupee must be equal for all goods at equilibrium.' },
+        { id: 'q16', question: 'Initial utility is _______.', options: ['Lowest MU', 'Highest MU', 'Zero MU', 'Negative MU'], correctIndex: 1, explanation: 'First unit gives maximum satisfaction (highest MU).' },
+        { id: 'q17', question: 'Which is NOT an assumption of Law of DMU?', options: ['Continuous consumption', 'Homogeneous units', 'Changing tastes', 'Standard units'], correctIndex: 2, explanation: 'Tastes must remain constant for law of DMU to apply.' },
+        { id: 'q18', question: 'Stamp collecting for a hobbyist is exception because _______.', options: ['MU increases', 'MU is zero', 'MU is negative', 'TU is zero'], correctIndex: 0, explanation: 'For hobbies, each new stamp adds more satisfaction.' },
+        { id: 'q19', question: 'TU can be found by _______ all MUs.', options: ['Subtracting', 'Dividing', 'Adding', 'Multiplying'], correctIndex: 2, explanation: 'TU = ΣMU (summation of all marginal utilities).' },
+        { id: 'q20', question: 'When TU rises at decreasing rate, MU is _______.', options: ['Rising', 'Falling but positive', 'Zero', 'Negative'], correctIndex: 1, explanation: 'Positive but decreasing MU causes TU to rise slowly.' },
+        { id: 'q21', question: 'Utility is _______ from usefulness.', options: ['Same as', 'Different', 'Equal to', 'Derived from'], correctIndex: 1, explanation: 'Utility = want satisfaction; Usefulness = beneficial quality only.' },
+        { id: 'q22', question: 'Marshall assumed MU of money to be _______.', options: ['Variable', 'Constant', 'Zero', 'Negative'], correctIndex: 1, explanation: 'Marshall assumed MUm remains constant for analysis.' },
+        { id: 'q23', question: 'Disutility means MU is _______.', options: ['Maximum', 'Zero', 'Positive', 'Negative'], correctIndex: 3, explanation: 'Negative MU indicates dissatisfaction or disutility.' },
+        { id: 'q24', question: 'Which approach uses Indifference Curve?', options: ['Cardinal', 'Ordinal', 'Classical', 'Keynesian'], correctIndex: 1, explanation: 'Ordinal approach uses IC analysis developed by Hicks-Allen.' },
+        { id: 'q25', question: 'Law of Substitution is another name for _______.', options: ['Law of DMU', 'Law of Equi-Marginal Utility', 'Law of Demand', 'Law of Supply'], correctIndex: 1, explanation: 'Consumer substitutes goods to equalize MU per rupee.' },
+        { id: 'q26', question: 'If MUx/Px > MUy/Py, consumer should buy more of _______.', options: ['Good X', 'Good Y', 'Both equally', 'Neither'], correctIndex: 0, explanation: 'Higher MU per rupee means better value, buy more of X.' },
+        { id: 'q27', question: 'For a drunkard, MU of alcohol _______.', options: ['Decreases', 'Increases', 'Is zero', 'Is negative'], correctIndex: 1, explanation: 'Drunkards experience increasing MU - exception to DMU.' },
+        { id: 'q28', question: 'At consumer equilibrium, satisfaction is _______.', options: ['Minimum', 'Maximum', 'Zero', 'Negative'], correctIndex: 1, explanation: 'Equilibrium point gives maximum possible satisfaction.' },
+        { id: 'q29', question: 'Gossen was a _______ economist.', options: ['British', 'American', 'German', 'French'], correctIndex: 2, explanation: 'Hermann Heinrich Gossen was a German economist (1810-1858).' },
+        { id: 'q30', question: 'Utility has _______ relationship with demand.', options: ['No', 'Inverse', 'Direct', 'Complex'], correctIndex: 2, explanation: 'Higher utility leads to higher demand for a good.' }
       ],
       reels: [
         { id: 'r1', title: 'Utility', content: 'Want satisfying power.\nSubjective = Person to person different.', color: getReelColor(0) },
         { id: 'r2', title: 'TU vs MU', content: 'TU = Total satisfaction.\nMU = Extra satisfaction from ONE more unit.', color: getReelColor(1) },
         { id: 'r3', title: 'MU Formula', content: 'MU = TUn - TUn-1\nOR MU = ΔTU/ΔQ', color: getReelColor(2) },
-        { id: 'r4', title: 'Law of DMU', content: 'More you consume,\nLess satisfaction from each extra unit.', color: getReelColor(3) },
-        { id: 'r5', title: 'TU Max Point', content: 'When MU = 0\nPoint of Satiety.', color: getReelColor(4) },
-        { id: 'r6', title: 'TU Falls', content: 'When MU becomes Negative.\nOver-consumption!', color: getReelColor(5) },
-        { id: 'r7', title: 'Cardinal', content: 'Marshall: Utility can be measured in Utils (numbers).', color: getReelColor(6) },
-        { id: 'r8', title: 'Ordinal', content: 'Hicks-Allen: Utility can only be ranked (1st, 2nd...).', color: getReelColor(7) }
+        { id: 'r4', title: 'Law of DMU', content: 'More you consume,\nLess satisfaction from each extra unit.\nGossen\'s First Law', color: getReelColor(3) },
+        { id: 'r5', title: 'TU Max Point', content: 'When MU = 0\nPoint of Satiety\nFull satisfaction achieved', color: getReelColor(4) },
+        { id: 'r6', title: 'TU Falls', content: 'When MU becomes Negative.\nOver-consumption!\nDisutility zone', color: getReelColor(5) },
+        { id: 'r7', title: 'Cardinal', content: 'Marshall: Utility in Utils\nCan be measured as numbers\n10 utils, 8 utils...', color: getReelColor(6) },
+        { id: 'r8', title: 'Ordinal', content: 'Hicks-Allen: Utility ranked\n1st, 2nd, 3rd...\nCannot measure "how much"', color: getReelColor(7) },
+        { id: 'r9', title: 'Gossen', content: 'German economist\n1st Law = DMU\n2nd Law = Equi-Marginal', color: getReelColor(8) },
+        { id: 'r10', title: 'Utils', content: 'Imaginary unit\nCardinal measurement\n1 apple = 10 utils', color: getReelColor(9) },
+        { id: 'r11', title: 'DMU Assumptions', content: 'Homogeneous units\nContinuous consumption\nNo time gap\nNormal consumer', color: getReelColor(0) },
+        { id: 'r12', title: 'DMU Exceptions', content: 'Hobbies, Misers\nDrunkards, Music lovers\nMU increases!', color: getReelColor(1) },
+        { id: 'r13', title: 'TU Curve', content: 'Inverted U shape\nRises → Max → Falls\nPositive → Zero → Negative MU', color: getReelColor(2) },
+        { id: 'r14', title: 'MU Curve', content: 'Downward sloping\nStarts high, crosses zero\nGoes negative', color: getReelColor(3) },
+        { id: 'r15', title: 'TU-MU Relationship', content: 'MU > 0 = TU rises\nMU = 0 = TU max\nMU < 0 = TU falls', color: getReelColor(4) },
+        { id: 'r16', title: 'Initial Utility', content: 'First unit = Maximum MU\nHighest satisfaction\nStarts the curve', color: getReelColor(5) },
+        { id: 'r17', title: 'Zero Utility', content: 'MU = 0\nPoint of satiety\nNeither gain nor loss', color: getReelColor(6) },
+        { id: 'r18', title: 'Negative Utility', content: 'MU < 0 = Disutility\nOver-consumption\nHarm from more', color: getReelColor(7) },
+        { id: 'r19', title: 'Equi-Marginal Law', content: 'MUx/Px = MUy/Py = MUm\nEqual MU per rupee\nMaximum satisfaction', color: getReelColor(8) },
+        { id: 'r20', title: 'Consumer Equilibrium', content: 'Cardinal: MU/P equal\nNo reallocation helps\nOptimal spending', color: getReelColor(9) },
+        { id: 'r21', title: 'Utility vs Usefulness', content: 'Utility = Want satisfaction\nUsefulness = Beneficial\nCigarette has utility!', color: getReelColor(0) },
+        { id: 'r22', title: 'Subjective Nature', content: 'Varies person to person\nSame good, different utility\nDepends on needs', color: getReelColor(1) },
+        { id: 'r23', title: 'Why DMU Works', content: 'Wants are satiable\nIntensity decreases\nPsychological factor', color: getReelColor(2) },
+        { id: 'r24', title: 'Cardinal vs Ordinal', content: 'Cardinal = Measure (10)\nOrdinal = Rank (1st)\nMarshall vs Hicks', color: getReelColor(3) },
+        { id: 'r25', title: 'TU Formula', content: 'TU = Σ MU\nSum of all MUs\nTotal = Adding parts', color: getReelColor(4) },
+        { id: 'r26', title: 'MUm', content: 'Marginal Utility of Money\nMarshall: Constant\nSpending one more rupee', color: getReelColor(5) },
+        { id: 'r27', title: 'Substitution Rule', content: 'If MUx/Px > MUy/Py\nBuy more X, less Y\nRebalance spending', color: getReelColor(6) },
+        { id: 'r28', title: 'Law Names', content: 'DMU = Gossen\'s 1st\nEqui-Marginal = Gossen\'s 2nd\nAlso: Law of Substitution', color: getReelColor(7) },
+        { id: 'r29', title: 'Satiety Point', content: 'Full satisfaction\nNo more want\nMU crosses zero', color: getReelColor(8) },
+        { id: 'r30', title: 'Key Formulas', content: 'MU = ΔTU/ΔQ\nTU = ΣMU\nEquilibrium: MU/P equal', color: getReelColor(9) }
       ]
     },
     {
@@ -4065,14 +4516,13 @@ Potential ability to learn or perform in specific area
 
 ### Punnett Square
 Used to predict offspring genotypes and phenotypes
-```
-        T       t
-   +--------+--------+
-T  |   TT   |   Tt   |
-   +--------+--------+
-t  |   Tt   |   tt   |
-   +--------+--------+
-```
+
+         T       t
+    +--------+--------+
+ T  |   TT   |   Tt   |
+    +--------+--------+
+ t  |   Tt   |   tt   |
+    +--------+--------+
 
 ## Deviations from Mendelian Ratios
 
