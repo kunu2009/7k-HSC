@@ -74,7 +74,7 @@ const StudyPlanner: React.FC<StudyPlannerProps> = ({ subjects, examDate, examNam
   useEffect(() => {
     const loadUserData = () => {
       const profile = db.getUserProfile();
-      const marks = db.getExamMarks();
+      const marks = db.getAllMarks();
       setUserProfile(profile);
       setExamMarks(marks);
     };
