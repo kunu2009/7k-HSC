@@ -9,33 +9,49 @@ const KEYS = {
   SETTINGS: '7k-hsc-settings',
 };
 
-// Stream-specific subjects
-export const STREAM_SUBJECTS: Record<Stream, { id: string; name: string; maxMarks: number }[]> = {
+// Compulsory subjects (same for all streams) - English is compulsory
+export const COMPULSORY_SUBJECTS = [
+  { id: 'eng', name: 'English', maxMarks: 100, isCompulsory: true },
+];
+
+// Stream-specific elective subjects (user selects from these)
+export const ELECTIVE_SUBJECTS: Record<Stream, { id: string; name: string; maxMarks: number; isCompulsory?: boolean }[]> = {
   [Stream.COMMERCE]: [
     { id: 'eco', name: 'Economics', maxMarks: 100 },
     { id: 'ocm', name: 'OCM', maxMarks: 100 },
     { id: 'sp', name: 'Secretarial Practice', maxMarks: 100 },
     { id: 'bk', name: 'Book Keeping', maxMarks: 100 },
-    { id: 'eng', name: 'English', maxMarks: 100 },
-    { id: 'evs', name: 'EVS', maxMarks: 50 },
   ],
   [Stream.ARTS]: [
-    { id: 'eng', name: 'English', maxMarks: 100 },
     { id: 'his', name: 'History', maxMarks: 100 },
     { id: 'pol', name: 'Political Science', maxMarks: 100 },
     { id: 'geo', name: 'Geography', maxMarks: 100 },
     { id: 'soc', name: 'Sociology', maxMarks: 100 },
     { id: 'psy', name: 'Psychology', maxMarks: 100 },
-    { id: 'evs', name: 'EVS', maxMarks: 50 },
+    { id: 'eco', name: 'Economics', maxMarks: 100 },
   ],
   [Stream.SCIENCE]: [
     { id: 'phy', name: 'Physics', maxMarks: 100 },
     { id: 'chem', name: 'Chemistry', maxMarks: 100 },
     { id: 'math', name: 'Mathematics', maxMarks: 100 },
     { id: 'bio', name: 'Biology', maxMarks: 100 },
-    { id: 'eng', name: 'English', maxMarks: 100 },
     { id: 'it', name: 'Information Technology', maxMarks: 100 },
-    { id: 'evs', name: 'EVS', maxMarks: 50 },
+  ],
+};
+
+// All subjects for a stream (compulsory + elective)
+export const STREAM_SUBJECTS: Record<Stream, { id: string; name: string; maxMarks: number; isCompulsory?: boolean }[]> = {
+  [Stream.COMMERCE]: [
+    ...COMPULSORY_SUBJECTS,
+    ...ELECTIVE_SUBJECTS[Stream.COMMERCE],
+  ],
+  [Stream.ARTS]: [
+    ...COMPULSORY_SUBJECTS,
+    ...ELECTIVE_SUBJECTS[Stream.ARTS],
+  ],
+  [Stream.SCIENCE]: [
+    ...COMPULSORY_SUBJECTS,
+    ...ELECTIVE_SUBJECTS[Stream.SCIENCE],
   ],
 };
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Stream } from '../types';
-import { db, STREAM_SUBJECTS, UserProfile } from '../services/localDb';
-import { GraduationCap, BookOpen, FlaskConical, TrendingUp, ChevronRight, Check, Sparkles, User } from 'lucide-react';
+import { db, ELECTIVE_SUBJECTS, COMPULSORY_SUBJECTS, UserProfile } from '../services/localDb';
+import { GraduationCap, BookOpen, FlaskConical, TrendingUp, ChevronRight, Check, Sparkles, User, Lock } from 'lucide-react';
 
 interface OnboardingProps {
   onComplete: (profile: UserProfile) => void;
@@ -15,8 +15,8 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
   const handleStreamSelect = (stream: Stream) => {
     setSelectedStream(stream);
-    // Pre-select first 5 subjects by default
-    const defaultSubjects = STREAM_SUBJECTS[stream].slice(0, 5).map(s => s.id);
+    // Pre-select all elective subjects by default (compulsory are auto-included)
+    const defaultSubjects = ELECTIVE_SUBJECTS[stream].map(s => s.id);
     setSelectedSubjects(defaultSubjects);
     setStep('subjects');
   };
@@ -31,7 +31,9 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
   const handleComplete = () => {
     if (!selectedStream || selectedSubjects.length === 0) return;
-    const profile = db.createUserProfile(name || 'Student', selectedStream, selectedSubjects);
+    // Always include compulsory subjects (English)
+    const allSubjects = [...COMPULSORY_SUBJECTS.map(s => s.id), ...selectedSubjects];
+    const profile = db.createUserProfile(name || 'Student', selectedStream, allSubjects);
     onComplete(profile);
   };
 
@@ -188,34 +190,61 @@ const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
             <div className="text-center mb-6">
               <h2 className="text-2xl font-bold text-white mb-2">Select Your Subjects</h2>
-              <p className="text-slate-400">Choose the subjects you're studying</p>
+              <p className="text-slate-400">Choose your elective subjects (English is compulsory)</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 mb-6">
-              {STREAM_SUBJECTS[selectedStream].map((subject) => {
-                const isSelected = selectedSubjects.includes(subject.id);
-                return (
-                  <button
+            {/* Compulsory Subjects - Locked */}
+            <div className="mb-4">
+              <p className="text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-2 flex items-center gap-1">
+                <Lock size={12} /> Compulsory Subject
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {COMPULSORY_SUBJECTS.map((subject) => (
+                  <div
                     key={subject.id}
-                    onClick={() => toggleSubject(subject.id)}
-                    className={`p-4 rounded-xl border-2 transition-all text-left ${
-                      isSelected 
-                        ? 'bg-indigo-600/20 border-indigo-500 text-white' 
-                        : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:border-slate-600'
-                    }`}
+                    className="p-4 rounded-xl border-2 bg-emerald-600/20 border-emerald-500 text-white cursor-not-allowed"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-semibold">{subject.name}</span>
-                      {isSelected && (
-                        <div className="w-6 h-6 bg-indigo-500 rounded-full flex items-center justify-center">
-                          <Check size={14} className="text-white" />
-                        </div>
-                      )}
+                      <div className="w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center">
+                        <Check size={14} className="text-white" />
+                      </div>
                     </div>
-                    <span className="text-xs text-slate-500">{subject.maxMarks} marks</span>
-                  </button>
-                );
-              })}
+                    <span className="text-xs text-emerald-300">Auto-included</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Elective Subjects - Selectable */}
+            <div className="mb-6">
+              <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Elective Subjects (Select your subjects)</p>
+              <div className="grid grid-cols-2 gap-3">
+                {ELECTIVE_SUBJECTS[selectedStream].map((subject) => {
+                  const isSelected = selectedSubjects.includes(subject.id);
+                  return (
+                    <button
+                      key={subject.id}
+                      onClick={() => toggleSubject(subject.id)}
+                      className={`p-4 rounded-xl border-2 transition-all text-left ${
+                        isSelected 
+                          ? 'bg-indigo-600/20 border-indigo-500 text-white' 
+                          : 'bg-slate-800/50 border-slate-700 text-slate-300 hover:border-slate-600'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="font-semibold">{subject.name}</span>
+                        {isSelected && (
+                          <div className="w-6 h-6 bg-indigo-500 rounded-full flex items-center justify-center">
+                            <Check size={14} className="text-white" />
+                          </div>
+                        )}
+                      </div>
+                      <span className="text-xs text-slate-500">{subject.maxMarks} marks</span>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
 
             <button

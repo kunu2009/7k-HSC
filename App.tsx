@@ -50,6 +50,20 @@ const App: React.FC = () => {
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
+
+  // Get filtered subjects based on user's selection (only shows selected + compulsory subjects)
+  const getFilteredSubjects = (): Subject[] => {
+    if (!selectedStream || !MOCK_DATA[selectedStream]) return [];
+    const allSubjects = MOCK_DATA[selectedStream].subjects;
+    
+    // If no user profile, return all subjects
+    if (!userProfile || !userProfile.selectedSubjects || userProfile.selectedSubjects.length === 0) {
+      return allSubjects;
+    }
+    
+    // Filter to only show subjects the user selected (includes compulsory subjects added during onboarding)
+    return allSubjects.filter(sub => userProfile.selectedSubjects.includes(sub.id));
+  };
   
   // Progress Tracking
   const { 
@@ -178,7 +192,7 @@ const App: React.FC = () => {
   // --- Sidebar Component ---
   const Sidebar = () => {
     if (!selectedStream) return null;
-    const subjects = MOCK_DATA[selectedStream].subjects;
+    const subjects = getFilteredSubjects();
 
     return (
       <>
@@ -398,6 +412,7 @@ const App: React.FC = () => {
 
   const renderDashboard = () => {
     const data = selectedStream ? MOCK_DATA[selectedStream] : null;
+    const filteredSubjects = getFilteredSubjects();
     const greeting = () => {
       const hour = new Date().getHours();
       if (hour < 12) return 'Good Morning';
@@ -442,7 +457,7 @@ const App: React.FC = () => {
           </h2>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {data?.subjects.map((sub) => {
+            {filteredSubjects.map((sub) => {
                // Dynamic Icon Mapping
                const Icon = sub.id === 'eco' ? TrendingUp : 
                             sub.id === 'ocm' ? Briefcase : 
@@ -1012,7 +1027,7 @@ const App: React.FC = () => {
             <div className="mt-8">
               <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4">Subject Progress</h2>
               <div className="space-y-4">
-                {MOCK_DATA[selectedStream].subjects.map((sub) => {
+                {getFilteredSubjects().map((sub) => {
                   const completion = getSubjectCompletion(sub.id);
                   const progressPercent = Math.round(completion * 100);
                   
@@ -1065,7 +1080,7 @@ const App: React.FC = () => {
   };
 
   const renderStudyPlanner = () => {
-    const data = selectedStream ? MOCK_DATA[selectedStream] : null;
+    const filteredSubjects = getFilteredSubjects();
     const prelimsDate = new Date('2026-01-15');
     
     return (
@@ -1086,9 +1101,9 @@ const App: React.FC = () => {
         </div>
 
         <div className="p-6">
-          {data && (
+          {filteredSubjects.length > 0 && (
             <StudyPlanner 
-              subjects={data.subjects} 
+              subjects={filteredSubjects} 
               examDate={prelimsDate} 
               examName="Prelims"
             />

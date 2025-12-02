@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { Subject, Chapter } from '../types';
-import { Calendar, Target, CheckCircle2, Circle, Clock, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, Zap } from 'lucide-react';
+import { Calendar, Target, CheckCircle2, Circle, Clock, ChevronDown, ChevronUp, ChevronLeft, ChevronRight, BookOpen, Zap, AlertTriangle, TrendingUp, Award, Brain, Coffee, Moon, Sun, Flame, Star, BarChart3, FileText, RefreshCw, AlertCircle, Sparkles } from 'lucide-react';
+import { db, ExamMarks, UserProfile, STREAM_SUBJECTS } from '../services/localDb';
 
 interface StudyPlannerProps {
   subjects: Subject[];
@@ -20,13 +21,76 @@ interface DaySchedule {
   isCompleted: boolean;
 }
 
+// Plan types for personalized study plans
+type PlanType = 'balanced' | 'weak-focus' | 'sprint' | 'revision';
+
+interface SubjectAnalysis {
+  subjectId: string;
+  subjectName: string;
+  avgMarks: number;
+  maxMarks: number;
+  percentage: number;
+  status: 'weak' | 'average' | 'strong';
+  priority: number;
+  chaptersTotal: number;
+  chaptersCompleted: number;
+  hoursNeeded: number;
+}
+
+interface WeeklyPlan {
+  weekNumber: number;
+  startDate: Date;
+  endDate: Date;
+  focus: string;
+  subjects: { name: string; hours: number; priority: 'high' | 'medium' | 'low' }[];
+  goals: string[];
+}
+
+interface DailyScheduleSlot {
+  time: string;
+  subject: string;
+  activity: string;
+  duration: number;
+}
+
 const STORAGE_KEY = '7k-hsc-study-planner';
+const PLAN_STORAGE_KEY = '7k-hsc-selected-plan';
+
+// Maharashtra HSC Important Dates (approximate)
+const PRELIMS_DATE = new Date(2025, 1, 15); // Feb 15, 2025
+const BOARDS_DATE = new Date(2025, 2, 1); // March 1, 2025
 
 const StudyPlanner: React.FC<StudyPlannerProps> = ({ subjects, examDate, examName }) => {
   const [checkedChapters, setCheckedChapters] = useState<ChapterStatus>({});
   const [expandedSubjects, setExpandedSubjects] = useState<string[]>([]);
-  const [activeTab, setActiveTab] = useState<'checklist' | 'calendar'>('checklist');
+  const [activeTab, setActiveTab] = useState<'plan' | 'checklist' | 'calendar' | 'weekly'>('plan');
   const [calendarMonth, setCalendarMonth] = useState(new Date());
+  const [selectedPlan, setSelectedPlan] = useState<PlanType>('balanced');
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
+  const [examMarks, setExamMarks] = useState<ExamMarks[]>([]);
+  const [showPlanSelector, setShowPlanSelector] = useState(false);
+
+  // Load user profile and exam marks
+  useEffect(() => {
+    const loadUserData = () => {
+      const profile = db.getUserProfile();
+      const marks = db.getExamMarks();
+      setUserProfile(profile);
+      setExamMarks(marks);
+    };
+    loadUserData();
+    
+    // Load selected plan
+    const savedPlan = localStorage.getItem(PLAN_STORAGE_KEY);
+    if (savedPlan && ['balanced', 'weak-focus', 'sprint', 'revision'].includes(savedPlan)) {
+      setSelectedPlan(savedPlan as PlanType);
+    }
+  }, []);
+
+  // Save selected plan
+  useEffect(() => {
+    localStorage.setItem(PLAN_STORAGE_KEY, selectedPlan);
+  }, [selectedPlan]);
 
   // Load from localStorage
   useEffect(() => {
@@ -135,6 +199,250 @@ const StudyPlanner: React.FC<StudyPlannerProps> = ({ subjects, examDate, examNam
     return Math.round((completed / subject.chapters.length) * 100);
   };
 
+  // COMPREHENSIVE SUBJECT ANALYSIS based on marks
+  const subjectAnalysis: SubjectAnalysis[] = useMemo(() => {
+    const analysis: SubjectAnalysis[] = [];
+    
+    subjects.forEach(subject => {
+      // Find marks for this subject from all exams
+      let totalMarks = 0;
+      let totalMaxMarks = 0;
+      let examCount = 0;
+      
+      examMarks.forEach(exam => {
+        const subjectMark = exam.subjects.find(s => 
+          s.subjectId.toLowerCase() === subject.id.toLowerCase() ||
+          s.subjectName.toLowerCase() === subject.name.toLowerCase()
+        );
+        if (subjectMark) {
+          totalMarks += subjectMark.marksObtained;
+          totalMaxMarks += subjectMark.maxMarks;
+          examCount++;
+        }
+      });
+      
+      const avgMarks = examCount > 0 ? totalMarks / examCount : 0;
+      const maxMarks = examCount > 0 ? totalMaxMarks / examCount : 100;
+      const percentage = maxMarks > 0 ? (avgMarks / maxMarks) * 100 : 50; // Default to 50% if no data
+      
+      let status: 'weak' | 'average' | 'strong';
+      let priority: number;
+      
+      if (percentage < 45) {
+        status = 'weak';
+        priority = 3; // Highest priority
+      } else if (percentage < 70) {
+        status = 'average';
+        priority = 2;
+      } else {
+        status = 'strong';
+        priority = 1;
+      }
+      
+      const chaptersTotal = subject.chapters.length;
+      const chaptersCompleted = subject.chapters.filter(ch => checkedChapters[ch.id]).length;
+      
+      // Estimate hours needed (2 hours per chapter for weak, 1.5 for average, 1 for strong)
+      const hoursPerChapter = status === 'weak' ? 2 : status === 'average' ? 1.5 : 1;
+      const remainingChapters = chaptersTotal - chaptersCompleted;
+      const hoursNeeded = remainingChapters * hoursPerChapter;
+      
+      analysis.push({
+        subjectId: subject.id,
+        subjectName: subject.name,
+        avgMarks,
+        maxMarks,
+        percentage,
+        status,
+        priority,
+        chaptersTotal,
+        chaptersCompleted,
+        hoursNeeded
+      });
+    });
+    
+    // Sort by priority (weak subjects first)
+    return analysis.sort((a, b) => b.priority - a.priority);
+  }, [subjects, examMarks, checkedChapters]);
+
+  // Calculate days until prelims and boards
+  const daysUntilPrelims = Math.max(0, Math.ceil((PRELIMS_DATE.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)));
+  const daysUntilBoards = Math.max(0, Math.ceil((BOARDS_DATE.getTime() - today.getTime()) / (1000 * 60 * 60 * 24)));
+
+  // Generate personalized study plan based on selected plan type
+  const generateWeeklyPlan = useMemo((): WeeklyPlan[] => {
+    const weeks: WeeklyPlan[] = [];
+    const weeksRemaining = Math.ceil(daysRemaining / 7);
+    const weakSubjects = subjectAnalysis.filter(s => s.status === 'weak');
+    const avgSubjects = subjectAnalysis.filter(s => s.status === 'average');
+    const strongSubjects = subjectAnalysis.filter(s => s.status === 'strong');
+    
+    for (let i = 0; i < Math.min(weeksRemaining, 12); i++) {
+      const startDate = new Date(today);
+      startDate.setDate(startDate.getDate() + (i * 7));
+      const endDate = new Date(startDate);
+      endDate.setDate(endDate.getDate() + 6);
+      
+      let focus: string;
+      let subjectsForWeek: { name: string; hours: number; priority: 'high' | 'medium' | 'low' }[];
+      let goals: string[];
+      
+      // Different allocation based on plan type
+      switch (selectedPlan) {
+        case 'weak-focus':
+          // Heavy focus on weak subjects
+          focus = weakSubjects.length > 0 
+            ? `Focus on ${weakSubjects.map(s => s.subjectName).slice(0, 2).join(' & ')}`
+            : 'Maintain strong performance';
+          subjectsForWeek = [
+            ...weakSubjects.map(s => ({ name: s.subjectName, hours: 12, priority: 'high' as const })),
+            ...avgSubjects.map(s => ({ name: s.subjectName, hours: 6, priority: 'medium' as const })),
+            ...strongSubjects.map(s => ({ name: s.subjectName, hours: 3, priority: 'low' as const })),
+          ];
+          goals = [
+            weakSubjects.length > 0 ? `Complete 3-4 chapters of ${weakSubjects[0]?.subjectName}` : 'Review all subjects',
+            'Solve previous year questions for weak subjects',
+            'Practice numerical problems if applicable'
+          ];
+          break;
+          
+        case 'sprint':
+          // Fast coverage of all subjects
+          focus = 'Quick Syllabus Coverage Mode';
+          const totalSubjects = subjects.length;
+          const hoursPerSubject = Math.floor(42 / totalSubjects); // 6 hours/day * 7 days
+          subjectsForWeek = subjectAnalysis.map(s => ({
+            name: s.subjectName,
+            hours: hoursPerSubject,
+            priority: s.status === 'weak' ? 'high' as const : 'medium' as const
+          }));
+          goals = [
+            `Cover 5-6 chapters across all subjects`,
+            'Focus on key concepts and formulas',
+            'Skip detailed theory, focus on exam-oriented content'
+          ];
+          break;
+          
+        case 'revision':
+          // Revision and practice focused
+          focus = 'Revision & Practice Mode';
+          subjectsForWeek = subjectAnalysis.map(s => ({
+            name: s.subjectName,
+            hours: 6,
+            priority: s.chaptersCompleted < s.chaptersTotal ? 'high' as const : 'medium' as const
+          }));
+          goals = [
+            'Complete 2 practice papers per subject',
+            'Revise formulas and key concepts',
+            'Focus on high-weightage topics'
+          ];
+          break;
+          
+        default: // balanced
+          focus = 'Balanced Study Approach';
+          subjectsForWeek = [
+            ...weakSubjects.map(s => ({ name: s.subjectName, hours: 8, priority: 'high' as const })),
+            ...avgSubjects.map(s => ({ name: s.subjectName, hours: 6, priority: 'medium' as const })),
+            ...strongSubjects.map(s => ({ name: s.subjectName, hours: 4, priority: 'low' as const })),
+          ];
+          goals = [
+            'Complete 2-3 chapters per subject',
+            'Maintain notes for quick revision',
+            'Solve at least 20 MCQs daily'
+          ];
+      }
+      
+      weeks.push({
+        weekNumber: i + 1,
+        startDate,
+        endDate,
+        focus,
+        subjects: subjectsForWeek.slice(0, 6),
+        goals
+      });
+    }
+    
+    return weeks;
+  }, [selectedPlan, subjectAnalysis, daysRemaining, subjects, today]);
+
+  // Generate daily schedule template
+  const dailyScheduleTemplate: DailyScheduleSlot[] = useMemo(() => {
+    const weakSubjects = subjectAnalysis.filter(s => s.status === 'weak');
+    const avgSubjects = subjectAnalysis.filter(s => s.status === 'average');
+    
+    if (selectedPlan === 'sprint') {
+      return [
+        { time: '6:00 AM', subject: 'Any', activity: '🧠 Quick revision of yesterday', duration: 30 },
+        { time: '6:30 AM', subject: weakSubjects[0]?.subjectName || 'Subject 1', activity: '📚 New chapter study', duration: 90 },
+        { time: '8:00 AM', subject: 'Break', activity: '☕ Breakfast', duration: 30 },
+        { time: '8:30 AM', subject: weakSubjects[1]?.subjectName || 'Subject 2', activity: '📚 Chapter continuation', duration: 90 },
+        { time: '10:00 AM', subject: avgSubjects[0]?.subjectName || 'Subject 3', activity: '📖 Concept learning', duration: 90 },
+        { time: '11:30 AM', subject: 'Break', activity: '🍎 Short break', duration: 30 },
+        { time: '12:00 PM', subject: 'Practice', activity: '✍️ MCQ Practice (50 questions)', duration: 60 },
+        { time: '1:00 PM', subject: 'Break', activity: '🍽️ Lunch + Rest', duration: 90 },
+        { time: '2:30 PM', subject: avgSubjects[1]?.subjectName || 'Subject 4', activity: '📚 Study session', duration: 90 },
+        { time: '4:00 PM', subject: 'Any', activity: '📝 Notes making', duration: 60 },
+        { time: '5:00 PM', subject: 'Break', activity: '🏃 Physical activity', duration: 60 },
+        { time: '6:00 PM', subject: weakSubjects[0]?.subjectName || 'Subject 1', activity: '🔄 Revision + Doubts', duration: 90 },
+        { time: '7:30 PM', subject: 'Break', activity: '🍽️ Dinner', duration: 60 },
+        { time: '8:30 PM', subject: 'Practice', activity: '📋 Previous year papers', duration: 90 },
+        { time: '10:00 PM', subject: 'Any', activity: '📖 Light reading + Sleep prep', duration: 30 },
+      ];
+    }
+    
+    // Default balanced schedule
+    return [
+      { time: '6:00 AM', subject: 'Any', activity: '🧘 Meditation + Planning', duration: 30 },
+      { time: '6:30 AM', subject: weakSubjects[0]?.subjectName || 'Subject 1', activity: '📚 Deep study session', duration: 120 },
+      { time: '8:30 AM', subject: 'Break', activity: '☕ Breakfast', duration: 30 },
+      { time: '9:00 AM', subject: avgSubjects[0]?.subjectName || 'Subject 2', activity: '📖 Concept learning', duration: 90 },
+      { time: '10:30 AM', subject: 'Break', activity: '🍎 Short break', duration: 15 },
+      { time: '10:45 AM', subject: 'Practice', activity: '✍️ MCQ Practice (30 questions)', duration: 45 },
+      { time: '11:30 AM', subject: avgSubjects[1]?.subjectName || 'Subject 3', activity: '📚 Study session', duration: 90 },
+      { time: '1:00 PM', subject: 'Break', activity: '🍽️ Lunch + Power nap', duration: 120 },
+      { time: '3:00 PM', subject: weakSubjects[1]?.subjectName || 'Subject 4', activity: '📚 Focus session', duration: 90 },
+      { time: '4:30 PM', subject: 'Break', activity: '☕ Tea break', duration: 30 },
+      { time: '5:00 PM', subject: 'Any', activity: '📝 Notes + Formulas', duration: 60 },
+      { time: '6:00 PM', subject: 'Break', activity: '🏃 Exercise/Walk', duration: 60 },
+      { time: '7:00 PM', subject: 'Revision', activity: '🔄 Day\'s revision', duration: 60 },
+      { time: '8:00 PM', subject: 'Break', activity: '🍽️ Dinner', duration: 60 },
+      { time: '9:00 PM', subject: 'Practice', activity: '📋 Previous year questions', duration: 90 },
+      { time: '10:30 PM', subject: 'Any', activity: '📖 Light reading + Sleep', duration: 30 },
+    ];
+  }, [selectedPlan, subjectAnalysis]);
+
+  // Plan descriptions
+  const planDescriptions = {
+    'balanced': {
+      name: 'Balanced Plan',
+      icon: '⚖️',
+      description: 'Equal focus on all subjects with extra time for weak areas',
+      ideal: 'For students with 60+ days remaining',
+      color: 'from-blue-500 to-indigo-500'
+    },
+    'weak-focus': {
+      name: 'Weak Subject Focus',
+      icon: '🎯',
+      description: 'Maximum time on weak subjects, quick revision for strong ones',
+      ideal: 'When you need to improve specific subjects significantly',
+      color: 'from-red-500 to-orange-500'
+    },
+    'sprint': {
+      name: 'Sprint Mode',
+      icon: '🚀',
+      description: 'Fast-paced coverage with focus on key concepts only',
+      ideal: 'When time is limited (30 days or less)',
+      color: 'from-purple-500 to-pink-500'
+    },
+    'revision': {
+      name: 'Revision Mode',
+      icon: '🔄',
+      description: 'Focus on practice papers and revision, minimal new learning',
+      ideal: 'When syllabus is mostly complete',
+      color: 'from-emerald-500 to-teal-500'
+    }
+  };
+
   // Calendar helpers
   const getDaysInMonth = (date: Date) => {
     const year = date.getFullYear();
@@ -239,30 +547,332 @@ const StudyPlanner: React.FC<StudyPlannerProps> = ({ subjects, examDate, examNam
       )}
 
       {/* Tab Navigation */}
-      <div className="flex border-b border-slate-100 dark:border-slate-800 mx-4 mt-4">
+      <div className="flex border-b border-slate-100 dark:border-slate-800 mx-4 mt-4 overflow-x-auto">
+        <button
+          onClick={() => setActiveTab('plan')}
+          className={`flex-1 py-3 text-sm font-bold border-b-2 transition-colors whitespace-nowrap ${
+            activeTab === 'plan'
+              ? 'border-indigo-500 text-indigo-600 dark:text-indigo-400'
+              : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
+          }`}
+        >
+          <Target size={16} className="inline mr-1" />
+          My Plan
+        </button>
+        <button
+          onClick={() => setActiveTab('weekly')}
+          className={`flex-1 py-3 text-sm font-bold border-b-2 transition-colors whitespace-nowrap ${
+            activeTab === 'weekly'
+              ? 'border-indigo-500 text-indigo-600 dark:text-indigo-400'
+              : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
+          }`}
+        >
+          <BarChart3 size={16} className="inline mr-1" />
+          Weekly
+        </button>
         <button
           onClick={() => setActiveTab('checklist')}
-          className={`flex-1 py-3 text-sm font-bold border-b-2 transition-colors ${
+          className={`flex-1 py-3 text-sm font-bold border-b-2 transition-colors whitespace-nowrap ${
             activeTab === 'checklist'
               ? 'border-indigo-500 text-indigo-600 dark:text-indigo-400'
               : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
           }`}
         >
-          <CheckCircle2 size={16} className="inline mr-2" />
-          Checklist
+          <CheckCircle2 size={16} className="inline mr-1" />
+          Chapters
         </button>
         <button
           onClick={() => setActiveTab('calendar')}
-          className={`flex-1 py-3 text-sm font-bold border-b-2 transition-colors ${
+          className={`flex-1 py-3 text-sm font-bold border-b-2 transition-colors whitespace-nowrap ${
             activeTab === 'calendar'
               ? 'border-indigo-500 text-indigo-600 dark:text-indigo-400'
               : 'border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'
           }`}
         >
-          <Calendar size={16} className="inline mr-2" />
+          <Calendar size={16} className="inline mr-1" />
           Calendar
         </button>
       </div>
+
+      {/* MY PLAN TAB - Comprehensive Personalized Plan */}
+      {activeTab === 'plan' && (
+        <div className="p-4 space-y-4">
+          {/* Exam Countdown Cards */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="p-4 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl text-white">
+              <div className="text-xs font-medium opacity-80">Prelims</div>
+              <div className="text-2xl font-black">{daysUntilPrelims}</div>
+              <div className="text-xs opacity-80">days left</div>
+            </div>
+            <div className="p-4 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-xl text-white">
+              <div className="text-xs font-medium opacity-80">Boards</div>
+              <div className="text-2xl font-black">{daysUntilBoards}</div>
+              <div className="text-xs opacity-80">days left</div>
+            </div>
+          </div>
+
+          {/* Subject Analysis Based on Marks */}
+          <div className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-4">
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-bold text-slate-800 dark:text-white flex items-center gap-2">
+                <BarChart3 size={18} />
+                Your Subject Analysis
+              </h3>
+              {examMarks.length === 0 && (
+                <span className="text-xs text-amber-600 dark:text-amber-400 flex items-center gap-1">
+                  <AlertCircle size={12} />
+                  Add marks for better analysis
+                </span>
+              )}
+            </div>
+            
+            <div className="space-y-2">
+              {subjectAnalysis.map(analysis => (
+                <div key={analysis.subjectId} className="flex items-center gap-3">
+                  <div className={`w-16 h-2 rounded-full overflow-hidden ${
+                    analysis.status === 'weak' ? 'bg-red-200 dark:bg-red-900' :
+                    analysis.status === 'average' ? 'bg-amber-200 dark:bg-amber-900' :
+                    'bg-emerald-200 dark:bg-emerald-900'
+                  }`}>
+                    <div 
+                      className={`h-full transition-all ${
+                        analysis.status === 'weak' ? 'bg-red-500' :
+                        analysis.status === 'average' ? 'bg-amber-500' :
+                        'bg-emerald-500'
+                      }`}
+                      style={{ width: `${analysis.percentage}%` }}
+                    />
+                  </div>
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300 flex-1">
+                    {analysis.subjectName}
+                  </span>
+                  <span className={`text-xs px-2 py-0.5 rounded-full font-bold ${
+                    analysis.status === 'weak' ? 'bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300' :
+                    analysis.status === 'average' ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300' :
+                    'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/50 dark:text-emerald-300'
+                  }`}>
+                    {analysis.status === 'weak' ? '🔴 Needs Focus' : 
+                     analysis.status === 'average' ? '🟡 Improve' : 
+                     '🟢 Strong'}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Plan Selector */}
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden">
+            <button
+              onClick={() => setShowPlanSelector(!showPlanSelector)}
+              className="w-full p-4 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-3">
+                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${planDescriptions[selectedPlan].color} flex items-center justify-center text-2xl`}>
+                  {planDescriptions[selectedPlan].icon}
+                </div>
+                <div className="text-left">
+                  <h4 className="font-bold text-slate-800 dark:text-white">
+                    {planDescriptions[selectedPlan].name}
+                  </h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    {planDescriptions[selectedPlan].description}
+                  </p>
+                </div>
+              </div>
+              <ChevronDown size={20} className={`transition-transform ${showPlanSelector ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {showPlanSelector && (
+              <div className="border-t border-slate-100 dark:border-slate-800 p-2 space-y-2">
+                {(Object.keys(planDescriptions) as PlanType[]).map(planType => (
+                  <button
+                    key={planType}
+                    onClick={() => {
+                      setSelectedPlan(planType);
+                      setShowPlanSelector(false);
+                    }}
+                    className={`w-full p-3 rounded-xl flex items-center gap-3 transition-all ${
+                      selectedPlan === planType
+                        ? 'bg-indigo-50 dark:bg-indigo-900/30 border-2 border-indigo-500'
+                        : 'hover:bg-slate-50 dark:hover:bg-slate-800 border-2 border-transparent'
+                    }`}
+                  >
+                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${planDescriptions[planType].color} flex items-center justify-center text-xl`}>
+                      {planDescriptions[planType].icon}
+                    </div>
+                    <div className="text-left flex-1">
+                      <h5 className="font-bold text-slate-800 dark:text-white text-sm">
+                        {planDescriptions[planType].name}
+                      </h5>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        {planDescriptions[planType].ideal}
+                      </p>
+                    </div>
+                    {selectedPlan === planType && (
+                      <CheckCircle2 size={20} className="text-indigo-500" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Daily Schedule Template */}
+          <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-xl p-4">
+            <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+              <Clock size={18} />
+              Your Daily Schedule Template
+            </h3>
+            
+            <div className="space-y-1 max-h-80 overflow-y-auto">
+              {dailyScheduleTemplate.map((slot, idx) => (
+                <div 
+                  key={idx}
+                  className={`flex items-center gap-3 p-2 rounded-lg ${
+                    slot.subject === 'Break' 
+                      ? 'bg-emerald-50 dark:bg-emerald-900/20' 
+                      : 'bg-white dark:bg-slate-800'
+                  }`}
+                >
+                  <span className="text-xs font-mono font-bold text-slate-500 dark:text-slate-400 w-16">
+                    {slot.time}
+                  </span>
+                  <span className={`text-xs px-2 py-0.5 rounded font-medium ${
+                    slot.subject === 'Break' ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-800 dark:text-emerald-300' :
+                    slot.subject === 'Practice' ? 'bg-purple-100 text-purple-700 dark:bg-purple-800 dark:text-purple-300' :
+                    slot.subject === 'Revision' ? 'bg-blue-100 text-blue-700 dark:bg-blue-800 dark:text-blue-300' :
+                    'bg-indigo-100 text-indigo-700 dark:bg-indigo-800 dark:text-indigo-300'
+                  }`}>
+                    {slot.subject}
+                  </span>
+                  <span className="text-sm text-slate-600 dark:text-slate-300 flex-1">
+                    {slot.activity}
+                  </span>
+                  <span className="text-xs text-slate-400">
+                    {slot.duration}m
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Personalized Tips based on marks */}
+          <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-4 border border-indigo-200 dark:border-indigo-800">
+            <h3 className="font-bold text-indigo-800 dark:text-indigo-200 mb-2 flex items-center gap-2">
+              <Sparkles size={18} />
+              Personalized Tips for You
+            </h3>
+            <ul className="space-y-2 text-sm text-indigo-700 dark:text-indigo-300">
+              {subjectAnalysis.filter(s => s.status === 'weak').length > 0 && (
+                <li className="flex items-start gap-2">
+                  <AlertTriangle size={14} className="mt-0.5 shrink-0 text-red-500" />
+                  <span>
+                    Focus on <strong>{subjectAnalysis.filter(s => s.status === 'weak').map(s => s.subjectName).join(', ')}</strong> - 
+                    these need immediate attention based on your marks
+                  </span>
+                </li>
+              )}
+              {daysUntilPrelims < 30 && (
+                <li className="flex items-start gap-2">
+                  <Flame size={14} className="mt-0.5 shrink-0 text-orange-500" />
+                  <span>Prelims are very close! Switch to Sprint Mode for faster coverage</span>
+                </li>
+              )}
+              {completedChapters / totalChapters > 0.7 && (
+                <li className="flex items-start gap-2">
+                  <Award size={14} className="mt-0.5 shrink-0 text-emerald-500" />
+                  <span>Great progress! Consider switching to Revision Mode for practice</span>
+                </li>
+              )}
+              <li className="flex items-start gap-2">
+                <Brain size={14} className="mt-0.5 shrink-0 text-purple-500" />
+                <span>
+                  Study weak subjects in the morning when focus is highest
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Target size={14} className="mt-0.5 shrink-0 text-blue-500" />
+                <span>
+                  Complete {chaptersPerDay} chapter{chaptersPerDay > 1 ? 's' : ''} daily to finish on time
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      )}
+
+      {/* WEEKLY TAB */}
+      {activeTab === 'weekly' && (
+        <div className="p-4 space-y-4">
+          <div className="flex items-center justify-between">
+            <h3 className="font-bold text-slate-800 dark:text-white">
+              {generateWeeklyPlan.length}-Week Plan
+            </h3>
+            <span className="text-xs bg-indigo-100 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 px-2 py-1 rounded-full font-medium">
+              {planDescriptions[selectedPlan].name}
+            </span>
+          </div>
+          
+          <div className="space-y-3 max-h-[500px] overflow-y-auto">
+            {generateWeeklyPlan.map((week, idx) => (
+              <div 
+                key={idx}
+                className={`border rounded-xl overflow-hidden ${
+                  idx === 0 
+                    ? 'border-indigo-300 dark:border-indigo-700 bg-indigo-50/50 dark:bg-indigo-900/20' 
+                    : 'border-slate-200 dark:border-slate-700'
+                }`}
+              >
+                <div className={`p-3 ${idx === 0 ? 'bg-indigo-100 dark:bg-indigo-900/40' : 'bg-slate-50 dark:bg-slate-800/50'}`}>
+                  <div className="flex items-center justify-between">
+                    <span className="font-bold text-slate-800 dark:text-white">
+                      {idx === 0 ? '📍 This Week' : `Week ${week.weekNumber}`}
+                    </span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400">
+                      {week.startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })} - 
+                      {week.endDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
+                    </span>
+                  </div>
+                  <p className="text-sm text-indigo-600 dark:text-indigo-400 font-medium mt-1">
+                    {week.focus}
+                  </p>
+                </div>
+                
+                <div className="p-3 space-y-2">
+                  <div className="flex flex-wrap gap-2">
+                    {week.subjects.slice(0, 4).map((subj, sIdx) => (
+                      <span 
+                        key={sIdx}
+                        className={`text-xs px-2 py-1 rounded-full font-medium ${
+                          subj.priority === 'high' 
+                            ? 'bg-red-100 text-red-700 dark:bg-red-900/50 dark:text-red-300' 
+                            : subj.priority === 'medium'
+                            ? 'bg-amber-100 text-amber-700 dark:bg-amber-900/50 dark:text-amber-300'
+                            : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
+                        }`}
+                      >
+                        {subj.name} ({subj.hours}h)
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <div className="pt-2 border-t border-slate-100 dark:border-slate-800">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">Goals:</p>
+                    <ul className="space-y-1">
+                      {week.goals.map((goal, gIdx) => (
+                        <li key={gIdx} className="text-xs text-slate-600 dark:text-slate-400 flex items-start gap-2">
+                          <span className="text-indigo-500">•</span>
+                          {goal}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Checklist Tab */}
       {activeTab === 'checklist' && (
