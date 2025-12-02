@@ -1,0 +1,862 @@
+import { Subject } from '../types';
+import { getReelColor } from './helpers';
+
+export const IT_SUBJECT: Subject = {
+        id: 'it',
+        name: 'Information Technology',
+        icon: 'Monitor',
+        color: 'bg-cyan-500',
+        syllabus: '1. Introduction to IT\n2. HTML & Web Design\n3. JavaScript Basics\n4. Networking & Internet\n5. Cyber Security',
+        paperPattern: '### IT Paper Pattern (50 Marks Theory + 50 Marks Practical)\n\n**Theory:**\n* MCQs (10 Marks)\n* Short Answers (20 Marks)\n* Long Answers (20 Marks)\n\n**Practical:**\n* HTML/CSS (20 Marks)\n* JavaScript (20 Marks)\n* Viva (10 Marks)',
+        previousPapers: [{ year: '2024', title: '2024 IT Paper', link: '#' }, { year: '2023', title: '2023 IT Paper', link: '#' }],
+        chapters: [
+          {
+            id: 'it-ch1',
+            title: 'Chapter 1: Introduction to IT',
+            description: 'Basics of Information Technology and Computers',
+            summary: `
+# Introduction to Information Technology
+
+## Key Concepts
+
+### What is IT?
+- Collection, storage, processing, and distribution of information
+- Uses computers, networks, software, and electronic devices
+
+### Components of Computer
+1. **Hardware**: Physical components
+   - Input: Keyboard, mouse, scanner
+   - Output: Monitor, printer, speaker
+   - Processing: CPU (Central Processing Unit)
+   - Storage: HDD, SSD, RAM, ROM
+
+2. **Software**: Programs and instructions
+   - System Software: OS (Windows, Linux, macOS)
+   - Application Software: MS Office, browsers, games
+
+### Types of Computers
+- **Supercomputer**: Fastest, weather forecasting (PARAM)
+- **Mainframe**: Large organizations, banks
+- **Minicomputer**: Medium businesses
+- **Microcomputer**: Personal computers, laptops
+- **Mobile**: Smartphones, tablets
+
+### Memory Units
+| Unit | Size |
+|------|------|
+| Bit | 0 or 1 |
+| Byte | 8 bits |
+| KB | 1024 bytes |
+| MB | 1024 KB |
+| GB | 1024 MB |
+| TB | 1024 GB |
+            `,
+            detailedNotes: `
+# Detailed Notes: Introduction to IT
+
+## Computer System Components
+
+### Central Processing Unit (CPU)
+The "brain" of computer, consists of:
+1. **ALU (Arithmetic Logic Unit)**: Mathematical & logical operations
+2. **CU (Control Unit)**: Controls all operations, fetches instructions
+3. **Registers**: Temporary storage in CPU
+
+### Memory Types
+
+#### Primary Memory
+| Type | Features |
+|------|----------|
+| RAM (Random Access Memory) | Volatile, temporary, fast |
+| ROM (Read Only Memory) | Non-volatile, permanent, firmware |
+| Cache | Very fast, between CPU and RAM |
+
+#### Secondary Memory
+- Hard Disk Drive (HDD): Magnetic storage
+- Solid State Drive (SSD): Flash memory, faster
+- Optical: CD, DVD, Blu-ray
+- Flash: Pen drive, SD card
+
+### Input Devices
+1. **Keyboard**: Text input, QWERTY layout
+2. **Mouse**: Pointing device, clicking
+3. **Scanner**: Digitize documents
+4. **Microphone**: Audio input
+5. **Webcam**: Video input
+6. **Barcode Reader**: Reads barcodes
+7. **Touchscreen**: Input + Output
+
+### Output Devices
+1. **Monitor**: Visual display (LCD, LED, OLED)
+2. **Printer**: Hard copy (Inkjet, Laser, Dot matrix)
+3. **Speaker**: Audio output
+4. **Projector**: Large display
+
+## Software Classification
+
+### System Software
+- **Operating System**: Interface between hardware and user
+  - Windows, macOS, Linux, Android, iOS
+- **Device Drivers**: Hardware-specific programs
+- **Utilities**: Antivirus, disk cleanup
+
+### Application Software
+- **Productivity**: MS Office, LibreOffice
+- **Browsers**: Chrome, Firefox, Edge
+- **Media**: VLC, Photoshop
+- **Communication**: Email, Zoom
+
+### Programming Languages
+- **Low Level**: Machine language, Assembly
+- **High Level**: C, C++, Java, Python
+
+## Number Systems
+| System | Base | Digits |
+|--------|------|--------|
+| Binary | 2 | 0, 1 |
+| Octal | 8 | 0-7 |
+| Decimal | 10 | 0-9 |
+| Hexadecimal | 16 | 0-9, A-F |
+
+### Conversions
+- Binary to Decimal: Multiply by powers of 2
+- Decimal to Binary: Divide by 2, take remainders
+            `,
+            flashcards: [
+              { id: 'f1', front: 'What are the main components of CPU?', back: 'ALU (Arithmetic Logic Unit) - does calculations, CU (Control Unit) - controls operations, Registers - temporary storage.' },
+              { id: 'f2', front: 'Difference between RAM and ROM?', back: 'RAM: Volatile, temporary, read/write, faster. ROM: Non-volatile, permanent, read-only, stores firmware.' },
+              { id: 'f3', front: 'What is 1 KB equal to?', back: '1 KB = 1024 bytes. Memory hierarchy: Bit < Byte < KB < MB < GB < TB' },
+              { id: 'f4', front: 'What is an Operating System?', back: 'System software that manages hardware and provides interface for users. Examples: Windows, macOS, Linux, Android.' },
+              { id: 'f5', front: 'Name types of printers.', back: 'Impact: Dot matrix. Non-impact: Inkjet (color, home use), Laser (fast, office use), Thermal (receipts).' }
+            ],
+            mcqs: [
+              { id: 'mcq1', question: 'Brain of computer is:', options: ['RAM', 'ROM', 'CPU', 'Hard Disk'], correctIndex: 2, explanation: '' },
+              { id: 'mcq2', question: '1 GB equals:', options: ['1024 MB', '1024 KB', '1024 TB', '1000 MB'], correctIndex: 0, explanation: '' },
+              { id: 'mcq3', question: 'Which is volatile memory?', options: ['ROM', 'Hard Disk', 'RAM', 'SSD'], correctIndex: 2, explanation: '' },
+              { id: 'mcq4', question: 'PARAM is a:', options: ['Mainframe', 'Supercomputer', 'Minicomputer', 'Microcomputer'], correctIndex: 1, explanation: '' }
+            ],
+            reels: [
+              { id: 'r1', color: '#4ECDC4', title: 'CPU Components', content: 'ALU (Math) + CU (Control) + Registers (Storage) = CPU 🧠' },
+              { id: 'r2', color: '#45B7D1', title: 'Memory Hierarchy', content: 'Bit → Byte → KB → MB → GB → TB | Each = 1024× previous 📊' },
+              { id: 'r3', color: '#96CEB4', title: 'RAM vs ROM', content: 'RAM: Volatile, Temporary 💨 | ROM: Permanent, Firmware 💾' },
+              { id: 'r4', color: '#FFEAA7', title: 'Computer Types', content: 'Super > Mainframe > Mini > Micro > Mobile | Speed & Size decreases 🖥️📱' }
+            ]
+          },
+          {
+            id: 'it-ch2',
+            title: 'Chapter 2: HTML & Web Design',
+            description: 'Creating web pages with HTML and CSS',
+            summary: `
+# HTML & Web Design
+
+## Key Concepts
+
+### What is HTML?
+- HyperText Markup Language
+- Standard language for creating web pages
+- Uses tags enclosed in < >
+
+### Basic HTML Structure
+\`\`\`html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+  Content here
+</body>
+</html>
+\`\`\`
+
+### Common HTML Tags
+| Tag | Purpose |
+|-----|---------|
+| \`<h1>\` to \`<h6>\` | Headings |
+| \`<p>\` | Paragraph |
+| \`<a href="">\` | Hyperlink |
+| \`<img src="">\` | Image |
+| \`<ul>, <ol>, <li>\` | Lists |
+| \`<table>, <tr>, <td>\` | Tables |
+| \`<form>\` | User input forms |
+| \`<div>, <span>\` | Containers |
+
+### CSS (Cascading Style Sheets)
+- Styles the HTML elements
+- Colors, fonts, layouts
+- Can be inline, internal, or external
+            `,
+            detailedNotes: `
+# Detailed Notes: HTML & Web Design
+
+## HTML Document Structure
+
+### DOCTYPE Declaration
+\`<!DOCTYPE html>\` - Tells browser it's HTML5
+
+### Head Section
+- \`<title>\`: Browser tab title
+- \`<meta>\`: Metadata (charset, viewport)
+- \`<link>\`: External CSS
+- \`<style>\`: Internal CSS
+- \`<script>\`: JavaScript
+
+### Body Section
+Contains visible content
+
+## HTML Tags in Detail
+
+### Text Formatting
+| Tag | Effect |
+|-----|--------|
+| \`<b>\` or \`<strong>\` | Bold |
+| \`<i>\` or \`<em>\` | Italic |
+| \`<u>\` | Underline |
+| \`<br>\` | Line break |
+| \`<hr>\` | Horizontal line |
+
+### Links and Images
+\`\`\`html
+<a href="https://example.com" target="_blank">Link Text</a>
+<img src="image.jpg" alt="Description" width="200">
+\`\`\`
+
+### Lists
+**Unordered (bullets):**
+\`\`\`html
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+\`\`\`
+
+**Ordered (numbers):**
+\`\`\`html
+<ol>
+  <li>First</li>
+  <li>Second</li>
+</ol>
+\`\`\`
+
+### Tables
+\`\`\`html
+<table border="1">
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+  </tr>
+  <tr>
+    <td>Data 1</td>
+    <td>Data 2</td>
+  </tr>
+</table>
+\`\`\`
+
+### Forms
+\`\`\`html
+<form action="submit.php" method="POST">
+  <input type="text" name="username" placeholder="Name">
+  <input type="password" name="pass">
+  <input type="email" name="email">
+  <input type="submit" value="Submit">
+</form>
+\`\`\`
+
+## CSS Basics
+
+### Ways to Apply CSS
+1. **Inline**: \`<p style="color: red;">\`
+2. **Internal**: \`<style>\` in head
+3. **External**: \`<link rel="stylesheet" href="style.css">\`
+
+### CSS Syntax
+\`\`\`css
+selector {
+  property: value;
+}
+\`\`\`
+
+### Common CSS Properties
+| Property | Values |
+|----------|--------|
+| color | red, #FF0000, rgb(255,0,0) |
+| background-color | color values |
+| font-size | 16px, 1em, 100% |
+| font-family | Arial, sans-serif |
+| margin | 10px (outside space) |
+| padding | 10px (inside space) |
+| border | 1px solid black |
+
+### CSS Selectors
+- Element: \`p { }\`
+- Class: \`.classname { }\`
+- ID: \`#idname { }\`
+- Universal: \`* { }\`
+            `,
+            flashcards: [
+              { id: 'f6', front: 'What does HTML stand for?', back: 'HyperText Markup Language - standard language for creating web pages using tags.' },
+              { id: 'f7', front: 'What is the basic structure of HTML document?', back: '<!DOCTYPE html>, <html>, <head> (title, meta), <body> (content), </html>' },
+              { id: 'f8', front: 'How to create a hyperlink in HTML?', back: '<a href="URL">Link Text</a>. Use target="_blank" to open in new tab.' },
+              { id: 'f9', front: 'What is CSS used for?', back: 'Cascading Style Sheets - used to style HTML elements (colors, fonts, layouts). Can be inline, internal, or external.' },
+              { id: 'f10', front: 'Difference between <div> and <span>?', back: '<div> is block-level (takes full width). <span> is inline (takes only needed width). Both are containers.' }
+            ],
+            mcqs: [
+              { id: 'mcq5', question: 'HTML stands for:', options: ['Hyper Text Making Language', 'HyperText Markup Language', 'High Text Markup Language', 'Hyper Tool Markup Language'], correctIndex: 1, explanation: '' },
+              { id: 'mcq6', question: 'Which tag creates largest heading?', options: ['<h6>', '<h1>', '<heading>', '<head>'], correctIndex: 1, explanation: '' },
+              { id: 'mcq7', question: 'CSS stands for:', options: ['Cascading Style Sheets', 'Computer Style Sheets', 'Creative Style System', 'Colorful Style Sheets'], correctIndex: 0, explanation: '' },
+              { id: 'mcq8', question: 'Which is correct CSS syntax?', options: ['body:color=black', '{body;color:black}', 'body {color: black;}', 'body = color: black'], correctIndex: 2, explanation: '' }
+            ],
+            reels: [
+              { id: 'r5', color: '#DDA0DD', title: 'HTML Structure', content: '<!DOCTYPE> → <html> → <head> + <body> → </html> 📄' },
+              { id: 'r6', color: '#98D8C8', title: 'Common Tags', content: '<h1> Heading | <p> Paragraph | <a> Link | <img> Image | <div> Container 🏷️' },
+              { id: 'r7', color: '#F7DC6F', title: 'CSS Ways', content: 'Inline: style="" | Internal: <style> | External: .css file 🎨' },
+              { id: 'r8', color: '#BB8FCE', title: 'CSS Box Model', content: 'Content → Padding → Border → Margin (inside to outside) 📦' }
+            ]
+          },
+          {
+            id: 'it-ch3',
+            title: 'Chapter 3: JavaScript Basics',
+            description: 'Introduction to JavaScript programming',
+            summary: `
+# JavaScript Basics
+
+## Key Concepts
+
+### What is JavaScript?
+- Client-side scripting language
+- Makes web pages interactive
+- Runs in browser
+
+### Adding JavaScript
+1. **Inline**: \`onclick="alert('Hi')"\`
+2. **Internal**: \`<script>\` tag in HTML
+3. **External**: \`<script src="file.js">\`
+
+### Variables
+\`\`\`javascript
+var name = "John";    // old way
+let age = 25;         // block-scoped
+const PI = 3.14;      // constant
+\`\`\`
+
+### Data Types
+- String: \`"Hello"\`
+- Number: \`42, 3.14\`
+- Boolean: \`true, false\`
+- Array: \`[1, 2, 3]\`
+- Object: \`{name: "John", age: 25}\`
+
+### Operators
+- Arithmetic: \`+, -, *, /, %\`
+- Comparison: \`==, ===, !=, <, >\`
+- Logical: \`&&, ||, !\`
+
+### Functions
+\`\`\`javascript
+function greet(name) {
+  return "Hello " + name;
+}
+\`\`\`
+            `,
+            detailedNotes: `
+# Detailed Notes: JavaScript Basics
+
+## Introduction to JavaScript
+
+### Features
+- Interpreted language (no compilation)
+- Case-sensitive
+- Dynamic typing
+- Event-driven programming
+- Object-based
+
+### Adding to HTML
+\`\`\`html
+<!-- Internal -->
+<script>
+  alert("Hello World!");
+</script>
+
+<!-- External -->
+<script src="script.js"></script>
+\`\`\`
+
+## Variables and Data Types
+
+### Variable Declaration
+| Keyword | Scope | Reassign | Redeclare |
+|---------|-------|----------|-----------|
+| var | Function | Yes | Yes |
+| let | Block | Yes | No |
+| const | Block | No | No |
+
+### Data Types
+**Primitive:**
+- String: \`"Hello"\` or \`'Hello'\`
+- Number: \`10\`, \`3.14\`, \`NaN\`, \`Infinity\`
+- Boolean: \`true\`, \`false\`
+- Undefined: Variable declared but not assigned
+- Null: Intentionally empty
+
+**Non-Primitive:**
+- Array: \`let arr = [1, 2, 3];\`
+- Object: \`let obj = {key: value};\`
+
+## Operators
+
+### Arithmetic Operators
+| Operator | Operation |
+|----------|-----------|
+| + | Addition |
+| - | Subtraction |
+| * | Multiplication |
+| / | Division |
+| % | Modulus (remainder) |
+| ++ | Increment |
+| -- | Decrement |
+
+### Comparison Operators
+| Operator | Meaning |
+|----------|---------|
+| == | Equal (value) |
+| === | Strict equal (value + type) |
+| != | Not equal |
+| !== | Strict not equal |
+| > < >= <= | Comparisons |
+
+## Control Structures
+
+### If-Else
+\`\`\`javascript
+if (condition) {
+  // code
+} else if (condition2) {
+  // code
+} else {
+  // code
+}
+\`\`\`
+
+### Switch
+\`\`\`javascript
+switch (value) {
+  case 1: break;
+  case 2: break;
+  default: break;
+}
+\`\`\`
+
+### Loops
+\`\`\`javascript
+// For loop
+for (let i = 0; i < 5; i++) { }
+
+// While loop
+while (condition) { }
+
+// Do-while
+do { } while (condition);
+\`\`\`
+
+## Functions
+
+### Function Declaration
+\`\`\`javascript
+function add(a, b) {
+  return a + b;
+}
+\`\`\`
+
+### Arrow Function (ES6)
+\`\`\`javascript
+const add = (a, b) => a + b;
+\`\`\`
+
+## DOM Manipulation
+
+### Selecting Elements
+\`\`\`javascript
+document.getElementById("id");
+document.getElementsByClassName("class");
+document.querySelector(".class");
+\`\`\`
+
+### Changing Content
+\`\`\`javascript
+element.innerHTML = "New content";
+element.style.color = "red";
+\`\`\`
+
+### Events
+\`\`\`javascript
+element.onclick = function() { };
+element.addEventListener("click", function);
+\`\`\`
+
+Common events: click, mouseover, keydown, submit, load
+            `,
+            flashcards: [
+              { id: 'f11', front: 'What is JavaScript used for?', back: 'Client-side scripting language that makes web pages interactive. Runs in browser, handles events, manipulates DOM.' },
+              { id: 'f12', front: 'Difference between var, let, and const?', back: 'var: function-scoped, can redeclare. let: block-scoped, can reassign. const: block-scoped, cannot reassign (constant).' },
+              { id: 'f13', front: 'Difference between == and ===?', back: '== checks value equality (with type coercion). === checks value AND type equality (strict comparison). Use === preferred.' },
+              { id: 'f14', front: 'What is DOM?', back: 'Document Object Model - tree representation of HTML document. JavaScript uses it to access and manipulate page elements.' },
+              { id: 'f15', front: 'How to declare a function in JavaScript?', back: 'function name(params) { return value; } or Arrow: const name = (params) => value;' }
+            ],
+            mcqs: [
+              { id: 'mcq9', question: 'JavaScript is a:', options: ['Compiled language', 'Markup language', 'Scripting language', 'Database language'], correctIndex: 2, explanation: '' },
+              { id: 'mcq10', question: 'Which declares a constant?', options: ['var', 'let', 'const', 'constant'], correctIndex: 2, explanation: '' },
+              { id: 'mcq11', question: 'Correct way to write array?', options: ['var a = (1,2,3)', 'var a = [1,2,3]', 'var a = {1,2,3}', 'var a = "1,2,3"'], correctIndex: 1, explanation: '' },
+              { id: 'mcq12', question: 'DOM stands for:', options: ['Document Object Model', 'Data Object Model', 'Document Order Model', 'Digital Object Module'], correctIndex: 0, explanation: '' }
+            ],
+            reels: [
+              { id: 'r9', color: '#85C1E9', title: 'JS Data Types', content: 'String | Number | Boolean | Array | Object | Null | Undefined 📝' },
+              { id: 'r10', color: '#FF6B6B', title: 'var vs let vs const', content: 'var: old, function scope | let: new, block scope | const: constant, no change 🔒' },
+              { id: 'r11', color: '#4ECDC4', title: '== vs ===', content: '== Value only (5 == "5" ✓) | === Value + Type (5 === "5" ✗) 🎯' },
+              { id: 'r12', color: '#45B7D1', title: 'DOM Methods', content: 'getElementById | querySelector | innerHTML | addEventListener 🌳' }
+            ]
+          },
+          {
+            id: 'it-ch4',
+            title: 'Chapter 4: Networking & Internet',
+            description: 'Computer networks and internet concepts',
+            summary: `
+# Networking & Internet
+
+## Key Concepts
+
+### What is a Network?
+- Connected computers sharing resources
+- LAN, WAN, MAN, PAN
+
+### Network Types
+| Type | Range | Example |
+|------|-------|---------|
+| PAN | Few meters | Bluetooth |
+| LAN | Building | Office network |
+| MAN | City | Cable TV network |
+| WAN | Country/World | Internet |
+
+### Network Topologies
+- **Bus**: Single cable, all connected
+- **Star**: Central hub/switch
+- **Ring**: Circular connection
+- **Mesh**: Every device connected
+
+### Internet Basics
+- Global network of networks
+- Uses TCP/IP protocol
+- Services: WWW, Email, FTP
+
+### IP Address
+- Unique address for each device
+- IPv4: 192.168.1.1 (32-bit)
+- IPv6: 128-bit (newer)
+
+### URL Components
+\`https://www.example.com/page.html\`
+- Protocol: https
+- Domain: www.example.com
+- Path: /page.html
+            `,
+            detailedNotes: `
+# Detailed Notes: Networking & Internet
+
+## Computer Networks
+
+### Definition
+Collection of interconnected computers and devices that share resources and communicate with each other.
+
+### Advantages
+- Resource sharing (printers, files)
+- Communication (email, chat)
+- Centralized data management
+- Cost effective
+
+### Network Types
+
+| Type | Full Form | Range | Speed | Example |
+|------|-----------|-------|-------|---------|
+| PAN | Personal Area Network | ~10m | Low | Bluetooth devices |
+| LAN | Local Area Network | Building | High | Office, school |
+| MAN | Metropolitan Area Network | City | Medium | Cable TV |
+| WAN | Wide Area Network | Global | Variable | Internet |
+
+## Network Topologies
+
+### Bus Topology
+- Single backbone cable
+- All devices connected to it
+- Cheap but single point of failure
+- Collision issues
+
+### Star Topology
+- Central switch/hub
+- All devices connect to center
+- Easy to add devices
+- If center fails, all fail
+
+### Ring Topology
+- Circular arrangement
+- Data travels in one direction
+- Token passing method
+- Difficult to troubleshoot
+
+### Mesh Topology
+- Every device connected to every other
+- Highly reliable, redundant
+- Expensive, complex
+
+## Internet Fundamentals
+
+### What is Internet?
+- Network of networks
+- Started as ARPANET (1969)
+- Uses TCP/IP protocol
+
+### Key Terms
+- **WWW**: World Wide Web, collection of websites
+- **HTTP/HTTPS**: Protocol for web pages (S = Secure)
+- **FTP**: File Transfer Protocol
+- **SMTP**: Email sending protocol
+- **DNS**: Domain Name System (converts URL to IP)
+
+### IP Addressing
+
+#### IPv4
+- 32-bit address
+- Format: xxx.xxx.xxx.xxx
+- Example: 192.168.1.1
+- Classes: A, B, C, D, E
+
+#### IPv6
+- 128-bit address
+- Hexadecimal format
+- More addresses available
+
+### URL Structure
+\`\`\`
+https://www.example.com:443/folder/page.html?id=1#section
+|____| |_______________|___| |________________| |___| |_____|
+Protocol    Domain      Port      Path         Query Fragment
+\`\`\`
+
+## Network Devices
+
+| Device | Function |
+|--------|----------|
+| Hub | Broadcasts to all ports |
+| Switch | Sends to specific port (MAC) |
+| Router | Connects different networks (IP) |
+| Modem | Modulator-Demodulator (analog-digital) |
+| Gateway | Connects different protocols |
+| Firewall | Security, filters traffic |
+
+## Network Models
+
+### OSI Model (7 Layers)
+1. Physical
+2. Data Link
+3. Network
+4. Transport
+5. Session
+6. Presentation
+7. Application
+
+**Mnemonic**: Please Do Not Throw Sausage Pizza Away
+
+### TCP/IP Model (4 Layers)
+1. Network Interface
+2. Internet
+3. Transport
+4. Application
+            `,
+            flashcards: [
+              { id: 'f16', front: 'What is LAN?', back: 'Local Area Network - network within a building or small area. High speed, private ownership. Example: Office or school network.' },
+              { id: 'f17', front: 'What is an IP address?', back: 'Internet Protocol address - unique numerical identifier for each device on network. IPv4: 32-bit (e.g., 192.168.1.1), IPv6: 128-bit.' },
+              { id: 'f18', front: 'What is DNS?', back: 'Domain Name System - converts human-readable domain names (google.com) to IP addresses. Like phonebook of internet.' },
+              { id: 'f19', front: 'Difference between Hub and Switch?', back: 'Hub: Broadcasts data to all ports (dumb). Switch: Sends data only to intended port using MAC address (smart, efficient).' },
+              { id: 'f20', front: 'What are the 7 layers of OSI model?', back: 'Physical, Data Link, Network, Transport, Session, Presentation, Application. Mnemonic: Please Do Not Throw Sausage Pizza Away.' }
+            ],
+            mcqs: [
+              { id: 'mcq13', question: 'LAN stands for:', options: ['Local Access Network', 'Local Area Network', 'Large Area Network', 'Long Area Network'], correctIndex: 1, explanation: '' },
+              { id: 'mcq14', question: 'Which topology has central hub?', options: ['Bus', 'Ring', 'Star', 'Mesh'], correctIndex: 2, explanation: '' },
+              { id: 'mcq15', question: 'IP address is:', options: ['8-bit', '16-bit', '32-bit (IPv4)', '64-bit'], correctIndex: 2, explanation: '' },
+              { id: 'mcq16', question: 'DNS converts:', options: ['IP to MAC', 'Domain to IP', 'MAC to IP', 'IP to Domain'], correctIndex: 1, explanation: '' }
+            ],
+            reels: [
+              { id: 'r13', color: '#96CEB4', title: 'Network Types', content: 'PAN (Bluetooth) < LAN (Building) < MAN (City) < WAN (World) 🌐' },
+              { id: 'r14', color: '#FFEAA7', title: 'Star Topology', content: 'All connect to CENTER | Easy to manage | Center fails = All fail ⭐' },
+              { id: 'r15', color: '#DDA0DD', title: 'OSI Layers', content: 'Please Do Not Throw Sausage Pizza Away | 7 layers bottom to top 📚' },
+              { id: 'r16', color: '#98D8C8', title: 'Hub vs Switch', content: 'Hub: Broadcast to ALL 📢 | Switch: Send to SPECIFIC port 🎯' }
+            ]
+          },
+          {
+            id: 'it-ch5',
+            title: 'Chapter 5: Cyber Security',
+            description: 'Online threats and protection methods',
+            summary: `
+# Cyber Security
+
+## Key Concepts
+
+### What is Cyber Security?
+- Protecting computers, networks, data from attacks
+- Also called Information Security
+
+### Types of Cyber Threats
+1. **Virus**: Self-replicating malicious code
+2. **Worm**: Spreads without host file
+3. **Trojan**: Disguised as legitimate software
+4. **Ransomware**: Encrypts data, demands ransom
+5. **Spyware**: Secretly monitors activity
+6. **Phishing**: Fake emails/websites to steal data
+
+### Protection Methods
+- Antivirus software
+- Firewall
+- Strong passwords
+- Regular updates
+- Backup data
+- Be cautious with links/attachments
+
+### Password Best Practices
+- Minimum 8 characters
+- Mix of uppercase, lowercase, numbers, symbols
+- Don't use personal info
+- Change regularly
+- Use different passwords
+
+### Safe Internet Practices
+- Verify website authenticity (https, padlock)
+- Don't share personal info
+- Avoid public WiFi for banking
+- Log out after use
+            `,
+            detailedNotes: `
+# Detailed Notes: Cyber Security
+
+## Introduction
+
+### Definition
+Cyber security is the practice of protecting systems, networks, and programs from digital attacks.
+
+### Goals (CIA Triad)
+1. **Confidentiality**: Data accessible only to authorized
+2. **Integrity**: Data not altered without permission
+3. **Availability**: Systems accessible when needed
+
+## Types of Malware
+
+| Type | Description | Spread |
+|------|-------------|--------|
+| Virus | Attaches to files, replicates | User action needed |
+| Worm | Self-replicates, spreads alone | Network |
+| Trojan | Disguised as useful software | Downloads |
+| Ransomware | Encrypts files, demands payment | Email, downloads |
+| Spyware | Secretly monitors user | Bundled software |
+| Adware | Shows unwanted ads | Free software |
+| Rootkit | Hides in system, hard to detect | Various |
+
+## Cyber Attacks
+
+### Phishing
+- Fake emails/websites mimicking legitimate ones
+- Goal: Steal login credentials, personal info
+- Prevention: Check URL, don't click suspicious links
+
+### Social Engineering
+- Manipulating people to reveal information
+- Pretexting, baiting, quid pro quo
+- Prevention: Verify identity, be cautious
+
+### DoS/DDoS Attack
+- Denial of Service / Distributed DoS
+- Overwhelms system with requests
+- Makes service unavailable
+
+### Man-in-the-Middle
+- Attacker intercepts communication
+- Can read/modify messages
+- Prevention: Use HTTPS, VPN
+
+### SQL Injection
+- Inserting malicious SQL code
+- Targets databases through web forms
+- Prevention: Input validation
+
+## Protection Measures
+
+### Technical Measures
+1. **Antivirus**: Detects and removes malware
+2. **Firewall**: Filters network traffic
+3. **Encryption**: Scrambles data
+4. **Two-Factor Authentication**: Extra security layer
+5. **VPN**: Secure connection over internet
+6. **Regular Updates**: Patch vulnerabilities
+
+### Password Security
+**Strong Password Rules:**
+- Minimum 12 characters (8 minimum)
+- Uppercase + lowercase letters
+- Numbers and special characters
+- No dictionary words or personal info
+- Unique for each account
+
+**Password Manager:**
+- Stores passwords securely
+- Generates strong passwords
+- Examples: LastPass, 1Password
+
+### Safe Browsing
+- Check for HTTPS (padlock icon)
+- Verify website URL
+- Avoid clicking unknown links
+- Don't download from untrusted sources
+- Be careful on public WiFi
+
+## Cyber Laws in India
+
+### IT Act 2000
+- Legal recognition of electronic documents
+- Digital signatures
+- Cyber crimes and penalties
+
+### Common Cyber Crimes
+| Section | Crime |
+|---------|-------|
+| 43 | Unauthorized access, damage |
+| 66 | Computer hacking |
+| 66A | Offensive messages (struck down) |
+| 66B | Stolen computer/device |
+| 66C | Identity theft |
+| 66D | Cheating by personation |
+| 66E | Violation of privacy |
+| 67 | Publishing obscene content |
+
+### Reporting Cyber Crime
+- Cyber Crime Cell
+- www.cybercrime.gov.in
+- Helpline: 1930
+            `,
+            flashcards: [
+              { id: 'f21', front: 'What is the CIA triad in cyber security?', back: 'Confidentiality (only authorized access), Integrity (data not altered), Availability (systems accessible when needed).' },
+              { id: 'f22', front: 'Difference between virus and worm?', back: 'Virus: Needs host file, spreads by user action. Worm: No host needed, self-replicates and spreads automatically through network.' },
+              { id: 'f23', front: 'What is phishing?', back: 'Fraudulent attempt to obtain sensitive information by disguising as trustworthy entity through fake emails or websites.' },
+              { id: 'f24', front: 'What is ransomware?', back: 'Malware that encrypts victim\'s files and demands ransom payment for decryption key. Prevention: Backup, don\'t click unknown links.' },
+              { id: 'f25', front: 'What is two-factor authentication?', back: 'Security method requiring two types of verification: something you know (password) + something you have (OTP on phone).' }
+            ],
+            mcqs: [
+              { id: 'mcq17', question: 'Which spreads without user action?', options: ['Virus', 'Worm', 'Trojan', 'Adware'], correctIndex: 1, explanation: '' },
+              { id: 'mcq18', question: 'CIA in security stands for:', options: ['Computer Internet Access', 'Confidentiality Integrity Availability', 'Central Intelligence Agency', 'Computer Information Architecture'], correctIndex: 1, explanation: '' },
+              { id: 'mcq19', question: 'Phishing attacks through:', options: ['Direct hacking', 'Fake emails/websites', 'Physical access', 'USB drive'], correctIndex: 1, explanation: '' },
+              { id: 'mcq20', question: 'IT Act in India was passed in:', options: ['1995', '2000', '2005', '2008'], correctIndex: 1, explanation: '' }
+            ],
+            reels: [
+              { id: 'r17', color: '#F7DC6F', title: 'CIA Triad', content: 'Confidentiality + Integrity + Availability = Security Goals 🔒' },
+              { id: 'r18', color: '#BB8FCE', title: 'Virus vs Worm', content: 'Virus: Needs host file 📎 | Worm: Spreads alone 🐛' },
+              { id: 'r19', color: '#85C1E9', title: 'Strong Password', content: '12+ chars + Upper + Lower + Number + Symbol = Strong 💪🔐' },
+              { id: 'r20', color: '#FF6B6B', title: 'Phishing Signs', content: 'Urgent! + Spelling errors + Suspicious link + Too good = SCAM ⚠️' }
+            ]
+          }
+        ]
+};
