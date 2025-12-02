@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
@@ -12,10 +12,12 @@ import MarkdownRenderer from './components/MarkdownRenderer';
 import CountdownTimer from './components/CountdownTimer';
 import ProgressDashboard from './components/ProgressDashboard';
 import StudyPlanner from './components/StudyPlanner';
-import PreviousMarksInput from './components/PreviousMarksInput';
+import PreviousMarksInput from './components/PreviousMarksInputNew';
 import WeaknessAnalysis from './components/WeaknessAnalysis';
+import Onboarding from './components/Onboarding';
 import { useProgress } from './hooks/useProgress';
 import { explainConcept } from './services/geminiService';
+import { db, UserProfile } from './services/localDb';
 
 // --- Types ---
 type ViewState = 
@@ -27,9 +29,12 @@ type ViewState =
   | 'SYLLABUS_VIEW'
   | 'PAPER_PATTERN_VIEW'
   | 'PROGRESS_VIEW'
-  | 'STUDY_PLANNER';
+  | 'STUDY_PLANNER'
+  | 'SETTINGS';
 
 const App: React.FC = () => {
+  const [isOnboarded, setIsOnboarded] = useState<boolean>(true); // Default true to avoid flash
+  const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [view, setView] = useState<ViewState>('STREAM_SELECT');
   const [selectedStream, setSelectedStream] = useState<Stream | null>(null);
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
@@ -44,7 +49,7 @@ const App: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   
   // Dark Mode State
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
   
   // Progress Tracking
   const { 
@@ -58,17 +63,56 @@ const App: React.FC = () => {
     getStudyStats 
   } = useProgress();
 
+  // Check onboarding status on mount
+  useEffect(() => {
+    const profile = db.getUserProfile();
+    if (profile) {
+      setUserProfile(profile);
+      setSelectedStream(profile.stream);
+      setIsOnboarded(true);
+      setView('DASHBOARD');
+    } else {
+      setIsOnboarded(false);
+    }
+  }, []);
+
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
+    db.saveSettings({ darkMode });
   }, [darkMode]);
+
+  // Handle onboarding complete
+  const handleOnboardingComplete = (profile: UserProfile) => {
+    setUserProfile(profile);
+    setSelectedStream(profile.stream);
+    setIsOnboarded(true);
+    setView('DASHBOARD');
+  };
+
+  // Logout / Reset
+  const handleLogout = () => {
+    if (confirm('This will reset all your data. Are you sure?')) {
+      db.clearAllData();
+      setUserProfile(null);
+      setSelectedStream(null);
+      setIsOnboarded(false);
+      setView('STREAM_SELECT');
+    }
+  };
 
   // --- Handlers ---
   const selectStream = (stream: Stream) => {
     setSelectedStream(stream);
+    // Update profile if exists
+    if (userProfile) {
+      const updated = { ...userProfile, stream };
+      db.saveUserProfile(updated);
+      setUserProfile(updated);
+    }
     setView('DASHBOARD');
   };
 
@@ -207,6 +251,28 @@ const App: React.FC = () => {
                     {darkMode ? <Sun size={22} className="shrink-0 text-amber-400" /> : <Moon size={22} className="shrink-0 text-indigo-400" />}
                     <span className="font-semibold text-sm hidden sm:block">{darkMode ? 'Light Mode' : 'Dark Mode'}</span>
                  </button>
+
+                 {/* User Profile */}
+                 {userProfile && (
+                   <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                     <div className="px-2 py-2 flex items-center gap-2">
+                       <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xs">
+                         {userProfile.name.charAt(0).toUpperCase()}
+                       </div>
+                       <div className="hidden sm:block">
+                         <p className="text-xs font-bold text-slate-700 dark:text-slate-200 truncate">{userProfile.name}</p>
+                         <p className="text-[10px] text-slate-400">{userProfile.stream}</p>
+                       </div>
+                     </div>
+                     <button 
+                       onClick={handleLogout}
+                       className="w-full p-3 rounded-xl flex items-center gap-3 hover:bg-red-50 dark:hover:bg-red-900/20 text-red-500 dark:text-red-400 transition-colors mt-2"
+                     >
+                       <LogOut size={18} className="shrink-0" />
+                       <span className="font-semibold text-sm hidden sm:block">Reset Profile</span>
+                     </button>
+                   </div>
+                 )}
               </div>
 
               <div>
@@ -332,28 +398,40 @@ const App: React.FC = () => {
 
   const renderDashboard = () => {
     const data = selectedStream ? MOCK_DATA[selectedStream] : null;
+    const greeting = () => {
+      const hour = new Date().getHours();
+      if (hour < 12) return 'Good Morning';
+      if (hour < 17) return 'Good Afternoon';
+      return 'Good Evening';
+    };
     
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-24 font-sans transition-colors">
-        <div className="bg-white dark:bg-slate-900 px-6 pt-6 pb-4 sticky top-0 z-20 shadow-sm border-b border-slate-100 dark:border-slate-800">
-           <div className="flex justify-between items-center mb-4">
-              <button onClick={goBack} className="p-2 -ml-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full text-slate-600 dark:text-slate-300">
-                <ArrowLeft size={22} />
-              </button>
+        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700 dark:from-indigo-900 dark:via-purple-900 dark:to-indigo-950 px-6 pt-8 pb-12 rounded-b-[2.5rem] shadow-xl shadow-indigo-200/50 dark:shadow-indigo-900/50">
+           <div className="flex justify-between items-start mb-6">
+              <div>
+                <p className="text-indigo-200 text-sm font-medium mb-1">{greeting()}</p>
+                <h1 className="text-3xl font-black text-white">
+                  {userProfile?.name || 'Student'} 👋
+                </h1>
+              </div>
               <div className="flex items-center gap-2">
-                 <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-xs">7k</div>
+                <div className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold">
+                  {selectedStream}
+                </div>
               </div>
            </div>
-           <h1 className="text-3xl font-black text-slate-800 dark:text-white">Learning Hub</h1>
-           <p className="text-slate-500 dark:text-slate-400 font-medium">Let's crush those exams!</p>
+           <p className="text-indigo-100 font-medium">Let's crush those exams! 🚀</p>
         </div>
 
-        <div className="p-6">
+        <div className="p-6 -mt-6">
           {/* Countdown Timer */}
-          <CountdownTimer />
+          <div className="mb-6">
+            <CountdownTimer />
+          </div>
 
-          {/* Previous Marks Input Section */}
-          <PreviousMarksInput />
+          {/* Previous Marks Input Section - Now with stream-specific subjects */}
+          {selectedStream && <PreviousMarksInput stream={selectedStream} />}
 
           {/* Weakness Analysis Section */}
           <WeaknessAnalysis />
@@ -1019,6 +1097,11 @@ const App: React.FC = () => {
       </div>
     );
   };
+
+  // Show onboarding if user hasn't set up profile
+  if (!isOnboarded) {
+    return <Onboarding onComplete={handleOnboardingComplete} />;
+  }
 
   return (
     <div className="antialiased text-slate-800 dark:text-slate-200 bg-slate-50 dark:bg-slate-950 h-full selection:bg-indigo-100 dark:selection:bg-indigo-900 selection:text-indigo-900 dark:selection:text-indigo-100 flex overflow-hidden transition-colors duration-300">
