@@ -60,7 +60,7 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
   },
   [Stream.ARTS]: {
     id: Stream.ARTS,
-    subjects: [ENGLISH_SUBJECT, HIS_SUBJECT, POL_SUBJECT, SOC_SUBJECT, GEO_SUBJECT, PSY_SUBJECT]
+    subjects: [ENGLISH_SUBJECT, HIS_SUBJECT, POL_SUBJECT, SOC_SUBJECT, GEO_SUBJECT, PSY_SUBJECT, ECONOMICS_SUBJECT]
   },
   [Stream.SCIENCE]: {
     id: Stream.SCIENCE,
