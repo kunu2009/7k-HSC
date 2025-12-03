@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
@@ -23,6 +23,15 @@ import SpeedRevision from './components/SpeedRevision';
 import ExamSimulation from './components/ExamSimulation';
 import RevisionDashboard from './components/RevisionDashboard';
 import FormulaBank from './components/FormulaBank';
+import BreathingExercise from './components/BreathingExercise';
+import GoalSetting from './components/GoalSetting';
+import MatchPairs from './components/MatchPairs';
+import ChapterSummary from './components/ChapterSummary';
+import Achievements from './components/Achievements';
+import Bookmarks from './components/Bookmarks';
+import ProgressCharts from './components/ProgressCharts';
+import LastMinuteRevision from './components/LastMinuteRevision';
+import RandomChallenge from './components/RandomChallenge';
 import { useProgress } from './hooks/useProgress';
 import { explainConcept } from './services/geminiService';
 import { db, UserProfile } from './services/localDb';
@@ -65,6 +74,15 @@ const App: React.FC = () => {
   const [showExamSimulation, setShowExamSimulation] = useState(false);
   const [showRevisionDashboard, setShowRevisionDashboard] = useState(false);
   const [showFormulaBank, setShowFormulaBank] = useState(false);
+  const [showBreathing, setShowBreathing] = useState(false);
+  const [showGoalSetting, setShowGoalSetting] = useState(false);
+  const [showMatchPairs, setShowMatchPairs] = useState(false);
+  const [showChapterSummary, setShowChapterSummary] = useState(false);
+  const [showAchievements, setShowAchievements] = useState(false);
+  const [showBookmarks, setShowBookmarks] = useState(false);
+  const [showProgressCharts, setShowProgressCharts] = useState(false);
+  const [showLastMinute, setShowLastMinute] = useState(false);
+  const [showRandomChallenge, setShowRandomChallenge] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -595,6 +613,108 @@ const App: React.FC = () => {
                   <BookMarked size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Formulas</span>
+              </button>
+            </div>
+            
+            {/* New Row 3 */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowBreathing(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-cyan-200 dark:hover:border-cyan-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-500 flex items-center justify-center">
+                  <Wind size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Breathe</span>
+              </button>
+              
+              <button
+                onClick={() => setShowGoalSetting(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-500 flex items-center justify-center">
+                  <ListChecks size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Goals</span>
+              </button>
+              
+              <button
+                onClick={() => setShowMatchPairs(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-pink-200 dark:hover:border-pink-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-pink-100 dark:bg-pink-900/30 text-pink-500 flex items-center justify-center">
+                  <Puzzle size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Match</span>
+              </button>
+              
+              <button
+                onClick={() => setShowRandomChallenge(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-rose-200 dark:hover:border-rose-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 text-rose-500 flex items-center justify-center">
+                  <Shuffle size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Challenge</span>
+              </button>
+            </div>
+            
+            {/* New Row 4 */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowAchievements(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-500 flex items-center justify-center">
+                  <Trophy size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Badges</span>
+              </button>
+              
+              <button
+                onClick={() => setShowBookmarks(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-500 flex items-center justify-center">
+                  <Bookmark size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Bookmarks</span>
+              </button>
+              
+              <button
+                onClick={() => setShowProgressCharts(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-violet-200 dark:hover:border-violet-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-violet-100 dark:bg-violet-900/30 text-violet-500 flex items-center justify-center">
+                  <BarChart3 size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Analytics</span>
+              </button>
+              
+              <button
+                onClick={() => setShowLastMinute(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 text-red-500 flex items-center justify-center">
+                  <Clock size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Last Min</span>
+              </button>
+            </div>
+            
+            {/* Row 5 - Chapter Summary */}
+            <div className="grid grid-cols-2 gap-3 mt-3">
+              <button
+                onClick={() => setShowChapterSummary(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800 transition flex items-center gap-3"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-500 flex items-center justify-center">
+                  <FileText size={22} />
+                </div>
+                <div className="text-left">
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200 block">Chapter Summary</span>
+                  <span className="text-xs text-slate-400">Overview of all chapters</span>
+                </div>
               </button>
             </div>
           </div>
@@ -1304,6 +1424,63 @@ const App: React.FC = () => {
         <FormulaBank 
           subjects={getFilteredSubjects()} 
           onClose={() => setShowFormulaBank(false)} 
+        />
+      )}
+      
+      {showBreathing && (
+        <BreathingExercise onClose={() => setShowBreathing(false)} />
+      )}
+      
+      {showGoalSetting && (
+        <GoalSetting onClose={() => setShowGoalSetting(false)} />
+      )}
+      
+      {showMatchPairs && (
+        <MatchPairs 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowMatchPairs(false)} 
+        />
+      )}
+      
+      {showChapterSummary && (
+        <ChapterSummary 
+          subjects={getFilteredSubjects()}
+          onSelectChapter={handleSelectChapterFromDashboard}
+          onClose={() => setShowChapterSummary(false)} 
+        />
+      )}
+      
+      {showAchievements && (
+        <Achievements onClose={() => setShowAchievements(false)} />
+      )}
+      
+      {showBookmarks && (
+        <Bookmarks 
+          subjects={getFilteredSubjects()}
+          onStudyBookmark={(subjectIndex, chapterIndex, type, itemIndex) => {
+            // Navigate to the bookmarked item
+            handleSelectChapterFromDashboard(subjectIndex, chapterIndex);
+          }}
+          onClose={() => setShowBookmarks(false)} 
+        />
+      )}
+      
+      {showProgressCharts && (
+        <ProgressCharts onClose={() => setShowProgressCharts(false)} />
+      )}
+      
+      {showLastMinute && (
+        <LastMinuteRevision 
+          subjects={getFilteredSubjects()}
+          onSelectChapter={handleSelectChapterFromDashboard}
+          onClose={() => setShowLastMinute(false)} 
+        />
+      )}
+      
+      {showRandomChallenge && (
+        <RandomChallenge 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowRandomChallenge(false)} 
         />
       )}
     </div>
