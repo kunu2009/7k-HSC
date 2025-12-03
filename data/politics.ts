@@ -6,8 +6,179 @@ export const POL_SUBJECT: Subject = {
         name: 'Political Science', 
         icon: 'Building2', 
         color: 'bg-red-500', 
-        syllabus: '1. The World since 1991\n2. Key Concepts and Issues since 1991 : Globalisation\n3. Key Concepts and Issues since 1991 : Humanitarian Issues\n4. Contemporary India : Challenges to Peace, Stability and National Integration\n5. Contemporary India : Good Governance\n6. India and the World',
-        paperPattern: '### Political Science Paper Pattern (80 Marks)\n\n* **Q.1 MCQs (20 Marks)**\n* **Q.2-Q.5 Short Answers (40 Marks)**\n* **Q.6 Long Answers (20 Marks)**',
+        syllabus: `### राज्यशास्त्र (Political Science) - Maharashtra HSC Syllabus
+
+## पाठ्यक्रम (Syllabus) - 6 Chapters
+
+**भाग 1: 1991 नंतरचे जग (The World since 1991)**
+
+| Ch | Title (English) | Title (Marathi) | Key Topics |
+|----|-----------------|-----------------|------------|
+| 1 | The World since 1991 | १९९१ नंतरचे जग | Cold War End, USSR Collapse, Unipolarity, New World Order, Gulf War, 9/11, Multipolarity |
+| 2 | Globalisation | जागतिकीकरण | Economic/Political/Cultural Globalisation, MNCs, WTO, LPG Reforms, Impact on India |
+| 3 | Humanitarian Issues | मानवतावादी मुद्दे | Human Rights, UN Role, Refugees, Migration, Terrorism, Environment |
+
+**भाग 2: समकालीन भारत (Contemporary India)**
+
+| Ch | Title (English) | Title (Marathi) | Key Topics |
+|----|-----------------|-----------------|------------|
+| 4 | Challenges to Peace & Stability | शांतता व स्थिरतेला आव्हाने | Communalism, Regionalism, Casteism, Terrorism, Naxalism, National Integration |
+| 5 | Good Governance | सुशासन | Democracy, E-Governance, RTI, Lokpal, Citizen's Charter, Transparency |
+| 6 | India and the World | भारत आणि जग | Foreign Policy, Non-Alignment, India-Pakistan, India-China, SAARC, BRICS, G20 |
+
+## परीक्षा विभाजन (Distribution of Marks)
+
+| Section | Marks |
+|---------|-------|
+| Q.1 MCQs & Objectives | 20 |
+| Q.2 Identify & Explain Concepts | 8 |
+| Q.3 Distinguish Between | 8 |
+| Q.4 Answer in Brief | 16 |
+| Q.5 Long Answers | 16 |
+| Q.6 Graph/Statistical Analysis | 12 |
+| **Total** | **80** |
+
+## अध्याय निहाय अंक (Chapter-wise Weightage)
+
+| Chapter | Expected Marks |
+|---------|---------------|
+| 1. The World since 1991 | 12-14 |
+| 2. Globalisation | 12-14 |
+| 3. Humanitarian Issues | 10-12 |
+| 4. Challenges to Peace | 12-14 |
+| 5. Good Governance | 10-12 |
+| 6. India and the World | 14-16 |`,
+        paperPattern: `### Political Science Paper Pattern (80 Marks)
+## Maharashtra HSC Board - Detailed Pattern
+
+---
+
+### Q.1: वस्तुनिष्ठ प्रश्न (Objective Questions) - 20 Marks
+
+| Sub-Q | Type | Marks | Instructions |
+|-------|------|-------|--------------|
+| A | MCQs (1 mark × 5) | 5 | Choose correct option |
+| B | Find odd word out | 2 | 2 sets of 4 words |
+| C | Complete the correlation | 2 | A:B :: C:? format |
+| D | State True/False with reason | 4 | 2 statements |
+| E | Identify concept from statement | 4 | 2 statements given |
+| F | Complete concept map | 3 | Fill boxes in diagram |
+
+---
+
+### Q.2: संकल्पना ओळखा व स्पष्ट करा (Identify & Explain) - 8 Marks
+
+- **Given:** 5 statements describing concepts
+- **Task:** Identify concept + Write 2 features
+- **Answer:** Any 2 out of 5
+- **Marks:** 4 marks each (2 for ID + 2 for features)
+
+**Example:**
+> Statement: "The process by which economies and societies are interconnected globally"
+> Answer: Globalisation
+> Features: 1. Flow of goods/services 2. Cultural exchange
+
+---
+
+### Q.3: फरक स्पष्ट करा (Distinguish Between) - 8 Marks
+
+- **Given:** 5 pairs of concepts
+- **Task:** Write 4 differences
+- **Answer:** Any 2 out of 5
+- **Marks:** 4 marks each (1 per point)
+
+**Expected Pairs:**
+- Soft Power vs Hard Power
+- Unipolarity vs Multipolarity
+- Globalization vs Localization
+- E-Governance vs Good Governance
+- Bilateral vs Multilateral relations
+
+---
+
+### Q.4: थोडक्यात उत्तरे (Answer in Brief) - 16 Marks
+
+- **Given:** 5 questions
+- **Task:** Answer in 50-60 words
+- **Answer:** Any 4 out of 5
+- **Marks:** 4 marks each
+
+**Topics Usually Asked:**
+- End of Cold War
+- Features of Globalisation
+- Challenges to National Integration
+- Role of UN
+- India's Foreign Policy principles
+
+---
+
+### Q.5: दीर्घ उत्तरे (Long Answers) - 16 Marks
+
+- **Given:** 3 questions
+- **Task:** Answer in 150-200 words
+- **Answer:** Any 2 out of 3
+- **Marks:** 8 marks each
+
+**Tips for 8-mark answers:**
+1. Introduction (1 mark)
+2. Main content - 5-6 points (5-6 marks)
+3. Conclusion (1 mark)
+4. Use subheadings
+
+**Important Long Answer Topics:**
+- Impact of Globalisation on India
+- Challenges to Peace in India
+- Features of Good Governance
+- India-Pakistan Relations
+- India's Foreign Policy since 1991
+
+---
+
+### Q.6: आलेख/सांख्यिकी (Graph/Statistical Analysis) - 12 Marks
+
+- **Given:** 2 passages/tables/graphs
+- **Task:** Answer questions based on data
+- **Answer:** All questions compulsory
+- **Marks:** 6 marks each
+
+**Types:**
+1. Bar Graph / Pie Chart interpretation
+2. Table data analysis
+3. Timeline / Flow chart completion
+4. Statistical data interpretation
+
+---
+
+## ⏰ Time Management (3 Hours)
+
+| Section | Time |
+|---------|------|
+| Q.1 Objectives | 25 min |
+| Q.2 Identify & Explain | 15 min |
+| Q.3 Distinguish Between | 15 min |
+| Q.4 Brief Answers | 35 min |
+| Q.5 Long Answers | 40 min |
+| Q.6 Graph/Data | 20 min |
+| **Revision** | **10 min** |
+
+---
+
+## 📝 Exam Tips
+
+1. **MCQs:** Read all options before choosing
+2. **Concepts:** Learn definitions with examples
+3. **Distinguish:** Make 4-point table format
+4. **Brief:** Be precise, use keywords
+5. **Long:** Structure with introduction + points + conclusion
+6. **Graph:** Read data carefully, check units
+
+## Important Current Affairs Topics (2024-25)
+- G20 Summit India
+- Russia-Ukraine War impact
+- India-China Border situation
+- New Parliament Building
+- One Nation One Election debate
+- Digital India initiatives`,
         previousPapers: [], 
         chapters: [
           {

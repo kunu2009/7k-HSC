@@ -56,9 +56,9 @@ interface DailyScheduleSlot {
 const STORAGE_KEY = '7k-hsc-study-planner';
 const PLAN_STORAGE_KEY = '7k-hsc-selected-plan';
 
-// Maharashtra HSC Important Dates (approximate)
-const PRELIMS_DATE = new Date(2025, 1, 15); // Feb 15, 2025
-const BOARDS_DATE = new Date(2025, 2, 1); // March 1, 2025
+// Maharashtra HSC Important Dates 2026
+const PRELIMS_DATE = new Date(2026, 0, 15); // Jan 15, 2026
+const BOARDS_DATE = new Date(2026, 1, 21); // Feb 21, 2026 (First Paper)
 
 const StudyPlanner: React.FC<StudyPlannerProps> = ({ subjects, examDate, examName }) => {
   const [checkedChapters, setCheckedChapters] = useState<ChapterStatus>({});

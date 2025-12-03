@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
@@ -15,6 +15,14 @@ import StudyPlanner from './components/StudyPlanner';
 import PreviousMarksInput from './components/PreviousMarksInputNew';
 import WeaknessAnalysis from './components/WeaknessAnalysis';
 import Onboarding from './components/Onboarding';
+import PomodoroTimer from './components/PomodoroTimer';
+import StudyStreak from './components/StudyStreak';
+import QuickTest from './components/QuickTest';
+import ErrorLog from './components/ErrorLog';
+import SpeedRevision from './components/SpeedRevision';
+import ExamSimulation from './components/ExamSimulation';
+import RevisionDashboard from './components/RevisionDashboard';
+import FormulaBank from './components/FormulaBank';
 import { useProgress } from './hooks/useProgress';
 import { explainConcept } from './services/geminiService';
 import { db, UserProfile } from './services/localDb';
@@ -47,6 +55,16 @@ const App: React.FC = () => {
   const [aiResponse, setAiResponse] = useState('');
   const [aiLoading, setAiLoading] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  
+  // Study Tools Modal States
+  const [showPomodoro, setShowPomodoro] = useState(false);
+  const [showStudyStreak, setShowStudyStreak] = useState(false);
+  const [showQuickTest, setShowQuickTest] = useState(false);
+  const [showErrorLog, setShowErrorLog] = useState(false);
+  const [showSpeedRevision, setShowSpeedRevision] = useState(false);
+  const [showExamSimulation, setShowExamSimulation] = useState(false);
+  const [showRevisionDashboard, setShowRevisionDashboard] = useState(false);
+  const [showFormulaBank, setShowFormulaBank] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -488,6 +506,97 @@ const App: React.FC = () => {
                 </button>
               );
             })}
+          </div>
+
+          {/* Study Tools Section */}
+          <div className="mt-8">
+            <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">
+              <Zap size={20} className="text-amber-500" />
+              Study Tools
+            </h2>
+            <div className="grid grid-cols-4 gap-3">
+              <button
+                onClick={() => setShowPomodoro(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 text-red-500 flex items-center justify-center">
+                  <Timer size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Pomodoro</span>
+              </button>
+              
+              <button
+                onClick={() => setShowQuickTest(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-500 flex items-center justify-center">
+                  <Zap size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Quick Test</span>
+              </button>
+              
+              <button
+                onClick={() => setShowSpeedRevision(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-500 flex items-center justify-center">
+                  <Flame size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Speed Rev</span>
+              </button>
+              
+              <button
+                onClick={() => setShowExamSimulation(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-500 flex items-center justify-center">
+                  <FileText size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Mock Exam</span>
+              </button>
+            </div>
+            
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowStudyStreak(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-green-200 dark:hover:border-green-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-green-100 dark:bg-green-900/30 text-green-500 flex items-center justify-center">
+                  <Award size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Streaks</span>
+              </button>
+              
+              <button
+                onClick={() => setShowErrorLog(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 text-red-500 flex items-center justify-center">
+                  <AlertTriangle size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Error Log</span>
+              </button>
+              
+              <button
+                onClick={() => setShowRevisionDashboard(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-500 flex items-center justify-center">
+                  <Target size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Revision</span>
+              </button>
+              
+              <button
+                onClick={() => setShowFormulaBank(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-orange-200 dark:hover:border-orange-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-500 flex items-center justify-center">
+                  <BookMarked size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Formulas</span>
+              </button>
+            </div>
           </div>
 
            <div className="mt-10 bg-indigo-900 dark:bg-indigo-950 rounded-3xl p-6 text-white relative overflow-hidden shadow-xl">
@@ -1113,6 +1222,16 @@ const App: React.FC = () => {
     );
   };
 
+  // Helper to select chapter from RevisionDashboard
+  const handleSelectChapterFromDashboard = (subjectIndex: number, chapterIndex: number) => {
+    const subjects = getFilteredSubjects();
+    if (subjects[subjectIndex]) {
+      setSelectedSubject(subjects[subjectIndex]);
+      setSelectedChapter(subjects[subjectIndex].chapters[chapterIndex]);
+      setView('CHAPTER_DETAIL');
+    }
+  };
+
   // Show onboarding if user hasn't set up profile
   if (!isOnboarded) {
     return <Onboarding onComplete={handleOnboardingComplete} />;
@@ -1138,6 +1257,55 @@ const App: React.FC = () => {
       )}
       {selectedStream && <Sidebar />}
       {renderAiModal()}
+      
+      {/* Study Tools Modals */}
+      {showPomodoro && (
+        <PomodoroTimer onClose={() => setShowPomodoro(false)} />
+      )}
+      
+      {showStudyStreak && (
+        <StudyStreak onClose={() => setShowStudyStreak(false)} />
+      )}
+      
+      {showQuickTest && (
+        <QuickTest 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowQuickTest(false)} 
+        />
+      )}
+      
+      {showErrorLog && (
+        <ErrorLog onClose={() => setShowErrorLog(false)} />
+      )}
+      
+      {showSpeedRevision && (
+        <SpeedRevision 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowSpeedRevision(false)} 
+        />
+      )}
+      
+      {showExamSimulation && (
+        <ExamSimulation 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowExamSimulation(false)} 
+        />
+      )}
+      
+      {showRevisionDashboard && (
+        <RevisionDashboard 
+          subjects={getFilteredSubjects()}
+          onSelectChapter={handleSelectChapterFromDashboard}
+          onClose={() => setShowRevisionDashboard(false)} 
+        />
+      )}
+      
+      {showFormulaBank && (
+        <FormulaBank 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowFormulaBank(false)} 
+        />
+      )}
     </div>
   );
 };
