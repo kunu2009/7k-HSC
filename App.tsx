@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks, FileEdit, Map, HelpCircle, Cloud, Share2, MessageSquare, Eye, Calendar } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import Flashcard from './components/Flashcard';
@@ -32,6 +32,15 @@ import Bookmarks from './components/Bookmarks';
 import ProgressCharts from './components/ProgressCharts';
 import LastMinuteRevision from './components/LastMinuteRevision';
 import RandomChallenge from './components/RandomChallenge';
+import StudyNotes from './components/StudyNotes';
+import TimelineView from './components/TimelineView';
+import ClozeTest from './components/ClozeTest';
+import KeywordCloud from './components/KeywordCloud';
+import MindMapView from './components/MindMapView';
+import TeachBack from './components/TeachBack';
+import ActiveRecall from './components/ActiveRecall';
+import RapidFire from './components/RapidFire';
+import DailyTracker from './components/DailyTracker';
 import { useProgress } from './hooks/useProgress';
 import { explainConcept } from './services/geminiService';
 import { db, UserProfile } from './services/localDb';
@@ -83,6 +92,15 @@ const App: React.FC = () => {
   const [showProgressCharts, setShowProgressCharts] = useState(false);
   const [showLastMinute, setShowLastMinute] = useState(false);
   const [showRandomChallenge, setShowRandomChallenge] = useState(false);
+  const [showStudyNotes, setShowStudyNotes] = useState(false);
+  const [showTimeline, setShowTimeline] = useState(false);
+  const [showClozeTest, setShowClozeTest] = useState(false);
+  const [showKeywordCloud, setShowKeywordCloud] = useState(false);
+  const [showMindMap, setShowMindMap] = useState(false);
+  const [showTeachBack, setShowTeachBack] = useState(false);
+  const [showActiveRecall, setShowActiveRecall] = useState(false);
+  const [showRapidFire, setShowRapidFire] = useState(false);
+  const [showDailyTracker, setShowDailyTracker] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -715,6 +733,105 @@ const App: React.FC = () => {
                   <span className="text-sm font-semibold text-slate-700 dark:text-slate-200 block">Chapter Summary</span>
                   <span className="text-xs text-slate-400">Overview of all chapters</span>
                 </div>
+              </button>
+              
+              <button
+                onClick={() => setShowDailyTracker(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-rose-200 dark:hover:border-rose-800 transition flex items-center gap-3"
+              >
+                <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 text-rose-500 flex items-center justify-center">
+                  <Calendar size={22} />
+                </div>
+                <div className="text-left">
+                  <span className="text-sm font-semibold text-slate-700 dark:text-slate-200 block">Daily Tracker</span>
+                  <span className="text-xs text-slate-400">Plan your day</span>
+                </div>
+              </button>
+            </div>
+            
+            {/* Row 6 - More Learning Tools */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowStudyNotes(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-500 flex items-center justify-center">
+                  <FileEdit size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Notes</span>
+              </button>
+              
+              <button
+                onClick={() => setShowActiveRecall(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-cyan-200 dark:hover:border-cyan-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-500 flex items-center justify-center">
+                  <Eye size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Recall</span>
+              </button>
+              
+              <button
+                onClick={() => setShowTeachBack(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-500 flex items-center justify-center">
+                  <MessageSquare size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Teach</span>
+              </button>
+              
+              <button
+                onClick={() => setShowRapidFire(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-orange-200 dark:hover:border-orange-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-500 flex items-center justify-center">
+                  <Zap size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Rapid</span>
+              </button>
+            </div>
+            
+            {/* Row 7 - Advanced Tools */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowClozeTest(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-500 flex items-center justify-center">
+                  <HelpCircle size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Fill Blank</span>
+              </button>
+              
+              <button
+                onClick={() => setShowKeywordCloud(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-violet-200 dark:hover:border-violet-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-violet-100 dark:bg-violet-900/30 text-violet-500 flex items-center justify-center">
+                  <Cloud size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Keywords</span>
+              </button>
+              
+              <button
+                onClick={() => setShowMindMap(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-fuchsia-200 dark:hover:border-fuchsia-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-500 flex items-center justify-center">
+                  <Share2 size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Mind Map</span>
+              </button>
+              
+              <button
+                onClick={() => setShowTimeline(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-teal-200 dark:hover:border-teal-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-900/30 text-teal-500 flex items-center justify-center">
+                  <Map size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Timeline</span>
               </button>
             </div>
           </div>
@@ -1481,6 +1598,68 @@ const App: React.FC = () => {
         <RandomChallenge 
           subjects={getFilteredSubjects()} 
           onClose={() => setShowRandomChallenge(false)} 
+        />
+      )}
+      
+      {showStudyNotes && (
+        <StudyNotes 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowStudyNotes(false)} 
+        />
+      )}
+      
+      {showTimeline && (
+        <TimelineView 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowTimeline(false)} 
+        />
+      )}
+      
+      {showClozeTest && (
+        <ClozeTest 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowClozeTest(false)} 
+        />
+      )}
+      
+      {showKeywordCloud && (
+        <KeywordCloud 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowKeywordCloud(false)} 
+        />
+      )}
+      
+      {showMindMap && (
+        <MindMapView 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowMindMap(false)} 
+        />
+      )}
+      
+      {showTeachBack && (
+        <TeachBack 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowTeachBack(false)} 
+        />
+      )}
+      
+      {showActiveRecall && (
+        <ActiveRecall 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowActiveRecall(false)} 
+        />
+      )}
+      
+      {showRapidFire && (
+        <RapidFire 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowRapidFire(false)} 
+        />
+      )}
+      
+      {showDailyTracker && (
+        <DailyTracker 
+          onClose={() => setShowDailyTracker(false)} 
         />
       )}
     </div>
