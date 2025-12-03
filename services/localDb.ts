@@ -29,6 +29,8 @@ export const ELECTIVE_SUBJECTS: Record<Stream, { id: string; name: string; maxMa
     { id: 'soc', name: 'Sociology', maxMarks: 100 },
     { id: 'psy', name: 'Psychology', maxMarks: 100 },
     { id: 'eco', name: 'Economics', maxMarks: 100 },
+    { id: 'hin', name: 'Hindi', maxMarks: 100 },
+    { id: 'san', name: 'Sanskrit', maxMarks: 100 },
   ],
   [Stream.SCIENCE]: [
     { id: 'phy', name: 'Physics', maxMarks: 100 },

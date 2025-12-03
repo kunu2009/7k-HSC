@@ -16,6 +16,8 @@ import { CHEM_SUBJECT } from './data/chemistry';
 import { MATH_SUBJECT } from './data/math';
 import { BIO_SUBJECT } from './data/biology';
 import { IT_SUBJECT } from './data/it';
+import { HINDI_SUBJECT } from './data/hindi';
+import { SANSKRIT_SUBJECT } from './data/sanskrit';
 
 // --- Data Helpers ---
 const REEL_COLORS = [
@@ -60,7 +62,7 @@ export const MOCK_DATA: Record<Stream, StreamData> = {
   },
   [Stream.ARTS]: {
     id: Stream.ARTS,
-    subjects: [ENGLISH_SUBJECT, HIS_SUBJECT, POL_SUBJECT, SOC_SUBJECT, GEO_SUBJECT, PSY_SUBJECT, ECONOMICS_SUBJECT]
+    subjects: [ENGLISH_SUBJECT, HIS_SUBJECT, POL_SUBJECT, SOC_SUBJECT, GEO_SUBJECT, PSY_SUBJECT, ECONOMICS_SUBJECT, HINDI_SUBJECT, SANSKRIT_SUBJECT]
   },
   [Stream.SCIENCE]: {
     id: Stream.SCIENCE,
