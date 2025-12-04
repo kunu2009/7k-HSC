@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Play, Pause, RotateCcw, Coffee, Brain, Flame, Clock, Trophy, Volume2, VolumeX } from 'lucide-react';
+import { Play, Pause, RotateCcw, Coffee, Brain, Flame, Clock, Trophy, Volume2, VolumeX, X, ArrowLeft } from 'lucide-react';
 
 interface PomodoroTimerProps {
   onSessionComplete?: (minutes: number, type: 'focus' | 'break') => void;
+  onClose?: () => void;
 }
 
 type TimerMode = 'focus' | 'shortBreak' | 'longBreak';
@@ -13,7 +14,7 @@ const TIMER_CONFIGS = {
   longBreak: { duration: 15 * 60, label: 'Long Break', color: 'from-blue-500 to-cyan-500', icon: Coffee },
 };
 
-const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete }) => {
+const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete, onClose }) => {
   const [mode, setMode] = useState<TimerMode>('focus');
   const [timeLeft, setTimeLeft] = useState(TIMER_CONFIGS.focus.duration);
   const [isRunning, setIsRunning] = useState(false);
@@ -113,20 +114,29 @@ const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete }) => {
   const IconComponent = config.icon;
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-6 max-w-md mx-auto">
-      {/* Header */}
-      <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center gap-2">
-          <div className={`p-2 rounded-lg bg-gradient-to-r ${config.color}`}>
-            <Clock className="w-5 h-5 text-white" />
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-4 sm:p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
+          <div className="flex items-center gap-2">
+            {onClose && (
+              <button
+                onClick={onClose}
+                className="p-2 -ml-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 active:scale-95 transition"
+              >
+                <ArrowLeft className="w-5 h-5 dark:text-white" />
+              </button>
+            )}
+            <div className={`p-2 rounded-lg bg-gradient-to-r ${config.color}`}>
+              <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+            </div>
+            <h2 className="text-lg sm:text-xl font-bold dark:text-white">Pomodoro Timer</h2>
           </div>
-          <h2 className="text-xl font-bold dark:text-white">Pomodoro Timer</h2>
-        </div>
-        <button
-          onClick={() => setSoundEnabled(!soundEnabled)}
-          className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
-        >
-          {soundEnabled ? (
+          <button
+            onClick={() => setSoundEnabled(!soundEnabled)}
+            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors active:scale-95"
+          >
+            {soundEnabled ? (
             <Volume2 className="w-5 h-5 text-gray-600 dark:text-gray-400" />
           ) : (
             <VolumeX className="w-5 h-5 text-gray-400" />
@@ -135,15 +145,15 @@ const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete }) => {
       </div>
 
       {/* Mode Selector */}
-      <div className="flex gap-2 mb-6">
+      <div className="flex gap-2 mb-4 sm:mb-6">
         {(['focus', 'shortBreak', 'longBreak'] as TimerMode[]).map((m) => (
           <button
             key={m}
             onClick={() => handleModeChange(m)}
-            className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition-all ${
+            className={`flex-1 py-2 px-2 sm:px-3 rounded-lg text-xs sm:text-sm font-medium transition-all active:scale-95 ${
               mode === m
                 ? `bg-gradient-to-r ${TIMER_CONFIGS[m].color} text-white shadow-lg`
-                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
             }`}
           >
             {m === 'focus' ? '🧠 Focus' : m === 'shortBreak' ? '☕ Short' : '🌴 Long'}
@@ -152,10 +162,10 @@ const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete }) => {
       </div>
 
       {/* Timer Display */}
-      <div className="relative mb-6">
+      <div className="relative mb-4 sm:mb-6">
         {/* Progress Ring */}
-        <div className="relative w-48 h-48 mx-auto">
-          <svg className="w-full h-full transform -rotate-90">
+        <div className="relative w-40 h-40 sm:w-48 sm:h-48 mx-auto">
+          <svg className="w-full h-full transform -rotate-90" viewBox="0 0 192 192">
             <circle
               cx="96"
               cy="96"
@@ -187,31 +197,31 @@ const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete }) => {
           
           {/* Time Display */}
           <div className="absolute inset-0 flex flex-col items-center justify-center">
-            <IconComponent className={`w-8 h-8 mb-2 ${mode === 'focus' ? 'text-red-500' : 'text-green-500'}`} />
-            <span className="text-4xl font-bold dark:text-white">{formatTime(timeLeft)}</span>
-            <span className="text-sm text-gray-500 dark:text-gray-400 mt-1">{config.label}</span>
+            <IconComponent className={`w-6 h-6 sm:w-8 sm:h-8 mb-2 ${mode === 'focus' ? 'text-red-500' : 'text-green-500'}`} />
+            <span className="text-3xl sm:text-4xl font-bold dark:text-white">{formatTime(timeLeft)}</span>
+            <span className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-1">{config.label}</span>
           </div>
         </div>
       </div>
 
       {/* Controls */}
-      <div className="flex justify-center gap-4 mb-6">
+      <div className="flex justify-center gap-4 mb-4 sm:mb-6">
         <button
           onClick={handleReset}
-          className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+          className="p-3 rounded-full bg-gray-100 dark:bg-gray-700 active:scale-95 transition"
         >
-          <RotateCcw className="w-6 h-6 text-gray-600 dark:text-gray-400" />
+          <RotateCcw className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600 dark:text-gray-400" />
         </button>
         <button
           onClick={() => setIsRunning(!isRunning)}
-          className={`p-4 rounded-full bg-gradient-to-r ${config.color} text-white shadow-lg hover:shadow-xl transition-all transform hover:scale-105`}
+          className={`p-4 rounded-full bg-gradient-to-r ${config.color} text-white shadow-lg active:scale-95 transition`}
         >
-          {isRunning ? <Pause className="w-8 h-8" /> : <Play className="w-8 h-8 ml-1" />}
+          {isRunning ? <Pause className="w-7 h-7 sm:w-8 sm:h-8" /> : <Play className="w-7 h-7 sm:w-8 sm:h-8 ml-1" />}
         </button>
       </div>
 
       {/* Stats */}
-      <div className="grid grid-cols-3 gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+      <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
         <div className="text-center">
           <div className="flex items-center justify-center gap-1 text-orange-500 mb-1">
             <Flame className="w-4 h-4" />
@@ -237,12 +247,13 @@ const PomodoroTimer: React.FC<PomodoroTimerProps> = ({ onSessionComplete }) => {
 
       {/* Motivational Message */}
       <div className="mt-4 text-center">
-        <p className="text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
           {sessionsCompleted === 0 && "🚀 Start your first focus session!"}
           {sessionsCompleted >= 1 && sessionsCompleted < 4 && "💪 Great start! Keep going!"}
           {sessionsCompleted >= 4 && sessionsCompleted < 8 && "🔥 You're on fire! Amazing focus!"}
           {sessionsCompleted >= 8 && "🏆 Incredible dedication! You're a study champion!"}
         </p>
+      </div>
       </div>
     </div>
   );

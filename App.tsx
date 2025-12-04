@@ -41,6 +41,10 @@ import TeachBack from './components/TeachBack';
 import ActiveRecall from './components/ActiveRecall';
 import RapidFire from './components/RapidFire';
 import DailyTracker from './components/DailyTracker';
+import SpacedRepetition from './components/SpacedRepetition';
+import PreviousYearQuestions from './components/PreviousYearQuestions';
+import WritingPractice from './components/WritingPractice';
+import ReverseLearning from './components/ReverseLearning';
 import { useProgress } from './hooks/useProgress';
 import { explainConcept } from './services/geminiService';
 import { db, UserProfile } from './services/localDb';
@@ -101,6 +105,10 @@ const App: React.FC = () => {
   const [showActiveRecall, setShowActiveRecall] = useState(false);
   const [showRapidFire, setShowRapidFire] = useState(false);
   const [showDailyTracker, setShowDailyTracker] = useState(false);
+  const [showSpacedRepetition, setShowSpacedRepetition] = useState(false);
+  const [showPYQ, setShowPYQ] = useState(false);
+  const [showWritingPractice, setShowWritingPractice] = useState(false);
+  const [showReverseLearning, setShowReverseLearning] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -832,6 +840,49 @@ const App: React.FC = () => {
                   <Map size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Timeline</span>
+              </button>
+            </div>
+            
+            {/* Row 8 - Phase 4 Tools */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowSpacedRepetition(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-violet-200 dark:hover:border-violet-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-violet-100 dark:bg-violet-900/30 text-violet-500 flex items-center justify-center">
+                  <Brain size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">SRS</span>
+              </button>
+              
+              <button
+                onClick={() => setShowPYQ(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-500 flex items-center justify-center">
+                  <FileText size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">PYQ</span>
+              </button>
+              
+              <button
+                onClick={() => setShowWritingPractice(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-pink-200 dark:hover:border-pink-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-pink-100 dark:bg-pink-900/30 text-pink-500 flex items-center justify-center">
+                  <PenTool size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Writing</span>
+              </button>
+              
+              <button
+                onClick={() => setShowReverseLearning(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-500 flex items-center justify-center">
+                  <Shuffle size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Reverse</span>
               </button>
             </div>
           </div>
@@ -1660,6 +1711,34 @@ const App: React.FC = () => {
       {showDailyTracker && (
         <DailyTracker 
           onClose={() => setShowDailyTracker(false)} 
+        />
+      )}
+      
+      {showSpacedRepetition && (
+        <SpacedRepetition 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowSpacedRepetition(false)} 
+        />
+      )}
+      
+      {showPYQ && (
+        <PreviousYearQuestions 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowPYQ(false)} 
+        />
+      )}
+      
+      {showWritingPractice && (
+        <WritingPractice 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowWritingPractice(false)} 
+        />
+      )}
+      
+      {showReverseLearning && (
+        <ReverseLearning 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowReverseLearning(false)} 
         />
       )}
     </div>
