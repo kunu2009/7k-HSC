@@ -34,6 +34,278 @@ export const SOC_SUBJECT: Subject = {
               { id: 'r3', title: 'Durkheim', content: 'Father of Modern Sociology.\nSocial Facts.\nSuicide study.', color: getReelColor(2) },
               { id: 'r4', title: 'Weber', content: 'Verstehen approach.\nUnderstanding.\nInterpretive sociology.', color: getReelColor(3) },
               { id: 'r5', title: 'Marx', content: 'Class conflict.\nBourgeoisie vs Proletariat.\nCommunism.', color: getReelColor(4) }
+            ],
+            longAnswers: [
+              {
+                id: 'socl1-1',
+                question: 'Define Sociology and explain its nature and scope.',
+                mnemonic: 'SCOPE - Science of society, Comte founder, Origin from Latin+Greek, Pure science, Empirical study',
+                answer: `### Definition of Sociology
+
+**Meaning**: Sociology is the scientific study of society, social relationships, social institutions, and human social behavior.
+
+**Etymology**:
+- Socius (Latin) = Companion/Society
+- Logos (Greek) = Study/Science
+- Sociology = Science of Society
+
+### Founders of Sociology
+
+| Thinker | Contribution |
+|---------|--------------|
+| Auguste Comte | Father of Sociology (coined term 1838) |
+| Emile Durkheim | Father of Modern Sociology |
+| Max Weber | Verstehen (understanding) approach |
+| Karl Marx | Class conflict theory |
+| Herbert Spencer | Social Darwinism |
+
+### Nature of Sociology
+
+**1. Social Science**
+- Studies human society and social life
+- Focuses on groups, not individuals
+
+**2. Empirical Science**
+- Based on observation and evidence
+- Not philosophical speculation
+
+**3. Pure Science**
+- Knowledge for its own sake
+- Not applied immediately
+
+**4. Generalizing Science**
+- Looks for patterns and trends
+- Makes generalizations about social behavior
+
+**5. Abstract Science**
+- Studies abstract concepts (norms, values)
+- Not concrete objects
+
+### Scope of Sociology
+
+**A. Formalistic School (Narrow View)**
+- Thinkers: Georg Simmel, Leopold von Wiese
+- Sociology studies only forms of social relationships
+- Focus: Pure sociology separate from other sciences
+
+**B. Synthetic School (Broader View)**
+- Thinkers: Durkheim, Sorokin
+- Sociology studies all aspects of society
+- Includes: Family, religion, economy, politics
+
+### Importance of Sociology
+
+1. **Understanding Society**: Comprehend social problems
+2. **Policy Making**: Helps in social planning
+3. **Social Reform**: Identify issues for change
+4. **Self-awareness**: Understand our place in society
+5. **Career Opportunities**: Research, social work, HR
+
+### Conclusion
+Sociology provides scientific understanding of human society, helping us analyze social relationships, institutions, and problems for better social planning and reform.`
+              },
+              {
+                id: 'socl1-2',
+                question: 'Explain the contributions of Auguste Comte and Emile Durkheim to Sociology.',
+                mnemonic: 'COMTE DURKHEIM - Comte coined term, Organic theory, Modes of thought, Three stages, Empirical method / Durkheim modernized, Universal, Rules, Knowledge, Hierarchy, Empirical, Integration, Moral facts',
+                answer: `### Auguste Comte (1798-1857)
+
+**Title**: Father of Sociology
+
+**Background**:
+- French philosopher
+- Born in Montpellier, France
+- Coined term "Sociology" in 1838
+- Initially called it "Social Physics"
+
+**Major Contributions**:
+
+**1. Law of Three Stages**
+| Stage | Mode of Thought | Explanation |
+|-------|-----------------|-------------|
+| Theological | Religious | Events explained by gods/supernatural |
+| Metaphysical | Abstract | Events explained by abstract forces |
+| Positive/Scientific | Scientific | Events explained by observation and laws |
+
+**2. Hierarchy of Sciences**
+- Mathematics → Astronomy → Physics → Chemistry → Biology → Sociology
+- Each science builds on the previous
+- Sociology is the "queen of sciences"
+
+**3. Positivism**
+- Knowledge must be based on observation
+- Scientific method for studying society
+- Rejected speculation and theology
+
+**4. Social Statics and Social Dynamics**
+- Statics: Study of social order (how society maintains stability)
+- Dynamics: Study of social change (how society progresses)
+
+### Emile Durkheim (1858-1917)
+
+**Title**: Father of Modern Sociology
+
+**Background**:
+- French sociologist
+- Born in Épinal, France
+- First professor of sociology
+- Made sociology an academic discipline
+
+**Major Contributions**:
+
+**1. Social Facts**
+- External to individuals
+- Constraining on individuals
+- General in society
+- Examples: Laws, norms, beliefs
+
+**2. Division of Labour**
+| Type | Society | Basis |
+|------|---------|-------|
+| Mechanical Solidarity | Traditional | Similarity, shared beliefs |
+| Organic Solidarity | Modern | Interdependence, specialization |
+
+**3. Study of Suicide**
+| Type | Cause |
+|------|-------|
+| Egoistic | Low social integration |
+| Altruistic | Over-integration (sacrifice) |
+| Anomic | Breakdown of norms |
+| Fatalistic | Excessive regulation |
+
+**4. Rules of Sociological Method**
+- Treat social facts as "things"
+- Observe objectively
+- Compare across societies
+
+**5. Religion**
+- Sacred vs Profane distinction
+- Religion promotes social cohesion
+- "Elementary Forms of Religious Life"
+
+### Comparison
+
+| Aspect | Comte | Durkheim |
+|--------|-------|----------|
+| Title | Father of Sociology | Father of Modern Sociology |
+| Focus | General development | Empirical research |
+| Method | Philosophical | Scientific-empirical |
+| Key Work | Positive Philosophy | Rules of Sociological Method |
+
+### Conclusion
+Comte laid the foundation of sociology as a discipline, while Durkheim established it as an empirical science with rigorous methods. Together, their contributions shaped modern sociology.`
+              },
+              {
+                id: 'socl1-3',
+                question: 'Discuss the relationship between Sociology and other Social Sciences.',
+                mnemonic: 'RELATIONSHIP - Related disciplines, Economics overlaps, Law connects, Anthropology similar, Together they study, Inter-disciplinary, Overlapping concerns, Notable differences, Shared subjects, Historical connections, Inter-dependent, Psychology connects',
+                answer: `### Introduction
+
+Sociology is one of several social sciences that study human behavior and society. While each has its own focus, they share many common areas and methods.
+
+### Sociology and History
+
+**Similarities**:
+- Both study human society
+- Both analyze change over time
+- Use documentary evidence
+
+**Differences**:
+| Sociology | History |
+|-----------|---------|
+| Studies general patterns | Studies unique events |
+| Present-focused | Past-focused |
+| Generalizing | Particularizing |
+| Scientific method | Historical method |
+
+**Relationship**: "Sociology without history is rootless; History without sociology is fruitless" - G.E. Howard
+
+### Sociology and Economics
+
+**Similarities**:
+- Both study human behavior
+- Both analyze institutions
+- Interest in development
+
+**Differences**:
+| Sociology | Economics |
+|-----------|-----------|
+| All social relationships | Economic relationships |
+| Qualitative focus | Quantitative focus |
+| Social factors | Economic factors |
+| Society as whole | Production, consumption, distribution |
+
+**Relationship**: Economic activities are embedded in social relations (Karl Polanyi)
+
+### Sociology and Political Science
+
+**Similarities**:
+- Both study power
+- Both analyze institutions
+- Interest in social organization
+
+**Differences**:
+| Sociology | Political Science |
+|-----------|-------------------|
+| All social relations | Political relations |
+| Society as whole | State and government |
+| Informal power too | Formal political power |
+
+**Relationship**: Political behavior is shaped by social factors
+
+### Sociology and Psychology
+
+**Similarities**:
+- Both study human behavior
+- Interest in personality
+- Analyze attitudes
+
+**Differences**:
+| Sociology | Psychology |
+|-----------|------------|
+| Group behavior | Individual behavior |
+| Social factors | Mental processes |
+| Social institutions | Individual mind |
+
+**Overlapping Area**: Social Psychology
+
+### Sociology and Anthropology
+
+**Similarities**:
+- Both study culture
+- Both analyze society
+- Similar methods (fieldwork)
+
+**Differences**:
+| Sociology | Anthropology |
+|-----------|--------------|
+| Modern societies | Traditional/tribal societies |
+| Large-scale studies | Small community studies |
+| Complex societies | Simple societies |
+
+**Relationship**: Very close disciplines, sometimes called "twin sisters"
+
+### Sociology and Law
+
+**Connection**:
+- Laws reflect social norms
+- Legal institutions are social institutions
+- Sociology of law studies this relationship
+
+### Inter-disciplinary Nature
+
+**Modern Trends**:
+| Sub-field | Combines |
+|-----------|----------|
+| Political Sociology | Sociology + Politics |
+| Economic Sociology | Sociology + Economics |
+| Historical Sociology | Sociology + History |
+| Social Psychology | Sociology + Psychology |
+
+### Conclusion
+
+Social sciences are inter-related and inter-dependent. While each has its distinct focus and methods, they complement each other in understanding human society. Modern research increasingly uses inter-disciplinary approaches for comprehensive understanding.`
+              }
             ]
           },
           {
@@ -60,6 +332,296 @@ export const SOC_SUBJECT: Subject = {
               { id: 'r3', title: 'Secondary', content: 'Organizations.\nFormal, Impersonal.\nGoal-oriented.', color: getReelColor(2) },
               { id: 'r4', title: 'In-group', content: '"We" feeling.\nOur team, Our family.\nSumner\'s concept.', color: getReelColor(3) },
               { id: 'r5', title: 'Reference', content: 'Compare ourselves.\nAspirational.\nMerton\'s concept.', color: getReelColor(4) }
+            ],
+            longAnswers: [
+              {
+                id: 'socl2-1',
+                question: 'Define Social Group and explain its characteristics and types.',
+                mnemonic: 'GROUPS - Gathering, Rules, Organization, Unity, Purpose, Shared identity',
+                answer: `### Definition of Social Group
+
+**Meaning**: A social group is a collection of two or more individuals who interact with each other, share common identity, interests, or goals, and have a sense of unity.
+
+**According to Sociologists**:
+- **Ogburn & Nimkoff**: "A group is a collection of individuals among whom there is interaction"
+- **Maclver & Page**: "A group is any collection of human beings brought into social relationship with one another"
+
+### Characteristics of Social Group
+
+| Characteristic | Description |
+|----------------|-------------|
+| **Mutual Awareness** | Members know they belong to the group |
+| **Interaction** | Regular communication and exchange |
+| **Common Interest** | Shared goals or purposes |
+| **Sense of Unity** | "We" feeling among members |
+| **Group Norms** | Shared rules of behavior |
+| **Structure** | Defined roles and positions |
+
+### Types of Social Groups
+
+**1. Primary Groups (C.H. Cooley)**
+
+| Feature | Description |
+|---------|-------------|
+| Size | Small |
+| Relations | Face-to-face, intimate |
+| Duration | Long-lasting |
+| Example | Family, Friends, Neighborhood |
+
+**Characteristics**:
+- Personal relationships
+- Emotional bonds
+- Spontaneous development
+- Informal structure
+- Total personality involvement
+
+**2. Secondary Groups**
+
+| Feature | Description |
+|---------|-------------|
+| Size | Large |
+| Relations | Impersonal, formal |
+| Duration | May be temporary |
+| Example | Organizations, Unions, Parties |
+
+**Characteristics**:
+- Goal-oriented
+- Formal rules
+- Limited interaction
+- Replaceable members
+- Segmental involvement
+
+**3. In-group and Out-group (W.G. Sumner)**
+
+| Type | Feeling | Example |
+|------|---------|---------|
+| In-group | "We" | Our family, Our team |
+| Out-group | "They" | Other teams, Rivals |
+
+**4. Reference Group (Robert Merton)**
+- Group we compare ourselves with
+- May or may not be actual member
+- Influences our behavior and aspirations
+- Example: Celebrities, Role models
+
+### Importance of Social Groups
+
+1. **Socialization**: Learn social norms and values
+2. **Identity Formation**: Sense of belonging
+3. **Social Control**: Groups regulate behavior
+4. **Emotional Support**: Fulfillment of needs
+5. **Division of Labor**: Cooperation for goals
+
+### Conclusion
+Social groups are fundamental to human society, providing identity, support, and social organization essential for individual and collective well-being.`
+              },
+              {
+                id: 'socl2-2',
+                question: 'Distinguish between Primary and Secondary Groups with examples.',
+                mnemonic: 'PRIMARY - Personal, Relationships intimate, Informal, Meaningful, Affection, Relatives, Youthful bonds / SECONDARY - Structured, Efficiency, Contractual, Organization, Norms, Detached, Associations, Rules, You can leave',
+                answer: `### Introduction
+
+Social groups are classified into Primary and Secondary groups based on the nature of relationships among members. This distinction was first made by C.H. Cooley in 1909.
+
+### Primary Groups
+
+**Definition**: Small groups characterized by intimate, face-to-face interaction and personal relationships.
+
+**Coined by**: Charles Horton Cooley
+
+**Characteristics**:
+| Feature | Description |
+|---------|-------------|
+| Size | Small |
+| Relationship | Personal, intimate |
+| Contact | Face-to-face, direct |
+| Duration | Long-lasting |
+| Structure | Informal |
+| Goals | No specific goals |
+| Membership | Involuntary (born into) |
+
+**Examples**:
+1. Family
+2. Peer group / Friends
+3. Play group
+4. Neighborhood
+5. Village community
+
+**Functions**:
+- Primary socialization
+- Emotional security
+- Identity formation
+- Personality development
+
+### Secondary Groups
+
+**Definition**: Large groups characterized by impersonal, formal relationships focused on specific goals.
+
+**Characteristics**:
+| Feature | Description |
+|---------|-------------|
+| Size | Large |
+| Relationship | Impersonal, formal |
+| Contact | Indirect (often through representatives) |
+| Duration | May be temporary |
+| Structure | Formal, bureaucratic |
+| Goals | Specific objectives |
+| Membership | Voluntary (choice to join) |
+
+**Examples**:
+1. Political parties
+2. Trade unions
+3. Educational institutions
+4. Corporate organizations
+5. Professional associations
+
+**Functions**:
+- Achieve specific goals
+- Division of labor
+- Economic activities
+- Political organization
+
+### Comparison Table
+
+| Basis | Primary Group | Secondary Group |
+|-------|---------------|-----------------|
+| **Size** | Small | Large |
+| **Relations** | Intimate, personal | Impersonal, formal |
+| **Contact** | Face-to-face | Indirect |
+| **Structure** | Informal | Formal/Bureaucratic |
+| **Goals** | General welfare | Specific objectives |
+| **Membership** | Often involuntary | Usually voluntary |
+| **Duration** | Permanent | May be temporary |
+| **Interest** | Total personality | Segmental (limited aspect) |
+| **Control** | Informal (praise/shame) | Formal (rules/laws) |
+| **Example** | Family | Trade Union |
+
+### Interdependence
+
+**Primary to Secondary**:
+- Values learned in family shape work behavior
+- Family support enables organizational participation
+
+**Secondary to Primary**:
+- Work schedule affects family time
+- Economic conditions impact family life
+
+### Changes in Modern Society
+
+**Trends**:
+1. Decline of joint families
+2. Rise of nuclear families
+3. Increased secondary group participation
+4. Virtual communities (online groups)
+
+### Conclusion
+Both primary and secondary groups are essential for society. Primary groups provide emotional foundation while secondary groups achieve complex social goals. Modern society sees increasing importance of secondary groups while primary groups remain fundamental for socialization and emotional well-being.`
+              },
+              {
+                id: 'socl2-3',
+                question: 'Explain the concept of Reference Group and its importance in socialization.',
+                mnemonic: 'REFERENCE - Role models, Evaluation standard, Frame of reference, Expectations set, Relative deprivation, Norms borrowed, Comparison, Expectations',
+                answer: `### Introduction
+
+The concept of Reference Group was developed by Herbert Hyman (1942) and elaborated by Robert K. Merton. It refers to any group that individuals use as a standard for self-evaluation and behavior.
+
+### Definition
+
+**Reference Group**: A group that serves as a point of reference for individuals in forming their attitudes, values, and behaviors.
+
+**According to Merton**: "Groups to which individuals relate themselves as parts or to which they aspire to relate themselves psychologically"
+
+### Types of Reference Groups
+
+**1. Based on Membership**
+
+| Type | Description | Example |
+|------|-------------|---------|
+| Membership Reference Group | Person is a member | Own family, workplace |
+| Non-membership Reference Group | Person is NOT a member | Celebrities, elite class |
+
+**2. Based on Function**
+
+| Type | Function | Example |
+|------|----------|---------|
+| Normative | Sets norms and values | Family teaching values |
+| Comparative | Used for comparison | Comparing grades with toppers |
+
+**3. Based on Attitude**
+
+| Type | Attitude | Example |
+|------|----------|---------|
+| Positive Reference Group | Aspire to join/imitate | Role models, successful people |
+| Negative Reference Group | Avoid/oppose | Groups one rejects |
+
+### Characteristics of Reference Groups
+
+1. **Standard of Comparison**: Used to evaluate oneself
+2. **Source of Norms**: Provides behavioral guidelines
+3. **May be Real or Imaginary**: Can be actual or idealized
+4. **Multiple Groups**: Person can have several reference groups
+5. **Dynamic**: Changes over time and context
+
+### Role in Socialization
+
+**1. Value Formation**
+- Individuals adopt values of reference groups
+- Learn what is desirable/undesirable
+
+**2. Behavior Shaping**
+| Aspect | Process |
+|--------|---------|
+| Dress | Imitate style of reference group |
+| Language | Adopt speech patterns |
+| Attitudes | Form opinions based on reference group |
+
+**3. Aspiration Setting**
+- Career goals influenced by reference groups
+- Educational aspirations shaped
+
+**4. Identity Formation**
+- Self-concept developed through comparison
+- Social identity shaped
+
+### Relative Deprivation
+
+**Concept**: Feeling of deprivation by comparing with reference group
+
+**Example**:
+- Middle-class person feels poor when comparing with upper class
+- Villager feels backward comparing with city dweller
+
+**Significance**:
+- Explains social discontent
+- Drives social mobility
+- Can cause frustration
+
+### Importance of Reference Groups
+
+| Area | Importance |
+|------|------------|
+| **Consumer Behavior** | Buying decisions influenced |
+| **Political Attitudes** | Voting behavior shaped |
+| **Career Choices** | Professional aspirations set |
+| **Social Conformity** | Behavior regulated |
+| **Self-evaluation** | Self-esteem affected |
+
+### Examples in Daily Life
+
+1. **Students**: Use toppers as reference for grades
+2. **Teenagers**: Use celebrities for fashion/lifestyle
+3. **Professionals**: Use successful people in field
+4. **Social Climbers**: Use upper class for behavior
+
+### Criticism
+
+1. **Multiple Groups**: Confusion when references conflict
+2. **Unrealistic Standards**: Can lead to frustration
+3. **Relative Nature**: Not absolute standards
+
+### Conclusion
+Reference groups play a crucial role in socialization by providing standards for behavior, values, and self-evaluation. Understanding this concept helps explain why people behave the way they do and how social influence operates in society.`
+              }
             ]
           },
           {
@@ -86,6 +648,341 @@ export const SOC_SUBJECT: Subject = {
               { id: 'r3', title: 'Class', content: 'Economic-based.\nOpen system.\nMobility possible.', color: getReelColor(2) },
               { id: 'r4', title: 'Varnas', content: 'Brahmin (Priests).\nKshatriya (Warriors).\nVaishya (Traders).\nShudra (Servants).', color: getReelColor(3) },
               { id: 'r5', title: 'Weber', content: 'Class + Status + Power.\nMulti-dimensional.\nBeyond just money.', color: getReelColor(4) }
+            ],
+            longAnswers: [
+              {
+                id: 'socl3-1',
+                question: 'Define Social Stratification and explain its major forms.',
+                mnemonic: 'STRATIFICATION - Strata layers, Types many, Ranks fixed, Ascribed or achieved, Tradition or money, Inequality, Forms differ, Inherited or earned, Caste class estate, Access varies, Theories explain, Inequality persists, Origin differs, Nation-specific',
+                answer: `### Definition of Social Stratification
+
+**Meaning**: Social Stratification is the division of society into hierarchical layers (strata) based on unequal distribution of resources, prestige, and power.
+
+**Etymology**: Stratum (Latin) = Layer
+
+**According to Sociologists**:
+- **Gisbert**: "The division of society into permanent groups or categories linked with each other by the relationship of superiority and subordination"
+- **Ogburn & Nimkoff**: "Process by which individuals and groups are ranked in a more or less enduring hierarchy of status"
+
+### Characteristics of Social Stratification
+
+| Characteristic | Description |
+|----------------|-------------|
+| **Universal** | Found in all societies |
+| **Social** | Based on social factors, not individual |
+| **Ancient** | Existed since early civilizations |
+| **Diverse** | Takes different forms |
+| **Consequential** | Affects life chances |
+
+### Major Forms of Stratification
+
+**1. Caste System**
+
+| Feature | Description |
+|---------|-------------|
+| Basis | Birth (ascribed status) |
+| Mobility | None (closed system) |
+| Marriage | Endogamous (within caste) |
+| Occupation | Fixed by birth |
+| Location | India, Nepal, parts of Asia |
+
+**Varna System**:
+1. Brahmin (Priests, scholars)
+2. Kshatriya (Warriors, rulers)
+3. Vaishya (Merchants, traders)
+4. Shudra (Servants, laborers)
+5. Dalits/Untouchables (Outside varna)
+
+**2. Class System**
+
+| Feature | Description |
+|---------|-------------|
+| Basis | Economic factors (achieved status) |
+| Mobility | Possible (open system) |
+| Marriage | No restrictions |
+| Occupation | Based on merit/opportunity |
+| Location | Modern industrial societies |
+
+**Classes**:
+- Upper Class (wealthy, powerful)
+- Middle Class (professionals, managers)
+- Working Class (manual laborers)
+- Lower Class (poor, unemployed)
+
+**3. Estate System (Feudal)**
+
+| Estate | Members |
+|--------|---------|
+| First | Clergy (Church) |
+| Second | Nobility (Lords) |
+| Third | Commoners (Peasants, merchants) |
+
+- Found in Medieval Europe
+- Based on land ownership
+- Limited mobility
+
+**4. Slavery**
+
+| Feature | Description |
+|---------|-------------|
+| Status | Person as property |
+| Rights | None |
+| Most extreme | Form of inequality |
+| Now | Abolished worldwide |
+
+### Comparison of Forms
+
+| Basis | Caste | Class | Estate |
+|-------|-------|-------|--------|
+| **Membership** | Birth | Achievement | Birth/land |
+| **Mobility** | None | Possible | Limited |
+| **Marriage** | Endogamy | Open | Within estate |
+| **System** | Closed | Open | Semi-closed |
+
+### Conclusion
+Social stratification takes various forms depending on the society's history, culture, and economy. While caste is rigid and birth-based, class allows mobility through achievement. Understanding these forms helps analyze inequality in different societies.`
+              },
+              {
+                id: 'socl3-2',
+                question: 'Compare and contrast Caste and Class systems of stratification.',
+                mnemonic: 'CASTE vs CLASS - Closed vs Open, Ascribed vs Achieved, Sacred vs Secular, Traditional vs Modern, Economic vs Ritual',
+                answer: `### Introduction
+
+Caste and Class are two major forms of social stratification. While caste is primarily found in India, class is the dominant form in modern industrial societies. Both create inequality but differ fundamentally in their basis and characteristics.
+
+### Caste System
+
+**Definition**: A system of social stratification based on birth, with rigid hierarchy and no possibility of mobility.
+
+**Origin**: Ancient India (possibly from Varna system)
+
+**Characteristics**:
+| Feature | Description |
+|---------|-------------|
+| Basis | Birth (ascribed) |
+| Hierarchy | Religious/ritual purity |
+| Mobility | Not possible |
+| Marriage | Endogamy (within caste) |
+| Occupation | Fixed by birth |
+| Commensality | Restrictions on eating together |
+| Sanctions | Religious and social |
+
+### Class System
+
+**Definition**: A system of social stratification based on economic factors, with hierarchy but possibility of mobility.
+
+**Origin**: Industrial Revolution, Capitalism
+
+**Characteristics**:
+| Feature | Description |
+|---------|-------------|
+| Basis | Economic (achieved) |
+| Hierarchy | Wealth and income |
+| Mobility | Possible (up or down) |
+| Marriage | No restrictions |
+| Occupation | Based on merit |
+| Commensality | No restrictions |
+| Sanctions | Economic and legal |
+
+### Comparison Table
+
+| Aspect | Caste | Class |
+|--------|-------|-------|
+| **Basis** | Birth, hereditary | Economic, achievement |
+| **Status** | Ascribed (given at birth) | Achieved (earned) |
+| **Mobility** | Closed (no movement) | Open (movement possible) |
+| **Marriage** | Endogamous | Exogamous allowed |
+| **Occupation** | Fixed, hereditary | Based on merit |
+| **Nature** | Religious, ritual | Secular, economic |
+| **Sanctions** | Religious, social ostracism | Legal, economic |
+| **Consciousness** | Strong caste identity | Class consciousness varies |
+| **Example** | Indian society | Western industrial societies |
+
+### Similarities
+
+1. **Both create hierarchy**: Unequal layers in society
+2. **Both affect life chances**: Access to resources, opportunities
+3. **Both involve inequality**: Unequal distribution of wealth, status
+4. **Both influence lifestyle**: Different standards of living
+5. **Both affect social interaction**: Who you associate with
+
+### Changes in Modern India
+
+**Declining Caste Features**:
+- Constitutional abolition of untouchability
+- Reservation policies
+- Urbanization reducing caste visibility
+- Inter-caste marriages increasing
+- Occupational mobility
+
+**Rise of Class Elements**:
+- Economic status becoming important
+- Education opening opportunities
+- Middle class growing
+- Consumerism spreading
+
+**Interaction of Caste and Class**:
+| Scenario | Example |
+|----------|---------|
+| High caste, High class | Brahmin businessman |
+| High caste, Low class | Poor Brahmin priest |
+| Low caste, High class | Dalit entrepreneur |
+| Low caste, Low class | Dalit laborer |
+
+### Theoretical Perspectives
+
+**Marxist View**:
+- Class is fundamental
+- Caste is false consciousness
+- Economic relations determine everything
+
+**Weberian View**:
+- Class, Status, Power are separate dimensions
+- Caste combines status and economic factors
+
+### Conclusion
+While caste and class differ fundamentally in their basis and characteristics, in contemporary India, both systems coexist and interact. Modern India sees a complex interplay where economic class is becoming increasingly important while caste identity remains socially significant.`
+              },
+              {
+                id: 'socl3-3',
+                question: 'Explain the concept of Social Mobility and its types.',
+                mnemonic: 'MOBILITY - Movement in hierarchy, Open systems, Barriers exist, Individual or group, Lateral or vertical, Intergenerational, Types many, You can rise or fall',
+                answer: `### Definition of Social Mobility
+
+**Meaning**: Social Mobility refers to the movement of individuals or groups from one social position to another in the stratification system.
+
+**According to Sorokin**: "By social mobility is understood any transition of an individual or social object from one social position to another"
+
+### Characteristics
+
+| Feature | Description |
+|---------|-------------|
+| Movement | Change in social position |
+| Direction | Can be up or down |
+| Individual/Group | Can affect one person or many |
+| System-dependent | More in open, less in closed systems |
+
+### Types of Social Mobility
+
+**1. Vertical Mobility**
+
+Movement up or down in the social hierarchy.
+
+| Type | Direction | Example |
+|------|-----------|---------|
+| Upward | Low to High | Clerk becomes manager |
+| Downward | High to Low | Businessman goes bankrupt |
+
+**Examples of Upward Mobility**:
+- Education leading to better job
+- Entrepreneurship creating wealth
+- Political rise
+
+**Examples of Downward Mobility**:
+- Job loss
+- Business failure
+- Economic crisis affecting status
+
+**2. Horizontal Mobility**
+
+Movement within the same social level.
+
+| Feature | Description |
+|---------|-------------|
+| Level | Remains same |
+| Position | Changes |
+| Status | Similar |
+
+**Examples**:
+- Teacher in one school joins another school
+- Clerk transfers to different department
+- Doctor moves from one hospital to another
+
+**3. Intergenerational Mobility**
+
+Movement across generations (parent to child).
+
+| Type | Direction | Example |
+|------|-----------|---------|
+| Upward | Child higher than parent | Farmer's son becomes doctor |
+| Downward | Child lower than parent | Businessman's son becomes clerk |
+| Static | Same position | Doctor's son becomes doctor |
+
+**4. Intragenerational Mobility**
+
+Movement within one person's lifetime.
+
+| Feature | Description |
+|---------|-------------|
+| Span | One generation |
+| Individual | Same person |
+| Timeline | During career/life |
+
+**Example**: Person starts as junior clerk, retires as senior manager
+
+**5. Structural Mobility**
+
+Movement due to changes in society's structure.
+
+| Cause | Effect |
+|-------|--------|
+| Industrialization | New occupations created |
+| Economic growth | More middle-class jobs |
+| Technology | Old jobs disappear, new emerge |
+
+### Factors Affecting Social Mobility
+
+**1. Individual Factors**
+| Factor | Impact |
+|--------|--------|
+| Education | Increases opportunities |
+| Skills | Enhances employability |
+| Motivation | Drives achievement |
+
+**2. Social Factors**
+| Factor | Impact |
+|--------|--------|
+| Family background | Initial resources |
+| Social networks | Connections help |
+| Discrimination | Barriers for some groups |
+
+**3. Structural Factors**
+| Factor | Impact |
+|--------|--------|
+| Economic development | Creates opportunities |
+| Government policies | Reservations, scholarships |
+| Type of stratification | Caste limits, class allows |
+
+### Mobility in Different Systems
+
+| System | Mobility Level | Reason |
+|--------|---------------|--------|
+| Caste | Very low | Birth determines position |
+| Estate | Low | Land-based hierarchy |
+| Class | High | Achievement-based |
+
+### Social Mobility in India
+
+**Traditional Period**:
+- Limited by caste
+- Occupation fixed
+- Little vertical mobility
+
+**Modern Period**:
+- Constitutional provisions
+- Education expansion
+- Reservation policies
+- Urbanization
+
+**Current Trends**:
+1. Sanskritization (adopting upper caste practices)
+2. Westernization
+3. Education as mobility channel
+4. Political power for lower castes
+
+### Conclusion
+Social mobility is essential for a dynamic society. While closed systems like caste restrict mobility, open class systems encourage it. Modern India sees increasing mobility through education, urbanization, and government policies, though barriers persist.`
+              }
             ]
           },
           {
