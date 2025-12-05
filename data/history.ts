@@ -1089,6 +1089,63 @@ Both British and French East India Companies competed for trade in India. Their 
 - Indian Navy adopted some traditions
 - Navy Day (4th December) - Shivaji connection
 - National pride in maritime heritage`
+              },
+              {
+                id: 'hl4-3',
+                question: 'Describe the role of Mahadji Shinde in Maratha history.',
+                mnemonic: 'MAHADJI - Military modernizer, Arbiter of Delhi, Held confederacy, Alliance with French, Defender of Mughals, Jagir expansion, Iron discipline',
+                answer: `### Early Life
+- Born c. 1730 in Shinde (Scindia) family
+- Rose from humble origins to great general
+- Lost a leg in Battle of Panipat (1761) but continued fighting
+
+### Military Achievements
+
+**Army Modernization**
+- Introduced European-style training
+- Employed French officers like De Boigne
+- Created disciplined infantry battalions
+- Used modern artillery effectively
+
+**Key Campaigns**
+- Restored Maratha prestige after Panipat disaster
+- Recaptured Delhi from Rohillas
+- Defeated Rajput chiefs
+
+### Political Role
+
+**Protector of Mughal Emperor**
+- Rescued Shah Alam II from captivity
+- Made Mughals dependent on Marathas
+- Became "Vakil-i-Mutlaq" (Regent Plenipotentiary)
+- Controlled Delhi administration
+
+**Maratha Confederacy**
+- Maintained unity among Maratha chiefs
+- Prevented internal conflicts
+- Kept British at bay after First Anglo-Maratha War
+
+### Treaty of Salbai (1782)
+
+**His Role**
+- Chief negotiator with British
+- Secured favorable terms for Marathas
+- Ensured 20 years of peace
+
+### Legacy
+
+| Achievement | Impact |
+|-------------|--------|
+| Military reform | Modern Maratha army |
+| Delhi control | Maratha prestige restored |
+| Diplomatic skill | Peace with British |
+| Unity | Confederacy survived |
+
+### Death and Aftermath
+- Died in 1794
+- His death weakened Maratha unity
+- Led to eventual British dominance
+- Remembered as greatest Maratha general after Shivaji`
               }
             ]
           },
@@ -1308,6 +1365,75 @@ Mahatma Jyotirao Phule (1827-1890) was a pioneering social reformer from Maharas
 - Inspiration for reservation policy
 - Pioneer of women's education
 - Model for rational reform`
+              },
+              {
+                id: 'hl5-3',
+                question: 'Describe the contributions of Dr. Babasaheb Ambedkar to Indian society.',
+                mnemonic: 'AMBEDKAR - Annihilation of caste, Mahad satyagraha, Buddhist conversion, Education champion, Dalit rights, Kalaram temple, Architecture of Constitution, Rights for women',
+                answer: `### Early Life & Education
+- Born April 14, 1891 in Mhow (MP)
+- Faced untouchability from childhood
+- First untouchable to complete college education
+- PhD from Columbia University, DSc from London
+
+### Social Movements
+
+**1. Mahad Satyagraha (1927)**
+- Asserted Dalits' right to use public water
+- Chavdar Tale (tank) in Mahad
+- First civil rights movement in India
+- Burned Manusmriti (Dec 25, 1927)
+
+**2. Kalaram Temple Entry (1930)**
+- Nashik temple entry movement
+- 15,000 Dalits participated
+- Lasted 5 years
+- Highlighted temple discrimination
+
+**3. Organizations Founded**
+- Bahishkrit Hitakarini Sabha (1924)
+- Independent Labour Party (1936)
+- Scheduled Castes Federation (1942)
+
+### Political Contributions
+
+**Constitution of India**
+- Chairman of Drafting Committee
+- Chief architect of Constitution
+- Included fundamental rights
+- Protected minorities and Dalits
+
+**Key Constitutional Provisions**
+| Article | Provision |
+|---------|-----------|
+| Article 14 | Equality before law |
+| Article 17 | Abolition of untouchability |
+| Article 15 | No discrimination |
+| Article 46 | Protection of SC/ST |
+
+**As Law Minister**
+- Hindu Code Bill for women's rights
+- Property rights for women
+- Divorce rights
+- Inheritance equality
+
+### Literary & Journalistic Work
+- Mooknayak (newspaper)
+- Bahishkrit Bharat
+- "Annihilation of Caste"
+- "Buddha and His Dhamma"
+
+### Buddhist Conversion (1956)
+- Embraced Buddhism at Nagpur (Oct 14, 1956)
+- 5 lakh followers converted with him
+- Rejected caste-based Hinduism
+- Sought dignity through Buddhism
+
+### Legacy
+- Father of Indian Constitution
+- Icon of social justice
+- Bharat Ratna (1990 - posthumous)
+- April 14 celebrated as Ambedkar Jayanti`
               }
             ]
           },
@@ -1545,6 +1671,96 @@ Mahatma Gandhi (1869-1948) transformed the Indian freedom struggle into a mass m
 - Father of the Nation
 - Inspired global leaders (MLK, Mandela)
 - Philosophy relevant today`
+              },
+              {
+                id: 'hl6-3',
+                question: 'Describe the armed revolutionary movement in India and its impact on the freedom struggle.',
+                mnemonic: 'ARMS - Armed youth, Revolutionary parties, Martyrs sacrifice, Spirit of nationalism',
+                answer: `### Introduction
+While Gandhian methods dominated India's freedom struggle, a parallel revolutionary movement believed in armed resistance against British rule. These revolutionaries believed that violent action was necessary to overthrow colonial oppression.
+
+### Early Revolutionary Phase (1897-1914)
+
+**Bengal & Maharashtra**
+- Chapekar Brothers: Assassinated Rand (1897)
+- Anushilan Samiti & Jugantar: Secret societies in Bengal
+- **Alipore Bomb Case (1908)**: Khudiram Bose threw bomb at magistrate's carriage
+
+**Key Figures**
+| Revolutionary | Contribution |
+|---------------|--------------|
+| Bal Gangadhar Tilak | Inspired militant nationalism |
+| Aurobindo Ghosh | Spiritual revolutionary |
+| Khudiram Bose | First young martyr (age 18) |
+| Prafulla Chaki | Muzaffarpur bombing |
+
+### Hindustan Republican Association (HRA/HSRA)
+
+**Formation & Leaders**
+- Founded: 1924 at Kanpur
+- Key leaders: Ram Prasad Bismil, Ashfaqullah Khan, Chandrashekhar Azad
+
+**Major Actions**
+- **Kakori Train Robbery (1925)**: Looted government treasury
+- Ram Prasad Bismil, Ashfaqullah Khan executed (1927)
+
+**HSRA (Hindustan Socialist Republican Association)**
+- Renamed in 1928 to include Socialist ideology
+- Leaders: Bhagat Singh, Sukhdev, Rajguru, Azad
+
+### Bhagat Singh & Comrades
+
+**Central Assembly Bombing (1929)**
+- Bhagat Singh & Batukeshwar Dutt threw bombs
+- Purpose: "To make the deaf hear"
+- Voluntarily arrested to use trial as platform
+
+**Lahore Conspiracy Case**
+- Bhagat Singh, Sukhdev, Rajguru sentenced to death
+- Executed on 23 March 1931
+- Became martyrs and national heroes
+
+### INA (Indian National Army)
+
+**Formation**
+- Originally formed by Capt. Mohan Singh (1942)
+- Reorganized by **Subhas Chandra Bose** (1943)
+- Also called "Azad Hind Fauj"
+
+**Subhas Chandra Bose's Contribution**
+- Escaped India (1941)
+- Went to Germany, then Japan
+- Called "Netaji"
+- Gave slogan: "Give me blood, I will give you freedom"
+
+**Rani Jhansi Regiment**
+- Women's regiment of INA
+- Led by Captain Lakshmi Sahgal
+
+**Military Campaign**
+- Attacked through Burma
+- Captured Moirang (Manipur)
+- Indian flag hoisted on Indian soil
+- Defeated at Imphal/Kohima (1944)
+
+### Impact on Freedom Struggle
+
+**Immediate Effects**
+| Impact | Description |
+|--------|-------------|
+| British Fear | Realized Indians ready to die |
+| Youth Inspiration | Thousands joined nationalist movement |
+| Naval Mutiny (1946) | Inspired by INA spirit |
+| British Decision | Hastened decision to leave India |
+
+**Long-term Legacy**
+- Revolutionary nationalism complemented Gandhian methods
+- Created cult of martyrdom
+- Showed British that resistance would continue
+- INA trials created widespread sympathy
+
+### Conclusion
+The armed revolutionary movement, though not directly successful in overthrowing British rule, played a crucial role in the freedom struggle. The sacrifices of revolutionaries inspired generations and demonstrated to the British that Indian resistance would never cease.`
               }
             ]
           },
@@ -1787,6 +2003,109 @@ Sardar Vallabhbhai Patel (1875-1950), the "Iron Man of India," integrated over 5
 - Goa Liberation Day: 19 December
 - Goa became state in 1987
 - Unique Indo-Portuguese culture preserved`
+              },
+              {
+                id: 'hl7-3',
+                question: 'Explain the process of integration of Hyderabad into the Indian Union.',
+                mnemonic: 'POLO - Police action, Operation code, Liberation of Hyderabad, Osman Ali defeated',
+                answer: `### Background
+
+**About Hyderabad**
+- Largest princely state in India
+- Area: 82,698 sq miles (size of Britain)
+- Population: 16 million (85% Hindu, 15% Muslim)
+- Ruler: Nizam Mir Osman Ali Khan
+- One of the richest men in the world
+
+**Political Situation**
+| Factor | Details |
+|--------|---------|
+| Ruler | Muslim Nizam over Hindu majority |
+| Nizam's Wish | Independence or join Pakistan |
+| Location | Land-locked, surrounded by India |
+| Strategic | Heart of Deccan, vital for unity |
+
+### Nizam's Resistance
+
+**Steps Taken by Nizam**
+- Refused to sign Instrument of Accession
+- Signed Standstill Agreement (temporary)
+- Sought international support
+- Built up armed forces
+
+**Razakars**
+- Private militia of Ittehad-ul-Muslimeen
+- Led by **Qasim Razvi**
+- Committed atrocities against Hindus
+- Killed thousands, looted property
+- Prevented people from joining India
+
+### India's Approach
+
+**Diplomatic Efforts**
+- Sardar Patel negotiated patiently
+- Sent V.P. Menon for talks
+- Mountbatten mediated
+- All efforts failed due to Nizam's stubbornness
+
+**Why Action Became Necessary**
+- Razakar violence increasing
+- Refugees fleeing to India
+- Communist uprising in Telangana
+- Pakistan's encouragement to Nizam
+- National security threatened
+
+### Operation Polo (Police Action)
+
+**Preparation**
+- Date: 13-17 September 1948
+- Code name: Operation Polo
+- Commander: Major General J.N. Chaudhuri
+- Forces: Indian Army from all sides
+
+**Military Campaign**
+| Day | Events |
+|-----|--------|
+| 13 Sept | Operation begins |
+| 14 Sept | Rapid advance |
+| 15 Sept | Key towns captured |
+| 17 Sept | Hyderabad city reached |
+| 17 Sept | Nizam surrenders |
+
+**Result**
+- 5-day operation
+- Minimal casualties
+- Razakars surrendered
+- Nizam signed Instrument of Accession
+- Hyderabad integrated into India
+
+### Aftermath
+
+**Immediate**
+- Military administration established
+- Razakar leaders arrested (Qasim Razvi imprisoned)
+- Peace restored
+- Relief to suffering people
+
+**Long-term**
+- Nizam made Rajpramukh (ceremonial head)
+- Given annual privy purse
+- Hyderabad state later reorganized
+- Split into Maharashtra, Karnataka, Andhra Pradesh (1956)
+
+### Significance
+
+**National**
+- Ended hopes of Pakistan extending to Deccan
+- Demonstrated India's resolve for unity
+- Sardar Patel's greatest achievement
+
+**Administrative**
+- Proved integration possible without bloodshed
+- Model for dealing with reluctant states
+
+### Conclusion
+Operation Polo was a swift and decisive action that ended the Nizam's dream of independence and completed the integration of the Indian Union. Sardar Patel's firm handling earned him the title "Iron Man of India."`
               }
             ]
           },
@@ -2030,6 +2349,105 @@ Subhash Chandra Bose (1897-1945), known as Netaji, believed in armed struggle fo
 - 23 January: Parakram Diwas
 - Debate on his death (1945)
 - Symbol of courage and sacrifice`
+              },
+              {
+                id: 'hl8-3',
+                question: 'Explain the impact of World War II on India.',
+                mnemonic: 'IMPACT - Industrial growth, Military expansion, Political awakening, August movement, Communal tensions, Transfer of power',
+                answer: `### Introduction
+World War II (1939-1945) had far-reaching consequences on India's political, economic, and social life. It ultimately accelerated India's journey towards independence.
+
+### Political Impact
+
+**Congress Response**
+| Year | Event |
+|------|-------|
+| 1939 | Britain declared war on India's behalf without consultation |
+| 1939 | Congress ministries resigned in protest |
+| 1940 | Individual Satyagraha launched |
+| 1942 | Quit India Movement |
+| 1942 | All major leaders arrested |
+
+**Muslim League's Gains**
+- Jinnah called Congress resignation "Day of Deliverance"
+- Lahore Resolution (1940) - demanded Pakistan
+- Grew stronger while Congress leaders in jail
+- Two-Nation Theory gained support
+
+**British Offers**
+- **August Offer (1940)**: Dominion status after war - Rejected
+- **Cripps Mission (1942)**: Dominion status, constitution by Indians - Failed
+- **Wavell Plan (1945)**: Executive Council reform - Failed
+- **Cabinet Mission (1946)**: Three-tier federation - Accepted then rejected
+
+### Economic Impact
+
+**Industrial Growth**
+- War industries expanded
+- Iron, steel, textiles, chemicals grew
+- Indian capitalists profited
+- Indigenous entrepreneurs emerged
+
+**Negative Effects**
+| Problem | Impact |
+|---------|--------|
+| Inflation | Prices rose sharply |
+| Shortages | Essential goods scarce |
+| Rationing | Government controlled supplies |
+| Bengal Famine (1943) | 3 million died |
+
+**Military Expenditure**
+- India bore huge war expenses
+- Sterling balances accumulated
+- Britain became debtor to India
+
+### Social Impact
+
+**Military Expansion**
+- Indian Army grew from 2 lakh to 25 lakh
+- Exposure to world affairs
+- Technical skills learned
+- Questioning of British authority
+
+**Refugee Crisis**
+- Burma refugees fled to India
+- Japanese threat to eastern India
+- Civilians evacuated from coastal areas
+
+### Quit India Movement (1942)
+
+**Background**
+- Cripps Mission failure
+- Japanese advance
+- Rising discontent
+
+**"Do or Die" Call**
+- 8 August 1942: Resolution passed
+- Gandhi's call: "Do or Die"
+- All leaders arrested next day
+
+**Response**
+- Underground movement
+- Sabotage of communications
+- Parallel governments formed
+- Violent suppression by British
+
+### Impact on Freedom Struggle
+
+**Hastened Independence**
+- Britain economically exhausted
+- Labour Party came to power (1945)
+- British public wanted troops home
+- Empire became unsustainable
+
+**Changed Dynamics**
+- Congress-League divide widened
+- INA trials united Indians
+- Naval mutiny (1946) alarmed British
+- Partition became inevitable
+
+### Conclusion
+World War II fundamentally changed India's relationship with Britain. A weakened Britain, combined with intensified nationalist movements and the changed global scenario, made Indian independence inevitable. The war's economic strain on Britain and the political awakening in India set the stage for the transfer of power in 1947.`
               }
             ]
           },
