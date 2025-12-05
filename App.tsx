@@ -45,6 +45,10 @@ import SpacedRepetition from './components/SpacedRepetition';
 import PreviousYearQuestions from './components/PreviousYearQuestions';
 import WritingPractice from './components/WritingPractice';
 import ReverseLearning from './components/ReverseLearning';
+import StudyHeatmap from './components/StudyHeatmap';
+import SmartWeakness from './components/SmartWeakness';
+import WeeklyReport from './components/WeeklyReport';
+import QuickStatsWidget from './components/QuickStatsWidget';
 import { useProgress } from './hooks/useProgress';
 import { explainConcept } from './services/geminiService';
 import { db, UserProfile } from './services/localDb';
@@ -109,6 +113,9 @@ const App: React.FC = () => {
   const [showPYQ, setShowPYQ] = useState(false);
   const [showWritingPractice, setShowWritingPractice] = useState(false);
   const [showReverseLearning, setShowReverseLearning] = useState(false);
+  const [showStudyHeatmap, setShowStudyHeatmap] = useState(false);
+  const [showSmartWeakness, setShowSmartWeakness] = useState(false);
+  const [showWeeklyReport, setShowWeeklyReport] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -507,6 +514,14 @@ const App: React.FC = () => {
             <CountdownTimer />
           </div>
 
+          {/* Quick Stats Widget - NEW */}
+          <QuickStatsWidget 
+            subjects={filteredSubjects}
+            onOpenWeakness={() => setShowSmartWeakness(true)}
+            onOpenHeatmap={() => setShowStudyHeatmap(true)}
+            onOpenWeeklyReport={() => setShowWeeklyReport(true)}
+          />
+
           {/* Previous Marks Input Section - Now with stream-specific subjects */}
           {selectedStream && <PreviousMarksInput stream={selectedStream} />}
 
@@ -883,6 +898,39 @@ const App: React.FC = () => {
                   <Shuffle size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Reverse</span>
+              </button>
+            </div>
+            
+            {/* Row 9 - NEW Smart Analytics Tools */}
+            <div className="grid grid-cols-3 gap-3 mt-3">
+              <button
+                onClick={() => setShowStudyHeatmap(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-500 flex items-center justify-center">
+                  <Calendar size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Heatmap</span>
+              </button>
+              
+              <button
+                onClick={() => setShowSmartWeakness(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-violet-200 dark:hover:border-violet-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-violet-100 dark:bg-violet-900/30 text-violet-500 flex items-center justify-center">
+                  <Brain size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Smart AI</span>
+              </button>
+              
+              <button
+                onClick={() => setShowWeeklyReport(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-500 flex items-center justify-center">
+                  <BarChart3 size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Weekly</span>
               </button>
             </div>
           </div>
@@ -1739,6 +1787,32 @@ const App: React.FC = () => {
         <ReverseLearning 
           subjects={getFilteredSubjects()} 
           onClose={() => setShowReverseLearning(false)} 
+        />
+      )}
+      
+      {/* NEW Study Analytics Tools */}
+      {showStudyHeatmap && (
+        <StudyHeatmap 
+          onClose={() => setShowStudyHeatmap(false)} 
+        />
+      )}
+      
+      {showSmartWeakness && (
+        <SmartWeakness 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowSmartWeakness(false)}
+          onSelectChapter={(subject, chapter) => {
+            setSelectedSubject(subject);
+            setSelectedChapter(chapter);
+            setView('CHAPTER_DETAIL');
+          }}
+        />
+      )}
+      
+      {showWeeklyReport && (
+        <WeeklyReport 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowWeeklyReport(false)} 
         />
       )}
     </div>
