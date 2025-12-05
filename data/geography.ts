@@ -670,6 +670,171 @@ Activities directly using natural resources
               { id: 'r19', color: '#85C1E9', title: 'Green Revolution', content: 'HYV + Fertilizers + Irrigation = Food surplus =��+ | Punjab-Haryana leaders!' },
               { id: 'r20', color: '#FF6B6B', title: 'Mining Types', content: 'Surface: Open pit (near surface) | Underground: Shafts (deep) G��n+�' }
             ]
+          },
+          {
+            id: 'geo-ch6',
+            title: 'Chapter 6: Secondary Activities',
+            description: 'Manufacturing industries, types, and industrial regions',
+            summary: `
+# Secondary Activities
+
+## Key Concepts
+
+### Definition
+Activities that transform raw materials into finished goods through manufacturing and processing.
+
+### Types of Industries
+1. **Based on Size**: Large, Medium, Small, Cottage
+2. **Based on Raw Material**: Agro-based, Mineral-based, Forest-based, Marine-based
+3. **Based on Ownership**: Private, Public, Joint, Cooperative
+4. **Based on Product**: Heavy, Light, Consumer, Capital goods
+
+### Factors of Industrial Location
+- Raw materials, Power, Labor, Market, Transport, Capital, Government policy
+
+### Major Industrial Regions of India
+- Mumbai-Pune, Hooghly, Bengaluru-Chennai, Gujarat corridor
+            `,
+            detailedNotes: `
+# Detailed Notes: Secondary Activities
+
+## Understanding Secondary Activities
+
+### Definition
+Secondary activities involve manufacturing and processing - transforming raw materials into finished products of higher value.
+
+### Evolution of Manufacturing
+1. **Cottage/Household**: Home-based, family labor
+2. **Small Scale**: Limited investment, local market
+3. **Large Scale/Factory**: Heavy investment, mass production
+
+## Classification of Industries
+
+### By Size
+| Type | Investment | Employment | Example |
+|------|------------|------------|---------|
+| **Large Scale** | >10 crore | >100 workers | TISCO, BHEL |
+| **Medium Scale** | 5-10 crore | 50-100 | Auto parts |
+| **Small Scale** | <5 crore | <50 | Garments |
+| **Cottage** | Minimal | Family | Handloom |
+
+### By Raw Material Source
+| Type | Raw Material | Examples |
+|------|-------------|----------|
+| **Agro-based** | Agricultural | Sugar, Cotton textile, Jute |
+| **Mineral-based** | Minerals | Iron & Steel, Cement |
+| **Forest-based** | Forests | Paper, Furniture |
+| **Marine-based** | Sea products | Fish processing |
+
+### By Product Type
+- **Heavy Industries**: Iron & steel, machinery (capital goods)
+- **Light Industries**: Electronics, consumer goods
+- **Basic Industries**: Provide input to others (steel)
+- **Consumer Industries**: Direct consumer products
+
+## Factors Affecting Industrial Location
+
+### Physical Factors
+1. **Raw Materials**: Weight-losing industries near source
+2. **Power**: Energy-intensive near power source
+3. **Climate**: Some industries need specific climate
+
+### Economic Factors
+1. **Market**: Consumer goods near market
+2. **Transport**: Good connectivity essential
+3. **Labor**: Skilled/cheap labor availability
+4. **Capital**: Financial resources access
+
+### Human Factors
+1. **Government Policy**: SEZs, incentives
+2. **Industrial Inertia**: Existing infrastructure
+3. **Agglomeration**: Benefits of clustering
+
+## Major Industrial Regions of India
+
+### 1. Mumbai-Pune Region
+- **Industries**: Cotton textile, petrochemical, engineering
+- **Advantages**: Port, finance, skilled labor
+
+### 2. Hooghly Industrial Region
+- **Industries**: Jute, engineering, steel
+- **Advantages**: Coal, port, labor
+
+### 3. Bengaluru-Chennai Corridor
+- **Industries**: IT, automobiles, electronics
+- **Advantages**: Skilled workforce, climate
+
+### 4. Gujarat Industrial Corridor
+- **Industries**: Petrochemicals, textiles, diamond cutting
+- **Advantages**: Port, entrepreneurship
+
+## Special Economic Zones (SEZs)
+- Tax benefits
+- Export promotion
+- Infrastructure support
+- Single-window clearance
+            `,
+            flashcards: [
+              { id: 'f26', front: 'What are secondary activities?', back: 'Activities that transform raw materials into finished goods through manufacturing and processing.' },
+              { id: 'f27', front: 'What are agro-based industries?', back: 'Industries using agricultural products as raw material: Sugar, Cotton textile, Jute, Food processing.' },
+              { id: 'f28', front: 'What is industrial inertia?', back: 'Tendency of industries to remain at original location even after factors change, due to established infrastructure and linkages.' },
+              { id: 'f29', front: 'Name the main industrial regions of India.', back: 'Mumbai-Pune, Hooghly (Kolkata), Bengaluru-Chennai, Gujarat corridor, Chotanagpur plateau.' },
+              { id: 'f30', front: 'What are SEZs?', back: 'Special Economic Zones - designated areas with tax benefits and infrastructure to promote exports and manufacturing.' },
+              { id: 'f31', front: 'Difference between heavy and light industries?', back: 'Heavy: Large machines, bulk products (steel, cement). Light: Smaller products, less raw material (electronics, garments).' },
+              { id: 'f32', front: 'What is basic industry?', back: 'Industry whose products serve as raw material for other industries. Example: Iron & steel industry.' },
+              { id: 'f33', front: 'Why are sugar mills located near sugarcane farms?', back: 'Sugarcane is weight-losing (sucrose content decreases with time), so processing near farms reduces cost and waste.' },
+              { id: 'f34', front: 'What is cottage industry?', back: 'Small-scale manufacturing done at home using family labor and simple tools. Examples: Handloom, pottery, handicrafts.' },
+              { id: 'f35', front: 'What factors determine industrial location?', back: 'Raw materials, power, labor, market, transport, capital, government policy, water supply.' },
+              { id: 'f36', front: 'Why is Bengaluru IT hub?', back: 'Pleasant climate, skilled workforce, educational institutions, early government support, good connectivity.' },
+              { id: 'f37', front: 'What is industrial agglomeration?', back: 'Concentration of industries in one area due to benefits like shared infrastructure, labor pool, and ancillary services.' },
+              { id: 'f38', front: 'Name mineral-based industries.', back: 'Iron & steel, cement, aluminum, copper, petrochemicals - use minerals as raw material.' },
+              { id: 'f39', front: 'What is footloose industry?', back: 'Industries not dependent on specific location factors, can be set up anywhere. Example: Electronics, software.' },
+              { id: 'f40', front: 'First iron and steel plant in India?', back: 'TISCO (Tata Iron and Steel Company) at Jamshedpur, 1907.' },
+              { id: 'f41', front: 'What is public sector industry?', back: 'Industry owned and operated by government. Examples: BHEL, SAIL, ONGC.' },
+              { id: 'f42', front: 'Why Mumbai-Pune is industrial hub?', back: 'Port facility, financial capital, skilled labor, market access, good transport, power availability.' },
+              { id: 'f43', front: 'What is market-oriented industry?', back: 'Industry located near consumers/market. Example: Bakery, soft drinks, furniture.' },
+              { id: 'f44', front: 'Name forest-based industries.', back: 'Paper, plywood, furniture, match, lac, rubber processing.' },
+              { id: 'f45', front: 'What is small-scale industry criteria in India?', back: 'Investment in plant and machinery up to Rs 10 crore (varies with policy).' },
+              { id: 'f46', front: 'What is Make in India initiative?', back: 'Government program to promote manufacturing in India, create jobs, and reduce imports.' },
+              { id: 'f47', front: 'Why Hooghly region developed industries?', back: 'Coal from Damodar valley, jute from Bengal, port (Kolkata), cheap labor, British investment.' },
+              { id: 'f48', front: 'What are consumer goods industries?', back: 'Industries producing goods for direct consumption: Food, textiles, electronics, furniture.' },
+              { id: 'f49', front: 'What is sunrise industry?', back: 'New, rapidly growing industries: IT, biotechnology, renewable energy, electronics.' },
+              { id: 'f50', front: 'What is sunset industry?', back: 'Declining industries due to obsolescence: Traditional textiles, typewriters, film cameras.' },
+              { id: 'f51', front: 'What is ancillary industry?', back: 'Industry that makes parts/components for larger industries. Auto parts makers for car companies.' },
+              { id: 'f52', front: 'Largest industrial employer in India?', back: 'Textile industry - employs millions in cotton, jute, silk, synthetic textiles.' },
+              { id: 'f53', front: 'What is joint sector industry?', back: 'Industry with both government and private ownership. Example: Maruti Udyog (initially).' },
+              { id: 'f54', front: 'Why aluminum industry needs cheap power?', back: 'Aluminum smelting is highly energy-intensive, electricity cost is major production cost.' },
+              { id: 'f55', front: 'What is industrial policy?', back: 'Government guidelines for industrial development: licensing, investment limits, reserved sectors.' }
+            ],
+            mcqs: [
+              { id: 'mcq16', question: 'Which is an agro-based industry?', options: ['Cement', 'Sugar', 'Steel', 'Aluminum'], correctIndex: 1, explanation: 'Sugar uses sugarcane as raw material.' },
+              { id: 'mcq17', question: 'TISCO is located at:', options: ['Mumbai', 'Jamshedpur', 'Bengaluru', 'Chennai'], correctIndex: 1, explanation: 'First steel plant in India, established 1907.' },
+              { id: 'mcq18', question: 'Which is a footloose industry?', options: ['Sugar', 'Steel', 'Software', 'Cement'], correctIndex: 2, explanation: 'Software industry can be located anywhere.' },
+              { id: 'mcq19', question: 'Iron and steel is a:', options: ['Light industry', 'Basic industry', 'Consumer industry', 'Agro-based industry'], correctIndex: 1, explanation: 'Provides input for other industries.' },
+              { id: 'mcq20', question: 'Which industrial region is known for jute?', options: ['Mumbai-Pune', 'Hooghly', 'Chennai', 'Ahmedabad'], correctIndex: 1, explanation: 'Kolkata-Hooghly region is jute belt.' },
+              { id: 'mcq21', question: 'SEZ stands for:', options: ['Small Economic Zone', 'Special Export Zone', 'Special Economic Zone', 'Standard Economic Zone'], correctIndex: 2, explanation: 'Special Economic Zones for export promotion.' },
+              { id: 'mcq22', question: 'Which is NOT a factor of industrial location?', options: ['Raw material', 'Language', 'Transport', 'Market'], correctIndex: 1, explanation: 'Language is not a direct industrial location factor.' },
+              { id: 'mcq23', question: 'Cottage industry is characterized by:', options: ['Heavy machinery', 'Large capital', 'Family labor', 'Mass production'], correctIndex: 2, explanation: 'Cottage industries use family labor and simple tools.' },
+              { id: 'mcq24', question: 'IT industry is concentrated in:', options: ['Mumbai only', 'Kolkata only', 'Bengaluru-Hyderabad-Pune', 'Chennai only'], correctIndex: 2, explanation: 'IT hub cities of India.' },
+              { id: 'mcq25', question: 'Which is a sunrise industry?', options: ['Jute', 'Handloom', 'Biotechnology', 'Typewriter'], correctIndex: 2, explanation: 'New, growing industry.' },
+              { id: 'mcq26', question: 'Cement industry is:', options: ['Agro-based', 'Forest-based', 'Mineral-based', 'Marine-based'], correctIndex: 2, explanation: 'Uses limestone (mineral) as raw material.' },
+              { id: 'mcq27', question: 'Industrial inertia means:', options: ['Industries moving frequently', 'Industries staying at original location', 'No industrial growth', 'Government control'], correctIndex: 1, explanation: 'Tendency to remain even when conditions change.' },
+              { id: 'mcq28', question: 'BHEL is:', options: ['Private sector', 'Public sector', 'Joint sector', 'Cooperative'], correctIndex: 1, explanation: 'Bharat Heavy Electricals Limited is government owned.' },
+              { id: 'mcq29', question: 'Sugar mills are near farms because:', options: ['Labor availability', 'Sugarcane is weight-losing', 'Power supply', 'Market access'], correctIndex: 1, explanation: 'Sucrose content decreases with time/distance.' },
+              { id: 'mcq30', question: 'Gujarat is famous for:', options: ['Jute', 'Petrochemicals', 'Jute', 'Paper'], correctIndex: 1, explanation: 'Major petrochemical hub of India.' }
+            ],
+            reels: [
+              { id: 'r21', color: '#E74C3C', title: 'Secondary Activities', content: 'Manufacturing = Transform raw → finished goods | Add value = Higher price' },
+              { id: 'r22', color: '#9B59B6', title: 'Industry Types', content: 'By size: Large/Medium/Small/Cottage | By material: Agro/Mineral/Forest/Marine' },
+              { id: 'r23', color: '#3498DB', title: 'Location Factors', content: 'Raw material + Power + Labor + Market + Transport + Capital + Policy = Perfect location!' },
+              { id: 'r24', color: '#1ABC9C', title: 'India Industrial Hubs', content: 'Mumbai-Pune: Finance | Hooghly: Jute | Bengaluru: IT | Gujarat: Petrochem' },
+              { id: 'r25', color: '#F39C12', title: 'SEZ Benefits', content: 'Tax free + Export focus + Infrastructure + Easy clearance = Industry boost!' },
+              { id: 'r26', color: '#27AE60', title: 'Sunrise vs Sunset', content: 'Sunrise: IT, Biotech (growing) | Sunset: Typewriters, Film cameras (declining)' },
+              { id: 'r27', color: '#E91E63', title: 'TISCO Facts', content: '1907 | Jamshedpur | First steel plant | Tata family | Near coal & iron ore' },
+              { id: 'r28', color: '#00BCD4', title: 'Agro Industries', content: 'Sugar + Cotton textile + Jute + Food processing = Farm to factory!' },
+              { id: 'r29', color: '#FF5722', title: 'Footloose Industry', content: 'IT, Electronics = Can go anywhere! Not tied to raw material/power location' },
+              { id: 'r30', color: '#673AB7', title: 'Make in India', content: 'Goal: Manufacturing hub | Create jobs | Reduce imports | Boost economy' }
+            ]
           }
         ]
 };
