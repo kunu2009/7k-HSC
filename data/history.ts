@@ -2690,6 +2690,115 @@ The Bandung Conference (1955) was a historic gathering of Asian and African nati
 - Spirit of Bandung still invoked
 - Symbol of Third World unity
 - Beginning of Global South solidarity`
+              },
+              {
+                id: 'hl9-3',
+                question: 'Describe the process of decolonization in Africa with special reference to South Africa.',
+                mnemonic: 'AFRICA FREE - Anti-colonial, Fight for rights, Racial equality, Independence, Colonialism ended, Apartheid, Freedom, Resistance, Elections, Equality achieved',
+                answer: `### Introduction
+Decolonization in Africa was a long and complex process. While most African nations gained independence in the 1950s-60s, South Africa's struggle against Apartheid continued until 1994.
+
+### Decolonization Timeline
+
+**Early Independence**
+| Country | Year | Colonial Power | Leader |
+|---------|------|----------------|--------|
+| Ghana | 1957 | Britain | Kwame Nkrumah |
+| Guinea | 1958 | France | Sekou Toure |
+| Nigeria | 1960 | Britain | Nnamdi Azikiwe |
+| Tanzania | 1961 | Britain | Julius Nyerere |
+| Kenya | 1963 | Britain | Jomo Kenyatta |
+
+**Year of Africa (1960)**
+- 17 African countries gained independence
+- Symbol of rapid decolonization
+- UN membership increased
+
+### South Africa: A Special Case
+
+**Background**
+- Union of South Africa (1910) - Dominion status
+- White minority rule over Black majority
+- Racial segregation policies
+
+**Apartheid (1948-1994)**
+- Meaning: "Separateness" in Afrikaans
+- System of racial segregation
+- Implemented by National Party
+
+### Apartheid Laws
+
+| Law | Provision |
+|-----|-----------|
+| Population Registration Act | Classified by race |
+| Group Areas Act | Separate residential areas |
+| Pass Laws | Blacks required to carry passes |
+| Bantu Education Act | Inferior education for Blacks |
+| Mixed Marriages Act | Interracial marriage banned |
+
+### Resistance to Apartheid
+
+**African National Congress (ANC)**
+- Founded: 1912
+- Initially: Peaceful protests, petitions
+- Key leaders: Walter Sisulu, Oliver Tambo, Nelson Mandela
+
+**Turning Points**
+- **1960 Sharpeville Massacre**: Police killed 69 peaceful protesters
+- ANC banned, went underground
+- Armed wing "Umkhonto we Sizwe" formed (1961)
+- Mandela arrested (1962), life sentence (1964)
+
+**International Response**
+- UN condemned Apartheid
+- Economic sanctions imposed
+- Sports boycotts (banned from Olympics)
+- Cultural boycotts
+
+### End of Apartheid
+
+**Factors Leading to Change**
+- International pressure
+- Economic sanctions hurting economy
+- Internal resistance growing
+- New President F.W. de Klerk's reforms
+
+**Process**
+| Year | Event |
+|------|-------|
+| 1990 | Mandela released after 27 years |
+| 1990 | ANC unbanned |
+| 1991 | Apartheid laws repealed |
+| 1993 | Mandela & de Klerk: Nobel Peace Prize |
+| 1994 | First democratic elections |
+
+### Nelson Mandela's Legacy
+
+**Achievements**
+- First Black President (1994-1999)
+- Truth and Reconciliation Commission
+- Rainbow Nation concept
+- Forgiveness over revenge
+
+**Global Symbol**
+- Icon of anti-racism struggle
+- Inspired movements worldwide
+- Madiba: Beloved father figure
+
+### Significance
+
+**For Africa**
+- End of white minority rule
+- Inspiration for human rights movements
+- Economic recovery began
+
+**For World**
+- Showed peaceful transition possible
+- Model for conflict resolution
+- Power of international solidarity
+
+### Conclusion
+The decolonization of Africa and the end of Apartheid in South Africa represent humanity's triumph over colonialism and racism. Nelson Mandela's example of forgiveness and reconciliation remains a beacon for conflict resolution worldwide.`
               }
             ]
           },
@@ -2941,6 +3050,126 @@ The Non-Aligned Movement (NAM) was formed during Cold War as an alternative to j
 - Relevance questioned
 - Economic focus needed
 - Climate change cooperation`
+              },
+              {
+                id: 'hl10-3',
+                question: 'Explain the Cold War and its impact on international relations.',
+                mnemonic: 'COLD WAR - Capitalism vs Communism, Opposition without direct war, Loose alliances, Division of world, Weapons race, Arms buildup, Rivalry',
+                answer: `### Introduction
+The Cold War (1947-1991) was a period of political and military tension between the Western bloc (led by USA) and Eastern bloc (led by USSR) without direct military conflict between the superpowers.
+
+### Origin of Cold War
+
+**Causes**
+| Factor | Description |
+|--------|-------------|
+| Ideological | Capitalism vs Communism |
+| Political | Democracy vs Dictatorship |
+| Economic | Free market vs State control |
+| Power | Superpowers competing for dominance |
+
+**Key Events Leading to Cold War**
+- Yalta Conference (1945): Disagreements over Europe
+- Iron Curtain Speech (1946): Churchill warned of Soviet expansion
+- Truman Doctrine (1947): Containment of Communism
+- Marshall Plan (1948): Economic aid to Europe
+
+### Military Alliances
+
+**NATO (1949)**
+- North Atlantic Treaty Organization
+- Led by USA
+- 12 founding members
+- Collective defense: Attack on one = Attack on all
+
+**Warsaw Pact (1955)**
+- Counter to NATO
+- Led by USSR
+- Eastern European nations
+- Dissolved in 1991
+
+**Other Alliances**
+| Alliance | Region | Members |
+|----------|--------|---------|
+| SEATO | Southeast Asia | USA, UK, France, etc. |
+| CENTO | Middle East | UK, Turkey, Iran, Pakistan |
+| ANZUS | Pacific | Australia, NZ, USA |
+
+### Major Cold War Events
+
+**Crises**
+- Berlin Blockade (1948-49)
+- Korean War (1950-53)
+- Cuban Missile Crisis (1962)
+- Vietnam War (1955-75)
+- Afghan War (1979-89)
+
+**Arms Race**
+- Nuclear weapons stockpiling
+- Space race (Sputnik, Moon landing)
+- SDI "Star Wars" program
+- Mutual Assured Destruction (MAD)
+
+**Détente Period (1970s)**
+- Easing of tensions
+- SALT I & II treaties
+- Helsinki Accords (1975)
+- Trade and cultural exchanges
+
+### Impact on International Relations
+
+**Division of World**
+| Aspect | USA Bloc | USSR Bloc |
+|--------|----------|-----------|
+| Ideology | Capitalism | Communism |
+| Government | Democracy | One-party |
+| Economy | Free market | State-planned |
+| Examples | Western Europe, Japan | Eastern Europe, Cuba |
+
+**Third World Impact**
+- Proxy wars in developing countries
+- Aid linked to allegiance
+- Arms supplied to allies
+- Coup d'états supported
+
+**On India**
+- Remained non-aligned
+- NAM leadership
+- Received aid from both blocs
+- 1971: Treaty with USSR
+
+### End of Cold War
+
+**Factors**
+- Soviet economic crisis
+- Gorbachev's reforms (Glasnost, Perestroika)
+- Fall of Berlin Wall (1989)
+- Eastern European revolutions
+
+**Final Events**
+| Year | Event |
+|------|-------|
+| 1989 | Berlin Wall falls |
+| 1990 | Germany reunified |
+| 1991 | Warsaw Pact dissolved |
+| 1991 | USSR disintegrates |
+
+### Legacy
+
+**Positive**
+- UN strengthened post-Cold War
+- Arms control treaties
+- Regional cooperation increased
+- Decolonization accelerated
+
+**Negative**
+- Proxy war devastation
+- Nuclear proliferation
+- Regional conflicts
+- Economic disparities
+
+### Conclusion
+The Cold War shaped international relations for nearly half a century. While it never escalated to direct warfare between superpowers, it led to numerous proxy conflicts and divided the world. Its end marked the beginning of a new world order with USA as the sole superpower.`
               }
             ]
           },
@@ -3200,6 +3429,124 @@ The White Revolution transformed India into world's largest milk producer.
 
 ### Legacy
 Both revolutions transformed rural India, ensuring food and nutritional security.`
+              },
+              {
+                id: 'hl11-3',
+                question: 'Describe India\'s nuclear program and its significance.',
+                mnemonic: 'NUCLEAR - National security, Unique capability, Civilian use, Livermore & Bhabha, Energy, Arms capability, Research',
+                answer: `### Introduction
+India's nuclear program, started in 1944 under Dr. Homi Bhabha, serves both civilian (energy) and strategic (defense) purposes. India is a nuclear weapons state but follows a "No First Use" policy.
+
+### History of Nuclear Program
+
+**Pioneers**
+| Scientist | Contribution |
+|-----------|--------------|
+| Dr. Homi J. Bhabha | Father of Indian Nuclear Program |
+| Dr. Vikram Sarabhai | Space & Nuclear development |
+| Dr. Raja Ramanna | Pokhran-I architect |
+| Dr. R. Chidambaram | Pokhran-II team leader |
+| Dr. APJ Abdul Kalam | Missile development |
+
+**Timeline**
+- 1944: Tata Institute of Fundamental Research (TIFR) founded
+- 1948: Atomic Energy Act
+- 1954: Department of Atomic Energy (DAE) created
+- 1956: Asia's first nuclear reactor (Apsara) at Trombay
+- 1974: Pokhran-I "Peaceful Nuclear Explosion"
+- 1998: Pokhran-II nuclear tests
+
+### Pokhran Tests
+
+**Pokhran-I (1974)**
+- Date: 18 May 1974
+- Code name: "Smiling Buddha"
+- PM: Indira Gandhi
+- Purpose: Peaceful Nuclear Explosion (PNE)
+- Yield: 12-15 kilotons
+- Result: India joined nuclear club
+
+**Pokhran-II (1998)**
+- Date: 11 & 13 May 1998
+- Code name: "Operation Shakti"
+- PM: Atal Bihari Vajpayee
+- Tests: 5 nuclear devices
+- Types: Fission, thermonuclear, tactical
+
+### Nuclear Policy
+
+**No First Use (NFU)**
+- India will not use nuclear weapons first
+- Only retaliatory use if attacked
+- Credible Minimum Deterrence
+
+**Command Structure**
+- Nuclear Command Authority (NCA)
+- Political Council (PM as Chairman)
+- Executive Council (NSA)
+- Strategic Forces Command
+
+### Civilian Nuclear Program
+
+**Power Generation**
+| Reactor Type | Locations |
+|--------------|-----------|
+| PHWR | Tarapur, Kalpakkam, Rawatbhata, etc. |
+| VVER (Russian) | Kudankulam |
+| Fast Breeder | Kalpakkam (PFBR) |
+
+**Three-Stage Program**
+1. Natural Uranium in PHWRs
+2. Plutonium in Fast Breeders
+3. Thorium-based reactors (future)
+
+### International Agreements
+
+**Nuclear Suppliers Group (NSG)**
+- India outside NPT but civil nuclear deal (2008)
+- Indo-US Nuclear Deal
+- Access to uranium, technology
+
+**Treaties Status**
+| Treaty | India's Position |
+|--------|-----------------|
+| NPT | Not signed |
+| CTBT | Not signed |
+| FMCT | Supports |
+| NSG membership | Seeking |
+
+### Significance
+
+**Strategic**
+- Nuclear deterrent against adversaries
+- Regional power status
+- Security assurance
+
+**Energy**
+- Reduces dependence on fossil fuels
+- Clean energy source
+- Long-term sustainability
+
+**Scientific**
+- Indigenous technology development
+- Human resource development
+- International recognition
+
+### Defense Applications
+
+**Delivery Systems**
+- Agni series (ballistic missiles)
+- Prithvi series
+- Submarine-launched (K-15, K-4)
+- Aircraft-delivered
+
+**Nuclear Triad**
+- Land-based missiles
+- Sea-based (INS Arihant submarine)
+- Air-based (fighter aircraft)
+
+### Conclusion
+India's nuclear program symbolizes the country's scientific capability and strategic autonomy. Maintaining a credible minimum deterrent while pursuing peaceful uses ensures India's security and energy needs.`
               }
             ]
           },
@@ -3467,6 +3814,122 @@ Indian sports have evolved from a cricket-dominated field to global excellence i
 - Youth inspiration
 - Global recognition
 - Healthy lifestyle promotion`
+              },
+              {
+                id: 'hl12-3',
+                question: 'Describe the development of Indian cinema and its impact on society.',
+                mnemonic: 'CINEMA - Cultural impact, Inspiration, Nationalism, Entertainment, Mass communication, Art form',
+                answer: `### Introduction
+Indian cinema, also known as Bollywood (Hindi) and regional industries, is the largest film industry in the world by number of films produced. It has played a significant role in shaping Indian society and culture.
+
+### History of Indian Cinema
+
+**Pioneers**
+| Person | Contribution |
+|--------|--------------|
+| Dadasaheb Phalke | Father of Indian Cinema |
+| Raja Harishchandra | First Indian feature film (1913) |
+| Ardeshir Irani | First talkie - Alam Ara (1931) |
+| Satyajit Ray | International recognition |
+
+**Evolution Phases**
+- Silent Era (1913-1931): Raja Harishchandra, Phalke's films
+- Talkie Era (1931-1947): Alam Ara, mythological films
+- Golden Era (1947-1970s): Parallel cinema, social themes
+- Modern Era (1980s-present): Commercial success, global reach
+
+### Regional Cinema
+
+**Major Industries**
+| Industry | Language | Notable Feature |
+|----------|----------|-----------------|
+| Bollywood | Hindi | Largest by revenue |
+| Tollywood | Telugu | High production value |
+| Kollywood | Tamil | Global audience |
+| Sandalwood | Kannada | Parallel cinema tradition |
+| Mollywood | Malayalam | Realistic stories |
+| Bengali | Bengali | Art cinema pioneers |
+
+### Social Impact
+
+**Positive Contributions**
+- Social awareness films (Mother India, Lagaan)
+- National integration through songs
+- Entertainment for masses
+- Employment generation
+- Indian culture abroad
+
+**Social Issues Addressed**
+| Film | Year | Issue |
+|------|------|-------|
+| Mother India | 1957 | Rural struggles |
+| Lagaan | 2001 | Colonial oppression |
+| Taare Zameen Par | 2007 | Dyslexia awareness |
+| Padman | 2018 | Menstrual hygiene |
+| Article 15 | 2019 | Caste discrimination |
+
+### Economic Importance
+
+**Industry Scale**
+- Second largest cinema market (by admissions)
+- Over 1,500 films per year
+- Employs millions directly/indirectly
+- Growing OTT presence
+
+**Global Reach**
+- Films released worldwide
+- Indian diaspora audience
+- International film festivals
+- Collaborations with Hollywood
+
+### Awards & Recognition
+
+**National**
+- Dadasaheb Phalke Award (Highest honor)
+- National Film Awards
+- Filmfare Awards
+
+**International**
+| Film | Achievement |
+|------|-------------|
+| Satyajit Ray | Honorary Oscar (1992) |
+| Gandhi | 8 Oscars (1983) |
+| Lagaan | Oscar nomination |
+| RRR | Golden Globe, Oscar (2023) |
+
+### Cultural Impact
+
+**Music**
+- Bollywood songs: Part of Indian life
+- Playback singers legends (Lata, Kishore)
+- Music directors (A.R. Rahman)
+- Global recognition (Jai Ho - Oscar)
+
+**Fashion & Lifestyle**
+- Influenced fashion trends
+- Hairstyles, dialogues copied
+- Tourism boost (film locations)
+
+### Challenges
+
+**Issues Faced**
+- Piracy
+- Content regulation debates
+- Nepotism accusations
+- Competition from OTT platforms
+- Social responsibility vs. entertainment
+
+### Future
+
+**Emerging Trends**
+- OTT platforms growth (Netflix, Amazon, Hotstar)
+- Pan-Indian films
+- International collaborations
+- Technological advances (VFX, 3D)
+- Content diversity
+
+### Conclusion
+Indian cinema has evolved from silent films to a global entertainment powerhouse. It has not only entertained billions but also served as a mirror to society, addressing social issues and promoting cultural unity. The industry continues to evolve while remaining an integral part of Indian identity.`
               }
             ]
           },
