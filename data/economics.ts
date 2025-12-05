@@ -2069,6 +2069,179 @@ All three methods are equivalent ways of measuring the same economic activity, j
       longAnswers: [
         {
           id: 'eco8-la1',
+          question: 'Explain various reasons for the growth of public expenditure. (8 Marks)',
+          mnemonic: 'SIR DG - Social activities, Inflation, Rising population, Defence, Government democracy',
+          answer: `### Introduction
+Public expenditure is the spending incurred by the public authority (Central, State, and Local Bodies) for protecting citizens, satisfying collective needs, and promoting economic and social welfare. Modern governments not only perform obligatory functions (like defense and law and order) but also optional functions (like providing health and education), leading to a continuous increase in spending.
+
+### Reasons for the Growth in Public Expenditure
+
+**1. Increase in the Activities of the Government**
+- Modern governments undertake numerous functions for social and economic development
+- Spread of education, public health, public works, and social welfare schemes
+- New functions are continuously being taken up
+- Increasing the overall expenditure
+
+**2. Rapid Increase in Population**
+- Developing countries like India face fast-rising populations
+- Government must incur greater expenditure to fulfil growing needs
+- Providing food, housing, and social services
+- More schools, hospitals, and infrastructure needed
+
+**3. Growing Urbanization**
+- Global trend of urbanization leads to increased government spending
+- Essential urban infrastructure and services required:
+  - Water supply and roads
+  - Energy and schools
+  - Public transport and sanitation
+
+**4. Increasing Defence Expenditure**
+- Modern governments face continuous demands for greater defence spending
+- Even in peacetime due to unstable and hostile international relationships
+- Acquiring and maintaining modern military equipment
+- Border security and internal security needs
+
+**5. Spread of Democracy**
+- Democratic form of government is inherently expensive
+- Costs associated with regular elections
+- Functioning of democratic institutions
+- Various political activities contribute to the increase
+
+**6. Inflation**
+- Prices generally show a rising trend (inflation)
+- Government's costs for purchasing goods and services increase
+- Needed for economic and social development
+- Leads to higher overall expenditure
+
+**7. Industrial Development**
+- To promote industrial development and increase production
+- Generate employment through various schemes and programmes
+- Large investments and expenditure required
+- Infrastructure development for industries
+
+**8. Disaster Management**
+- Government frequently spends huge amounts on managing calamities
+- Natural disasters: earthquakes, floods, cyclones
+- Man-made calamities and social unrest
+- Results in increase in total expenditure
+
+### Summary Table
+
+| Reason | Impact on Expenditure |
+|--------|----------------------|
+| Government Activities | More welfare schemes |
+| Population Growth | More basic services |
+| Urbanization | Infrastructure costs |
+| Defence | Military modernization |
+| Democracy | Election & institution costs |
+| Inflation | Higher prices |
+| Industrial Development | Schemes & programmes |
+| Disasters | Emergency spending |
+
+### Conclusion
+Modern governments aim to be "welfare states," making the continuous growth in public expenditure essential and virtually unavoidable. The role of government has expanded from maintaining law and order to actively promoting economic development and social welfare.`
+        },
+        {
+          id: 'eco8-la2',
+          question: 'Explain the concept of public revenue and its sources (Tax and Non-Tax). (8 Marks)',
+          mnemonic: 'Tax: DI (Direct, Indirect) | Non-Tax: GF BF PS (Grants/Gifts, Fees, Borrowings, Fines, Prices, Special assessment)',
+          answer: `### Concept of Public Revenue
+
+Public revenue refers to the **aggregate collection of income** that the government receives through various sources. The study of public revenue is a permanent and crucial part of public finance, as the necessity for revenue arises directly from the need to cover public expenditure.
+
+### Sources of Public Revenue
+
+Public revenue is broadly divided into two main categories:
+
+---
+
+## A) Tax Revenue
+
+**Definition**: Tax is a **compulsory contribution** from a person to the government without reference to any special benefits conferred.
+
+### 1. Direct Tax
+- Paid by the taxpayer on their **income and property**
+- The burden **cannot be transferred** to others
+- Impact and incidence fall on the same person
+- Progressive in nature (higher income = higher tax rate)
+
+**Examples**:
+- Personal Income Tax
+- Corporate Tax
+- Capital Gains Tax
+- Wealth Tax (abolished)
+
+### 2. Indirect Tax
+- Levied on **goods or services**
+- Paid at the time of production or sale/purchase
+- Burden **can be shifted** from taxpayer (producer) to others (consumers)
+- Regressive in nature
+
+**Examples**:
+- **GST (Goods and Services Tax)** - replaced almost all previous indirect taxes
+- Customs Duty
+- Excise Duty (mostly subsumed in GST)
+
+---
+
+## B) Non-Tax Revenue
+
+Non-tax revenue includes funds received from government administration, public enterprises, gifts, grants, and other sources besides taxes.
+
+### 1. Fees
+- Payment made in return for certain **specific services** rendered by government
+- Unlike tax, fee grants the right to a specific service
+- *Example*: Education fee, Registration fee, Court fee
+
+### 2. Prices of Public Goods and Services
+- Payment made by citizens to government for goods and services sold
+- Modern governments provide various public utilities
+- *Example*: Railway fares, Postal charges, Electricity charges
+
+### 3. Fines and Penalties
+- Imposed by government on those who **violate the laws**
+- Primarily to discourage unlawful acts
+- Resulting income is relatively small
+- *Example*: Traffic fines, Tax penalties
+
+### 4. Gifts, Grants, and Donations
+- Income from citizens in the form of gifts or donations
+- Grants from foreign governments and institutions for specific purposes
+- Often uncertain in nature
+- *Example*: Foreign aid, Charitable donations
+
+### 5. Special Assessment
+- Payment made by citizens in a particular locality
+- In exchange for **special facilities** provided to that area
+- By local authorities
+- *Example*: Roads, Water supply, Street lighting in specific areas
+
+### 6. Borrowings
+- Loans raised by government from various sources:
+  - Public (through bonds)
+  - Banks and Financial institutions
+  - Foreign governments
+  - International organisations (IMF, World Bank)
+- Highly popular and common source of revenue
+
+### Summary Table
+
+| Source Type | Sub-Type | Characteristics |
+|-------------|----------|-----------------|
+| **Tax** | Direct | Cannot shift burden |
+| **Tax** | Indirect | Can shift to consumer |
+| **Non-Tax** | Fees | For specific service |
+| **Non-Tax** | Prices | For public goods |
+| **Non-Tax** | Fines | For law violations |
+| **Non-Tax** | Gifts/Grants | Uncertain source |
+| **Non-Tax** | Special Assessment | Local area benefits |
+| **Non-Tax** | Borrowings | Loans from various sources |
+
+### Conclusion
+Both tax and non-tax sources are essential for funding the wide array of obligatory and optional functions performed by the modern government in a welfare state. A balanced mix of both ensures sustainable public finance.`
+        },
+        {
+          id: 'eco8-la3',
           question: 'Explain the types of Government Budget Deficits.',
           mnemonic: 'RFP - Revenue deficit, Fiscal deficit, Primary deficit',
           answer: `### Introduction
@@ -2113,7 +2286,7 @@ Budget deficits occur when government expenditure exceeds revenue. Understanding
 Managing deficits is crucial for fiscal health and economic stability.`
         },
         {
-          id: 'eco8-la2',
+          id: 'eco8-la4',
           question: 'Distinguish between Direct and Indirect Taxes.',
           mnemonic: 'DIRECT cannot shift, INDIRECT can shift burden',
           answer: `### Introduction
