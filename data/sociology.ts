@@ -1009,6 +1009,352 @@ Social mobility is essential for a dynamic society. While closed systems like ca
               { id: 'r3', title: 'Evolution', content: 'Slow & Gradual.\nNatural process.\nOver generations.', color: getReelColor(2) },
               { id: 'r4', title: 'Revolution', content: 'Sudden & Radical.\nFrench Revolution.\nComplete overhaul.', color: getReelColor(3) },
               { id: 'r5', title: 'Agents', content: 'Education, Media.\nLaws, Movements.\nGlobalization.', color: getReelColor(4) }
+            ],
+            longAnswers: [
+              {
+                id: 'socl4-1',
+                question: 'Define Social Change and explain its characteristics.',
+                mnemonic: 'CHANGE - Continuous, Historical, All societies, Natural, General, Everywhere',
+                answer: `### Definition of Social Change
+
+**Meaning**: Social Change refers to alterations in the social structure, culture, social institutions, and patterns of behavior in society over time.
+
+**According to Sociologists**:
+- **Kingsley Davis**: "Social change is meant only such alterations as occur in social organization"
+- **MacIver**: "Social change refers to a change in social relationships"
+- **Gillin & Gillin**: "Social change means variations from the accepted modes of life"
+
+### Characteristics of Social Change
+
+| Characteristic | Description |
+|----------------|-------------|
+| **Universal** | Found in all societies, everywhere |
+| **Continuous** | Never stops, always happening |
+| **Temporal** | Takes place over time |
+| **Community-based** | Affects groups, not just individuals |
+| **Inevitable** | Cannot be stopped or prevented |
+| **Uneven** | Different rates in different societies |
+
+### Nature of Social Change
+
+**1. Universal Phenomenon**
+- No society is static
+- Change varies in degree and pace
+- Both simple and complex societies change
+
+**2. Chain Reaction**
+- One change leads to another
+- Interconnected changes
+- Example: Industrialization → Urbanization → Family change
+
+**3. Direction Varies**
+| Direction | Meaning | Example |
+|-----------|---------|--------|
+| Progress | Improvement | Education spread |
+| Decline | Deterioration | Environmental degradation |
+| Cyclical | Rise and fall | Fashion trends |
+
+**4. Multi-causal**
+- No single cause
+- Multiple factors interact
+- Complex causation
+
+### Factors of Social Change
+
+**Internal Factors**:
+| Factor | Example |
+|--------|--------|
+| Demographic | Population growth/decline |
+| Technological | New inventions |
+| Economic | Industrialization |
+| Cultural | New ideas, values |
+| Political | Revolutions, reforms |
+
+**External Factors**:
+- Cultural diffusion
+- War and conquest
+- Natural disasters
+- Contact with other societies
+
+### Importance of Studying Social Change
+
+1. **Understanding Society**: How societies evolve
+2. **Predicting Trends**: Future developments
+3. **Policy Making**: Planning social programs
+4. **Social Reform**: Deliberate intervention
+5. **Historical Understanding**: Past to present
+
+### Conclusion
+Social change is universal, continuous, and inevitable. Understanding its characteristics helps us comprehend societal transformation and plan for the future.`
+              },
+              {
+                id: 'socl4-2',
+                question: 'Explain the major theories of Social Change.',
+                mnemonic: 'THEORIES - Traditional to modern, Historical stages, Evolution, Oscillation, Revolution, Internal conflict, External factors, Structural changes',
+                answer: `### Introduction
+
+Various sociological theories explain how and why social change occurs. These theories offer different perspectives on the nature, direction, and causes of change.
+
+### 1. Evolutionary Theory
+
+**Proponents**: Auguste Comte, Herbert Spencer
+
+**Main Idea**: Society evolves from simple to complex forms, like biological evolution.
+
+**Comte's Law of Three Stages**:
+| Stage | Thought Pattern | Society Type |
+|-------|----------------|-------------|
+| Theological | Religious/Supernatural | Traditional |
+| Metaphysical | Abstract forces | Transitional |
+| Positive/Scientific | Scientific laws | Modern |
+
+**Spencer's Social Darwinism**:
+- Society evolves like organisms
+- "Survival of the fittest"
+- Simple → Complex structures
+
+**Criticism**:
+- Too optimistic about progress
+- Ethnocentric (Western = advanced)
+- Ignores decline and regression
+
+### 2. Cyclical Theory
+
+**Proponents**: Oswald Spengler, Arnold Toynbee
+
+**Main Idea**: Societies rise, flourish, and decline in cycles.
+
+**Spengler's View**:
+| Stage | Characteristics |
+|-------|----------------|
+| Birth | New civilization emerges |
+| Growth | Development, creativity |
+| Maturity | Peak achievement |
+| Decline | Decay, eventual death |
+
+**Toynbee's Challenge-Response**:
+- Civilizations rise in response to challenges
+- Success depends on creative response
+- Failure leads to decline
+
+**Criticism**:
+- Deterministic
+- Ignores human agency
+- Difficult to predict cycles
+
+### 3. Conflict Theory
+
+**Proponent**: Karl Marx
+
+**Main Idea**: Change results from conflict between opposing groups.
+
+**Marxist View**:
+| Concept | Explanation |
+|---------|------------|
+| Historical Materialism | Economic conditions drive history |
+| Class Conflict | Bourgeoisie vs. Proletariat |
+| Dialectical Change | Thesis → Antithesis → Synthesis |
+| Revolution | Overthrow of exploiting class |
+
+**Stages of Society (Marx)**:
+1. Primitive Communism
+2. Slave Society
+3. Feudalism
+4. Capitalism
+5. Socialism
+6. Communism
+
+**Criticism**:
+- Overemphasis on economic factors
+- Revolution not always outcome
+- Doesn't explain all societies
+
+### 4. Functionalist Theory
+
+**Proponents**: Talcott Parsons, Emile Durkheim
+
+**Main Idea**: Society changes to maintain equilibrium and adapt.
+
+**Key Concepts**:
+- Differentiation: Society becomes more specialized
+- Integration: New mechanisms maintain unity
+- Adaptation: Society adjusts to environment
+
+**Criticism**:
+- Conservative bias
+- Ignores conflict
+- Slow to explain rapid change
+
+### 5. Modernization Theory
+
+**Main Idea**: Traditional societies become modern through development.
+
+**Features of Modernization**:
+| Traditional | Modern |
+|-------------|--------|
+| Rural | Urban |
+| Agricultural | Industrial |
+| Religious | Secular |
+| Ascribed status | Achieved status |
+
+**Criticism**:
+- Western-centric
+- Ignores exploitation
+- Not universal path
+
+### Comparison of Theories
+
+| Theory | Cause of Change | Direction |
+|--------|----------------|----------|
+| Evolutionary | Natural progress | Linear (upward) |
+| Cyclical | Internal dynamics | Circular |
+| Conflict | Class struggle | Revolutionary |
+| Functionalist | Adaptation | Equilibrium |
+| Modernization | Development | Traditional to Modern |
+
+### Conclusion
+Each theory offers valuable insights into social change. A comprehensive understanding requires considering multiple perspectives, as change is complex and multi-causal.`
+              },
+              {
+                id: 'socl4-3',
+                question: 'Discuss the agents of Social Change with examples.',
+                mnemonic: 'AGENTS - Activism, Government, Education, Networks, Technology, Social movements',
+                answer: `### Introduction
+
+Agents of social change are the forces, institutions, and individuals that bring about transformation in society. They can be intentional (planned reforms) or unintentional (technological innovations).
+
+### Major Agents of Social Change
+
+### 1. Education
+
+**Role**: Education is a powerful agent that transforms attitudes, values, and behavior.
+
+**How Education Causes Change**:
+| Aspect | Impact |
+|--------|--------|
+| Knowledge | Awareness of rights and issues |
+| Values | Modern, rational thinking |
+| Mobility | Enables social and economic rise |
+| Questioning | Challenges traditions |
+
+**Examples in India**:
+- Spread of education reduced child marriage
+- Women's education led to empowerment
+- Technical education drove industrialization
+
+### 2. Technology
+
+**Role**: Innovations in technology transform how society functions.
+
+**Types of Technological Change**:
+| Type | Example | Impact |
+|------|---------|--------|
+| Agricultural | Tractors, HYV seeds | Green Revolution |
+| Industrial | Machines, factories | Urbanization |
+| Communication | Mobile, Internet | Information revolution |
+| Medical | Vaccines, treatments | Longer life span |
+
+**Impact of Digital Technology**:
+- Changed communication patterns
+- E-commerce transforming markets
+- Social media enabling movements
+- Work from home culture
+
+### 3. Mass Media
+
+**Role**: Spreads information, creates awareness, shapes public opinion.
+
+**Types and Impact**:
+| Medium | Reach | Impact |
+|--------|-------|--------|
+| Newspapers | Literate population | Awareness, opinion formation |
+| Television | Mass audience | Entertainment, information |
+| Social Media | Global, instant | Mobilization, trends |
+
+**Examples**:
+- Anna Hazare's anti-corruption movement (media coverage)
+- #MeToo movement (social media)
+- Awareness campaigns (health, sanitation)
+
+### 4. Legislation (Law)
+
+**Role**: Laws can mandate change and prohibit harmful practices.
+
+**Examples of Social Legislation in India**:
+| Law | Year | Change Brought |
+|-----|------|---------------|
+| Sati Prohibition | 1829 | Ended widow burning |
+| Child Marriage Restraint | 1929 | Raised marriage age |
+| Hindu Code Bills | 1955-56 | Women's rights in marriage |
+| Dowry Prohibition | 1961 | Penalized dowry |
+| Right to Education | 2009 | Universal education |
+
+**Limitations**:
+- Law alone cannot change attitudes
+- Implementation challenges
+- Social acceptance needed
+
+### 5. Social Movements
+
+**Role**: Organized collective action to bring change.
+
+**Types**:
+| Type | Goal | Example |
+|------|------|--------|
+| Reform | Modify existing system | Women's rights movement |
+| Revolutionary | Complete change | Independence movement |
+| Resistance | Oppose change | Anti-globalization |
+| Alternative | Create alternatives | Cooperative movements |
+
+**Famous Social Movements in India**:
+- Independence Movement
+- Chipko Movement (environmental)
+- Anti-Caste Movements
+- Women's Movements
+- LGBTQ+ Rights Movement
+
+### 6. Economic Changes
+
+**Role**: Economic development transforms society.
+
+**Impact of Liberalization (1991)**:
+| Aspect | Change |
+|--------|--------|
+| Employment | New job types, IT sector |
+| Consumption | Global brands, mall culture |
+| Lifestyle | Changed aspirations |
+| Family | Women working, nuclear families |
+
+### 7. Urbanization
+
+**Role**: Rural to urban migration transforms values and relationships.
+
+**Changes Due to Urbanization**:
+- Weakening of caste restrictions
+- Nuclear families increase
+- Anonymity reduces social control
+- New occupations emerge
+
+### 8. Globalization
+
+**Role**: Connects societies worldwide, leading to cultural exchange.
+
+**Impact**:
+- Cultural diffusion (food, fashion, ideas)
+- Economic integration
+- Information exchange
+- Westernization debates
+
+### Interrelation of Agents
+
+Agents don't work in isolation:
+- Education + Technology → Skilled workforce
+- Media + Movements → Awareness campaigns
+- Law + Education → Implementation success
+
+### Conclusion
+Social change results from the complex interplay of multiple agents. Understanding these agents helps in planning deliberate social transformation and addressing societal challenges.`
+              }
             ]
           },
           {
@@ -1035,6 +1381,378 @@ Social mobility is essential for a dynamic society. While closed systems like ca
               { id: 'r3', title: 'Nuclear Family', content: 'Parents + Kids.\nModern.\nUrban trend.', color: getReelColor(2) },
               { id: 'r4', title: 'Endogamy', content: 'Marry within group.\nSame caste.\nTraditional norm.', color: getReelColor(3) },
               { id: 'r5', title: 'Changes', content: 'Urbanization.\nWomen empowerment.\nInter-caste marriage.', color: getReelColor(4) }
+            ],
+            longAnswers: [
+              {
+                id: 'socl5-1',
+                question: 'Explain the concept of Unity in Diversity in Indian Society.',
+                mnemonic: 'UNITY - United nation, National symbols, Integration factors, Traditions shared, Year-round festivals',
+                answer: `### Introduction
+
+"Unity in Diversity" is a defining characteristic of Indian society. Despite vast differences in religion, language, culture, and ethnicity, India remains united as one nation.
+
+### Diversity in India
+
+**Religious Diversity**:
+| Religion | Population % (approx) |
+|----------|----------------------|
+| Hinduism | 79.8% |
+| Islam | 14.2% |
+| Christianity | 2.3% |
+| Sikhism | 1.7% |
+| Buddhism | 0.7% |
+| Jainism | 0.4% |
+| Others | 0.9% |
+
+**Linguistic Diversity**:
+- 22 Official languages (8th Schedule)
+- 1,600+ languages and dialects
+- Different scripts (Devanagari, Tamil, etc.)
+
+**Cultural Diversity**:
+- Regional cuisines
+- Traditional dresses
+- Art forms (classical, folk)
+- Festivals (regional variations)
+
+**Ethnic Diversity**:
+- Dravidian, Aryan, Mongoloid groups
+- Tribal populations
+- Regional identities
+
+### Factors Promoting Unity
+
+**1. Constitutional Unity**
+| Element | Role |
+|---------|------|
+| Single Citizenship | One national identity |
+| Fundamental Rights | Equal rights for all |
+| Directive Principles | Common goals |
+| Secular State | No state religion |
+
+**2. National Symbols**
+- National Flag (Tiranga)
+- National Anthem (Jana Gana Mana)
+- National Emblem (Ashoka Chakra)
+- National Animal, Bird, Flower
+
+**3. Common History**
+- Freedom struggle united all
+- Shared heroes (Gandhi, Nehru, Bose)
+- Colonial experience
+- Post-independence nation building
+
+**4. Pilgrimage Centers**
+- Char Dham (four corners)
+- Varanasi, Ayodhya, Mathura
+- Ajmer Sharif, Golden Temple
+- Creates national circulation
+
+**5. Festivals**
+| Festival | Spread |
+|----------|--------|
+| Diwali | Pan-India |
+| Eid | All states |
+| Christmas | Urban, Christian areas |
+| Holi | North, spreading nationwide |
+
+**6. Interregional Exchange**
+- All-India services (IAS, IPS)
+- National institutions (IITs, IIMs)
+- National sports teams
+- Bollywood and popular culture
+
+### Challenges to Unity
+
+| Challenge | Description |
+|-----------|-------------|
+| Communalism | Religious conflicts |
+| Regionalism | State vs national identity |
+| Casteism | Caste-based divisions |
+| Linguistic conflicts | Language politics |
+| Separatism | Demands for independence |
+
+### Mechanisms to Maintain Unity
+
+**Constitutional Provisions**:
+- Article 1: India as Union of States
+- Article 51A: Fundamental Duties
+- Special provisions for diverse groups
+
+**Institutional Mechanisms**:
+- National Integration Council
+- Human Rights Commission
+- Minority Commission
+
+### Sociological Significance
+
+1. **Composite Culture**: Synthesis of different traditions
+2. **Syncretism**: Blending of religious practices
+3. **Secularism**: Respect for all religions
+4. **Accommodation**: Living with differences
+
+### Conclusion
+Unity in Diversity is not just a slogan but a lived reality in India. While challenges exist, the nation has shown remarkable ability to maintain unity despite its vast diversity, making it a unique example in the world.`
+              },
+              {
+                id: 'socl5-2',
+                question: 'Describe the features and changes in the Indian Family System.',
+                mnemonic: 'FAMILY - Four types, Arranged marriage, Men headed, Inheritance, Living together, Younger generations changing',
+                answer: `### Introduction
+
+The family is the basic unit of Indian society. Indian family system has distinct features and is undergoing significant changes due to modernization.
+
+### Types of Family in India
+
+**1. Based on Structure**
+| Type | Composition | Features |
+|------|-------------|----------|
+| Joint Family | 3+ generations | Common property, kitchen |
+| Nuclear Family | Parents + children | Separate residence |
+| Extended Family | Nuclear + relatives | Not common residence |
+
+**2. Based on Authority**
+| Type | Head | Example |
+|------|------|--------|
+| Patriarchal | Male (father) | Most of India |
+| Matriarchal | Female (mother) | Khasi, Nair communities |
+
+**3. Based on Residence**
+| Type | After Marriage |
+|------|----------------|
+| Patrilocal | Wife goes to husband's home |
+| Matrilocal | Husband goes to wife's home |
+| Neolocal | New independent residence |
+
+### Features of Traditional Joint Family
+
+**Characteristics**:
+| Feature | Description |
+|---------|-------------|
+| Common Residence | All members under one roof |
+| Common Property | Ancestral property shared |
+| Common Kitchen | Eating together |
+| Common Worship | Family deity |
+| Patriarchal Authority | Eldest male as head (Karta) |
+| Coparcenary | Male inheritance rights |
+
+**Functions of Joint Family**:
+1. Economic: Pooled resources, shared expenses
+2. Educational: Socialization of children
+3. Recreational: Joint celebrations
+4. Protective: Security for all members
+5. Religious: Common rituals
+
+### Changes in Indian Family
+
+**Structural Changes**:
+| Traditional | Modern |
+|-------------|--------|
+| Joint families dominant | Nuclear families increasing |
+| Large families | Small families (2 children) |
+| Extended kinship | Limited kinship ties |
+
+**Functional Changes**:
+| Aspect | Change |
+|--------|--------|
+| Authority | Less patriarchal |
+| Decision making | More democratic |
+| Women's role | Economic participation |
+| Children | More attention, fewer children |
+
+**Causes of Change**:
+1. **Industrialization**: Migration to cities for work
+2. **Urbanization**: Space constraints in cities
+3. **Education**: Changed aspirations
+4. **Women's Employment**: Economic independence
+5. **Legislation**: Property rights for women
+6. **Individualism**: Personal freedom valued
+
+### Marriage in India
+
+**Types Based on Number**:
+| Type | Definition | Status |
+|------|------------|--------|
+| Monogamy | One spouse | Legal norm |
+| Polygyny | Multiple wives | Illegal (except Muslims) |
+| Polyandry | Multiple husbands | Very rare (tribal areas) |
+
+**Types Based on Choice**:
+| Type | Who Decides | Trend |
+|------|-------------|-------|
+| Arranged Marriage | Family | Still dominant |
+| Love Marriage | Individual | Increasing |
+| Love-cum-arranged | Both | Growing |
+
+**Rules of Marriage**:
+| Rule | Meaning |
+|------|--------|
+| Endogamy | Within same group (caste) |
+| Exogamy | Outside one's gotra |
+| Hypergamy | Woman marrying higher status |
+| Hypogamy | Woman marrying lower status |
+
+### Contemporary Trends
+
+**New Family Forms**:
+- Single-parent families
+- Live-in relationships
+- Same-sex partnerships (emerging)
+- DINK (Double Income No Kids)
+
+**Challenges**:
+| Issue | Concern |
+|-------|--------|
+| Elderly care | Who looks after aged parents? |
+| Work-life balance | Dual career couples |
+| Divorce | Increasing rates |
+| Domestic violence | Still prevalent |
+
+### Conclusion
+The Indian family system is in transition, balancing traditional values with modern realities. While nuclear families are increasing, family ties remain important in Indian culture.`
+              },
+              {
+                id: 'socl5-3',
+                question: 'Analyze the changes in Indian society due to Modernization and Globalization.',
+                mnemonic: 'MODERN GLOBAL - Migration, Occupations, Dress, Education, Religion, Nuclear families / Goods, Lifestyle, Opportunities, Business, Attitudes, Language',
+                answer: `### Introduction
+
+Modernization and Globalization are two major forces transforming Indian society. While modernization began with colonialism and continued post-independence, globalization accelerated after 1991 economic reforms.
+
+### Understanding the Concepts
+
+**Modernization**:
+- Transition from traditional to modern society
+- Involves industrialization, urbanization, rationalization
+- Adoption of scientific thinking and technology
+
+**Globalization**:
+- Integration of world economies and cultures
+- Free flow of goods, services, capital, ideas
+- Interconnected world through technology
+
+### Changes Due to Modernization
+
+**1. Economic Changes**
+| Aspect | Traditional | Modern |
+|--------|-------------|--------|
+| Economy | Agricultural | Industrial/Service |
+| Work | Family-based | Factory/Office |
+| Income | Subsistence | Wage-based |
+| Market | Local | National/Global |
+
+**2. Social Structure Changes**
+| Institution | Change |
+|-------------|--------|
+| Caste | Weakening, but not eliminated |
+| Joint Family | Declining, nuclear rising |
+| Marriage | More individual choice |
+| Gender roles | Women entering workforce |
+
+**3. Cultural Changes**
+- Scientific thinking vs superstition
+- Secular attitudes growing
+- Western influence in lifestyle
+- English education spreading
+
+### Changes Due to Globalization (Post-1991)
+
+**1. Economic Transformation**
+| Sector | Impact |
+|--------|--------|
+| IT/ITES | Major employer, global recognition |
+| Retail | Malls, supermarkets |
+| Finance | Foreign banks, investments |
+| Manufacturing | MNCs, exports |
+
+**2. Consumer Culture**
+| Aspect | Change |
+|--------|--------|
+| Brands | Global brands popular |
+| Food | Fast food chains (McDonald's, Pizza Hut) |
+| Fashion | Western wear, global trends |
+| Entertainment | Hollywood, Netflix, social media |
+
+**3. Communication Revolution**
+- Mobile phone penetration
+- Internet and social media
+- 24/7 news channels
+- Digital payments
+
+**4. Employment Changes**
+| Traditional | New |
+|-------------|-----|
+| Government jobs | Private sector |
+| Local companies | MNCs |
+| Lifetime employment | Job mobility |
+| Seniority-based | Performance-based |
+
+### Impact on Different Sections
+
+**Urban Middle Class**:
+- Major beneficiaries
+- New consumption patterns
+- Career opportunities
+- Changed lifestyles
+
+**Rural Areas**:
+- Uneven impact
+- Agriculture neglected
+- Migration to cities
+- Digital divide
+
+**Women**:
+| Positive | Negative |
+|----------|----------|
+| Employment opportunities | Double burden |
+| Economic independence | Work-family conflict |
+| Education access | New forms of exploitation |
+
+**Youth**:
+- New career options
+- Global exposure
+- Changed aspirations
+- Identity questions
+
+### Debates and Concerns
+
+**Cultural Concerns**:
+| Issue | Argument |
+|-------|----------|
+| Westernization | Losing Indian identity? |
+| Consumerism | Materialism over values |
+| Language | English vs regional languages |
+| Traditional values | Erosion of family values |
+
+**Economic Concerns**:
+- Inequality increasing
+- Agriculture crisis
+- Informal sector neglected
+- Environmental degradation
+
+**Social Concerns**:
+- Rural-urban divide
+- Digital divide
+- Generational conflicts
+- Mental health issues
+
+### Sociological Perspectives
+
+**Optimistic View**:
+- Progress and development
+- Breaking traditional barriers
+- Individual freedom
+- Global opportunities
+
+**Critical View**:
+- Imperialism in new form
+- Cultural homogenization
+- Increased inequality
+- Loss of local traditions
+
+### Conclusion
+Modernization and Globalization have transformed Indian society in complex ways. While offering opportunities for development and individual advancement, they also create challenges of inequality, cultural change, and social disruption. A balanced approach that harnesses benefits while protecting vulnerable sections is needed.`
+              }
             ]
           },
           {
@@ -1200,6 +1918,377 @@ Markets are not separate from society - they are:
               { id: 'soc6r28', title: 'Home Workers', content: 'Work from home.\nMostly women.\nLow wages.', color: getReelColor(27) },
               { id: 'soc6r29', title: 'Market Features', content: 'Buyers + Sellers.\nCompetition.\nPrice mechanism.', color: getReelColor(28) },
               { id: 'soc6r30', title: 'Markets Matter', content: 'Exchange hub.\nSocial institution.\nEconomy + Society.', color: getReelColor(29) }
+            ],
+            longAnswers: [
+              {
+                id: 'socl6-1',
+                question: 'Explain the concept of Market as a Social Institution.',
+                mnemonic: 'MARKET SOCIAL - Many buyers sellers, Affected by culture, Rules govern, Kith networks, Exchange hub, Trust matters, Social embeddedness, Organization, Caste class impact, Institutions shape, Allocation, Laws regulate',
+                answer: `### Introduction
+
+From a sociological perspective, markets are not merely economic spaces but social institutions shaped by culture, power relations, and social norms. This view challenges the purely economic understanding of markets.
+
+### Definition
+
+**Economic View**: Market is a place where buyers and sellers exchange goods for money through price mechanism.
+
+**Sociological View**: Market is a social institution embedded in social relations, cultural values, and power structures.
+
+### Karl Polanyi's Contribution
+
+**Social Embeddedness**: Markets are embedded in social relations.
+
+**Key Ideas**:
+| Concept | Meaning |
+|---------|--------|
+| Embeddedness | Markets exist within society |
+| Reciprocity | Exchange based on mutual obligation |
+| Redistribution | Centralized collection and distribution |
+| Market Exchange | Price-based exchange |
+
+**Polanyi's Argument**:
+- Markets are not natural or universal
+- They were created through deliberate policy
+- Social relations always shape economic activity
+
+### Features of Market as Social Institution
+
+**1. Social Relations**
+- Trust between buyers and sellers
+- Kinship networks in business
+- Caste-based occupations
+- Community-based trade
+
+**2. Cultural Values**
+| Aspect | Example |
+|--------|--------|
+| Bargaining | Expected in Indian markets |
+| Credit | Based on trust, reputation |
+| Festival sales | Religious occasions |
+| Auspicious timing | Muhurat for transactions |
+
+**3. Power Relations**
+- Big vs small traders
+- Monopoly vs competition
+- Gender in markets (who sells what)
+- Caste hierarchy in certain trades
+
+**4. Regulation**
+| Type | Source |
+|------|--------|
+| Formal | Laws, contracts |
+| Informal | Social norms, customs |
+| Traditional | Caste rules |
+| Modern | Consumer protection |
+
+### Types of Markets in India
+
+**Based on Time**:
+| Type | Description | Example |
+|------|-------------|--------|
+| Weekly (Haat) | Specific days | Rural weekly markets |
+| Periodic | Seasonal | Melas, fairs |
+| Permanent | Daily | Urban markets, shops |
+
+**Based on Goods**:
+| Market Type | What's Traded |
+|-------------|---------------|
+| Commodity | Physical goods |
+| Labour | Work for wages |
+| Capital | Stocks, shares |
+| Land | Real estate |
+
+### Social Dimensions of Market
+
+**1. Caste and Market**
+- Traditional caste-based occupations
+- Certain castes in certain trades
+- Changing but not eliminated
+
+**2. Gender and Market**
+| Aspect | Pattern |
+|--------|--------|
+| Vendors | Women in specific goods |
+| Home-based work | Mostly women |
+| Informal sector | Women predominant |
+| Formal sector | Men dominant |
+
+**3. Class and Market**
+- Rich vs poor consumers
+- Differential access
+- Credit availability varies
+
+### Conclusion
+Markets are social institutions shaped by relations, culture, and power. Understanding this helps us see markets as more than just economic mechanisms.`
+              },
+              {
+                id: 'socl6-2',
+                question: 'Discuss the concept of Commodification with examples.',
+                mnemonic: 'COMMODITY - Changed to sellable, Objects for market, Money value assigned, Made purchasable, Originally free, Daily needs, Increasing trend, Transformation, You pay for everything',
+                answer: `### Definition of Commodification
+
+**Meaning**: Commodification is the process by which things that were previously not traded in markets become commodities to be bought and sold.
+
+**Karl Marx**: A commodity is something that can be bought and sold, having exchange value.
+
+### Process of Commodification
+
+**Traditional → Commodified**:
+| Before | After |
+|--------|-------|
+| Free | Priced |
+| Shared | Private |
+| Common | Owned |
+| Given | Sold |
+
+### Examples of Commodification
+
+**1. Water**
+| Traditional | Commodified |
+|-------------|-------------|
+| Free from wells, rivers | Bottled water (Bisleri, Aquafina) |
+| Community resource | Private business |
+| Right | Product |
+
+**Issues**:
+- Poor cannot afford clean water
+- Groundwater exploitation
+- Corporate control of water
+
+**2. Education**
+| Traditional | Commodified |
+|-------------|-------------|
+| Gurukul system | Private schools |
+| Knowledge sharing | Tuition industry |
+| Low/no fees | Expensive education |
+
+**Examples**:
+- Private coaching (IIT, Medical)
+- International schools
+- Online courses
+- Deemed universities
+
+**3. Healthcare**
+| Traditional | Commodified |
+|-------------|-------------|
+| Community healers | Private hospitals |
+| Accessible healthcare | Corporate hospitals |
+| Affordable treatment | Medical tourism |
+
+**Issues**:
+- High treatment costs
+- Insurance-based access
+- Rural-urban divide
+
+**4. Labour**
+| Traditional | Commodified |
+|-------------|-------------|
+| Work for family | Work for wages |
+| Skills passed down | Skilled workers hired |
+| Household work | Domestic workers |
+
+**Features of Labour Market**:
+- Wages determined by market
+- Workers as "human resources"
+- Contractual relationships
+
+**5. Knowledge/Information**
+| Traditional | Commodified |
+|-------------|-------------|
+| Freely shared | Intellectual property |
+| Public domain | Patents, copyrights |
+| Common knowledge | Data as product |
+
+**6. Care Work**
+| Traditional | Commodified |
+|-------------|-------------|
+| Family care for elderly | Old age homes |
+| Mother's childcare | Day care centers |
+| Home cooking | Food delivery apps |
+
+**7. Surrogate Motherhood**
+- Controversial commodification
+- Women's bodies in market
+- Ethical debates
+
+### Consequences of Commodification
+
+**Positive**:
+| Aspect | Benefit |
+|--------|--------|
+| Efficiency | Better quality through competition |
+| Choice | Multiple options |
+| Employment | Job creation |
+| Innovation | New products and services |
+
+**Negative**:
+| Concern | Impact |
+|---------|--------|
+| Inequality | Access depends on money |
+| Exploitation | Workers, nature exploited |
+| Values | Everything has price |
+| Community | Shared resources privatized |
+
+### Sociological Critique
+
+**Marx's View**:
+- Commodity fetishism: We forget human labor behind products
+- Alienation: Workers estranged from their work
+- Class exploitation: Capitalists profit from workers
+
+**Polanyi's View**:
+- "Fictitious commodities": Land, Labor, Money
+- These cannot be true commodities
+- Society must protect itself from total commodification
+
+### Resistance to Commodification
+
+| Movement | Against |
+|----------|--------|
+| Water movements | Water privatization |
+| Education activists | Private education |
+| Open source | Knowledge commodification |
+| Commons movements | Land privatization |
+
+### Conclusion
+Commodification is a growing trend in capitalism where more aspects of life become marketable products. While it can bring efficiency, it raises concerns about inequality, exploitation, and the nature of society itself.`
+              },
+              {
+                id: 'socl6-3',
+                question: 'Explain the impact of Globalization on Indian markets and economy.',
+                mnemonic: 'GLOBALIZATION - Global brands, Liberalization, Open economy, Business MNCs, Access worldwide, Local affected, Infrastructure, Zones export, Advantages, Trade, Investment, Opportunities, Networks',
+                answer: `### Introduction
+
+Globalization refers to the integration of world economies through free flow of goods, services, capital, and ideas. India's markets have transformed significantly since the 1991 liberalization.
+
+### Economic Reforms of 1991
+
+**Background**:
+- Balance of payments crisis
+- IMF loan conditions
+- P.V. Narasimha Rao government
+- Finance Minister: Manmohan Singh
+
+**LPG Reforms**:
+| Reform | Meaning |
+|--------|--------|
+| Liberalization | Removing restrictions |
+| Privatization | Private sector role |
+| Globalization | Opening to world |
+
+### Changes in Indian Markets
+
+**1. Retail Sector**
+| Before | After |
+|--------|-------|
+| Kirana stores | Supermarkets, malls |
+| Local shops | Global chains |
+| Personal service | Self-service |
+
+**Examples**:
+- Big Bazaar, Reliance Retail
+- Walmart (now Flipkart)
+- Amazon, Flipkart (e-commerce)
+
+**2. Consumer Goods**
+| Sector | Global Brands |
+|--------|---------------|
+| Food | McDonald's, KFC, Domino's |
+| Beverages | Coca-Cola, Pepsi, Starbucks |
+| Clothing | Zara, H&M, Nike |
+| Electronics | Samsung, Apple, Sony |
+
+**3. Services Sector**
+| Industry | Impact |
+|----------|--------|
+| IT/ITES | Export boom (Infosys, TCS, Wipro) |
+| BPO | Call centers, back offices |
+| Banking | Foreign banks, insurance |
+| Telecom | Mobile revolution |
+
+**4. Labour Market**
+| Change | Description |
+|--------|-------------|
+| New jobs | IT, retail, services |
+| Contract work | Less permanent employment |
+| Skill demand | English, computer skills |
+| Migration | Brain drain, blue-collar migration |
+
+### Impact on Different Groups
+
+**Winners**:
+| Group | Benefit |
+|-------|--------|
+| Urban middle class | Jobs, consumer goods |
+| IT professionals | High salaries, global mobility |
+| English-educated | Employment opportunities |
+| Entrepreneurs | Access to capital, markets |
+
+**Losers**:
+| Group | Challenge |
+|-------|----------|
+| Small traders | Competition from big retailers |
+| Farmers | Import competition, low prices |
+| Traditional artisans | Mass-produced goods |
+| Informal workers | Job insecurity |
+
+### Debates on Globalization
+
+**Positive View**:
+| Argument | Evidence |
+|----------|----------|
+| Growth | GDP growth increased |
+| Choice | More products available |
+| Efficiency | Competition improves quality |
+| Jobs | New sectors created |
+
+**Critical View**:
+| Concern | Evidence |
+|---------|----------|
+| Inequality | Rich-poor gap widening |
+| Job insecurity | Contract, gig work |
+| Cultural loss | Westernization |
+| Environment | Pollution, exploitation |
+
+### Special Economic Zones (SEZs)
+
+**Features**:
+- Tax benefits for companies
+- Export-oriented production
+- Foreign investment attracted
+
+**Criticisms**:
+- Land acquisition issues
+- Farmers displaced
+- Labour rights concerns
+
+### Social Impact
+
+**Consumption Patterns**:
+| Traditional | Globalized |
+|-------------|------------|
+| Local products | Global brands |
+| Savings culture | Consumer loans |
+| Need-based | Aspiration-based |
+
+**Cultural Changes**:
+- Fast food culture
+- Mall culture
+- Valentine's Day celebrations
+- English media dominance
+
+### Resistance to Globalization
+
+| Movement/Group | Issue |
+|----------------|-------|
+| Swadeshi Jagran Manch | Promoting local goods |
+| Farmers' movements | Against corporate agriculture |
+| Anti-retail FDI | Protecting small traders |
+| Make in India | Domestic manufacturing |
+
+### Conclusion
+Globalization has transformed Indian markets, bringing both opportunities and challenges. While it has driven growth and offered new choices, concerns about inequality, cultural change, and vulnerability of weaker sections remain important policy issues.`
+              }
             ]
           },
           {
