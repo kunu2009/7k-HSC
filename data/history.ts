@@ -231,6 +231,73 @@ export const HIS_SUBJECT: Subject = {
 - Colonialism intensified
 - European dominance worldwide
 - Foundation of modern economy`
+              },
+              {
+                id: 'hl1-3',
+                question: 'Explain the contributions of Renaissance artists and scientists.',
+                mnemonic: 'LMRC-GC - Leonardo, Michelangelo, Raphael, Copernicus, Galileo, Columbus',
+                answer: `### Renaissance Artists
+
+**1. Leonardo da Vinci (1452-1519)**
+- "Universal Genius" - painter, sculptor, scientist, inventor
+- Masterpieces: Mona Lisa, The Last Supper
+- Studied human anatomy through dissection
+- Designed flying machines, tanks (ahead of time)
+- Pioneered sfumato technique (soft shading)
+
+**2. Michelangelo (1475-1564)**
+- Sculptor, painter, architect, poet
+- Masterpieces: David (sculpture), Sistine Chapel ceiling
+- Designed dome of St. Peter's Basilica
+- Known for powerful human figures
+- Spent 4 years painting Sistine Chapel
+
+**3. Raphael (1483-1520)**
+- Painter and architect
+- Masterpiece: School of Athens
+- Known for Madonna paintings
+- Perfected High Renaissance style
+- Harmonious compositions and soft colors
+
+**4. Albrecht Dürer (1471-1528)**
+- German painter and printmaker
+- Master of woodcuts and engravings
+- Brought Renaissance to Northern Europe
+- Famous for self-portraits
+
+### Renaissance Scientists
+
+**1. Nicolaus Copernicus (1473-1543)**
+- Proposed Heliocentric Theory (Sun at center)
+- Challenged Ptolemaic geocentric view
+- Published "On the Revolutions of Celestial Spheres"
+- Foundation of modern astronomy
+
+**2. Galileo Galilei (1564-1642)**
+- "Father of Modern Science"
+- Improved telescope, observed moons of Jupiter
+- Supported Copernican theory
+- Faced Inquisition for his views
+- Discovered law of falling bodies
+
+**3. Johannes Kepler (1571-1630)**
+- Discovered laws of planetary motion
+- Planets move in ellipses, not circles
+- Supported Copernican system with mathematics
+
+### Impact on Knowledge
+| Field | Before Renaissance | After Renaissance |
+|-------|-------------------|-------------------|
+| **Art** | Flat, religious only | Realistic, perspective, secular |
+| **Science** | Faith-based | Observation & experiment |
+| **Education** | Latin, theology | Vernacular, humanities |
+| **World View** | Earth-centered | Sun-centered |
+
+### Legacy
+- Scientific method established
+- Human-centered worldview
+- Foundation for Enlightenment
+- Modern art techniques developed`
               }
             ]
           },
@@ -453,6 +520,69 @@ Colonialism is the practice by which a powerful country directly controls anothe
 - Economic inequality between nations
 - Neo-colonialism through debt and trade
 - Cultural identity issues persist`
+              },
+              {
+                id: 'hl2-3',
+                question: 'Explain the colonization of Africa by European powers.',
+                mnemonic: 'BERLIN SCRAMBLE - Berlin Conference, European rivalry, Resources, Livingstone, Imperialism, Nations divided',
+                answer: `### Background
+Africa was called the "Dark Continent" because Europeans knew little about its interior until the 19th century.
+
+### Exploration Phase
+
+**Key Explorers**:
+- **David Livingstone**: Scottish missionary, explored Central Africa
+- **Henry Stanley**: Journalist who found Livingstone
+- **Mungo Park**: Explored Niger River
+
+**Motives for Exploration**:
+- Geographical curiosity
+- Search for source of rivers (Nile, Niger)
+- Missionary work
+- Commercial interests
+
+### Scramble for Africa (1880s-1914)
+
+**Causes**:
+1. Industrial Revolution needed raw materials
+2. European rivalry and nationalism
+3. "Civilizing mission" ideology
+4. Strategic importance (Suez Canal)
+
+**Berlin Conference (1884-85)**:
+- Called by Otto von Bismarck
+- 14 European nations attended
+- Africa divided without African representation
+- Rules for claiming territory established
+
+### Colonial Powers in Africa
+
+| Power | Territories | Key Features |
+|-------|-------------|--------------|
+| **Britain** | Egypt, Sudan, South Africa, Nigeria, Kenya | Cape to Cairo dream |
+| **France** | Algeria, West Africa, Madagascar | Largest African empire |
+| **Belgium** | Congo | Brutal exploitation (King Leopold) |
+| **Germany** | Tanganyika, Namibia, Cameroon | Lost after WWI |
+| **Portugal** | Angola, Mozambique | Oldest colonies |
+| **Italy** | Libya, Somalia, Eritrea | Failed in Ethiopia |
+
+### Impact on Africa
+
+**Negative**:
+- Artificial borders divided ethnic groups
+- Exploitation of resources and labor
+- Destruction of traditional societies
+- Famines and population decline
+
+**Some Infrastructure**:
+- Railways (for resource extraction)
+- Ports and roads
+- Schools and hospitals (limited)
+
+### Resistance
+- **Ethiopia**: Only African country never colonized (defeated Italy at Adwa 1896)
+- Various local resistances crushed
+- Led to later independence movements`
               }
             ]
           },
@@ -662,6 +792,68 @@ Both British and French East India Companies competed for trade in India. Their 
 2. Better home government support
 3. Efficient administration
 4. Strategic Indian alliances`
+              },
+              {
+                id: 'hl3-3',
+                question: 'Describe the arrival and activities of Portuguese in India.',
+                mnemonic: 'VASCO-GAB - Vasco da Gama, Albuquerque, Blue Water Policy, Sea passes (Cartaz), Goa captured',
+                answer: `### Arrival of Portuguese
+
+**Vasco da Gama's Voyage (1498)**:
+- First European to reach India by sea
+- Reached Calicut (Kozhikode) on May 20, 1498
+- Welcomed by Zamorin (local king)
+- Opened direct sea route from Europe to India
+- Avoided Arab middlemen in spice trade
+
+### Portuguese Policies
+
+**1. Blue Water Policy (Francisco de Almeida)**
+- Control the seas, not land
+- Destroy Arab and Egyptian naval power
+- Establish naval supremacy
+- Battle of Diu (1509) - Defeated combined Arab-Egyptian fleet
+
+**2. Territorial Expansion (Afonso de Albuquerque)**
+- Real founder of Portuguese power in India
+- Captured Goa (1510) from Sultan of Bijapur
+- Established Portuguese capital at Goa
+- Encouraged intermarriage with Indians
+- Built forts at strategic locations
+
+**3. Cartaz System**
+- Compulsory passes for ships in Indian Ocean
+- Ships without Cartaz could be attacked
+- Monopolized Indian Ocean trade
+- Created resentment among Indian traders
+
+### Portuguese Settlements
+
+| Settlement | Importance |
+|------------|------------|
+| **Goa** | Capital, headquarters |
+| **Daman** | Trading post |
+| **Diu** | Naval base |
+| **Bassein** | Trade center |
+| **Cochin** | First factory (1503) |
+
+### Religious Policy
+- Aggressive Christian conversion
+- Inquisition established in Goa (1560)
+- Destroyed Hindu temples
+- Religious intolerance caused resentment
+
+### Decline of Portuguese Power
+
+**Causes**:
+1. Religious intolerance alienated Indians
+2. Rise of Dutch and British competition
+3. Weak home government support
+4. Marathas challenged their power
+
+### Liberation of Goa (1961)
+- Operation Vijay by Indian Army
+- Portuguese: First to come, last to leave`
               }
             ]
           },
