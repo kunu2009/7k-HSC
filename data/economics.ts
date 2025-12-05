@@ -408,6 +408,141 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'General Equilibrium', content: 'Macro Economics\nAll markets together\nInterdependence', color: getReelColor(7) },
         { id: 'r29', title: 'Arthashastra', content: 'Kautilya (Chanakya)\nAncient Indian Economics\nMaurya Empire advisor', color: getReelColor(8) },
         { id: 'r30', title: 'Key Years to Remember', content: '1776: Wealth of Nations\n1890: Marshall\n1932: Robbins\n1936: Keynes', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco1-la1',
+          question: 'Explain the features and scope of Micro Economics.',
+          mnemonic: 'SIMPLE - Slicing method, Individual units, Marginalism, Partial equilibrium, Limited scope, Equilibrium of firm',
+          answer: `### Introduction
+Micro Economics is the branch of economics that studies individual economic units like consumers, firms, and factor owners. The term 'Micro' comes from Greek word 'Mikros' meaning small.
+
+### Features of Micro Economics
+
+**1. Study of Individual Units**
+- Individual consumer behavior
+- Individual firm's decisions
+- Individual market analysis
+- Individual factor pricing
+
+**2. Price Theory**
+- Also called Price Theory as it explains price determination
+- Product pricing in different markets
+- Factor pricing (wages, rent, interest, profit)
+
+**3. Slicing Method**
+- Divides economy into small segments
+- Studies each segment separately
+- "Cannot see the forest for the trees"
+
+**4. Partial Equilibrium Analysis**
+- Uses "Ceteris Paribus" assumption
+- Other things remaining constant
+- Isolates one variable at a time
+
+**5. Marginalism**
+- Uses marginal concepts extensively
+- Marginal utility, Marginal cost, Marginal revenue
+- Decision-making at the margin
+
+### Scope of Micro Economics
+
+| Area | What it Studies |
+|------|-----------------|
+| Consumer Behavior | Utility analysis, Consumer equilibrium |
+| Producer Behavior | Production, Costs, Revenue |
+| Product Pricing | Price in Perfect/Imperfect markets |
+| Factor Pricing | Wages, Rent, Interest, Profit |
+| Welfare Economics | Pareto optimality, Efficiency |
+
+### Conclusion
+Micro Economics forms the foundation for understanding individual decision-making and market mechanisms.`
+        },
+        {
+          id: 'eco1-la2',
+          question: 'Explain the features and scope of Macro Economics.',
+          mnemonic: 'LARGE - Lumping method, Aggregates study, Revenue (National), General equilibrium, Economy-wide',
+          answer: `### Introduction
+Macro Economics studies the economy as a whole. The term 'Macro' comes from Greek word 'Makros' meaning large. J.M. Keynes is called the Father of Modern Macro Economics.
+
+### Features of Macro Economics
+
+**1. Study of Aggregates**
+- National Income (GDP, GNP)
+- Aggregate Demand and Supply
+- General Price Level
+- Total Employment
+
+**2. Income Theory**
+- Also called Income Theory
+- Studies national income determination
+- Factors affecting economic growth
+
+**3. Lumping Method**
+- Studies economy as a whole
+- Does not divide into parts
+- "Sees the forest, not individual trees"
+
+**4. General Equilibrium Analysis**
+- All markets considered together
+- Interdependence of markets
+- No ceteris paribus
+
+**5. Policy Oriented**
+- Helps in policy formulation
+- Fiscal policy, Monetary policy
+- Growth and development strategies
+
+### Scope of Macro Economics
+
+| Area | What it Studies |
+|------|-----------------|
+| National Income | GDP, GNP, NI measurement |
+| Employment | Full employment, Unemployment |
+| Money & Banking | Money supply, Inflation |
+| Business Cycles | Boom, Recession, Recovery |
+| Economic Growth | Development, Planning |
+| International Trade | BOP, Exchange rates |
+
+### Conclusion
+Macro Economics helps understand economy-wide problems and formulate policies for growth and stability.`
+        },
+        {
+          id: 'eco1-la3',
+          question: 'Distinguish between Micro Economics and Macro Economics.',
+          mnemonic: 'Compare: Individual vs Aggregate, Price vs Income, Partial vs General, Slicing vs Lumping',
+          answer: `### Introduction
+Micro and Macro Economics are two branches of economics. Norwegian economist Ragnar Frisch coined these terms in 1933.
+
+### Differences
+
+| Basis | Micro Economics | Macro Economics |
+|-------|-----------------|-----------------|
+| **Meaning** | Study of individual units | Study of economy as whole |
+| **Coined by** | 'Mikros' (Small) | 'Makros' (Large) |
+| **Father** | Alfred Marshall | J.M. Keynes |
+| **Also Called** | Price Theory | Income Theory |
+| **Method** | Slicing Method | Lumping Method |
+| **Analysis** | Partial Equilibrium | General Equilibrium |
+| **Assumption** | Ceteris Paribus | No such assumption |
+| **Focus** | Individual demand/supply | Aggregate demand/supply |
+| **Examples** | Consumer, Firm, Market | GDP, Inflation, Unemployment |
+| **Scope** | Limited (one unit) | Wide (whole economy) |
+
+### Similarities
+1. Both are branches of Economics
+2. Both use similar tools
+3. Both are interdependent
+4. Both aim to maximize welfare
+
+### Interdependence
+- Macro aggregates are sum of micro units
+- Micro decisions affect macro outcomes
+- "Macro is the forest, Micro is the trees"
+
+### Conclusion
+Both branches are essential - Micro for understanding individual behavior, Macro for economy-wide policies. Together they provide complete economic understanding.`
+        }
       ]
     },
     {
@@ -511,6 +646,159 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'Law Names', content: 'DMU = Gossen\'s 1st\nEqui-Marginal = Gossen\'s 2nd\nAlso: Law of Substitution', color: getReelColor(7) },
         { id: 'r29', title: 'Satiety Point', content: 'Full satisfaction\nNo more want\nMU crosses zero', color: getReelColor(8) },
         { id: 'r30', title: 'Key Formulas', content: 'MU = ΔTU/ΔQ\nTU = ΣMU\nEquilibrium: MU/P equal', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco2-la1',
+          question: 'Explain the Law of Diminishing Marginal Utility with assumptions and exceptions.',
+          mnemonic: 'GOSSEN - German economist, On consuming more, Satisfaction falls, Same quality, Each unit decreases, Normal consumer',
+          answer: `### Introduction
+The Law of Diminishing Marginal Utility (DMU) is a fundamental principle in economics, propounded by German economist H.H. Gossen (Gossen's First Law).
+
+### Statement of the Law
+"As a consumer consumes more and more units of a commodity, the utility derived from each successive unit goes on diminishing, other things remaining constant."
+
+### Explanation with Example
+
+| Units | TU (Utils) | MU (Utils) |
+|-------|-----------|-----------|
+| 1 | 10 | 10 |
+| 2 | 18 | 8 |
+| 3 | 24 | 6 |
+| 4 | 28 | 4 |
+| 5 | 30 | 2 |
+| 6 | 30 | 0 (Satiety) |
+| 7 | 28 | -2 (Disutility) |
+
+### Assumptions
+
+**1. Homogeneous Units**: All units must be identical in quality and size
+**2. Continuous Consumption**: Units consumed in quick succession
+**3. No Time Gap**: No interval between consumption of units
+**4. Reasonable Quantity**: Standard units consumed
+**5. Constant Income**: Consumer's income remains same
+**6. Normal Consumer**: Consumer is rational and sane
+**7. Constant Tastes**: Preferences don't change during consumption
+
+### Exceptions to the Law
+
+1. **Hobbies** (Stamp/Coin collection) - MU may increase
+2. **Misers** - For money, MU doesn't diminish
+3. **Drunkards** - Alcohol gives increasing satisfaction initially
+4. **Music Lovers** - Repeated listening may increase utility
+5. **Knowledge Seekers** - Learning gives increasing satisfaction
+
+### Importance
+- Basis of Law of Demand
+- Explains downward sloping demand curve
+- Foundation of consumer equilibrium
+
+### Conclusion
+The Law of DMU is universal in application with few exceptions and forms the foundation of demand theory.`
+        },
+        {
+          id: 'eco2-la2',
+          question: 'Distinguish between Cardinal and Ordinal Utility approaches.',
+          mnemonic: 'MARSHAL vs HICKS - Measurable vs Ranked, Absolute vs Relative, Realistic vs Theoretical',
+          answer: `### Introduction
+There are two approaches to measure consumer satisfaction - Cardinal (Marshall) and Ordinal (Hicks-Allen).
+
+### Cardinal Utility Approach
+
+**Given by**: Alfred Marshall
+
+**Main Features**:
+- Utility can be measured in numbers (Utils)
+- Absolute measurement possible
+- Example: Apple = 10 utils, Orange = 8 utils
+- Uses Law of DMU and Law of Equi-Marginal Utility
+
+### Ordinal Utility Approach
+
+**Given by**: J.R. Hicks and R.G.D. Allen
+
+**Main Features**:
+- Utility can only be ranked (1st, 2nd, 3rd)
+- Relative comparison only
+- Example: Apple > Orange (Apple preferred)
+- Uses Indifference Curve Analysis
+
+### Differences
+
+| Basis | Cardinal | Ordinal |
+|-------|----------|---------|
+| **Measurement** | Quantitative (Utils) | Qualitative (Ranks) |
+| **Proponent** | Alfred Marshall | Hicks & Allen |
+| **Year** | 1890 | 1934 |
+| **Type** | Absolute | Relative |
+| **Analysis Tool** | DMU, Equi-Marginal | Indifference Curves |
+| **Assumption** | MUm constant | MUm varies |
+| **Realism** | Less realistic | More realistic |
+| **Comparison** | Between goods possible | Only preference order |
+| **Introspection** | Required | Not required |
+
+### Similarities
+1. Both explain consumer behavior
+2. Both assume rationality
+3. Both derive demand curve
+4. Both aim to maximize satisfaction
+
+### Conclusion
+Cardinal approach is simpler but less realistic; Ordinal approach is more realistic but complex. Both contribute to understanding consumer behavior.`
+        },
+        {
+          id: 'eco2-la3',
+          question: 'State and explain the Law of Equi-Marginal Utility.',
+          mnemonic: 'EQUAL - Every good, Quota balanced, Utility per rupee same, Allocate wisely, Law of Substitution',
+          answer: `### Introduction
+The Law of Equi-Marginal Utility, also known as Gossen's Second Law or Law of Maximum Satisfaction, explains how consumers allocate their income.
+
+### Statement
+"A consumer gets maximum satisfaction when the marginal utility per rupee spent on each commodity is equal."
+
+### Mathematical Expression
+**MUx/Px = MUy/Py = MUm**
+
+Where:
+- MUx = Marginal Utility of good X
+- Px = Price of good X
+- MUy = Marginal Utility of good Y
+- Py = Price of good Y
+- MUm = Marginal Utility of Money
+
+### Explanation with Example
+
+Given: Income = ₹5, Price of Apple = ₹1, Price of Banana = ₹1
+
+| Units | MU Apple | MU Banana |
+|-------|----------|-----------|
+| 1 | 10 | 8 |
+| 2 | 8 | 6 |
+| 3 | 6 | 4 |
+| 4 | 4 | 2 |
+
+**Optimal Allocation**: 3 Apples + 2 Bananas
+- MU of last Apple = 6
+- MU of last Banana = 6
+- MU per rupee is EQUAL (6/1 = 6/1)
+
+### Assumptions
+1. Cardinal measurement of utility
+2. Constant MU of money
+3. Unlimited wants
+4. Limited income
+5. Rational consumer
+6. Independent utilities
+
+### Importance
+1. **Consumer Equilibrium**: Shows optimal spending pattern
+2. **Price-Demand Relation**: Explains inverse relationship
+3. **Tax Policy**: Helps in progressive taxation
+4. **Public Finance**: Allocation of government funds
+
+### Conclusion
+The law guides consumers to maximize satisfaction by equalizing marginal utility per rupee across all goods.`
+        }
       ]
     },
     {
@@ -615,6 +903,115 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'Demand Schedule', content: 'Table format\nPrice vs Quantity\nPlotted → Demand Curve', color: getReelColor(7) },
         { id: 'r29', title: 'Graph Convention', content: 'X-axis = Quantity (Q)\nY-axis = Price (P)\nOpposite of math!', color: getReelColor(8) },
         { id: 'r30', title: 'Key Economists', content: 'Giffen: Inferior goods\nVeblen: Prestige goods\nMarshall: Law of Demand', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco3a-la1',
+          question: 'State and explain the Law of Demand with its assumptions and exceptions.',
+          mnemonic: 'PRICE DOWN - People buy more, Reverse if price up, Income constant, Ceteris paribus, Exceptions exist',
+          answer: `### Introduction
+The Law of Demand is a fundamental principle in economics, propounded by Alfred Marshall. It establishes the inverse relationship between price and quantity demanded.
+
+### Statement of the Law
+"Other things remaining constant, when the price of a commodity rises, its quantity demanded falls, and when the price falls, its quantity demanded rises."
+
+**In Short**: Price ↑ → Demand ↓ and Price ↓ → Demand ↑
+
+### Explanation with Schedule
+
+| Price (₹) | Quantity (Units) |
+|-----------|-----------------|
+| 50 | 10 |
+| 40 | 20 |
+| 30 | 30 |
+| 20 | 40 |
+| 10 | 50 |
+
+### Assumptions of the Law
+
+1. **Income Constant**: Consumer's income should not change
+2. **Tastes Unchanged**: Preferences remain same
+3. **Prices of Related Goods Constant**: Substitutes and complements' prices fixed
+4. **No Expectations**: No anticipation of future price changes
+5. **No New Buyers**: Number of consumers constant
+6. **Normal Goods**: Law applies to normal goods
+
+### Why Does Demand Curve Slope Downward?
+
+1. **Law of DMU**: Additional units give less satisfaction, so pay less
+2. **Income Effect**: Lower price = Higher real income = Buy more
+3. **Substitution Effect**: Lower price = Switch from expensive alternatives
+4. **New Buyers**: At lower prices, new consumers enter market
+5. **Multiple Uses**: At lower prices, use for various purposes
+
+### Exceptions to the Law
+
+1. **Giffen Goods**: Inferior goods (Jowar, Bajra) - Poor spend more on them when price rises
+2. **Veblen Goods**: Prestige goods (Diamonds, Designer items) - Status symbol
+3. **Speculation**: Expected further price rise leads to more buying
+4. **Emergency**: War, pandemic - Buy at any price
+5. **Necessities**: Life-saving drugs bought at any price
+
+### Conclusion
+The Law of Demand is universal with limited exceptions and forms the basis of demand theory and price determination.`
+        },
+        {
+          id: 'eco3a-la2',
+          question: 'Distinguish between Extension/Contraction and Increase/Decrease in Demand.',
+          mnemonic: 'MOVEMENT vs SHIFT - Move along (price), Shift entire (other factors)',
+          answer: `### Introduction
+Changes in demand can be of two types - Movement along the curve and Shift of the curve. Understanding this distinction is crucial.
+
+### Extension and Contraction (Movement Along Curve)
+
+**Cause**: Change in PRICE of the commodity (own price)
+
+**Extension of Demand**:
+- Price FALLS
+- Quantity demanded INCREASES
+- Movement DOWN along the same curve
+- Other factors constant
+
+**Contraction of Demand**:
+- Price RISES
+- Quantity demanded DECREASES
+- Movement UP along the same curve
+- Other factors constant
+
+### Increase and Decrease (Shift of Curve)
+
+**Cause**: Change in OTHER FACTORS (not own price)
+
+**Increase in Demand**:
+- Curve shifts RIGHTWARD
+- More quantity at SAME price
+- Factors: Income rise, Favorable taste change, Price of substitute rises
+
+**Decrease in Demand**:
+- Curve shifts LEFTWARD
+- Less quantity at SAME price
+- Factors: Income fall, Unfavorable taste change, Price of substitute falls
+
+### Differences
+
+| Basis | Extension/Contraction | Increase/Decrease |
+|-------|----------------------|-------------------|
+| **Type** | Movement along curve | Shift of entire curve |
+| **Cause** | Own price change | Other factors change |
+| **Price** | Changes | Remains same |
+| **Curve** | Same curve | New curve |
+| **Direction** | Up/Down on curve | Left/Right shift |
+| **Diagram** | Points on same curve | Two different curves |
+
+### Diagram Explanation
+
+**Extension/Contraction**: A to B on same demand curve (price axis movement)
+
+**Increase/Decrease**: D1 to D2 (entire curve shifts parallel)
+
+### Conclusion
+Extension/Contraction involves movement along the demand curve due to price change, while Increase/Decrease involves shifting of the entire demand curve due to changes in other factors.`
+        }
       ]
     },
     {
@@ -718,6 +1115,122 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'Negative Sign', content: 'Ed always negative\n(P↑Q↓ or P↓Q↑)\nBut we use |Ed|\nAbsolute value', color: getReelColor(7) },
         { id: 'r29', title: 'Promotional Ea', content: 'Ea = %ΔQd / %ΔAdvertising\nHow ads affect demand\nMarketing measure', color: getReelColor(8) },
         { id: 'r30', title: 'Key Formulas', content: 'Ed = %ΔQ/%ΔP\nEy = %ΔQ/%ΔY\nEc = %ΔQx/%ΔPy\nMR = AR(1-1/Ed)', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco3b-la1',
+          question: 'Explain Price Elasticity of Demand with its types.',
+          mnemonic: 'TYPES - Total 5, Perfectly elastic/inelastic, Unitary, Elastic > 1, Inelastic < 1',
+          answer: `### Introduction
+Price Elasticity of Demand measures the responsiveness of quantity demanded to changes in price. It was introduced by Alfred Marshall.
+
+### Definition
+"Price Elasticity of Demand is the degree of responsiveness of quantity demanded to a change in price of the commodity."
+
+### Formula
+**Ed = %ΔQd / %ΔP = (ΔQ/Q) ÷ (ΔP/P) = (ΔQ/ΔP) × (P/Q)**
+
+### Types of Price Elasticity
+
+**1. Perfectly Elastic (Ed = ∞)**
+- Horizontal demand curve
+- Infinite demand at one price, zero at any other
+- Theoretical concept
+- Example: Homogeneous products in perfect competition
+
+**2. Perfectly Inelastic (Ed = 0)**
+- Vertical demand curve
+- Quantity remains constant at all prices
+- Example: Life-saving drugs, salt
+
+**3. Unitary Elastic (Ed = 1)**
+- Rectangular hyperbola
+- %ΔQd = %ΔP
+- Total expenditure remains constant
+- Example: Commodities with moderate substitutes
+
+**4. Relatively Elastic (Ed > 1)**
+- Flatter demand curve
+- %ΔQd > %ΔP
+- Sensitive to price changes
+- Example: Luxury goods, goods with many substitutes
+
+**5. Relatively Inelastic (Ed < 1)**
+- Steeper demand curve
+- %ΔQd < %ΔP
+- Less responsive to price changes
+- Example: Necessities, habit-forming goods
+
+### Total Expenditure Method
+
+| Elasticity | Price ↓ | Price ↑ |
+|------------|---------|---------|
+| Ed > 1 | TE ↑ | TE ↓ |
+| Ed = 1 | TE same | TE same |
+| Ed < 1 | TE ↓ | TE ↑ |
+
+### Conclusion
+Understanding elasticity helps businesses in pricing decisions and governments in tax policy formulation.`
+        },
+        {
+          id: 'eco3b-la2',
+          question: 'Explain the factors affecting Price Elasticity of Demand.',
+          mnemonic: 'NATURE - Nature of good, Availability of substitutes, Time, Uses, Range of prices, Expenditure proportion',
+          answer: `### Introduction
+Price Elasticity of Demand varies across goods and situations. Several factors determine whether demand is elastic or inelastic.
+
+### Factors Affecting Price Elasticity
+
+**1. Nature of Commodity**
+
+| Type | Elasticity | Example |
+|------|-----------|---------|
+| Necessities | Inelastic | Salt, Medicine |
+| Comforts | Moderately elastic | Fans, Furniture |
+| Luxuries | Elastic | Cars, Diamonds |
+
+**2. Availability of Substitutes**
+- More substitutes = More elastic demand
+- Fewer substitutes = Less elastic demand
+- Example: Tea vs Coffee (elastic), Salt (inelastic)
+
+**3. Proportion of Income Spent**
+- Higher proportion = More elastic
+- Lower proportion = Less elastic
+- Example: House rent (elastic), Matchbox (inelastic)
+
+**4. Time Period**
+- Short run = Inelastic (no time to adjust)
+- Long run = Elastic (can find alternatives)
+- Habits can be changed over time
+
+**5. Number of Uses**
+- More uses = More elastic
+- Fewer uses = Less elastic
+- Example: Electricity (many uses = elastic)
+
+**6. Habit-forming Goods**
+- Addictive goods = Inelastic
+- People buy regardless of price
+- Example: Cigarettes, Alcohol
+
+**7. Range of Prices**
+- Very high prices = Elastic (rich buyers)
+- Very low prices = Inelastic (small amount)
+- Middle range = Most elastic
+
+**8. Postponability of Purchase**
+- Can postpone = Elastic
+- Cannot postpone = Inelastic
+- Example: Luxury car vs Medicine
+
+**9. Joint Demand**
+- Complements have similar elasticity
+- Car and petrol, Printer and ink
+
+### Conclusion
+Multiple factors work together to determine the elasticity of demand. Businesses must consider all factors for pricing decisions.`
+        }
       ]
     },
     {
@@ -821,6 +1334,105 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'Number of Firms', content: 'More firms enter\n→ Market supply ↑\n→ Curve shifts RIGHT', color: getReelColor(7) },
         { id: 'r29', title: 'Supply Schedule', content: 'Table format\nPrice vs Quantity\nPlotted → Supply Curve', color: getReelColor(8) },
         { id: 'r30', title: 'Key Difference', content: 'Demand: Consumer side\nSupply: Producer side\nTogether: Market', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco4-la1',
+          question: 'State and explain the Law of Supply.',
+          mnemonic: 'DIRECT - Direction is same, Increase price increase supply, Rational producers, Exceptions exist, Cost recovery',
+          answer: `### Introduction
+The Law of Supply establishes the direct relationship between price and quantity supplied. It is the counterpart of the Law of Demand.
+
+### Statement
+"Other things being equal, when the price of a commodity rises, its quantity supplied also rises, and when the price falls, its quantity supplied also falls."
+
+**In Short**: Price ↑ → Supply ↑ and Price ↓ → Supply ↓
+
+### Explanation with Schedule
+
+| Price (₹) | Quantity Supplied (Units) |
+|-----------|--------------------------|
+| 10 | 100 |
+| 20 | 200 |
+| 30 | 300 |
+| 40 | 400 |
+| 50 | 500 |
+
+### Why Does Supply Curve Slope Upward?
+
+1. **Profit Motive**: Higher price = More profit = More willing to supply
+2. **Coverage of Costs**: Higher price covers higher marginal cost
+3. **New Producers**: Higher prices attract new firms
+4. **Existing Stock**: Sellers release held stock at higher prices
+
+### Assumptions of Law of Supply
+
+1. Cost of production remains constant
+2. Technology unchanged
+3. Government policy unchanged
+4. Prices of inputs constant
+5. No expectations of future price changes
+6. Goals of firm constant
+
+### Exceptions to Law of Supply
+
+1. **Agricultural Products**: Depend on weather, not just price
+2. **Labor Supply**: Backward bending at high wages
+3. **Perishable Goods**: Must sell regardless of price
+4. **Rare/Antique Items**: Fixed supply
+5. **Future Expectations**: If price expected to rise more, hold stock
+
+### Conclusion
+The Law of Supply is fundamental to understanding producer behavior and market dynamics.`
+        },
+        {
+          id: 'eco4-la2',
+          question: 'Distinguish between Extension/Contraction and Increase/Decrease in Supply.',
+          mnemonic: 'PRICE vs OTHER - Price changes = move along, Other factors = shift',
+          answer: `### Introduction
+Changes in supply can occur in two ways - movement along the curve or shift of the entire curve. Understanding this distinction is crucial.
+
+### Extension and Contraction (Movement Along Curve)
+
+**Cause**: Change in OWN PRICE of the commodity
+
+**Extension of Supply**:
+- Price RISES
+- Quantity supplied INCREASES  
+- Movement UPWARD along the same curve
+
+**Contraction of Supply**:
+- Price FALLS
+- Quantity supplied DECREASES
+- Movement DOWNWARD along the same curve
+
+### Increase and Decrease (Shift of Curve)
+
+**Cause**: Change in OTHER FACTORS (not own price)
+
+**Increase in Supply**:
+- Curve shifts RIGHTWARD
+- More quantity at SAME price
+- Causes: Technology improves, Input costs fall, Subsidies given
+
+**Decrease in Supply**:
+- Curve shifts LEFTWARD
+- Less quantity at SAME price
+- Causes: Input costs rise, Taxes imposed, Technology declines
+
+### Differences
+
+| Basis | Extension/Contraction | Increase/Decrease |
+|-------|----------------------|-------------------|
+| **Type** | Movement along curve | Shift of entire curve |
+| **Cause** | Own price change | Other factors |
+| **Price** | Changes | Remains same |
+| **Curve** | Same curve | New curve |
+| **Direction** | Up/Down movement | Right/Left shift |
+
+### Conclusion
+Movement along the curve is due to price change while shift of curve is due to changes in other determinants like technology, costs, and policies.`
+        }
       ]
     },
     {
@@ -924,6 +1536,119 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'Legal Monopoly', content: 'Patents, Copyrights\nGovernment license\nLegal protection\nTime-limited', color: getReelColor(7) },
         { id: 'r29', title: 'Non-Price Competition', content: 'Advertising\nQuality improvement\nCustomer service\nNot price cuts', color: getReelColor(8) },
         { id: 'r30', title: 'Market Comparison', content: 'Sellers: PC>MC>Oligo>Mono\nPower: Mono>Oligo>MC>PC\nProfit: Mono highest', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco5-la1',
+          question: 'Explain the features of Perfect Competition.',
+          mnemonic: 'LARGE - Large buyers/sellers, All products same, Free entry/exit, Perfect knowledge, Price takers',
+          answer: `### Introduction
+Perfect Competition is a market structure with a large number of buyers and sellers dealing in homogeneous products with perfect knowledge.
+
+### Features of Perfect Competition
+
+**1. Large Number of Buyers and Sellers**
+- So many that no single buyer/seller can influence price
+- Each firm's output is insignificant compared to market
+- Market forces of demand and supply determine price
+
+**2. Homogeneous Product**
+- All firms produce identical products
+- No differentiation in quality, packaging, branding
+- Buyers indifferent between sellers
+- Example: Agricultural products like wheat, rice
+
+**3. Free Entry and Exit**
+- No barriers to enter or leave industry
+- New firms can enter when profits are high
+- Existing firms can exit when facing losses
+- Ensures normal profit in long run
+
+**4. Perfect Knowledge**
+- All buyers and sellers have complete information
+- Know all prices in the market
+- Know quality of products
+- No advertising needed
+
+**5. Price Takers**
+- Firms accept market price as given
+- Cannot charge higher (lose customers)
+- No need to charge lower (can sell all at market price)
+- Firm's demand curve is horizontal line
+
+**6. No Transportation Costs**
+- Products freely move in the market
+- No location advantage
+
+**7. AR = MR = Price**
+- Average Revenue equals Marginal Revenue
+- Both equal to price
+- Total Revenue increases at constant rate
+
+### Diagram
+- Firm's demand curve: Horizontal line at market price
+- Market: Usual downward demand, upward supply curves
+
+### Conclusion
+Perfect Competition is an ideal market rarely found in reality but serves as a benchmark for efficiency.`
+        },
+        {
+          id: 'eco5-la2',
+          question: 'Explain the features of Monopoly.',
+          mnemonic: 'SINGLE - Single seller, No substitutes, Entry barriers, Price maker, Abnormal profits possible',
+          answer: `### Introduction
+Monopoly is a market structure with a single seller of a product that has no close substitutes. "Mono" means one and "poly" means seller.
+
+### Features of Monopoly
+
+**1. Single Seller**
+- Only one firm in the industry
+- Firm = Industry
+- Supplies the entire market demand
+
+**2. No Close Substitutes**
+- Product is unique
+- Buyers have no alternative
+- Examples: Indian Railways, BSNL (earlier)
+
+**3. Entry Barriers**
+- New firms cannot enter the industry
+- Barriers may be: Natural, Legal, Economic
+
+| Type | Example |
+|------|---------|
+| Natural | Economies of scale, Resource control |
+| Legal | Patents, Licenses, Copyrights |
+| Economic | High capital requirement |
+
+**4. Price Maker**
+- Can set price or output (not both)
+- Has market power
+- Faces downward sloping demand curve
+
+**5. Abnormal Profits**
+- Can earn supernormal profits in long run
+- No competition to erode profits
+- Profits protected by entry barriers
+
+**6. AR > MR**
+- To sell more, must reduce price
+- Revenue from additional unit < price (MR < AR)
+- MR curve below AR curve
+
+**7. Price Discrimination Possible**
+- Can charge different prices to different customers
+- For same product
+- Based on elasticity of demand
+
+### Types of Monopoly
+1. **Natural Monopoly**: Due to economies of scale
+2. **Legal Monopoly**: Patents, licenses
+3. **Government Monopoly**: Public utilities
+
+### Conclusion
+Monopoly can lead to higher prices and lower output compared to competition, which is why it's often regulated.`
+        }
       ]
     },
     {
@@ -1027,6 +1752,20 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'Real vs Nominal', content: 'Nominal = Current₹\nReal = Adjusted₹\nIndex converts', color: getReelColor(7) },
         { id: 'r29', title: 'Why Important?', content: 'Economic barometer\nPolicy decisions\nWage negotiations', color: getReelColor(8) },
         { id: 'r30', title: 'Quick Formulas', content: 'L: Σp1q0/Σp0q0\nP: Σp1q1/Σp0q1\nF: √(L×P)', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco6-la1',
+          question: 'Explain the methods of constructing Index Numbers.',
+          mnemonic: 'SIMPLE + WEIGHTED - Simple aggregate/relatives, Laspeyre (q0), Paasche (q1), Fisher (ideal)',
+          answer: `### Introduction\nIndex Numbers measure relative changes in variables over time. Various methods are used for their construction.\n\n### Methods of Construction\n\n**A. Simple/Unweighted Methods**\n\n**1. Simple Aggregate Method**\n- Formula: P01 = (Σp1/Σp0) × 100\n- Sum of current prices / Sum of base prices\n- Limitation: Ignores quantity weights\n\n**2. Simple Average of Price Relatives**\n- Formula: P01 = ΣR/N where R = (p1/p0) × 100\n- Average of individual price relatives\n- Each item gets equal weight\n\n**B. Weighted Methods**\n\n**1. Laspeyre's Index (Base Year Weighted)**\n- Formula: P01 = (Σp1q0/Σp0q0) × 100\n- Uses base year quantities (q0) as weights\n- Easy to calculate, data readily available\n- Limitation: Overstates price rise (ignores substitution)\n\n**2. Paasche's Index (Current Year Weighted)**\n- Formula: P01 = (Σp1q1/Σp0q1) × 100\n- Uses current year quantities (q1)\n- Limitation: Understates, requires current data\n\n**3. Fisher's Ideal Index**\n- Formula: P01 = √(Laspeyre × Paasche)\n- Geometric mean of L and P\n- Satisfies Time and Factor Reversal tests\n- Called 'Ideal' index\n\n### Conclusion\nWeighted methods are more accurate. Fisher's is theoretically best but complex. Laspeyre's is most commonly used due to ease of calculation.`
+        },
+        {
+          id: 'eco6-la2',
+          question: 'Explain the uses/importance of Index Numbers.',
+          mnemonic: 'IMPORTANT - Inflation measure, Policy making, Wage adjustment, Deflating, Comparison',
+          answer: `### Introduction\nIndex Numbers are indispensable tools in economics, business, and policy-making. They serve multiple purposes.\n\n### Uses of Index Numbers\n\n**1. Measuring Inflation/Price Changes**\n- CPI and WPI track price changes\n- Helps assess cost of living\n- Monetary policy decisions\n\n**2. Wage Adjustment (Dearness Allowance)**\n- DA linked to CPI\n- Compensates workers for price rise\n- Maintains real purchasing power\n\n**3. Deflating Money Values**\n- Converts nominal to real values\n- Real Wage = (Money Wage/CPI) × 100\n- Allows meaningful comparison over time\n\n**4. Policy Formulation**\n- Government uses for economic planning\n- Tax policies\n- Import-export decisions\n\n**5. Economic Barometer**\n- Indicates economic health\n- Shows business cycles\n- Guides investors\n\n**6. International Comparisons**\n- Compare living standards\n- Purchasing Power Parity\n- Development rankings\n\n**7. Contract Escalation**\n- Long-term contracts adjusted\n- Based on index changes\n- Protects against inflation\n\n**8. Business Decisions**\n- Pricing strategies\n- Investment planning\n- Wage negotiations\n\n### Conclusion\nIndex Numbers are economic barometers essential for informed decision-making at individual, business, and government levels.`
+        }
       ]
     },
     {
@@ -1130,6 +1869,99 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'GDP Flow', content: 'GDP(MP)\n→ GDP(FC): -IT+S\n→ NDP: -Dep', color: getReelColor(7) },
         { id: 'r29', title: 'GNP Flow', content: 'GDP + NFIA\n→ GNP - Dep\n→ NNP = NI', color: getReelColor(8) },
         { id: 'r30', title: 'Key Formula', content: 'NI = NNP(FC)\n= GNP - Dep - IT + S\nMaster this!', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco7-la1',
+          question: 'Explain the concepts of GDP, GNP, NDP, NNP, and National Income.',
+          mnemonic: 'GDP GNP NDP NNP - Gross Domestic, Gross National, Net Domestic, Net National = National Income',
+          answer: `### Introduction
+National Income accounting involves various concepts that measure economic activity. Understanding the relationship between them is crucial.
+
+### Key Concepts
+
+**1. GDP (Gross Domestic Product)**
+- Total value of all final goods and services produced within domestic territory
+- Regardless of who produces (citizens or foreigners)
+- GDP = C + I + G + (X - M)
+
+**2. GNP (Gross National Product)**
+- GDP + Net Factor Income from Abroad (NFIA)
+- NFIA = Income earned by residents abroad - Income earned by non-residents domestically
+- **GNP = GDP + NFIA**
+
+**3. NDP (Net Domestic Product)**
+- GDP minus Depreciation
+- Depreciation = Wear and tear of capital goods
+- **NDP = GDP - Depreciation**
+
+**4. NNP (Net National Product)**
+- GNP minus Depreciation
+- Also called National Income at Market Price
+- **NNP = GNP - Depreciation**
+
+**5. National Income (NI)**
+- NNP at Factor Cost
+- **NI = NNP(MP) - Indirect Taxes + Subsidies**
+
+### Relationship Flow Chart
+
+GDP → (+NFIA) → GNP → (-Dep) → NNP → (-IT+S) → NI
+
+### Conclusion
+All concepts are interrelated and measure different aspects of national economic activity.`
+        },
+        {
+          id: 'eco7-la2',
+          question: 'Explain the methods of calculating National Income.',
+          mnemonic: 'PIE - Product method, Income method, Expenditure method',
+          answer: `### Introduction
+National Income can be calculated using three methods, all of which give the same result due to the circular flow of income.
+
+### 1. Product/Output Method
+
+**Formula**: NI = Σ(Value Added by all sectors)
+
+**Steps**:
+- Calculate Gross Value of Output (GVO) of each sector
+- Subtract Intermediate Consumption
+- Value Added = GVO - Intermediate Consumption
+- Sum all sectors: Primary + Secondary + Tertiary
+
+**Sectors**:
+- Primary: Agriculture, Mining, Fishing
+- Secondary: Manufacturing, Construction
+- Tertiary: Services, Banking, Trade
+
+### 2. Income Method
+
+**Formula**: NI = W + R + I + P + Mixed Income
+
+Where:
+- W = Wages and Salaries
+- R = Rent
+- I = Interest
+- P = Profits
+- Mixed Income = Self-employed income
+
+**Covers**: All factor incomes earned by normal residents
+
+### 3. Expenditure Method
+
+**Formula**: NI = C + I + G + (X - M)
+
+Where:
+- C = Private Consumption Expenditure
+- I = Gross Investment (GFCF + Change in Stock)
+- G = Government Expenditure
+- X - M = Net Exports
+
+### Why Same Result?
+Due to circular flow: Production = Income = Expenditure
+
+### Conclusion
+All three methods are equivalent ways of measuring the same economic activity, just from different perspectives.`
+        }
       ]
     },
     {
@@ -1233,6 +2065,110 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'Tax vs Non-Tax', content: 'Tax: Compulsory\nNon-Tax: For service\nBoth = Revenue', color: getReelColor(7) },
         { id: 'r29', title: 'Revenue vs Capital', content: 'Revenue: Recurring\nCapital: One-time\nAsset based', color: getReelColor(8) },
         { id: 'r30', title: 'Budget Process', content: 'FM presents → Debate\n→ Voting → Pass\nMoney Bill procedure', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco8-la1',
+          question: 'Explain the types of Government Budget Deficits.',
+          mnemonic: 'RFP - Revenue deficit, Fiscal deficit, Primary deficit',
+          answer: `### Introduction
+Budget deficits occur when government expenditure exceeds revenue. Understanding different types helps analyze fiscal health.
+
+### Types of Deficits
+
+**1. Revenue Deficit**
+- **Formula**: Revenue Deficit = Revenue Expenditure - Revenue Receipts
+- Occurs when current income < current expenses
+- Uses borrowed funds for day-to-day expenses
+- Indicates poor financial discipline
+- Should ideally be zero or minimal
+
+**2. Fiscal Deficit**
+- **Formula**: Fiscal Deficit = Total Expenditure - Total Receipts (excluding borrowings)
+- Shows government's total borrowing requirement
+- = Net borrowing by government
+- FRBM Act target: 3% of GDP
+- Most widely used indicator
+
+**3. Primary Deficit**
+- **Formula**: Primary Deficit = Fiscal Deficit - Interest Payments
+- Shows borrowing for non-interest purposes
+- If Primary Deficit = 0, borrowing only for interest
+- Indicates fresh borrowing burden
+
+### Relationship
+
+| Concept | Formula |
+|---------|---------|
+| Revenue Deficit | Rev Exp - Rev Receipts |
+| Fiscal Deficit | Total Exp - Total Receipts (excl. borrowing) |
+| Primary Deficit | Fiscal Deficit - Interest |
+
+### Implications
+- High deficits → More borrowing → Higher interest burden
+- Affects credit rating and inflation
+- FRBM Act aims to control deficits
+
+### Conclusion
+Managing deficits is crucial for fiscal health and economic stability.`
+        },
+        {
+          id: 'eco8-la2',
+          question: 'Distinguish between Direct and Indirect Taxes.',
+          mnemonic: 'DIRECT cannot shift, INDIRECT can shift burden',
+          answer: `### Introduction
+Taxes are classified into Direct and Indirect based on their incidence and impact.
+
+### Direct Taxes
+
+**Definition**: Taxes where incidence and impact fall on the same person. Cannot be shifted.
+
+**Features**:
+- Paid directly by taxpayer to government
+- Progressive in nature (higher income, higher rate)
+- Cannot be shifted to others
+- Based on ability to pay
+
+**Examples**:
+- Income Tax
+- Corporate Tax
+- Capital Gains Tax
+- Wealth Tax (abolished)
+
+### Indirect Taxes
+
+**Definition**: Taxes where burden can be shifted to others. Paid initially by one, borne by another.
+
+**Features**:
+- Collected by intermediary (seller)
+- Regressive in nature
+- Can be shifted to consumer
+- Embedded in price of goods
+
+**Examples**:
+- GST (Goods and Services Tax)
+- Customs Duty
+- Excise Duty (mostly subsumed in GST)
+
+### Differences
+
+| Basis | Direct Tax | Indirect Tax |
+|-------|-----------|--------------|
+| **Incidence** | Cannot shift | Can shift |
+| **Nature** | Progressive | Regressive |
+| **Burden** | On taxpayer | On consumer |
+| **Collection** | Direct | Through intermediary |
+| **Examples** | Income Tax | GST |
+
+### GST (Goods and Services Tax)
+- Introduced: 1st July 2017
+- "One Nation One Tax"
+- Replaced multiple indirect taxes
+- Destination-based consumption tax
+
+### Conclusion
+Both types have their merits. A balanced tax system uses both for equity and efficiency.`
+        }
       ]
     },
     {
@@ -1336,6 +2272,114 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'NBFC', content: 'Non-Banking Financial\nRBI regulated\nBanking-like services', color: getReelColor(7) },
         { id: 'r29', title: 'Private Placement', content: 'Select investors only\nNot public offer\nQuick capital raise', color: getReelColor(8) },
         { id: 'r30', title: 'Rate Hierarchy', content: 'MSF > Repo > Reverse\nBank Rate for long-term\nRBI policy rates', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco9-la1',
+          question: 'Distinguish between Money Market and Capital Market.',
+          mnemonic: 'MONEY short RBI, CAPITAL long SEBI',
+          answer: `### Introduction
+Financial markets are broadly classified into Money Market and Capital Market based on the duration of funds.
+
+### Money Market
+
+**Definition**: Market for short-term funds (less than 1 year)
+
+**Features**:
+- Short-term borrowing and lending
+- High liquidity, Low risk
+- Regulated by RBI
+- No fixed location (OTC market)
+
+**Instruments**:
+- Treasury Bills (91, 182, 364 days)
+- Commercial Paper
+- Certificate of Deposit
+- Call Money (overnight)
+- Repo and Reverse Repo
+
+### Capital Market
+
+**Definition**: Market for long-term funds (more than 1 year)
+
+**Features**:
+- Long-term borrowing and lending
+- Moderate to high risk
+- Regulated by SEBI
+- Fixed location (Stock Exchanges)
+
+**Components**:
+- Primary Market (New Issues)
+- Secondary Market (Stock Exchange)
+
+### Differences
+
+| Basis | Money Market | Capital Market |
+|-------|-------------|----------------|
+| **Duration** | < 1 year | > 1 year |
+| **Instruments** | T-Bills, CP, CD | Shares, Debentures |
+| **Risk** | Low | Moderate to High |
+| **Regulator** | RBI | SEBI |
+| **Liquidity** | Very High | Relatively Low |
+| **Participants** | Banks, RBI, Firms | Investors, Companies |
+| **Returns** | Lower | Higher |
+
+### Conclusion
+Both markets serve essential functions in the financial system - Money Market for short-term liquidity, Capital Market for long-term investment.`
+        },
+        {
+          id: 'eco9-la2',
+          question: 'Explain the instruments of Money Market.',
+          mnemonic: 'T-Bills, CP, CD, Call Money, Repo - Short term, RBI regulated',
+          answer: `### Introduction
+Money Market instruments are short-term financial instruments with high liquidity and low risk.
+
+### Major Instruments
+
+**1. Treasury Bills (T-Bills)**
+- Government securities
+- Issued by RBI on behalf of government
+- Durations: 91, 182, 364 days
+- Zero coupon (issued at discount)
+- Safest instrument
+
+**2. Commercial Paper (CP)**
+- Unsecured promissory note
+- Issued by large companies
+- Duration: 7 days to 1 year
+- For working capital needs
+- Minimum ₹5 lakh denomination
+
+**3. Certificate of Deposit (CD)**
+- Negotiable term deposit
+- Issued by banks and FIs
+- Duration: 7 days to 1 year
+- Higher interest than savings
+- Transferable
+
+**4. Call Money**
+- Overnight lending between banks
+- For daily cash management
+- Very short-term (1-14 days)
+- Interbank market
+
+**5. Repo and Reverse Repo**
+
+| Instrument | Description |
+|------------|-------------|
+| **Repo** | RBI lends to banks against securities |
+| **Reverse Repo** | RBI borrows from banks |
+| **Repo Rate** | Rate at which RBI lends |
+| **Reverse Repo** | Rate at which RBI borrows |
+
+### Role of RBI
+- Regulates money market
+- Uses Repo/Reverse Repo for liquidity management
+- LAF (Liquidity Adjustment Facility)
+
+### Conclusion
+Money Market instruments help manage short-term liquidity for banks, companies, and government.`
+        }
       ]
     },
     {
@@ -1439,6 +2483,179 @@ The branch of economics that studies the economy as a whole, including aggregate
         { id: 'r28', title: 'India\'s Trade', content: 'Usually deficit\nOil imports high\nIT exports strong', color: getReelColor(7) },
         { id: 'r29', title: 'Trade Types', content: 'Import Trade\nExport Trade\nEntrepot Trade', color: getReelColor(8) },
         { id: 'r30', title: 'Key Formula', content: 'BOT = X - M\nBOP = Current + Capital\nMaster these!', color: getReelColor(9) }
+      ],
+      longAnswers: [
+        {
+          id: 'eco10-la1',
+          question: 'Distinguish between Balance of Trade (BOT) and Balance of Payments (BOP).',
+          mnemonic: 'BOT = Goods only, BOP = Everything',
+          answer: `### Introduction
+Both are measures of international economic transactions but differ in scope and coverage.
+
+### Balance of Trade (BOT)
+
+**Definition**: Difference between exports and imports of visible goods (merchandise).
+
+**Formula**: BOT = Exports - Imports
+
+**Features**:
+- Only visible/tangible goods
+- Part of Current Account
+- Narrower concept
+- Also called Trade Balance
+
+**Types**:
+- **Favorable (Surplus)**: Exports > Imports
+- **Unfavorable (Deficit)**: Imports > Exports
+- **Balanced**: Exports = Imports
+
+### Balance of Payments (BOP)
+
+**Definition**: Systematic record of all economic transactions between residents of one country and rest of the world.
+
+**Components**:
+
+| Account | Items Included |
+|---------|----------------|
+| **Current Account** | Goods, Services, Income, Transfers |
+| **Capital Account** | FDI, FPI, Loans, Banking capital |
+| **Errors & Omissions** | Statistical discrepancies |
+
+### Key Differences
+
+| Basis | BOT | BOP |
+|-------|-----|-----|
+| **Coverage** | Visible goods only | All transactions |
+| **Scope** | Narrow | Wide |
+| **Components** | One item | Multiple accounts |
+| **Concept** | Trade balance | Payment balance |
+| **Services** | Not included | Included |
+| **Capital flows** | Not included | Included |
+| **India's status** | Usually deficit | Can be managed |
+
+### Conclusion
+BOT is a subset of BOP. While India often has trade deficit, overall BOP is managed through capital inflows and forex reserves.`
+        },
+        {
+          id: 'eco10-la2',
+          question: 'Explain India\'s major exports and imports.',
+          mnemonic: 'Export: PG-PIT (Petroleum, Gems, Pharma, IT, Textiles), Import: COGEM (Crude Oil, Gold, Electronics, Machinery)',
+          answer: `### Introduction
+India is a major player in global trade with diverse export and import baskets.
+
+### India's Major Exports
+
+**1. Petroleum Products**
+- India refines crude oil and exports refined petroleum
+- Largest export item by value
+- Major destinations: USA, UAE, Singapore
+
+**2. Gems & Jewelry**
+- Cut and polished diamonds
+- Surat is the diamond hub
+- 90% of world's diamonds processed in India
+
+**3. Pharmaceuticals (Pharma)**
+- Generic medicines
+- "Pharmacy of the World"
+- Major markets: USA, Africa, Europe
+
+**4. IT & Software Services**
+- Invisible export
+- Major contributor to forex
+- USA is largest market
+
+**5. Textiles & Garments**
+- Traditional strength
+- Handloom and readymade garments
+- Markets: USA, EU, Middle East
+
+**6. Agricultural Products**
+- Rice, Spices, Tea, Coffee
+- Basmati rice to Middle East
+
+### India's Major Imports
+
+| Import | Share | Source Countries |
+|--------|-------|------------------|
+| **Crude Oil** | ~25% | Saudi Arabia, Iraq, UAE |
+| **Gold** | ~10% | Switzerland, UAE |
+| **Electronics** | ~12% | China, South Korea |
+| **Machinery** | ~8% | China, Germany, USA |
+| **Chemicals** | ~6% | China, USA, Germany |
+
+### Trade Balance
+- India usually has **Trade Deficit**
+- Oil imports cause major outflow
+- IT exports help reduce deficit
+
+### Conclusion
+Diversifying exports and reducing oil dependence are key policy goals.`
+        },
+        {
+          id: 'eco10-la3',
+          question: 'What are the measures to promote foreign trade in India?',
+          mnemonic: 'SEZ-DUTY-FTA-MAKE (Export zones, Duty benefits, Free Trade, Make in India)',
+          answer: `### Introduction
+Government uses various policy measures to promote exports and manage imports.
+
+### Export Promotion Measures
+
+**1. Special Economic Zones (SEZ)**
+- Tax-free enclaves for export production
+- No customs duty on imports
+- Single-window clearance
+- 100% FDI allowed
+
+**2. Duty Drawback Scheme**
+- Refund of customs duty on imported inputs
+- For goods used in exported products
+- Reduces export costs
+
+**3. Export Credit & Finance**
+- Pre-shipment and post-shipment credit
+- EXIM Bank facilities
+- Interest subsidies
+
+**4. Export Promotion Councils**
+- Industry-specific promotion
+- Market intelligence
+- Trade fairs participation
+
+**5. Free Trade Agreements (FTAs)**
+- Bilateral/multilateral agreements
+- Reduced/zero tariffs
+- Market access
+
+### Import Regulation Measures
+
+**1. Make in India**
+- Promote domestic manufacturing
+- Import substitution
+- Self-reliance
+
+**2. Tariffs & Duties**
+- Customs duty on imports
+- Protects domestic industry
+- Revenue generation
+
+**3. Import Licensing**
+- For sensitive items
+- Quantitative restrictions
+- Quality standards
+
+### Trade Policy Framework
+
+| Policy | Objective |
+|--------|-----------|
+| **EXIM Policy** | Guide foreign trade |
+| **Foreign Trade Policy** | 5-year framework |
+| **PLI Scheme** | Boost manufacturing |
+| **Atmanirbhar Bharat** | Self-reliance |
+
+### Conclusion
+Balanced approach of export promotion and strategic import management helps achieve trade objectives.`
+        }
       ]
     }
   ]
