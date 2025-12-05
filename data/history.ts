@@ -111,6 +111,127 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Flying Shuttle', content: 'John Kay.\nFaster weaving.\nFirst step.', color: getReelColor(7) },
               { id: 'r29', title: 'New Trade Routes', content: 'Spices.\nGold.\nGlory.', color: getReelColor(8) },
               { id: 'r30', title: 'Modern Era', content: 'Science.\nReason.\nProgress.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl1-1',
+                question: 'Explain the causes and consequences of the Renaissance in Europe.',
+                mnemonic: 'CHART - Crusades, Humanism, Art, Rich patrons, Trade',
+                answer: `### Causes of Renaissance
+
+**1. Fall of Constantinople (1453)**
+- Scholars fled to Italy with Greek and Roman manuscripts
+- Spread classical knowledge to Western Europe
+
+**2. Crusades Impact**
+- Contact with Arab world brought new ideas
+- Trade routes opened to the East
+- Exposure to Greek philosophy preserved by Arabs
+
+**3. Rise of Wealthy Patrons**
+- Medici family in Florence sponsored artists
+- Church commissioned religious art
+- Rich merchants wanted portraits and decorations
+
+**4. Invention of Printing Press (1440)**
+- Gutenberg's movable type spread ideas rapidly
+- Books became affordable to common people
+- Knowledge no longer limited to monks
+
+**5. Growth of Trade**
+- Italian city-states (Venice, Florence) grew wealthy
+- Surplus wealth funded art and learning
+- Trade brought new ideas from East
+
+### Consequences of Renaissance
+
+**1. Humanism**
+- Focus shifted from God to Human potential
+- "Man is the measure of all things"
+- Individual achievement celebrated
+
+**2. Art Revolution**
+- Realistic perspective developed
+- Human anatomy studied scientifically
+- Masters: Leonardo, Michelangelo, Raphael
+
+**3. Scientific Method**
+- Observation and experimentation valued
+- Empiricism replaced blind faith
+- Foundation for modern science
+
+**4. Reformation**
+- Questioning authority led to religious reform
+- Martin Luther challenged Catholic Church
+- Protestant movement began
+
+**5. Age of Exploration**
+- Curiosity led to geographical discoveries
+- New sea routes to Asia discovered
+- Colonialism began`
+              },
+              {
+                id: 'hl1-2',
+                question: 'Describe the causes and impact of the Industrial Revolution in England.',
+                mnemonic: 'CLIMB - Coal, Labor, Investment, Markets, Britain',
+                answer: `### Why Industrial Revolution Started in England
+
+**1. Natural Resources**
+- Abundant coal and iron ore deposits
+- Rivers for water power and transportation
+- Suitable climate for textile industry (humid)
+
+**2. Capital Availability**
+- Wealthy merchants with money to invest
+- Strong banking system developed
+- Profits from colonial trade
+
+**3. Colonial Empire**
+- Raw materials from colonies (cotton from India)
+- Ready markets for finished goods
+- Naval power protected trade routes
+
+**4. Labor Supply**
+- Enclosure Movement displaced farmers
+- Large population for factory work
+- Migration from villages to cities
+
+**5. Stable Government**
+- No wars on British soil
+- Patent laws protected inventions
+- Infrastructure development supported
+
+### Key Inventions
+
+| Invention | Inventor | Impact |
+|-----------|----------|--------|
+| Spinning Jenny | James Hargreaves | Multiple threads at once |
+| Water Frame | Richard Arkwright | Water-powered spinning |
+| Power Loom | Edmund Cartwright | Mechanized weaving |
+| Steam Engine | James Watt | Powered factories |
+
+### Impact of Industrial Revolution
+
+**Economic Impact**
+- Rise of factory system
+- Mass production reduced costs
+- Capitalism strengthened
+
+**Social Impact**
+- Urbanization (growth of cities)
+- Rise of middle class
+- Working class exploitation (child labor)
+
+**Political Impact**
+- Labor movements began
+- Demand for political rights
+- Trade unions formed
+
+**Global Impact**
+- Colonialism intensified
+- European dominance worldwide
+- Foundation of modern economy`
+              }
             ]
           },
           {
@@ -214,6 +335,125 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Neo-Colonialism', content: 'Economic control.\nDebt traps.\nModern empire.', color: getReelColor(7) },
               { id: 'r29', title: 'Resistance', content: 'Revolts started.\nNationalism rose.\nFreedom struggle.', color: getReelColor(8) },
               { id: 'r30', title: 'Legacy', content: 'Language, Borders.\nConflicts today.\nGlobal connection.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl2-1',
+                question: 'Explain the causes and nature of European colonialism.',
+                mnemonic: 'CRIME - Capital, Raw materials, Industrial Revolution, Markets, Expansion',
+                answer: `### Meaning of Colonialism
+Colonialism is the practice by which a powerful country directly controls another territory, exploiting its resources and people for economic benefit.
+
+### Causes of Colonialism
+
+**1. Industrial Revolution**
+- Factories needed cheap raw materials (cotton, rubber, minerals)
+- Finished goods needed markets to sell
+- Competition among European nations intensified
+
+**2. Economic Motives**
+- Search for gold, silver, precious stones
+- Control over trade routes
+- Investment opportunities in new lands
+
+**3. Strategic Reasons**
+- Naval bases for protecting trade routes
+- Control of key waterways (Suez, Panama)
+- Military advantage over rivals
+
+**4. Population Pressure**
+- Europe's growing population needed land
+- Settlement colonies in America, Australia
+- Employment for surplus population
+
+**5. Ideological Justification**
+- "White Man's Burden" - duty to civilize
+- Spread Christianity
+- Racial superiority complex
+
+### Nature of Colonialism
+
+**Phase 1: Trading Posts**
+- Initial contact for trade only
+- Small factories on coasts
+- Limited interference in local affairs
+
+**Phase 2: Political Control**
+- Treaties with local rulers
+- Military intervention
+- Direct administration
+
+**Phase 3: Economic Exploitation**
+- Plantation economy
+- Drain of wealth
+- Destruction of local industries
+
+### Types of Colonies
+| Type | Example | Purpose |
+|------|---------|---------|
+| Settlement | Australia | European population |
+| Plantation | Caribbean | Cash crops |
+| Exploitation | India | Raw materials & markets |`
+              },
+              {
+                id: 'hl2-2',
+                question: 'Describe the impact of colonialism on colonized regions.',
+                mnemonic: 'DEEP CUTS - Drain, Economy, Education, Political, Culture, Unity, Trade, Social',
+                answer: `### Economic Impact
+
+**Negative Effects**
+- **Drain of Wealth**: Resources transferred to Europe
+- **Deindustrialization**: Local handicrafts destroyed
+- **Cash Crops**: Food crops replaced, famines resulted
+- **Unfair Trade**: Bought raw materials cheap, sold goods expensive
+
+**Some Positive Effects**
+- Railways, roads, ports built (for colonial benefit)
+- Modern banking system introduced
+- New crops introduced (tea, coffee, rubber)
+
+### Political Impact
+
+**Negative Effects**
+- Loss of independence and sovereignty
+- Artificial borders dividing communities
+- Puppet rulers and indirect rule
+
+**Some Positive Effects**
+- Unified administration over large areas
+- Modern legal and judicial systems
+- Concept of nation-state introduced
+
+### Social Impact
+
+**Negative Effects**
+- Racial discrimination
+- Slavery and forced labor
+- Social hierarchy disrupted
+
+**Some Positive Effects**
+- Western education spread
+- Social reforms (abolition of practices like Sati)
+- Medical facilities introduced
+
+### Cultural Impact
+
+**Negative Effects**
+- Local languages suppressed
+- Traditional culture devalued
+- Religious conversion pressures
+
+**Some Positive Effects**
+- Spread of English (global language)
+- Printing press spread knowledge
+- Cross-cultural exchange
+
+### Long-term Legacy
+- Colonial borders still cause conflicts
+- Economic inequality between nations
+- Neo-colonialism through debt and trade
+- Cultural identity issues persist`
+              }
             ]
           },
           {
@@ -317,6 +557,112 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Colonialism', content: 'Trade first.\nThen forts.\nThen rule.', color: getReelColor(7) },
               { id: 'r29', title: 'Impact', content: 'Drain of wealth.\nRailways built.\nUnity formed.', color: getReelColor(8) },
               { id: 'r30', title: '1947', content: 'Independence.\nBritish left.\nNew India.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl3-1',
+                question: 'Describe the establishment of British power in India through the Battles of Plassey and Buxar.',
+                mnemonic: 'POWER - Plassey, Officials bribed, War at Buxar, Empire started, Revenue rights',
+                answer: `### Background
+The British East India Company came to India in 1600 for trade. Gradually, they interfered in Indian politics to expand their power.
+
+### Battle of Plassey (1757)
+
+**Causes**
+- Siraj-ud-Daulah became Nawab of Bengal (1756)
+- He opposed British fortification of Calcutta
+- Captured Fort William (Black Hole incident)
+- British wanted to control Bengal's wealth
+
+**Events**
+- Robert Clive led British forces
+- Mir Jafar (Commander of Bengal army) was bribed
+- Battle was largely a conspiracy
+- Very little actual fighting
+
+**Results**
+- Siraj-ud-Daulah killed, Mir Jafar made puppet Nawab
+- British got 24 Parganas district
+- Foundation of British Empire laid
+- Bengal's wealth drained
+
+### Battle of Buxar (1764)
+
+**Causes**
+- Mir Qasim (new Nawab) opposed British interference
+- Alliance of Mir Qasim, Shuja-ud-Daulah (Awadh), Shah Alam II (Mughal)
+- Real military confrontation unlike Plassey
+
+**Results**
+- Combined Indian forces defeated
+- **Treaty of Allahabad (1765)** signed by Clive
+- **Diwani Rights**: British got tax collection of Bengal, Bihar, Odisha
+- Mughal Emperor became British pensioner
+
+### Significance
+| Plassey | Buxar |
+|---------|-------|
+| Political victory | Military victory |
+| Conspiracy-based | Real battle |
+| Foundation laid | Power confirmed |
+| Bengal Nawab puppet | Diwani rights gained |`
+              },
+              {
+                id: 'hl3-2',
+                question: 'Compare the British and French struggle for supremacy in India (Carnatic Wars).',
+                mnemonic: 'WARS - Wandiwash ended, Anglo-French rivalry, Regional alliances, Supremacy to British',
+                answer: `### Background
+Both British and French East India Companies competed for trade in India. Their rivalry in Europe extended to India, leading to three Carnatic Wars.
+
+### First Carnatic War (1746-1748)
+
+**Cause**: Extension of Austrian War of Succession in Europe
+**Events**:
+- French captured Madras (1746)
+- Battle of Adyar: Small French force defeated Nawab's army
+
+**Result**: Treaty of Aix-la-Chapelle - Madras returned to British
+
+**Significance**: Showed European military superiority
+
+### Second Carnatic War (1749-1754)
+
+**Cause**: Succession disputes in Hyderabad and Carnatic
+**Key Players**:
+- Dupleix (French) supported Chanda Sahib, Muzaffar Jang
+- British supported Muhammad Ali, Nasir Jang
+
+**Key Events**:
+- Clive's defense of Arcot (1751) - Famous 53-day siege
+- French Governor Dupleix recalled
+
+**Result**: French influence weakened
+
+### Third Carnatic War (1756-1763)
+
+**Cause**: Seven Years' War in Europe
+**Key Events**:
+- Count de Lally led French forces
+- **Battle of Wandiwash (1760)** - Decisive British victory
+
+**Result**: Treaty of Paris (1763) - French restricted to trade only
+
+### Comparison Table
+
+| Aspect | French | British |
+|--------|--------|---------|
+| Leadership | Dupleix, Lally | Clive, Eyre Coote |
+| Navy | Weak | Strong |
+| Government support | Less | More |
+| Indian alliances | Fewer | More |
+| Final outcome | Defeated | Supreme |
+
+### Reasons for British Victory
+1. Superior naval power
+2. Better home government support
+3. Efficient administration
+4. Strategic Indian alliances`
+              }
             ]
           },
           {
@@ -420,6 +766,138 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Confederacy', content: 'Maratha union.\n5 Chiefs.\nPeshwa head.', color: getReelColor(7) },
               { id: 'r29', title: 'Lord Hastings', content: 'British Governor.\nCrushed Marathas.\nEnded Pindaris.', color: getReelColor(8) },
               { id: 'r30', title: 'Legacy', content: 'Resistance.\nNaval power.\nNational pride.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl4-1',
+                question: 'Explain the Three Anglo-Maratha Wars and their consequences.',
+                mnemonic: 'WAR 3 - Wellesley wars, Alliances failed, Raghunathrao, 1818 end',
+                answer: `### First Anglo-Maratha War (1775-1782)
+
+**Cause**
+- Raghunathrao (Raghoba Dada) wanted to become Peshwa
+- He signed Treaty of Surat (1775) with British
+- Other Maratha chiefs opposed British interference
+
+**Key Events**
+- Battle of Wadgaon (1779): British defeated
+- Mahadji Shinde negotiated peace
+
+**Result**: **Treaty of Salbai (1782)**
+- British returned territories
+- Recognized Madhavrao II as Peshwa
+- Peace for 20 years
+
+**Significance**: Marathas showed unity, British pushed back
+
+### Second Anglo-Maratha War (1803-1805)
+
+**Cause**
+- Peshwa Bajirao II signed **Treaty of Bassein (1802)**
+- Accepted Subsidiary Alliance after defeat by Holkars
+- Scindia and Bhosale opposed this
+
+**Key Events**
+- Battle of Assaye: Wellesley defeated Scindia
+- Battle of Argaon: Bhosale defeated
+- Holkar fought back fiercely
+
+**Result**
+- Separate treaties with Scindia, Bhosale
+- British controlled large territories
+- Peshwa became British puppet
+
+### Third Anglo-Maratha War (1817-1818)
+
+**Cause**
+- Peshwa tried to regain independence
+- Attacked British Residency
+- Pindari problem gave British excuse
+
+**Key Events**
+- Battle of Kirkee: Peshwa defeated
+- Battle of Koregaon: Brave fight by Indian soldiers
+- Battle of Ashti: Bajirao II surrendered
+
+**Result**
+- End of Maratha Empire
+- Peshwa pensioned to Bithur
+- British supreme in India
+
+### Consequences
+
+| First War | Second War | Third War |
+|-----------|------------|-----------|
+| Maratha victory | Partial British victory | Complete British victory |
+| Treaty of Salbai | Subsidiary Alliance | End of Marathas |
+| Unity maintained | Chiefs divided | Empire finished |`
+              },
+              {
+                id: 'hl4-2',
+                question: 'Describe the Maratha Navy and its significance.',
+                mnemonic: 'NAVY - Naval forts, Angre family, Victory over enemies, Years of dominance',
+                answer: `### Chhatrapati Shivaji Maharaj - Father of Indian Navy
+
+**Why Navy Was Needed**
+- Portuguese controlled Konkan coast
+- Cartaz system taxed Indian ships
+- Protection of trade and pilgrims
+- Defense of coastal forts
+
+**Naval Building**
+- Started building warships in 1650s
+- Established dockyards in Konkan
+- Different types: Ghurabs, Gallivats
+- Trained sailors from fishing communities
+
+### Naval Forts
+
+| Fort | Location | Significance |
+|------|----------|--------------|
+| Sindhudurg | Malvan | Engineering marvel, built 1664-67 |
+| Vijaydurg | Devgad | Main naval base |
+| Khanderi | Alibag | Guarded Bombay harbor |
+| Colaba | Alibag | Strategic position |
+| Suvarnadurg | Harnai | Protected coast |
+
+### Kanhoji Angre - The Maratha Admiral
+
+**Background**
+- Appointed Sarkhel (Admiral) in 1698
+- Controlled coast from Mumbai to Vengurla
+
+**Achievements**
+- Defeated British, Portuguese, Dutch fleets
+- Called "Terror of the Seas"
+- Protected Maratha trade
+
+**Strategy**
+- Guerilla warfare at sea
+- Quick attacks, fast retreats
+- Used local knowledge of coast
+
+### Significance of Maratha Navy
+
+**Military**
+- First Indian naval power of modern times
+- Challenged European supremacy at sea
+- Protected coastal territories
+
+**Economic**
+- Safeguarded trade routes
+- Revenue from sea trade
+- Weakened Portuguese monopoly
+
+**Political**
+- Made Marathas a maritime power
+- Increased respect in international affairs
+- Set example for future Indian navies
+
+**Legacy**
+- Indian Navy adopted some traditions
+- Navy Day (4th December) - Shivaji connection
+- National pride in maritime heritage`
+              }
             ]
           },
           {
@@ -523,6 +1001,122 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Agarkar', content: 'Rationalist.\nSudharak paper.\nSocial reform first.', color: getReelColor(7) },
               { id: 'r29', title: 'Periyar', content: 'Self-Respect Movement.\nSouth India.\nAnti-caste.', color: getReelColor(8) },
               { id: 'r30', title: 'Legacy', content: 'Modern India.\nEquality & Justice.\nConstitution.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl5-1',
+                question: 'Describe the contribution of Raja Ram Mohan Roy to social reform in India.',
+                mnemonic: 'REFORM - Religious unity, Education, Freedom of press, Opposition to Sati, Ram Mohan Roy, Modernization',
+                answer: `### Introduction
+Raja Ram Mohan Roy (1772-1833) is called the "Father of Indian Renaissance" and "Father of Modern India" for his pioneering efforts in social reform.
+
+### Major Reforms
+
+**1. Abolition of Sati**
+- Sati: Widow burning alive on husband's funeral pyre
+- Roy campaigned vigorously against it
+- Studied scriptures to prove it not mandatory
+- **Sati Regulation Act (1829)** passed by Lord Bentinck
+- Major victory for human rights
+
+**2. Education Reform**
+- Advocated Western education
+- Founded Hindu College (1817) - now Presidency
+- Supported English as medium of instruction
+- Believed in scientific and rational thinking
+
+**3. Religious Reform**
+- Opposed idol worship and rituals
+- Founded **Brahmo Samaj (1828)**
+- Promoted monotheism (one God)
+- Translated Upanishads to show rational Hinduism
+
+**4. Press Freedom**
+- Started newspapers: Sambad Kaumudi, Mirat-ul-Akhbar
+- Fought for freedom of press
+- Petitioned against restrictions
+
+**5. Women's Rights**
+- Advocated women's education
+- Supported widow remarriage
+- Opposed polygamy
+- Property rights for women
+
+### Methods Used
+
+| Method | Example |
+|--------|---------|
+| Scripture study | Proved Sati not mandatory |
+| Petitions | To Governor General |
+| Journalism | Newspapers for public opinion |
+| Organizations | Brahmo Samaj |
+
+### Legacy
+- Pioneer of modern India
+- Set template for future reformers
+- Bridge between East and West
+- Recognized globally (visited England)`
+              },
+              {
+                id: 'hl5-2',
+                question: 'Explain the work of Mahatma Jyotirao Phule for social justice.',
+                mnemonic: 'PHULE - Poor upliftment, Helping women, Universal education, Liberation of lower castes, Equality for all',
+                answer: `### Introduction
+Mahatma Jyotirao Phule (1827-1890) was a pioneering social reformer from Maharashtra who fought against caste discrimination and worked for education of all.
+
+### Educational Work
+
+**Girls' Education**
+- First girls' school in India (1848) with wife Savitribai
+- Faced severe opposition from orthodox society
+- Savitribai was pelted with stones and mud
+- Continued despite threats
+
+**Education for Lower Castes**
+- Schools for Dalits and backward castes
+- Free education provided
+- Night schools for working adults
+- Believed education was key to liberation
+
+### Social Reform
+
+**1. Satyashodhak Samaj (1873)**
+- "Truth-Seekers' Society"
+- Promoted equality and rationalism
+- Rejected Brahmanical priesthood
+- Marriages without priests
+
+**2. Anti-Caste Movement**
+- Fought against untouchability
+- Opened his well to Dalits
+- Organized Dalits and backward classes
+- Wrote "Gulamgiri" (Slavery) - 1873
+
+**3. Women's Rights**
+- Widow remarriage support
+- Founded home for widows
+- Opposed child marriage
+- Infanticide prevention center
+
+### Literary Works
+
+| Book | Theme |
+|------|-------|
+| Gulamgiri (1873) | Caste as slavery |
+| Shetkaryacha Asud | Farmers' exploitation |
+| Sarvajanik Satyadharma Pustak | Religion of truth |
+
+### Recognition
+- Title "Mahatma" given by people of Bombay
+- Influenced Shahu Maharaj and Ambedkar
+- Father of social revolution in Maharashtra
+
+### Legacy
+- Foundation of Dalit movement
+- Inspiration for reservation policy
+- Pioneer of women's education
+- Model for rational reform`
+              }
             ]
           },
           {
@@ -626,6 +1220,140 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Madam Cama', content: 'Flag in Germany.\nMother of Revolution.\nBrave lady.', color: getReelColor(7) },
               { id: 'r29', title: 'Khan Abdul Ghaffar', content: 'Frontier Gandhi.\nRed Shirts.\nNon-violence.', color: getReelColor(8) },
               { id: 'r30', title: 'Jai Hind', content: 'Slogan of Bose.\nSalutation.\nVictory to India.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl6-1',
+                question: 'Describe the causes, events, and significance of the Revolt of 1857.',
+                mnemonic: 'REVOLT - Religious interference, Economic drain, Various leaders, Old regime, Land policies, Trigger cartridge',
+                answer: `### Introduction
+The Revolt of 1857, also called the First War of Independence, was a major uprising against British rule in India.
+
+### Causes
+
+**Political Causes**
+- Doctrine of Lapse annexed Indian states
+- Annexation of Awadh (1856) hurt feelings
+- Title and pension of Mughal Emperor threatened
+
+**Economic Causes**
+- Drain of wealth to Britain
+- Destruction of Indian handicrafts
+- Heavy land revenue
+- Exploitation of peasants
+
+**Military Causes**
+- Indian sepoys treated badly
+- No promotion for Indians
+- Low salaries
+- Sent to fight overseas (against religious beliefs)
+
+**Social & Religious Causes**
+- Western education threatened traditions
+- Reforms seen as attack on religion
+- Fear of forced conversion
+
+**Immediate Cause**
+- Enfield rifle cartridges greased with cow/pig fat
+- Soldiers had to bite cartridge
+- Offended both Hindu and Muslim soldiers
+
+### Course of Events
+
+| Leader | Place | Role |
+|--------|-------|------|
+| Mangal Pandey | Barrackpore | Started revolt (29 March 1857) |
+| Bahadur Shah II | Delhi | Declared leader |
+| Rani Laxmibai | Jhansi | Heroic resistance |
+| Nana Saheb | Kanpur | Led uprising |
+| Tantya Tope | Central India | Military leader |
+| Begum Hazrat Mahal | Lucknow | Led Awadh revolt |
+
+### Suppression
+- British reinforcements arrived
+- Delhi recaptured (Sept 1857)
+- Lack of coordination among rebels
+- Modern British weapons
+
+### Significance
+
+**Immediate**
+- EIC rule ended
+- Crown took over (1858)
+- Queen's Proclamation promised equality
+
+**Long-term**
+- First national awakening
+- United people against foreign rule
+- Inspiration for freedom struggle
+- Martyrs remembered as heroes`
+              },
+              {
+                id: 'hl6-2',
+                question: 'Explain the role of Mahatma Gandhi in the Indian freedom struggle.',
+                mnemonic: 'GANDHI - Great leader, Ahimsa, Non-cooperation, Dandi March, Hunger strikes, Independence',
+                answer: `### Introduction
+Mahatma Gandhi (1869-1948) transformed the Indian freedom struggle into a mass movement through his philosophy of non-violence (Ahimsa) and truth (Satya).
+
+### Early Life & South Africa
+- Born in Porbandar, Gujarat
+- Studied law in London
+- In South Africa (1893-1914): Fought against racial discrimination
+- Developed Satyagraha technique
+
+### Major Movements in India
+
+**1. Champaran Satyagraha (1917)**
+- First civil disobedience in India
+- Against indigo cultivation (Tinkathia system)
+- Success gave confidence
+
+**2. Non-Cooperation Movement (1920-22)**
+- Against Rowlatt Act and Jallianwala Bagh
+- Methods: Boycott of British goods, schools, courts
+- Khadi promotion, Swadeshi
+- Stopped after Chauri Chaura violence
+
+**3. Civil Disobedience Movement (1930-34)**
+- **Dandi March**: 12 March - 6 April 1930
+- Broke Salt Law at Dandi
+- 78 followers walked 385 km
+- Massive civil disobedience across India
+- Gandhi-Irwin Pact (1931)
+
+**4. Quit India Movement (1942)**
+- "Do or Die" call
+- Demanded immediate British withdrawal
+- Leaders arrested
+- Underground resistance continued
+
+### Philosophy & Methods
+
+| Principle | Application |
+|-----------|-------------|
+| Ahimsa | Non-violence in all protests |
+| Satya | Truth as weapon |
+| Satyagraha | Civil disobedience |
+| Sarvodaya | Welfare of all |
+| Swadeshi | Indian goods |
+
+### Contributions
+
+**Political**
+- Mass participation in freedom struggle
+- Hindu-Muslim unity (Khilafat)
+- Gave voice to peasants and workers
+
+**Social**
+- Untouchability removal (called Harijans)
+- Women's participation
+- Village upliftment
+
+### Legacy
+- Father of the Nation
+- Inspired global leaders (MLK, Mandela)
+- Philosophy relevant today`
+              }
             ]
           },
           {
@@ -729,6 +1457,145 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Article 370', content: 'Kashmir special.\nAutonomy.\nHistory.', color: getReelColor(7) },
               { id: 'r29', title: 'Statue of Unity', content: 'Tallest Statue.\nPatel tribute.\nGujarat.', color: getReelColor(8) },
               { id: 'r30', title: 'Integration', content: 'Diplomacy + Force.\nPatel\'s genius.\nSuccess.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl7-1',
+                question: 'Explain the role of Sardar Vallabhbhai Patel in the integration of Princely States.',
+                mnemonic: 'PATEL - Persuasion, Action, Tough decisions, Expertise, Liberation',
+                answer: `### Introduction
+Sardar Vallabhbhai Patel (1875-1950), the "Iron Man of India," integrated over 562 princely states into the Indian Union, making it one of the most remarkable achievements in history.
+
+### The Challenge
+
+**Situation at Independence**
+- 562 princely states covered 40% of India
+- States had three choices: Join India, Pakistan, or remain independent
+- British paramountcy lapsed on 15 Aug 1947
+- Danger of Balkanization (breaking into small states)
+
+**Key Assistants**
+- V.P. Menon: Secretary, drafted documents
+- Lord Mountbatten: Convinced many rulers
+
+### Methods Used
+
+**1. Diplomacy**
+- Personal meetings with rulers
+- Appealing to patriotism
+- Explaining benefits of joining India
+
+**2. Instrument of Accession**
+- Legal document for joining India
+- Rulers surrendered defense, external affairs, communications
+- Internal autonomy guaranteed initially
+
+**3. Financial Incentives**
+- Privy purses for rulers
+- Retention of titles and privileges
+- Respect for royal families
+
+**4. Military Pressure (when needed)**
+- Used threat of force
+- Public movements supported
+- Swift military action
+
+### Major Challenges
+
+| State | Problem | Solution |
+|-------|---------|----------|
+| Junagadh | Nawab wanted Pakistan | Plebiscite, people chose India |
+| Hyderabad | Nizam wanted independence | Operation Polo (1948) |
+| Kashmir | Pakistan invasion | Accession after military help |
+
+### Significance
+
+**National Unity**
+- Created unified India
+- Prevented foreign interference
+- Strong central government
+
+**Legacy**
+- "Iron Man" title
+- Statue of Unity built
+- Father of Indian integration`
+              },
+              {
+                id: 'hl7-2',
+                question: 'Describe the liberation of Goa from Portuguese rule.',
+                mnemonic: 'GOA FREE - Goa nationalism, Operation Vijay, Armed action, Freedom 1961, Resistance, Ended colonialism, European last',
+                answer: `### Background
+
+**Portuguese in India**
+- First Europeans to arrive (1498)
+- Last to leave (1961)
+- Held Goa, Daman, Diu, Dadra, Nagar Haveli
+- 450 years of colonial rule
+
+**Why Liberation Was Difficult**
+- Portugal refused negotiations
+- NATO ally, international pressure
+- Non-violence policy limited options
+
+### Freedom Movement in Goa
+
+**Leaders**
+| Name | Contribution |
+|------|--------------|
+| T.B. Cunha | Father of Goa nationalism |
+| Ram Manohar Lohia | Civil disobedience (1946) |
+| Mohan Ranade | Revolutionary activities |
+| Azad Gomantak Dal | Armed resistance |
+
+**Methods Used**
+- Satyagraha (non-violent protest)
+- Underground activities
+- Publicity of Portuguese atrocities
+- International pressure
+
+### Dadra & Nagar Haveli Liberation (1954)
+- First Portuguese territory liberated
+- Azad Gomantak Dal attacked
+- Quick liberation on 2 August 1954
+- Became part of India later
+
+### Operation Vijay (1961)
+
+**Decision to Act**
+- 14 years of patience since independence
+- Diplomatic efforts failed
+- Portugal joined NATO, sought protection
+- Nehruvian patience ran out
+
+**Military Operation**
+- Date: 17-19 December 1961
+- Forces: Army, Navy, Air Force
+- Commander: Major General K.P. Candeth
+- Duration: 36 hours
+
+**Result**
+- Portuguese Governor General surrendered
+- 3,000 Portuguese POWs
+- Minimal casualties
+- Goa, Daman, Diu liberated
+
+### Significance
+
+**National**
+- End of all colonial rule in India
+- National integration complete
+- Victory for patience and firmness
+
+**International**
+- Criticized by Portugal, some Western nations
+- Supported by Asian, African countries
+- Set example for decolonization
+
+### Legacy
+- Goa Liberation Day: 19 December
+- Goa became state in 1987
+- Unique Indo-Portuguese culture preserved`
+              }
             ]
           },
           {
@@ -832,6 +1699,146 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Submarines', content: 'U-boats.\nGerman.\nAtlantic terror.', color: getReelColor(7) },
               { id: 'r29', title: 'Luftwaffe', content: 'German Air Force.\nBlitz London.\nBattle of Britain.', color: getReelColor(8) },
               { id: 'r30', title: 'War Legacy', content: 'UN formed.\nCold War.\nNew World.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl8-1',
+                question: 'Explain the impact of World Wars on India.',
+                mnemonic: 'IMPACTS - Industry grew, Mass movements, Political awakening, Army contribution, Consciousness, Trade, Sacrifice',
+                answer: `### India's Contribution to World Wars
+
+**World War I (1914-1918)**
+- 1.3 million Indian soldiers served
+- Rs. 146 crore donated to Britain
+- Fought in Europe, Africa, Middle East
+- 74,000 Indians died
+
+**World War II (1939-1945)**
+- 2.5 million Indian soldiers
+- Indian territory used as base
+- Fought against Japan in Burma
+- Over 87,000 died
+
+### Impact on India
+
+**Political Impact**
+
+| WWI Impact | WWII Impact |
+|------------|-------------|
+| Home Rule Movement (1916) | Quit India Movement (1942) |
+| Lucknow Pact | Congress resigned ministries |
+| Montagu-Chelmsford Reforms | Cripps Mission failure |
+| Rowlatt Act → Protest | INA trial → Mass support |
+
+**Economic Impact**
+
+*Positive*
+- War industries developed
+- Tata Steel expanded
+- New factories established
+- Technical skills gained
+
+*Negative*
+- Heavy taxation
+- Inflation increased
+- **Bengal Famine (1943)**: 3 million died
+- Agricultural disruption
+- Rising prices
+
+**Social Impact**
+- Western ideas spread
+- Confidence in Indian abilities
+- Women entered workforce
+- Questioning of British superiority
+
+### Role in Independence
+
+**After WWI**
+- India expected self-rule
+- Got Rowlatt Act instead
+- Led to mass protests, Non-Cooperation
+
+**After WWII**
+- Britain economically weak
+- Could not hold colonies
+- INA trial united Indians
+- Independence became inevitable
+
+### Conclusion
+World Wars weakened colonial powers and accelerated India's freedom struggle, proving that Indians could match any nation in capability.`
+              },
+              {
+                id: 'hl8-2',
+                question: 'Describe the role of Subhash Chandra Bose and INA in the freedom struggle.',
+                mnemonic: 'BOSE - Brave leader, Outside help, Singapore HQ, Escape, Azad Hind',
+                answer: `### Introduction
+Subhash Chandra Bose (1897-1945), known as Netaji, believed in armed struggle for independence. He formed the Indian National Army (INA) to fight British rule.
+
+### Early Life & Congress Career
+- Born in Cuttack, Odisha
+- ICS qualified (1920), resigned
+- Joined Congress, became President twice (1938, 1939)
+- Disagreed with Gandhi's methods
+- Founded Forward Bloc (1939)
+
+### Great Escape
+- House arrest in Calcutta (1941)
+- Escaped in disguise
+- Traveled through Afghanistan, USSR
+- Reached Germany (1941)
+- Met Hitler seeking support
+
+### Formation of INA
+
+**Background**
+- Captain Mohan Singh formed INA in Malaya
+- From Indian POWs captured by Japan
+- Bose took over leadership (1943)
+
+**Structure**
+| Unit | Named After |
+|------|-------------|
+| Regiment | Gandhi Brigade |
+| Regiment | Azad Brigade |
+| Regiment | Nehru Brigade |
+| Women's Regiment | Rani Jhansi Regiment |
+
+### Azad Hind Government (1943)
+- Provisional Government of Free India
+- Capital: Port Blair (later Rangoon)
+- Own currency, postal stamps
+- Recognized by Axis powers
+
+### Military Campaign
+
+**"Chalo Delhi" March**
+- Entered India through Burma (1944)
+- Captured Imphal briefly
+- Raised Indian flag on Indian soil
+
+**Setbacks**
+- Japan losing war
+- Supply problems
+- Allied counter-offensive
+
+### Significance
+
+**During War**
+- Inspired Indians worldwide
+- Showed armed resistance possible
+- Undermined British authority in army
+
+**After War**
+- **INA Trials** united India
+- Showed British couldn't trust Indian army
+- Major factor in British decision to quit
+
+### Legacy
+- "Jai Hind" slogan
+- 23 January: Parakram Diwas
+- Debate on his death (1945)
+- Symbol of courage and sacrifice`
+              }
             ]
           },
           {
@@ -935,6 +1942,145 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Neo-colonialism', content: 'Economic control.\nNew chains.\nOngoing.', color: getReelColor(7) },
               { id: 'r29', title: 'African Union', content: 'Replaced OAU.\n2002.\nContinental body.', color: getReelColor(8) },
               { id: 'r30', title: 'Legacy', content: 'Free nations.\nChallenges remain.\nHope.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl9-1',
+                question: 'Explain the process of decolonisation in Africa with special reference to Ghana and South Africa.',
+                mnemonic: 'AFRICA FREE - African nationalism, Freedom fighters, Resistance, Independence, Colonialism ended, Apartheid fell',
+                answer: `### Introduction
+Decolonisation is the process by which colonies gained independence from European powers. Africa's struggle was particularly intense due to exploitation and racism.
+
+### Ghana - First Sub-Saharan African Nation to Gain Independence
+
+**Background**
+- Known as Gold Coast (British colony)
+- Rich in gold, cocoa
+- Educated elite emerged
+
+**Freedom Movement**
+- **Kwame Nkrumah**: Leader of independence movement
+- United Gold Coast Convention (UGCC)
+- Later formed Convention People's Party (CPP)
+- Slogan: "Self-Government Now"
+- Organized strikes and boycotts
+
+**Independence**
+- Date: 6 March 1957
+- First Prime Minister: Kwame Nkrumah
+- Changed name to Ghana
+- Inspired all African nations
+
+### South Africa - Struggle Against Apartheid
+
+**Apartheid System (1948-1994)**
+| Feature | Description |
+|---------|-------------|
+| Definition | Racial segregation policy |
+| Pass Laws | Blacks needed passes to move |
+| Bantustans | Separate homelands for Blacks |
+| Separate Amenities | Separate facilities by race |
+
+**African National Congress (ANC)**
+- Founded: 1912
+- Fought for Black rights
+- Initially non-violent
+- Later armed resistance (Umkhonto we Sizwe)
+
+**Nelson Mandela**
+- Joined ANC (1944)
+- Led Defiance Campaign
+- Arrested (1962)
+- **Rivonia Trial**: Sentenced to life imprisonment
+- 27 years on Robben Island
+- Symbol of anti-apartheid struggle
+
+**End of Apartheid**
+- International sanctions hurt South Africa
+- F.W. de Klerk released Mandela (1990)
+- Negotiations began
+- First democratic elections: 1994
+- Mandela became President
+
+### Significance
+- End of racism in Africa
+- Truth and Reconciliation Commission
+- Model for peaceful transition
+- Rainbow Nation concept`
+              },
+              {
+                id: 'hl9-2',
+                question: 'Describe the Bandung Conference and its significance.',
+                mnemonic: 'BANDUNG - Brotherhood, Asian-African unity, Non-alignment, Decolonisation, Unity, New world, Guidance',
+                answer: `### Introduction
+The Bandung Conference (1955) was a historic gathering of Asian and African nations, marking the first major assertion of Third World solidarity.
+
+### Background
+
+**Context**
+- Cold War dividing world into two blocs
+- Many nations recently independent
+- Colonialism still existing in parts of Africa
+- Need for collective voice
+
+**Organizers**
+- Indonesia, India, Burma, Ceylon, Pakistan (Colombo Powers)
+- Initiative by Indonesian President Sukarno
+
+### The Conference
+
+**Details**
+| Aspect | Information |
+|--------|-------------|
+| Date | 18-24 April 1955 |
+| Place | Bandung, Indonesia |
+| Participants | 29 countries |
+| Theme | Afro-Asian Solidarity |
+
+**Key Leaders Present**
+- Jawaharlal Nehru (India)
+- Zhou Enlai (China)
+- Gamal Abdel Nasser (Egypt)
+- Sukarno (Indonesia)
+- U Nu (Burma)
+
+### Ten Principles of Bandung
+
+1. Respect for fundamental human rights
+2. Respect for sovereignty and territorial integrity
+3. Recognition of equality of all races
+4. Non-intervention in internal affairs
+5. Right of self-defense
+6. Refusal to use collective defense for big powers
+7. Refrain from aggression
+8. Peaceful settlement of disputes
+9. Promote mutual interests and cooperation
+10. Respect for justice and international obligations
+
+### Significance
+
+**Political**
+- First major Afro-Asian gathering
+- Challenged Euro-centric world order
+- Gave voice to colonized peoples
+- Foundation for Non-Aligned Movement (NAM)
+
+**Anti-Colonial**
+- Strong condemnation of colonialism
+- Supported independence movements
+- Moral boost to freedom fighters
+
+**Economic**
+- Called for economic cooperation
+- South-South cooperation concept
+- Development agenda
+
+### Legacy
+- Led to Belgrade Conference (1961) and NAM
+- Spirit of Bandung still invoked
+- Symbol of Third World unity
+- Beginning of Global South solidarity`
+              }
             ]
           },
           {
@@ -1038,6 +2184,154 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Panchsheel', content: 'Five Principles.\nIndia-China.\nPeace.', color: getReelColor(7) },
               { id: 'r29', title: 'Commonwealth', content: 'British legacy.\n54 Nations.\nCooperation.', color: getReelColor(8) },
               { id: 'r30', title: '1991', content: 'USSR ends.\nCold War over.\nNew Era.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl10-1',
+                question: 'Explain the Cold War and its impact on world politics.',
+                mnemonic: 'COLD WAR - Capitalism vs Communism, Organizations (NATO/Warsaw), Local proxy wars, Division of world',
+                answer: `### Introduction
+The Cold War (1945-1991) was an ideological, political, and economic conflict between the USA and USSR without direct military confrontation.
+
+### Causes
+
+**Ideological Differences**
+| USA (Capitalist) | USSR (Communist) |
+|------------------|------------------|
+| Free market economy | State-controlled economy |
+| Multi-party democracy | One-party state |
+| Individual freedom | Collective good |
+| Private property | State ownership |
+
+**Post-WWII Factors**
+- Division of Germany and Europe
+- Soviet expansion in Eastern Europe
+- Atomic bomb monopoly (initially US)
+- Mutual suspicion and distrust
+
+### Features of Cold War
+
+**Military Alliances**
+- NATO (1949): Western alliance led by USA
+- Warsaw Pact (1955): Eastern alliance led by USSR
+- Arms race: Nuclear weapons stockpiling
+
+**Proxy Wars**
+| War | Period | Result |
+|-----|--------|--------|
+| Korean War | 1950-53 | Division of Korea |
+| Vietnam War | 1955-75 | Communist victory |
+| Afghan War | 1979-89 | Soviet withdrawal |
+
+**Space Race**
+- Sputnik (1957): First satellite (USSR)
+- Moon landing (1969): First man on moon (USA)
+
+### Impact on World Politics
+
+**Division of World**
+- Iron Curtain divided Europe
+- Third World caught between blocs
+- Berlin Wall symbol of division
+
+**Non-Aligned Movement**
+- India, Yugoslavia, Egypt led
+- Third option for new nations
+- Promoted peace and neutrality
+
+**End of Cold War**
+- Gorbachev's reforms (Glasnost, Perestroika)
+- Fall of Berlin Wall (1989)
+- Dissolution of USSR (1991)
+- US emerged as sole superpower
+
+### Legacy
+- UN remains important
+- Regional conflicts continue
+- Nuclear proliferation concerns
+- New world order debates`
+              },
+              {
+                id: 'hl10-2',
+                question: 'Describe the Non-Aligned Movement and India\'s role in it.',
+                mnemonic: 'NAM INDIA - Neutral position, Afro-Asian solidarity, Moral leadership, Independence, Nehru founder, Development focus, Anti-colonialism',
+                answer: `### Introduction
+The Non-Aligned Movement (NAM) was formed during Cold War as an alternative to joining either USA-led or USSR-led blocs.
+
+### Formation
+
+**Background**
+- Cold War divided world
+- New nations didn't want to join either bloc
+- Need for independent voice
+
+**Founders**
+| Leader | Country |
+|--------|---------|
+| Jawaharlal Nehru | India |
+| Josip Broz Tito | Yugoslavia |
+| Gamal Abdel Nasser | Egypt |
+| Sukarno | Indonesia |
+| Kwame Nkrumah | Ghana |
+
+**First Summit**: Belgrade, Yugoslavia (1961)
+
+### Principles of NAM
+
+**Five Principles (Panchsheel)**
+1. Mutual respect for sovereignty
+2. Non-aggression
+3. Non-interference in internal affairs
+4. Equality and mutual benefit
+5. Peaceful coexistence
+
+**Core Values**
+- No military alliances with superpowers
+- Anti-colonialism and anti-imperialism
+- Economic development
+- Peaceful settlement of disputes
+
+### India's Role
+
+**Nehru's Vision**
+- Architect of NAM ideology
+- Promoted Panchsheel (1954)
+- Hosted Bandung Conference delegates
+- Voice of developing world
+
+**Key Contributions**
+
+| Period | Action |
+|--------|--------|
+| 1950s | Panchsheel, anti-colonialism |
+| 1960s | Kashmir mediation offers |
+| 1970s | Support for liberation movements |
+| 1980s | Indira Gandhi's leadership |
+| 1990s | Economic focus |
+| 2000s | South-South cooperation |
+
+**NAM Summits in India**
+- New Delhi (1983): Indira Gandhi as Chair
+- New Delhi (2024): Ministerial conference
+
+### Significance
+
+**For Developing World**
+- United voice in UN
+- Focus on development
+- South-South cooperation
+
+**For India**
+- Enhanced global standing
+- Diplomatic flexibility
+- Leadership role in Global South
+
+### Challenges Today
+- Cold War ended
+- Relevance questioned
+- Economic focus needed
+- Climate change cooperation`
+              }
             ]
           },
           {
@@ -1141,6 +2435,162 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Trishul', content: 'Trident.\nShort Range.\nNavy & Army.', color: getReelColor(7) },
               { id: 'r29', title: 'Blue Revolution', content: 'Fish.\nAquaculture.\nProtein.', color: getReelColor(8) },
               { id: 'r30', title: 'Make in India', content: 'Self-reliance.\nManufacturing.\nAtmanirbhar.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl11-1',
+                question: 'Explain India\'s achievements in Space Research.',
+                mnemonic: 'SPACE - Satellites, PSLV, Aryabhata, Chandrayaan, Exploration',
+                answer: `### Introduction
+India's space program, run by ISRO (Indian Space Research Organisation), has achieved remarkable success, making India a global space power.
+
+### History of ISRO
+
+**Foundation**
+- Founded: 1969
+- HQ: Bengaluru
+- Father: Dr. Vikram Sarabhai
+- Vision: Space for national development
+
+**Early Achievements**
+| Year | Achievement |
+|------|-------------|
+| 1975 | Aryabhata - First satellite |
+| 1980 | SLV-3 - First launch vehicle |
+| 1984 | Rakesh Sharma in space |
+| 1994 | PSLV first successful launch |
+
+### Major Achievements
+
+**1. Satellite Programs**
+- INSAT: Communication satellites
+- IRS: Remote sensing satellites
+- GSAT: Advanced communication
+- NavIC: Indian navigation system
+
+**2. Launch Vehicles**
+| Vehicle | Purpose |
+|---------|---------|
+| SLV | First indigenous launch |
+| ASLV | Augmented SLV |
+| PSLV | Polar orbit, workhorse |
+| GSLV | Geostationary orbit |
+| LVM3 | Heavy lift capability |
+
+**3. Landmark Missions**
+
+*Chandrayaan-1 (2008)*
+- First lunar mission
+- Discovered water on Moon
+- 95 countries participated in data
+
+*Mangalyaan/MOM (2013)*
+- Mars Orbiter Mission
+- First Asian country to Mars orbit
+- First attempt success
+- Budget: $74 million only
+
+*Chandrayaan-3 (2023)*
+- First to land on Moon's South Pole
+- Vikram lander, Pragyan rover
+- Historic achievement
+
+### Significance
+
+**National Pride**
+- Technology self-reliance
+- Cost-effective space missions
+- Global recognition
+
+**Practical Benefits**
+- Weather forecasting
+- Disaster management
+- Communication
+- Agriculture monitoring
+- Education
+
+**Commercial Success**
+- Launches satellites for other countries
+- 104 satellites in single mission (2017)
+- Revenue generation`
+              },
+              {
+                id: 'hl11-2',
+                question: 'Describe the Green and White Revolutions and their impact on India.',
+                mnemonic: 'REVOLUTIONS - Rice & Wheat, Enough food, Verghese Kurien, Operation Flood, Livestock, Upliftment, Technology, India self-sufficient, Organized dairy, Nutrition, Success',
+                answer: `### Green Revolution
+
+**Introduction**
+The Green Revolution (1960s) was a transformation in Indian agriculture that made India self-sufficient in food production.
+
+**Background**
+- India faced food shortages, famines
+- Dependent on food imports ("Ship to mouth")
+- Growing population
+
+**Architects**
+- M.S. Swaminathan: Father of Green Revolution in India
+- Norman Borlaug: Father of Green Revolution globally
+
+**Key Features**
+| Feature | Description |
+|---------|-------------|
+| HYV Seeds | High Yielding Varieties of wheat, rice |
+| Irrigation | Canal, tubewell expansion |
+| Fertilizers | Chemical fertilizers promoted |
+| Mechanization | Tractors, harvesters |
+| Credit | Banks provided agricultural loans |
+
+**Impact**
+
+*Positive*
+- Food self-sufficiency achieved
+- Wheat production tripled
+- No more famines
+- Export surplus
+
+*Negative*
+- Regional imbalance (Punjab, Haryana benefited more)
+- Landless laborers didn't benefit
+- Environmental concerns
+- Water table decline
+
+### White Revolution (Operation Flood)
+
+**Introduction**
+The White Revolution transformed India into world's largest milk producer.
+
+**Architect**
+- Dr. Verghese Kurien: "Milkman of India"
+- Organization: AMUL (Anand Milk Union Limited)
+
+**Background**
+- India had low milk production
+- Rural economy weak
+- Middlemen exploited farmers
+
+**Operation Flood (1970-1996)**
+| Phase | Period | Achievement |
+|-------|--------|-------------|
+| Phase I | 1970-80 | Urban markets linked |
+| Phase II | 1981-85 | Dairy cooperatives expanded |
+| Phase III | 1985-96 | Self-sustaining industry |
+
+**Impact**
+
+*Economic*
+- India became #1 milk producer
+- From 20 million tonnes (1970) to 200+ million tonnes (2022)
+- Rural income increased
+
+*Social*
+- Women empowerment (dairy managed by women)
+- Cooperative movement strengthened
+- Employment in villages
+
+### Legacy
+Both revolutions transformed rural India, ensuring food and nutritional security.`
+              }
             ]
           },
           {
@@ -1244,6 +2694,170 @@ export const HIS_SUBJECT: Subject = {
               { id: 'r28', title: 'Aadhaar', content: 'Identity.\n12 Digits.\nUnique.', color: getReelColor(7) },
               { id: 'r29', title: 'Thomas Cup', content: 'Badminton.\n2022.\nFirst Ever.', color: getReelColor(8) },
               { id: 'r30', title: 'RRR Oscar', content: 'Naatu Naatu.\nBest Song.\nGlobal Glory.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'hl12-1',
+                question: 'Explain the importance of RTI and RTE Acts in transforming India.',
+                mnemonic: 'RIGHTS - Right to info, Information power, Governance improved, Homework assigned, Transparency, Schools for all',
+                answer: `### Right to Information Act (RTI) 2005
+
+**Introduction**
+The RTI Act empowers citizens to seek information from public authorities, promoting transparency and accountability.
+
+**Background**
+- Corruption was rampant
+- Citizens had no access to government information
+- Aruna Roy and activists campaigned for years
+
+**Key Provisions**
+
+| Feature | Description |
+|---------|-------------|
+| Scope | Covers all public authorities |
+| Time Limit | 30 days to provide information |
+| Fee | Rs. 10 application fee |
+| Exemptions | National security, personal privacy |
+| Appeal | Can appeal if information denied |
+
+**Information Officers**
+- Public Information Officer (PIO) at each office
+- Appellate Authority for appeals
+- Central/State Information Commissions
+
+**Impact**
+
+*Positive*
+- Reduced corruption
+- Empowered common citizens
+- Exposed scams
+- Improved governance
+
+*Challenges*
+- Delays in response
+- Misuse of act
+- RTI activists face threats
+
+### Right to Education Act (RTE) 2009
+
+**Introduction**
+The RTE Act makes education a fundamental right for children aged 6-14 years.
+
+**Key Provisions**
+
+| Feature | Description |
+|---------|-------------|
+| Age Group | 6-14 years |
+| Type | Free and compulsory |
+| Responsibility | Government and local authorities |
+| Private Schools | 25% seats for poor students |
+| No Detention | Till Class 8 (later amended) |
+
+**Quality Standards**
+- Pupil-Teacher Ratio: 30:1
+- Trained teachers mandatory
+- Infrastructure standards
+- No corporal punishment
+
+**Impact**
+
+*Positive*
+- Enrollment increased significantly
+- Girls' education improved
+- Dropout rates reduced
+- Infrastructure improved
+
+*Challenges*
+- Quality of education varies
+- Learning outcomes still poor
+- Teacher shortage in rural areas
+
+### Significance
+
+Both acts represent India's commitment to:
+1. Democratic values
+2. Inclusive development
+3. Empowering citizens
+4. Building human capital
+
+They have transformed governance and education landscape of India.`
+              },
+              {
+                id: 'hl12-2',
+                question: 'Describe India\'s achievements in Sports.',
+                mnemonic: 'SPORTS GLORY - Success stories, Players legendary, Olympics medals, Records broken, Tennis stars, Stars of cricket',
+                answer: `### Introduction
+Indian sports have evolved from a cricket-dominated field to global excellence in multiple disciplines.
+
+### Cricket - National Passion
+
+**World Cup Victories**
+| Year | Captain | Final Against | Result |
+|------|---------|---------------|--------|
+| 1983 | Kapil Dev | West Indies | Won by 43 runs |
+| 2011 | MS Dhoni | Sri Lanka | Won by 6 wickets |
+| 2007 | MS Dhoni | T20 WC (Pakistan) | Won by 5 runs |
+
+**Legendary Players**
+- Sachin Tendulkar: 100 centuries, God of Cricket
+- Virat Kohli: Modern great, run machine
+- MS Dhoni: Greatest captain, finisher
+
+### Olympics - Growing Success
+
+**Historic Medals**
+| Year | Athlete | Sport | Medal |
+|------|---------|-------|-------|
+| 1952 | K.D. Jadhav | Wrestling | Bronze |
+| 2008 | Abhinav Bindra | Shooting | Gold |
+| 2020 | Neeraj Chopra | Javelin | Gold |
+| 2020 | Mirabai Chanu | Weightlifting | Silver |
+
+**Hockey Legacy**
+- 8 Olympic Golds (1928-1980)
+- Major Dhyan Chand: Wizard of Hockey
+- National Sports Day: August 29
+
+### Badminton - New Era
+
+**Champions**
+| Player | Achievement |
+|--------|-------------|
+| P.V. Sindhu | 2 Olympic medals |
+| Saina Nehwal | Olympic Bronze (2012) |
+| Kidambi Srikanth | World #1 ranking |
+| Thomas Cup 2022 | First ever win |
+
+### Other Sports Excellence
+
+**Tennis**
+- Leander Paes: Olympic Bronze, Grand Slam titles
+- Sania Mirza: World #1 Doubles
+
+**Wrestling**
+- Sushil Kumar: 2 Olympic medals
+- Sakshi Malik: Olympic Bronze (Rio)
+- Bajrang Punia: World medalist
+
+**Boxing**
+- Mary Kom: 6x World Champion
+- Lovlina Borgohain: Olympic Bronze
+
+### Government Initiatives
+
+**Schemes**
+| Initiative | Purpose |
+|------------|---------|
+| Khelo India | Youth sports development |
+| Target Olympic Podium | Medal hopes supported |
+| Fit India | Mass fitness movement |
+
+### Significance
+- National pride and unity
+- Youth inspiration
+- Global recognition
+- Healthy lifestyle promotion`
+              }
             ]
           },
         ]

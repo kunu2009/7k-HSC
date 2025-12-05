@@ -282,6 +282,150 @@ export const POL_SUBJECT: Subject = {
               { id: 'r28', title: 'Technology', content: 'Internet revolution.\nInformation age.\nChanged warfare.', color: getReelColor(7) },
               { id: 'r29', title: 'Migration', content: 'Refugee crisis.\nPeople moving.\nGlobal challenge.', color: getReelColor(8) },
               { id: 'r30', title: 'New World Order', content: 'Post-1991.\nComplex world.\nUncertain future.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'pl1-1',
+                question: 'Explain the major changes in world politics after 1991.',
+                mnemonic: 'CHANGES - Cold War ended, Hegemony of USA, Alliances changed, New world order, Globalization, Emerging powers, Security threats',
+                answer: `### Introduction
+The year 1991 marked a turning point in world politics with the collapse of the Soviet Union, ending the Cold War era and ushering in a new world order.
+
+### Major Changes
+
+**1. End of Bipolarity**
+- Cold War (1945-1991) ended
+- USSR dissolved into 15 republics
+- Warsaw Pact disbanded
+- Communist ideology weakened
+
+**2. Rise of Unipolarity**
+- USA emerged as sole superpower
+- No military/economic rival
+- "New World Order" announced by Bush
+- American dominance in global affairs
+
+**3. Economic Transformations**
+| Change | Impact |
+|--------|--------|
+| Market economy spread | Socialism declined |
+| Globalization accelerated | World interconnected |
+| WTO established (1995) | Trade liberalized |
+| MNCs grew powerful | Cross-border operations |
+
+**4. Regional Organizations**
+- European Union strengthened (Maastricht 1992)
+- ASEAN expanded
+- SAARC continued
+- African Union formed (2002)
+
+**5. New Security Challenges**
+- **Terrorism**: 9/11 attacks (2001)
+- **Cyber warfare**: New threat domain
+- **Climate change**: Global security issue
+- **Nuclear proliferation**: More nuclear states
+
+**6. Shift Towards Multipolarity**
+- China's rise as economic power
+- India's emergence
+- Russia's resurgence under Putin
+- BRICS formation (2009)
+
+### Significance
+
+**For Developing Countries**
+- More trade opportunities
+- Technology access
+- But also vulnerability to global forces
+
+**For International Relations**
+- UN's role changed
+- Humanitarian intervention debates
+- Human rights globalized
+
+### Conclusion
+The post-1991 world is characterized by globalization, new power centers, and complex security challenges unlike the simpler bipolar world of the Cold War.`
+              },
+              {
+                id: 'pl1-2',
+                question: 'Discuss the concepts of Unipolarity and Multipolarity in contemporary world.',
+                mnemonic: 'POLES - Power distribution, One superpower, Leadership, Emerging nations, Several powers',
+                answer: `### Introduction
+The distribution of power in the international system determines whether it is unipolar, bipolar, or multipolar.
+
+### Unipolarity (1991-2008)
+
+**Definition**
+A system where one state dominates military, economic, and diplomatic spheres.
+
+**Features of US Unipolarity**
+| Aspect | US Dominance |
+|--------|--------------|
+| Military | Largest defense budget |
+| Economy | World's largest GDP |
+| Technology | Leader in innovation |
+| Culture | Hollywood, English language |
+| Institutions | NATO, IMF influence |
+
+**Examples of US Actions**
+- Gulf War (1991)
+- Kosovo Intervention (1999)
+- Afghanistan War (2001)
+- Iraq War (2003)
+
+**Criticisms**
+- Unilateralism (acting alone)
+- Disregard for UN at times
+- "World Policeman" critique
+- Imposing values on others
+
+### Multipolarity (2008 onwards)
+
+**Definition**
+A system where several states share power, no single dominant state.
+
+**Emerging Powers**
+| Power | Basis of Influence |
+|-------|-------------------|
+| China | Economic strength, manufacturing |
+| India | Population, IT sector, democracy |
+| Russia | Energy resources, military |
+| EU | Economic bloc, soft power |
+| Brazil | Regional power, resources |
+
+**Characteristics**
+- Balance of power
+- Multiple alliances
+- Regional powers gain importance
+- Complex diplomacy required
+
+**Benefits**
+- Checks on any single power
+- More voices in global affairs
+- Democratic international order
+
+**Challenges**
+- More complex negotiations
+- Risk of regional conflicts
+- Unclear leadership on global issues
+
+### India's Position
+
+**Advantages of Multipolarity for India**
+- Strategic autonomy
+- Multiple partnerships (US, Russia, EU)
+- Leadership role in Global South
+- Economic opportunities
+
+**India's Actions**
+- Non-alignment updated (multi-alignment)
+- BRICS, SCO membership
+- Act East Policy
+- Quad participation
+
+### Conclusion
+The world is transitioning from unipolarity to multipolarity, creating both opportunities and challenges for countries like India.`
+              }
             ]
           },
           {
@@ -385,6 +529,93 @@ export const POL_SUBJECT: Subject = {
               { id: 'r28', title: 'Containerization', content: 'Shipping goods.\nStandard boxes.\nCheaper trade.', color: getReelColor(7) },
               { id: 'r29', title: 'Smart Power', content: 'Soft + Hard.\nClever strategy.\nEffective diplomacy.', color: getReelColor(8) },
               { id: 'r30', title: 'Future?', content: 'More connected?\nOr deglobalisation?\nTime will tell.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'pl3',
+                question: 'Explain the concept of Globalisation and its impact on Indian economy. (8 marks)',
+                mnemonic: 'LPG + MNC - Liberalisation, Privatisation, Globalisation + MNCs',
+                answer: `### Concept of Globalisation
+
+**Definition**: Globalisation is the process of integration of national economies into the global economy through trade, investment, technology, and cultural exchange.
+
+**Key Features**:
+1. **Free movement** of goods, services, capital, and labor
+2. **Interconnected** world economies
+3. **Spread** of technology and information
+4. **Cultural exchange** and homogenization
+
+### Impact on Indian Economy
+
+**Positive Impacts**:
+| Aspect | Impact |
+|--------|--------|
+| FDI Inflow | Increased foreign investment (IT, Telecom) |
+| GDP Growth | Higher economic growth rate (7-8% average) |
+| Employment | New jobs in IT, BPO, KPO sectors |
+| Technology | Access to latest technology and innovation |
+| Consumer Choice | More products and services available |
+| Competition | Improved quality and lower prices |
+
+**Negative Impacts**:
+| Aspect | Impact |
+|--------|--------|
+| Agriculture | Distress due to competition |
+| MSMEs | Small industries struggled |
+| Inequality | Rich-poor gap widened |
+| Cultural | Western influence on local culture |
+| Environment | Pollution and resource exploitation |
+
+### Conclusion
+Globalisation has been a double-edged sword for India - bringing growth but also creating challenges that need to be addressed through inclusive policies.`
+              },
+              {
+                id: 'pl4',
+                question: 'Discuss the role of Non-State Actors in International Relations with examples. (8 marks)',
+                mnemonic: 'MNT - MNCs, NGOs, Terrorists',
+                answer: `### Non-State Actors
+
+**Definition**: Entities that participate in international relations but are not states or governments.
+
+### Types of Non-State Actors
+
+**1. Multinational Corporations (MNCs)**:
+- Companies operating in multiple countries
+- Examples: Apple, Google, Reliance, Tata
+- Influence: Economic policy, employment, technology transfer
+- Impact: Can be larger than some country economies
+
+**2. Non-Governmental Organizations (NGOs)**:
+| Type | Examples | Role |
+|------|----------|------|
+| Humanitarian | Red Cross, Doctors Without Borders | Emergency relief |
+| Human Rights | Amnesty International | Advocacy |
+| Environmental | Greenpeace, WWF | Conservation |
+| Development | Oxfam, CARE | Poverty reduction |
+
+**3. Terrorist Organizations**:
+- Use violence for political aims
+- Examples: Al-Qaeda, ISIS
+- Impact: Force states to cooperate on security
+- Challenge to state sovereignty
+
+**4. Media**:
+- CNN, BBC - Shape global opinion
+- Social media - Instant information spread
+
+**5. Religious Groups**:
+- Vatican, Islamic organizations
+- Soft power and cultural influence
+
+### Significance
+- Challenge traditional state-centric view
+- Shape global agenda
+- Can be positive (development) or negative (terrorism)
+- Growing influence in 21st century
+
+### Conclusion
+Non-state actors have become crucial players in international relations, both complementing and challenging state authority in various domains.`
+              }
             ]
           },
           {
@@ -488,6 +719,108 @@ export const POL_SUBJECT: Subject = {
               { id: 'r28', title: 'Water Crisis', content: 'Save water.\nEvery drop counts.\nFuture war?', color: getReelColor(7) },
               { id: 'r29', title: 'Climate Action', content: 'SDG 13.\nAct now.\nBefore too late.', color: getReelColor(8) },
               { id: 'r30', title: 'Hope', content: 'We can change.\nSustainable future.\nTogether.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'pl5',
+                question: 'Trace the evolution of International Environmental Agreements from Stockholm to Paris. (8 marks)',
+                mnemonic: 'SBRKP - Stockholm, Brundtland, Rio, Kyoto, Paris',
+                answer: `### Evolution of Environmental Agreements
+
+**1. Stockholm Conference (1972)**:
+- First major UN conference on environment
+- Theme: "Only One Earth"
+- Outcome: UNEP (United Nations Environment Programme) established
+- Declaration with 26 principles
+- Began international environmental cooperation
+
+**2. Brundtland Commission (1987)**:
+- Report: "Our Common Future"
+- Introduced concept of **Sustainable Development**
+- Definition: "Development that meets the needs of the present without compromising the ability of future generations to meet their own needs"
+
+**3. Rio Earth Summit (1992)**:
+| Outcome | Description |
+|---------|-------------|
+| Agenda 21 | Action plan for sustainable development |
+| UNFCCC | Framework Convention on Climate Change |
+| CBD | Convention on Biological Diversity |
+| Rio Declaration | 27 principles on environment |
+
+**4. Kyoto Protocol (1997)**:
+- Legally binding emission reduction targets
+- Developed countries to reduce emissions by 5%
+- Concept of Carbon Credits introduced
+- USA did not ratify
+
+**5. Paris Agreement (2015)**:
+- Goal: Limit warming to below 2°C, preferably 1.5°C
+- **NDCs**: Nationally Determined Contributions
+- All countries participate (unlike Kyoto)
+- India's commitments included
+
+### Conclusion
+From Stockholm's awareness to Paris's global commitment, environmental cooperation has evolved significantly, though implementation remains a challenge.`
+              },
+              {
+                id: 'pl6',
+                question: 'Discuss the Three Generations of Human Rights with examples. (8 marks)',
+                mnemonic: 'LEF - Liberty, Equality, Fraternity',
+                answer: `### Three Generations of Human Rights
+
+**Based on French Revolution ideals**: Liberty, Equality, Fraternity
+
+### First Generation Rights (Blue Rights - Liberty)
+
+**Category**: Civil and Political Rights
+
+| Rights | Examples |
+|--------|----------|
+| Civil | Right to life, liberty, privacy |
+| Political | Right to vote, freedom of speech |
+| Legal | Fair trial, equality before law |
+
+- **Origin**: 17th-18th century (Enlightenment)
+- **Focus**: Freedom FROM state interference
+- **Document**: ICCPR (International Covenant on Civil and Political Rights)
+
+### Second Generation Rights (Red Rights - Equality)
+
+**Category**: Economic, Social and Cultural Rights
+
+| Rights | Examples |
+|--------|----------|
+| Economic | Right to work, fair wages |
+| Social | Education, healthcare, housing |
+| Cultural | Participate in cultural life |
+
+- **Origin**: 19th-20th century (Socialist movements)
+- **Focus**: Freedom TO (positive rights - state must provide)
+- **Document**: ICESCR (International Covenant on Economic, Social and Cultural Rights)
+
+### Third Generation Rights (Green Rights - Fraternity)
+
+**Category**: Collective/Solidarity Rights
+
+| Rights | Examples |
+|--------|----------|
+| Development | Right to development |
+| Environment | Clean environment |
+| Peace | Freedom from war |
+| Self-determination | Right of peoples |
+
+- **Origin**: Post-colonial era (1970s onwards)
+- **Focus**: Group rights, global cooperation needed
+- **Emerging**: Still evolving
+
+### In India
+- **Fundamental Rights** (Part III): Mostly 1st and 2nd generation
+- **DPSPs** (Part IV): 2nd generation
+- **Article 51**: 3rd generation (International peace)
+
+### Conclusion
+All three generations are interdependent and indivisible - true human dignity requires all.`
+              }
             ]
           },
           {
@@ -591,6 +924,135 @@ export const POL_SUBJECT: Subject = {
               { id: 'r28', title: 'Unity', content: 'United we stand.\nDivided we fall.\nStrength.', color: getReelColor(7) },
               { id: 'r29', title: 'Diversity', content: 'Languages.\nCultures.\nBeautiful mix.', color: getReelColor(8) },
               { id: 'r30', title: 'Future', content: 'Strong State.\nPeaceful Nation.\nDeveloped India.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'pl7',
+                question: 'Discuss the four essential elements of a State with examples. (8 marks)',
+                mnemonic: 'PTGS - Population, Territory, Government, Sovereignty',
+                answer: `### Four Essential Elements of State
+
+**Definition of State (J.W. Garner)**: A community of persons, permanently occupying a definite territory, independent of external control, and possessing an organized government.
+
+### 1. Population
+
+**Description**: People who live within the state's boundaries.
+
+| Aspect | Details |
+|--------|---------|
+| Requirement | No fixed number required |
+| Examples | India (1.4 billion), Vatican (800) |
+| Diversity | Can be homogeneous or heterogeneous |
+| Citizenship | Legal membership of state |
+
+### 2. Territory
+
+**Description**: Defined geographical area with recognized boundaries.
+
+| Component | Description |
+|-----------|-------------|
+| Land | Territorial land within borders |
+| Water | Rivers, lakes, territorial waters (12 nautical miles) |
+| Airspace | Air above territory |
+| Examples | India (3.3 million sq km), Singapore (721 sq km) |
+
+### 3. Government
+
+**Description**: Political organization that makes and enforces laws.
+
+| Type | Examples |
+|------|----------|
+| Democratic | India, USA, UK |
+| Authoritarian | North Korea, China |
+| Monarchy | Saudi Arabia, Bhutan |
+| Function | Legislature, Executive, Judiciary |
+
+### 4. Sovereignty
+
+**Description**: Supreme power of the state.
+
+| Type | Meaning | Example |
+|------|---------|---------|
+| Internal | Authority over all within territory | Laws apply to all citizens |
+| External | Independence from foreign control | Conduct foreign policy independently |
+
+**Key Features**:
+- Absolute and unlimited
+- Permanent (survives change of government)
+- Indivisible (cannot be shared)
+- Exclusive (only one sovereign)
+
+### Conclusion
+All four elements are essential - absence of any one means it is not a state. For example, Palestine lacks full territorial control and recognized sovereignty, hence its statehood is disputed.`
+              },
+              {
+                id: 'pl8',
+                question: 'Analyze the challenges to National Integration in India and measures to address them. (8 marks)',
+                mnemonic: 'RCCLR - Regionalism, Communalism, Casteism, Linguism, Remedies',
+                answer: `### Challenges to National Integration
+
+**National Integration**: The process of uniting people of different backgrounds into a single national identity while respecting diversity.
+
+### Major Challenges
+
+**1. Communalism**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | Religious hatred and violence |
+| Examples | Riots, hate speech, polarization |
+| Impact | Divides society, breaks trust |
+
+**2. Regionalism**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | Excessive loyalty to one's region |
+| Examples | Demand for separate states, "Sons of Soil" |
+| Impact | Separatist movements, migration issues |
+
+**3. Casteism**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | Discrimination based on caste |
+| Examples | Untouchability, caste violence |
+| Impact | Social divisions, inequality |
+
+**4. Linguistic Issues**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | Language-based disputes |
+| Examples | Hindi imposition protests, language politics |
+| Impact | Regional tensions |
+
+**5. Terrorism and Naxalism**:
+- Internal security threats
+- Red Corridor (Naxal areas)
+- Cross-border terrorism
+
+### Measures to Address
+
+**Constitutional Measures**:
+- Fundamental Rights (Art. 14-18: Equality)
+- Directive Principles (Uniform Civil Code)
+- Fundamental Duties (Art. 51A)
+
+**Legal Measures**:
+- UAPA (Unlawful Activities Prevention Act)
+- SC/ST Prevention of Atrocities Act
+- Religious Institutions (Prevention of Misuse) Act
+
+**Institutional Measures**:
+- National Integration Council
+- National Foundation for Communal Harmony
+- NHRC
+
+**Educational and Social**:
+- Value education
+- Cultural exchange programs
+- Media sensitization
+
+### Conclusion
+India's "Unity in Diversity" requires continuous effort through education, dialogue, development, and strong institutions to maintain national integration.`
+              }
             ]
           },
           {
@@ -694,6 +1156,156 @@ export const POL_SUBJECT: Subject = {
               { id: 'r28', title: 'Good Gov Day', content: 'Dec 25.\nVajpayee.\nCelebration.', color: getReelColor(7) },
               { id: 'r29', title: 'Civil Society', content: 'NGOs.\nActivists.\nPartners.', color: getReelColor(8) },
               { id: 'r30', title: 'Future', content: 'Clean Govt.\nHappy Citizens.\nGreat Nation.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'pl9',
+                question: 'Explain the Eight Characteristics of Good Governance as defined by the World Bank. (8 marks)',
+                mnemonic: 'PART RACE - Participation, Accountability, Rule of law, Transparency, Responsiveness, Consensus, Equity, Effectiveness',
+                answer: `### Eight Characteristics of Good Governance
+
+**World Bank Definition (1992)**: "Good Governance is the manner in which power is exercised in the management of a country's economic and social resources for development."
+
+### The Eight Characteristics
+
+**1. Participation**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | All citizens can have a voice |
+| Methods | Voting, consultations, public hearings |
+| Requirement | Freedom of association and expression |
+
+**2. Rule of Law**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | Fair legal frameworks enforced impartially |
+| Features | Independent judiciary, police |
+| Basis | Constitution and human rights |
+
+**3. Transparency**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | Information freely available |
+| Examples | RTI Act, open budgets |
+| Purpose | Enables informed decisions |
+
+**4. Responsiveness**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | Serving stakeholders within reasonable time |
+| Examples | Citizen's Charter, service guarantees |
+| Purpose | Timely redressal of grievances |
+
+**5. Consensus Oriented**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | Mediating different interests |
+| Goal | Broad agreement on what is best |
+| Method | Dialogue and negotiation |
+
+**6. Equity and Inclusiveness**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | All groups feel they have a stake |
+| Focus | Marginalized sections included |
+| Goal | Social justice |
+
+**7. Effectiveness and Efficiency**:
+| Aspect | Description |
+|--------|-------------|
+| Effectiveness | Producing results that meet needs |
+| Efficiency | Optimal use of resources |
+| Goal | Value for money |
+
+**8. Accountability**:
+| Aspect | Description |
+|--------|-------------|
+| Meaning | Decision-makers answerable to public |
+| Types | Political, administrative, legal |
+| Mechanisms | Lokpal, CAG, Parliament |
+
+### India's Initiatives
+- RTI Act 2005 (Transparency)
+- Lokpal Act 2013 (Accountability)
+- E-Governance (Efficiency)
+- Social Audit (Participation)
+
+### Conclusion
+Good governance is essential for development. India is progressing but challenges remain in implementation.`
+              },
+              {
+                id: 'pl10',
+                question: 'Discuss the Right to Information Act 2005 and its significance for Good Governance. (8 marks)',
+                mnemonic: 'TRACK - Transparency, Responsibility, Accountability, Citizen power, Knowledge',
+                answer: `### Right to Information Act, 2005
+
+**Enacted**: 12th October 2005
+**Objective**: To provide for setting out the practical regime of right to information for citizens to secure access to information under the control of public authorities.
+
+### Key Provisions
+
+**1. Right of Citizens**:
+| Right | Details |
+|-------|---------|
+| Request | Any citizen can request information |
+| Time limit | 30 days (48 hours in case of life/liberty) |
+| Fee | Nominal application fee |
+| Appeals | Two-tier appeal system |
+
+**2. Public Authorities' Duties**:
+- Proactive disclosure (Section 4)
+- Designate PIOs (Public Information Officers)
+- Maintain records properly
+- Respond within time limits
+
+**3. Information Covered**:
+| Included | Excluded (Section 8) |
+|----------|---------------------|
+| Records, documents | National security |
+| Files, contracts | Personal privacy |
+| Opinions, data | Cabinet papers |
+| Email, samples | Trade secrets |
+
+### Institutional Framework
+
+| Authority | Level | Role |
+|-----------|-------|------|
+| CIC | Central | Central Information Commission (Appellate) |
+| SIC | State | State Information Commission (Appellate) |
+| PIO | Department | First point of contact |
+| FAA | Department | First Appellate Authority |
+
+### Significance for Good Governance
+
+**1. Transparency**:
+- Opens government functioning to public scrutiny
+- Reduces secrecy in administration
+
+**2. Accountability**:
+- Officials answerable for decisions
+- Reasons for decisions must be provided
+
+**3. Citizen Empowerment**:
+- Shift from "Need to Know" to "Right to Know"
+- Informed participation in democracy
+
+**4. Anti-Corruption**:
+- Exposes wrongdoing
+- Deterrent effect on corrupt practices
+
+**5. Better Service Delivery**:
+- Pressure to perform
+- Citizen feedback mechanism
+
+### Challenges
+- Low awareness in rural areas
+- Delays in responses
+- Attacks on RTI activists
+- Misuse for vexatious requests
+
+### Conclusion
+RTI is a powerful tool for good governance, transforming citizen-government relationship from subjects to stakeholders. It's called the "Master Key" to democracy.`
+              }
             ]
           },
           {
@@ -797,6 +1409,129 @@ export const POL_SUBJECT: Subject = {
               { id: 'r28', title: 'BRICS', content: 'Emerging economies.\nGlobal South.\nNew order.', color: getReelColor(7) },
               { id: 'r29', title: 'G20 Presidency', content: 'Vasudhaiva Kutumbakam.\nOne Earth.\nOne Family.', color: getReelColor(8) },
               { id: 'r30', title: 'UN Seat', content: 'Security Council.\nPermanent Seat.\nIndia deserves.', color: getReelColor(9) }
+            ],
+            longAnswers: [
+              {
+                id: 'pl11',
+                question: 'Explain the Panchsheel Principles and their relevance in contemporary international relations. (8 marks)',
+                mnemonic: 'MINTI - Mutual respect, Integrity, Non-aggression, Non-interference, Peaceful coexistence',
+                answer: `### Panchsheel (Five Principles of Peaceful Coexistence)
+
+**Origin**: Signed in the Preamble of the Agreement on Trade and Intercourse between Tibet Region of China and India, **29 April 1954**.
+
+**Signatories**: Jawaharlal Nehru (India) and Zhou Enlai (China)
+
+### The Five Principles
+
+| No. | Principle | Meaning |
+|-----|-----------|---------|
+| 1 | Mutual Respect for Territorial Integrity and Sovereignty | Respecting each other's borders and independence |
+| 2 | Mutual Non-Aggression | Not attacking each other |
+| 3 | Mutual Non-Interference in Internal Affairs | Not meddling in domestic matters |
+| 4 | Equality and Mutual Benefit | Equal partnership, win-win relations |
+| 5 | Peaceful Coexistence | Living together in peace despite differences |
+
+### Historical Significance
+
+**Positive Aspects**:
+- Foundation of NAM philosophy
+- Alternative to Cold War bloc politics
+- Influenced Afro-Asian relations
+- Bandung Conference (1955) adopted these principles
+
+**Limitations**:
+- 1962 Indo-China War: China violated these principles
+- More idealistic than practical
+- Did not prevent border disputes
+
+### Contemporary Relevance
+
+**Still Relevant**:
+| Context | Application |
+|---------|-------------|
+| UN Charter | Article 2 echoes these principles |
+| ASEAN | Treaty of Amity and Cooperation based on similar principles |
+| SCO | Shanghai Cooperation Organization adopts similar norms |
+| India-China | Still referenced in bilateral talks |
+
+**Modern Challenges**:
+- Terrorism (non-state actors)
+- Cyber warfare
+- Economic coercion
+- Climate change (shared responsibility)
+
+### India's Position Today
+- Multi-alignment (not non-alignment)
+- Respects sovereignty but acts against terrorism
+- "Neighbourhood First" policy
+- Strategic autonomy
+
+### Conclusion
+While the idealism of Panchsheel was tested by 1962, its core principles remain foundational to international law and diplomacy. India continues to advocate peaceful resolution of disputes while defending its interests.`
+              },
+              {
+                id: 'pl12',
+                question: 'Discuss the evolution of India-USA relations from the Cold War to Strategic Partnership. (8 marks)',
+                mnemonic: 'ECND - Estranged, Cold War tilt, Nuclear deal, Defense partnership',
+                answer: `### Evolution of India-USA Relations
+
+### Phase 1: Cold War Era (1947-1991)
+
+**"Estranged Democracies"**:
+| Factor | Impact |
+|--------|--------|
+| NAM | India's non-alignment seen negatively by US |
+| Pakistan | USA's ally against USSR (SEATO, CENTO) |
+| Soviet Tilt | India-USSR Treaty of Friendship (1971) |
+| Nuclear | India's 1974 test strained relations |
+| Sanctions | Technology denial, restrictions |
+
+**Key Events**:
+- 1971 War: USS Enterprise sent to Bay of Bengal
+- PL-480 Food aid dependency
+- Limited cooperation
+
+### Phase 2: Post-Cold War Transition (1991-2000)
+
+**Improving Relations**:
+- Economic liberalization opened doors
+- Common democratic values emphasized
+- But 1998 nuclear tests led to sanctions
+
+### Phase 3: Strategic Partnership (2000-Present)
+
+**Turning Point**: Visit of PM Vajpayee (2000) and President Clinton
+
+| Milestone | Year | Significance |
+|-----------|------|--------------|
+| NSSP | 2004 | Next Steps in Strategic Partnership |
+| Civil Nuclear Deal | 2005-08 | 123 Agreement, ended India's isolation |
+| DTTI | 2012 | Defense Trade and Technology Initiative |
+| Major Defense Partner | 2016 | Same status as NATO allies |
+| 2+2 Dialogue | 2018 | Foreign + Defense Ministers meeting |
+| QUAD Revival | 2017 | Indo-Pacific cooperation |
+| iCET | 2023 | Initiative on Critical and Emerging Technology |
+
+### Areas of Cooperation Today
+
+| Domain | Examples |
+|--------|----------|
+| Defense | COMCASA, BECA, LEMOA agreements |
+| Trade | $190+ billion bilateral trade |
+| Diaspora | 4.4 million Indian-Americans |
+| Technology | Space, semiconductors, AI |
+| Counter-terrorism | Intelligence sharing |
+| Climate | Clean energy partnership |
+
+### Challenges Remain
+- CAATSA sanctions (S-400 issue)
+- Trade differences
+- Immigration (H-1B visas)
+- Russia relationship
+
+### Conclusion
+From estranged democracies to indispensable partners - the relationship has transformed dramatically. Both countries now share convergent interests in a rules-based Indo-Pacific order.`
+              }
             ]
           }
         ]
