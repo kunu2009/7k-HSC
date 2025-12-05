@@ -835,6 +835,223 @@ Secondary activities involve manufacturing and processing - transforming raw mat
               { id: 'r29', color: '#FF5722', title: 'Footloose Industry', content: 'IT, Electronics = Can go anywhere! Not tied to raw material/power location' },
               { id: 'r30', color: '#673AB7', title: 'Make in India', content: 'Goal: Manufacturing hub | Create jobs | Reduce imports | Boost economy' }
             ]
+          },
+          {
+            id: 'geo-ch7',
+            title: 'Chapter 7: Tertiary & Quaternary Activities',
+            description: 'Services sector, IT, trade, and knowledge economy',
+            summary: `
+# Tertiary & Quaternary Activities
+
+## Key Concepts
+
+### Tertiary Activities (Services)
+Activities that provide services rather than goods:
+- Trade, Transport, Communication
+- Banking, Insurance, Healthcare
+- Education, Tourism, Entertainment
+
+### Quaternary Activities
+Knowledge-based activities:
+- IT and Software
+- Research & Development
+- Financial consultancy
+- Media and Information
+
+### Quinary Activities
+Highest level decision-making:
+- Top executives, Scientists
+- Policy makers, Senior officials
+
+### Service Sector in India
+- Contributes ~55% of GDP
+- Fastest growing sector
+- IT hub: Bengaluru, Hyderabad, Pune
+            `,
+            detailedNotes: `
+# Detailed Notes: Tertiary & Quaternary Activities
+
+## Classification of Economic Activities
+
+### Overview
+| Level | Activity | Examples |
+|-------|----------|----------|
+| **Primary** | Extraction | Agriculture, Mining |
+| **Secondary** | Manufacturing | Industries, Processing |
+| **Tertiary** | Services | Trade, Transport, Banking |
+| **Quaternary** | Knowledge | IT, R&D, Consulting |
+| **Quinary** | Decision-making | CEOs, Scientists, Leaders |
+
+## Tertiary Activities (Services)
+
+### Definition
+Activities that provide services to consumers and businesses, not physical goods.
+
+### Types of Services
+
+#### 1. Trade Services
+- **Retail**: Direct to consumer (shops, malls)
+- **Wholesale**: Bulk to retailers
+- **E-commerce**: Online platforms (Amazon, Flipkart)
+
+#### 2. Transport Services
+- Road, Rail, Air, Water transport
+- Logistics and warehousing
+- Courier and delivery services
+
+#### 3. Communication Services
+- Telecom (mobile, internet)
+- Postal services
+- Media and broadcasting
+
+#### 4. Financial Services
+- Banking and credit
+- Insurance
+- Stock market
+- Payment services (UPI, cards)
+
+#### 5. Social Services
+- Healthcare and hospitals
+- Education and training
+- Government administration
+
+#### 6. Personal Services
+- Hotels and restaurants
+- Tourism and travel
+- Entertainment and recreation
+
+### Characteristics of Services
+- **Intangible**: Cannot be touched
+- **Perishable**: Cannot be stored
+- **Inseparable**: Production and consumption together
+- **Variable**: Quality varies
+
+## Quaternary Activities
+
+### Definition
+Knowledge-intensive activities involving collection, processing, and manipulation of information.
+
+### Examples
+1. **Information Technology (IT)**
+   - Software development
+   - IT services and BPO
+   - Data analytics
+
+2. **Research & Development (R&D)**
+   - Scientific research
+   - Product development
+   - Innovation labs
+
+3. **Financial Consultancy**
+   - Investment advice
+   - Business consulting
+   - Legal services
+
+4. **Media & Information**
+   - News and journalism
+   - Publishing
+   - Content creation
+
+### IT Industry in India
+- **Major Hubs**: Bengaluru, Hyderabad, Pune, Chennai, NCR
+- **Companies**: TCS, Infosys, Wipro, HCL
+- **Contribution**: ~8% of GDP, major forex earner
+- **Employment**: 5+ million direct jobs
+
+## Quinary Activities
+
+### Definition
+Highest level of decision-making and policy formulation.
+
+### Characteristics
+- Top executives (CEOs, Directors)
+- Senior government officials
+- Scientists and researchers
+- University professors
+- Healthcare specialists
+
+## Service Sector Growth in India
+
+### Statistics
+- Service sector: ~55% of GDP
+- Employment: ~30% of workforce
+- Fastest growing sector
+
+### Reasons for Growth
+1. Rising income levels
+2. Urbanization
+3. Globalization
+4. IT revolution
+5. Banking expansion
+6. Tourism growth
+
+### Challenges
+- Unorganized sector dominance
+- Low wages in many services
+- Regional imbalance
+- Skill gaps
+            `,
+            flashcards: [
+              { id: 'f56', front: 'What are tertiary activities?', back: 'Activities that provide services rather than goods: trade, transport, banking, healthcare, education, tourism.' },
+              { id: 'f57', front: 'What are quaternary activities?', back: 'Knowledge-based activities: IT, R&D, financial consulting, media, information processing.' },
+              { id: 'f58', front: 'What are quinary activities?', back: 'Highest level decision-making: top executives, senior officials, scientists, policy makers.' },
+              { id: 'f59', front: 'Service sector contribution to India GDP?', back: 'Approximately 55% of GDP, making it the largest sector.' },
+              { id: 'f60', front: 'Major IT hubs in India?', back: 'Bengaluru, Hyderabad, Pune, Chennai, NCR (Noida-Gurgaon).' },
+              { id: 'f61', front: 'Characteristics of services?', back: 'Intangible (cannot touch), Perishable (cannot store), Inseparable (production=consumption), Variable (quality varies).' },
+              { id: 'f62', front: 'What is BPO?', back: 'Business Process Outsourcing - contracting business operations to third-party providers. India is major BPO hub.' },
+              { id: 'f63', front: 'Difference between retail and wholesale trade?', back: 'Retail: Sells directly to consumers in small quantities. Wholesale: Sells in bulk to retailers.' },
+              { id: 'f64', front: 'What is e-commerce?', back: 'Buying and selling goods/services over internet. Examples: Amazon, Flipkart, Myntra.' },
+              { id: 'f65', front: 'Top Indian IT companies?', back: 'TCS, Infosys, Wipro, HCL Technologies, Tech Mahindra.' },
+              { id: 'f66', front: 'Why Bengaluru is IT capital?', back: 'Pleasant climate, skilled workforce, educational institutions, early government support, infrastructure.' },
+              { id: 'f67', front: 'What is outsourcing?', back: 'Contracting work to external agencies. India receives IT/BPO outsourcing from USA, Europe.' },
+              { id: 'f68', front: 'What is KPO?', back: 'Knowledge Process Outsourcing - higher-level outsourcing like research, analytics, legal services.' },
+              { id: 'f69', front: 'Service sector employment in India?', back: 'About 30% of total workforce, but contributes 55% of GDP (high productivity).' },
+              { id: 'f70', front: 'What is medical tourism?', back: 'Traveling to another country for medical treatment. India attracts patients for affordable healthcare.' },
+              { id: 'f71', front: 'Difference between organized and unorganized services?', back: 'Organized: Registered, regulated, benefits. Unorganized: Informal, no registration, no benefits.' },
+              { id: 'f72', front: 'What is digital economy?', back: 'Economic activity based on digital technologies: e-commerce, digital payments, online services.' },
+              { id: 'f73', front: 'UPI full form and significance?', back: 'Unified Payments Interface - instant mobile payment system. India leads in digital payments.' },
+              { id: 'f74', front: 'What are logistics services?', back: 'Management of goods movement: warehousing, transportation, inventory, supply chain.' },
+              { id: 'f75', front: 'Tourism contribution to economy?', back: 'Employment, foreign exchange, infrastructure development, cultural exchange, regional development.' },
+              { id: 'f76', front: 'What is gig economy?', back: 'Economy based on short-term contracts and freelance work rather than permanent jobs. Uber, Swiggy drivers.' },
+              { id: 'f77', front: 'What is fintech?', back: 'Financial Technology - technology for financial services: mobile banking, digital wallets, online lending.' },
+              { id: 'f78', front: 'Call center industry in India?', back: 'Major employer, serves global companies, English-speaking workforce, time zone advantage.' },
+              { id: 'f79', front: 'What is telemedicine?', back: 'Healthcare delivery through telecommunications: online consultations, remote diagnosis.' },
+              { id: 'f80', front: 'Why service sector growing faster?', back: 'Rising incomes, urbanization, globalization, IT revolution, changing lifestyles, outsourcing.' },
+              { id: 'f81', front: 'What is startup ecosystem?', back: 'Network of startups, investors, incubators, accelerators. India has 3rd largest startup ecosystem.' },
+              { id: 'f82', front: 'Role of communication in development?', back: 'Connects people, enables trade, spreads information, supports governance, boosts economy.' },
+              { id: 'f83', front: 'What is banking sector reform?', back: 'Liberalization of banking: private banks allowed, technology adoption, financial inclusion (Jan Dhan).' },
+              { id: 'f84', front: 'Insurance sector in India?', back: 'Life and general insurance, LIC is largest, private players post-2000, IRDAI regulates.' },
+              { id: 'f85', front: 'What is skill development importance?', back: 'Training workforce for service jobs, bridging skill gaps, improving employability, supporting growth.' }
+            ],
+            mcqs: [
+              { id: 'mcq31', question: 'Service sector contributes what % of India GDP?', options: ['25%', '40%', '55%', '70%'], correctIndex: 2, explanation: 'Services contribute about 55% of Indian GDP.' },
+              { id: 'mcq32', question: 'IT industry is a:', options: ['Primary activity', 'Secondary activity', 'Tertiary activity', 'Quaternary activity'], correctIndex: 3, explanation: 'IT is knowledge-based quaternary activity.' },
+              { id: 'mcq33', question: 'Which is NOT a tertiary activity?', options: ['Banking', 'Teaching', 'Manufacturing', 'Tourism'], correctIndex: 2, explanation: 'Manufacturing is secondary activity.' },
+              { id: 'mcq34', question: 'BPO stands for:', options: ['Business Product Organization', 'Business Process Outsourcing', 'Basic Process Output', 'Bulk Purchase Order'], correctIndex: 1, explanation: 'Business Process Outsourcing.' },
+              { id: 'mcq35', question: 'IT capital of India is:', options: ['Mumbai', 'Delhi', 'Bengaluru', 'Kolkata'], correctIndex: 2, explanation: 'Bengaluru is the IT hub of India.' },
+              { id: 'mcq36', question: 'Quinary activities include:', options: ['Farming', 'Manufacturing', 'Banking', 'Top-level decision making'], correctIndex: 3, explanation: 'CEOs, policy makers, scientists.' },
+              { id: 'mcq37', question: 'Which company is NOT Indian IT company?', options: ['TCS', 'Infosys', 'Microsoft', 'Wipro'], correctIndex: 2, explanation: 'Microsoft is American company.' },
+              { id: 'mcq38', question: 'E-commerce example:', options: ['Local shop', 'Amazon', 'Street vendor', 'Weekly market'], correctIndex: 1, explanation: 'Amazon is online shopping platform.' },
+              { id: 'mcq39', question: 'Medical tourism means:', options: ['Doctors traveling', 'Patients traveling for treatment', 'Medicine export', 'Hospital construction'], correctIndex: 1, explanation: 'Traveling abroad for medical treatment.' },
+              { id: 'mcq40', question: 'UPI is related to:', options: ['Education', 'Digital payments', 'Transport', 'Healthcare'], correctIndex: 1, explanation: 'Unified Payments Interface for mobile payments.' },
+              { id: 'mcq41', question: 'Which is a characteristic of services?', options: ['Tangible', 'Storable', 'Intangible', 'Uniform'], correctIndex: 2, explanation: 'Services cannot be touched.' },
+              { id: 'mcq42', question: 'KPO stands for:', options: ['Knowledge Process Outsourcing', 'Key Performance Output', 'Karnataka Process Office', 'Knowledge Product Organization'], correctIndex: 0, explanation: 'Higher-level outsourcing like research.' },
+              { id: 'mcq43', question: 'Gig economy workers include:', options: ['Government employees', 'Factory workers', 'Uber drivers', 'Bank managers'], correctIndex: 2, explanation: 'Short-term contract/freelance workers.' },
+              { id: 'mcq44', question: 'Fintech combines:', options: ['Finance + Technology', 'Fine + Tech', 'Final + Technology', 'Financial + Techniques'], correctIndex: 0, explanation: 'Financial Technology.' },
+              { id: 'mcq45', question: 'India ranks in startup ecosystem:', options: ['1st', '2nd', '3rd', '10th'], correctIndex: 2, explanation: 'Third largest startup ecosystem globally.' }
+            ],
+            reels: [
+              { id: 'r31', color: '#2196F3', title: 'Economic Activities', content: 'Primary→Secondary→Tertiary→Quaternary→Quinary | Extraction→Manufacturing→Services→Knowledge→Leadership' },
+              { id: 'r32', color: '#4CAF50', title: 'Tertiary = Services', content: 'Trade + Transport + Banking + Healthcare + Education + Tourism = Service economy!' },
+              { id: 'r33', color: '#9C27B0', title: 'Quaternary = Knowledge', content: 'IT + R&D + Consulting + Media = Brain work! Knowledge is power!' },
+              { id: 'r34', color: '#FF9800', title: 'India IT Hubs', content: 'Bengaluru #1 | Hyderabad | Pune | Chennai | NCR = Silicon Valley of India!' },
+              { id: 'r35', color: '#E91E63', title: 'Service Sector Stats', content: '55% GDP + 30% jobs = Largest sector! Growing fastest!' },
+              { id: 'r36', color: '#00BCD4', title: 'BPO/KPO', content: 'BPO: Business Process | KPO: Knowledge Process | India = Outsourcing king!' },
+              { id: 'r37', color: '#795548', title: 'Digital India', content: 'UPI + E-commerce + Fintech + Digital payments = Cashless revolution!' },
+              { id: 'r38', color: '#607D8B', title: 'Top IT Companies', content: 'TCS + Infosys + Wipro + HCL + Tech Mahindra = Indian IT giants!' },
+              { id: 'r39', color: '#F44336', title: 'Gig Economy', content: 'Uber + Swiggy + Freelancers = No permanent job, work by task!' },
+              { id: 'r40', color: '#3F51B5', title: 'Service Characteristics', content: 'Intangible + Perishable + Inseparable + Variable = IPIV!' }
+            ]
           }
         ]
 };
