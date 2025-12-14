@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks, FileEdit, Map, HelpCircle, Cloud, Share2, MessageSquare, Eye, Calendar } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks, FileEdit, Map, HelpCircle, Cloud, Share2, MessageSquare, Eye, Calendar, CheckCircle2, Circle } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import { getSubjectBoardExamDate } from './examTimetable';
@@ -51,7 +51,9 @@ import SmartWeakness from './components/SmartWeakness';
 import WeeklyReport from './components/WeeklyReport';
 import QuickStatsWidget from './components/QuickStatsWidget';
 import SubjectCountdown from './components/SubjectCountdown';
+import ChapterProgressWidget from './components/ChapterProgressWidget';
 import { useProgress } from './hooks/useProgress';
+import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
 import { db, UserProfile } from './services/localDb';
 
@@ -147,6 +149,23 @@ const App: React.FC = () => {
     getSubjectCompletion,
     getStudyStats 
   } = useProgress();
+
+  // Chapter Completion Tracking
+  const filteredSubjectsForHook = React.useMemo(() => {
+    if (!selectedStream || !MOCK_DATA[selectedStream]) return [];
+    const allSubjects = MOCK_DATA[selectedStream].subjects;
+    if (!userProfile || !userProfile.selectedSubjects || userProfile.selectedSubjects.length === 0) {
+      return allSubjects;
+    }
+    return allSubjects.filter(sub => userProfile.selectedSubjects.includes(sub.id));
+  }, [selectedStream, userProfile]);
+
+  const {
+    isChapterCompleted,
+    toggleChapter,
+    getSubjectProgress: getChapterSubjectProgress,
+    getOverallProgress,
+  } = useChapterCompletion(selectedStream, filteredSubjectsForHook);
 
   // Check onboarding status on mount
   useEffect(() => {
@@ -524,6 +543,12 @@ const App: React.FC = () => {
             onOpenWeeklyReport={() => setShowWeeklyReport(true)}
           />
 
+          {/* Chapter Progress Widget - Syllabus Completion Tracker */}
+          <ChapterProgressWidget 
+            overallProgress={getOverallProgress()}
+            subjectProgressList={filteredSubjects.map(sub => getChapterSubjectProgress(sub))}
+          />
+
           {/* Previous Marks Input Section - Now with stream-specific subjects */}
           {selectedStream && <PreviousMarksInput stream={selectedStream} />}
 
@@ -557,12 +582,44 @@ const App: React.FC = () => {
                   onClick={() => selectSubject(sub)}
                   className="bg-white dark:bg-slate-900 p-5 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 active:scale-95 transition-all flex flex-col items-start gap-4 h-full hover:border-indigo-100 dark:hover:border-indigo-900"
                 >
-                  <div className={`p-4 rounded-2xl ${sub.color} text-white shadow-md`}>
+                  <div className={`p-4 rounded-2xl ${sub.color} text-white shadow-md relative`}>
                     <Icon size={28} />
+                    {/* Completion badge */}
+                    {(() => {
+                      const prog = getChapterSubjectProgress(sub);
+                      if (prog.percentComplete === 100) {
+                        return (
+                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
+                            <CheckCircle2 size={12} className="text-white" />
+                          </div>
+                        );
+                      }
+                      return null;
+                    })()}
                   </div>
-                  <div className="text-left">
+                  <div className="text-left w-full">
                     <span className="font-bold text-slate-800 dark:text-slate-200 block text-lg leading-tight mb-1 truncate w-full">{sub.name}</span>
-                    <span className="text-xs text-slate-400 font-medium">{sub.chapters.length} Chapters</span>
+                    {(() => {
+                      const prog = getChapterSubjectProgress(sub);
+                      return (
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs text-slate-400 font-medium">
+                            {prog.completedChapters}/{sub.chapters.length} done
+                          </span>
+                          {prog.percentComplete > 0 && prog.percentComplete < 100 && (
+                            <div className="flex-1 h-1 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden max-w-[60px]">
+                              <div 
+                                className={`h-full rounded-full ${
+                                  prog.percentComplete >= 80 ? 'bg-green-500' : 
+                                  prog.percentComplete >= 50 ? 'bg-yellow-500' : 'bg-orange-500'
+                                }`}
+                                style={{ width: `${prog.percentComplete}%` }}
+                              />
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })()}
                   </div>
                 </button>
               );
@@ -1035,8 +1092,56 @@ const App: React.FC = () => {
               </button>
            </div>
 
+           {/* Subject Progress Card */}
+           {selectedSubject.chapters.length > 0 && (() => {
+             const subjectProg = getChapterSubjectProgress(selectedSubject);
+             const perDayPrelims = subjectProg.chaptersPerDayPrelims;
+             const perDayBoards = subjectProg.chaptersPerDayBoards;
+             return (
+               <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 p-4 mb-6">
+                 <div className="flex items-center justify-between mb-3">
+                   <div className="flex items-center gap-2">
+                     <Target size={18} className="text-indigo-500" />
+                     <span className="font-bold text-slate-800 dark:text-white text-sm">Chapter Progress</span>
+                   </div>
+                   <span className="text-sm font-bold text-indigo-600 dark:text-indigo-400">
+                     {subjectProg.completedChapters}/{subjectProg.totalChapters} done
+                   </span>
+                 </div>
+                 <div className="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden mb-3">
+                   <div 
+                     className={`h-full rounded-full transition-all ${
+                       subjectProg.percentComplete >= 80 ? 'bg-green-500' : 
+                       subjectProg.percentComplete >= 50 ? 'bg-yellow-500' : 
+                       subjectProg.percentComplete >= 25 ? 'bg-orange-500' : 'bg-red-500'
+                     }`}
+                     style={{ width: `${subjectProg.percentComplete}%` }}
+                   />
+                 </div>
+                 {subjectProg.remainingChapters > 0 && (
+                   <div className="flex gap-4 text-xs">
+                     <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+                       <Flame size={12} className="text-orange-500" />
+                       <span><strong>{perDayPrelims.toFixed(1)}</strong>/day for Prelims</span>
+                     </div>
+                     <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+                       <Calendar size={12} className="text-blue-500" />
+                       <span><strong>{perDayBoards.toFixed(1)}</strong>/day for Boards</span>
+                     </div>
+                   </div>
+                 )}
+                 {subjectProg.remainingChapters === 0 && (
+                   <p className="text-xs text-green-600 dark:text-green-400 font-medium flex items-center gap-1">
+                     <CheckCircle2 size={12} /> All chapters complete! Focus on revision.
+                   </p>
+                 )}
+               </div>
+             );
+           })()}
+
            <h3 className="text-slate-800 dark:text-slate-200 font-bold text-lg mb-4 flex items-center gap-2">
              <Layers size={20} className="text-slate-400" /> Chapters
+             <span className="text-xs font-normal text-slate-500 dark:text-slate-400 ml-auto">Tap checkbox to mark done</span>
            </h3>
            
            <div className="space-y-4">
@@ -1046,27 +1151,63 @@ const App: React.FC = () => {
                 <p>Content coming soon!</p>
               </div>
             ) : (
-              selectedSubject.chapters.map((chapter, index) => (
-                <button 
+              selectedSubject.chapters.map((chapter, index) => {
+                const isDone = isChapterCompleted(selectedSubject.id, chapter.id);
+                return (
+                <div 
                   key={chapter.id}
-                  onClick={() => selectChapter(chapter)}
-                  className="w-full bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-900 active:scale-[0.98] transition-all flex items-start gap-4 group"
+                  className={`w-full bg-white dark:bg-slate-900 p-5 rounded-2xl shadow-sm border transition-all flex items-start gap-4 group ${
+                    isDone 
+                      ? 'border-green-200 dark:border-green-900 bg-green-50/50 dark:bg-green-900/10' 
+                      : 'border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-900'
+                  }`}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 font-black text-lg flex items-center justify-center shrink-0 group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/30 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-                    {index + 1}
-                  </div>
-                  <div className="flex-1 text-left">
-                    <h3 className="font-bold text-slate-800 dark:text-slate-200 leading-tight mb-2 group-hover:text-indigo-700 dark:group-hover:text-indigo-300 transition-colors">{chapter.title}</h3>
-                    <div className="flex gap-2">
-                        {chapter.reels.length > 0 && <span className="px-2 py-1 rounded bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 text-[10px] font-bold uppercase flex items-center gap-1"><Video size={10} /> Reels</span>}
-                        {chapter.flashcards.length > 0 && <span className="px-2 py-1 rounded bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase flex items-center gap-1"><Layers size={10} /> Cards</span>}
+                  {/* Checkbox */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleChapter(selectedSubject.id, chapter.id);
+                    }}
+                    className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 transition-all ${
+                      isDone 
+                        ? 'bg-green-500 text-white' 
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-400 dark:text-slate-500 hover:bg-green-100 dark:hover:bg-green-900/30 hover:text-green-600 dark:hover:text-green-400'
+                    }`}
+                    title={isDone ? 'Mark as incomplete' : 'Mark as complete'}
+                  >
+                    {isDone ? <CheckCircle2 size={22} /> : <Circle size={22} />}
+                  </button>
+                  
+                  {/* Chapter Content - Clickable */}
+                  <button 
+                    onClick={() => selectChapter(chapter)}
+                    className="flex-1 flex items-start gap-4 text-left active:scale-[0.98] transition-transform"
+                  >
+                    <div className={`w-10 h-10 rounded-xl font-black text-lg flex items-center justify-center shrink-0 transition-colors ${
+                      isDone 
+                        ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' 
+                        : 'bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 group-hover:bg-indigo-50 dark:group-hover:bg-indigo-900/30 group-hover:text-indigo-600 dark:group-hover:text-indigo-400'
+                    }`}>
+                      {index + 1}
                     </div>
-                  </div>
-                  <div className="h-full flex items-center text-slate-300 dark:text-slate-600 group-hover:text-indigo-400">
-                    <ChevronRight size={20} />
-                  </div>
-                </button>
-              ))
+                    <div className="flex-1">
+                      <h3 className={`font-bold leading-tight mb-2 transition-colors ${
+                        isDone 
+                          ? 'text-green-700 dark:text-green-400' 
+                          : 'text-slate-800 dark:text-slate-200 group-hover:text-indigo-700 dark:group-hover:text-indigo-300'
+                      }`}>{chapter.title}</h3>
+                      <div className="flex gap-2">
+                          {chapter.reels.length > 0 && <span className="px-2 py-1 rounded bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-400 text-[10px] font-bold uppercase flex items-center gap-1"><Video size={10} /> Reels</span>}
+                          {chapter.flashcards.length > 0 && <span className="px-2 py-1 rounded bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase flex items-center gap-1"><Layers size={10} /> Cards</span>}
+                          {isDone && <span className="px-2 py-1 rounded bg-green-50 dark:bg-green-900/20 text-green-600 dark:text-green-400 text-[10px] font-bold uppercase flex items-center gap-1"><CheckCircle2 size={10} /> Done</span>}
+                      </div>
+                    </div>
+                    <div className="h-full flex items-center text-slate-300 dark:text-slate-600 group-hover:text-indigo-400">
+                      <ChevronRight size={20} />
+                    </div>
+                  </button>
+                </div>
+              );})
             )}
            </div>
         </div>
