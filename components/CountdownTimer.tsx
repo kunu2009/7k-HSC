@@ -1,10 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Calendar, Clock, Target, Flame, ChevronDown, ChevronUp } from 'lucide-react';
+import { PRELIMS_START_2026, getStreamBoardStartDate } from '../examTimetable';
+import { Stream } from '../types';
 
-// Exam dates configuration
-const EXAM_DATES = {
-  prelims: new Date('2026-01-15T00:00:00'),
-  hscBoard: new Date('2026-02-21T00:00:00'),
+// Fall-back board start date (first paper) if stream is unknown
+const DEFAULT_BOARD_START = new Date('2026-02-21T11:00:00');
+
+interface CountdownTimerProps {
+  /** Pass stream to derive the correct board-start date; otherwise uses default */
+  stream?: Stream | null;
+}
+
+// Helper to resolve board start date
+const resolveBoardDate = (stream?: Stream | null): Date => {
+  const d = getStreamBoardStartDate(stream ?? null);
+  return d ?? DEFAULT_BOARD_START;
 };
 
 interface TimeLeft {
@@ -28,7 +38,10 @@ const MOTIVATIONAL_QUOTES = [
   "Hard work beats talent when talent doesn't work hard! 🏆",
 ];
 
-const CountdownTimer: React.FC = () => {
+const CountdownTimer: React.FC<CountdownTimerProps> = ({ stream }) => {
+  const boardDate = resolveBoardDate(stream);
+  const prelimsDate = PRELIMS_START_2026;
+
   const [timeToBoard, setTimeToBoard] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0, total: 0 });
   const [timeToPrelims, setTimeToPrelims] = useState<TimeLeft>({ days: 0, hours: 0, minutes: 0, seconds: 0, total: 0 });
   const [showPrelims, setShowPrelims] = useState(false);
@@ -51,28 +64,33 @@ const CountdownTimer: React.FC = () => {
     };
   };
 
+  // Get daily quote based on day of year (changes once per day, same quote all day)
+  const getDailyQuote = () => {
+    const now = new Date();
+    const startOfYear = new Date(now.getFullYear(), 0, 0);
+    const diff = now.getTime() - startOfYear.getTime();
+    const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+    return MOTIVATIONAL_QUOTES[dayOfYear % MOTIVATIONAL_QUOTES.length];
+  };
+
   useEffect(() => {
     // Update countdown every second
     const timer = setInterval(() => {
-      setTimeToBoard(calculateTimeLeft(EXAM_DATES.hscBoard));
-      setTimeToPrelims(calculateTimeLeft(EXAM_DATES.prelims));
+      setTimeToBoard(calculateTimeLeft(boardDate));
+      setTimeToPrelims(calculateTimeLeft(prelimsDate));
     }, 1000);
 
-    // Change quote every 30 seconds
-    const quoteTimer = setInterval(() => {
-      setQuote(MOTIVATIONAL_QUOTES[Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length)]);
-    }, 30000);
-
     // Initial calculation
-    setTimeToBoard(calculateTimeLeft(EXAM_DATES.hscBoard));
-    setTimeToPrelims(calculateTimeLeft(EXAM_DATES.prelims));
-    setQuote(MOTIVATIONAL_QUOTES[Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length)]);
+    setTimeToBoard(calculateTimeLeft(boardDate));
+    setTimeToPrelims(calculateTimeLeft(prelimsDate));
+    
+    // Set daily quote (changes once per day based on day of year)
+    setQuote(getDailyQuote());
 
     return () => {
       clearInterval(timer);
-      clearInterval(quoteTimer);
     };
-  }, []);
+  }, [boardDate, prelimsDate]);
 
   const getUrgencyColor = (days: number) => {
     if (days <= 7) return 'from-red-500 to-rose-600';
@@ -115,7 +133,7 @@ const CountdownTimer: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-bold text-sm sm:text-base">HSC Board 2026</h3>
-                <p className="text-[10px] sm:text-xs opacity-80">Feb 21, 2026 • First Paper</p>
+                <p className="text-[10px] sm:text-xs opacity-80">{boardDate.toLocaleDateString('en-IN', { month: 'short', day: 'numeric', year: 'numeric' })} • First Paper</p>
               </div>
             </div>
             <span className="text-xs sm:text-sm font-bold bg-white/20 px-3 py-1 rounded-full">
@@ -163,7 +181,7 @@ const CountdownTimer: React.FC = () => {
                 <Target size={16} />
                 <span className="font-bold text-sm">Prelims Exam</span>
               </div>
-              <span className="text-xs opacity-80">Jan 15, 2026</span>
+              <span className="text-xs opacity-80">Jan 1, 2026</span>
             </div>
 
             <div className="flex justify-center gap-3">
@@ -186,25 +204,33 @@ const CountdownTimer: React.FC = () => {
         </div>
       )}
 
-      {/* Quick Stats Row */}
-      <div className="grid grid-cols-3 gap-3 mt-4">
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-3 text-center shadow-sm border border-slate-100 dark:border-slate-700">
-          <Flame size={18} className="mx-auto text-orange-500 mb-1" />
-          <span className="text-lg font-black text-slate-800 dark:text-white">{timeToBoard.days}</span>
-          <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Days Left</span>
-        </div>
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-3 text-center shadow-sm border border-slate-100 dark:border-slate-700">
-          <Target size={18} className="mx-auto text-indigo-500 mb-1" />
-          <span className="text-lg font-black text-slate-800 dark:text-white">{Math.ceil(timeToBoard.days / 7)}</span>
-          <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Weeks Left</span>
-        </div>
-        <div className="bg-white dark:bg-slate-800 rounded-xl p-3 text-center shadow-sm border border-slate-100 dark:border-slate-700">
-          <Clock size={18} className="mx-auto text-emerald-500 mb-1" />
-          <span className="text-lg font-black text-slate-800 dark:text-white">{timeToBoard.days * 8}</span>
-          <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Study Hours*</span>
-        </div>
-      </div>
-      <p className="text-[10px] text-slate-400 dark:text-slate-500 text-center mt-2">*Assuming 8 hours of study per day</p>
+      {/* Quick Stats Row - shows prelims stats when prelims is expanded, otherwise board stats */}
+      {(() => {
+        const activeDays = showPrelims ? timeToPrelims.days : timeToBoard.days;
+        const label = showPrelims ? 'to Prelims' : 'to Boards';
+        return (
+          <>
+            <div className="grid grid-cols-3 gap-3 mt-4">
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-3 text-center shadow-sm border border-slate-100 dark:border-slate-700">
+                <Flame size={18} className="mx-auto text-orange-500 mb-1" />
+                <span className="text-lg font-black text-slate-800 dark:text-white">{activeDays}</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Days Left</span>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-3 text-center shadow-sm border border-slate-100 dark:border-slate-700">
+                <Target size={18} className="mx-auto text-indigo-500 mb-1" />
+                <span className="text-lg font-black text-slate-800 dark:text-white">{Math.ceil(activeDays / 7)}</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Weeks Left</span>
+              </div>
+              <div className="bg-white dark:bg-slate-800 rounded-xl p-3 text-center shadow-sm border border-slate-100 dark:border-slate-700">
+                <Clock size={18} className="mx-auto text-emerald-500 mb-1" />
+                <span className="text-lg font-black text-slate-800 dark:text-white">{activeDays * 8}</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 block">Study Hours*</span>
+              </div>
+            </div>
+            <p className="text-[10px] text-slate-400 dark:text-slate-500 text-center mt-2">*Assuming 8 hours of study per day {label}</p>
+          </>
+        );
+      })()}
     </div>
   );
 };

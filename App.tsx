@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks, FileEdit, Map, HelpCircle, Cloud, Share2, MessageSquare, Eye, Calendar } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
+import { getSubjectBoardExamDate } from './examTimetable';
 import Flashcard from './components/Flashcard';
 import MCQView from './components/MCQView';
 import ReelView from './components/ReelView';
@@ -49,6 +50,7 @@ import StudyHeatmap from './components/StudyHeatmap';
 import SmartWeakness from './components/SmartWeakness';
 import WeeklyReport from './components/WeeklyReport';
 import QuickStatsWidget from './components/QuickStatsWidget';
+import SubjectCountdown from './components/SubjectCountdown';
 import { useProgress } from './hooks/useProgress';
 import { explainConcept } from './services/geminiService';
 import { db, UserProfile } from './services/localDb';
@@ -511,7 +513,7 @@ const App: React.FC = () => {
         <div className="p-6 -mt-6">
           {/* Countdown Timer */}
           <div className="mb-6">
-            <CountdownTimer />
+            <CountdownTimer stream={selectedStream} />
           </div>
 
           {/* Quick Stats Widget - NEW */}
@@ -980,6 +982,8 @@ const App: React.FC = () => {
           <div className="flex items-center gap-4 text-white/80 text-sm font-medium">
              <span className="flex items-center gap-1"><Layers size={16}/> {selectedSubject.chapters.length} Chapters</span>
           </div>
+          {/* Per-subject board exam countdown */}
+          <SubjectCountdown stream={selectedStream} subjectId={selectedSubject.id} subjectName={selectedSubject.name} />
         </div>
 
         <div className="px-6 -mt-6 pb-24 relative z-40">

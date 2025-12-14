@@ -9,7 +9,7 @@
 - ✅ **Pre-loaded Content** - Everything built-in, no API dependencies
 - ✅ **Offline First** - Works without internet
 - ✅ **No Account Required** - Instant access, no barriers
-- ⏸️ **AI Features** - Future enhancement (not priority)
+- ✅ **AI Features (Optional)** - Gemini tutor works when API key is configured
 - ⏸️ **Database/Auth** - Future enhancement (not priority)
 
 ---
@@ -36,19 +36,19 @@ Nov 2025 ───────────────────────�
   - Motivational quotes
   - Quick stats (days, weeks, study hours)
 
-- [ ] **Progress Tracking (Local Storage)**
+- [x] **Progress Tracking (Local Storage)**
   - Chapter completion checkmarks
   - Flashcard review counts
   - MCQ scores per chapter
   - Study streak tracking
 
 ### Week 2: Study Enhancements
-- [ ] **Spaced Repetition System (SRS)**
+- [x] **Spaced Repetition System (SRS)**
   - SM-2 algorithm for flashcards
   - "Due for review" queue
   - Local storage based
 
-- [ ] **Practice Test Mode**
+- [x] **Practice Test Mode**
   - Timed MCQ tests
   - Chapter-wise tests
   - Mixed subject tests
