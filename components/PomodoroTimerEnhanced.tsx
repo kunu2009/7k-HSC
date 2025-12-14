@@ -3,9 +3,53 @@ import {
   Play, Pause, RotateCcw, Coffee, Brain, Flame, Clock, Trophy, 
   Volume2, VolumeX, ArrowLeft, Target, BookOpen, ChevronDown,
   Plus, Minus, Zap, Calendar, CheckCircle2, ListChecks, Edit3,
-  TrendingUp, Award, Sparkles, Timer
+  TrendingUp, Award, Sparkles, Timer, XCircle, AlertCircle,
+  History, FileText, Download, Trash2
 } from 'lucide-react';
 import { Subject, Chapter } from '../types';
+
+// Session Event Types for detailed logging
+type SessionEventType = 
+  | 'session_started'
+  | 'session_paused'
+  | 'session_resumed'
+  | 'session_completed'
+  | 'session_abandoned'
+  | 'break_started'
+  | 'break_completed'
+  | 'goal_set'
+  | 'duration_changed';
+
+interface SessionEvent {
+  id: string;
+  timestamp: string; // ISO string
+  eventType: SessionEventType;
+  timeRemaining?: number; // seconds remaining when event occurred
+  details?: string;
+}
+
+interface DetailedSessionLog {
+  id: string;
+  sessionNumber: number;
+  date: string;
+  startTime: string;
+  endTime?: string;
+  plannedDuration: number; // minutes
+  actualDuration: number; // minutes
+  type: 'focus' | 'break';
+  status: 'completed' | 'abandoned' | 'in-progress';
+  subject?: string;
+  subjectName?: string;
+  chapter?: string;
+  chapterName?: string;
+  activity?: string;
+  customGoal?: string;
+  pauseCount: number;
+  totalPausedTime: number; // seconds
+  events: SessionEvent[];
+  xpEarned: number;
+  notes?: string;
+}
 
 interface StudySession {
   id: string;
@@ -25,9 +69,14 @@ interface StudySession {
 interface PomodoroStats {
   date: string;
   sessions: StudySession[];
+  detailedLogs: DetailedSessionLog[];
   totalFocusMinutes: number;
   totalSessions: number;
+  completedSessions: number;
+  abandonedSessions: number;
+  totalPauseCount: number;
   currentStreak: number;
+  longestSession: number; // minutes
   xp: number;
 }
 
@@ -113,6 +162,13 @@ const PomodoroTimerEnhanced: React.FC<PomodoroTimerEnhancedProps> = ({
   const [showGoalSetup, setShowGoalSetup] = useState(true);
   const [currentQuote, setCurrentQuote] = useState(MOTIVATIONAL_QUOTES[0]);
   const [showSessionLog, setShowSessionLog] = useState(false);
+  const [showDetailedLog, setShowDetailedLog] = useState(false);
+  const [logViewMode, setLogViewMode] = useState<'simple' | 'detailed'>('simple');
+  
+  // Detailed Session Tracking
+  const [currentSessionLog, setCurrentSessionLog] = useState<DetailedSessionLog | null>(null);
+  const [pauseCount, setPauseCount] = useState(0);
+  const [sessionEvents, setSessionEvents] = useState<SessionEvent[]>([]);
   
   const audioRef = useRef<AudioContext | null>(null);
 
@@ -123,15 +179,28 @@ const PomodoroTimerEnhanced: React.FC<PomodoroTimerEnhancedProps> = ({
     if (stored) {
       const parsed = JSON.parse(stored) as PomodoroStats;
       if (parsed.date === today) {
-        setStats(parsed);
+        // Ensure new fields exist for backward compatibility
+        setStats({
+          ...parsed,
+          detailedLogs: parsed.detailedLogs || [],
+          completedSessions: parsed.completedSessions || parsed.sessions.filter(s => s.completed).length,
+          abandonedSessions: parsed.abandonedSessions || 0,
+          totalPauseCount: parsed.totalPauseCount || 0,
+          longestSession: parsed.longestSession || 0,
+        });
       } else {
         // New day - keep streak if yesterday had sessions
         const newStats: PomodoroStats = {
           date: today,
           sessions: [],
+          detailedLogs: [],
           totalFocusMinutes: 0,
           totalSessions: 0,
+          completedSessions: 0,
+          abandonedSessions: 0,
+          totalPauseCount: 0,
           currentStreak: parsed.sessions.length > 0 ? parsed.currentStreak + 1 : 0,
+          longestSession: 0,
           xp: parsed.xp, // Carry over XP
         };
         setStats(newStats);
@@ -161,6 +230,29 @@ const PomodoroTimerEnhanced: React.FC<PomodoroTimerEnhancedProps> = ({
       case 'shortBreak': return shortBreakDuration * 60;
       case 'longBreak': return longBreakDuration * 60;
     }
+  };
+
+  // Log a session event
+  const logEvent = useCallback((eventType: SessionEventType, details?: string) => {
+    const event: SessionEvent = {
+      id: Date.now().toString(),
+      timestamp: new Date().toISOString(),
+      eventType,
+      timeRemaining: timeLeft,
+      details,
+    };
+    setSessionEvents(prev => [...prev, event]);
+    return event;
+  }, [timeLeft]);
+
+  // Format duration for display
+  const formatDuration = (seconds: number) => {
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    if (hrs > 0) return `${hrs}h ${mins}m ${secs}s`;
+    if (mins > 0) return `${mins}m ${secs}s`;
+    return `${secs}s`;
   };
 
   const playSound = useCallback((frequency: number = 800, duration: number = 200) => {
@@ -205,6 +297,10 @@ const PomodoroTimerEnhanced: React.FC<PomodoroTimerEnhancedProps> = ({
       const endTime = new Date();
       const actualMinutes = Math.round((focusDuration * 60 - totalPausedTime) / 60);
       
+      // Log completion event
+      const completionEvent = logEvent('session_completed', `Completed ${actualMinutes} minutes of focus`);
+      const finalEvents = [...sessionEvents, completionEvent];
+      
       const session: StudySession = {
         id: Date.now().toString(),
         startTime: sessionStartTime.toISOString(),
@@ -222,16 +318,48 @@ const PomodoroTimerEnhanced: React.FC<PomodoroTimerEnhancedProps> = ({
       const earnedXP = (actualMinutes * XP_PER_MINUTE) + XP_BONUS_COMPLETE + 
         (stats.currentStreak > 0 ? XP_STREAK_BONUS : 0);
       
+      // Create detailed session log
+      const detailedLog: DetailedSessionLog = {
+        id: Date.now().toString(),
+        sessionNumber: stats.totalSessions + 1,
+        date: new Date().toDateString(),
+        startTime: sessionStartTime.toISOString(),
+        endTime: endTime.toISOString(),
+        plannedDuration: focusDuration,
+        actualDuration: actualMinutes,
+        type: 'focus',
+        status: 'completed',
+        subject: selectedSubject || undefined,
+        subjectName: selectedSubject ? subjects.find(s => s.id === selectedSubject)?.name : undefined,
+        chapter: selectedChapter || undefined,
+        chapterName: selectedChapter ? chapters.find(c => c.id === selectedChapter)?.title : undefined,
+        activity: selectedActivity,
+        customGoal: selectedActivity === 'custom' ? customGoal : undefined,
+        pauseCount: pauseCount,
+        totalPausedTime: totalPausedTime,
+        events: finalEvents,
+        xpEarned: earnedXP,
+      };
+      
       const newStats: PomodoroStats = {
         ...stats,
         sessions: [...stats.sessions, session],
+        detailedLogs: [...(stats.detailedLogs || []), detailedLog],
         totalFocusMinutes: stats.totalFocusMinutes + actualMinutes,
         totalSessions: stats.totalSessions + 1,
+        completedSessions: (stats.completedSessions || 0) + 1,
+        totalPauseCount: (stats.totalPauseCount || 0) + pauseCount,
+        longestSession: Math.max(stats.longestSession || 0, actualMinutes),
         xp: stats.xp + earnedXP,
       };
       
       saveStats(newStats);
       onSessionComplete?.(session);
+      
+      // Reset session tracking
+      setSessionEvents([]);
+      setPauseCount(0);
+      setCurrentSessionLog(null);
       
       // Auto switch to break
       if ((stats.totalSessions + 1) % 4 === 0) {
@@ -242,7 +370,8 @@ const PomodoroTimerEnhanced: React.FC<PomodoroTimerEnhancedProps> = ({
         setTimeLeft(shortBreakDuration * 60);
       }
     } else {
-      // Break completed
+      // Break completed - log it
+      logEvent('break_completed', `${mode === 'shortBreak' ? 'Short' : 'Long'} break completed`);
       setMode('focus');
       setTimeLeft(focusDuration * 60);
       setShowGoalSetup(true);
@@ -256,14 +385,28 @@ const PomodoroTimerEnhanced: React.FC<PomodoroTimerEnhancedProps> = ({
   const handleStart = () => {
     if (!isRunning) {
       if (!sessionStartTime) {
+        // Starting a new session
         setSessionStartTime(new Date());
         setShowGoalSetup(false);
+        setSessionEvents([]);
+        setPauseCount(0);
+        
+        // Log session start
+        const goalDetails = selectedActivity === 'custom' 
+          ? customGoal 
+          : ACTIVITY_OPTIONS.find(a => a.id === selectedActivity)?.label;
+        logEvent('session_started', `Started ${mode === 'focus' ? 'focus' : 'break'} session: ${goalDetails || 'General'}`);
+        
+        if (selectedSubject || selectedChapter) {
+          logEvent('goal_set', `Subject: ${subjects.find(s => s.id === selectedSubject)?.name || 'None'}, Chapter: ${chapters.find(c => c.id === selectedChapter)?.title || 'None'}`);
+        }
       }
       if (pauseStartTime) {
         // Resume from pause
         const pausedDuration = Math.round((new Date().getTime() - pauseStartTime.getTime()) / 1000);
         setTotalPausedTime(prev => prev + pausedDuration);
         setPauseStartTime(null);
+        logEvent('session_resumed', `Resumed after ${formatDuration(pausedDuration)} pause`);
       }
       setIsRunning(true);
       playSound(600, 100);
@@ -271,17 +414,65 @@ const PomodoroTimerEnhanced: React.FC<PomodoroTimerEnhancedProps> = ({
       // Pause
       setPauseStartTime(new Date());
       setIsRunning(false);
+      setPauseCount(prev => prev + 1);
+      logEvent('session_paused', `Paused at ${formatTime(timeLeft)} remaining`);
       playSound(400, 100);
     }
   };
 
   const handleReset = () => {
+    // Log abandoned session if one was in progress
+    if (sessionStartTime && mode === 'focus') {
+      const endTime = new Date();
+      const elapsedSeconds = Math.round((endTime.getTime() - sessionStartTime.getTime()) / 1000) - totalPausedTime;
+      const elapsedMinutes = Math.round(elapsedSeconds / 60);
+      
+      logEvent('session_abandoned', `Abandoned after ${formatDuration(elapsedSeconds)}`);
+      
+      // Create abandoned session log
+      const abandonedLog: DetailedSessionLog = {
+        id: Date.now().toString(),
+        sessionNumber: stats.totalSessions + 1,
+        date: new Date().toDateString(),
+        startTime: sessionStartTime.toISOString(),
+        endTime: endTime.toISOString(),
+        plannedDuration: focusDuration,
+        actualDuration: elapsedMinutes,
+        type: 'focus',
+        status: 'abandoned',
+        subject: selectedSubject || undefined,
+        subjectName: selectedSubject ? subjects.find(s => s.id === selectedSubject)?.name : undefined,
+        chapter: selectedChapter || undefined,
+        chapterName: selectedChapter ? chapters.find(c => c.id === selectedChapter)?.title : undefined,
+        activity: selectedActivity,
+        customGoal: selectedActivity === 'custom' ? customGoal : undefined,
+        pauseCount: pauseCount,
+        totalPausedTime: totalPausedTime,
+        events: [...sessionEvents, { id: Date.now().toString(), timestamp: endTime.toISOString(), eventType: 'session_abandoned' as SessionEventType, timeRemaining: timeLeft }],
+        xpEarned: 0,
+      };
+      
+      // Only log if some time was spent (at least 1 minute)
+      if (elapsedMinutes >= 1) {
+        const newStats: PomodoroStats = {
+          ...stats,
+          detailedLogs: [...(stats.detailedLogs || []), abandonedLog],
+          abandonedSessions: (stats.abandonedSessions || 0) + 1,
+          totalPauseCount: (stats.totalPauseCount || 0) + pauseCount,
+        };
+        saveStats(newStats);
+      }
+    }
+    
     setTimeLeft(getDuration(mode));
     setIsRunning(false);
     setSessionStartTime(null);
     setTotalPausedTime(0);
     setPauseStartTime(null);
     setShowGoalSetup(true);
+    setSessionEvents([]);
+    setPauseCount(0);
+    setCurrentSessionLog(null);
   };
 
   const handleModeChange = (newMode: TimerMode) => {
@@ -745,36 +936,228 @@ const PomodoroTimerEnhanced: React.FC<PomodoroTimerEnhancedProps> = ({
           </div>
 
           {/* Session Log */}
-          {showSessionLog && stats.sessions.length > 0 && (
+          {showSessionLog && (
             <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
-              <h4 className="font-semibold text-slate-700 dark:text-slate-300 mb-2 flex items-center gap-2">
-                <Calendar size={14} />
-                Today's Sessions
-              </h4>
-              <div className="space-y-2 max-h-40 overflow-y-auto">
-                {stats.sessions.slice().reverse().map((session) => (
-                  <div 
-                    key={session.id}
-                    className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 flex items-center justify-between"
+              {/* Log Header with Toggle */}
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                  <History size={14} />
+                  Session Log
+                </h4>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setLogViewMode(logViewMode === 'simple' ? 'detailed' : 'simple')}
+                    className={`text-xs px-2 py-1 rounded-lg transition ${
+                      logViewMode === 'detailed' 
+                        ? 'bg-indigo-500 text-white' 
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                    }`}
                   >
-                    <div className="flex items-center gap-2">
-                      <CheckCircle2 size={14} className="text-green-500" />
-                      <div>
-                        <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                          {session.activity ? ACTIVITY_OPTIONS.find(a => a.id === session.activity)?.label : 'Focus Session'}
-                        </p>
-                        <p className="text-xs text-slate-500">
-                          {new Date(session.startTime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })} - 
-                          {new Date(session.endTime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
-                        </p>
-                      </div>
-                    </div>
-                    <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400">
-                      {session.duration}m
-                    </span>
-                  </div>
-                ))}
+                    {logViewMode === 'simple' ? 'Simple' : 'Detailed'}
+                  </button>
+                </div>
               </div>
+
+              {/* Analytics Summary */}
+              <div className="grid grid-cols-3 gap-2 mb-3">
+                <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-2 text-center">
+                  <div className="text-lg font-bold text-green-600 dark:text-green-400">{stats.completedSessions || 0}</div>
+                  <div className="text-[10px] text-green-600 dark:text-green-400">Completed</div>
+                </div>
+                <div className="bg-red-50 dark:bg-red-900/20 rounded-lg p-2 text-center">
+                  <div className="text-lg font-bold text-red-600 dark:text-red-400">{stats.abandonedSessions || 0}</div>
+                  <div className="text-[10px] text-red-600 dark:text-red-400">Abandoned</div>
+                </div>
+                <div className="bg-orange-50 dark:bg-orange-900/20 rounded-lg p-2 text-center">
+                  <div className="text-lg font-bold text-orange-600 dark:text-orange-400">{stats.totalPauseCount || 0}</div>
+                  <div className="text-[10px] text-orange-600 dark:text-orange-400">Pauses</div>
+                </div>
+              </div>
+
+              {/* Detailed Logs View */}
+              {logViewMode === 'detailed' && stats.detailedLogs && stats.detailedLogs.length > 0 ? (
+                <div className="space-y-3 max-h-60 overflow-y-auto">
+                  {stats.detailedLogs.slice().reverse().map((log) => (
+                    <div 
+                      key={log.id}
+                      className={`rounded-xl p-3 border ${
+                        log.status === 'completed' 
+                          ? 'bg-green-50 dark:bg-green-900/10 border-green-200 dark:border-green-800' 
+                          : 'bg-red-50 dark:bg-red-900/10 border-red-200 dark:border-red-800'
+                      }`}
+                    >
+                      {/* Session Header */}
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          {log.status === 'completed' ? (
+                            <CheckCircle2 size={16} className="text-green-500" />
+                          ) : (
+                            <XCircle size={16} className="text-red-500" />
+                          )}
+                          <span className="font-semibold text-sm text-slate-800 dark:text-white">
+                            Session #{log.sessionNumber}
+                          </span>
+                          <span className={`text-xs px-2 py-0.5 rounded-full ${
+                            log.status === 'completed' 
+                              ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300' 
+                              : 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300'
+                          }`}>
+                            {log.status === 'completed' ? '✓ Completed' : '✗ Abandoned'}
+                          </span>
+                        </div>
+                        {log.xpEarned > 0 && (
+                          <span className="text-xs font-bold text-yellow-600 dark:text-yellow-400">
+                            +{log.xpEarned} XP
+                          </span>
+                        )}
+                      </div>
+
+                      {/* Session Details Grid */}
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs mb-2">
+                        <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+                          <Clock size={10} />
+                          <span>Started: {new Date(log.startTime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+                          <Clock size={10} />
+                          <span>Ended: {log.endTime ? new Date(log.endTime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' }) : 'N/A'}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+                          <Timer size={10} />
+                          <span>Planned: {log.plannedDuration}m</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+                          <Timer size={10} />
+                          <span>Actual: {log.actualDuration}m</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+                          <Pause size={10} />
+                          <span>Pauses: {log.pauseCount}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-slate-600 dark:text-slate-400">
+                          <Pause size={10} />
+                          <span>Paused: {formatDuration(log.totalPausedTime)}</span>
+                        </div>
+                      </div>
+
+                      {/* Goal/Subject Info */}
+                      {(log.subjectName || log.activity) && (
+                        <div className="text-xs text-slate-500 dark:text-slate-400 mb-2 bg-white/50 dark:bg-slate-800/50 rounded-lg p-2">
+                          <div className="flex items-center gap-1 flex-wrap">
+                            <Target size={10} />
+                            {log.activity && (
+                              <span>{ACTIVITY_OPTIONS.find(a => a.id === log.activity)?.icon} {ACTIVITY_OPTIONS.find(a => a.id === log.activity)?.label}</span>
+                            )}
+                            {log.subjectName && <span>• {log.subjectName}</span>}
+                            {log.chapterName && <span>• {log.chapterName}</span>}
+                          </div>
+                          {log.customGoal && (
+                            <div className="mt-1 text-slate-600 dark:text-slate-300 italic">"{log.customGoal}"</div>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Event Timeline */}
+                      {log.events && log.events.length > 0 && (
+                        <div className="mt-2">
+                          <button
+                            onClick={() => {
+                              const el = document.getElementById(`events-${log.id}`);
+                              if (el) el.classList.toggle('hidden');
+                            }}
+                            className="text-xs text-indigo-600 dark:text-indigo-400 flex items-center gap-1 hover:underline"
+                          >
+                            <FileText size={10} />
+                            View Event Log ({log.events.length} events)
+                          </button>
+                          <div id={`events-${log.id}`} className="hidden mt-2 pl-2 border-l-2 border-slate-200 dark:border-slate-700 space-y-1">
+                            {log.events.map((event, idx) => (
+                              <div key={idx} className="text-[10px] text-slate-500 dark:text-slate-400 flex items-start gap-2">
+                                <span className="text-slate-400 whitespace-nowrap">
+                                  {new Date(event.timestamp).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+                                </span>
+                                <span className={`font-medium ${
+                                  event.eventType === 'session_completed' ? 'text-green-600' :
+                                  event.eventType === 'session_abandoned' ? 'text-red-600' :
+                                  event.eventType === 'session_paused' ? 'text-orange-600' :
+                                  event.eventType === 'session_resumed' ? 'text-blue-600' :
+                                  'text-slate-600'
+                                }`}>
+                                  {event.eventType.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                                </span>
+                                {event.details && <span className="text-slate-400">- {event.details}</span>}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              ) : logViewMode === 'simple' && stats.sessions.length > 0 ? (
+                /* Simple View */
+                <div className="space-y-2 max-h-40 overflow-y-auto">
+                  {stats.sessions.slice().reverse().map((session) => (
+                    <div 
+                      key={session.id}
+                      className="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-3 flex items-center justify-between"
+                    >
+                      <div className="flex items-center gap-2">
+                        <CheckCircle2 size={14} className="text-green-500" />
+                        <div>
+                          <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                            {session.activity ? ACTIVITY_OPTIONS.find(a => a.id === session.activity)?.label : 'Focus Session'}
+                          </p>
+                          <p className="text-xs text-slate-500">
+                            {new Date(session.startTime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })} - 
+                            {new Date(session.endTime).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })}
+                          </p>
+                        </div>
+                      </div>
+                      <span className="text-sm font-semibold text-indigo-600 dark:text-indigo-400">
+                        {session.duration}m
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center py-4 text-slate-400 dark:text-slate-500 text-sm">
+                  <History size={24} className="mx-auto mb-2 opacity-50" />
+                  No sessions logged yet today
+                </div>
+              )}
+
+              {/* Current Session Live Events (when running) */}
+              {sessionStartTime && sessionEvents.length > 0 && (
+                <div className="mt-3 pt-3 border-t border-slate-200 dark:border-slate-700">
+                  <h5 className="text-xs font-semibold text-slate-600 dark:text-slate-400 mb-2 flex items-center gap-1">
+                    <AlertCircle size={12} className="text-orange-500 animate-pulse" />
+                    Current Session Events
+                  </h5>
+                  <div className="pl-2 border-l-2 border-orange-300 dark:border-orange-700 space-y-1 max-h-20 overflow-y-auto">
+                    {sessionEvents.map((event, idx) => (
+                      <div key={idx} className="text-[10px] text-slate-500 dark:text-slate-400 flex items-start gap-2">
+                        <span className="text-slate-400 whitespace-nowrap">
+                          {new Date(event.timestamp).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+                        </span>
+                        <span className="font-medium text-slate-600 dark:text-slate-300">
+                          {event.eventType.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Pause indicator during session */}
+              {pauseStartTime && (
+                <div className="mt-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg p-2 flex items-center gap-2">
+                  <Pause size={14} className="text-orange-500 animate-pulse" />
+                  <span className="text-xs text-orange-600 dark:text-orange-400">
+                    Paused since {formatClockTime(pauseStartTime)} (Pause #{pauseCount})
+                  </span>
+                </div>
+              )}
             </div>
           )}
 
