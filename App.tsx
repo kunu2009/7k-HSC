@@ -17,6 +17,7 @@ import PreviousMarksInput from './components/PreviousMarksInputNew';
 import WeaknessAnalysis from './components/WeaknessAnalysis';
 import Onboarding from './components/Onboarding';
 import PomodoroTimer from './components/PomodoroTimer';
+import PomodoroTimerEnhanced from './components/PomodoroTimerEnhanced';
 import StudyStreak from './components/StudyStreak';
 import QuickTest from './components/QuickTest';
 import ErrorLog from './components/ErrorLog';
@@ -1741,7 +1742,10 @@ const App: React.FC = () => {
       
       {/* Study Tools Modals */}
       {showPomodoro && (
-        <PomodoroTimer onClose={() => setShowPomodoro(false)} />
+        <PomodoroTimerEnhanced 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowPomodoro(false)} 
+        />
       )}
       
       {showStudyStreak && (
