@@ -178,18 +178,18 @@ study_sessions {
 | Long Answers (8M) | ✅ Done | Medium | High |
 | AI Doubt Solver | ✅ Done | High | High |
 | Dark Mode | ✅ Done | Low | Medium |
-| **Countdown Timer** | 🔲 TODO | Low | High |
-| **Progress Tracking** | 🔲 TODO | Medium | High |
+| **Countdown Timer** | ✅ Done | Low | High |
+| **Progress Tracking** | ✅ Done | Medium | High |
 
 ### Priority 2: Should Have
 | Feature | Status | Complexity | Impact |
 |:--------|:------:|:----------:|:------:|
 | User Authentication | 🔲 TODO | Medium | High |
-| Spaced Repetition | 🔲 TODO | High | Very High |
-| Practice Tests | 🔲 TODO | High | Very High |
-| Study Planner | 🔲 TODO | High | High |
-| Previous Papers | 🔲 TODO | Medium | High |
-| Offline Mode | 🔲 TODO | High | Medium |
+| Spaced Repetition | ✅ Done | High | Very High |
+| Practice Tests | ✅ Done | High | Very High |
+| Study Planner | ✅ Done | High | High |
+| Previous Papers | 🟡 Partial | Medium | High |
+| Offline Mode | 🟡 Partial | High | Medium |
 
 ### Priority 3: Nice to Have
 | Feature | Status | Complexity | Impact |
