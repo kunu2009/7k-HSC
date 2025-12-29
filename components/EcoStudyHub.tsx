@@ -129,11 +129,11 @@ const EcoStudyHub: React.FC<EcoStudyHubProps> = ({ onClose, onOpenTool }) => {
   const totalCount = tools.length;
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-slate-900 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-hidden shadow-2xl border border-slate-700">
+    <div className="fixed inset-0 z-50 bg-slate-950/60 backdrop-blur-sm overflow-y-auto">
+      <div className="bg-slate-900 rounded-3xl w-full max-w-6xl mx-auto my-8 shadow-2xl border border-slate-800 overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-6">
-          <div className="flex items-center justify-between">
+        <div className="bg-gradient-to-r from-emerald-600 to-teal-600 p-8">
+          <div className="flex items-center justify-between gap-6 flex-wrap">
             <div className="flex items-center gap-4">
               <div className="text-5xl">💹</div>
               <div>
@@ -145,7 +145,8 @@ const EcoStudyHub: React.FC<EcoStudyHubProps> = ({ onClose, onOpenTool }) => {
             </div>
             <button
               onClick={onClose}
-              className="text-white/80 hover:text-white text-3xl transition-colors"
+              className="text-white/90 hover:text-white bg-white/10 border border-white/20 rounded-full p-2 text-xl transition-colors"
+              aria-label="Close"
             >
               ×
             </button>
@@ -167,7 +168,7 @@ const EcoStudyHub: React.FC<EcoStudyHubProps> = ({ onClose, onOpenTool }) => {
         </div>
 
         {/* Phase Filter */}
-        <div className="p-4 bg-slate-800 border-b border-slate-700">
+        <div className="p-5 bg-slate-800 border-b border-slate-800">
           <div className="flex items-center gap-3 flex-wrap">
             <button
               onClick={() => setSelectedPhase(null)}
@@ -201,8 +202,8 @@ const EcoStudyHub: React.FC<EcoStudyHubProps> = ({ onClose, onOpenTool }) => {
         </div>
 
         {/* Tools Grid */}
-        <div className="p-6 overflow-y-auto max-h-[calc(90vh-280px)]">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="p-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredTools.map(tool => (
               <div
                 key={tool.id}

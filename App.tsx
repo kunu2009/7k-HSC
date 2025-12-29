@@ -1661,8 +1661,7 @@ const App: React.FC = () => {
               <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4">Subject Progress</h2>
               <div className="space-y-4">
                 {getFilteredSubjects().map((sub) => {
-                  const completion = getSubjectCompletion(sub.id);
-                  const progressPercent = Math.round(completion * 100);
+                  const progressPercent = Math.min(100, Math.max(0, getSubjectCompletion(sub.id)));
                   
                   // Dynamic Icon Mapping
                   const Icon = sub.id === 'eco' ? TrendingUp : 
