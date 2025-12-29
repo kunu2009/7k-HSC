@@ -50,6 +50,7 @@ import ReverseLearning from './components/ReverseLearning';
 import StudyHeatmap from './components/StudyHeatmap';
 import SmartWeakness from './components/SmartWeakness';
 import WeeklyReport from './components/WeeklyReport';
+import StudyWrapped2025 from './components/StudyWrapped2025';
 import QuickStatsWidget from './components/QuickStatsWidget';
 import SubjectCountdown from './components/SubjectCountdown';
 import ChapterProgressWidget from './components/ChapterProgressWidget';
@@ -126,6 +127,7 @@ const App: React.FC = () => {
   const [showStudyHeatmap, setShowStudyHeatmap] = useState(false);
   const [showSmartWeakness, setShowSmartWeakness] = useState(false);
   const [showWeeklyReport, setShowWeeklyReport] = useState(false);
+  const [showStudyWrapped2025, setShowStudyWrapped2025] = useState(false);
   const [showEcoStudyHub, setShowEcoStudyHub] = useState(false);
   const [showEcoFormulaBank, setShowEcoFormulaBank] = useState(false);
   const [showEcoGraphPractice, setShowEcoGraphPractice] = useState(false);
@@ -972,7 +974,7 @@ const App: React.FC = () => {
             </div>
             
             {/* Row 9 - NEW Smart Analytics Tools */}
-            <div className="grid grid-cols-3 gap-3 mt-3">
+            <div className="grid grid-cols-4 gap-3 mt-3">
               <button
                 onClick={() => setShowStudyHeatmap(true)}
                 className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
@@ -1001,6 +1003,16 @@ const App: React.FC = () => {
                   <BarChart3 size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Weekly</span>
+              </button>
+
+              <button
+                onClick={() => setShowStudyWrapped2025(true)}
+                className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-4 rounded-2xl shadow-lg hover:shadow-xl transition flex flex-col items-center gap-2 text-white"
+              >
+                <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                  <Sparkles size={22} />
+                </div>
+                <span className="text-xs font-semibold">2025 Wrap</span>
               </button>
             </div>
             
@@ -1993,6 +2005,10 @@ const App: React.FC = () => {
           subjects={getFilteredSubjects()} 
           onClose={() => setShowWeeklyReport(false)} 
         />
+      )}
+
+      {showStudyWrapped2025 && (
+        <StudyWrapped2025 onClose={() => setShowStudyWrapped2025(false)} />
       )}
       
       {/* Economics Study Tools */}
