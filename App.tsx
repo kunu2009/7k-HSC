@@ -35,6 +35,7 @@ import ProgressCharts from './components/ProgressCharts';
 import LastMinuteRevision from './components/LastMinuteRevision';
 import RandomChallenge from './components/RandomChallenge';
 import StudyNotes from './components/StudyNotes';
+import ArtsQuickSprint from './components/ArtsQuickSprint';
 import TimelineView from './components/TimelineView';
 import ClozeTest from './components/ClozeTest';
 import KeywordCloud from './components/KeywordCloud';
@@ -112,6 +113,7 @@ const App: React.FC = () => {
   const [showLastMinute, setShowLastMinute] = useState(false);
   const [showRandomChallenge, setShowRandomChallenge] = useState(false);
   const [showStudyNotes, setShowStudyNotes] = useState(false);
+  const [showArtsQuickSprint, setShowArtsQuickSprint] = useState(false);
   const [showTimeline, setShowTimeline] = useState(false);
   const [showClozeTest, setShowClozeTest] = useState(false);
   const [showKeywordCloud, setShowKeywordCloud] = useState(false);
@@ -927,6 +929,19 @@ const App: React.FC = () => {
                   <Map size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Timeline</span>
+              </button>
+            </div>
+            
+            {/* Row 7B - Arts Boosters */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowArtsQuickSprint(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center">
+                  <Flame size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Arts Sprint</span>
               </button>
             </div>
             
@@ -1943,6 +1958,13 @@ const App: React.FC = () => {
         <RapidFire 
           subjects={getFilteredSubjects()} 
           onClose={() => setShowRapidFire(false)} 
+        />
+      )}
+      
+      {showArtsQuickSprint && (
+        <ArtsQuickSprint 
+          subjects={getFilteredSubjects()} 
+          onClose={() => setShowArtsQuickSprint(false)} 
         />
       )}
       

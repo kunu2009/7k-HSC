@@ -291,8 +291,8 @@ const EcoElasticityCalc: React.FC<EcoElasticityCalcProps> = ({ onClose }) => {
   ];
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-slate-900 rounded-2xl w-full max-w-5xl max-h-[95vh] overflow-hidden shadow-2xl border border-slate-700 flex flex-col">
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 overflow-y-auto">
+      <div className="bg-slate-900 rounded-3xl w-full max-w-5xl mx-auto my-6 overflow-hidden shadow-2xl border border-slate-700 flex flex-col min-h-[80vh]">
         {/* Header */}
         <div className="bg-gradient-to-r from-orange-600 to-amber-600 p-5 flex-shrink-0">
           <div className="flex items-center justify-between">

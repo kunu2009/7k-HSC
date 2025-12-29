@@ -26,8 +26,8 @@ const extractTimelineEvents = (subjects: Subject[]): TimelineEvent[] => {
   const events: TimelineEvent[] = [];
   
   subjects.forEach(subject => {
-    // Only process History, Politics type subjects
-    if (!['History', 'Political Science', 'Politics', 'Economics'].includes(subject.name)) return;
+    // Only process History/Polity/Geo/Socio/Economics style subjects
+    if (!['History', 'Political Science', 'Politics', 'Economics', 'Geography', 'Sociology', 'Psychology'].includes(subject.name)) return;
     
     subject.chapters.forEach(chapter => {
       // Extract from flashcards that contain dates/years
@@ -80,18 +80,36 @@ const extractTimelineEvents = (subjects: Subject[]): TimelineEvent[] => {
   return events.sort((a, b) => parseInt(a.year) - parseInt(b.year));
 };
 
-// Predefined important historical events for India
+// Predefined important historical events for India + arts timeline boosters
 const importantEvents: TimelineEvent[] = [
+  { id: 'hist-0', year: '1757', title: 'Battle of Plassey', description: 'East India Company defeats Siraj-ud-Daulah; start of British dominance in Bengal', category: 'Colonial Expansion', subject: 'History', chapter: 'India and European Colonialism', importance: 'high', location: 'Plassey, Bengal' },
+  { id: 'hist-0b', year: '1764', title: 'Battle of Buxar', description: 'Company victory over Bengal, Awadh and Mughal forces; Diwani rights secured', category: 'Colonial Expansion', subject: 'History', chapter: 'India and European Colonialism', importance: 'high', location: 'Buxar, Bihar' },
   { id: 'hist-1', year: '1857', title: 'First War of Independence', description: 'The Sepoy Mutiny marked the first large-scale uprising against British rule', category: 'Freedom Struggle', subject: 'History', chapter: 'Freedom Movement', importance: 'high' },
+  { id: 'pol-1858', year: '1858', title: 'Government of India Act 1858', description: 'Crown rule begins; East India Company dissolved; Viceroy replaces Governor-General', category: 'Political', subject: 'Political Science', chapter: 'Constitutional Development', importance: 'high' },
   { id: 'hist-2', year: '1885', title: 'Indian National Congress Founded', description: 'Founded by A.O. Hume in Bombay, marking the beginning of organized political movement', category: 'Political', subject: 'History', chapter: 'Freedom Movement', importance: 'high' },
   { id: 'hist-3', year: '1905', title: 'Partition of Bengal', description: 'Lord Curzon partitioned Bengal, leading to Swadeshi Movement', category: 'Political', subject: 'History', chapter: 'Freedom Movement', importance: 'high' },
+  { id: 'pol-1909', year: '1909', title: 'Morley–Minto Reforms', description: 'Introduced separate electorates and expanded councils; milestone in constitutional politics', category: 'Political', subject: 'Political Science', chapter: 'Good Governance', importance: 'medium' },
   { id: 'hist-4', year: '1906', title: 'Muslim League Founded', description: 'All India Muslim League established at Dhaka', category: 'Political', subject: 'History', chapter: 'Freedom Movement', importance: 'medium' },
   { id: 'hist-5', year: '1919', title: 'Jallianwala Bagh Massacre', description: 'General Dyer ordered firing on peaceful protesters at Amritsar', category: 'Freedom Struggle', subject: 'History', chapter: 'Freedom Movement', importance: 'high' },
+  { id: 'pol-1919', year: '1919', title: 'Montagu–Chelmsford Reforms', description: 'Dyarchy introduced in provinces; paved way for provincial autonomy', category: 'Political', subject: 'Political Science', chapter: 'Good Governance', importance: 'medium' },
   { id: 'hist-6', year: '1920', title: 'Non-Cooperation Movement', description: 'Gandhi launched first mass movement against British rule', category: 'Freedom Struggle', subject: 'History', chapter: 'Gandhi Era', importance: 'high' },
   { id: 'hist-7', year: '1930', title: 'Salt March / Dandi March', description: 'Gandhi walked 240 miles to make salt, defying British salt laws', category: 'Freedom Struggle', subject: 'History', chapter: 'Gandhi Era', importance: 'high' },
+  { id: 'pol-1935', year: '1935', title: 'Government of India Act 1935', description: 'Provincial autonomy introduced; blueprint later influenced the Constitution', category: 'Political', subject: 'Political Science', chapter: 'Constitutional Development', importance: 'high' },
   { id: 'hist-8', year: '1942', title: 'Quit India Movement', description: 'Gandhi gave call for "Do or Die" - final mass movement', category: 'Freedom Struggle', subject: 'History', chapter: 'Gandhi Era', importance: 'high' },
   { id: 'hist-9', year: '1947', title: 'Independence of India', description: 'India gained independence on August 15, 1947', category: 'Independence', subject: 'History', chapter: 'Independence', importance: 'high', date: 'August 15' },
   { id: 'hist-10', year: '1950', title: 'Constitution Came into Effect', description: 'India became a Republic on January 26, 1950', category: 'Political', subject: 'Political Science', chapter: 'Constitution', importance: 'high', date: 'January 26' },
+  { id: 'eco-1951', year: '1951', title: 'First Five-Year Plan Launched', description: 'Agriculture and irrigation focus with Harrod–Domar approach; planning era begins', category: 'Economic Policy', subject: 'Economics', chapter: 'National Income', importance: 'high' },
+  { id: 'geo-1966', year: '1966', title: 'Green Revolution Phase I', description: 'HYV seeds, fertilizer, and irrigation push boosted foodgrain output', category: 'Human Geography', subject: 'Geography', chapter: 'Primary Activities', importance: 'high' },
+  { id: 'eco-1969', year: '1969', title: 'Bank Nationalization (14 Banks)', description: 'Public sector control over major banks to drive directed credit and social banking', category: 'Economic Policy', subject: 'Economics', chapter: 'Money Market', importance: 'medium' },
+  { id: 'pol-1975', year: '1975', title: 'National Emergency Declared', description: 'Internal Emergency under Article 352; civil liberties curtailed until 1977', category: 'Political', subject: 'Political Science', chapter: 'Good Governance', importance: 'high' },
+  { id: 'soc-1990', year: '1990', title: 'Mandal Commission Implementation', description: '27% OBC reservation in central services; milestone for affirmative action', category: 'Social Justice', subject: 'Sociology', chapter: 'Social Stratification', importance: 'high' },
+  { id: 'eco-1991', year: '1991', title: 'LPG Reforms Announced', description: 'New Economic Policy liberalized trade, privatization, and deregulation; IMF-led stabilization', category: 'Economic Policy', subject: 'Economics', chapter: 'Foreign Trade of India', importance: 'high' },
+  { id: 'pol-1992', year: '1992', title: '73rd & 74th Amendments', description: 'Constitutional status to Panchayati Raj and Urban Local Bodies with women’s reservation', category: 'Governance', subject: 'Political Science', chapter: 'Good Governance', importance: 'high' },
+  { id: 'pol-2005', year: '2005', title: 'Right to Information Act', description: 'RTI operationalizes transparency and citizen oversight of governance', category: 'Governance', subject: 'Political Science', chapter: 'Good Governance', importance: 'high' },
+  { id: 'geo-2008', year: '2008', title: 'National Action Plan on Climate Change', description: 'Eight missions including solar and energy efficiency; aligns development with sustainability', category: 'Human Geography', subject: 'Geography', chapter: 'Human Development', importance: 'medium' },
+  { id: 'eco-2016', year: '2016', title: 'Demonetisation of ₹500/₹1000', description: '86% of currency withdrawn overnight to target black money and spur digital payments', category: 'Economic Policy', subject: 'Economics', chapter: 'Money Market', importance: 'medium' },
+  { id: 'eco-2017', year: '2017', title: 'GST Rollout', description: 'Single indirect tax replacing cascading state and central levies', category: 'Economic Policy', subject: 'Economics', chapter: 'Public Finance', importance: 'high' },
+  { id: 'pol-2023', year: '2023', title: 'Women’s Reservation Bill Passed', description: '33% reservation for women in Lok Sabha and State Assemblies (Nari Shakti Vandan Adhiniyam)', category: 'Governance', subject: 'Political Science', chapter: 'Constitution', importance: 'high' },
 ];
 
 const TimelineView: React.FC<TimelineViewProps> = ({ subjects, onClose }) => {
@@ -101,7 +119,7 @@ const TimelineView: React.FC<TimelineViewProps> = ({ subjects, onClose }) => {
   const [filterImportance, setFilterImportance] = useState<string>('all');
   const [expandedEvent, setExpandedEvent] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<'timeline' | 'list'>('timeline');
-  const [yearRange, setYearRange] = useState<[number, number]>([1800, 2025]);
+  const [yearRange, setYearRange] = useState<[number, number]>([1700, 2025]);
 
   useEffect(() => {
     const extracted = extractTimelineEvents(subjects);
@@ -152,6 +170,9 @@ const TimelineView: React.FC<TimelineViewProps> = ({ subjects, onClose }) => {
       'Political Science': 'from-blue-500 to-purple-500',
       'Politics': 'from-blue-500 to-purple-500',
       'Economics': 'from-green-500 to-teal-500',
+      'Geography': 'from-teal-500 to-cyan-500',
+      'Sociology': 'from-pink-500 to-orange-500',
+      'Psychology': 'from-rose-500 to-amber-500',
     };
     return colors[subject] || 'from-gray-500 to-gray-600';
   };
@@ -200,6 +221,9 @@ const TimelineView: React.FC<TimelineViewProps> = ({ subjects, onClose }) => {
               <option value="History">History</option>
               <option value="Political Science">Political Science</option>
               <option value="Economics">Economics</option>
+              <option value="Geography">Geography</option>
+              <option value="Sociology">Sociology</option>
+              <option value="Psychology">Psychology</option>
             </select>
             
             <select
@@ -218,7 +242,7 @@ const TimelineView: React.FC<TimelineViewProps> = ({ subjects, onClose }) => {
               <input
                 type="number"
                 value={yearRange[0]}
-                onChange={e => setYearRange([parseInt(e.target.value) || 1800, yearRange[1]])}
+                onChange={e => setYearRange([parseInt(e.target.value) || 1700, yearRange[1]])}
                 className="w-20 px-2 py-1 rounded border border-gray-200 dark:border-gray-700 dark:bg-gray-800 text-center"
               />
               <span>to</span>

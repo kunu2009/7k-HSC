@@ -443,33 +443,34 @@ const EcoGraphPractice: React.FC<EcoGraphPracticeProps> = ({ onClose }) => {
   ];
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-slate-900 rounded-2xl w-full max-w-6xl max-h-[95vh] overflow-hidden shadow-2xl border border-slate-700 flex flex-col">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-5 flex-shrink-0">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="text-4xl">📈</div>
-              <div>
-                <h2 className="text-2xl font-bold text-white">Graph Drawing Practice</h2>
-                <p className="text-green-100 text-sm mt-1">
-                  Master economics diagrams with interactive practice
-                </p>
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 overflow-y-auto">
+      <div className="w-full max-w-6xl mx-auto my-6 px-4 sm:px-6">
+        <div className="bg-slate-900 rounded-3xl w-full shadow-2xl border border-slate-700 flex flex-col min-h-[80vh] overflow-hidden">
+          {/* Header */}
+          <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-5 flex-shrink-0">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <div className="text-4xl">📈</div>
+                <div>
+                  <h2 className="text-2xl font-bold text-white">Graph Drawing Practice</h2>
+                  <p className="text-green-100 text-sm mt-1">
+                    Master economics diagrams with interactive practice
+                  </p>
+                </div>
               </div>
+              <button
+                onClick={onClose}
+                className="text-white/80 hover:text-white text-3xl transition-colors"
+              >
+                ×
+              </button>
             </div>
-            <button
-              onClick={onClose}
-              className="text-white/80 hover:text-white text-3xl transition-colors"
-            >
-              ×
-            </button>
           </div>
-        </div>
 
-        {/* Main Content */}
-        <div className="flex flex-1 overflow-hidden">
+          {/* Main Content */}
+          <div className="flex flex-col lg:flex-row gap-4 flex-1 overflow-hidden p-4 sm:p-6">
           {/* Sidebar - Graph List */}
-          <div className="w-80 bg-slate-800 border-r border-slate-700 overflow-y-auto flex-shrink-0">
+          <div className="lg:w-80 bg-slate-800 border border-slate-700 rounded-2xl overflow-hidden flex-shrink-0">
             {/* Chapter Filter */}
             <div className="p-3 border-b border-slate-700">
               <select
@@ -484,7 +485,7 @@ const EcoGraphPractice: React.FC<EcoGraphPracticeProps> = ({ onClose }) => {
             </div>
 
             {/* Graph Cards */}
-            <div className="p-3 space-y-2">
+            <div className="p-3 space-y-2 max-h-[50vh] lg:max-h-none overflow-y-auto">
               {filteredGraphs.map(graph => (
                 <button
                   key={graph.id}
@@ -513,7 +514,7 @@ const EcoGraphPractice: React.FC<EcoGraphPracticeProps> = ({ onClose }) => {
           </div>
 
           {/* Main Area */}
-          <div className="flex-1 overflow-y-auto p-6">
+          <div className="flex-1 overflow-y-auto bg-slate-800 rounded-2xl p-4 sm:p-5">
             {!selectedGraph ? (
               <div className="h-full flex items-center justify-center text-slate-400">
                 <div className="text-center">

@@ -1853,6 +1853,123 @@ While the idealism of Panchsheel was tested by 1962, its core principles remain 
 From estranged democracies to indispensable partners - the relationship has transformed dramatically. Both countries now share convergent interests in a rules-based Indo-Pacific order.`
               }
             ]
+          },
+          {
+            id: 'pol7',
+            title: '7. Revision Pack - High Yield Crash Course',
+            description: 'Last 24h checklist with 10 MCQs and three 8-markers for rapid recall.',
+            summary: '**Use in final day**: 10 high-yield MCQs, 3 eight-markers, quick reels\n**Focus areas**: World since 1991, Globalisation, Humanitarian issues, Governance, India & World\n**Checklist**: Skim → MCQs → 8-mark outlines → reels mnemonics',
+            detailedNotes: '### How to use (last 24 hours)\n- 20 min: Skim summaries of chapters 1-6.\n- 25 min: Attempt the 10 MCQs below (closed book).\n- 30 min: Draft bullet outlines for the three 8-markers.\n- 10 min: Lock dates/stats (1991 LPG, WTO 1995, RTI 2005, G20 India 2023, QUAD revival 2017).\n- 5 min: Breathe + sleep.\n\n### Last-24h Checklist\n1. **World since 1991**: USSR fall impacts; unipolar → multipolar shifts.\n2. **Globalisation**: LPG reforms, WTO role, homogenisation vs glocalisation.\n3. **Humanitarian issues**: UN role, refugees/migration, terrorism, climate justice.\n4. **Peace/Integration**: Communalism, regionalism, casteism + remedies (education, federal balance, dialogue).\n5. **Governance**: RTI 2005, e-governance examples, citizen charter, social audit.\n6. **India & World**: NAM legacy to multi-alignment; QUAD/BRICS/SCO positions; NFU doctrine.\n7. **Data points**: Article 51 (international peace), SAARC 1985, Panchsheel 1954, Act East 1991, Act West focus Gulf.\n\n### Rapid recall anchors\n- 8-marker structure: Intro → 5-6 bullets → conclusion.\n- Mnemonics: ENAGL (USSR causes), LPG (reforms), PAVERS (peace threats), TRACK (RTI significance), BALANCE (multi-alignment steps).',
+            flashcards: [
+              { id: 'rf1', front: '8-marker skeleton', back: 'Intro (1) + 5-6 bullets (6) + conclusion (1); add dates/examples.' },
+              { id: 'rf2', front: 'UN peacekeeping hook', back: 'India stays among top troop contributors; mandates now include protection of civilians.' },
+              { id: 'rf3', front: 'Globalisation balance', back: 'Open markets (LPG 1991) + safeguard culture (glocalisation) + welfare cushions.' },
+              { id: 'rf4', front: 'India\'s stance', back: 'Strategic autonomy with multi-alignment across QUAD, BRICS, SCO, G20.' }
+            ],
+            mcqs: [
+              { id: 'rq1', question: 'Which year marks the start of India\'s LPG reforms?', options: ['1985', '1991', '1996', '2000'], correctIndex: 1, explanation: '1991 crisis triggered liberalisation, privatisation, globalisation.' },
+              { id: 'rq2', question: 'WTO formally replaced GATT in:', options: ['1989', '1991', '1995', '2001'], correctIndex: 2, explanation: 'World Trade Organization began in 1995 (Uruguay Round outcome).' },
+              { id: 'rq3', question: 'Article 51 of the Indian Constitution urges:', options: ['Abolition of titles', 'Promotion of international peace', 'Uniform civil code', 'Right to property'], correctIndex: 1, explanation: 'Directive Principle promoting peace, dispute resolution, and respect for international law.' },
+              { id: 'rq4', question: 'The Right to Information Act was enacted in:', options: ['1999', '2002', '2005', '2010'], correctIndex: 2, explanation: 'RTI, 2005 operationalised transparency and accountability.' },
+              { id: 'rq5', question: 'QUAD was effectively revived at officials level in:', options: ['2001', '2007', '2011', '2017'], correctIndex: 3, explanation: 'Post-2017 Indo-Pacific focus revived the grouping.' },
+              { id: 'rq6', question: 'Which is NOT a permanent member of the UN Security Council?', options: ['India', 'Russia', 'China', 'France'], correctIndex: 0, explanation: 'India seeks a permanent seat; current P5 exclude India.' },
+              { id: 'rq7', question: 'India\'s nuclear doctrine emphasises:', options: ['First Use', 'No First Use', 'Massive first strike', 'Flexible first strike'], correctIndex: 1, explanation: 'Declared NFU with credible minimum deterrence.' },
+              { id: 'rq8', question: 'Citizen\'s Charter best represents which good-governance pillar?', options: ['Equity', 'Rule of Law', 'Responsiveness', 'Participation'], correctIndex: 2, explanation: 'It sets service standards and timelines to respond to citizens.' },
+              { id: 'rq9', question: 'Which is a non-state actor in global politics?', options: ['Parliament of India', 'Supreme Court of India', 'Greenpeace', 'RBI'], correctIndex: 2, explanation: 'NGOs like Greenpeace operate across borders influencing agendas.' },
+              { id: 'rq10', question: 'India is consistently among top troop contributors to:', options: ['NATO missions', 'UN Peacekeeping', 'CSTO deployments', 'OPEC operations'], correctIndex: 1, explanation: 'India deploys large contingents to UN peacekeeping missions.' }
+            ],
+            reels: [
+              { id: 'rr1', title: 'Exam Eve Flow', content: 'Skim core notes.\nAttempt MCQs.\nOutline 8-markers.\nSleep.', color: getReelColor(0) },
+              { id: 'rr2', title: 'Date Drops', content: '1991-LPG.\n1995-WTO.\n2005-RTI.\n2017-QUAD revival.\n2023-G20 India.', color: getReelColor(1) },
+              { id: 'rr3', title: 'Hooks to Cite', content: 'Article 51.\nNFU doctrine.\nUN peacekeeping lead.\nPanchsheel 1954.', color: getReelColor(2) }
+            ],
+            longAnswers: [
+              {
+                id: 'rl1',
+                question: 'Analyse the impact of globalisation on India\'s economy, politics, and culture. (8 marks)',
+                mnemonic: 'EPC-TIGER (Economy, Politics, Culture - Trade, Investment, Governance, Equality, Roots)',
+                answer: `### Impact of Globalisation on India
+
+**Introduction**: 1991 LPG reforms + 1995 WTO entry integrated India with global markets.
+
+### Economy (TIG)
+- **Trade Boom**: Exports/services surged; IT/BPO hubs emerged.
+- **Investment**: FDI inflows; technology and capital access improved.
+- **Growth vs Gaps**: Higher GDP, but regional and sectoral inequality widened; external shocks (2008) felt quickly.
+
+### Politics/Governance (E)
+- **Regulatory Shifts**: Competition law, SEBI strengthening, IPR compliance.
+- **Policy Space Debate**: WTO rules constrain tariffs/subsidies; need safety nets.
+- **State Role**: From controller to facilitator; PPPs and disinvestment.
+
+### Culture/Society (R)
+- **Connectivity**: Internet/social media globalise tastes and activism.
+- **Homogenisation vs Glocalisation**: Western formats adapted locally (OTT, food, music).
+- **Migration/Diaspora**: Remittances and soft power rise; brain drain concerns persist.
+
+### Conclusion
+Globalisation catalysed growth and openness but demands balanced policies—productivity + inclusion + cultural confidence.`
+              },
+              {
+                id: 'rl2',
+                question: 'Evaluate India\'s multi-alignment strategy in the 21st century. (8 marks)',
+                mnemonic: 'BALANCE - Build many ties, Autonomy, Leverage coalitions, Avoid entanglement, Neighbourhood first, Crisis hedging, Economic gains',
+                answer: `### India\'s Multi-Alignment Strategy
+
+**Introduction**: Shift from Cold War non-alignment to issue-based multi-alignment in a multipolar world.
+
+### Drivers
+- **China Factor**: Border tensions + Indo-Pacific competition.
+- **Growth Goals**: Technology, energy, capital from diverse partners.
+- **System Fluidity**: No single hegemon; coalitions by issue.
+
+### Practice
+- **QUAD/Indo-Pacific** for maritime security; **BRICS/SCO** for Eurasian balance; **G20** for economic voice.
+- **US Partnership** (tech/defense) balanced with **Russia ties** (legacy hardware, energy).
+- **Neighbourhood First** + **Act East/West** to anchor regionally.
+
+### Benefits
+- Strategic autonomy preserved; more options in crises.
+- Diversified defense sourcing and energy security.
+- Leadership image for Global South (Voice of Global South Summit).
+
+### Risks/Constraints
+- Managing contradictions (CAATSA risk, China sensitivities).
+- Resource bandwidth to engage multiple forums.
+- Perception of drift if positions seem ambiguous.
+
+### Conclusion
+Multi-alignment maximises space and leverage but needs clear red-lines, capacity building, and consistent messaging.`
+              },
+              {
+                id: 'rl3',
+                question: 'Assess the UN\'s role in peacekeeping and human rights protection after 1991. (8 marks)',
+                mnemonic: 'PROTECT - Peacekeeping, R2P, OHCHR, Troops from Global South, Enforcement gaps, Council reform, Trust building',
+                answer: `### UN After 1991: Peace & Rights
+
+**Introduction**: Post-Cold War UN moved from traditional monitoring to complex mandates including state-building and rights protection.
+
+### Peacekeeping Evolution
+- **Robust Mandates**: Protection of civilians, DDR (Disarmament, Demobilisation, Reintegration) e.g., Sierra Leone, Liberia.
+- **Global South Troops**: India, Bangladesh, Rwanda among top contributors.
+- **Challenges**: Slow deployments, mandate-resource gap, safety of peacekeepers.
+
+### Human Rights Pillar
+- **Institutions**: OHCHR strengthened; Human Rights Council (2006) replaced Commission; ICC prosecutes core crimes (complementary to states).
+- **Norms**: Responsibility to Protect (2005) links rights to security; women/children in conflict focus.
+
+### Constraints
+- **Veto Politics**: Syria, Ukraine illustrate paralysis; selective action hurts credibility.
+- **Abuse Concerns**: Misconduct cases require stricter accountability.
+
+### Reform & Way Forward
+- **Council Reform**: Wider representation (G4/Africa demands) to improve legitimacy.
+- **Performance**: Better training, funding, tech (drones, medevac) and clear exit strategies.
+
+### Conclusion
+UN remains essential but must adapt—credible enforcement, inclusive decision-making, and rights-centric operations build trust.`
+              }
+            ]
           }
         ]
 };
