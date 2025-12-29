@@ -49,6 +49,11 @@ import StudyHeatmap from './components/StudyHeatmap';
 import SmartWeakness from './components/SmartWeakness';
 import WeeklyReport from './components/WeeklyReport';
 import QuickStatsWidget from './components/QuickStatsWidget';
+import EcoStudyHub from './components/EcoStudyHub';
+import EcoFormulaBank from './components/EcoFormulaBank';
+import EcoGraphPractice from './components/EcoGraphPractice';
+import EcoNumericalSolver from './components/EcoNumericalSolver';
+import EcoElasticityCalc from './components/EcoElasticityCalc';
 import { useProgress } from './hooks/useProgress';
 import { explainConcept } from './services/geminiService';
 import { db, UserProfile } from './services/localDb';
@@ -116,6 +121,11 @@ const App: React.FC = () => {
   const [showStudyHeatmap, setShowStudyHeatmap] = useState(false);
   const [showSmartWeakness, setShowSmartWeakness] = useState(false);
   const [showWeeklyReport, setShowWeeklyReport] = useState(false);
+  const [showEcoStudyHub, setShowEcoStudyHub] = useState(false);
+  const [showEcoFormulaBank, setShowEcoFormulaBank] = useState(false);
+  const [showEcoGraphPractice, setShowEcoGraphPractice] = useState(false);
+  const [showEcoNumericalSolver, setShowEcoNumericalSolver] = useState(false);
+  const [showEcoElasticityCalc, setShowEcoElasticityCalc] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -932,6 +942,26 @@ const App: React.FC = () => {
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Weekly</span>
               </button>
+            </div>
+            
+            {/* Row 10 - Subject-Specific Study Tools */}
+            <div className="mt-6 mb-3">
+              <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-3">📚 Subject Study Tools</h3>
+              <div className="grid grid-cols-1 gap-3">
+                <button
+                  onClick={() => setShowEcoStudyHub(true)}
+                  className="bg-gradient-to-r from-emerald-500 to-teal-500 p-4 rounded-2xl shadow-lg hover:shadow-xl transition flex items-center gap-4"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center text-2xl">
+                    💹
+                  </div>
+                  <div className="text-left">
+                    <span className="text-white font-bold block">Economics Study Hub</span>
+                    <span className="text-white/70 text-xs">Formulas, Graphs, Numerical Solver & more</span>
+                  </div>
+                  <ChevronRight className="ml-auto text-white/70" size={20} />
+                </button>
+              </div>
             </div>
           </div>
 
@@ -1814,6 +1844,38 @@ const App: React.FC = () => {
           subjects={getFilteredSubjects()} 
           onClose={() => setShowWeeklyReport(false)} 
         />
+      )}
+      
+      {/* Economics Study Tools */}
+      {showEcoStudyHub && (
+        <EcoStudyHub 
+          onClose={() => setShowEcoStudyHub(false)}
+          onOpenTool={(tool) => {
+            setShowEcoStudyHub(false);
+            switch(tool) {
+              case 'formula-bank': setShowEcoFormulaBank(true); break;
+              case 'graph-practice': setShowEcoGraphPractice(true); break;
+              case 'numerical-solver': setShowEcoNumericalSolver(true); break;
+              case 'elasticity-calc': setShowEcoElasticityCalc(true); break;
+            }
+          }}
+        />
+      )}
+      
+      {showEcoFormulaBank && (
+        <EcoFormulaBank onClose={() => setShowEcoFormulaBank(false)} />
+      )}
+      
+      {showEcoGraphPractice && (
+        <EcoGraphPractice onClose={() => setShowEcoGraphPractice(false)} />
+      )}
+      
+      {showEcoNumericalSolver && (
+        <EcoNumericalSolver onClose={() => setShowEcoNumericalSolver(false)} />
+      )}
+      
+      {showEcoElasticityCalc && (
+        <EcoElasticityCalc onClose={() => setShowEcoElasticityCalc(false)} />
       )}
     </div>
   );
