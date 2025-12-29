@@ -105,6 +105,29 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
     { label: 'MCQs attempted', value: formatNumber(stats.mcqAttempted) },
   ];
 
+  const timeline = [
+    {
+      title: 'Hours invested',
+      value: `${formatNumber(totalHours)}h`,
+      note: `${formatNumber(stats.totalMinutes)} study mins • ${formatNumber(stats.focusMinutes)} pomodoro mins`,
+    },
+    {
+      title: 'Streak peak',
+      value: `${stats.longestStreak} days`,
+      note: `Current streak ${stats.currentStreak} days`,
+    },
+    {
+      title: 'MCQ grind',
+      value: `${formatNumber(stats.mcqAttempted)} MCQs`,
+      note: stats.avgQuizScore ? `Avg score ${stats.avgQuizScore}%` : 'Keep testing to see your avg',
+    },
+    {
+      title: 'Chapters touched',
+      value: `${formatNumber(stats.chaptersTouched)}`,
+      note: `${formatNumber(stats.subjectsTouched)} subjects explored`,
+    },
+  ];
+
   const highlightCards = [
     {
       title: 'Total Focused Hours',
@@ -163,10 +186,12 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 z-[120] bg-black/70 backdrop-blur-sm overflow-y-auto">
       <div className="relative w-full max-w-5xl mx-auto my-6 px-4 md:px-6">
-        <div className="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-950 text-white rounded-3xl shadow-2xl overflow-hidden border border-white/10">
+        <div className="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-950 text-white rounded-3xl shadow-2xl overflow-hidden border border-white/10 relative">
         <div className="absolute inset-0 pointer-events-none opacity-40" style={{
           backgroundImage: 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0, transparent 35%), radial-gradient(circle at 80% 0%, rgba(99,102,241,0.2) 0, transparent 30%), radial-gradient(circle at 50% 80%, rgba(14,165,233,0.15) 0, transparent 30%)'
         }} />
+        <div className="absolute -left-10 -top-10 w-40 h-40 bg-amber-400/20 blur-3xl rounded-full" />
+        <div className="absolute -right-12 top-24 w-48 h-48 bg-cyan-400/15 blur-3xl rounded-full" />
 
         <div className="relative p-6 md:p-10 space-y-8">
           <div className="flex items-start justify-between gap-4">
@@ -221,6 +246,20 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
                   <p className="font-semibold text-white">{item.title}</p>
                 </div>
                 <p className="text-sm text-slate-200/80 leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {timeline.map((item) => (
+              <div key={item.title} className="bg-white/5 border border-white/10 rounded-2xl p-4 flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-lg font-bold">
+                  {item.value}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">{item.title}</p>
+                  <p className="text-xs text-white/70 mt-1 leading-relaxed">{item.note}</p>
+                </div>
               </div>
             ))}
           </div>
