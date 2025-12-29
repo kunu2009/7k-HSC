@@ -154,21 +154,22 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
   ];
 
   return (
-    <div className="fixed inset-0 z-[120] bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
-      <div className="relative w-full max-w-4xl bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-950 text-white rounded-3xl shadow-2xl overflow-hidden">
+    <div className="fixed inset-0 z-[120] bg-black/70 backdrop-blur-sm overflow-y-auto">
+      <div className="relative w-full max-w-5xl mx-auto my-6 px-4 md:px-6">
+        <div className="bg-gradient-to-br from-slate-900 via-indigo-900 to-slate-950 text-white rounded-3xl shadow-2xl overflow-hidden border border-white/10">
         <div className="absolute inset-0 pointer-events-none opacity-40" style={{
           backgroundImage: 'radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0, transparent 35%), radial-gradient(circle at 80% 0%, rgba(99,102,241,0.2) 0, transparent 30%), radial-gradient(circle at 50% 80%, rgba(14,165,233,0.15) 0, transparent 30%)'
         }} />
 
-        <div className="relative p-6 md:p-8 space-y-6">
+        <div className="relative p-6 md:p-10 space-y-8">
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-indigo-200 text-xs font-semibold uppercase tracking-[0.2em]">Study Wrapped {stats.year}</p>
-              <h2 className="text-2xl md:text-3xl font-black mt-2 flex items-center gap-2">
+              <h2 className="text-2xl md:text-3xl font-black mt-2 flex items-center gap-2 leading-tight">
                 <Sparkles size={24} className="text-amber-200" />
                 Your 2025 Learning Story
               </h2>
-              <p className="text-slate-200/80 text-sm max-w-xl mt-1">
+              <p className="text-slate-200/80 text-sm max-w-2xl mt-2">
                 A snapshot of how you showed up this year — hours focused, streaks kept, chapters explored, and wins earned.
               </p>
             </div>
@@ -181,7 +182,7 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
             {highlightCards.map(card => (
               <div key={card.title} className={`p-4 rounded-2xl bg-gradient-to-r ${card.gradient} shadow-lg shadow-black/20 flex items-start gap-3`}> 
                 <div className="p-3 bg-white/15 rounded-xl">
@@ -208,7 +209,7 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
             ))}
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center gap-3">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-4 flex flex-col md:flex-row items-start md:items-center gap-4">
             <div className="p-3 bg-indigo-500/40 rounded-xl">
               <Star className="text-yellow-100" size={22} />
             </div>
@@ -229,7 +230,10 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
             <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15">2025 • Finishing strong</span>
             <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15">Momentum over perfection</span>
             <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15">Consistency &gt; intensity</span>
+            <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15">Celebrate small wins</span>
+            <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15">Keep the streaks kind</span>
           </div>
+        </div>
         </div>
       </div>
     </div>
