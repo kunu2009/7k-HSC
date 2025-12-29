@@ -98,6 +98,13 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
 
   const totalHours = useMemo(() => Math.round((stats.totalMinutes + stats.focusMinutes) / 60), [stats]);
 
+  const quickChips = [
+    { label: 'Focused hours', value: `${formatNumber(totalHours)}h` },
+    { label: 'Study days', value: formatNumber(stats.totalDays) },
+    { label: 'Chapters touched', value: formatNumber(stats.chaptersTouched) },
+    { label: 'MCQs attempted', value: formatNumber(stats.mcqAttempted) },
+  ];
+
   const highlightCards = [
     {
       title: 'Total Focused Hours',
@@ -182,6 +189,15 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
             </button>
           </div>
 
+          <div className="flex flex-wrap gap-3 text-xs text-white/80">
+            {quickChips.map(chip => (
+              <span key={chip.label} className="px-3 py-2 rounded-xl bg-white/10 border border-white/15 flex items-center gap-2">
+                <span className="text-white font-semibold text-sm">{chip.value}</span>
+                <span className="text-white/70">{chip.label}</span>
+              </span>
+            ))}
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
             {highlightCards.map(card => (
               <div key={card.title} className={`p-4 rounded-2xl bg-gradient-to-r ${card.gradient} shadow-lg shadow-black/20 flex items-start gap-3`}> 
@@ -232,6 +248,16 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
             <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15">Consistency &gt; intensity</span>
             <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15">Celebrate small wins</span>
             <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15">Keep the streaks kind</span>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-3 md:items-center justify-between bg-white/5 border border-white/10 rounded-2xl p-4">
+            <div className="text-sm text-white/85">
+              Want a stronger start to 2026? Pick one habit to double down on this week.
+            </div>
+            <div className="flex gap-2 flex-wrap">
+              <button className="px-4 py-2 rounded-xl bg-white text-slate-900 text-sm font-semibold hover:bg-slate-100 transition">Set a mini goal</button>
+              <button className="px-4 py-2 rounded-xl bg-indigo-500/40 border border-white/20 text-white text-sm font-semibold hover:bg-indigo-500/60 transition">Plan next 7 days</button>
+            </div>
           </div>
         </div>
         </div>
