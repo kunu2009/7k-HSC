@@ -23,6 +23,22 @@ interface WrappedStats {
 const formatNumber = (num: number) => num.toLocaleString('en-IN');
 
 const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
+  const useAnimatedNumber = (target: number, duration = 900) => {
+    const [display, setDisplay] = useState(0);
+    useEffect(() => {
+      let frame: number;
+      const start = performance.now();
+      const animate = (now: number) => {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setDisplay(Math.round(target * eased));
+        if (progress < 1) frame = requestAnimationFrame(animate);
+      };
+      frame = requestAnimationFrame(animate);
+      return () => cancelAnimationFrame(frame);
+    }, [target, duration]);
+    return display;
+  };
   const [stats, setStats] = useState<WrappedStats>({
     totalMinutes: 0,
     totalDays: 0,
@@ -97,33 +113,39 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
   }, []);
 
   const totalHours = useMemo(() => Math.round((stats.totalMinutes + stats.focusMinutes) / 60), [stats]);
+  const animatedHours = useAnimatedNumber(totalHours);
+  const animatedDays = useAnimatedNumber(stats.totalDays);
+  const animatedChapters = useAnimatedNumber(stats.chaptersTouched);
+  const animatedMCQs = useAnimatedNumber(stats.mcqAttempted);
+  const animatedLongest = useAnimatedNumber(stats.longestStreak);
+  const animatedCurrent = useAnimatedNumber(stats.currentStreak);
 
   const quickChips = [
-    { label: 'Focused hours', value: `${formatNumber(totalHours)}h` },
-    { label: 'Study days', value: formatNumber(stats.totalDays) },
-    { label: 'Chapters touched', value: formatNumber(stats.chaptersTouched) },
-    { label: 'MCQs attempted', value: formatNumber(stats.mcqAttempted) },
+    { label: 'Focused hours', value: `${formatNumber(animatedHours)}h` },
+    { label: 'Study days', value: formatNumber(animatedDays) },
+    { label: 'Chapters touched', value: formatNumber(animatedChapters) },
+    { label: 'MCQs attempted', value: formatNumber(animatedMCQs) },
   ];
 
   const timeline = [
     {
       title: 'Hours invested',
-      value: `${formatNumber(totalHours)}h`,
+      value: `${formatNumber(animatedHours)}h`,
       note: `${formatNumber(stats.totalMinutes)} study mins • ${formatNumber(stats.focusMinutes)} pomodoro mins`,
     },
     {
       title: 'Streak peak',
-      value: `${stats.longestStreak} days`,
-      note: `Current streak ${stats.currentStreak} days`,
+      value: `${animatedLongest} days`,
+      note: `Current streak ${animatedCurrent} days`,
     },
     {
       title: 'MCQ grind',
-      value: `${formatNumber(stats.mcqAttempted)} MCQs`,
+      value: `${formatNumber(animatedMCQs)} MCQs`,
       note: stats.avgQuizScore ? `Avg score ${stats.avgQuizScore}%` : 'Keep testing to see your avg',
     },
     {
       title: 'Chapters touched',
-      value: `${formatNumber(stats.chaptersTouched)}`,
+      value: `${formatNumber(animatedChapters)}`,
       note: `${formatNumber(stats.subjectsTouched)} subjects explored`,
     },
   ];
@@ -131,28 +153,28 @@ const StudyWrapped2025: React.FC<StudyWrapped2025Props> = ({ onClose }) => {
   const highlightCards = [
     {
       title: 'Total Focused Hours',
-      value: `${formatNumber(totalHours)}h`,
+      value: `${formatNumber(animatedHours)}h`,
       caption: `${formatNumber(stats.totalMinutes)} study mins + ${formatNumber(stats.focusMinutes)} pomodoro mins`,
       icon: <Clock className="text-amber-200" size={24} />,
       gradient: 'from-amber-500 to-orange-500',
     },
     {
       title: 'Days Showed Up',
-      value: formatNumber(stats.totalDays),
-      caption: `Longest streak ${stats.longestStreak} days • Current ${stats.currentStreak} days`,
+      value: formatNumber(animatedDays),
+      caption: `Longest streak ${animatedLongest} days • Current ${animatedCurrent} days`,
       icon: <Flame className="text-rose-200" size={24} />,
       gradient: 'from-rose-500 to-pink-500',
     },
     {
       title: 'Chapters Touched',
-      value: `${formatNumber(stats.chaptersTouched)}`,
+      value: `${formatNumber(animatedChapters)}`,
       caption: `${formatNumber(stats.subjectsTouched)} subjects explored`,
       icon: <BookOpen className="text-emerald-200" size={24} />,
       gradient: 'from-emerald-500 to-teal-500',
     },
     {
       title: 'Quiz Journey',
-      value: `${formatNumber(stats.mcqAttempted)} MCQs`,
+      value: `${formatNumber(animatedMCQs)} MCQs`,
       caption: stats.avgQuizScore ? `Avg score ${stats.avgQuizScore}%` : 'Keep testing your recall!',
       icon: <Target className="text-sky-200" size={24} />,
       gradient: 'from-sky-500 to-indigo-500',
