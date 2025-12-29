@@ -890,10 +890,11 @@ const EcoFormulaBank: React.FC<EcoFormulaBankProps> = ({ onClose }) => {
   }), [bookmarked]);
 
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-      <div className="bg-slate-900 rounded-2xl w-full max-w-6xl max-h-[95vh] overflow-hidden shadow-2xl border border-slate-700 flex flex-col">
+    <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm overflow-y-auto">
+      <div className="w-full max-w-6xl mx-auto my-6 px-4 sm:px-6">
+        <div className="bg-slate-900 rounded-3xl w-full shadow-2xl border border-slate-700 flex flex-col min-h-[80vh] overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-5 flex-shrink-0">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 p-5 sm:p-6 flex-shrink-0">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="text-4xl">📐</div>
@@ -978,10 +979,10 @@ const EcoFormulaBank: React.FC<EcoFormulaBankProps> = ({ onClose }) => {
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-1 overflow-hidden">
+        <div className="flex flex-1 overflow-hidden flex-col lg:flex-row">
           {/* Chapter Sidebar */}
-          <div className="w-64 bg-slate-850 border-r border-slate-700 overflow-y-auto flex-shrink-0">
-            <div className="p-3">
+          <div className="w-full lg:w-64 bg-slate-850 border-b lg:border-b-0 lg:border-r border-slate-700 overflow-y-auto flex-shrink-0">
+            <div className="p-3 flex flex-wrap gap-2 lg:block">
               <button
                 onClick={() => setSelectedChapter(null)}
                 className={`w-full text-left px-3 py-2 rounded-lg mb-2 transition-all ${
@@ -1117,6 +1118,7 @@ const EcoFormulaBank: React.FC<EcoFormulaBankProps> = ({ onClose }) => {
         <div className="p-3 bg-slate-800 border-t border-slate-700 flex items-center justify-between text-sm text-slate-400 flex-shrink-0">
           <span>Showing {filteredFormulas.length} of {stats.total} items</span>
           <span>📚 Maharashtra HSC Economics</span>
+        </div>
         </div>
       </div>
     </div>
