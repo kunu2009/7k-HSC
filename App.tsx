@@ -63,6 +63,8 @@ import EcoElasticityCalc from './components/EcoElasticityCalc';
 import ArtsStudyHub from './components/ArtsStudyHub';
 import HistoryTimelineQuiz from './components/HistoryTimelineQuiz';
 import ArtsQuickReference from './components/ArtsQuickReference';
+import LiteratureAnalysis from './components/LiteratureAnalysis';
+import PoliticalScienceHub from './components/PoliticalScienceHub';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -141,6 +143,8 @@ const App: React.FC = () => {
   const [showArtsStudyHub, setShowArtsStudyHub] = useState(false);
   const [showHistoryTimelineQuiz, setShowHistoryTimelineQuiz] = useState(false);
   const [showArtsQuickReference, setShowArtsQuickReference] = useState(false);
+  const [showLiteratureAnalysis, setShowLiteratureAnalysis] = useState(false);
+  const [showPoliticalScienceHub, setShowPoliticalScienceHub] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -978,6 +982,29 @@ const App: React.FC = () => {
                   <FileText size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Quick Ref</span>
+              </button>
+            </div>
+            
+            {/* Row 7C - More Arts Tools */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowLiteratureAnalysis(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center">
+                  <BookOpen size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Literature</span>
+              </button>
+              
+              <button
+                onClick={() => setShowPoliticalScienceHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center">
+                  <Globe size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Pol. Science</span>
               </button>
             </div>
             
@@ -2121,6 +2148,14 @@ const App: React.FC = () => {
       
       {showArtsQuickReference && (
         <ArtsQuickReference onClose={() => setShowArtsQuickReference(false)} />
+      )}
+      
+      {showLiteratureAnalysis && (
+        <LiteratureAnalysis onClose={() => setShowLiteratureAnalysis(false)} />
+      )}
+      
+      {showPoliticalScienceHub && (
+        <PoliticalScienceHub onClose={() => setShowPoliticalScienceHub(false)} />
       )}
     </div>
   );
