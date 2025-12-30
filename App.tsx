@@ -60,6 +60,9 @@ import EcoFormulaBank from './components/EcoFormulaBank';
 import EcoGraphPractice from './components/EcoGraphPractice';
 import EcoNumericalSolver from './components/EcoNumericalSolver';
 import EcoElasticityCalc from './components/EcoElasticityCalc';
+import ArtsStudyHub from './components/ArtsStudyHub';
+import HistoryTimelineQuiz from './components/HistoryTimelineQuiz';
+import ArtsQuickReference from './components/ArtsQuickReference';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -135,6 +138,9 @@ const App: React.FC = () => {
   const [showEcoGraphPractice, setShowEcoGraphPractice] = useState(false);
   const [showEcoNumericalSolver, setShowEcoNumericalSolver] = useState(false);
   const [showEcoElasticityCalc, setShowEcoElasticityCalc] = useState(false);
+  const [showArtsStudyHub, setShowArtsStudyHub] = useState(false);
+  const [showHistoryTimelineQuiz, setShowHistoryTimelineQuiz] = useState(false);
+  const [showArtsQuickReference, setShowArtsQuickReference] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -942,6 +948,36 @@ const App: React.FC = () => {
                   <Flame size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Arts Sprint</span>
+              </button>
+              
+              <button
+                onClick={() => setShowArtsStudyHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center">
+                  <BookA size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Arts Hub</span>
+              </button>
+              
+              <button
+                onClick={() => setShowHistoryTimelineQuiz(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-teal-200 dark:hover:border-teal-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-900/30 text-teal-600 flex items-center justify-center">
+                  <Clock size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">History Quiz</span>
+              </button>
+              
+              <button
+                onClick={() => setShowArtsQuickReference(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-pink-200 dark:hover:border-pink-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-pink-100 dark:bg-pink-900/30 text-pink-600 flex items-center justify-center">
+                  <FileText size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Quick Ref</span>
               </button>
             </div>
             
@@ -2062,6 +2098,29 @@ const App: React.FC = () => {
       
       {showEcoElasticityCalc && (
         <EcoElasticityCalc onClose={() => setShowEcoElasticityCalc(false)} />
+      )}
+      
+      {/* Arts Study Tools */}
+      {showArtsStudyHub && (
+        <ArtsStudyHub 
+          onClose={() => setShowArtsStudyHub(false)}
+          onOpenTool={(tool) => {
+            setShowArtsStudyHub(false);
+            switch(tool) {
+              case 'timeline-quiz': setShowHistoryTimelineQuiz(true); break;
+              case 'arts-sprint': setShowArtsQuickSprint(true); break;
+              case 'writing-practice': setShowWritingPractice(true); break;
+            }
+          }}
+        />
+      )}
+      
+      {showHistoryTimelineQuiz && (
+        <HistoryTimelineQuiz onClose={() => setShowHistoryTimelineQuiz(false)} />
+      )}
+      
+      {showArtsQuickReference && (
+        <ArtsQuickReference onClose={() => setShowArtsQuickReference(false)} />
       )}
     </div>
   );
