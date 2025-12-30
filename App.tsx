@@ -69,6 +69,9 @@ import HindiGrammarHub from './components/HindiGrammarHub';
 import GeographyConcepts from './components/GeographyConcepts';
 import EnglishWritingSkills from './components/EnglishWritingSkills';
 import EconomicsCaseStudies from './components/EconomicsCaseStudies';
+import HistoryChapterSummary from './components/HistoryChapterSummary';
+import ConstitutionalArticles from './components/ConstitutionalArticles';
+import HindiSahitya from './components/HindiSahitya';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -153,6 +156,9 @@ const App: React.FC = () => {
   const [showGeographyConcepts, setShowGeographyConcepts] = useState(false);
   const [showEnglishWritingSkills, setShowEnglishWritingSkills] = useState(false);
   const [showEconomicsCaseStudies, setShowEconomicsCaseStudies] = useState(false);
+  const [showHistoryChapterSummary, setShowHistoryChapterSummary] = useState(false);
+  const [showConstitutionalArticles, setShowConstitutionalArticles] = useState(false);
+  const [showHindiSahitya, setShowHindiSahitya] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1056,6 +1062,39 @@ const App: React.FC = () => {
                   <TrendingUp size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Eco Cases</span>
+              </button>
+              
+              <button
+                onClick={() => setShowHistoryChapterSummary(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center">
+                  <BookOpen size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">History Notes</span>
+              </button>
+              
+              <button
+                onClick={() => setShowConstitutionalArticles(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center">
+                  <FileText size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Constitution</span>
+              </button>
+            </div>
+            
+            {/* Row 7E - More Hindi & Arts */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowHindiSahitya(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-rose-200 dark:hover:border-rose-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 text-rose-600 flex items-center justify-center">
+                  <BookA size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Hindi Sahitya</span>
               </button>
             </div>
             
@@ -2223,6 +2262,18 @@ const App: React.FC = () => {
       
       {showEconomicsCaseStudies && (
         <EconomicsCaseStudies onClose={() => setShowEconomicsCaseStudies(false)} />
+      )}
+      
+      {showHistoryChapterSummary && (
+        <HistoryChapterSummary onClose={() => setShowHistoryChapterSummary(false)} />
+      )}
+      
+      {showConstitutionalArticles && (
+        <ConstitutionalArticles onClose={() => setShowConstitutionalArticles(false)} />
+      )}
+      
+      {showHindiSahitya && (
+        <HindiSahitya onClose={() => setShowHindiSahitya(false)} />
       )}
     </div>
   );
