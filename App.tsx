@@ -85,6 +85,9 @@ import SanskritShlokBank from './components/SanskritShlokBank';
 import CurrentAffairs from './components/CurrentAffairs';
 import SpeedQuiz from './components/SpeedQuiz';
 import BoardExamTips from './components/BoardExamTips';
+import GrammarMaster from './components/GrammarMaster';
+import MockTest from './components/MockTest';
+import ImportantEvents from './components/ImportantEvents';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -185,6 +188,9 @@ const App: React.FC = () => {
   const [showCurrentAffairs, setShowCurrentAffairs] = useState(false);
   const [showSpeedQuiz, setShowSpeedQuiz] = useState(false);
   const [showBoardExamTips, setShowBoardExamTips] = useState(false);
+  const [showGrammarMaster, setShowGrammarMaster] = useState(false);
+  const [showMockTest, setShowMockTest] = useState(false);
+  const [showImportantEvents, setShowImportantEvents] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1346,7 +1352,40 @@ const App: React.FC = () => {
               </button>
             </div>
             
-            {/* Row 12 - Subject-Specific Study Tools */}
+            {/* Row 12 - More Study Tools */}
+            <div className="grid grid-cols-3 gap-3 mt-3">
+              <button
+                onClick={() => setShowGrammarMaster(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center">
+                  <BookOpen size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Grammar</span>
+              </button>
+              
+              <button
+                onClick={() => setShowMockTest(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-rose-200 dark:hover:border-rose-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 text-rose-600 flex items-center justify-center">
+                  <FileText size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Mock Test</span>
+              </button>
+              
+              <button
+                onClick={() => setShowImportantEvents(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center">
+                  <Calendar size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Events</span>
+              </button>
+            </div>
+            
+            {/* Row 13 - Subject-Specific Study Tools */}
             <div className="mt-6 mb-3">
               <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-3">📚 Subject Study Tools</h3>
               <div className="grid grid-cols-1 gap-3">
@@ -2488,6 +2527,18 @@ const App: React.FC = () => {
       
       {showBoardExamTips && (
         <BoardExamTips onClose={() => setShowBoardExamTips(false)} />
+      )}
+      
+      {showGrammarMaster && (
+        <GrammarMaster onClose={() => setShowGrammarMaster(false)} />
+      )}
+      
+      {showMockTest && (
+        <MockTest onClose={() => setShowMockTest(false)} />
+      )}
+      
+      {showImportantEvents && (
+        <ImportantEvents onClose={() => setShowImportantEvents(false)} />
       )}
     </div>
   );
