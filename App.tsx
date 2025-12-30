@@ -72,6 +72,9 @@ import EconomicsCaseStudies from './components/EconomicsCaseStudies';
 import HistoryChapterSummary from './components/HistoryChapterSummary';
 import ConstitutionalArticles from './components/ConstitutionalArticles';
 import HindiSahitya from './components/HindiSahitya';
+import SociologyHub from './components/SociologyHub';
+import PsychologyHub from './components/PsychologyHub';
+import QuickRevisionQuiz from './components/QuickRevisionQuiz';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -159,6 +162,9 @@ const App: React.FC = () => {
   const [showHistoryChapterSummary, setShowHistoryChapterSummary] = useState(false);
   const [showConstitutionalArticles, setShowConstitutionalArticles] = useState(false);
   const [showHindiSahitya, setShowHindiSahitya] = useState(false);
+  const [showSociologyHub, setShowSociologyHub] = useState(false);
+  const [showPsychologyHub, setShowPsychologyHub] = useState(false);
+  const [showQuickRevisionQuiz, setShowQuickRevisionQuiz] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1095,6 +1101,36 @@ const App: React.FC = () => {
                   <BookA size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Hindi Sahitya</span>
+              </button>
+              
+              <button
+                onClick={() => setShowSociologyHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-violet-200 dark:hover:border-violet-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-violet-100 dark:bg-violet-900/30 text-violet-600 flex items-center justify-center">
+                  <Users size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Sociology</span>
+              </button>
+              
+              <button
+                onClick={() => setShowPsychologyHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-cyan-200 dark:hover:border-cyan-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 flex items-center justify-center">
+                  <Brain size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Psychology</span>
+              </button>
+              
+              <button
+                onClick={() => setShowQuickRevisionQuiz(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center">
+                  <Target size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Quick Quiz</span>
               </button>
             </div>
             
@@ -2274,6 +2310,18 @@ const App: React.FC = () => {
       
       {showHindiSahitya && (
         <HindiSahitya onClose={() => setShowHindiSahitya(false)} />
+      )}
+      
+      {showSociologyHub && (
+        <SociologyHub onClose={() => setShowSociologyHub(false)} />
+      )}
+      
+      {showPsychologyHub && (
+        <PsychologyHub onClose={() => setShowPsychologyHub(false)} />
+      )}
+      
+      {showQuickRevisionQuiz && (
+        <QuickRevisionQuiz onClose={() => setShowQuickRevisionQuiz(false)} />
       )}
     </div>
   );
