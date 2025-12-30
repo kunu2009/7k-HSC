@@ -75,6 +75,9 @@ import HindiSahitya from './components/HindiSahitya';
 import SociologyHub from './components/SociologyHub';
 import PsychologyHub from './components/PsychologyHub';
 import QuickRevisionQuiz from './components/QuickRevisionQuiz';
+import ImportantDates from './components/ImportantDates';
+import ImportantPersons from './components/ImportantPersons';
+import OneMinuteChallenge from './components/OneMinuteChallenge';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -165,6 +168,9 @@ const App: React.FC = () => {
   const [showSociologyHub, setShowSociologyHub] = useState(false);
   const [showPsychologyHub, setShowPsychologyHub] = useState(false);
   const [showQuickRevisionQuiz, setShowQuickRevisionQuiz] = useState(false);
+  const [showImportantDates, setShowImportantDates] = useState(false);
+  const [showImportantPersons, setShowImportantPersons] = useState(false);
+  const [showOneMinuteChallenge, setShowOneMinuteChallenge] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1131,6 +1137,36 @@ const App: React.FC = () => {
                   <Target size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Quick Quiz</span>
+              </button>
+              
+              <button
+                onClick={() => setShowImportantDates(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center">
+                  <Calendar size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Dates</span>
+              </button>
+              
+              <button
+                onClick={() => setShowImportantPersons(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-rose-200 dark:hover:border-rose-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 text-rose-600 flex items-center justify-center">
+                  <Award size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Persons</span>
+              </button>
+              
+              <button
+                onClick={() => setShowOneMinuteChallenge(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 text-red-600 flex items-center justify-center">
+                  <Zap size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">1 Min</span>
               </button>
             </div>
             
@@ -2322,6 +2358,18 @@ const App: React.FC = () => {
       
       {showQuickRevisionQuiz && (
         <QuickRevisionQuiz onClose={() => setShowQuickRevisionQuiz(false)} />
+      )}
+      
+      {showImportantDates && (
+        <ImportantDates onClose={() => setShowImportantDates(false)} />
+      )}
+      
+      {showImportantPersons && (
+        <ImportantPersons onClose={() => setShowImportantPersons(false)} />
+      )}
+      
+      {showOneMinuteChallenge && (
+        <OneMinuteChallenge onClose={() => setShowOneMinuteChallenge(false)} />
       )}
     </div>
   );
