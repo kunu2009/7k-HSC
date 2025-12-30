@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks, FileEdit, Map, HelpCircle, Cloud, Share2, MessageSquare, Eye, Calendar, CheckCircle2, Circle } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks, FileEdit, Map, MapPin, HelpCircle, Cloud, Share2, MessageSquare, Eye, Calendar, CheckCircle2, Circle } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import { getSubjectBoardExamDate } from './examTimetable';
@@ -81,6 +81,10 @@ import OneMinuteChallenge from './components/OneMinuteChallenge';
 import PYQBank from './components/PYQBank';
 import WritingTemplates from './components/WritingTemplates';
 import HistoryMapWork from './components/HistoryMapWork';
+import SanskritShlokBank from './components/SanskritShlokBank';
+import CurrentAffairs from './components/CurrentAffairs';
+import SpeedQuiz from './components/SpeedQuiz';
+import BoardExamTips from './components/BoardExamTips';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -177,6 +181,10 @@ const App: React.FC = () => {
   const [showPYQBank, setShowPYQBank] = useState(false);
   const [showWritingTemplates, setShowWritingTemplates] = useState(false);
   const [showHistoryMapWork, setShowHistoryMapWork] = useState(false);
+  const [showSanskritShlokBank, setShowSanskritShlokBank] = useState(false);
+  const [showCurrentAffairs, setShowCurrentAffairs] = useState(false);
+  const [showSpeedQuiz, setShowSpeedQuiz] = useState(false);
+  const [showBoardExamTips, setShowBoardExamTips] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1295,7 +1303,50 @@ const App: React.FC = () => {
               </button>
             </div>
             
-            {/* Row 11 - Subject-Specific Study Tools */}
+            {/* Row 11 - More Arts Study Tools */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowSanskritShlokBank(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center text-xl">
+                  📜
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Sanskrit</span>
+              </button>
+              
+              <button
+                onClick={() => setShowCurrentAffairs(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-cyan-200 dark:hover:border-cyan-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 flex items-center justify-center">
+                  <Globe size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Affairs</span>
+              </button>
+              
+              <button
+                onClick={() => setShowSpeedQuiz(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center">
+                  <Zap size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Speed Quiz</span>
+              </button>
+              
+              <button
+                onClick={() => setShowBoardExamTips(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center">
+                  <Target size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Exam Tips</span>
+              </button>
+            </div>
+            
+            {/* Row 12 - Subject-Specific Study Tools */}
             <div className="mt-6 mb-3">
               <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-3">📚 Subject Study Tools</h3>
               <div className="grid grid-cols-1 gap-3">
@@ -2421,6 +2472,22 @@ const App: React.FC = () => {
       
       {showHistoryMapWork && (
         <HistoryMapWork onClose={() => setShowHistoryMapWork(false)} />
+      )}
+      
+      {showSanskritShlokBank && (
+        <SanskritShlokBank onClose={() => setShowSanskritShlokBank(false)} />
+      )}
+      
+      {showCurrentAffairs && (
+        <CurrentAffairs onClose={() => setShowCurrentAffairs(false)} />
+      )}
+      
+      {showSpeedQuiz && (
+        <SpeedQuiz onClose={() => setShowSpeedQuiz(false)} />
+      )}
+      
+      {showBoardExamTips && (
+        <BoardExamTips onClose={() => setShowBoardExamTips(false)} />
       )}
     </div>
   );
