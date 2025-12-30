@@ -65,6 +65,8 @@ import HistoryTimelineQuiz from './components/HistoryTimelineQuiz';
 import ArtsQuickReference from './components/ArtsQuickReference';
 import LiteratureAnalysis from './components/LiteratureAnalysis';
 import PoliticalScienceHub from './components/PoliticalScienceHub';
+import HindiGrammarHub from './components/HindiGrammarHub';
+import GeographyConcepts from './components/GeographyConcepts';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -145,6 +147,8 @@ const App: React.FC = () => {
   const [showArtsQuickReference, setShowArtsQuickReference] = useState(false);
   const [showLiteratureAnalysis, setShowLiteratureAnalysis] = useState(false);
   const [showPoliticalScienceHub, setShowPoliticalScienceHub] = useState(false);
+  const [showHindiGrammarHub, setShowHindiGrammarHub] = useState(false);
+  const [showGeographyConcepts, setShowGeographyConcepts] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1005,6 +1009,26 @@ const App: React.FC = () => {
                   <Globe size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Pol. Science</span>
+              </button>
+              
+              <button
+                onClick={() => setShowHindiGrammarHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-orange-200 dark:hover:border-orange-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-600 flex items-center justify-center">
+                  <BookA size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Hindi व्याकरण</span>
+              </button>
+              
+              <button
+                onClick={() => setShowGeographyConcepts(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center">
+                  <Globe size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Geography</span>
               </button>
             </div>
             
@@ -2156,6 +2180,14 @@ const App: React.FC = () => {
       
       {showPoliticalScienceHub && (
         <PoliticalScienceHub onClose={() => setShowPoliticalScienceHub(false)} />
+      )}
+      
+      {showHindiGrammarHub && (
+        <HindiGrammarHub onClose={() => setShowHindiGrammarHub(false)} />
+      )}
+      
+      {showGeographyConcepts && (
+        <GeographyConcepts onClose={() => setShowGeographyConcepts(false)} />
       )}
     </div>
   );
