@@ -67,6 +67,8 @@ import LiteratureAnalysis from './components/LiteratureAnalysis';
 import PoliticalScienceHub from './components/PoliticalScienceHub';
 import HindiGrammarHub from './components/HindiGrammarHub';
 import GeographyConcepts from './components/GeographyConcepts';
+import EnglishWritingSkills from './components/EnglishWritingSkills';
+import EconomicsCaseStudies from './components/EconomicsCaseStudies';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -149,6 +151,8 @@ const App: React.FC = () => {
   const [showPoliticalScienceHub, setShowPoliticalScienceHub] = useState(false);
   const [showHindiGrammarHub, setShowHindiGrammarHub] = useState(false);
   const [showGeographyConcepts, setShowGeographyConcepts] = useState(false);
+  const [showEnglishWritingSkills, setShowEnglishWritingSkills] = useState(false);
+  const [showEconomicsCaseStudies, setShowEconomicsCaseStudies] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1029,6 +1033,29 @@ const App: React.FC = () => {
                   <Globe size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Geography</span>
+              </button>
+            </div>
+            
+            {/* Row 7D - Even More Arts Tools */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowEnglishWritingSkills(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center">
+                  <PenTool size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Writing Skills</span>
+              </button>
+              
+              <button
+                onClick={() => setShowEconomicsCaseStudies(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center">
+                  <TrendingUp size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Eco Cases</span>
               </button>
             </div>
             
@@ -2188,6 +2215,14 @@ const App: React.FC = () => {
       
       {showGeographyConcepts && (
         <GeographyConcepts onClose={() => setShowGeographyConcepts(false)} />
+      )}
+      
+      {showEnglishWritingSkills && (
+        <EnglishWritingSkills onClose={() => setShowEnglishWritingSkills(false)} />
+      )}
+      
+      {showEconomicsCaseStudies && (
+        <EconomicsCaseStudies onClose={() => setShowEconomicsCaseStudies(false)} />
       )}
     </div>
   );
