@@ -78,6 +78,9 @@ import QuickRevisionQuiz from './components/QuickRevisionQuiz';
 import ImportantDates from './components/ImportantDates';
 import ImportantPersons from './components/ImportantPersons';
 import OneMinuteChallenge from './components/OneMinuteChallenge';
+import PYQBank from './components/PYQBank';
+import WritingTemplates from './components/WritingTemplates';
+import HistoryMapWork from './components/HistoryMapWork';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -171,6 +174,9 @@ const App: React.FC = () => {
   const [showImportantDates, setShowImportantDates] = useState(false);
   const [showImportantPersons, setShowImportantPersons] = useState(false);
   const [showOneMinuteChallenge, setShowOneMinuteChallenge] = useState(false);
+  const [showPYQBank, setShowPYQBank] = useState(false);
+  const [showWritingTemplates, setShowWritingTemplates] = useState(false);
+  const [showHistoryMapWork, setShowHistoryMapWork] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1256,7 +1262,40 @@ const App: React.FC = () => {
               </button>
             </div>
             
-            {/* Row 10 - Subject-Specific Study Tools */}
+            {/* Row 10 - Enhanced Study Resources */}
+            <div className="grid grid-cols-3 gap-3 mt-3">
+              <button
+                onClick={() => setShowPYQBank(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center">
+                  <FileText size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">PYQ Bank</span>
+              </button>
+              
+              <button
+                onClick={() => setShowWritingTemplates(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center">
+                  <PenTool size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Templates</span>
+              </button>
+              
+              <button
+                onClick={() => setShowHistoryMapWork(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 text-red-600 flex items-center justify-center">
+                  <MapPin size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Map Work</span>
+              </button>
+            </div>
+            
+            {/* Row 11 - Subject-Specific Study Tools */}
             <div className="mt-6 mb-3">
               <h3 className="text-sm font-semibold text-slate-500 dark:text-slate-400 mb-3">📚 Subject Study Tools</h3>
               <div className="grid grid-cols-1 gap-3">
@@ -2370,6 +2409,18 @@ const App: React.FC = () => {
       
       {showOneMinuteChallenge && (
         <OneMinuteChallenge onClose={() => setShowOneMinuteChallenge(false)} />
+      )}
+      
+      {showPYQBank && (
+        <PYQBank onClose={() => setShowPYQBank(false)} />
+      )}
+      
+      {showWritingTemplates && (
+        <WritingTemplates onClose={() => setShowWritingTemplates(false)} />
+      )}
+      
+      {showHistoryMapWork && (
+        <HistoryMapWork onClose={() => setShowHistoryMapWork(false)} />
       )}
     </div>
   );
