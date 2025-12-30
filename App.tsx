@@ -88,6 +88,7 @@ import BoardExamTips from './components/BoardExamTips';
 import GrammarMaster from './components/GrammarMaster';
 import MockTest from './components/MockTest';
 import ImportantEvents from './components/ImportantEvents';
+import SyllabusCrusher82 from './components/SyllabusCrusher82';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -191,6 +192,7 @@ const App: React.FC = () => {
   const [showGrammarMaster, setShowGrammarMaster] = useState(false);
   const [showMockTest, setShowMockTest] = useState(false);
   const [showImportantEvents, setShowImportantEvents] = useState(false);
+  const [showSyllabusCrusher82, setShowSyllabusCrusher82] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -987,6 +989,21 @@ const App: React.FC = () => {
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Timeline</span>
               </button>
             </div>
+            
+            {/* Featured: Syllabus Crusher 82 */}
+            <button
+              onClick={() => setShowSyllabusCrusher82(true)}
+              className="mt-4 w-full bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 p-4 rounded-2xl shadow-lg hover:shadow-xl transition flex items-center gap-4"
+            >
+              <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center text-3xl">
+                🔥
+              </div>
+              <div className="text-left flex-1">
+                <span className="text-white font-bold block text-lg">Syllabus Crusher 82</span>
+                <span className="text-white/80 text-xs">Complete any chapter - MCQs, Flashcards, Notes, PYQs & more!</span>
+              </div>
+              <ChevronRight className="text-white/70" size={24} />
+            </button>
             
             {/* Row 7B - Arts Boosters */}
             <div className="grid grid-cols-4 gap-3 mt-3">
@@ -2539,6 +2556,14 @@ const App: React.FC = () => {
       
       {showImportantEvents && (
         <ImportantEvents onClose={() => setShowImportantEvents(false)} />
+      )}
+      
+      {showSyllabusCrusher82 && selectedStream && (
+        <SyllabusCrusher82 
+          onClose={() => setShowSyllabusCrusher82(false)} 
+          stream={selectedStream}
+          darkMode={darkMode}
+        />
       )}
     </div>
   );
