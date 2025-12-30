@@ -2561,7 +2561,7 @@ const App: React.FC = () => {
       {showSyllabusCrusher82 && selectedStream && (
         <SyllabusCrusher82 
           onClose={() => setShowSyllabusCrusher82(false)} 
-          stream={selectedStream}
+          subjects={getFilteredSubjects()}
           darkMode={darkMode}
         />
       )}
