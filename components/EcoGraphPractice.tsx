@@ -788,6 +788,7 @@ const EcoGraphPractice: React.FC<EcoGraphPracticeProps> = ({ onClose }) => {
             )}
           </div>
         </div>
+        </div>
       </div>
     </div>
   );
