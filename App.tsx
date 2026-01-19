@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks, FileEdit, Map, MapPin, HelpCircle, Cloud, Share2, MessageSquare, Eye, Calendar, CheckCircle2, Circle } from 'lucide-react';
+import { BookOpen, Layers, Zap, FileText, ChevronRight, ArrowLeft, GraduationCap, Video, Brain, PenTool, TrendingUp, Briefcase, Calculator, Sparkles, Clock, Star, PlayCircle, Home, LayoutGrid, X, Menu, PanelRightClose, PanelRightOpen, ArrowRight, Moon, Sun, Award, Globe, Atom, Dna, FlaskConical, Users, Building2, BookA, BarChart3, ClipboardList, Settings, User, LogOut, Timer, Flame, AlertTriangle, Target, BookMarked, Wind, Trophy, Bookmark, Shuffle, Puzzle, ListChecks, FileEdit, Map, MapPin, HelpCircle, Cloud, Share2, MessageSquare, Eye, Calendar, CheckCircle2, Circle, RotateCcw } from 'lucide-react';
 import { MOCK_DATA } from './constants';
 import { Stream, Subject, Chapter, ContentType } from './types';
 import { getSubjectBoardExamDate } from './examTimetable';
