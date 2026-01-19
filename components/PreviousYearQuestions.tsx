@@ -286,6 +286,35 @@ const PreviousYearQuestions: React.FC<PYQProps> = ({ subjects, onClose }) => {
           />
         </div>
 
+        {/* Previous Papers (PDF) */}
+        {subject?.previousPapers && subject.previousPapers.length > 0 && (
+          <div className="mt-2 space-y-2">
+            <div className="text-xs font-semibold text-indigo-600 dark:text-indigo-300 flex items-center gap-1">
+              <FileText className="w-3 h-3" /> Previous Papers
+            </div>
+            <div className="grid grid-cols-1 gap-2">
+              {subject.previousPapers.map((p) => (
+                <a
+                  key={`${subject.id}-${p.year}`}
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-between p-3 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition"
+                >
+                  <div className="flex items-center gap-2 min-w-0">
+                    <FileText className="w-4 h-4 text-indigo-500" />
+                    <div className="truncate">
+                      <div className="text-sm font-medium dark:text-white truncate">{p.title}</div>
+                      <div className="text-xs text-gray-500 truncate">{p.year}</div>
+                    </div>
+                  </div>
+                  <span className="text-xs px-2 py-1 rounded bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 whitespace-nowrap">PDF</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Questions List */}
         <div className="space-y-2">
           {filteredQuestions.length === 0 ? (
