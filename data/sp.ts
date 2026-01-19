@@ -8,7 +8,12 @@ export const SP_SUBJECT: Subject = {
         color: 'bg-purple-500',
         syllabus: '1. Introduction to Corporate Finance...',
         paperPattern: 'Similar to OCM Pattern.',
-        previousPapers: [],
+        previousPapers: [
+          { year: '2025', title: 'HSC Secretarial Practice Feb 2025', link: '/papers/sp-2025.pdf' },
+          { year: '2024', title: 'HSC Secretarial Practice Feb 2024', link: '/papers/sp-2024.pdf' },
+          { year: '2023', title: 'HSC Secretarial Practice Feb 2023', link: '/papers/sp-2023.pdf' },
+          { year: '2022', title: 'HSC Secretarial Practice Feb 2022', link: '/papers/sp-2022.pdf' }
+        ],
         chapters: [
            { 
             id: 'sp1', 

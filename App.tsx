@@ -89,6 +89,16 @@ import GrammarMaster from './components/GrammarMaster';
 import MockTest from './components/MockTest';
 import ImportantEvents from './components/ImportantEvents';
 import SyllabusCrusher82 from './components/SyllabusCrusher82';
+import MockTestBank from './components/MockTestBank';
+import DefinitionBuilder from './components/DefinitionBuilder';
+import LayeredRevisionCards from './components/LayeredRevisionCards';
+import Random5Game from './components/Random5Game';
+import EventSorting from './components/EventSorting';
+import ConceptGrouping from './components/ConceptGrouping';
+import ChainDiagram from './components/ChainDiagram';
+import MistakeMeter from './components/MistakeMeter';
+import RepetitionTracker from './components/RepetitionTracker';
+import SpeedChallenge from './components/SpeedChallenge';
 import { useProgress } from './hooks/useProgress';
 import { useChapterCompletion } from './hooks/useChapterCompletion';
 import { explainConcept } from './services/geminiService';
@@ -193,6 +203,16 @@ const App: React.FC = () => {
   const [showMockTest, setShowMockTest] = useState(false);
   const [showImportantEvents, setShowImportantEvents] = useState(false);
   const [showSyllabusCrusher82, setShowSyllabusCrusher82] = useState(false);
+  const [showMockTestBank, setShowMockTestBank] = useState(false);
+  const [showDefinitionBuilder, setShowDefinitionBuilder] = useState(false);
+  const [showLayeredRevisionCards, setShowLayeredRevisionCards] = useState(false);
+  const [showRandom5Game, setShowRandom5Game] = useState(false);
+  const [showEventSorting, setShowEventSorting] = useState(false);
+  const [showConceptGrouping, setShowConceptGrouping] = useState(false);
+  const [showChainDiagram, setShowChainDiagram] = useState(false);
+  const [showMistakeMeter, setShowMistakeMeter] = useState(false);
+  const [showRepetitionTracker, setShowRepetitionTracker] = useState(false);
+  const [showSpeedChallenge, setShowSpeedChallenge] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -745,6 +765,16 @@ const App: React.FC = () => {
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Mock Exam</span>
               </button>
+              
+              <button
+                onClick={() => setShowMockTestBank(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-yellow-200 dark:hover:border-yellow-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 flex items-center justify-center">
+                  <Trophy size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Mock Tests</span>
+              </button>
             </div>
             
             <div className="grid grid-cols-4 gap-3 mt-3">
@@ -829,6 +859,105 @@ const App: React.FC = () => {
                   <Shuffle size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Challenge</span>
+              </button>
+            </div>
+            
+            {/* New Study Modes Row */}
+            <div className="grid grid-cols-3 gap-3 mt-3">
+              <button
+                onClick={() => setShowDefinitionBuilder(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-violet-200 dark:hover:border-violet-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-violet-100 dark:bg-violet-900/30 text-violet-500 flex items-center justify-center">
+                  <FileEdit size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Definitions</span>
+              </button>
+              
+              <button
+                onClick={() => setShowLayeredRevisionCards(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-fuchsia-200 dark:hover:border-fuchsia-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-fuchsia-100 dark:bg-fuchsia-900/30 text-fuchsia-500 flex items-center justify-center">
+                  <Layers size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">3-Layer</span>
+              </button>
+              
+              <button
+                onClick={() => setShowRandom5Game(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-orange-200 dark:hover:border-orange-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-500 flex items-center justify-center">
+                  <Flame size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Random 5</span>
+              </button>
+            </div>
+            
+            {/* Additional Study Modes Row */}
+            <div className="grid grid-cols-3 gap-3 mt-3">
+              <button
+                onClick={() => setShowEventSorting(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-500 flex items-center justify-center">
+                  <Clock size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Timeline</span>
+              </button>
+              
+              <button
+                onClick={() => setShowConceptGrouping(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-cyan-200 dark:hover:border-cyan-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-500 flex items-center justify-center">
+                  <LayoutGrid size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Grouping</span>
+              </button>
+              
+              <button
+                onClick={() => setShowChainDiagram(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-teal-200 dark:hover:border-teal-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-teal-100 dark:bg-teal-900/30 text-teal-500 flex items-center justify-center">
+                  <ChevronRight size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Chains</span>
+              </button>
+            </div>
+            
+            {/* Advanced Study Modes Row */}
+            <div className="grid grid-cols-3 gap-3 mt-3">
+              <button
+                onClick={() => setShowMistakeMeter(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 text-red-500 flex items-center justify-center">
+                  <AlertTriangle size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Mistakes</span>
+              </button>
+              
+              <button
+                onClick={() => setShowRepetitionTracker(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-500 flex items-center justify-center">
+                  <RotateCcw size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Repetition</span>
+              </button>
+              
+              <button
+                onClick={() => setShowSpeedChallenge(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-yellow-200 dark:hover:border-yellow-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 flex items-center justify-center">
+                  <Zap size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Speed</span>
               </button>
             </div>
             
@@ -2556,6 +2685,56 @@ const App: React.FC = () => {
       
       {showImportantEvents && (
         <ImportantEvents onClose={() => setShowImportantEvents(false)} />
+      )}
+      
+      {showMockTestBank && (
+        <div className="fixed inset-0 bg-black/50 z-50 overflow-y-auto">
+          <div className="min-h-screen relative">
+            <button
+              onClick={() => setShowMockTestBank(false)}
+              className="fixed top-4 right-4 z-50 bg-red-500 text-white p-3 rounded-full hover:bg-red-600 transition-all"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <MockTestBank />
+          </div>
+        </div>
+      )}
+      
+      {showDefinitionBuilder && (
+        <DefinitionBuilder onClose={() => setShowDefinitionBuilder(false)} />
+      )}
+      
+      {showLayeredRevisionCards && (
+        <LayeredRevisionCards onClose={() => setShowLayeredRevisionCards(false)} />
+      )}
+      
+      {showRandom5Game && (
+        <Random5Game onClose={() => setShowRandom5Game(false)} />
+      )}
+      
+      {showEventSorting && (
+        <EventSorting onClose={() => setShowEventSorting(false)} />
+      )}
+      
+      {showConceptGrouping && (
+        <ConceptGrouping onClose={() => setShowConceptGrouping(false)} />
+      )}
+      
+      {showChainDiagram && (
+        <ChainDiagram onClose={() => setShowChainDiagram(false)} />
+      )}
+      
+      {showMistakeMeter && (
+        <MistakeMeter onClose={() => setShowMistakeMeter(false)} />
+      )}
+      
+      {showRepetitionTracker && (
+        <RepetitionTracker onClose={() => setShowRepetitionTracker(false)} />
+      )}
+      
+      {showSpeedChallenge && (
+        <SpeedChallenge onClose={() => setShowSpeedChallenge(false)} />
       )}
       
       {showSyllabusCrusher82 && selectedStream && (

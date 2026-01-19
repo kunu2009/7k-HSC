@@ -6,8 +6,8 @@ export const SOC_SUBJECT: Subject = {
         name: 'Sociology', 
         icon: 'Users', 
         color: 'bg-pink-500', 
-        syllabus: '1. Introduction to Sociology\n2. Social Groups\n3. Social Stratification\n4. Social Change\n5. Indian Society',
-        paperPattern: '### Sociology Paper Pattern (80 Marks)\n\n* **Q.1 MCQs (20 Marks)**\n* **Q.2-Q.5 Short Answers (40 Marks)**\n* **Q.6 Long Answers (20 Marks)**',
+        syllabus: '1. Introducing Indian Society\n2. Demographic Structure of Indian Society\n3. Social Institutions: Continuity and Change\n4. Market as a Social Institution\n5. Pattern of Social Inequality and Exclusion\n6. Challenges of Cultural Diversity\n7. Structural Change in Indian Society\n8. Cultural Change in Indian Society\n9. Project Work',
+        paperPattern: '### Sociology Paper Pattern (80 Marks)\n\n* **Q.1 Objectives (20 Marks)**: MCQ, True/False, Match the Following\n* **Q.2 Answer in 1-2 sentences (8 Marks)**\n* **Q.3 Short Notes (12 Marks)**: 3 out of 5\n* **Q.4 Answer in Brief (16 Marks)**: 2 out of 3\n* **Q.5 Long Answers (16 Marks)**: 2 out of 3\n* **Q.6 Apply Knowledge (8 Marks)**',
         previousPapers: [], 
         chapters: [
           {

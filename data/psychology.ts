@@ -6,8 +6,8 @@ export const PSY_SUBJECT: Subject = {
         name: 'Psychology',
         icon: 'Brain',
         color: 'bg-pink-500',
-        syllabus: '1. Introduction to Psychology\n2. Biological Basis of Behavior\n3. Learning\n4. Memory\n5. Intelligence & Aptitude',
-        paperPattern: '### Psychology Paper Pattern (80 Marks)\n\n* **Q.1 MCQs (16 Marks)**\n* **Q.2 Answer in Brief (16 Marks)**\n* **Q.3 Short Notes (16 Marks)**\n* **Q.4 Long Answers (16 Marks)**\n* **Q.5 Case Study (16 Marks)**',
+        syllabus: '1. Introduction to Psychology\n2. Biological Basis of Behaviour\n3. Learning\n4. Human Memory\n5. Thinking\n6. Intelligence\n7. Personality\n8. Motivation and Emotion\n9. Developmental Psychology',
+        paperPattern: '### Psychology Paper Pattern (80 Marks)\n\n* **Q.1 MCQs (16 Marks)**\n* **Q.2 Answer in 1-2 sentences (16 Marks)**\n* **Q.3 Short Notes (16 Marks): 4 out of 6**\n* **Q.4 Long Answers (16 Marks): 2 out of 3**\n* **Q.5 Case Study Analysis (16 Marks)**',
         previousPapers: [{ year: '2024', title: '2024 Psychology Paper', link: '#' }, { year: '2023', title: '2023 Psychology Paper', link: '#' }],
         chapters: [
           {

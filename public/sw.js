@@ -1,77 +1,126 @@
-const CACHE_NAME = '7k-hsc-v1';
-const STATIC_ASSETS = [
+const APP_VERSION = '1.1.0';
+const APP_SHELL_CACHE = `7k-hsc-shell-${APP_VERSION}`;
+const RUNTIME_CACHE = `7k-hsc-runtime-${APP_VERSION}`;
+const FONT_CACHE = `7k-hsc-fonts-${APP_VERSION}`;
+
+const CORE_ASSETS = [
   '/',
   '/index.html',
-  '/manifest.json'
+  '/manifest.json',
+  '/offline.html',
+  '/icons/icon-72x72.png',
+  '/icons/icon-96x96.png',
+  '/icons/icon-128x128.png',
+  '/icons/icon-144x144.png',
+  '/icons/icon-152x152.png',
+  '/icons/icon-192x192.png',
+  '/icons/icon-384x384.png',
+  '/icons/icon-512x512.png'
 ];
 
-// Install event - cache static assets
+const OFFLINE_IMAGE_PLACEHOLDER = '/icons/icon-192x192.png';
+
+const CACHEABLE_DESTINATIONS = ['style', 'script', 'font'];
+
+// Install: pre-cache core app shell
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(STATIC_ASSETS);
-    })
+    caches.open(APP_SHELL_CACHE).then((cache) => cache.addAll(CORE_ASSETS))
   );
   self.skipWaiting();
 });
 
-// Activate event - clean old caches
+// Activate: clean old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames
-          .filter((name) => name !== CACHE_NAME)
-          .map((name) => caches.delete(name))
-      );
-    })
+    caches.keys().then((keys) =>
+      Promise.all(
+        keys
+          .filter((key) => ![APP_SHELL_CACHE, RUNTIME_CACHE, FONT_CACHE].includes(key))
+          .map((key) => caches.delete(key))
+      )
+    )
   );
   self.clients.claim();
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch strategies
 self.addEventListener('fetch', (event) => {
-  // Skip non-GET requests
   if (event.request.method !== 'GET') return;
 
-  // Skip external requests
-  if (!event.request.url.startsWith(self.location.origin)) return;
+  const url = new URL(event.request.url);
 
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        // Return cached version and update cache in background
-        event.waitUntil(
-          fetch(event.request).then((response) => {
-            if (response.ok) {
-              caches.open(CACHE_NAME).then((cache) => {
-                cache.put(event.request, response);
-              });
-            }
-          }).catch(() => {})
-        );
-        return cachedResponse;
-      }
+  // Navigation requests: network-first with offline fallback
+  if (event.request.mode === 'navigate') {
+    event.respondWith(networkFirst(event.request));
+    return;
+  }
 
-      // Not in cache, fetch from network
-      return fetch(event.request).then((response) => {
-        // Cache successful responses
-        if (response.ok) {
-          const responseClone = response.clone();
-          caches.open(CACHE_NAME).then((cache) => {
-            cache.put(event.request, responseClone);
-          });
+  // Same-origin static assets (hashed Vite assets, scripts, styles)
+  if (
+    url.origin === self.location.origin &&
+    (url.pathname.startsWith('/assets/') || CACHEABLE_DESTINATIONS.includes(event.request.destination))
+  ) {
+    event.respondWith(cacheFirst(event.request));
+    return;
+  }
+
+  // Images: cache-first with icon fallback when offline
+  if (event.request.destination === 'image') {
+    event.respondWith(cacheFirst(event.request, APP_SHELL_CACHE, OFFLINE_IMAGE_PLACEHOLDER));
+    return;
+  }
+
+  // Fonts (Google/other CDNs)
+  if (event.request.destination === 'font' || url.hostname.includes('fonts.gstatic.com')) {
+    event.respondWith(cacheFirst(event.request, FONT_CACHE));
+    return;
+  }
+
+  // Default: stale-while-revalidate
+  event.respondWith(staleWhileRevalidate(event.request));
+});
+
+function networkFirst(request) {
+  return fetch(request)
+    .then((response) => {
+      const copy = response.clone();
+      caches.open(APP_SHELL_CACHE).then((cache) => cache.put(request, copy));
+      return response;
+    })
+    .catch(() => caches.match(request).then((cached) => cached || caches.match('/offline.html')));
+}
+
+function cacheFirst(request, cacheName = APP_SHELL_CACHE, fallbackUrl = '/offline.html') {
+  return caches.match(request).then((cached) => {
+    if (cached) return cached;
+    return fetch(request)
+      .then((response) => {
+        if (response && response.ok) {
+          const copy = response.clone();
+          caches.open(cacheName).then((cache) => cache.put(request, copy));
         }
         return response;
-      }).catch(() => {
-        // Offline fallback for navigation requests
-        if (event.request.mode === 'navigate') {
-          return caches.match('/');
+      })
+      .catch(() => caches.match(fallbackUrl));
+  });
+}
+
+function staleWhileRevalidate(request) {
+  return caches.match(request).then((cached) => {
+    const fetchPromise = fetch(request)
+      .then((response) => {
+        if (response && response.ok) {
+          const copy = response.clone();
+          caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, copy));
         }
-      });
-    })
-  );
-});
+        return response;
+      })
+      .catch(() => cached || caches.match('/offline.html'));
+
+    return cached || fetchPromise;
+  });
+}
 
 // Listen for messages from the main app
 self.addEventListener('message', (event) => {

@@ -8,7 +8,13 @@ export const HIS_SUBJECT: Subject = {
         color: 'bg-orange-500', 
         syllabus: '1. Renaissance in Europe and Development of Science\n2. European Colonialism\n3. India and European Colonialism\n4. Colonialism and the Marathas\n5. India: Social and Religious Reforms\n6. Struggle against Colonialism\n7. Decolonisation to Political Integration of India\n8. World Wars and India\n9. World: Decolonisation\n10. Cold War\n11. India Transformed Part 1\n12. India Transformed Part 2',
         paperPattern: '### History Paper Pattern (80 Marks)\n\n* **Q.1 Multiple Choice (20 Marks)**\n* **Q.2 Answer in Brief (12 Marks)**\n* **Q.3 Short Notes (12 Marks)**\n* **Q.4 Long Answers (16 Marks)**\n* **Q.5 Map Work (8 Marks)**\n* **Q.6 Project (Internal - 20 Marks)**',
-        previousPapers: [], 
+        previousPapers: [
+          { year: '2025', title: 'HSC History Feb 2025', link: '/papers/history-2025.pdf' },
+          { year: '2024', title: 'HSC History Feb 2024', link: '/papers/history-2024.pdf' },
+          { year: '2023', title: 'HSC History Feb 2023', link: '/papers/history-2023.pdf' },
+          { year: '2022', title: 'HSC History Feb 2022', link: '/papers/history-2022.pdf' },
+          { year: '2021', title: 'HSC History Feb 2021', link: '/papers/history-2021.pdf' }
+        ], 
         chapters: [
           {
             id: 'his1',

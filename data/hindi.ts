@@ -8,7 +8,13 @@ export const HINDI_SUBJECT: Subject = {
   color: 'bg-orange-500',
   syllabus: '1. गद्य विभाग (Prose)\n2. पद्य विभाग (Poetry)\n3. विशेष अध्ययन - कनुप्रिया\n4. व्यावहारिक हिंदी\n5. व्याकरण एवं रचना',
   paperPattern: '### Hindi Paper Pattern (80 Marks)\n\n* **Section 1: गद्य विभाग (20 Marks)**\n* **Section 2: पद्य विभाग (20 Marks)**\n* **Section 3: विशेष अध्ययन (16 Marks)**\n* **Section 4: व्यावहारिक हिंदी (12 Marks)**\n* **Section 5: व्याकरण (12 Marks)**',
-  previousPapers: [],
+  previousPapers: [
+    { year: '2025', title: 'HSC Hindi Yuvakbharati Feb 2025', link: '/papers/hindi-2025.pdf' },
+    { year: '2024', title: 'HSC Hindi Yuvakbharati Feb 2024', link: '/papers/hindi-2024.pdf' },
+    { year: '2023', title: 'HSC Hindi Yuvakbharati Feb 2023', link: '/papers/hindi-2023.pdf' },
+    { year: '2022', title: 'HSC Hindi Yuvakbharati Feb 2022', link: '/papers/hindi-2022.pdf' },
+    { year: '2021', title: 'HSC Hindi Yuvakbharati Feb 2021', link: '/papers/hindi-2021.pdf' }
+  ],
   chapters: [
     // Chapter 1: नवनिर्माण
     {

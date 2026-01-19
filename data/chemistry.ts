@@ -8,7 +8,12 @@ export const CHEM_SUBJECT: Subject = {
         color: 'bg-teal-500', 
         syllabus: '1. Solid State\n2. Solutions\n3. Electrochemistry\n4. Chemical Kinetics\n5. Surface Chemistry\n6. p-Block Elements\n7. d and f Block Elements\n8. Coordination Compounds\n9. Haloalkanes\n10. Alcohols, Phenols, Ethers\n11. Aldehydes, Ketones\n12. Carboxylic Acids\n13. Amines\n14. Biomolecules\n15. Polymers\n16. Chemistry in Everyday Life',
         paperPattern: '### Chemistry Paper Pattern (70 Marks)\n\n* **Section A (14 Marks)**: 7 MCQs\n* **Section B (18 Marks)**: Very short answers\n* **Section C (12 Marks)**: Short answers\n* **Section D (8 Marks)**: Long answers\n* **Section E (18 Marks)**: Numericals\n* **Internal (30 Marks)**: Practical',
-        previousPapers: [], 
+        previousPapers: [
+          { year: '2025', title: 'HSC Chemistry Feb 2025', link: '/papers/chemistry-2025.pdf' },
+          { year: '2024', title: 'HSC Chemistry Feb 2024', link: '/papers/chemistry-2024.pdf' },
+          { year: '2023', title: 'HSC Chemistry Feb 2023', link: '/papers/chemistry-2023.pdf' },
+          { year: '2022', title: 'HSC Chemistry Feb 2022', link: '/papers/chemistry-2022.pdf' }
+        ], 
         chapters: [
           {
             id: 'chem1',

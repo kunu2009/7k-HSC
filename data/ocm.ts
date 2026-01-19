@@ -71,7 +71,13 @@ export const OCM_SUBJECT: Subject = {
   color: 'bg-emerald-500',
   syllabus: '1. Principles of Management\n2. Functions of Management\n3. Entrepreneurship Development\n4. Business Services\n5. Emerging Modes of Business\n6. Social Responsibility\n7. Consumer Protection\n8. Marketing',
   paperPattern: '### OCM Paper Pattern (80 Marks)\n\n* **Q.1 Objective Questions (20 Marks)**\n* **Q.2 Explain Terms/Concepts (8 Marks)**\n* **Q.3 Case Study/Situation (6 Marks)**\n* **Q.4 Distinguish Between (12 Marks)**\n* **Q.5 Answer in Brief (8 Marks)**\n* **Q.6 Justify Statements (8 Marks)**\n* **Q.7 Attempt the following (10 Marks)**\n* **Q.8 Long Answer Questions (8 Marks)**: (1 out of 2)',
-  previousPapers: [],
+  previousPapers: [
+    { year: '2025', title: 'HSC OCM Feb 2025', link: '/papers/ocm-2025.pdf' },
+    { year: '2024', title: 'HSC OCM Feb 2024', link: '/papers/ocm-2024.pdf' },
+    { year: '2023', title: 'HSC OCM Feb 2023', link: '/papers/ocm-2023.pdf' },
+    { year: '2022', title: 'HSC OCM Feb 2022', link: '/papers/ocm-2022.pdf' },
+    { year: '2021', title: 'HSC OCM Feb 2021', link: '/papers/ocm-2021.pdf' }
+  ],
   chapters: [
           { 
             id: 'ocm1', 

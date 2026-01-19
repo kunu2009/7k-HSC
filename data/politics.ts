@@ -179,7 +179,13 @@ export const POL_SUBJECT: Subject = {
 - New Parliament Building
 - One Nation One Election debate
 - Digital India initiatives`,
-        previousPapers: [], 
+        previousPapers: [
+          { year: '2025', title: 'HSC Political Science Feb 2025', link: '/papers/politics-2025.pdf' },
+          { year: '2024', title: 'HSC Political Science Feb 2024', link: '/papers/politics-2024.pdf' },
+          { year: '2023', title: 'HSC Political Science Feb 2023', link: '/papers/politics-2023.pdf' },
+          { year: '2022', title: 'HSC Political Science Feb 2022', link: '/papers/politics-2022.pdf' },
+          { year: '2021', title: 'HSC Political Science Feb 2021', link: '/papers/politics-2021.pdf' }
+        ], 
         chapters: [
           {
             id: 'pol1',

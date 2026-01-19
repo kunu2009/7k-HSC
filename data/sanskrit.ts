@@ -60,7 +60,11 @@ export const SANSKRIT_SUBJECT: Subject = {
 - परिवर्तनम् (3 marks) - Transformations`,
 
   previousPapers: [
-    { year: '2024', title: 'Maharashtra HSC Sanskrit 2024', link: './Sanskrit_4df1106923430bfb5c063dda80b71928.pdf' }
+    { year: '2025', title: 'HSC Sanskrit Alhad Feb 2025', link: '/papers/sanskrit-2025.pdf' },
+    { year: '2024', title: 'HSC Sanskrit Alhad Feb 2024', link: '/papers/sanskrit-2024.pdf' },
+    { year: '2023', title: 'HSC Sanskrit Alhad Feb 2023', link: '/papers/sanskrit-2023.pdf' },
+    { year: '2022', title: 'HSC Sanskrit Alhad Feb 2022', link: '/papers/sanskrit-2022.pdf' },
+    { year: '2021', title: 'HSC Sanskrit Alhad Feb 2021', link: '/papers/sanskrit-2021.pdf' }
   ],
   
   chapters: [

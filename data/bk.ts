@@ -8,7 +8,12 @@ export const BK_SUBJECT: Subject = {
         color: 'bg-rose-500',
         syllabus: '1. Accounts from Incomplete Records\n2. Single Entry System\n3. Accounts of Not-for-Profit Concerns\n4. Partnership Accounts\n5. Reconstitution of Partnership\n6. Dissolution of Partnership Firm\n7. Company Accounts',
         paperPattern: '### Book Keeping Paper Pattern (80 Marks)\n\n* **Q.1 Objective Questions (20 Marks)**: MCQs, Fill in blanks, Match.\n* **Q.2 Practical Problems (12 Marks)**: (Any 2 out of 3)\n* **Q.3 Practical Problems (12 Marks)**: (Any 2 out of 3)\n* **Q.4 Practical Problems (14 Marks)**: (Any 2 out of 3)\n* **Q.5 Practical Problems (14 Marks)**: (Any 2 out of 3)\n* **Q.6 Theory Questions (8 Marks)**: (Any 2 out of 3)',
-        previousPapers: [],
+        previousPapers: [
+          { year: '2025', title: 'HSC Book-Keeping Feb 2025', link: '/papers/bk-2025.pdf' },
+          { year: '2024', title: 'HSC Book-Keeping Feb 2024', link: '/papers/bk-2024.pdf' },
+          { year: '2023', title: 'HSC Book-Keeping Feb 2023', link: '/papers/bk-2023.pdf' },
+          { year: '2022', title: 'HSC Book-Keeping Feb 2022', link: '/papers/bk-2022.pdf' }
+        ],
         chapters: [
           { 
             id: 'bk1', 

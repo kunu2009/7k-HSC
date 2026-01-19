@@ -8,7 +8,13 @@ export const ENGLISH_SUBJECT: Subject = {
   color: 'bg-yellow-500',
   syllabus: '1. Prose\n2. Poetry\n3. Writing Skills\n4. Novel (Genre-Drama)',
   paperPattern: '### English Paper Pattern (80 Marks)\n\n* **Q.1 Prose (16 Marks)**\n* **Q.2 Poetry (14 Marks)**\n* **Q.3 Writing Skills (16 Marks)**\n* **Q.4 Novel (16 Marks)**\n* **Grammar & Vocabulary integrated**',
-  previousPapers: [],
+  previousPapers: [
+    { year: '2025', title: 'HSC English Yuvakbharati Feb 2025', link: '/papers/english-2025.pdf' },
+    { year: '2024', title: 'HSC English Yuvakbharati Feb 2024', link: '/papers/english-2024.pdf' },
+    { year: '2023', title: 'HSC English Yuvakbharati Feb 2023', link: '/papers/english-2023.pdf' },
+    { year: '2022', title: 'HSC English Yuvakbharati Feb 2022', link: '/papers/english-2022.pdf' },
+    { year: '2021', title: 'HSC English Yuvakbharati Feb 2021', link: '/papers/english-2021.pdf' }
+  ],
   chapters: [
     {
       id: 'eng1',

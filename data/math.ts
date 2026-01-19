@@ -8,7 +8,12 @@ export const MATH_SUBJECT: Subject = {
         color: 'bg-indigo-600', 
         syllabus: '1. Mathematical Logic\n2. Matrices\n3. Trigonometric Functions\n4. Pair of Straight Lines\n5. Vectors\n6. Three Dimensional Geometry\n7. Linear Programming\n8. Continuity\n9. Differentiation\n10. Applications of Derivatives\n11. Integration\n12. Applications of Integration\n13. Differential Equations\n14. Probability\n15. Binomial Distribution',
         paperPattern: '### Mathematics Paper Pattern (80 Marks)\n\n* **Section A (10 Marks)**: MCQs (2 marks each)\n* **Section B (16 Marks)**: Very short answers (2 marks each)\n* **Section C (18 Marks)**: Short answers (3 marks each)\n* **Section D (36 Marks)**: Long answers (4 marks each)',
-        previousPapers: [], 
+        previousPapers: [
+          { year: '2025', title: 'HSC Mathematics Feb 2025', link: '/papers/math-2025.pdf' },
+          { year: '2024', title: 'HSC Mathematics Feb 2024', link: '/papers/math-2024.pdf' },
+          { year: '2023', title: 'HSC Mathematics Feb 2023', link: '/papers/math-2023.pdf' },
+          { year: '2022', title: 'HSC Mathematics Feb 2022', link: '/papers/math-2022.pdf' }
+        ], 
         chapters: [
           {
             id: 'math1',

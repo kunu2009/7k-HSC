@@ -8,7 +8,12 @@ export const PHY_SUBJECT: Subject = {
         color: 'bg-blue-600', 
         syllabus: '1. Rotational Dynamics\n2. Mechanical Properties of Fluids\n3. Kinetic Theory of Gases\n4. Thermodynamics\n5. Oscillations\n6. Superposition of Waves\n7. Wave Optics\n8. Electrostatics\n9. Current Electricity\n10. Magnetic Effects of Electric Current\n11. Magnetic Materials\n12. Electromagnetic Induction\n13. AC Circuits\n14. Dual Nature of Radiation & Matter\n15. Structure of Atom\n16. Semiconductor Devices',
         paperPattern: '### Physics Paper Pattern (70 Marks)\n\n* **Section A (14 Marks)**: 7 MCQs (2 marks each)\n* **Section B (18 Marks)**: Very short answers\n* **Section C (12 Marks)**: Short answers\n* **Section D (8 Marks)**: Long answers (Any 2 out of 3)\n* **Section E (18 Marks)**: Numericals\n* **Internal Assessment (30 Marks)**: Practical',
-        previousPapers: [], 
+        previousPapers: [
+          { year: '2025', title: 'HSC Physics Feb 2025', link: '/papers/physics-2025.pdf' },
+          { year: '2024', title: 'HSC Physics Feb 2024', link: '/papers/physics-2024.pdf' },
+          { year: '2023', title: 'HSC Physics Feb 2023', link: '/papers/physics-2023.pdf' },
+          { year: '2022', title: 'HSC Physics Feb 2022', link: '/papers/physics-2022.pdf' }
+        ], 
         chapters: [
           {
             id: 'phy1',

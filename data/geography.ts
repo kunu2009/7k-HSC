@@ -6,8 +6,8 @@ export const GEO_SUBJECT: Subject = {
         name: 'Geography',
         icon: 'Globe',
         color: 'bg-teal-500',
-        syllabus: '1. Population Geography\n2. Migration\n3. Human Settlements\n4. Human Development\n5. Primary Activities',
-        paperPattern: '### Geography Paper Pattern (80 Marks)\n\n* **Q.1 MCQs (20 Marks)**\n* **Q.2 Short Answers (16 Marks)**\n* **Q.3 Distinguish Between (12 Marks)**\n* **Q.4 Long Answers (16 Marks)**\n* **Q.5 Map Work (16 Marks)**',
+        syllabus: '1. Population Geography\n2. Migration\n3. Human Settlements\n4. Human Development\n5. Primary Activities\n6. Secondary Activities\n7. Tertiary and Quaternary Activities\n8. Transport and Communication\n9. International Trade',
+        paperPattern: '### Geography Paper Pattern (80 Marks)\n\n* **Q.1 MCQs & Objectives (20 Marks)**\n* **Q.2 Give Geographical Reasons (8 Marks)**\n* **Q.3 Distinguish Between (8 Marks)**\n* **Q.4 Short Notes (12 Marks): 3 out of 5**\n* **Q.5 Long Answers (16 Marks): 2 out of 3**\n* **Q.6 Map Work (16 Marks)**',
         previousPapers: [{ year: '2024', title: '2024 Geography Paper', link: '#' }, { year: '2023', title: '2023 Geography Paper', link: '#' }],
         chapters: [
           {
