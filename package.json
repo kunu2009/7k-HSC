@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "import:pdfs": "node scripts/import_pdfs.cjs"
   },
   "dependencies": {
     "@google/genai": "^1.30.0",
