@@ -8,8 +8,8 @@ export const ECONOMICS_SUBJECT: Subject = {
   syllabus: '1. Introduction to Micro and Macro Economics\n2. Utility Analysis\n3A. Demand Analysis\n3B. Elasticity of Demand\n4. Supply Analysis\n5. Forms of Market\n6. Index Numbers\n7. National Income\n8. Public Finance in India\n9. Money Market and Capital Market in India\n10. Foreign Trade of India',
   paperPattern: '### Economics Paper Pattern (80 Marks)\n\n* **Q.1 Objective Questions (20 Marks)**: Select correct option, Correlation, Odd word out, etc.\n* **Q.2 Identify and Explain Concepts (6/10 Marks)**: (Any 3 out of 5)\n* **Q.3 Distinguish Between (6/10 Marks)**: (Any 3 out of 5)\n* **Q.4 Agree or Disagree (12 Marks)**: (Any 3 out of 5) with reasons.\n* **Q.5 Study Table/Figure/Passage (8 Marks)**: (Any 2 out of 3)\n* **Q.6 Long Answer Questions (16 Marks)**: (Any 2 out of 3)',
   previousPapers: [
-    { year: '2025 Super 100', title: 'Economics Super 100 Questions Pack', link: '/papers/economics-super-100-question.pdf' },
-    { year: '2024 ABT Bank', title: 'Economics ABT Question Bank 2024', link: '/papers/economics-abt-question-bank-2024.pdf' },
+    { year: '2025 Super 100', title: 'Economics Super 100 Questions Pack', link: '/papers/economics/economics-super-100-question.pdf' },
+    { year: '2024 ABT Bank', title: 'Economics ABT Question Bank 2024', link: '/papers/economics/economics-abt-question-bank-2024.pdf' },
     { year: '2025', title: 'HSC Economics Feb 2025', link: '/papers/economics-2025.pdf' },
     { year: '2024', title: 'HSC Economics Feb 2024', link: '/papers/economics-2024.pdf' },
     { year: '2023', title: 'HSC Economics Feb 2023', link: '/papers/economics-2023.pdf' },
