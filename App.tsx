@@ -79,6 +79,7 @@ import GeographyStudyHub from './components/GeographyStudyHub';
 import EnglishStudyHub from './components/EnglishStudyHub';
 import HindiStudyHub from './components/HindiStudyHub';
 import PoliticalScienceStudyHub from './components/PoliticalScienceStudyHub';
+import EconomicsStudyHub from './components/EconomicsStudyHub';
 import QuickRevisionQuiz from './components/QuickRevisionQuiz';
 import ImportantDates from './components/ImportantDates';
 import ImportantPersons from './components/ImportantPersons';
@@ -223,6 +224,7 @@ const App: React.FC = () => {
   const [showEnglishStudyHub, setShowEnglishStudyHub] = useState(false);
   const [showHindiStudyHub, setShowHindiStudyHub] = useState(false);
   const [showPoliticalScienceStudyHub, setShowPoliticalScienceStudyHub] = useState(false);
+  const [showEconomicsStudyHub, setShowEconomicsStudyHub] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1347,7 +1349,7 @@ const App: React.FC = () => {
             </div>
             
             {/* Row 7F - Arts Study Hubs with Previous Papers */}
-            <div className="grid grid-cols-5 gap-3 mt-3">
+            <div className="grid grid-cols-6 gap-3 mt-3">
               <button
                 onClick={() => setShowHistoryStudyHub(true)}
                 className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-orange-200 dark:hover:border-orange-800 transition flex flex-col items-center gap-2"
@@ -1396,6 +1398,16 @@ const App: React.FC = () => {
                   <Globe size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Pol Sci Hub</span>
+              </button>
+              
+              <button
+                onClick={() => setShowEconomicsStudyHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 flex items-center justify-center">
+                  <TrendingUp size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Eco Hub</span>
               </button>
             </div>
             
@@ -2712,6 +2724,10 @@ const App: React.FC = () => {
       
       {showPoliticalScienceStudyHub && (
         <PoliticalScienceStudyHub onClose={() => setShowPoliticalScienceStudyHub(false)} />
+      )}
+      
+      {showEconomicsStudyHub && (
+        <EconomicsStudyHub onClose={() => setShowEconomicsStudyHub(false)} />
       )}
       
       {showQuickRevisionQuiz && (
