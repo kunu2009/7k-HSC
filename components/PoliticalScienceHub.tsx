@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { X, Scale, Search, ChevronDown, ChevronUp, BookOpen, Users, Globe, Landmark, FileText, Brain, Lightbulb, CheckCircle, Star } from 'lucide-react';
+import { POL_SUBJECT } from '../data/politics';
 
 interface PoliticalScienceHubProps {
   onClose: () => void;
@@ -321,6 +322,14 @@ const PoliticalScienceHub: React.FC<PoliticalScienceHubProps> = ({ onClose }) =>
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
   const [score, setScore] = useState(0);
+  const papers = useMemo(() => {
+    const seen = new Set<string>();
+    return (POL_SUBJECT.previousPapers || []).filter(p => {
+      if (seen.has(p.link)) return false;
+      seen.add(p.link);
+      return true;
+    });
+  }, []);
 
   const filteredConcepts = useMemo(() => {
     return CONCEPTS.filter(c => {
@@ -675,6 +684,45 @@ const PoliticalScienceHub: React.FC<PoliticalScienceHubProps> = ({ onClose }) =>
                   </div>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* Previous Papers */}
+          {papers.length > 0 && (
+            <div className="mt-6 bg-slate-800 border border-slate-700 rounded-2xl p-5">
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-indigo-300">PDF Bank</p>
+                  <h3 className="text-lg font-semibold text-white">Previous Papers & Question Banks</h3>
+                </div>
+                <span className="px-2 py-1 rounded-full text-xs bg-indigo-900/40 text-indigo-200 border border-indigo-700/50">
+                  {papers.length} files
+                </span>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {papers.map(p => (
+                  <a
+                    key={p.link}
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-3 rounded-xl border border-slate-700 bg-slate-900/60 p-3 hover:border-indigo-500 hover:bg-slate-800 transition"
+                  >
+                    <div className="mt-1 text-indigo-300">📄</div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-indigo-200 border border-indigo-700/40">
+                          {p.year}
+                        </span>
+                        <span className="text-[11px] text-slate-400">PDF</span>
+                      </div>
+                      <div className="text-sm font-medium text-white truncate group-hover:text-indigo-200">{p.title}</div>
+                      <div className="text-xs text-slate-500 truncate">Opens in new tab</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           )}
         </div>

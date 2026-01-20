@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { X, Brain, Lightbulb, Users, Heart, BookOpen, ChevronDown, ChevronUp, Star, Sparkles, Target, Award } from 'lucide-react';
+import { PSY_SUBJECT } from '../data/psychology';
 
 interface PsychologyHubProps {
   onClose: () => void;
@@ -290,6 +291,14 @@ const PsychologyHub: React.FC<PsychologyHubProps> = ({ onClose }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [expandedConcept, setExpandedConcept] = useState<number | null>(null);
   const [showPsychologists, setShowPsychologists] = useState(false);
+  const papers = useMemo(() => {
+    const seen = new Set<string>();
+    return (PSY_SUBJECT.previousPapers || []).filter(p => {
+      if (seen.has(p.link)) return false;
+      seen.add(p.link);
+      return true;
+    });
+  }, []);
 
   const filteredConcepts = selectedCategory === 'All'
     ? PSYCHOLOGY_CONCEPTS
@@ -469,6 +478,42 @@ const PsychologyHub: React.FC<PsychologyHubProps> = ({ onClose }) => {
             ))}
           </div>
         </div>
+
+        {/* Previous Papers */}
+        {papers.length > 0 && (
+          <div className="px-4 pb-4">
+            <div className="bg-black/30 border border-cyan-600/40 rounded-xl p-4">
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-cyan-200">PDF Bank</p>
+                  <h3 className="text-lg font-semibold text-white">Previous Papers & Banks</h3>
+                </div>
+                <span className="px-2 py-1 rounded-full text-xs bg-cyan-900/40 text-cyan-200 border border-cyan-700/50">{papers.length} files</span>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {papers.map(p => (
+                  <a
+                    key={p.link}
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-3 rounded-lg border border-cyan-600/30 bg-white/5 p-3 hover:border-cyan-400 hover:bg-white/10 transition"
+                  >
+                    <div className="mt-1 text-cyan-200">📄</div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-cyan-900/40 text-cyan-200 border border-cyan-700/40">{p.year}</span>
+                        <span className="text-[11px] text-cyan-200/70">PDF</span>
+                      </div>
+                      <div className="text-sm font-medium text-white truncate group-hover:text-cyan-100">{p.title}</div>
+                      <div className="text-xs text-cyan-200/60 truncate">Opens in new tab</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Footer */}
         <div className="bg-black/30 p-4 flex justify-between items-center text-sm text-cyan-300/70">

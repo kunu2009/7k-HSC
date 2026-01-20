@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { X, Users, BookOpen, Lightbulb, Globe, ChevronDown, ChevronUp, Star, Award, Building } from 'lucide-react';
+import { SOC_SUBJECT } from '../data/sociology';
 
 interface SociologyHubProps {
   onClose: () => void;
@@ -273,6 +274,14 @@ const SociologyHub: React.FC<SociologyHubProps> = ({ onClose }) => {
   const [expandedConcept, setExpandedConcept] = useState<number | null>(null);
   const [showThinkers, setShowThinkers] = useState(false);
   const [expandedThinker, setExpandedThinker] = useState<string | null>(null);
+  const papers = useMemo(() => {
+    const seen = new Set<string>();
+    return (SOC_SUBJECT.previousPapers || []).filter(p => {
+      if (seen.has(p.link)) return false;
+      seen.add(p.link);
+      return true;
+    });
+  }, []);
 
   const filterConcepts = () => {
     if (selectedCategory === 'All') return SOCIOLOGY_CONCEPTS;
@@ -455,6 +464,42 @@ const SociologyHub: React.FC<SociologyHubProps> = ({ onClose }) => {
             ))}
           </div>
         </div>
+
+        {/* Previous Papers */}
+        {papers.length > 0 && (
+          <div className="px-4 pb-4">
+            <div className="bg-black/30 border border-violet-600/40 rounded-xl p-4">
+              <div className="flex items-center justify-between mb-3">
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-violet-200">PDF Bank</p>
+                  <h3 className="text-lg font-semibold text-white">Previous Papers & Banks</h3>
+                </div>
+                <span className="px-2 py-1 rounded-full text-xs bg-violet-900/40 text-violet-200 border border-violet-700/50">{papers.length} files</span>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {papers.map(p => (
+                  <a
+                    key={p.link}
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-start gap-3 rounded-lg border border-violet-600/30 bg-white/5 p-3 hover:border-violet-400 hover:bg-white/10 transition"
+                  >
+                    <div className="mt-1 text-violet-200">📄</div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs px-2 py-0.5 rounded-full bg-violet-900/40 text-violet-200 border border-violet-700/40">{p.year}</span>
+                        <span className="text-[11px] text-violet-200/70">PDF</span>
+                      </div>
+                      <div className="text-sm font-medium text-white truncate group-hover:text-violet-100">{p.title}</div>
+                      <div className="text-xs text-violet-200/60 truncate">Opens in new tab</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Footer */}
         <div className="bg-black/30 p-4 flex justify-between items-center text-sm text-violet-300/70">
