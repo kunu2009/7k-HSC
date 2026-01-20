@@ -74,6 +74,10 @@ import ConstitutionalArticles from './components/ConstitutionalArticles';
 import HindiSahitya from './components/HindiSahitya';
 import SociologyHub from './components/SociologyHub';
 import PsychologyHub from './components/PsychologyHub';
+import HistoryStudyHub from './components/HistoryStudyHub';
+import GeographyStudyHub from './components/GeographyStudyHub';
+import EnglishStudyHub from './components/EnglishStudyHub';
+import HindiStudyHub from './components/HindiStudyHub';
 import QuickRevisionQuiz from './components/QuickRevisionQuiz';
 import ImportantDates from './components/ImportantDates';
 import ImportantPersons from './components/ImportantPersons';
@@ -213,6 +217,10 @@ const App: React.FC = () => {
   const [showMistakeMeter, setShowMistakeMeter] = useState(false);
   const [showRepetitionTracker, setShowRepetitionTracker] = useState(false);
   const [showSpeedChallenge, setShowSpeedChallenge] = useState(false);
+  const [showHistoryStudyHub, setShowHistoryStudyHub] = useState(false);
+  const [showGeographyStudyHub, setShowGeographyStudyHub] = useState(false);
+  const [showEnglishStudyHub, setShowEnglishStudyHub] = useState(false);
+  const [showHindiStudyHub, setShowHindiStudyHub] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1333,6 +1341,49 @@ const App: React.FC = () => {
                   <Zap size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">1 Min</span>
+              </button>
+            </div>
+            
+            {/* Row 7F - Arts Study Hubs with Previous Papers */}
+            <div className="grid grid-cols-4 gap-3 mt-3">
+              <button
+                onClick={() => setShowHistoryStudyHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-orange-200 dark:hover:border-orange-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-orange-100 dark:bg-orange-900/30 text-orange-600 flex items-center justify-center">
+                  <BookOpen size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">History Hub</span>
+              </button>
+              
+              <button
+                onClick={() => setShowGeographyStudyHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-green-200 dark:hover:border-green-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-green-100 dark:bg-green-900/30 text-green-600 flex items-center justify-center">
+                  <MapPin size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Geography Hub</span>
+              </button>
+              
+              <button
+                onClick={() => setShowEnglishStudyHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center">
+                  <BookA size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">English Hub</span>
+              </button>
+              
+              <button
+                onClick={() => setShowHindiStudyHub(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-600 flex items-center justify-center">
+                  <BookA size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">हिंदी Hub</span>
               </button>
             </div>
             
@@ -2629,6 +2680,22 @@ const App: React.FC = () => {
       
       {showPsychologyHub && (
         <PsychologyHub onClose={() => setShowPsychologyHub(false)} />
+      )}
+      
+      {showHistoryStudyHub && (
+        <HistoryStudyHub onClose={() => setShowHistoryStudyHub(false)} />
+      )}
+      
+      {showGeographyStudyHub && (
+        <GeographyStudyHub onClose={() => setShowGeographyStudyHub(false)} />
+      )}
+      
+      {showEnglishStudyHub && (
+        <EnglishStudyHub onClose={() => setShowEnglishStudyHub(false)} />
+      )}
+      
+      {showHindiStudyHub && (
+        <HindiStudyHub onClose={() => setShowHindiStudyHub(false)} />
       )}
       
       {showQuickRevisionQuiz && (
