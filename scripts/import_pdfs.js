@@ -12,7 +12,7 @@ if (!fs.existsSync(srcDir)) {
 }
 
 const SUBJECT_KEYWORDS = {
-  economics: ['econom', 'eco'],
+  economics: ['econom', 'eco', 'abt'],
   history: ['history', 'hist'],
   physics: ['physics', 'phy'],
   chemistry: ['chemistry', 'chem'],

@@ -12,6 +12,7 @@ export const ECONOMICS_SUBJECT: Subject = {
 
     { year: '2025 Super 100', title: 'Economics Super 100 Questions Pack', link: '/papers/economics/economics-super-100-question.pdf' },
     { year: '2024 ABT Bank', title: 'Economics ABT Question Bank 2024', link: '/papers/economics/economics-abt-question-bank-2024.pdf' },
+    { year: '2024 ABT Final', title: 'Final ABT Question Bank 2024', link: '/papers/economics/economics-abt-question-bank-2024-final.pdf' },
     { year: '2025', title: 'HSC Economics Feb 2025', link: '/papers/economics-2025.pdf' },
     { year: '2024', title: 'HSC Economics Feb 2024', link: '/papers/economics-2024.pdf' },
     { year: '2023', title: 'HSC Economics Feb 2023', link: '/papers/economics-2023.pdf' },
