@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
+import { ECONOMICS_SUBJECT } from '../data/economics';
 
 interface EcoStudyHubProps {
   onClose: () => void;
@@ -114,6 +115,15 @@ const tools: Tool[] = [
 const EcoStudyHub: React.FC<EcoStudyHubProps> = ({ onClose, onOpenTool }) => {
   const [selectedPhase, setSelectedPhase] = useState<number | null>(null);
   const [hoveredTool, setHoveredTool] = useState<string | null>(null);
+
+  const papers = useMemo(() => {
+    const seen = new Set<string>();
+    return ECONOMICS_SUBJECT.previousPapers.filter(p => {
+      if (seen.has(p.link)) return false;
+      seen.add(p.link);
+      return true;
+    });
+  }, []);
 
   const filteredTools = selectedPhase 
     ? tools.filter(t => t.phase === selectedPhase)
@@ -255,6 +265,45 @@ const EcoStudyHub: React.FC<EcoStudyHubProps> = ({ onClose, onOpenTool }) => {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Previous Papers */}
+        <div className="px-6 pb-6">
+          <div className="bg-slate-800 border border-slate-700 rounded-2xl p-5">
+            <div className="flex items-center justify-between mb-3">
+              <div>
+                <p className="text-xs uppercase tracking-wide text-emerald-300">PDF Bank</p>
+                <h3 className="text-lg font-semibold text-white">Previous Papers & Question Banks</h3>
+              </div>
+              <span className="px-2 py-1 rounded-full text-xs bg-emerald-900/50 text-emerald-200 border border-emerald-700/50">
+                {papers.length} files
+              </span>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {papers.map(p => (
+                <a
+                  key={p.link}
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 rounded-xl border border-slate-700 bg-slate-900/60 p-3 hover:border-emerald-500 hover:bg-slate-800 transition"
+                >
+                  <div className="mt-1 text-emerald-300">📄</div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs px-2 py-0.5 rounded-full bg-slate-800 text-emerald-200 border border-emerald-700/40">
+                        {p.year}
+                      </span>
+                      <span className="text-[11px] text-slate-400">PDF</span>
+                    </div>
+                    <div className="text-sm font-medium text-white truncate group-hover:text-emerald-200">{p.title}</div>
+                    <div className="text-xs text-slate-500 truncate">Opens in new tab</div>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
