@@ -98,6 +98,12 @@ import SyllabusCrusher82 from './components/SyllabusCrusher82';
 import MockTestBank from './components/MockTestBank';
 import DefinitionBuilder from './components/DefinitionBuilder';
 import LayeredRevisionCards from './components/LayeredRevisionCards';
+import ArtsExamCountdown from './components/ArtsExamCountdown';
+import ArtsMasterFormula from './components/ArtsMasterFormula';
+import ArtsMasterQuiz from './components/ArtsMasterQuiz';
+import ArtsMapMaster from './components/ArtsMapMaster';
+import ArtsWritingGuide from './components/ArtsWritingGuide';
+import ArtsCurrentAffairs from './components/ArtsCurrentAffairs';
 import Random5Game from './components/Random5Game';
 import EventSorting from './components/EventSorting';
 import ConceptGrouping from './components/ConceptGrouping';
@@ -225,6 +231,12 @@ const App: React.FC = () => {
   const [showHindiStudyHub, setShowHindiStudyHub] = useState(false);
   const [showPoliticalScienceStudyHub, setShowPoliticalScienceStudyHub] = useState(false);
   const [showEconomicsStudyHub, setShowEconomicsStudyHub] = useState(false);
+  const [showArtsExamCountdown, setShowArtsExamCountdown] = useState(false);
+  const [showArtsMasterFormula, setShowArtsMasterFormula] = useState(false);
+  const [showArtsMasterQuiz, setShowArtsMasterQuiz] = useState(false);
+  const [showArtsMapMaster, setShowArtsMapMaster] = useState(false);
+  const [showArtsWritingGuide, setShowArtsWritingGuide] = useState(false);
+  const [showArtsCurrentAffairs, setShowArtsCurrentAffairs] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -1408,6 +1420,69 @@ const App: React.FC = () => {
                   <TrendingUp size={22} />
                 </div>
                 <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Eco Hub</span>
+              </button>
+            </div>
+            
+            {/* Row 7G - NEW Arts Enhancement Tools */}
+            <div className="grid grid-cols-6 gap-3 mt-3">
+              <button
+                onClick={() => setShowArtsExamCountdown(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center">
+                  <Clock size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Exam Timer</span>
+              </button>
+              
+              <button
+                onClick={() => setShowArtsMasterFormula(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-cyan-200 dark:hover:border-cyan-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-600 flex items-center justify-center">
+                  <Calculator size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Formulas</span>
+              </button>
+              
+              <button
+                onClick={() => setShowArtsMasterQuiz(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-pink-200 dark:hover:border-pink-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-pink-100 dark:bg-pink-900/30 text-pink-600 flex items-center justify-center">
+                  <Target size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Arts Quiz</span>
+              </button>
+              
+              <button
+                onClick={() => setShowArtsMapMaster(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center">
+                  <Map size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Map Master</span>
+              </button>
+              
+              <button
+                onClick={() => setShowArtsWritingGuide(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-600 flex items-center justify-center">
+                  <PenTool size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Writing</span>
+              </button>
+              
+              <button
+                onClick={() => setShowArtsCurrentAffairs(true)}
+                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-rose-200 dark:hover:border-rose-800 transition flex flex-col items-center gap-2"
+              >
+                <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 text-rose-600 flex items-center justify-center">
+                  <Globe size={22} />
+                </div>
+                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">Current</span>
               </button>
             </div>
             
@@ -2834,6 +2909,30 @@ const App: React.FC = () => {
       
       {showSpeedChallenge && (
         <SpeedChallenge onClose={() => setShowSpeedChallenge(false)} />
+      )}
+      
+      {showArtsExamCountdown && (
+        <ArtsExamCountdown onClose={() => setShowArtsExamCountdown(false)} />
+      )}
+      
+      {showArtsMasterFormula && (
+        <ArtsMasterFormula onClose={() => setShowArtsMasterFormula(false)} />
+      )}
+      
+      {showArtsMasterQuiz && (
+        <ArtsMasterQuiz onClose={() => setShowArtsMasterQuiz(false)} />
+      )}
+      
+      {showArtsMapMaster && (
+        <ArtsMapMaster onClose={() => setShowArtsMapMaster(false)} />
+      )}
+      
+      {showArtsWritingGuide && (
+        <ArtsWritingGuide onClose={() => setShowArtsWritingGuide(false)} />
+      )}
+      
+      {showArtsCurrentAffairs && (
+        <ArtsCurrentAffairs onClose={() => setShowArtsCurrentAffairs(false)} />
       )}
       
       {showSyllabusCrusher82 && selectedStream && (
