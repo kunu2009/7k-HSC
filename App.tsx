@@ -104,6 +104,7 @@ import ArtsMasterQuiz from './components/ArtsMasterQuiz';
 import ArtsMapMaster from './components/ArtsMapMaster';
 import ArtsWritingGuide from './components/ArtsWritingGuide';
 import ArtsCurrentAffairs from './components/ArtsCurrentAffairs';
+import MegaBoardCrasher from './components/MegaBoardCrasher';
 import Random5Game from './components/Random5Game';
 import EventSorting from './components/EventSorting';
 import ConceptGrouping from './components/ConceptGrouping';
@@ -237,6 +238,7 @@ const App: React.FC = () => {
   const [showArtsMapMaster, setShowArtsMapMaster] = useState(false);
   const [showArtsWritingGuide, setShowArtsWritingGuide] = useState(false);
   const [showArtsCurrentAffairs, setShowArtsCurrentAffairs] = useState(false);
+  const [showMegaBoardCrasher, setShowMegaBoardCrasher] = useState(false);
   
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -647,6 +649,29 @@ const App: React.FC = () => {
         </div>
 
         <div className="p-6 -mt-6">
+          {/* 🚀 MEGA BOARD CRASHER BANNER - Top Priority */}
+          {selectedStream === Stream.ARTS && (
+            <button
+              onClick={() => setShowMegaBoardCrasher(true)}
+              className="w-full mb-6 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all group"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl">
+                    🚀
+                  </div>
+                  <div className="text-left">
+                    <h3 className="text-xl font-black text-white">MEGA 90+ BOARD CRASHER</h3>
+                    <p className="text-white/80 text-sm">29-Day Plan: Zero to Hero • Start Now!</p>
+                  </div>
+                </div>
+                <div className="bg-white/20 rounded-full p-2 group-hover:bg-white/30 transition-colors">
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </div>
+              </div>
+            </button>
+          )}
+
           {/* Countdown Timer */}
           <div className="mb-6">
             <CountdownTimer stream={selectedStream} />
@@ -2933,6 +2958,10 @@ const App: React.FC = () => {
       
       {showArtsCurrentAffairs && (
         <ArtsCurrentAffairs onClose={() => setShowArtsCurrentAffairs(false)} />
+      )}
+      
+      {showMegaBoardCrasher && (
+        <MegaBoardCrasher onClose={() => setShowMegaBoardCrasher(false)} />
       )}
       
       {showSyllabusCrusher82 && selectedStream && (
