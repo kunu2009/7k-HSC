@@ -308,6 +308,205 @@ const App: React.FC = () => {
     db.saveSettings({ darkMode });
   }, [darkMode]);
 
+  // ==================== BACK BUTTON HANDLING ====================
+  // Handle Android/Mobile back button to navigate within the app instead of exiting
+  useEffect(() => {
+    // Function to close any open modal
+    const closeAnyOpenModal = (): boolean => {
+      // Check all modal states and close the first open one
+      const modalSetters = [
+        { state: showMegaBoardCrasher, setter: setShowMegaBoardCrasher },
+        { state: showPomodoro, setter: setShowPomodoro },
+        { state: showStudyStreak, setter: setShowStudyStreak },
+        { state: showQuickTest, setter: setShowQuickTest },
+        { state: showErrorLog, setter: setShowErrorLog },
+        { state: showSpeedRevision, setter: setShowSpeedRevision },
+        { state: showExamSimulation, setter: setShowExamSimulation },
+        { state: showRevisionDashboard, setter: setShowRevisionDashboard },
+        { state: showFormulaBank, setter: setShowFormulaBank },
+        { state: showBreathing, setter: setShowBreathing },
+        { state: showGoalSetting, setter: setShowGoalSetting },
+        { state: showMatchPairs, setter: setShowMatchPairs },
+        { state: showChapterSummary, setter: setShowChapterSummary },
+        { state: showAchievements, setter: setShowAchievements },
+        { state: showBookmarks, setter: setShowBookmarks },
+        { state: showProgressCharts, setter: setShowProgressCharts },
+        { state: showLastMinute, setter: setShowLastMinute },
+        { state: showRandomChallenge, setter: setShowRandomChallenge },
+        { state: showStudyNotes, setter: setShowStudyNotes },
+        { state: showArtsQuickSprint, setter: setShowArtsQuickSprint },
+        { state: showTimeline, setter: setShowTimeline },
+        { state: showClozeTest, setter: setShowClozeTest },
+        { state: showKeywordCloud, setter: setShowKeywordCloud },
+        { state: showMindMap, setter: setShowMindMap },
+        { state: showTeachBack, setter: setShowTeachBack },
+        { state: showActiveRecall, setter: setShowActiveRecall },
+        { state: showRapidFire, setter: setShowRapidFire },
+        { state: showDailyTracker, setter: setShowDailyTracker },
+        { state: showSpacedRepetition, setter: setShowSpacedRepetition },
+        { state: showPYQ, setter: setShowPYQ },
+        { state: showWritingPractice, setter: setShowWritingPractice },
+        { state: showReverseLearning, setter: setShowReverseLearning },
+        { state: showStudyHeatmap, setter: setShowStudyHeatmap },
+        { state: showSmartWeakness, setter: setShowSmartWeakness },
+        { state: showWeeklyReport, setter: setShowWeeklyReport },
+        { state: showStudyWrapped2025, setter: setShowStudyWrapped2025 },
+        { state: showEcoStudyHub, setter: setShowEcoStudyHub },
+        { state: showEcoFormulaBank, setter: setShowEcoFormulaBank },
+        { state: showEcoGraphPractice, setter: setShowEcoGraphPractice },
+        { state: showEcoNumericalSolver, setter: setShowEcoNumericalSolver },
+        { state: showEcoElasticityCalc, setter: setShowEcoElasticityCalc },
+        { state: showArtsStudyHub, setter: setShowArtsStudyHub },
+        { state: showHistoryTimelineQuiz, setter: setShowHistoryTimelineQuiz },
+        { state: showArtsQuickReference, setter: setShowArtsQuickReference },
+        { state: showLiteratureAnalysis, setter: setShowLiteratureAnalysis },
+        { state: showPoliticalScienceHub, setter: setShowPoliticalScienceHub },
+        { state: showHindiGrammarHub, setter: setShowHindiGrammarHub },
+        { state: showGeographyConcepts, setter: setShowGeographyConcepts },
+        { state: showEnglishWritingSkills, setter: setShowEnglishWritingSkills },
+        { state: showEconomicsCaseStudies, setter: setShowEconomicsCaseStudies },
+        { state: showHistoryChapterSummary, setter: setShowHistoryChapterSummary },
+        { state: showConstitutionalArticles, setter: setShowConstitutionalArticles },
+        { state: showHindiSahitya, setter: setShowHindiSahitya },
+        { state: showSociologyHub, setter: setShowSociologyHub },
+        { state: showPsychologyHub, setter: setShowPsychologyHub },
+        { state: showQuickRevisionQuiz, setter: setShowQuickRevisionQuiz },
+        { state: showImportantDates, setter: setShowImportantDates },
+        { state: showImportantPersons, setter: setShowImportantPersons },
+        { state: showOneMinuteChallenge, setter: setShowOneMinuteChallenge },
+        { state: showPYQBank, setter: setShowPYQBank },
+        { state: showWritingTemplates, setter: setShowWritingTemplates },
+        { state: showHistoryMapWork, setter: setShowHistoryMapWork },
+        { state: showSanskritShlokBank, setter: setShowSanskritShlokBank },
+        { state: showCurrentAffairs, setter: setShowCurrentAffairs },
+        { state: showSpeedQuiz, setter: setShowSpeedQuiz },
+        { state: showBoardExamTips, setter: setShowBoardExamTips },
+        { state: showGrammarMaster, setter: setShowGrammarMaster },
+        { state: showMockTest, setter: setShowMockTest },
+        { state: showImportantEvents, setter: setShowImportantEvents },
+        { state: showSyllabusCrusher82, setter: setShowSyllabusCrusher82 },
+        { state: showMockTestBank, setter: setShowMockTestBank },
+        { state: showDefinitionBuilder, setter: setShowDefinitionBuilder },
+        { state: showLayeredRevisionCards, setter: setShowLayeredRevisionCards },
+        { state: showRandom5Game, setter: setShowRandom5Game },
+        { state: showEventSorting, setter: setShowEventSorting },
+        { state: showConceptGrouping, setter: setShowConceptGrouping },
+        { state: showChainDiagram, setter: setShowChainDiagram },
+        { state: showMistakeMeter, setter: setShowMistakeMeter },
+        { state: showRepetitionTracker, setter: setShowRepetitionTracker },
+        { state: showSpeedChallenge, setter: setShowSpeedChallenge },
+        { state: showHistoryStudyHub, setter: setShowHistoryStudyHub },
+        { state: showGeographyStudyHub, setter: setShowGeographyStudyHub },
+        { state: showEnglishStudyHub, setter: setShowEnglishStudyHub },
+        { state: showHindiStudyHub, setter: setShowHindiStudyHub },
+        { state: showPoliticalScienceStudyHub, setter: setShowPoliticalScienceStudyHub },
+        { state: showEconomicsStudyHub, setter: setShowEconomicsStudyHub },
+        { state: showArtsExamCountdown, setter: setShowArtsExamCountdown },
+        { state: showArtsMasterFormula, setter: setShowArtsMasterFormula },
+        { state: showArtsMasterQuiz, setter: setShowArtsMasterQuiz },
+        { state: showArtsMapMaster, setter: setShowArtsMapMaster },
+        { state: showArtsWritingGuide, setter: setShowArtsWritingGuide },
+        { state: showArtsCurrentAffairs, setter: setShowArtsCurrentAffairs },
+        { state: aiModalOpen, setter: setAiModalOpen },
+      ];
+
+      for (const modal of modalSetters) {
+        if (modal.state) {
+          modal.setter(false);
+          return true;
+        }
+      }
+      return false;
+    };
+
+    // Handle navigation based on current view
+    const handleBackNavigation = (): boolean => {
+      // First, try to close any open modal
+      if (closeAnyOpenModal()) {
+        return true;
+      }
+
+      // Then handle view navigation
+      switch (view) {
+        case 'STUDY_MODE':
+          setStudyMode(null);
+          setView('CHAPTER_DETAIL');
+          return true;
+        case 'CHAPTER_DETAIL':
+          setSelectedChapter(null);
+          setView('SUBJECT_DETAIL');
+          return true;
+        case 'SUBJECT_DETAIL':
+          setSelectedSubject(null);
+          setView('DASHBOARD');
+          return true;
+        case 'SYLLABUS_VIEW':
+        case 'PAPER_PATTERN_VIEW':
+        case 'PROGRESS_VIEW':
+        case 'STUDY_PLANNER':
+        case 'SETTINGS':
+          setView('DASHBOARD');
+          return true;
+        case 'DASHBOARD':
+          // At dashboard, don't go back to stream select if user is logged in
+          // Instead, show a toast or do nothing
+          return false; // Allow default behavior (exit app) at dashboard
+        case 'STREAM_SELECT':
+          return false; // Allow default behavior at stream select
+        default:
+          return false;
+      }
+    };
+
+    // Push initial state to history
+    const pushHistoryState = () => {
+      window.history.pushState({ appState: true }, '');
+    };
+
+    // Handle the popstate event (back button press)
+    const handlePopState = (event: PopStateEvent) => {
+      // Prevent default back navigation
+      const handled = handleBackNavigation();
+      
+      if (handled) {
+        // Push a new state to keep the history stack
+        pushHistoryState();
+      }
+      // If not handled, the default behavior (exit/go back) will occur
+    };
+
+    // Initialize: push a state so we can catch the back button
+    pushHistoryState();
+
+    // Listen for back button
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [view, showMegaBoardCrasher, showPomodoro, showStudyStreak, showQuickTest, showErrorLog,
+      showSpeedRevision, showExamSimulation, showRevisionDashboard, showFormulaBank, showBreathing,
+      showGoalSetting, showMatchPairs, showChapterSummary, showAchievements, showBookmarks,
+      showProgressCharts, showLastMinute, showRandomChallenge, showStudyNotes, showArtsQuickSprint,
+      showTimeline, showClozeTest, showKeywordCloud, showMindMap, showTeachBack, showActiveRecall,
+      showRapidFire, showDailyTracker, showSpacedRepetition, showPYQ, showWritingPractice,
+      showReverseLearning, showStudyHeatmap, showSmartWeakness, showWeeklyReport, showStudyWrapped2025,
+      showEcoStudyHub, showEcoFormulaBank, showEcoGraphPractice, showEcoNumericalSolver,
+      showEcoElasticityCalc, showArtsStudyHub, showHistoryTimelineQuiz, showArtsQuickReference,
+      showLiteratureAnalysis, showPoliticalScienceHub, showHindiGrammarHub, showGeographyConcepts,
+      showEnglishWritingSkills, showEconomicsCaseStudies, showHistoryChapterSummary,
+      showConstitutionalArticles, showHindiSahitya, showSociologyHub, showPsychologyHub,
+      showQuickRevisionQuiz, showImportantDates, showImportantPersons, showOneMinuteChallenge,
+      showPYQBank, showWritingTemplates, showHistoryMapWork, showSanskritShlokBank, showCurrentAffairs,
+      showSpeedQuiz, showBoardExamTips, showGrammarMaster, showMockTest, showImportantEvents,
+      showSyllabusCrusher82, showMockTestBank, showDefinitionBuilder, showLayeredRevisionCards,
+      showRandom5Game, showEventSorting, showConceptGrouping, showChainDiagram, showMistakeMeter,
+      showRepetitionTracker, showSpeedChallenge, showHistoryStudyHub, showGeographyStudyHub,
+      showEnglishStudyHub, showHindiStudyHub, showPoliticalScienceStudyHub, showEconomicsStudyHub,
+      showArtsExamCountdown, showArtsMasterFormula, showArtsMasterQuiz, showArtsMapMaster,
+      showArtsWritingGuide, showArtsCurrentAffairs, aiModalOpen]);
+  // ==================== END BACK BUTTON HANDLING ====================
+
   // Handle onboarding complete
   const handleOnboardingComplete = (profile: UserProfile) => {
     setUserProfile(profile);
