@@ -2961,7 +2961,10 @@ const App: React.FC = () => {
       )}
       
       {showMegaBoardCrasher && (
-        <MegaBoardCrasher onClose={() => setShowMegaBoardCrasher(false)} />
+        <MegaBoardCrasher 
+          onClose={() => setShowMegaBoardCrasher(false)} 
+          selectedSubjects={userProfile?.selectedSubjects || []}
+        />
       )}
       
       {showSyllabusCrusher82 && selectedStream && (

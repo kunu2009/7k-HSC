@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 interface PhaseTask {
   id: string;
   day: number;
   date: string;
   subject: string;
+  subjectId: string;
   task: string;
   completed: boolean;
   priority: 'critical' | 'high' | 'medium';
@@ -12,24 +13,47 @@ interface PhaseTask {
 
 interface ExamDate {
   subject: string;
+  subjectId: string;
   date: string;
   time: string;
   color: string;
 }
 
-const EXAM_DATES: ExamDate[] = [
-  { subject: 'English', date: '2026-02-10', time: '11:00 AM', color: 'bg-blue-500' },
-  { subject: 'Hindi', date: '2026-02-11', time: '11:00 AM', color: 'bg-amber-500' },
-  { subject: 'Marathi', date: '2026-02-12', time: '11:00 AM', color: 'bg-purple-500' },
-  { subject: 'Sanskrit', date: '2026-02-13', time: '11:00 AM', color: 'bg-pink-500' },
-  { subject: 'Logic', date: '2026-02-16', time: '11:00 AM', color: 'bg-gray-500' },
-  { subject: 'Political Science', date: '2026-02-18', time: '3:00 PM', color: 'bg-red-500' },
-  { subject: 'Economics', date: '2026-02-24', time: '11:00 AM', color: 'bg-indigo-500' },
-  { subject: 'Philosophy', date: '2026-02-28', time: '3:00 PM', color: 'bg-cyan-500' },
-  { subject: 'Psychology', date: '2026-03-04', time: '3:00 PM', color: 'bg-rose-500' },
-  { subject: 'Geography', date: '2026-03-07', time: '3:00 PM', color: 'bg-teal-500' },
-  { subject: 'History', date: '2026-03-09', time: '3:00 PM', color: 'bg-orange-500' },
-  { subject: 'Sociology', date: '2026-03-11', time: '3:00 PM', color: 'bg-lime-500' },
+interface MegaBoardCrasherProps {
+  onClose: () => void;
+  selectedSubjects?: string[]; // Subject IDs like 'eng', 'his', 'pol', etc.
+}
+
+// Subject ID to display name mapping
+const SUBJECT_MAP: Record<string, { name: string; shortName: string; color: string }> = {
+  'eng': { name: 'English', shortName: 'English', color: 'bg-blue-500' },
+  'hin': { name: 'Hindi', shortName: 'Hindi', color: 'bg-amber-500' },
+  'mar': { name: 'Marathi', shortName: 'Marathi', color: 'bg-purple-500' },
+  'san': { name: 'Sanskrit', shortName: 'Sanskrit', color: 'bg-pink-500' },
+  'pol': { name: 'Political Science', shortName: 'Pol Science', color: 'bg-red-500' },
+  'eco': { name: 'Economics', shortName: 'Economics', color: 'bg-indigo-500' },
+  'geo': { name: 'Geography', shortName: 'Geography', color: 'bg-teal-500' },
+  'his': { name: 'History', shortName: 'History', color: 'bg-orange-500' },
+  'soc': { name: 'Sociology', shortName: 'Sociology', color: 'bg-lime-500' },
+  'psy': { name: 'Psychology', shortName: 'Psychology', color: 'bg-rose-500' },
+  'phi': { name: 'Philosophy', shortName: 'Philosophy', color: 'bg-cyan-500' },
+  'log': { name: 'Logic', shortName: 'Logic', color: 'bg-gray-500' },
+};
+
+// All exam dates with subject IDs
+const ALL_EXAM_DATES: ExamDate[] = [
+  { subject: 'English', subjectId: 'eng', date: '2026-02-10', time: '11:00 AM', color: 'bg-blue-500' },
+  { subject: 'Hindi', subjectId: 'hin', date: '2026-02-11', time: '11:00 AM', color: 'bg-amber-500' },
+  { subject: 'Marathi', subjectId: 'mar', date: '2026-02-12', time: '11:00 AM', color: 'bg-purple-500' },
+  { subject: 'Sanskrit', subjectId: 'san', date: '2026-02-13', time: '11:00 AM', color: 'bg-pink-500' },
+  { subject: 'Logic', subjectId: 'log', date: '2026-02-16', time: '11:00 AM', color: 'bg-gray-500' },
+  { subject: 'Political Science', subjectId: 'pol', date: '2026-02-18', time: '3:00 PM', color: 'bg-red-500' },
+  { subject: 'Economics', subjectId: 'eco', date: '2026-02-24', time: '11:00 AM', color: 'bg-indigo-500' },
+  { subject: 'Philosophy', subjectId: 'phi', date: '2026-02-28', time: '3:00 PM', color: 'bg-cyan-500' },
+  { subject: 'Psychology', subjectId: 'psy', date: '2026-03-04', time: '3:00 PM', color: 'bg-rose-500' },
+  { subject: 'Geography', subjectId: 'geo', date: '2026-03-07', time: '3:00 PM', color: 'bg-teal-500' },
+  { subject: 'History', subjectId: 'his', date: '2026-03-09', time: '3:00 PM', color: 'bg-orange-500' },
+  { subject: 'Sociology', subjectId: 'soc', date: '2026-03-11', time: '3:00 PM', color: 'bg-lime-500' },
 ];
 
 const generatePhaseTasks = (): PhaseTask[] => {
@@ -38,169 +62,169 @@ const generatePhaseTasks = (): PhaseTask[] => {
   
   // Phase 1 Tasks (Feb 1-9) - Foundation Building
   const phase1Tasks = [
-    { day: 1, subject: 'English', task: 'Writing skills framework (Letters, Essays)', priority: 'critical' as const },
-    { day: 1, subject: 'Hindi', task: 'Read ENTIRE poetry section with meaning', priority: 'critical' as const },
-    { day: 1, subject: 'Pol Science', task: 'Chapter 1 - World since 1991', priority: 'high' as const },
-    { day: 1, subject: 'Economics', task: 'Chapter 1 - Intro to Microeconomics', priority: 'high' as const },
-    { day: 1, subject: 'Geography', task: 'Chapter 1 - Population Geography', priority: 'medium' as const },
-    { day: 1, subject: 'History', task: 'Ch 1 - Renaissance + Ch 2 - Colonialism', priority: 'medium' as const },
+    { day: 1, subject: 'English', subjectId: 'eng', task: 'Writing skills framework (Letters, Essays)', priority: 'critical' as const },
+    { day: 1, subject: 'Hindi', subjectId: 'hin', task: 'Read ENTIRE poetry section with meaning', priority: 'critical' as const },
+    { day: 1, subject: 'Pol Science', subjectId: 'pol', task: 'Chapter 1 - World since 1991', priority: 'high' as const },
+    { day: 1, subject: 'Economics', subjectId: 'eco', task: 'Chapter 1 - Intro to Microeconomics', priority: 'high' as const },
+    { day: 1, subject: 'Geography', subjectId: 'geo', task: 'Chapter 1 - Population Geography', priority: 'medium' as const },
+    { day: 1, subject: 'History', subjectId: 'his', task: 'Ch 1 - Renaissance + Ch 2 - Colonialism', priority: 'medium' as const },
     
-    { day: 2, subject: 'English', task: 'Grammar rules (Tenses, Voice, Reported Speech)', priority: 'critical' as const },
-    { day: 2, subject: 'Hindi', task: 'Prose section - 2 chapters with summary', priority: 'critical' as const },
-    { day: 2, subject: 'Pol Science', task: 'Chapter 2 - Globalisation', priority: 'high' as const },
-    { day: 2, subject: 'Economics', task: 'Chapter 2 - Demand Analysis', priority: 'high' as const },
-    { day: 2, subject: 'Geography', task: 'Chapter 2 - Migration', priority: 'medium' as const },
-    { day: 2, subject: 'History', task: 'Ch 3 - India & Colonialism + Ch 4 - Marathas', priority: 'medium' as const },
+    { day: 2, subject: 'English', subjectId: 'eng', task: 'Grammar rules (Tenses, Voice, Reported Speech)', priority: 'critical' as const },
+    { day: 2, subject: 'Hindi', subjectId: 'hin', task: 'Prose section - 2 chapters with summary', priority: 'critical' as const },
+    { day: 2, subject: 'Pol Science', subjectId: 'pol', task: 'Chapter 2 - Globalisation', priority: 'high' as const },
+    { day: 2, subject: 'Economics', subjectId: 'eco', task: 'Chapter 2 - Demand Analysis', priority: 'high' as const },
+    { day: 2, subject: 'Geography', subjectId: 'geo', task: 'Chapter 2 - Migration', priority: 'medium' as const },
+    { day: 2, subject: 'History', subjectId: 'his', task: 'Ch 3 - India & Colonialism + Ch 4 - Marathas', priority: 'medium' as const },
     
-    { day: 3, subject: 'English', task: 'Novel/Drama question prep', priority: 'critical' as const },
-    { day: 3, subject: 'Hindi', task: 'Grammar section complete', priority: 'critical' as const },
-    { day: 3, subject: 'Pol Science', task: 'Chapter 3 - Indian Politics', priority: 'high' as const },
-    { day: 3, subject: 'Economics', task: 'Chapter 3 - Supply Analysis', priority: 'high' as const },
-    { day: 3, subject: 'Geography', task: 'Chapter 3 - Human Settlements', priority: 'medium' as const },
-    { day: 3, subject: 'History', task: 'Ch 5 - Social Reforms + Ch 6 - Struggle', priority: 'medium' as const },
+    { day: 3, subject: 'English', subjectId: 'eng', task: 'Novel/Drama question prep', priority: 'critical' as const },
+    { day: 3, subject: 'Hindi', subjectId: 'hin', task: 'Grammar section complete', priority: 'critical' as const },
+    { day: 3, subject: 'Pol Science', subjectId: 'pol', task: 'Chapter 3 - Indian Politics', priority: 'high' as const },
+    { day: 3, subject: 'Economics', subjectId: 'eco', task: 'Chapter 3 - Supply Analysis', priority: 'high' as const },
+    { day: 3, subject: 'Geography', subjectId: 'geo', task: 'Chapter 3 - Human Settlements', priority: 'medium' as const },
+    { day: 3, subject: 'History', subjectId: 'his', task: 'Ch 5 - Social Reforms + Ch 6 - Struggle', priority: 'medium' as const },
     
-    { day: 4, subject: 'English', task: 'Comprehension + Summary writing', priority: 'critical' as const },
-    { day: 4, subject: 'Hindi', task: 'Letter + Essay writing formats', priority: 'critical' as const },
-    { day: 4, subject: 'Pol Science', task: 'Chapter 4-5 complete', priority: 'high' as const },
-    { day: 4, subject: 'Economics', task: 'Chapter 4 - Elasticity (VERY IMPORTANT!)', priority: 'critical' as const },
-    { day: 4, subject: 'Geography', task: 'Chapter 4 - Human Development', priority: 'medium' as const },
-    { day: 4, subject: 'History', task: 'Ch 7-8 (Decolonisation, World Wars)', priority: 'medium' as const },
+    { day: 4, subject: 'English', subjectId: 'eng', task: 'Comprehension + Summary writing', priority: 'critical' as const },
+    { day: 4, subject: 'Hindi', subjectId: 'hin', task: 'Letter + Essay writing formats', priority: 'critical' as const },
+    { day: 4, subject: 'Pol Science', subjectId: 'pol', task: 'Chapter 4-5 complete', priority: 'high' as const },
+    { day: 4, subject: 'Economics', subjectId: 'eco', task: 'Chapter 4 - Elasticity (VERY IMPORTANT!)', priority: 'critical' as const },
+    { day: 4, subject: 'Geography', subjectId: 'geo', task: 'Chapter 4 - Human Development', priority: 'medium' as const },
+    { day: 4, subject: 'History', subjectId: 'his', task: 'Ch 7-8 (Decolonisation, World Wars)', priority: 'medium' as const },
     
-    { day: 5, subject: 'English', task: 'PYQ solving (2024, 2023 papers)', priority: 'critical' as const },
-    { day: 5, subject: 'Hindi', task: 'PYQ solving (2024, 2023 papers)', priority: 'critical' as const },
-    { day: 5, subject: 'Pol Science', task: 'Full syllabus revision', priority: 'high' as const },
-    { day: 5, subject: 'Economics', task: 'Chapter 5-6 (Market Structure)', priority: 'high' as const },
-    { day: 5, subject: 'Geography', task: 'Chapter 5 - Primary Activities', priority: 'medium' as const },
-    { day: 5, subject: 'History', task: 'Ch 9-10 (Cold War, Decolonisation)', priority: 'medium' as const },
+    { day: 5, subject: 'English', subjectId: 'eng', task: 'PYQ solving (2024, 2023 papers)', priority: 'critical' as const },
+    { day: 5, subject: 'Hindi', subjectId: 'hin', task: 'PYQ solving (2024, 2023 papers)', priority: 'critical' as const },
+    { day: 5, subject: 'Pol Science', subjectId: 'pol', task: 'Full syllabus revision', priority: 'high' as const },
+    { day: 5, subject: 'Economics', subjectId: 'eco', task: 'Chapter 5-6 (Market Structure)', priority: 'high' as const },
+    { day: 5, subject: 'Geography', subjectId: 'geo', task: 'Chapter 5 - Primary Activities', priority: 'medium' as const },
+    { day: 5, subject: 'History', subjectId: 'his', task: 'Ch 9-10 (Cold War, Decolonisation)', priority: 'medium' as const },
     
-    { day: 6, subject: 'English', task: '🔴 FULL DAY PREP - Prose + Poetry + Grammar', priority: 'critical' as const },
-    { day: 6, subject: 'History', task: 'Chapters 11-12 (India Transformed)', priority: 'medium' as const },
+    { day: 6, subject: 'English', subjectId: 'eng', task: '🔴 FULL DAY PREP - Prose + Poetry + Grammar', priority: 'critical' as const },
+    { day: 6, subject: 'History', subjectId: 'his', task: 'Chapters 11-12 (India Transformed)', priority: 'medium' as const },
     
-    { day: 7, subject: 'English', task: 'Mock test + correction', priority: 'critical' as const },
-    { day: 7, subject: 'Hindi', task: 'Complete syllabus revision', priority: 'critical' as const },
+    { day: 7, subject: 'English', subjectId: 'eng', task: 'Mock test + correction', priority: 'critical' as const },
+    { day: 7, subject: 'Hindi', subjectId: 'hin', task: 'Complete syllabus revision', priority: 'critical' as const },
     
-    { day: 8, subject: 'English', task: 'Final revision + formula sheet', priority: 'critical' as const },
-    { day: 8, subject: 'Hindi', task: 'Full mock test + PYQ revision', priority: 'critical' as const },
+    { day: 8, subject: 'English', subjectId: 'eng', task: 'Final revision + formula sheet', priority: 'critical' as const },
+    { day: 8, subject: 'Hindi', subjectId: 'hin', task: 'Full mock test + PYQ revision', priority: 'critical' as const },
     
-    { day: 9, subject: 'English', task: '✅ ONLY revision, no new topics. Sleep by 10 PM!', priority: 'critical' as const },
+    { day: 9, subject: 'English', subjectId: 'eng', task: '✅ ONLY revision, no new topics. Sleep by 10 PM!', priority: 'critical' as const },
   ];
   
   // Phase 2 Tasks (Feb 10-24) - Exam Time with Parallel Prep
   const phase2Tasks = [
     // Day 10 - English Exam Day
-    { day: 10, subject: '📝 EXAM', task: '🎯 ENGLISH EXAM - 11:00 AM | Light Hindi revision after', priority: 'critical' as const },
-    { day: 10, subject: 'Hindi', task: 'Post-exam: Quick revision of weak chapters', priority: 'high' as const },
+    { day: 10, subject: '📝 EXAM', subjectId: 'eng', task: '🎯 ENGLISH EXAM - 11:00 AM | Light Hindi revision after', priority: 'critical' as const },
+    { day: 10, subject: 'Hindi', subjectId: 'hin', task: 'Post-exam: Quick revision of weak chapters', priority: 'high' as const },
     
     // Day 11 - Hindi Exam Day
-    { day: 11, subject: '📝 EXAM', task: '🎯 HINDI EXAM - 11:00 AM | Start Pol Science prep after', priority: 'critical' as const },
-    { day: 11, subject: 'Pol Science', task: 'Post-exam: Chapters 1-2 revision', priority: 'high' as const },
+    { day: 11, subject: '📝 EXAM', subjectId: 'hin', task: '🎯 HINDI EXAM - 11:00 AM | Start Pol Science prep after', priority: 'critical' as const },
+    { day: 11, subject: 'Pol Science', subjectId: 'pol', task: 'Post-exam: Chapters 1-2 revision', priority: 'high' as const },
     
     // Day 12 - Marathi Exam
-    { day: 12, subject: '📝 EXAM', task: '🎯 MARATHI EXAM - 11:00 AM', priority: 'critical' as const },
-    { day: 12, subject: 'Pol Science', task: 'Full day prep - Chapters 3-5', priority: 'high' as const },
+    { day: 12, subject: '📝 EXAM', subjectId: 'mar', task: '🎯 MARATHI EXAM - 11:00 AM', priority: 'critical' as const },
+    { day: 12, subject: 'Pol Science', subjectId: 'pol', task: 'Full day prep - Chapters 3-5', priority: 'high' as const },
     
     // Day 13 - Sanskrit Exam
-    { day: 13, subject: '📝 EXAM', task: '🎯 SANSKRIT EXAM - 11:00 AM', priority: 'critical' as const },
-    { day: 13, subject: 'Pol Science', task: 'Current affairs + Important articles', priority: 'high' as const },
+    { day: 13, subject: '📝 EXAM', subjectId: 'san', task: '🎯 SANSKRIT EXAM - 11:00 AM', priority: 'critical' as const },
+    { day: 13, subject: 'Pol Science', subjectId: 'pol', task: 'Current affairs + Important articles', priority: 'high' as const },
     
     // Day 14 - Gap Day
-    { day: 14, subject: 'Pol Science', task: '🔴 INTENSIVE PREP - Full syllabus revision', priority: 'critical' as const },
-    { day: 14, subject: 'Economics', task: 'Start Demand & Supply chapters', priority: 'high' as const },
+    { day: 14, subject: 'Pol Science', subjectId: 'pol', task: '🔴 INTENSIVE PREP - Full syllabus revision', priority: 'critical' as const },
+    { day: 14, subject: 'Economics', subjectId: 'eco', task: 'Start Demand & Supply chapters', priority: 'high' as const },
     
     // Day 15 - Gap Day
-    { day: 15, subject: 'Pol Science', task: 'PYQ solving + Mock test', priority: 'critical' as const },
-    { day: 15, subject: 'Economics', task: 'Elasticity formulas + diagrams', priority: 'high' as const },
+    { day: 15, subject: 'Pol Science', subjectId: 'pol', task: 'PYQ solving + Mock test', priority: 'critical' as const },
+    { day: 15, subject: 'Economics', subjectId: 'eco', task: 'Elasticity formulas + diagrams', priority: 'high' as const },
     
     // Day 16 - Logic Exam
-    { day: 16, subject: '📝 EXAM', task: '🎯 LOGIC EXAM - 11:00 AM', priority: 'critical' as const },
-    { day: 16, subject: 'Pol Science', task: 'Final revision + formula sheet', priority: 'critical' as const },
+    { day: 16, subject: '📝 EXAM', subjectId: 'log', task: '🎯 LOGIC EXAM - 11:00 AM', priority: 'critical' as const },
+    { day: 16, subject: 'Pol Science', subjectId: 'pol', task: 'Final revision + formula sheet', priority: 'critical' as const },
     
     // Day 17 - Pre Pol Science
-    { day: 17, subject: 'Pol Science', task: '✅ FINAL REVISION ONLY - Sleep by 10 PM!', priority: 'critical' as const },
+    { day: 17, subject: 'Pol Science', subjectId: 'pol', task: '✅ FINAL REVISION ONLY - Sleep by 10 PM!', priority: 'critical' as const },
     
     // Day 18 - Political Science Exam
-    { day: 18, subject: '📝 EXAM', task: '🎯 POLITICAL SCIENCE EXAM - 3:00 PM', priority: 'critical' as const },
-    { day: 18, subject: 'Economics', task: 'Post-exam: Market structures + National Income', priority: 'high' as const },
+    { day: 18, subject: '📝 EXAM', subjectId: 'pol', task: '🎯 POLITICAL SCIENCE EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 18, subject: 'Economics', subjectId: 'eco', task: 'Post-exam: Market structures + National Income', priority: 'high' as const },
     
     // Day 19-23 - Economics Prep
-    { day: 19, subject: 'Economics', task: 'Chapters 1-3 complete with numericals', priority: 'critical' as const },
-    { day: 19, subject: 'Geography', task: 'Start Chapter 1-2 alongside', priority: 'medium' as const },
+    { day: 19, subject: 'Economics', subjectId: 'eco', task: 'Chapters 1-3 complete with numericals', priority: 'critical' as const },
+    { day: 19, subject: 'Geography', subjectId: 'geo', task: 'Start Chapter 1-2 alongside', priority: 'medium' as const },
     
-    { day: 20, subject: 'Economics', task: 'Chapters 4-5 + All graphs practice', priority: 'critical' as const },
-    { day: 20, subject: 'Geography', task: 'Chapters 3-4 (Human Settlements)', priority: 'medium' as const },
+    { day: 20, subject: 'Economics', subjectId: 'eco', task: 'Chapters 4-5 + All graphs practice', priority: 'critical' as const },
+    { day: 20, subject: 'Geography', subjectId: 'geo', task: 'Chapters 3-4 (Human Settlements)', priority: 'medium' as const },
     
-    { day: 21, subject: 'Economics', task: 'Chapter 6 + Full syllabus revision', priority: 'critical' as const },
-    { day: 21, subject: 'Geography', task: 'Chapters 5-6 (Primary & Secondary)', priority: 'medium' as const },
+    { day: 21, subject: 'Economics', subjectId: 'eco', task: 'Chapter 6 + Full syllabus revision', priority: 'critical' as const },
+    { day: 21, subject: 'Geography', subjectId: 'geo', task: 'Chapters 5-6 (Primary & Secondary)', priority: 'medium' as const },
     
-    { day: 22, subject: 'Economics', task: 'PYQ solving - 3 years papers', priority: 'critical' as const },
-    { day: 22, subject: 'History', task: 'Start Chapters 1-4 revision', priority: 'medium' as const },
+    { day: 22, subject: 'Economics', subjectId: 'eco', task: 'PYQ solving - 3 years papers', priority: 'critical' as const },
+    { day: 22, subject: 'History', subjectId: 'his', task: 'Start Chapters 1-4 revision', priority: 'medium' as const },
     
-    { day: 23, subject: 'Economics', task: 'Final revision + formula sheet prep', priority: 'critical' as const },
-    { day: 23, subject: 'History', task: 'Chapters 5-8 (Freedom Struggle)', priority: 'medium' as const },
+    { day: 23, subject: 'Economics', subjectId: 'eco', task: 'Final revision + formula sheet prep', priority: 'critical' as const },
+    { day: 23, subject: 'History', subjectId: 'his', task: 'Chapters 5-8 (Freedom Struggle)', priority: 'medium' as const },
     
     // Day 24 - Economics Exam
-    { day: 24, subject: '📝 EXAM', task: '🎯 ECONOMICS EXAM - 11:00 AM', priority: 'critical' as const },
-    { day: 24, subject: 'Geography', task: 'Post-exam: Full day Geography prep', priority: 'high' as const },
+    { day: 24, subject: '📝 EXAM', subjectId: 'eco', task: '🎯 ECONOMICS EXAM - 11:00 AM', priority: 'critical' as const },
+    { day: 24, subject: 'Geography', subjectId: 'geo', task: 'Post-exam: Full day Geography prep', priority: 'high' as const },
   ];
   
   // Phase 3 Tasks (Feb 25 - Mar 11) - Final Sprint
   const phase3Tasks = [
     // Day 25-27 - Philosophy + Geography Prep
-    { day: 25, subject: 'Geography', task: 'Chapters 7-8 + Map work practice', priority: 'critical' as const },
-    { day: 25, subject: 'History', task: 'Chapters 9-12 complete', priority: 'high' as const },
+    { day: 25, subject: 'Geography', subjectId: 'geo', task: 'Chapters 7-8 + Map work practice', priority: 'critical' as const },
+    { day: 25, subject: 'History', subjectId: 'his', task: 'Chapters 9-12 complete', priority: 'high' as const },
     
-    { day: 26, subject: 'Geography', task: 'Chapter 9 + Full revision round 1', priority: 'critical' as const },
-    { day: 26, subject: 'Philosophy', task: 'Pre-exam revision', priority: 'high' as const },
+    { day: 26, subject: 'Geography', subjectId: 'geo', task: 'Chapter 9 + Full revision round 1', priority: 'critical' as const },
+    { day: 26, subject: 'Philosophy', subjectId: 'phi', task: 'Pre-exam revision', priority: 'high' as const },
     
-    { day: 27, subject: 'Philosophy', task: '✅ PHILOSOPHY FINAL PREP', priority: 'critical' as const },
-    { day: 27, subject: 'Geography', task: 'PYQ solving + map marking', priority: 'high' as const },
+    { day: 27, subject: 'Philosophy', subjectId: 'phi', task: '✅ PHILOSOPHY FINAL PREP', priority: 'critical' as const },
+    { day: 27, subject: 'Geography', subjectId: 'geo', task: 'PYQ solving + map marking', priority: 'high' as const },
     
     // Day 28 - Philosophy Exam
-    { day: 28, subject: '📝 EXAM', task: '🎯 PHILOSOPHY EXAM - 3:00 PM', priority: 'critical' as const },
-    { day: 28, subject: 'Geography', task: 'Full syllabus revision', priority: 'high' as const },
+    { day: 28, subject: '📝 EXAM', subjectId: 'phi', task: '🎯 PHILOSOPHY EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 28, subject: 'Geography', subjectId: 'geo', task: 'Full syllabus revision', priority: 'high' as const },
     
     // Day 29-33 - Geography + Psychology + History Final Push
-    { day: 29, subject: 'Geography', task: 'Mock test + Map work intensive', priority: 'critical' as const },
-    { day: 29, subject: 'Psychology', task: 'Start preparations', priority: 'medium' as const },
+    { day: 29, subject: 'Geography', subjectId: 'geo', task: 'Mock test + Map work intensive', priority: 'critical' as const },
+    { day: 29, subject: 'Psychology', subjectId: 'psy', task: 'Start preparations', priority: 'medium' as const },
     
-    { day: 30, subject: 'Geography', task: 'PYQ analysis + weak areas focus', priority: 'critical' as const },
-    { day: 30, subject: 'Psychology', task: 'Core concepts + definitions', priority: 'medium' as const },
+    { day: 30, subject: 'Geography', subjectId: 'geo', task: 'PYQ analysis + weak areas focus', priority: 'critical' as const },
+    { day: 30, subject: 'Psychology', subjectId: 'psy', task: 'Core concepts + definitions', priority: 'medium' as const },
     
-    { day: 31, subject: 'Psychology', task: 'Full syllabus coverage', priority: 'critical' as const },
-    { day: 31, subject: 'History', task: 'Timeline + Important dates revision', priority: 'high' as const },
+    { day: 31, subject: 'Psychology', subjectId: 'psy', task: 'Full syllabus coverage', priority: 'critical' as const },
+    { day: 31, subject: 'History', subjectId: 'his', task: 'Timeline + Important dates revision', priority: 'high' as const },
     
-    { day: 32, subject: 'Psychology', task: 'PYQ solving + case studies', priority: 'critical' as const },
-    { day: 32, subject: 'History', task: 'Map work + Important events', priority: 'high' as const },
+    { day: 32, subject: 'Psychology', subjectId: 'psy', task: 'PYQ solving + case studies', priority: 'critical' as const },
+    { day: 32, subject: 'History', subjectId: 'his', task: 'Map work + Important events', priority: 'high' as const },
     
-    { day: 33, subject: 'Psychology', task: '✅ FINAL REVISION - Sleep early!', priority: 'critical' as const },
+    { day: 33, subject: 'Psychology', subjectId: 'psy', task: '✅ FINAL REVISION - Sleep early!', priority: 'critical' as const },
     
     // Day 34 - Psychology Exam
-    { day: 34, subject: '📝 EXAM', task: '🎯 PSYCHOLOGY EXAM - 3:00 PM', priority: 'critical' as const },
-    { day: 34, subject: 'Geography', task: 'Final Geography revision', priority: 'high' as const },
+    { day: 34, subject: '📝 EXAM', subjectId: 'psy', task: '🎯 PSYCHOLOGY EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 34, subject: 'Geography', subjectId: 'geo', task: 'Final Geography revision', priority: 'high' as const },
     
     // Day 35-36 - Pre Geography
-    { day: 35, subject: 'Geography', task: '🔴 INTENSIVE MAP WORK + REVISION', priority: 'critical' as const },
-    { day: 35, subject: 'History', task: 'Parallel History prep continues', priority: 'high' as const },
+    { day: 35, subject: 'Geography', subjectId: 'geo', task: '🔴 INTENSIVE MAP WORK + REVISION', priority: 'critical' as const },
+    { day: 35, subject: 'History', subjectId: 'his', task: 'Parallel History prep continues', priority: 'high' as const },
     
-    { day: 36, subject: 'Geography', task: '✅ FINAL REVISION ONLY - Sleep by 10 PM!', priority: 'critical' as const },
+    { day: 36, subject: 'Geography', subjectId: 'geo', task: '✅ FINAL REVISION ONLY - Sleep by 10 PM!', priority: 'critical' as const },
     
     // Day 37 - Geography Exam
-    { day: 37, subject: '📝 EXAM', task: '🎯 GEOGRAPHY EXAM - 3:00 PM', priority: 'critical' as const },
-    { day: 37, subject: 'History', task: 'Post-exam: Full day History intensive', priority: 'high' as const },
+    { day: 37, subject: '📝 EXAM', subjectId: 'geo', task: '🎯 GEOGRAPHY EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 37, subject: 'History', subjectId: 'his', task: 'Post-exam: Full day History intensive', priority: 'high' as const },
     
     // Day 38 - Pre History
-    { day: 38, subject: 'History', task: '🔴 INTENSIVE - Timeline + Dates + Maps', priority: 'critical' as const },
-    { day: 38, subject: 'Sociology', task: 'Start Sociology prep alongside', priority: 'medium' as const },
+    { day: 38, subject: 'History', subjectId: 'his', task: '🔴 INTENSIVE - Timeline + Dates + Maps', priority: 'critical' as const },
+    { day: 38, subject: 'Sociology', subjectId: 'soc', task: 'Start Sociology prep alongside', priority: 'medium' as const },
     
     // Day 39 - History Exam
-    { day: 39, subject: '📝 EXAM', task: '🎯 HISTORY EXAM - 3:00 PM', priority: 'critical' as const },
-    { day: 39, subject: 'Sociology', task: 'Post-exam: Full Sociology coverage', priority: 'high' as const },
+    { day: 39, subject: '📝 EXAM', subjectId: 'his', task: '🎯 HISTORY EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 39, subject: 'Sociology', subjectId: 'soc', task: 'Post-exam: Full Sociology coverage', priority: 'high' as const },
     
     // Day 40 - Pre Sociology
-    { day: 40, subject: 'Sociology', task: '🔴 INTENSIVE PREP + PYQ solving', priority: 'critical' as const },
+    { day: 40, subject: 'Sociology', subjectId: 'soc', task: '🔴 INTENSIVE PREP + PYQ solving', priority: 'critical' as const },
     
     // Day 41 - Sociology Exam
-    { day: 41, subject: '📝 EXAM', task: '🎯 SOCIOLOGY EXAM - 3:00 PM | 🏆 BOARDS COMPLETE!', priority: 'critical' as const },
+    { day: 41, subject: '📝 EXAM', subjectId: 'soc', task: '🎯 SOCIOLOGY EXAM - 3:00 PM | 🏆 BOARDS COMPLETE!', priority: 'critical' as const },
   ];
   
   // Combine all phases
@@ -215,6 +239,7 @@ const generatePhaseTasks = (): PhaseTask[] => {
       day: task.day,
       date: taskDate.toISOString().split('T')[0],
       subject: task.subject,
+      subjectId: task.subjectId,
       task: task.task,
       completed: false,
       priority: task.priority,
@@ -224,17 +249,46 @@ const generatePhaseTasks = (): PhaseTask[] => {
   return tasks;
 };
 
-const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSubjects = [] }) => {
   const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips'>('overview');
+  
+  // Filter exam dates based on selected subjects
+  const EXAM_DATES = useMemo(() => {
+    if (!selectedSubjects || selectedSubjects.length === 0) {
+      return ALL_EXAM_DATES;
+    }
+    return ALL_EXAM_DATES.filter(exam => selectedSubjects.includes(exam.subjectId));
+  }, [selectedSubjects]);
+  
+  // Generate tasks filtered by selected subjects
+  const allTasks = useMemo(() => generatePhaseTasks(), []);
+  
   const [tasks, setTasks] = useState<PhaseTask[]>(() => {
-    const saved = localStorage.getItem('megaCrasherTasks');
-    return saved ? JSON.parse(saved) : generatePhaseTasks();
+    const storageKey = selectedSubjects?.length > 0 
+      ? `megaCrasherTasks_${selectedSubjects.sort().join('_')}`
+      : 'megaCrasherTasks';
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+      return JSON.parse(saved);
+    }
+    // Filter tasks based on selected subjects
+    if (!selectedSubjects || selectedSubjects.length === 0) {
+      return allTasks;
+    }
+    return allTasks.filter(task => selectedSubjects.includes(task.subjectId));
   });
   const [selectedDay, setSelectedDay] = useState(1);
   
+  // Storage key based on selected subjects
+  const storageKey = useMemo(() => {
+    return selectedSubjects?.length > 0 
+      ? `megaCrasherTasks_${[...selectedSubjects].sort().join('_')}`
+      : 'megaCrasherTasks';
+  }, [selectedSubjects]);
+  
   useEffect(() => {
-    localStorage.setItem('megaCrasherTasks', JSON.stringify(tasks));
-  }, [tasks]);
+    localStorage.setItem(storageKey, JSON.stringify(tasks));
+  }, [tasks, storageKey]);
   
   const toggleTask = (taskId: string) => {
     setTasks(prev => prev.map(t => 
@@ -255,8 +309,26 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     return dayTasks.length > 0 ? Math.round((completed / dayTasks.length) * 100) : 0;
   };
   
+  // Get user's subject names for display
+  const userSubjectNames = useMemo(() => {
+    if (!selectedSubjects || selectedSubjects.length === 0) return [];
+    return selectedSubjects.map(id => SUBJECT_MAP[id]?.name || id).filter(Boolean);
+  }, [selectedSubjects]);
+  
   const renderOverview = () => (
     <div className="space-y-6">
+      {/* User's Subjects Banner */}
+      {userSubjectNames.length > 0 && (
+        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-3">
+          <p className="text-white/80 text-xs mb-1">Your Subjects</p>
+          <div className="flex flex-wrap gap-1">
+            {userSubjectNames.map(name => (
+              <span key={name} className="bg-white/20 text-white text-xs px-2 py-1 rounded-full">{name}</span>
+            ))}
+          </div>
+        </div>
+      )}
+      
       {/* Exam Countdown Cards */}
       <div className="bg-gradient-to-r from-red-600 to-orange-500 rounded-xl p-4 text-white">
         <h3 className="text-xl font-bold mb-3">🎯 Mission: 90%+ in 29 Days</h3>
@@ -530,22 +602,45 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     );
   };
   
-  const renderSubjects = () => (
-    <div className="space-y-4">
-      {/* Subject Cards */}
-      {[
-        { name: 'English', color: 'blue', target: '85+', chapters: 'Prose, Poetry, Grammar, Writing', tips: ['Master letter formats', 'Practice comprehension daily', 'Learn grammar rules'] },
-        { name: 'Hindi', color: 'amber', target: '85+', chapters: 'गद्य, पद्य, व्याकरण, लेखन', tips: ['Memorize poems with meanings', 'Practice essay formats', 'Grammar shortcuts'] },
-        { name: 'Political Science', color: 'red', target: '90+', chapters: '5 Chapters', tips: ['Learn Constitutional Articles', 'Current affairs examples', 'World events timeline'] },
-        { name: 'Economics', color: 'indigo', target: '90+', chapters: '6 Chapters', tips: ['Elasticity formulas', 'Draw all curves', 'National Income methods'] },
-        { name: 'Geography', color: 'teal', target: '90+', chapters: '9 Chapters', tips: ['Map work daily!', 'Learn geographical reasons', 'Population data'] },
-        { name: 'History', color: 'orange', target: '90+', chapters: '12 Chapters', tips: ['Timeline memorization', 'Important dates', 'Map marking'] },
-      ].map(subject => (
-        <div key={subject.name} className={`bg-gray-800 rounded-xl p-4 border-l-4 border-${subject.color}-500`}>
-          <div className="flex justify-between items-start mb-3">
-            <div>
-              <h4 className="text-white font-bold text-lg">{subject.name}</h4>
-              <p className="text-gray-400 text-sm">{subject.chapters}</p>
+  const renderSubjects = () => {
+    // All subject data with IDs
+    const allSubjectData = [
+      { id: 'eng', name: 'English', color: 'blue', target: '85+', chapters: 'Prose, Poetry, Grammar, Writing', tips: ['Master letter formats', 'Practice comprehension daily', 'Learn grammar rules'] },
+      { id: 'hin', name: 'Hindi', color: 'amber', target: '85+', chapters: 'गद्य, पद्य, व्याकरण, लेखन', tips: ['Memorize poems with meanings', 'Practice essay formats', 'Grammar shortcuts'] },
+      { id: 'mar', name: 'Marathi', color: 'purple', target: '85+', chapters: 'गद्य, पद्य, व्याकरण', tips: ['Read prose carefully', 'Memorize poems', 'Grammar practice'] },
+      { id: 'san', name: 'Sanskrit', color: 'pink', target: '80+', chapters: 'Shlokas, Grammar, Prose', tips: ['Learn shlokas with meaning', 'Practice sandhi', 'Focus on grammar'] },
+      { id: 'pol', name: 'Political Science', color: 'red', target: '90+', chapters: '5 Chapters', tips: ['Learn Constitutional Articles', 'Current affairs examples', 'World events timeline'] },
+      { id: 'eco', name: 'Economics', color: 'indigo', target: '90+', chapters: '6 Chapters', tips: ['Elasticity formulas', 'Draw all curves', 'National Income methods'] },
+      { id: 'geo', name: 'Geography', color: 'teal', target: '90+', chapters: '9 Chapters', tips: ['Map work daily!', 'Learn geographical reasons', 'Population data'] },
+      { id: 'his', name: 'History', color: 'orange', target: '90+', chapters: '12 Chapters', tips: ['Timeline memorization', 'Important dates', 'Map marking'] },
+      { id: 'soc', name: 'Sociology', color: 'lime', target: '90+', chapters: '8 Chapters', tips: ['Definitions first', 'Examples from daily life', 'Social thinkers quotes'] },
+      { id: 'psy', name: 'Psychology', color: 'rose', target: '90+', chapters: '9 Chapters', tips: ['Case studies important', 'Psychological terms', 'Theorists & theories'] },
+      { id: 'phi', name: 'Philosophy', color: 'cyan', target: '85+', chapters: '6 Chapters', tips: ['Logic arguments', 'Philosophical schools', 'Ethics concepts'] },
+      { id: 'log', name: 'Logic', color: 'gray', target: '85+', chapters: '5 Chapters', tips: ['Practice syllogisms', 'Truth tables', 'Arguments analysis'] },
+    ];
+    
+    // Filter based on selected subjects
+    const subjectsToShow = selectedSubjects && selectedSubjects.length > 0
+      ? allSubjectData.filter(s => selectedSubjects.includes(s.id))
+      : allSubjectData.slice(0, 6); // Show first 6 if no selection
+    
+    return (
+      <div className="space-y-4">
+        {/* Subject count indicator */}
+        {selectedSubjects && selectedSubjects.length > 0 && (
+          <div className="bg-gray-800 rounded-xl p-3 flex justify-between items-center">
+            <span className="text-gray-400 text-sm">Your Subjects</span>
+            <span className="text-white font-bold">{subjectsToShow.length} subjects</span>
+          </div>
+        )}
+        
+        {/* Subject Cards */}
+        {subjectsToShow.map(subject => (
+          <div key={subject.name} className={`bg-gray-800 rounded-xl p-4 border-l-4 border-${subject.color}-500`}>
+            <div className="flex justify-between items-start mb-3">
+              <div>
+                <h4 className="text-white font-bold text-lg">{subject.name}</h4>
+                <p className="text-gray-400 text-sm">{subject.chapters}</p>
             </div>
             <span className={`text-${subject.color}-400 font-bold text-xl`}>{subject.target}</span>
           </div>
@@ -559,7 +654,8 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         </div>
       ))}
     </div>
-  );
+    );
+  };
   
   const renderTips = () => (
     <div className="space-y-4">
@@ -772,8 +868,12 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const resetProgress = () => {
     if (confirm('Are you sure you want to reset all progress? This cannot be undone!')) {
       const freshTasks = generatePhaseTasks();
-      setTasks(freshTasks);
-      localStorage.setItem('megaCrasherTasks', JSON.stringify(freshTasks));
+      // Filter by selected subjects
+      const filteredTasks = selectedSubjects && selectedSubjects.length > 0
+        ? freshTasks.filter(task => selectedSubjects.includes(task.subjectId))
+        : freshTasks;
+      setTasks(filteredTasks);
+      localStorage.setItem(storageKey, JSON.stringify(filteredTasks));
     }
   };
   
