@@ -36,7 +36,7 @@ const generatePhaseTasks = (): PhaseTask[] => {
   const tasks: PhaseTask[] = [];
   const startDate = new Date('2026-02-01');
   
-  // Phase 1 Tasks (Feb 1-9)
+  // Phase 1 Tasks (Feb 1-9) - Foundation Building
   const phase1Tasks = [
     { day: 1, subject: 'English', task: 'Writing skills framework (Letters, Essays)', priority: 'critical' as const },
     { day: 1, subject: 'Hindi', task: 'Read ENTIRE poetry section with meaning', priority: 'critical' as const },
@@ -85,11 +85,133 @@ const generatePhaseTasks = (): PhaseTask[] => {
     { day: 9, subject: 'English', task: '✅ ONLY revision, no new topics. Sleep by 10 PM!', priority: 'critical' as const },
   ];
   
-  phase1Tasks.forEach((task, index) => {
+  // Phase 2 Tasks (Feb 10-24) - Exam Time with Parallel Prep
+  const phase2Tasks = [
+    // Day 10 - English Exam Day
+    { day: 10, subject: '📝 EXAM', task: '🎯 ENGLISH EXAM - 11:00 AM | Light Hindi revision after', priority: 'critical' as const },
+    { day: 10, subject: 'Hindi', task: 'Post-exam: Quick revision of weak chapters', priority: 'high' as const },
+    
+    // Day 11 - Hindi Exam Day
+    { day: 11, subject: '📝 EXAM', task: '🎯 HINDI EXAM - 11:00 AM | Start Pol Science prep after', priority: 'critical' as const },
+    { day: 11, subject: 'Pol Science', task: 'Post-exam: Chapters 1-2 revision', priority: 'high' as const },
+    
+    // Day 12 - Marathi Exam
+    { day: 12, subject: '📝 EXAM', task: '🎯 MARATHI EXAM - 11:00 AM', priority: 'critical' as const },
+    { day: 12, subject: 'Pol Science', task: 'Full day prep - Chapters 3-5', priority: 'high' as const },
+    
+    // Day 13 - Sanskrit Exam
+    { day: 13, subject: '📝 EXAM', task: '🎯 SANSKRIT EXAM - 11:00 AM', priority: 'critical' as const },
+    { day: 13, subject: 'Pol Science', task: 'Current affairs + Important articles', priority: 'high' as const },
+    
+    // Day 14 - Gap Day
+    { day: 14, subject: 'Pol Science', task: '🔴 INTENSIVE PREP - Full syllabus revision', priority: 'critical' as const },
+    { day: 14, subject: 'Economics', task: 'Start Demand & Supply chapters', priority: 'high' as const },
+    
+    // Day 15 - Gap Day
+    { day: 15, subject: 'Pol Science', task: 'PYQ solving + Mock test', priority: 'critical' as const },
+    { day: 15, subject: 'Economics', task: 'Elasticity formulas + diagrams', priority: 'high' as const },
+    
+    // Day 16 - Logic Exam
+    { day: 16, subject: '📝 EXAM', task: '🎯 LOGIC EXAM - 11:00 AM', priority: 'critical' as const },
+    { day: 16, subject: 'Pol Science', task: 'Final revision + formula sheet', priority: 'critical' as const },
+    
+    // Day 17 - Pre Pol Science
+    { day: 17, subject: 'Pol Science', task: '✅ FINAL REVISION ONLY - Sleep by 10 PM!', priority: 'critical' as const },
+    
+    // Day 18 - Political Science Exam
+    { day: 18, subject: '📝 EXAM', task: '🎯 POLITICAL SCIENCE EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 18, subject: 'Economics', task: 'Post-exam: Market structures + National Income', priority: 'high' as const },
+    
+    // Day 19-23 - Economics Prep
+    { day: 19, subject: 'Economics', task: 'Chapters 1-3 complete with numericals', priority: 'critical' as const },
+    { day: 19, subject: 'Geography', task: 'Start Chapter 1-2 alongside', priority: 'medium' as const },
+    
+    { day: 20, subject: 'Economics', task: 'Chapters 4-5 + All graphs practice', priority: 'critical' as const },
+    { day: 20, subject: 'Geography', task: 'Chapters 3-4 (Human Settlements)', priority: 'medium' as const },
+    
+    { day: 21, subject: 'Economics', task: 'Chapter 6 + Full syllabus revision', priority: 'critical' as const },
+    { day: 21, subject: 'Geography', task: 'Chapters 5-6 (Primary & Secondary)', priority: 'medium' as const },
+    
+    { day: 22, subject: 'Economics', task: 'PYQ solving - 3 years papers', priority: 'critical' as const },
+    { day: 22, subject: 'History', task: 'Start Chapters 1-4 revision', priority: 'medium' as const },
+    
+    { day: 23, subject: 'Economics', task: 'Final revision + formula sheet prep', priority: 'critical' as const },
+    { day: 23, subject: 'History', task: 'Chapters 5-8 (Freedom Struggle)', priority: 'medium' as const },
+    
+    // Day 24 - Economics Exam
+    { day: 24, subject: '📝 EXAM', task: '🎯 ECONOMICS EXAM - 11:00 AM', priority: 'critical' as const },
+    { day: 24, subject: 'Geography', task: 'Post-exam: Full day Geography prep', priority: 'high' as const },
+  ];
+  
+  // Phase 3 Tasks (Feb 25 - Mar 11) - Final Sprint
+  const phase3Tasks = [
+    // Day 25-27 - Philosophy + Geography Prep
+    { day: 25, subject: 'Geography', task: 'Chapters 7-8 + Map work practice', priority: 'critical' as const },
+    { day: 25, subject: 'History', task: 'Chapters 9-12 complete', priority: 'high' as const },
+    
+    { day: 26, subject: 'Geography', task: 'Chapter 9 + Full revision round 1', priority: 'critical' as const },
+    { day: 26, subject: 'Philosophy', task: 'Pre-exam revision', priority: 'high' as const },
+    
+    { day: 27, subject: 'Philosophy', task: '✅ PHILOSOPHY FINAL PREP', priority: 'critical' as const },
+    { day: 27, subject: 'Geography', task: 'PYQ solving + map marking', priority: 'high' as const },
+    
+    // Day 28 - Philosophy Exam
+    { day: 28, subject: '📝 EXAM', task: '🎯 PHILOSOPHY EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 28, subject: 'Geography', task: 'Full syllabus revision', priority: 'high' as const },
+    
+    // Day 29-33 - Geography + Psychology + History Final Push
+    { day: 29, subject: 'Geography', task: 'Mock test + Map work intensive', priority: 'critical' as const },
+    { day: 29, subject: 'Psychology', task: 'Start preparations', priority: 'medium' as const },
+    
+    { day: 30, subject: 'Geography', task: 'PYQ analysis + weak areas focus', priority: 'critical' as const },
+    { day: 30, subject: 'Psychology', task: 'Core concepts + definitions', priority: 'medium' as const },
+    
+    { day: 31, subject: 'Psychology', task: 'Full syllabus coverage', priority: 'critical' as const },
+    { day: 31, subject: 'History', task: 'Timeline + Important dates revision', priority: 'high' as const },
+    
+    { day: 32, subject: 'Psychology', task: 'PYQ solving + case studies', priority: 'critical' as const },
+    { day: 32, subject: 'History', task: 'Map work + Important events', priority: 'high' as const },
+    
+    { day: 33, subject: 'Psychology', task: '✅ FINAL REVISION - Sleep early!', priority: 'critical' as const },
+    
+    // Day 34 - Psychology Exam
+    { day: 34, subject: '📝 EXAM', task: '🎯 PSYCHOLOGY EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 34, subject: 'Geography', task: 'Final Geography revision', priority: 'high' as const },
+    
+    // Day 35-36 - Pre Geography
+    { day: 35, subject: 'Geography', task: '🔴 INTENSIVE MAP WORK + REVISION', priority: 'critical' as const },
+    { day: 35, subject: 'History', task: 'Parallel History prep continues', priority: 'high' as const },
+    
+    { day: 36, subject: 'Geography', task: '✅ FINAL REVISION ONLY - Sleep by 10 PM!', priority: 'critical' as const },
+    
+    // Day 37 - Geography Exam
+    { day: 37, subject: '📝 EXAM', task: '🎯 GEOGRAPHY EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 37, subject: 'History', task: 'Post-exam: Full day History intensive', priority: 'high' as const },
+    
+    // Day 38 - Pre History
+    { day: 38, subject: 'History', task: '🔴 INTENSIVE - Timeline + Dates + Maps', priority: 'critical' as const },
+    { day: 38, subject: 'Sociology', task: 'Start Sociology prep alongside', priority: 'medium' as const },
+    
+    // Day 39 - History Exam
+    { day: 39, subject: '📝 EXAM', task: '🎯 HISTORY EXAM - 3:00 PM', priority: 'critical' as const },
+    { day: 39, subject: 'Sociology', task: 'Post-exam: Full Sociology coverage', priority: 'high' as const },
+    
+    // Day 40 - Pre Sociology
+    { day: 40, subject: 'Sociology', task: '🔴 INTENSIVE PREP + PYQ solving', priority: 'critical' as const },
+    
+    // Day 41 - Sociology Exam
+    { day: 41, subject: '📝 EXAM', task: '🎯 SOCIOLOGY EXAM - 3:00 PM | 🏆 BOARDS COMPLETE!', priority: 'critical' as const },
+  ];
+  
+  // Combine all phases
+  const allTasks = [...phase1Tasks, ...phase2Tasks, ...phase3Tasks];
+  
+  allTasks.forEach((task, index) => {
     const taskDate = new Date(startDate);
     taskDate.setDate(taskDate.getDate() + task.day - 1);
+    const phase = task.day <= 9 ? 'phase1' : task.day <= 24 ? 'phase2' : 'phase3';
     tasks.push({
-      id: `phase1-${index}`,
+      id: `${phase}-${index}`,
       day: task.day,
       date: taskDate.toISOString().split('T')[0],
       subject: task.subject,
@@ -103,7 +225,7 @@ const generatePhaseTasks = (): PhaseTask[] => {
 };
 
 const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'subjects' | 'tips'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips'>('overview');
   const [tasks, setTasks] = useState<PhaseTask[]>(() => {
     const saved = localStorage.getItem('megaCrasherTasks');
     return saved ? JSON.parse(saved) : generatePhaseTasks();
@@ -169,15 +291,42 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       <div className="bg-gray-800 rounded-xl p-4">
         <h4 className="font-bold text-white mb-3">📊 Phase Progress</h4>
         <div className="space-y-3">
+          {/* Phase 1 */}
           <div>
             <div className="flex justify-between text-sm mb-1">
-              <span className="text-gray-400">Phase 1: Foundation (Feb 1-9)</span>
-              <span className="text-blue-400">{Math.round(tasks.filter(t => t.day <= 9 && t.completed).length / tasks.filter(t => t.day <= 9).length * 100) || 0}%</span>
+              <span className="text-gray-400">🏗️ Phase 1: Foundation (Feb 1-9)</span>
+              <span className="text-blue-400">{Math.round(tasks.filter(t => t.day <= 9 && t.completed).length / Math.max(1, tasks.filter(t => t.day <= 9).length) * 100)}%</span>
             </div>
             <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
               <div 
                 className="h-full bg-gradient-to-r from-blue-500 to-cyan-400 transition-all"
-                style={{ width: `${Math.round(tasks.filter(t => t.day <= 9 && t.completed).length / tasks.filter(t => t.day <= 9).length * 100) || 0}%` }}
+                style={{ width: `${Math.round(tasks.filter(t => t.day <= 9 && t.completed).length / Math.max(1, tasks.filter(t => t.day <= 9).length) * 100)}%` }}
+              ></div>
+            </div>
+          </div>
+          {/* Phase 2 */}
+          <div>
+            <div className="flex justify-between text-sm mb-1">
+              <span className="text-gray-400">📝 Phase 2: First Exams (Feb 10-24)</span>
+              <span className="text-orange-400">{Math.round(tasks.filter(t => t.day > 9 && t.day <= 24 && t.completed).length / Math.max(1, tasks.filter(t => t.day > 9 && t.day <= 24).length) * 100)}%</span>
+            </div>
+            <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-gradient-to-r from-orange-500 to-yellow-400 transition-all"
+                style={{ width: `${Math.round(tasks.filter(t => t.day > 9 && t.day <= 24 && t.completed).length / Math.max(1, tasks.filter(t => t.day > 9 && t.day <= 24).length) * 100)}%` }}
+              ></div>
+            </div>
+          </div>
+          {/* Phase 3 */}
+          <div>
+            <div className="flex justify-between text-sm mb-1">
+              <span className="text-gray-400">🏆 Phase 3: Final Sprint (Feb 25-Mar 11)</span>
+              <span className="text-green-400">{Math.round(tasks.filter(t => t.day > 24 && t.completed).length / Math.max(1, tasks.filter(t => t.day > 24).length) * 100)}%</span>
+            </div>
+            <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-gradient-to-r from-green-500 to-emerald-400 transition-all"
+                style={{ width: `${Math.round(tasks.filter(t => t.day > 24 && t.completed).length / Math.max(1, tasks.filter(t => t.day > 24).length) * 100)}%` }}
               ></div>
             </div>
           </div>
@@ -202,59 +351,144 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     </div>
   );
   
+  const [selectedPhase, setSelectedPhase] = useState<1 | 2 | 3>(1);
+  
+  const getPhaseInfo = (phase: number) => {
+    switch (phase) {
+      case 1: return { name: 'Foundation', days: [1, 2, 3, 4, 5, 6, 7, 8, 9], color: 'blue', emoji: '🏗️', range: 'Feb 1-9' };
+      case 2: return { name: 'First Exams', days: Array.from({ length: 15 }, (_, i) => i + 10), color: 'orange', emoji: '📝', range: 'Feb 10-24' };
+      case 3: return { name: 'Final Sprint', days: Array.from({ length: 17 }, (_, i) => i + 25), color: 'green', emoji: '🏆', range: 'Feb 25-Mar 11' };
+      default: return { name: '', days: [], color: 'gray', emoji: '', range: '' };
+    }
+  };
+  
+  const getCurrentDayNumber = () => {
+    const start = new Date('2026-02-01');
+    const today = new Date();
+    const diff = Math.floor((today.getTime() - start.getTime()) / (1000 * 60 * 60 * 24));
+    return Math.max(1, Math.min(41, diff + 1));
+  };
+  
   const renderDaily = () => {
     const dayTasks = tasks.filter(t => t.day === selectedDay);
     const progress = getProgressForDay(selectedDay);
+    const phaseInfo = getPhaseInfo(selectedPhase);
+    const currentDay = getCurrentDayNumber();
+    const selectedDayDate = new Date('2026-02-01');
+    selectedDayDate.setDate(selectedDayDate.getDate() + selectedDay - 1);
+    
+    // Determine if this is an exam day
+    const isExamDay = dayTasks.some(t => t.subject === '📝 EXAM');
     
     return (
       <div className="space-y-4">
-        {/* Day Selector */}
-        <div className="bg-gray-800 rounded-xl p-3">
-          <p className="text-sm text-gray-400 mb-2">Select Day</p>
-          <div className="flex gap-2 overflow-x-auto pb-2">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9].map(day => (
+        {/* Phase Selector */}
+        <div className="grid grid-cols-3 gap-2">
+          {[1, 2, 3].map(phase => {
+            const info = getPhaseInfo(phase);
+            return (
               <button
-                key={day}
-                onClick={() => setSelectedDay(day)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all min-w-[60px] ${
-                  selectedDay === day 
-                    ? 'bg-blue-500 text-white' 
-                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                key={phase}
+                onClick={() => {
+                  setSelectedPhase(phase as 1 | 2 | 3);
+                  setSelectedDay(info.days[0]);
+                }}
+                className={`p-3 rounded-xl text-center transition-all ${
+                  selectedPhase === phase 
+                    ? `bg-${info.color}-500 text-white` 
+                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
                 }`}
               >
-                Day {day}
-                <span className={`block text-xs ${getProgressForDay(day) === 100 ? 'text-green-300' : 'text-gray-400'}`}>
-                  {getProgressForDay(day)}%
-                </span>
+                <span className="text-lg">{info.emoji}</span>
+                <p className={`text-xs font-medium ${selectedPhase === phase ? 'text-white' : 'text-gray-400'}`}>{info.name}</p>
               </button>
-            ))}
+            );
+          })}
+        </div>
+        
+        {/* Day Selector */}
+        <div className="bg-gray-800 rounded-xl p-3">
+          <div className="flex justify-between items-center mb-2">
+            <p className="text-sm text-gray-400">{phaseInfo.emoji} {phaseInfo.name} • {phaseInfo.range}</p>
+            {currentDay >= 1 && currentDay <= 41 && (
+              <button 
+                onClick={() => {
+                  const todayPhase = currentDay <= 9 ? 1 : currentDay <= 24 ? 2 : 3;
+                  setSelectedPhase(todayPhase as 1 | 2 | 3);
+                  setSelectedDay(currentDay);
+                }}
+                className="text-xs bg-blue-500/20 text-blue-400 px-2 py-1 rounded-full"
+              >
+                Go to Today
+              </button>
+            )}
+          </div>
+          <div className="flex gap-2 overflow-x-auto pb-2">
+            {phaseInfo.days.map(day => {
+              const isToday = day === currentDay;
+              const hasExam = tasks.filter(t => t.day === day).some(t => t.subject === '📝 EXAM');
+              return (
+                <button
+                  key={day}
+                  onClick={() => setSelectedDay(day)}
+                  className={`px-3 py-2 rounded-lg font-medium transition-all min-w-[55px] relative ${
+                    selectedDay === day 
+                      ? `bg-${phaseInfo.color}-500 text-white` 
+                      : isToday 
+                        ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500'
+                        : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                  }`}
+                >
+                  {hasExam && <span className="absolute -top-1 -right-1 text-xs">📝</span>}
+                  <span className="text-xs block">Day</span>
+                  <span className="font-bold">{day}</span>
+                  <span className={`block text-xs ${getProgressForDay(day) === 100 ? 'text-green-300' : selectedDay === day ? 'text-white/70' : 'text-gray-500'}`}>
+                    {getProgressForDay(day)}%
+                  </span>
+                </button>
+              );
+            })}
           </div>
         </div>
         
-        {/* Progress Bar */}
-        <div className="bg-gray-800 rounded-xl p-4">
+        {/* Day Info Header */}
+        <div className={`rounded-xl p-4 ${isExamDay ? 'bg-gradient-to-r from-red-600 to-orange-500' : 'bg-gray-800'}`}>
           <div className="flex justify-between items-center mb-2">
-            <span className="text-white font-medium">Day {selectedDay} Progress</span>
-            <span className="text-green-400 font-bold">{progress}%</span>
+            <div>
+              <span className="text-white font-bold text-lg">Day {selectedDay}</span>
+              <span className="text-white/70 text-sm ml-2">
+                {selectedDayDate.toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' })}
+              </span>
+            </div>
+            <span className={`font-bold text-xl ${isExamDay ? 'text-white' : 'text-green-400'}`}>{progress}%</span>
           </div>
-          <div className="h-3 bg-gray-700 rounded-full overflow-hidden">
+          <div className="h-3 bg-black/30 rounded-full overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-green-500 to-emerald-400 transition-all duration-500"
+              className={`h-full transition-all duration-500 ${isExamDay ? 'bg-white' : 'bg-gradient-to-r from-green-500 to-emerald-400'}`}
               style={{ width: `${progress}%` }}
             ></div>
           </div>
+          {isExamDay && (
+            <p className="text-white/90 text-sm mt-2 font-medium">🎯 EXAM DAY - Stay calm and confident!</p>
+          )}
         </div>
         
         {/* Tasks List */}
         <div className="space-y-2">
-          {dayTasks.map(task => (
+          {dayTasks.length === 0 ? (
+            <div className="bg-gray-800 rounded-xl p-6 text-center">
+              <p className="text-gray-400">No tasks scheduled for this day</p>
+            </div>
+          ) : dayTasks.map(task => (
             <div 
               key={task.id}
               onClick={() => toggleTask(task.id)}
               className={`p-4 rounded-xl cursor-pointer transition-all ${
                 task.completed 
                   ? 'bg-green-900/30 border border-green-500/30' 
-                  : 'bg-gray-800 border border-gray-700 hover:border-gray-600'
+                  : task.subject === '📝 EXAM'
+                    ? 'bg-red-900/30 border border-red-500/30'
+                    : 'bg-gray-800 border border-gray-700 hover:border-gray-600'
               }`}
             >
               <div className="flex items-start gap-3">
@@ -395,6 +629,154 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     </div>
   );
   
+  const renderCalendar = () => {
+    // Generate calendar for Feb-Mar 2026
+    const getMonthDays = (year: number, month: number) => {
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+      const days = [];
+      const startPad = firstDay.getDay();
+      
+      // Add padding for days before month starts
+      for (let i = 0; i < startPad; i++) {
+        days.push(null);
+      }
+      
+      // Add actual days
+      for (let d = 1; d <= lastDay.getDate(); d++) {
+        days.push(d);
+      }
+      
+      return days;
+    };
+    
+    const getExamForDate = (year: number, month: number, day: number) => {
+      const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+      return EXAM_DATES.find(e => e.date === dateStr);
+    };
+    
+    const getDayNumber = (year: number, month: number, day: number) => {
+      const targetDate = new Date(year, month, day);
+      const startDate = new Date(2026, 1, 1); // Feb 1, 2026
+      const diff = Math.floor((targetDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+      return diff >= 0 && diff < 41 ? diff + 1 : null;
+    };
+    
+    const febDays = getMonthDays(2026, 1); // Feb 2026
+    const marDays = getMonthDays(2026, 2); // Mar 2026
+    const today = new Date();
+    const isToday = (year: number, month: number, day: number) => 
+      today.getFullYear() === year && today.getMonth() === month && today.getDate() === day;
+    
+    const renderMonth = (year: number, month: number, days: (number | null)[], monthName: string) => (
+      <div className="bg-gray-800 rounded-xl p-4">
+        <h4 className="font-bold text-white mb-3 text-center">{monthName} {year}</h4>
+        <div className="grid grid-cols-7 gap-1 text-center text-xs mb-2">
+          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(d => (
+            <div key={d} className="text-gray-500 font-medium py-1">{d}</div>
+          ))}
+        </div>
+        <div className="grid grid-cols-7 gap-1">
+          {days.map((day, i) => {
+            if (day === null) return <div key={i}></div>;
+            
+            const exam = getExamForDate(year, month, day);
+            const dayNum = getDayNumber(year, month, day);
+            const dayProgress = dayNum ? getProgressForDay(dayNum) : 0;
+            const isTodayDate = isToday(year, month, day);
+            
+            return (
+              <div 
+                key={i}
+                onClick={() => {
+                  if (dayNum) {
+                    const phase = dayNum <= 9 ? 1 : dayNum <= 24 ? 2 : 3;
+                    setSelectedPhase(phase as 1 | 2 | 3);
+                    setSelectedDay(dayNum);
+                    setActiveTab('daily');
+                  }
+                }}
+                className={`
+                  relative p-1 rounded-lg text-center cursor-pointer transition-all
+                  ${exam ? `${exam.color} text-white font-bold` : ''}
+                  ${isTodayDate && !exam ? 'ring-2 ring-yellow-400 bg-yellow-500/20' : ''}
+                  ${!exam && dayNum ? 'hover:bg-gray-700' : ''}
+                  ${!dayNum ? 'text-gray-600' : 'text-gray-300'}
+                `}
+              >
+                <span className="text-sm">{day}</span>
+                {dayNum && dayProgress === 100 && (
+                  <span className="absolute -top-1 -right-1 text-xs">✓</span>
+                )}
+                {exam && (
+                  <span className="block text-[10px] truncate">{exam.subject.split(' ')[0]}</span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+    
+    return (
+      <div className="space-y-4">
+        {/* Legend */}
+        <div className="bg-gray-800 rounded-xl p-3">
+          <p className="text-gray-400 text-xs mb-2">Tap any date to view its tasks</p>
+          <div className="flex flex-wrap gap-2">
+            <span className="text-xs text-gray-400 flex items-center gap-1">
+              <span className="w-3 h-3 rounded bg-blue-500"></span> Languages
+            </span>
+            <span className="text-xs text-gray-400 flex items-center gap-1">
+              <span className="w-3 h-3 rounded bg-red-500"></span> Pol Science
+            </span>
+            <span className="text-xs text-gray-400 flex items-center gap-1">
+              <span className="w-3 h-3 rounded bg-indigo-500"></span> Economics
+            </span>
+            <span className="text-xs text-gray-400 flex items-center gap-1">
+              <span className="w-3 h-3 rounded bg-teal-500"></span> Geography
+            </span>
+            <span className="text-xs text-gray-400 flex items-center gap-1">
+              <span className="w-3 h-3 rounded bg-orange-500"></span> History
+            </span>
+          </div>
+        </div>
+        
+        {renderMonth(2026, 1, febDays, 'February')}
+        {renderMonth(2026, 2, marDays, 'March')}
+        
+        {/* Exam List */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="font-bold text-white mb-3">📋 All Exam Dates</h4>
+          <div className="space-y-2">
+            {EXAM_DATES.map(exam => (
+              <div key={exam.subject} className="flex justify-between items-center p-2 bg-gray-700/50 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <div className={`w-3 h-3 rounded-full ${exam.color}`}></div>
+                  <span className="text-white text-sm">{exam.subject}</span>
+                </div>
+                <div className="text-right">
+                  <span className="text-gray-300 text-sm">
+                    {new Date(exam.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', weekday: 'short' })}
+                  </span>
+                  <span className="text-gray-500 text-xs ml-2">{exam.time}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
+  const resetProgress = () => {
+    if (confirm('Are you sure you want to reset all progress? This cannot be undone!')) {
+      const freshTasks = generatePhaseTasks();
+      setTasks(freshTasks);
+      localStorage.setItem('megaCrasherTasks', JSON.stringify(freshTasks));
+    }
+  };
+  
   return (
     <div className="fixed inset-0 bg-black/95 z-50 overflow-hidden">
       {/* Header */}
@@ -402,16 +784,27 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
         <div className="flex justify-between items-center">
           <div>
             <h2 className="text-xl font-bold text-white">🚀 MEGA 90+ CRASHER</h2>
-            <p className="text-white/80 text-sm">29 Days to Board Domination</p>
+            <p className="text-white/80 text-sm">41 Days to Board Domination</p>
           </div>
-          <button 
-            onClick={onClose}
-            className="bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors"
-          >
-            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
+          <div className="flex items-center gap-2">
+            <button 
+              onClick={resetProgress}
+              className="bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors"
+              title="Reset Progress"
+            >
+              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </button>
+            <button 
+              onClick={onClose}
+              className="bg-white/20 hover:bg-white/30 rounded-full p-2 transition-colors"
+            >
+              <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
         </div>
         
         {/* Tabs */}
@@ -419,6 +812,7 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           {[
             { id: 'overview', label: '📊 Overview' },
             { id: 'daily', label: '📅 Daily Plan' },
+            { id: 'calendar', label: '🗓️ Calendar' },
             { id: 'subjects', label: '📚 Subjects' },
             { id: 'tips', label: '💡 Tips' },
           ].map(tab => (
@@ -441,6 +835,7 @@ const MegaBoardCrasher: React.FC<{ onClose: () => void }> = ({ onClose }) => {
       <div className="overflow-y-auto p-4 pb-20" style={{ height: 'calc(100vh - 140px)' }}>
         {activeTab === 'overview' && renderOverview()}
         {activeTab === 'daily' && renderDaily()}
+        {activeTab === 'calendar' && renderCalendar()}
         {activeTab === 'subjects' && renderSubjects()}
         {activeTab === 'tips' && renderTips()}
       </div>
