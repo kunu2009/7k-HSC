@@ -172,6 +172,37 @@ interface AnswerWritingTip {
   example?: string;
 }
 
+interface PomodoroSession {
+  id: string;
+  subjectId: string;
+  startTime: string;
+  duration: number; // in minutes
+  completed: boolean;
+  date: string;
+}
+
+interface DailyAffirmation {
+  text: string;
+  category: 'confidence' | 'focus' | 'success' | 'calm' | 'power';
+}
+
+interface MarkingSchemeItem {
+  section: string;
+  questionType: string;
+  marks: number;
+  count: number;
+  totalMarks: number;
+  tips: string[];
+}
+
+interface SubjectMarkingScheme {
+  subjectId: string;
+  totalMarks: number;
+  passingMarks: number;
+  duration: number; // in minutes
+  sections: MarkingSchemeItem[];
+}
+
 interface MegaBoardCrasherProps {
   onClose: () => void;
   selectedSubjects?: string[]; // Subject IDs like 'eng', 'his', 'pol', etc.
@@ -1078,6 +1109,144 @@ const ANSWER_WRITING_GUIDE: AnswerWritingTip[] = [
   }
 ];
 
+// Daily Affirmations for Exam Motivation
+const DAILY_AFFIRMATIONS: DailyAffirmation[] = [
+  // Confidence
+  { text: "I am fully prepared and confident for my exams!", category: 'confidence' },
+  { text: "I have studied hard and I will succeed!", category: 'confidence' },
+  { text: "My hard work will pay off with excellent results!", category: 'confidence' },
+  { text: "I believe in myself and my abilities!", category: 'confidence' },
+  { text: "I am capable of achieving 90%+ in every subject!", category: 'confidence' },
+  
+  // Focus
+  { text: "I am focused and concentrated on my studies!", category: 'focus' },
+  { text: "Distractions have no power over me!", category: 'focus' },
+  { text: "Every minute I study brings me closer to success!", category: 'focus' },
+  { text: "I absorb knowledge like a sponge!", category: 'focus' },
+  { text: "My mind is sharp and ready to learn!", category: 'focus' },
+  
+  // Success
+  { text: "Success is my destiny, boards are just a step!", category: 'success' },
+  { text: "I visualize myself scoring excellent marks!", category: 'success' },
+  { text: "Every chapter I complete is a victory!", category: 'success' },
+  { text: "I am creating my successful future right now!", category: 'success' },
+  { text: "Top ranks are within my reach!", category: 'success' },
+  
+  // Calm
+  { text: "I am calm and peaceful during exams!", category: 'calm' },
+  { text: "Stress cannot affect my performance!", category: 'calm' },
+  { text: "I breathe deeply and stay relaxed!", category: 'calm' },
+  { text: "I trust the process and stay positive!", category: 'calm' },
+  { text: "Anxiety has no place in my mind!", category: 'calm' },
+  
+  // Power
+  { text: "I am stronger than any exam challenge!", category: 'power' },
+  { text: "No question is too difficult for me!", category: 'power' },
+  { text: "I have the power to achieve anything!", category: 'power' },
+  { text: "I am unstoppable on my path to success!", category: 'power' },
+  { text: "My determination is my superpower!", category: 'power' },
+];
+
+// Subject-wise Marking Scheme
+const SUBJECT_MARKING_SCHEMES: SubjectMarkingScheme[] = [
+  {
+    subjectId: 'eco',
+    totalMarks: 80,
+    passingMarks: 26,
+    duration: 180,
+    sections: [
+      { section: 'Q1', questionType: 'MCQ (1 mark each)', marks: 1, count: 20, totalMarks: 20, tips: ['All compulsory', 'Read carefully', '30 sec per MCQ'] },
+      { section: 'Q2-Q4', questionType: 'Short Answer (2 marks)', marks: 2, count: 6, totalMarks: 12, tips: ['2-3 points each', 'Include definition'] },
+      { section: 'Q5-Q7', questionType: 'Short Answer (4 marks)', marks: 4, count: 6, totalMarks: 24, tips: ['4-5 points', 'Add examples', 'Use diagrams'] },
+      { section: 'Q8-Q10', questionType: 'Long Answer (8 marks)', marks: 8, count: 3, totalMarks: 24, tips: ['6-8 points', 'Diagrams essential', 'Write 200+ words'] },
+    ]
+  },
+  {
+    subjectId: 'pol',
+    totalMarks: 80,
+    passingMarks: 26,
+    duration: 180,
+    sections: [
+      { section: 'Q1', questionType: 'MCQ (1 mark each)', marks: 1, count: 20, totalMarks: 20, tips: ['All compulsory', 'Current affairs important'] },
+      { section: 'Q2-Q4', questionType: 'Short Answer (2 marks)', marks: 2, count: 6, totalMarks: 12, tips: ['Brief definitions', 'Constitutional articles'] },
+      { section: 'Q5-Q7', questionType: 'Short Answer (4 marks)', marks: 4, count: 6, totalMarks: 24, tips: ['Explain concepts', 'Give examples'] },
+      { section: 'Q8-Q10', questionType: 'Long Answer (8 marks)', marks: 8, count: 3, totalMarks: 24, tips: ['Detailed analysis', 'Multiple perspectives'] },
+    ]
+  },
+  {
+    subjectId: 'geo',
+    totalMarks: 80,
+    passingMarks: 26,
+    duration: 180,
+    sections: [
+      { section: 'Q1', questionType: 'MCQ (1 mark each)', marks: 1, count: 20, totalMarks: 20, tips: ['Map-based MCQs common', 'Focus on locations'] },
+      { section: 'Map Work', questionType: 'Map Pointing', marks: 2, count: 8, totalMarks: 16, tips: ['Practice daily!', 'India + World maps', '16 EASY marks'] },
+      { section: 'Q2-Q4', questionType: 'Short Answer (2-4 marks)', marks: 3, count: 8, totalMarks: 24, tips: ['Use statistics', 'Draw simple diagrams'] },
+      { section: 'Q5-Q7', questionType: 'Long Answer (8 marks)', marks: 8, count: 3, totalMarks: 20, tips: ['Maps + Diagrams', 'Data interpretation'] },
+    ]
+  },
+  {
+    subjectId: 'his',
+    totalMarks: 80,
+    passingMarks: 26,
+    duration: 180,
+    sections: [
+      { section: 'Q1', questionType: 'MCQ (1 mark each)', marks: 1, count: 20, totalMarks: 20, tips: ['Dates are important!', 'Timeline questions'] },
+      { section: 'Q2-Q4', questionType: 'Short Answer (2 marks)', marks: 2, count: 6, totalMarks: 12, tips: ['Facts + Dates', 'Brief explanations'] },
+      { section: 'Q5-Q7', questionType: 'Short Answer (4 marks)', marks: 4, count: 6, totalMarks: 24, tips: ['Cause & Effect', 'Connect events'] },
+      { section: 'Q8-Q10', questionType: 'Long Answer (8 marks)', marks: 8, count: 3, totalMarks: 24, tips: ['Detailed timeline', 'Multiple factors', 'Conclusion important'] },
+    ]
+  },
+  {
+    subjectId: 'eng',
+    totalMarks: 80,
+    passingMarks: 26,
+    duration: 180,
+    sections: [
+      { section: 'Reading', questionType: 'Comprehension', marks: 4, count: 5, totalMarks: 20, tips: ['Read passage twice', 'Answer in own words'] },
+      { section: 'Writing', questionType: 'Letter/Essay/Report', marks: 8, count: 3, totalMarks: 24, tips: ['Follow format strictly', 'Use formal language'] },
+      { section: 'Grammar', questionType: 'Grammar exercises', marks: 1, count: 16, totalMarks: 16, tips: ['Tenses, Voice, Narration', 'Practice daily'] },
+      { section: 'Literature', questionType: 'Textbook questions', marks: 4, count: 5, totalMarks: 20, tips: ['Quote from text', 'Character analysis'] },
+    ]
+  },
+  {
+    subjectId: 'hin',
+    totalMarks: 80,
+    passingMarks: 26,
+    duration: 180,
+    sections: [
+      { section: 'गद्य', questionType: 'Prose questions', marks: 4, count: 4, totalMarks: 16, tips: ['भावार्थ महत्वपूर्ण', 'लेखक परिचय'] },
+      { section: 'पद्य', questionType: 'Poetry questions', marks: 4, count: 4, totalMarks: 16, tips: ['काव्य सौंदर्य', 'भाव स्पष्ट करें'] },
+      { section: 'व्याकरण', questionType: 'Grammar', marks: 1, count: 16, totalMarks: 16, tips: ['संधि-समास', 'वाक्य शुद्धि'] },
+      { section: 'लेखन', questionType: 'Writing', marks: 8, count: 4, totalMarks: 32, tips: ['पत्र प्रारूप', 'निबंध संरचना'] },
+    ]
+  },
+  {
+    subjectId: 'san',
+    totalMarks: 80,
+    passingMarks: 26,
+    duration: 180,
+    sections: [
+      { section: 'गद्य', questionType: 'Prose', marks: 4, count: 4, totalMarks: 16, tips: ['अर्थ समझें', 'शब्दार्थ याद करें'] },
+      { section: 'पद्य', questionType: 'Poetry/Shloka', marks: 4, count: 4, totalMarks: 16, tips: ['श्लोक अर्थ', 'सन्दर्भ सहित'] },
+      { section: 'व्याकरण', questionType: 'Grammar', marks: 2, count: 12, totalMarks: 24, tips: ['संधि विच्छेद', 'विभक्ति', 'धातु रूप'] },
+      { section: 'अनुवाद', questionType: 'Translation', marks: 8, count: 3, totalMarks: 24, tips: ['हिंदी से संस्कृत', 'संस्कृत से हिंदी'] },
+    ]
+  },
+  {
+    subjectId: 'mar',
+    totalMarks: 80,
+    passingMarks: 26,
+    duration: 180,
+    sections: [
+      { section: 'गद्य', questionType: 'Prose', marks: 4, count: 4, totalMarks: 16, tips: ['आशय स्पष्ट करा', 'लेखक माहिती'] },
+      { section: 'पद्य', questionType: 'Poetry', marks: 4, count: 4, totalMarks: 16, tips: ['काव्य सौंदर्य', 'भाव विश्लेषण'] },
+      { section: 'व्याकरण', questionType: 'Grammar', marks: 1, count: 16, totalMarks: 16, tips: ['संधी-समास', 'अलंकार'] },
+      { section: 'लेखन', questionType: 'Writing', marks: 8, count: 4, totalMarks: 32, tips: ['पत्र, निबंध', 'जाहिरात लेखन'] },
+    ]
+  },
+];
+
 // Last Minute Revision Points (Emergency Mode)
 const LAST_MINUTE_POINTS: Record<string, string[]> = {
   'eco': [
@@ -1395,7 +1564,7 @@ const generatePhaseTasks = (): PhaseTask[] => {
 };
 
 const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSubjects = [] }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock' | 'diagrams' | 'mistakes' | 'analytics' | 'mindmaps' | 'recorder' | 'checklist' | 'quickrev' | 'answerguide'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock' | 'diagrams' | 'mistakes' | 'analytics' | 'mindmaps' | 'recorder' | 'checklist' | 'quickrev' | 'answerguide' | 'pomodoro' | 'affirmations' | 'marking'>('overview');
   
   // Filter exam dates based on selected subjects
   const EXAM_DATES = useMemo(() => {
@@ -1539,6 +1708,24 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   // Quick Revision
   const [quickRevFilter, setQuickRevFilter] = useState<string>('all');
   const [currentRevCard, setCurrentRevCard] = useState(0);
+  
+  // Pomodoro Timer
+  const [pomodoroTime, setPomodoroTime] = useState(25 * 60); // 25 minutes in seconds
+  const [pomodoroRunning, setPomodoroRunning] = useState(false);
+  const [pomodoroMode, setPomodoroMode] = useState<'work' | 'shortBreak' | 'longBreak'>('work');
+  const [pomodoroSubject, setPomodoroSubject] = useState<string>('');
+  const [pomodoroSessions, setPomodoroSessions] = useState<PomodoroSession[]>(() => {
+    const saved = localStorage.getItem('megaCrusherPomodoro');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [pomodoroCount, setPomodoroCount] = useState(0);
+  
+  // Affirmations
+  const [currentAffirmation, setCurrentAffirmation] = useState(0);
+  const [affirmationCategory, setAffirmationCategory] = useState<string>('all');
+  
+  // Marking Scheme
+  const [markingSchemeFilter, setMarkingSchemeFilter] = useState<string>('all');
 
   // Storage key based on selected subjects
   const storageKey = useMemo(() => {
@@ -1600,6 +1787,55 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   useEffect(() => {
     localStorage.setItem('megaCrusherExamChecklist', JSON.stringify(examChecklistItems));
   }, [examChecklistItems]);
+  
+  // Save pomodoro sessions
+  useEffect(() => {
+    localStorage.setItem('megaCrusherPomodoro', JSON.stringify(pomodoroSessions));
+  }, [pomodoroSessions]);
+  
+  // Pomodoro timer effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (pomodoroRunning && pomodoroTime > 0) {
+      interval = setInterval(() => {
+        setPomodoroTime(prev => prev - 1);
+      }, 1000);
+    } else if (pomodoroTime === 0 && pomodoroRunning) {
+      setPomodoroRunning(false);
+      // Play notification sound
+      try {
+        const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2teleUs3AYiwmHBYRHfkzpBSAA==');
+        audio.play().catch(() => {});
+      } catch {}
+      // Handle session completion
+      if (pomodoroMode === 'work' && pomodoroSubject) {
+        const newSession: PomodoroSession = {
+          id: `pom_${Date.now()}`,
+          subjectId: pomodoroSubject,
+          startTime: new Date().toISOString(),
+          duration: 25,
+          completed: true,
+          date: new Date().toISOString().split('T')[0]
+        };
+        setPomodoroSessions(prev => [newSession, ...prev]);
+        setPomodoroCount(prev => prev + 1);
+      }
+      // Auto switch mode
+      if (pomodoroMode === 'work') {
+        if ((pomodoroCount + 1) % 4 === 0) {
+          setPomodoroMode('longBreak');
+          setPomodoroTime(15 * 60);
+        } else {
+          setPomodoroMode('shortBreak');
+          setPomodoroTime(5 * 60);
+        }
+      } else {
+        setPomodoroMode('work');
+        setPomodoroTime(25 * 60);
+      }
+    }
+    return () => clearInterval(interval);
+  }, [pomodoroRunning, pomodoroTime, pomodoroMode, pomodoroSubject, pomodoroCount]);
   
   // Recording timer
   useEffect(() => {
@@ -4044,6 +4280,406 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     );
   };
   
+  // Pomodoro Timer Render
+  const renderPomodoro = () => {
+    const formatPomodoroTime = (seconds: number) => {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    };
+    
+    const todaySessions = pomodoroSessions.filter(s => s.date === new Date().toISOString().split('T')[0]);
+    const totalMinutesToday = todaySessions.reduce((acc, s) => acc + s.duration, 0);
+    
+    const modeColors = {
+      work: 'from-red-600 to-orange-600',
+      shortBreak: 'from-green-600 to-emerald-600',
+      longBreak: 'from-blue-600 to-cyan-600'
+    };
+    
+    const modeLabels = {
+      work: '🎯 Focus Time',
+      shortBreak: '☕ Short Break',
+      longBreak: '🌴 Long Break'
+    };
+    
+    return (
+      <div className="space-y-4">
+        <div className={`bg-gradient-to-r ${modeColors[pomodoroMode]} rounded-xl p-4`}>
+          <h3 className="text-xl font-bold text-white mb-2">🍅 Pomodoro Timer</h3>
+          <p className="text-white/80 text-sm">25 min work → 5 min break → repeat!</p>
+        </div>
+        
+        {/* Timer Display */}
+        <div className="bg-gray-800 rounded-xl p-6 text-center">
+          <p className="text-gray-400 mb-2">{modeLabels[pomodoroMode]}</p>
+          <p className={`text-7xl font-mono font-bold ${
+            pomodoroMode === 'work' ? 'text-red-400' :
+            pomodoroMode === 'shortBreak' ? 'text-green-400' : 'text-blue-400'
+          }`}>
+            {formatPomodoroTime(pomodoroTime)}
+          </p>
+          
+          {/* Progress Ring */}
+          <div className="mt-4 flex justify-center">
+            <div className="flex gap-2">
+              {[1, 2, 3, 4].map(i => (
+                <div
+                  key={i}
+                  className={`w-4 h-4 rounded-full ${
+                    i <= pomodoroCount % 4 || (pomodoroCount % 4 === 0 && pomodoroCount > 0 && i === 4)
+                      ? 'bg-red-500' : 'bg-gray-600'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+          <p className="text-gray-500 text-sm mt-2">Sessions: {pomodoroCount}</p>
+        </div>
+        
+        {/* Subject Selection */}
+        {pomodoroMode === 'work' && !pomodoroRunning && (
+          <div className="bg-gray-800 rounded-xl p-4">
+            <label className="text-gray-400 text-sm">Study Subject</label>
+            <select
+              value={pomodoroSubject}
+              onChange={(e) => setPomodoroSubject(e.target.value)}
+              className="w-full mt-2 bg-gray-700 border border-gray-600 rounded-lg p-3 text-white"
+            >
+              <option value="">Select subject...</option>
+              {(selectedSubjects?.length ? selectedSubjects : Object.keys(SUBJECT_MAP)).map(subId => (
+                <option key={subId} value={subId}>{SUBJECT_MAP[subId]?.name}</option>
+              ))}
+            </select>
+          </div>
+        )}
+        
+        {/* Controls */}
+        <div className="flex gap-3">
+          <button
+            onClick={() => {
+              if (pomodoroMode === 'work' && !pomodoroSubject && !pomodoroRunning) {
+                alert('Please select a subject first!');
+                return;
+              }
+              setPomodoroRunning(!pomodoroRunning);
+            }}
+            className={`flex-1 py-4 rounded-xl font-bold text-lg ${
+              pomodoroRunning
+                ? 'bg-yellow-600 text-white'
+                : pomodoroMode === 'work'
+                ? 'bg-red-600 text-white'
+                : 'bg-green-600 text-white'
+            }`}
+          >
+            {pomodoroRunning ? '⏸️ Pause' : '▶️ Start'}
+          </button>
+          <button
+            onClick={() => {
+              setPomodoroRunning(false);
+              setPomodoroMode('work');
+              setPomodoroTime(25 * 60);
+            }}
+            className="px-6 py-4 bg-gray-700 text-white rounded-xl font-bold"
+          >
+            🔄
+          </button>
+        </div>
+        
+        {/* Quick Mode Switch */}
+        <div className="flex gap-2">
+          <button
+            onClick={() => { setPomodoroMode('work'); setPomodoroTime(25 * 60); setPomodoroRunning(false); }}
+            className={`flex-1 py-2 rounded-lg text-sm ${pomodoroMode === 'work' ? 'bg-red-600 text-white' : 'bg-gray-700 text-gray-300'}`}
+          >
+            🎯 25 min
+          </button>
+          <button
+            onClick={() => { setPomodoroMode('shortBreak'); setPomodoroTime(5 * 60); setPomodoroRunning(false); }}
+            className={`flex-1 py-2 rounded-lg text-sm ${pomodoroMode === 'shortBreak' ? 'bg-green-600 text-white' : 'bg-gray-700 text-gray-300'}`}
+          >
+            ☕ 5 min
+          </button>
+          <button
+            onClick={() => { setPomodoroMode('longBreak'); setPomodoroTime(15 * 60); setPomodoroRunning(false); }}
+            className={`flex-1 py-2 rounded-lg text-sm ${pomodoroMode === 'longBreak' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300'}`}
+          >
+            🌴 15 min
+          </button>
+        </div>
+        
+        {/* Today's Stats */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-3">📊 Today's Focus</h4>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-red-900/30 rounded-lg p-3 text-center">
+              <p className="text-3xl font-bold text-red-400">{todaySessions.length}</p>
+              <p className="text-gray-400 text-sm">Sessions</p>
+            </div>
+            <div className="bg-orange-900/30 rounded-lg p-3 text-center">
+              <p className="text-3xl font-bold text-orange-400">{totalMinutesToday}</p>
+              <p className="text-gray-400 text-sm">Minutes</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-red-900/30 rounded-xl p-4 text-center">
+          <p className="text-red-400 font-medium">🍅 4 Pomodoros = 1 Long Break!</p>
+        </div>
+      </div>
+    );
+  };
+  
+  // Daily Affirmations Render
+  const renderAffirmations = () => {
+    const filteredAffirmations = affirmationCategory === 'all'
+      ? DAILY_AFFIRMATIONS
+      : DAILY_AFFIRMATIONS.filter(a => a.category === affirmationCategory);
+    
+    const affirmation = filteredAffirmations[currentAffirmation % filteredAffirmations.length];
+    
+    const categoryColors: Record<string, string> = {
+      confidence: 'from-yellow-500 to-amber-600',
+      focus: 'from-blue-500 to-indigo-600',
+      success: 'from-green-500 to-emerald-600',
+      calm: 'from-purple-500 to-violet-600',
+      power: 'from-red-500 to-rose-600'
+    };
+    
+    const categoryEmojis: Record<string, string> = {
+      confidence: '💪',
+      focus: '🎯',
+      success: '🏆',
+      calm: '🧘',
+      power: '⚡'
+    };
+    
+    const nextAffirmation = () => {
+      setCurrentAffirmation(prev => (prev + 1) % filteredAffirmations.length);
+    };
+    
+    const prevAffirmation = () => {
+      setCurrentAffirmation(prev => (prev - 1 + filteredAffirmations.length) % filteredAffirmations.length);
+    };
+    
+    const randomAffirmation = () => {
+      setCurrentAffirmation(Math.floor(Math.random() * filteredAffirmations.length));
+    };
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-pink-600 to-purple-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">✨ Daily Affirmations</h3>
+          <p className="text-white/80 text-sm">Positive thoughts for exam success!</p>
+        </div>
+        
+        {/* Category Filter */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => { setAffirmationCategory('all'); setCurrentAffirmation(0); }}
+            className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+              affirmationCategory === 'all' ? 'bg-pink-600 text-white' : 'bg-gray-700 text-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {['confidence', 'focus', 'success', 'calm', 'power'].map(cat => (
+            <button
+              key={cat}
+              onClick={() => { setAffirmationCategory(cat); setCurrentAffirmation(0); }}
+              className={`px-3 py-1 rounded-full text-sm whitespace-nowrap capitalize ${
+                affirmationCategory === cat ? 'bg-pink-600 text-white' : 'bg-gray-700 text-gray-300'
+              }`}
+            >
+              {categoryEmojis[cat]} {cat}
+            </button>
+          ))}
+        </div>
+        
+        {/* Affirmation Card */}
+        {affirmation && (
+          <div className={`bg-gradient-to-br ${categoryColors[affirmation.category]} rounded-2xl p-6 min-h-[200px] flex flex-col justify-center items-center text-center`}>
+            <span className="text-5xl mb-4">{categoryEmojis[affirmation.category]}</span>
+            <p className="text-white text-2xl font-bold leading-relaxed">
+              "{affirmation.text}"
+            </p>
+            <span className="mt-4 text-white/70 text-sm capitalize">~ {affirmation.category}</span>
+          </div>
+        )}
+        
+        {/* Navigation */}
+        <div className="flex gap-3">
+          <button
+            onClick={prevAffirmation}
+            className="flex-1 py-3 bg-gray-700 text-white rounded-xl font-bold hover:bg-gray-600"
+          >
+            ◀ Previous
+          </button>
+          <button
+            onClick={randomAffirmation}
+            className="px-6 py-3 bg-pink-600 text-white rounded-xl font-bold hover:bg-pink-500"
+          >
+            🎲
+          </button>
+          <button
+            onClick={nextAffirmation}
+            className="flex-1 py-3 bg-gray-700 text-white rounded-xl font-bold hover:bg-gray-600"
+          >
+            Next ▶
+          </button>
+        </div>
+        
+        {/* Morning Routine */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-3">🌅 Morning Affirmation Routine</h4>
+          <div className="space-y-2 text-gray-300 text-sm">
+            <p>1. 🧘 Take 3 deep breaths</p>
+            <p>2. 🪞 Look in the mirror</p>
+            <p>3. 📢 Say the affirmation OUT LOUD 3 times</p>
+            <p>4. 💪 Believe in every word!</p>
+            <p>5. 🚀 Start studying with confidence!</p>
+          </div>
+        </div>
+        
+        <div className="bg-purple-900/30 rounded-xl p-4 text-center">
+          <p className="text-purple-400 font-medium">🌟 "You become what you believe!"</p>
+        </div>
+      </div>
+    );
+  };
+  
+  // Marking Scheme Render
+  const renderMarkingScheme = () => {
+    const filteredSchemes = markingSchemeFilter === 'all'
+      ? SUBJECT_MARKING_SCHEMES.filter(s => !selectedSubjects?.length || selectedSubjects.includes(s.subjectId))
+      : SUBJECT_MARKING_SCHEMES.filter(s => s.subjectId === markingSchemeFilter);
+    
+    const availableSubjects = [...new Set(SUBJECT_MARKING_SCHEMES.filter(s => !selectedSubjects?.length || selectedSubjects.includes(s.subjectId)).map(s => s.subjectId))];
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">📊 Marking Scheme</h3>
+          <p className="text-white/80 text-sm">Know your paper, plan your strategy!</p>
+        </div>
+        
+        {/* Filter */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => setMarkingSchemeFilter('all')}
+            className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+              markingSchemeFilter === 'all' ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {availableSubjects.map(subId => (
+            <button
+              key={subId}
+              onClick={() => setMarkingSchemeFilter(subId)}
+              className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+                markingSchemeFilter === subId ? 'bg-blue-600 text-white' : 'bg-gray-700 text-gray-300'
+              }`}
+            >
+              {SUBJECT_MAP[subId]?.shortName || subId}
+            </button>
+          ))}
+        </div>
+        
+        {/* Schemes */}
+        {filteredSchemes.map(scheme => (
+          <div key={scheme.subjectId} className="bg-gray-800 rounded-xl overflow-hidden">
+            <div className={`${SUBJECT_MAP[scheme.subjectId]?.color} p-4`}>
+              <div className="flex justify-between items-center">
+                <h4 className="text-white font-bold text-lg">{SUBJECT_MAP[scheme.subjectId]?.name}</h4>
+                <div className="text-right">
+                  <p className="text-white font-bold">{scheme.totalMarks} Marks</p>
+                  <p className="text-white/70 text-sm">{scheme.duration} min</p>
+                </div>
+              </div>
+              <p className="text-white/80 text-sm mt-1">Passing: {scheme.passingMarks} marks</p>
+            </div>
+            
+            <div className="p-4 space-y-3">
+              {scheme.sections.map((section, idx) => (
+                <div key={idx} className="bg-gray-700/50 rounded-lg p-3">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <p className="text-white font-medium">{section.section}</p>
+                      <p className="text-gray-400 text-sm">{section.questionType}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-yellow-400 font-bold">{section.totalMarks} marks</p>
+                      <p className="text-gray-500 text-xs">{section.count} × {section.marks}m</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-1 mt-2">
+                    {section.tips.map((tip, tipIdx) => (
+                      <span key={tipIdx} className="text-xs bg-blue-900/50 text-blue-300 px-2 py-1 rounded">
+                        {tip}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+              
+              {/* Visual Breakdown */}
+              <div className="mt-3">
+                <p className="text-gray-400 text-sm mb-2">Marks Distribution:</p>
+                <div className="h-4 rounded-full overflow-hidden flex">
+                  {scheme.sections.map((section, idx) => (
+                    <div
+                      key={idx}
+                      className={`h-full ${
+                        idx === 0 ? 'bg-blue-500' :
+                        idx === 1 ? 'bg-green-500' :
+                        idx === 2 ? 'bg-yellow-500' : 'bg-purple-500'
+                      }`}
+                      style={{ width: `${(section.totalMarks / scheme.totalMarks) * 100}%` }}
+                      title={`${section.section}: ${section.totalMarks} marks`}
+                    />
+                  ))}
+                </div>
+                <div className="flex justify-between text-xs text-gray-500 mt-1">
+                  {scheme.sections.map((section, idx) => (
+                    <span key={idx}>{section.totalMarks}m</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+        {/* Quick Reference */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-3">⚡ Quick Reference</h4>
+          <div className="grid grid-cols-2 gap-2 text-sm">
+            <div className="bg-blue-900/30 p-2 rounded text-center">
+              <p className="text-blue-400">MCQ</p>
+              <p className="text-white">30 sec/Q</p>
+            </div>
+            <div className="bg-green-900/30 p-2 rounded text-center">
+              <p className="text-green-400">2 marks</p>
+              <p className="text-white">3 min/Q</p>
+            </div>
+            <div className="bg-yellow-900/30 p-2 rounded text-center">
+              <p className="text-yellow-400">4 marks</p>
+              <p className="text-white">7 min/Q</p>
+            </div>
+            <div className="bg-purple-900/30 p-2 rounded text-center">
+              <p className="text-purple-400">8 marks</p>
+              <p className="text-white">15 min/Q</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-blue-900/30 rounded-xl p-4 text-center">
+          <p className="text-blue-400 font-medium">📝 Know the weightage, prioritize smart!</p>
+        </div>
+      </div>
+    );
+  };
+  
   const resetProgress = () => {
     if (confirm('Are you sure you want to reset all progress? This cannot be undone!')) {
       const freshTasks = generatePhaseTasks();
@@ -4102,10 +4738,13 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
             { id: 'writing', label: '📚' },
             { id: 'mock', label: '📋' },
             { id: 'recorder', label: '🎙️' },
-            { id: 'diagrams', label: '📊' },
+            { id: 'diagrams', label: '�' },
             { id: 'mistakes', label: '⚠️' },
             { id: 'checklist', label: '✅' },
             { id: 'analytics', label: '📈' },
+            { id: 'pomodoro', label: '🍅' },
+            { id: 'affirmations', label: '✨' },
+            { id: 'marking', label: '📊' },
             { id: 'calendar', label: '🗓️' },
             { id: 'subjects', label: '🏫' },
             { id: 'tips', label: '💡' },
@@ -4145,6 +4784,9 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         {activeTab === 'mistakes' && renderMistakes()}
         {activeTab === 'checklist' && renderExamChecklist()}
         {activeTab === 'analytics' && renderAnalytics()}
+        {activeTab === 'pomodoro' && renderPomodoro()}
+        {activeTab === 'affirmations' && renderAffirmations()}
+        {activeTab === 'marking' && renderMarkingScheme()}
         {activeTab === 'calendar' && renderCalendar()}
         {activeTab === 'subjects' && renderSubjects()}
         {activeTab === 'tips' && renderTips()}
