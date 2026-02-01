@@ -151,6 +151,27 @@ interface VoiceNote {
   transcription?: string;
 }
 
+interface ExamDayItem {
+  id: string;
+  category: 'documents' | 'stationery' | 'essentials' | 'tips';
+  item: string;
+  important: boolean;
+}
+
+interface QuickRevisionCard {
+  subjectId: string;
+  topic: string;
+  points: string[];
+  timeToRead: number; // in seconds
+}
+
+interface AnswerWritingTip {
+  type: 'mcq' | 'short' | 'long' | 'essay' | 'general';
+  title: string;
+  tips: string[];
+  example?: string;
+}
+
 interface MegaBoardCrasherProps {
   onClose: () => void;
   selectedSubjects?: string[]; // Subject IDs like 'eng', 'his', 'pol', etc.
@@ -388,22 +409,6 @@ const PYQ_QUESTIONS: PYQItem[] = [
   // Psychology PYQs
   { id: 'pyq-psy1', subjectId: 'psy', year: '2024', question: 'Explain the concept of Intelligence and its measurement.', marks: 8, type: 'long', practiced: false },
   { id: 'pyq-psy2', subjectId: 'psy', year: '2023', question: 'Describe Defense Mechanisms according to Freud.', marks: 8, type: 'long', practiced: false },
-];
-
-// Exam Day Checklist
-const EXAM_DAY_CHECKLIST = [
-  { id: 1, item: '📝 Hall Ticket / Admit Card', critical: true },
-  { id: 2, item: '🪪 School ID Card', critical: true },
-  { id: 3, item: '✏️ Blue & Black Pens (3 each)', critical: true },
-  { id: 4, item: '📏 Geometry Box (for maps/diagrams)', critical: false },
-  { id: 5, item: '⌚ Simple Wristwatch', critical: false },
-  { id: 6, item: '💧 Water Bottle (transparent)', critical: false },
-  { id: 7, item: '🍫 Small snack/chocolate', critical: false },
-  { id: 8, item: '📱 Phone at HOME (not allowed!)', critical: true },
-  { id: 9, item: '😴 8 hours sleep last night', critical: true },
-  { id: 10, item: '🍳 Light breakfast before exam', critical: true },
-  { id: 11, item: '⏰ Reach 30 mins before', critical: true },
-  { id: 12, item: '🧘 5 deep breaths before starting', critical: false },
 ];
 
 // Formula Bank for Quick Reference
@@ -817,6 +822,262 @@ const MIND_MAPS: MindMapData[] = [
   }
 ];
 
+// Exam Day Checklist
+const EXAM_DAY_CHECKLIST: ExamDayItem[] = [
+  // Documents
+  { id: 'doc1', category: 'documents', item: 'Hall Ticket / Admit Card', important: true },
+  { id: 'doc2', category: 'documents', item: 'School ID Card', important: true },
+  { id: 'doc3', category: 'documents', item: 'Aadhar Card (photocopy)', important: false },
+  { id: 'doc4', category: 'documents', item: 'Passport size photos (2 extra)', important: false },
+  
+  // Stationery
+  { id: 'stat1', category: 'stationery', item: 'Blue pens (3-4)', important: true },
+  { id: 'stat2', category: 'stationery', item: 'Black pen (for diagrams)', important: true },
+  { id: 'stat3', category: 'stationery', item: 'Pencils (2-3) & Eraser', important: true },
+  { id: 'stat4', category: 'stationery', item: 'Geometry box (scale, compass)', important: true },
+  { id: 'stat5', category: 'stationery', item: 'Sharpener', important: false },
+  { id: 'stat6', category: 'stationery', item: 'Transparent pouch/bag', important: false },
+  
+  // Essentials
+  { id: 'ess1', category: 'essentials', item: 'Water bottle', important: true },
+  { id: 'ess2', category: 'essentials', item: 'Light snacks (chocolate, biscuits)', important: false },
+  { id: 'ess3', category: 'essentials', item: 'Watch (non-smart)', important: true },
+  { id: 'ess4', category: 'essentials', item: 'Handkerchief/tissues', important: false },
+  { id: 'ess5', category: 'essentials', item: 'Sanitizer', important: false },
+  { id: 'ess6', category: 'essentials', item: 'Extra mask', important: false },
+  
+  // Tips
+  { id: 'tip1', category: 'tips', item: 'Reach center 30 mins early', important: true },
+  { id: 'tip2', category: 'tips', item: 'Use washroom before exam', important: true },
+  { id: 'tip3', category: 'tips', item: 'Read ALL questions first (5 mins)', important: true },
+  { id: 'tip4', category: 'tips', item: 'Attempt easy questions first', important: true },
+  { id: 'tip5', category: 'tips', item: 'Keep 15 mins for revision', important: true },
+  { id: 'tip6', category: 'tips', item: 'Don\'t leave ANY question blank', important: true },
+  { id: 'tip7', category: 'tips', item: 'Write neatly - presentation matters!', important: true },
+];
+
+// Quick 5-Minute Revision Cards
+const QUICK_REVISION_CARDS: QuickRevisionCard[] = [
+  {
+    subjectId: 'eco',
+    topic: 'Demand & Supply Basics',
+    points: [
+      '📉 Demand: Inverse relation with price (D curve slopes DOWN)',
+      '📈 Supply: Direct relation with price (S curve slopes UP)',
+      '⚖️ Equilibrium: Where D = S (no shortage/surplus)',
+      '🔢 Ed formula: %ΔQ ÷ %ΔP',
+      '💡 Ed > 1 Elastic | Ed < 1 Inelastic | Ed = 1 Unitary'
+    ],
+    timeToRead: 60
+  },
+  {
+    subjectId: 'eco',
+    topic: 'Market Structures',
+    points: [
+      '🏪 Perfect Competition: Many sellers, identical products, free entry',
+      '🏢 Monopoly: Single seller, unique product, barriers to entry',
+      '🏬 Monopolistic: Many sellers, differentiated products',
+      '🤝 Oligopoly: Few sellers, interdependent',
+      '💰 Monopoly has price-making power'
+    ],
+    timeToRead: 60
+  },
+  {
+    subjectId: 'pol',
+    topic: 'United Nations Quick Facts',
+    points: [
+      '🏛️ Founded: 1945 | HQ: New York | Members: 193',
+      '🛡️ Security Council: 5 Permanent (P5) + 10 Non-permanent',
+      '✋ P5 = USA, UK, France, Russia, China (VETO power)',
+      '🇮🇳 India: Founding member, demands permanent seat',
+      '⚖️ ICJ located in The Hague, Netherlands'
+    ],
+    timeToRead: 45
+  },
+  {
+    subjectId: 'pol',
+    topic: 'Globalisation',
+    points: [
+      '🌐 Definition: Integration of economies through trade & tech',
+      '📈 Positive: More jobs, tech transfer, FDI, competition',
+      '📉 Negative: Job losses, inequality, cultural erosion',
+      '🏢 MNCs: Operate in multiple countries',
+      '🇮🇳 India opened economy in 1991 (LPG reforms)'
+    ],
+    timeToRead: 45
+  },
+  {
+    subjectId: 'geo',
+    topic: 'Population Geography',
+    points: [
+      '👥 Density = Population ÷ Area',
+      '👫 Sex Ratio = Females per 1000 Males',
+      '📊 India Sex Ratio: 943 (Census 2011)',
+      '🚶 Push factors: Poverty, unemployment, disasters',
+      '🏙️ Pull factors: Jobs, education, healthcare'
+    ],
+    timeToRead: 45
+  },
+  {
+    subjectId: 'geo',
+    topic: 'Human Development',
+    points: [
+      '📊 HDI = Health + Education + Standard of Living',
+      '🥇 HDI Range: 0 to 1 (higher = better)',
+      '🏥 Health: Life expectancy at birth',
+      '📚 Education: Years of schooling',
+      '💰 Living: GNI per capita'
+    ],
+    timeToRead: 40
+  },
+  {
+    subjectId: 'his',
+    topic: 'Freedom Movement Timeline',
+    points: [
+      '1857: First War of Independence',
+      '1885: INC founded by A.O. Hume',
+      '1905: Bengal Partition → Swadeshi Movement',
+      '1919: Jallianwala Bagh | Rowlatt Act',
+      '1920: Non-Cooperation | 1930: Salt March | 1942: Quit India'
+    ],
+    timeToRead: 50
+  },
+  {
+    subjectId: 'his',
+    topic: 'World Wars Summary',
+    points: [
+      '⚔️ WW1: 1914-1918 | Trigger: Assassination of Franz Ferdinand',
+      '📜 Treaty of Versailles (1919) blamed Germany',
+      '⚔️ WW2: 1939-1945 | Started by Hitler (Germany)',
+      '💣 Ended with Atomic bombs on Hiroshima & Nagasaki',
+      '🕊️ UN formed in 1945 to prevent future wars'
+    ],
+    timeToRead: 50
+  },
+  {
+    subjectId: 'eng',
+    topic: 'Letter Writing Format',
+    points: [
+      '1️⃣ Sender\'s Address (top right)',
+      '2️⃣ Date (below address)',
+      '3️⃣ Receiver\'s Address (left side)',
+      '4️⃣ Subject Line (underlined)',
+      '5️⃣ Salutation → Body → Closing (Yours faithfully)'
+    ],
+    timeToRead: 40
+  },
+  {
+    subjectId: 'eng',
+    topic: 'Grammar Essentials',
+    points: [
+      '🔄 Active→Passive: Object becomes subject, add "by"',
+      '💬 Direct→Indirect: Change tense, pronouns, time words',
+      '⏰ Present→Past, This→That, Now→Then, Here→There',
+      '📝 Subject-Verb Agreement: Singular sub = singular verb',
+      '✅ Always check: Tense consistency throughout'
+    ],
+    timeToRead: 50
+  },
+  {
+    subjectId: 'san',
+    topic: 'संस्कृत संधि Quick',
+    points: [
+      '🔤 गुण संधि: अ/आ + इ/ई = ए | अ/आ + उ/ऊ = ओ',
+      '🔤 वृद्धि संधि: अ/आ + ए/ऐ = ऐ | अ/आ + ओ/औ = औ',
+      '🔤 यण संधि: इ/ई + अ = य | उ/ऊ + अ = व',
+      '📝 विद्या + आलय = विद्यालय (दीर्घ संधि)',
+      '📝 सूर्य + उदय = सूर्योदय (गुण संधि)'
+    ],
+    timeToRead: 60
+  },
+  {
+    subjectId: 'hin',
+    topic: 'हिंदी व्याकरण Quick',
+    points: [
+      '📝 संधि: स्वर + व्यंजन + विसर्ग (3 प्रकार)',
+      '📝 समास: अव्ययीभाव, तत्पुरुष, द्वंद्व, बहुव्रीहि',
+      '✨ उपमा: जैसे, सा, सी, सम | रूपक: आरोप',
+      '✉️ पत्र: औपचारिक (श्रीमान) | अनौपचारिक (प्रिय)',
+      '📜 निबंध: भूमिका → मुख्य भाग → निष्कर्ष'
+    ],
+    timeToRead: 50
+  },
+];
+
+// Answer Writing Guide
+const ANSWER_WRITING_GUIDE: AnswerWritingTip[] = [
+  {
+    type: 'mcq',
+    title: 'MCQ Strategy (1 mark each)',
+    tips: [
+      'Read question TWICE before answering',
+      'Eliminate obviously wrong options first',
+      'Don\'t spend more than 30 seconds per MCQ',
+      'If unsure, mark and come back later',
+      'NEVER leave blank - educated guess is better',
+      'Watch for words like "always", "never", "only"'
+    ]
+  },
+  {
+    type: 'short',
+    title: 'Short Answers (2-4 marks)',
+    tips: [
+      '2 marks = 2-3 points | 4 marks = 4-5 points',
+      'Use bullet points for clarity',
+      'Include definition + examples',
+      'Keep within word limit (50-80 words)',
+      'Underline key terms',
+      'One point = One mark (generally)'
+    ],
+    example: 'Q: Define demand. (2 marks)\nA: Demand refers to:\n• Desire backed by ability to pay\n• Willingness to purchase\n• At a given price and time\n• Example: Wanting to buy a phone for ₹15,000'
+  },
+  {
+    type: 'long',
+    title: 'Long Answers (8 marks)',
+    tips: [
+      'Follow structure: Intro → Body → Conclusion',
+      'Include 6-8 main points',
+      'Add diagrams where applicable (+2 marks)',
+      'Use headings and subheadings',
+      'Include real-world examples',
+      'Write 200-250 words minimum',
+      'Underline definitions and key terms',
+      'Draw neat, labeled diagrams'
+    ],
+    example: 'Structure for 8-mark answer:\n1. Definition (1 mark)\n2. Explanation (2 marks)\n3. 4-5 Points (3 marks)\n4. Diagram if applicable (1 mark)\n5. Conclusion/Example (1 mark)'
+  },
+  {
+    type: 'essay',
+    title: 'Essay Writing (8-10 marks)',
+    tips: [
+      'Start with a hook (quote/question/fact)',
+      'Clear introduction stating your stance',
+      '3 body paragraphs with examples',
+      'Use transition words (However, Moreover, Therefore)',
+      'Include statistics/data if possible',
+      'Balanced view (pros and cons)',
+      'Strong conclusion with your opinion',
+      'Maintain formal language throughout'
+    ]
+  },
+  {
+    type: 'general',
+    title: 'General Exam Tips',
+    tips: [
+      '⏰ First 5 mins: Read entire paper',
+      '✅ Attempt ALL questions - no zero marks',
+      '📝 Start with your strongest section',
+      '🎯 Allocate time per section beforehand',
+      '✍️ Write neatly - poor handwriting loses marks',
+      '📏 Draw margins and leave space between answers',
+      '🔍 Last 15 mins: Revise and check roll number',
+      '⚠️ Don\'t cross word limits - wastes time',
+      '📊 Draw diagrams even if not asked (bonus points)',
+      '🚫 Never argue with invigilator'
+    ]
+  }
+];
+
 // Last Minute Revision Points (Emergency Mode)
 const LAST_MINUTE_POINTS: Record<string, string[]> = {
   'eco': [
@@ -1134,7 +1395,7 @@ const generatePhaseTasks = (): PhaseTask[] => {
 };
 
 const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSubjects = [] }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock' | 'diagrams' | 'mistakes' | 'analytics' | 'mindmaps' | 'recorder'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock' | 'diagrams' | 'mistakes' | 'analytics' | 'mindmaps' | 'recorder' | 'checklist' | 'quickrev' | 'answerguide'>('overview');
   
   // Filter exam dates based on selected subjects
   const EXAM_DATES = useMemo(() => {
@@ -1268,6 +1529,16 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
   const [recordingSubject, setRecordingSubject] = useState<string>('');
   const [recordingTopic, setRecordingTopic] = useState<string>('');
+  
+  // Exam Day Checklist
+  const [examChecklistItems, setExamChecklistItems] = useState<Record<string, boolean>>(() => {
+    const saved = localStorage.getItem('megaCrusherExamChecklist');
+    return saved ? JSON.parse(saved) : {};
+  });
+  
+  // Quick Revision
+  const [quickRevFilter, setQuickRevFilter] = useState<string>('all');
+  const [currentRevCard, setCurrentRevCard] = useState(0);
 
   // Storage key based on selected subjects
   const storageKey = useMemo(() => {
@@ -1324,6 +1595,11 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     const notesMetadata = voiceNotes.map(({ audioBlob, ...rest }) => rest);
     localStorage.setItem('megaCrusherVoiceNotes', JSON.stringify(notesMetadata));
   }, [voiceNotes]);
+  
+  // Save exam checklist
+  useEffect(() => {
+    localStorage.setItem('megaCrusherExamChecklist', JSON.stringify(examChecklistItems));
+  }, [examChecklistItems]);
   
   // Recording timer
   useEffect(() => {
@@ -3511,6 +3787,263 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     );
   };
   
+  // Exam Day Checklist Render
+  const renderExamChecklist = () => {
+    const categories = ['documents', 'stationery', 'essentials', 'tips'] as const;
+    const categoryLabels = {
+      documents: { label: '📄 Documents', color: 'from-blue-600 to-blue-700' },
+      stationery: { label: '✏️ Stationery', color: 'from-green-600 to-green-700' },
+      essentials: { label: '🎒 Essentials', color: 'from-purple-600 to-purple-700' },
+      tips: { label: '💡 Exam Tips', color: 'from-yellow-600 to-orange-600' },
+    };
+    
+    const toggleItem = (id: string) => {
+      setExamChecklistItems(prev => ({ ...prev, [id]: !prev[id] }));
+    };
+    
+    const checkedCount = Object.values(examChecklistItems).filter(Boolean).length;
+    const totalCount = EXAM_DAY_CHECKLIST.length;
+    const progress = Math.round((checkedCount / totalCount) * 100);
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">📋 Exam Day Checklist</h3>
+          <p className="text-white/80 text-sm">Be fully prepared on exam day!</p>
+        </div>
+        
+        {/* Progress */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <div className="flex justify-between items-center mb-2">
+            <span className="text-white font-medium">Preparation Progress</span>
+            <span className="text-emerald-400 font-bold">{checkedCount}/{totalCount}</span>
+          </div>
+          <div className="h-3 bg-gray-700 rounded-full overflow-hidden">
+            <div 
+              className="h-full bg-gradient-to-r from-emerald-500 to-teal-500 transition-all duration-300"
+              style={{ width: `${progress}%` }}
+            />
+          </div>
+          {progress === 100 && (
+            <p className="text-emerald-400 text-center mt-2 font-medium">🎉 You're all set for the exam!</p>
+          )}
+        </div>
+        
+        {/* Categories */}
+        {categories.map(category => (
+          <div key={category} className="bg-gray-800 rounded-xl overflow-hidden">
+            <div className={`bg-gradient-to-r ${categoryLabels[category].color} p-3`}>
+              <h4 className="text-white font-bold">{categoryLabels[category].label}</h4>
+            </div>
+            <div className="p-3 space-y-2">
+              {EXAM_DAY_CHECKLIST.filter(item => item.category === category).map(item => (
+                <button
+                  key={item.id}
+                  onClick={() => toggleItem(item.id)}
+                  className={`w-full flex items-center gap-3 p-2 rounded-lg transition-colors ${
+                    examChecklistItems[item.id] ? 'bg-emerald-900/30' : 'bg-gray-700/50 hover:bg-gray-700'
+                  }`}
+                >
+                  <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                    examChecklistItems[item.id] 
+                      ? 'bg-emerald-500 border-emerald-500' 
+                      : 'border-gray-500'
+                  }`}>
+                    {examChecklistItems[item.id] && <span className="text-white text-sm">✓</span>}
+                  </div>
+                  <span className={`flex-1 text-left ${
+                    examChecklistItems[item.id] ? 'text-gray-400 line-through' : 'text-white'
+                  }`}>
+                    {item.item}
+                  </span>
+                  {item.important && !examChecklistItems[item.id] && (
+                    <span className="text-red-400 text-xs">Required</span>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
+        ))}
+        
+        <div className="bg-yellow-900/30 rounded-xl p-4 text-center">
+          <p className="text-yellow-400 font-medium">⏰ Prepare everything the night before!</p>
+        </div>
+      </div>
+    );
+  };
+  
+  // Quick 5-Minute Revision Render
+  const renderQuickRevision = () => {
+    const filteredCards = quickRevFilter === 'all'
+      ? QUICK_REVISION_CARDS.filter(c => !selectedSubjects?.length || selectedSubjects.includes(c.subjectId))
+      : QUICK_REVISION_CARDS.filter(c => c.subjectId === quickRevFilter);
+    
+    const availableSubjects = [...new Set(QUICK_REVISION_CARDS.filter(c => !selectedSubjects?.length || selectedSubjects.includes(c.subjectId)).map(c => c.subjectId))];
+    
+    const card = filteredCards[currentRevCard] || filteredCards[0];
+    
+    const nextCard = () => {
+      setCurrentRevCard(prev => (prev + 1) % filteredCards.length);
+    };
+    
+    const prevCard = () => {
+      setCurrentRevCard(prev => (prev - 1 + filteredCards.length) % filteredCards.length);
+    };
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">⚡ Quick 5-Min Revision</h3>
+          <p className="text-white/80 text-sm">Ultra-fast revision cards for last-minute prep</p>
+        </div>
+        
+        {/* Filter */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => { setQuickRevFilter('all'); setCurrentRevCard(0); }}
+            className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+              quickRevFilter === 'all' ? 'bg-amber-600 text-white' : 'bg-gray-700 text-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {availableSubjects.map(subId => (
+            <button
+              key={subId}
+              onClick={() => { setQuickRevFilter(subId); setCurrentRevCard(0); }}
+              className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+                quickRevFilter === subId ? 'bg-amber-600 text-white' : 'bg-gray-700 text-gray-300'
+              }`}
+            >
+              {SUBJECT_MAP[subId]?.shortName || subId}
+            </button>
+          ))}
+        </div>
+        
+        {/* Card Navigator */}
+        <div className="flex items-center justify-between bg-gray-800 rounded-xl p-3">
+          <span className="text-gray-400 text-sm">Card {currentRevCard + 1} of {filteredCards.length}</span>
+          <div className="flex gap-2">
+            {filteredCards.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentRevCard(idx)}
+                className={`w-2 h-2 rounded-full ${idx === currentRevCard ? 'bg-amber-500' : 'bg-gray-600'}`}
+              />
+            ))}
+          </div>
+        </div>
+        
+        {/* Current Card */}
+        {card && (
+          <div className="bg-gray-800 rounded-xl overflow-hidden">
+            <div className={`${SUBJECT_MAP[card.subjectId]?.color} p-4`}>
+              <div className="flex justify-between items-center">
+                <span className="text-white font-bold text-lg">{card.topic}</span>
+                <span className="text-white/80 text-sm">⏱️ {card.timeToRead}s</span>
+              </div>
+              <span className="text-white/70 text-sm">{SUBJECT_MAP[card.subjectId]?.name}</span>
+            </div>
+            <div className="p-4 space-y-3">
+              {card.points.map((point, idx) => (
+                <div key={idx} className="flex items-start gap-3 bg-gray-700/50 rounded-lg p-3">
+                  <span className="bg-amber-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                    {idx + 1}
+                  </span>
+                  <p className="text-white">{point}</p>
+                </div>
+              ))}
+            </div>
+            <div className="p-4 pt-0 flex gap-3">
+              <button
+                onClick={prevCard}
+                className="flex-1 py-3 bg-gray-700 text-white rounded-xl font-bold hover:bg-gray-600"
+              >
+                ◀ Previous
+              </button>
+              <button
+                onClick={nextCard}
+                className="flex-1 py-3 bg-amber-600 text-white rounded-xl font-bold hover:bg-amber-500"
+              >
+                Next ▶
+              </button>
+            </div>
+          </div>
+        )}
+        
+        <div className="bg-orange-900/30 rounded-xl p-4 text-center">
+          <p className="text-orange-400 font-medium">📱 Perfect for bus/auto revision!</p>
+        </div>
+      </div>
+    );
+  };
+  
+  // Answer Writing Guide Render
+  const renderAnswerGuide = () => {
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">✍️ Answer Writing Guide</h3>
+          <p className="text-white/80 text-sm">Write perfect answers and score maximum marks!</p>
+        </div>
+        
+        {ANSWER_WRITING_GUIDE.map((guide, idx) => (
+          <div key={idx} className="bg-gray-800 rounded-xl overflow-hidden">
+            <div className={`p-4 ${
+              guide.type === 'mcq' ? 'bg-blue-600' :
+              guide.type === 'short' ? 'bg-green-600' :
+              guide.type === 'long' ? 'bg-purple-600' :
+              guide.type === 'essay' ? 'bg-pink-600' : 'bg-orange-600'
+            }`}>
+              <h4 className="text-white font-bold text-lg">{guide.title}</h4>
+            </div>
+            <div className="p-4 space-y-2">
+              {guide.tips.map((tip, tipIdx) => (
+                <div key={tipIdx} className="flex items-start gap-2">
+                  <span className="text-green-400">✓</span>
+                  <p className="text-gray-300">{tip}</p>
+                </div>
+              ))}
+              {guide.example && (
+                <div className="mt-3 bg-gray-900 rounded-lg p-3">
+                  <p className="text-amber-400 text-sm font-medium mb-2">📝 Example:</p>
+                  <pre className="text-gray-300 text-sm whitespace-pre-wrap font-sans">{guide.example}</pre>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+        
+        {/* Marks Distribution Quick Reference */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-4">📊 Marks = Points Formula</h4>
+          <div className="space-y-2">
+            <div className="flex justify-between items-center p-2 bg-blue-900/30 rounded-lg">
+              <span className="text-blue-400">1 mark</span>
+              <span className="text-white">= 1 point / definition</span>
+            </div>
+            <div className="flex justify-between items-center p-2 bg-green-900/30 rounded-lg">
+              <span className="text-green-400">2 marks</span>
+              <span className="text-white">= 2-3 points</span>
+            </div>
+            <div className="flex justify-between items-center p-2 bg-yellow-900/30 rounded-lg">
+              <span className="text-yellow-400">4 marks</span>
+              <span className="text-white">= 4-5 points + example</span>
+            </div>
+            <div className="flex justify-between items-center p-2 bg-purple-900/30 rounded-lg">
+              <span className="text-purple-400">8 marks</span>
+              <span className="text-white">= 6-8 points + diagram</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="bg-indigo-900/30 rounded-xl p-4 text-center">
+          <p className="text-indigo-400 font-medium">📏 Quality over Quantity - Don't over-write!</p>
+        </div>
+      </div>
+    );
+  };
+  
   const resetProgress = () => {
     if (confirm('Are you sure you want to reset all progress? This cannot be undone!')) {
       const freshTasks = generatePhaseTasks();
@@ -3561,17 +4094,20 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
             { id: 'daily', label: '📅' },
             { id: 'flashcards', label: '⚡' },
             { id: 'pyq', label: '📝' },
+            { id: 'quickrev', label: '🚀' },
             { id: 'formulas', label: '📐' },
             { id: 'mindmaps', label: '🧠' },
             { id: 'emergency', label: '🚨' },
-            { id: 'writing', label: '✍️' },
+            { id: 'answerguide', label: '✍️' },
+            { id: 'writing', label: '📚' },
             { id: 'mock', label: '📋' },
             { id: 'recorder', label: '🎙️' },
             { id: 'diagrams', label: '📊' },
             { id: 'mistakes', label: '⚠️' },
+            { id: 'checklist', label: '✅' },
             { id: 'analytics', label: '📈' },
             { id: 'calendar', label: '🗓️' },
-            { id: 'subjects', label: '📚' },
+            { id: 'subjects', label: '🏫' },
             { id: 'tips', label: '💡' },
           ].map(tab => (
             <button
@@ -3597,14 +4133,17 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         {activeTab === 'daily' && renderDaily()}
         {activeTab === 'flashcards' && renderFlashcards()}
         {activeTab === 'pyq' && renderPYQ()}
+        {activeTab === 'quickrev' && renderQuickRevision()}
         {activeTab === 'formulas' && renderFormulas()}
+        {activeTab === 'mindmaps' && renderMindMaps()}
         {activeTab === 'emergency' && renderEmergency()}
+        {activeTab === 'answerguide' && renderAnswerGuide()}
         {activeTab === 'writing' && renderWriting()}
         {activeTab === 'mock' && renderMockTests()}
-        {activeTab === 'mindmaps' && renderMindMaps()}
         {activeTab === 'recorder' && renderVoiceRecorder()}
         {activeTab === 'diagrams' && renderDiagrams()}
         {activeTab === 'mistakes' && renderMistakes()}
+        {activeTab === 'checklist' && renderExamChecklist()}
         {activeTab === 'analytics' && renderAnalytics()}
         {activeTab === 'calendar' && renderCalendar()}
         {activeTab === 'subjects' && renderSubjects()}
