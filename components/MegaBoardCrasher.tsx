@@ -103,6 +103,29 @@ interface MotivationQuote {
   category: 'focus' | 'persistence' | 'success' | 'exam';
 }
 
+interface SubjectConfidence {
+  subjectId: string;
+  confidence: number; // 0-100
+  lastUpdated: string;
+  strongTopics: string[];
+  weakTopics: string[];
+}
+
+interface ImportantDiagram {
+  subjectId: string;
+  topic: string;
+  description: string;
+  marks: number;
+  tips: string[];
+}
+
+interface CommonMistake {
+  subjectId: string;
+  mistake: string;
+  correction: string;
+  impact: 'high' | 'medium' | 'low';
+}
+
 interface MegaBoardCrasherProps {
   onClose: () => void;
   selectedSubjects?: string[]; // Subject IDs like 'eng', 'his', 'pol', etc.
@@ -429,6 +452,114 @@ const MOTIVATION_QUOTES: MotivationQuote[] = [
   { text: "Board exams don't define you, but your preparation shows your dedication.", author: "7k-HSC", category: 'exam' },
 ];
 
+// Important Diagrams Reference
+const IMPORTANT_DIAGRAMS: ImportantDiagram[] = [
+  // Economics
+  { subjectId: 'eco', topic: 'Demand Curve', description: 'Downward sloping curve showing inverse P-Q relationship', marks: 4, tips: ['Label axes correctly (P on Y, Q on X)', 'Show arrows for movement along curve', 'Mark equilibrium point clearly'] },
+  { subjectId: 'eco', topic: 'Supply Curve', description: 'Upward sloping curve showing direct P-Q relationship', marks: 4, tips: ['Starts from origin or positive Y intercept', 'Label as SS curve', 'Show shift vs movement difference'] },
+  { subjectId: 'eco', topic: 'Market Equilibrium', description: 'Intersection of Demand & Supply curves', marks: 8, tips: ['Mark equilibrium price (Pe) and quantity (Qe)', 'Show surplus/shortage areas', 'Draw both curves clearly'] },
+  { subjectId: 'eco', topic: 'Types of Elasticity', description: '5 diagrams showing Ed = 0, 1, ∞, >1, <1', marks: 8, tips: ['Perfectly elastic = horizontal line', 'Perfectly inelastic = vertical line', 'Unitary = rectangular hyperbola'] },
+  { subjectId: 'eco', topic: 'Circular Flow of Income', description: 'Two-sector model showing flow between households & firms', marks: 4, tips: ['Show factor market & product market', 'Arrows in correct direction', 'Label money flow & real flow'] },
+  
+  // Geography
+  { subjectId: 'geo', topic: 'India Map - Physical', description: 'Mark mountains, rivers, plateaus', marks: 8, tips: ['Use proper symbols', 'Label neatly', 'Practice with blank map daily'] },
+  { subjectId: 'geo', topic: 'India Map - Political', description: 'States, capitals, major cities', marks: 8, tips: ['Know all 28 states + 8 UTs', 'Mark boundaries clearly', 'Use index if provided'] },
+  { subjectId: 'geo', topic: 'World Map', description: 'Continents, oceans, important countries', marks: 4, tips: ['Mark major countries asked in syllabus', 'Know major water bodies', 'Practice equator & tropic lines'] },
+  { subjectId: 'geo', topic: 'Population Pyramid', description: 'Age-sex structure diagram', marks: 4, tips: ['Males on left, Females on right', 'Show expansive/constrictive/stationary types', 'Label age groups clearly'] },
+  
+  // Political Science
+  { subjectId: 'pol', topic: 'UN Structure', description: '6 principal organs of United Nations', marks: 4, tips: ['Show hierarchy clearly', 'Mark specialized agencies', 'Highlight Security Council'] },
+  { subjectId: 'pol', topic: 'Indian Parliament', description: 'Lok Sabha & Rajya Sabha structure', marks: 4, tips: ['Show bicameral structure', 'Mark speaker/chairman positions', 'Include member numbers'] },
+  
+  // History
+  { subjectId: 'his', topic: 'Freedom Movement Timeline', description: 'Key events from 1857 to 1947', marks: 4, tips: ['Mark years clearly', 'Show cause-effect relationships', 'Include major leaders'] },
+  { subjectId: 'his', topic: 'World War Map', description: 'Allied vs Axis powers', marks: 4, tips: ['Use different colors/patterns', 'Mark major battle locations', 'Show territorial changes'] },
+];
+
+// Common Mistakes to Avoid
+const COMMON_MISTAKES: CommonMistake[] = [
+  // General
+  { subjectId: 'eng', mistake: 'Not reading the question carefully', correction: 'Underline keywords, check marks allocation before answering', impact: 'high' },
+  { subjectId: 'eng', mistake: 'Poor handwriting making answers illegible', correction: 'Write clearly, maintain spacing, use blue pen for answers', impact: 'high' },
+  { subjectId: 'eng', mistake: 'Not attempting all questions', correction: 'Write something for every question - partial marks are better than zero', impact: 'high' },
+  
+  // Economics
+  { subjectId: 'eco', mistake: 'Drawing diagrams without proper labels', correction: 'Always label X-axis, Y-axis, curves, and equilibrium points', impact: 'high' },
+  { subjectId: 'eco', mistake: 'Confusing movement along curve vs shift in curve', correction: 'Movement = price change | Shift = other factors change', impact: 'medium' },
+  { subjectId: 'eco', mistake: 'Wrong elasticity formula', correction: 'Ed = %ΔQ / %ΔP (NOT Q/P)', impact: 'high' },
+  { subjectId: 'eco', mistake: 'Mixing up GDP and GNP', correction: 'GDP = within country | GNP = by citizens (anywhere)', impact: 'medium' },
+  
+  // Political Science
+  { subjectId: 'pol', mistake: 'Confusing Article numbers', correction: 'Make a chart: 14-Equality, 17-Untouchability, 19-Freedom, 21-Life', impact: 'high' },
+  { subjectId: 'pol', mistake: 'Not giving current examples', correction: 'Add 1-2 recent examples for better marks in globalization topics', impact: 'medium' },
+  { subjectId: 'pol', mistake: 'Mixing up UN organs functions', correction: 'Security Council = Peace | General Assembly = Discussion | ICJ = Legal', impact: 'medium' },
+  
+  // Geography
+  { subjectId: 'geo', mistake: 'Map work without index', correction: 'Mark serial numbers and write index separately', impact: 'high' },
+  { subjectId: 'geo', mistake: 'Not using proper symbols', correction: 'Use standard symbols: ▲ for mountains, ─ for railways', impact: 'medium' },
+  { subjectId: 'geo', mistake: 'Skipping "Give geographical reasons" questions', correction: 'Follow format: Statement → Reason → Conclusion', impact: 'high' },
+  
+  // History
+  { subjectId: 'his', mistake: 'Wrong dates for events', correction: 'Learn key dates: 1857, 1885, 1919, 1920, 1930, 1942, 1947', impact: 'high' },
+  { subjectId: 'his', mistake: 'Not using cause-effect format', correction: 'Structure: Causes → Events → Effects → Significance', impact: 'medium' },
+  
+  // Sanskrit
+  { subjectId: 'san', mistake: 'Wrong संधि विच्छेद', correction: 'Check: स्वर+स्वर, व्यंजन+व्यंजन, विसर्ग cases separately', impact: 'high' },
+  { subjectId: 'san', mistake: 'Mixing up विभक्ति', correction: 'Remember: प्रथमा=कर्ता, द्वितीया=कर्म, तृतीया=करण', impact: 'medium' },
+  { subjectId: 'san', mistake: 'Incorrect धातु रूप', correction: 'Practice लट्, लृट्, लङ् for common verbs: भू, पठ्, गम्', impact: 'medium' },
+  
+  // Hindi
+  { subjectId: 'hin', mistake: 'समास में विग्रह गलत करना', correction: 'पहले समास का नाम पता करें, फिर विग्रह लिखें', impact: 'medium' },
+  { subjectId: 'hin', mistake: 'पत्र में format गलत', correction: 'दिनांक → सेवा में → विषय → महोदय → मुख्य भाग → भवदीय', impact: 'high' },
+  
+  // English
+  { subjectId: 'eng', mistake: 'Tense inconsistency in essays', correction: 'Stick to one tense throughout - prefer past or present', impact: 'medium' },
+  { subjectId: 'eng', mistake: 'Wrong letter format', correction: 'Formal: Yours faithfully | Informal: Yours sincerely/lovingly', impact: 'high' },
+  { subjectId: 'eng', mistake: 'Précis longer than 1/3rd', correction: 'Count words, should be exactly 1/3rd of original passage', impact: 'medium' },
+];
+
+// Time Management Tips for Exam
+const EXAM_TIME_TIPS: Record<string, { totalTime: number; sections: { name: string; marks: number; suggestedTime: number }[] }> = {
+  'eco': {
+    totalTime: 180,
+    sections: [
+      { name: 'MCQ/Objectives', marks: 20, suggestedTime: 20 },
+      { name: 'Short Answers (2-4 marks)', marks: 30, suggestedTime: 45 },
+      { name: 'Long Answers (8 marks)', marks: 40, suggestedTime: 80 },
+      { name: 'Revision & Checking', marks: 0, suggestedTime: 35 },
+    ]
+  },
+  'pol': {
+    totalTime: 180,
+    sections: [
+      { name: 'MCQ/Objectives', marks: 20, suggestedTime: 20 },
+      { name: 'Short Answers', marks: 30, suggestedTime: 50 },
+      { name: 'Long Answers', marks: 40, suggestedTime: 75 },
+      { name: 'Revision', marks: 0, suggestedTime: 35 },
+    ]
+  },
+  'geo': {
+    totalTime: 180,
+    sections: [
+      { name: 'MCQ/Objectives', marks: 20, suggestedTime: 15 },
+      { name: 'Map Work', marks: 16, suggestedTime: 30 },
+      { name: 'Short Answers', marks: 24, suggestedTime: 40 },
+      { name: 'Long Answers', marks: 30, suggestedTime: 60 },
+      { name: 'Revision', marks: 0, suggestedTime: 35 },
+    ]
+  },
+  'eng': {
+    totalTime: 180,
+    sections: [
+      { name: 'Reading Comprehension', marks: 20, suggestedTime: 25 },
+      { name: 'Grammar Section', marks: 15, suggestedTime: 20 },
+      { name: 'Writing (Letter/Essay)', marks: 25, suggestedTime: 50 },
+      { name: 'Literature', marks: 30, suggestedTime: 50 },
+      { name: 'Revision', marks: 0, suggestedTime: 35 },
+    ]
+  },
+};
+
 // Last Minute Revision Points (Emergency Mode)
 const LAST_MINUTE_POINTS: Record<string, string[]> = {
   'eco': [
@@ -746,7 +877,7 @@ const generatePhaseTasks = (): PhaseTask[] => {
 };
 
 const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSubjects = [] }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock' | 'diagrams' | 'mistakes' | 'analytics'>('overview');
   
   // Filter exam dates based on selected subjects
   const EXAM_DATES = useMemo(() => {
@@ -847,6 +978,24 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     const dayIndex = new Date().getDate() % MOTIVATION_QUOTES.length;
     return MOTIVATION_QUOTES[dayIndex];
   });
+  
+  // Subject Confidence Tracker
+  const [subjectConfidence, setSubjectConfidence] = useState<SubjectConfidence[]>(() => {
+    const saved = localStorage.getItem('megaCrusherConfidence');
+    if (saved) return JSON.parse(saved);
+    // Initialize with default values for selected subjects
+    return (selectedSubjects?.length ? selectedSubjects : Object.keys(SUBJECT_MAP)).map(subId => ({
+      subjectId: subId,
+      confidence: 50,
+      lastUpdated: new Date().toISOString().split('T')[0],
+      strongTopics: [],
+      weakTopics: []
+    }));
+  });
+  
+  // Diagram and Mistakes filter
+  const [diagramFilter, setDiagramFilter] = useState<string>('all');
+  const [mistakeFilter, setMistakeFilter] = useState<string>('all');
 
   // Storage key based on selected subjects
   const storageKey = useMemo(() => {
@@ -893,6 +1042,10 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   useEffect(() => {
     localStorage.setItem('megaCrusherWeakness', JSON.stringify(weaknesses));
   }, [weaknesses]);
+  
+  useEffect(() => {
+    localStorage.setItem('megaCrusherConfidence', JSON.stringify(subjectConfidence));
+  }, [subjectConfidence]);
   
   // Study timer effect
   useEffect(() => {
@@ -2447,6 +2600,293 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     );
   };
   
+  // Important Diagrams Render
+  const renderDiagrams = () => {
+    const filteredDiagrams = diagramFilter === 'all'
+      ? IMPORTANT_DIAGRAMS.filter(d => !selectedSubjects?.length || selectedSubjects.includes(d.subjectId))
+      : IMPORTANT_DIAGRAMS.filter(d => d.subjectId === diagramFilter);
+    
+    const availableSubjects = [...new Set(IMPORTANT_DIAGRAMS.filter(d => !selectedSubjects?.length || selectedSubjects.includes(d.subjectId)).map(d => d.subjectId))];
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-violet-600 to-purple-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">📊 Important Diagrams</h3>
+          <p className="text-white/80 text-sm">Must-practice diagrams for board exams</p>
+        </div>
+        
+        {/* Filter */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => setDiagramFilter('all')}
+            className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+              diagramFilter === 'all' ? 'bg-violet-600 text-white' : 'bg-gray-700 text-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {availableSubjects.map(subId => (
+            <button
+              key={subId}
+              onClick={() => setDiagramFilter(subId)}
+              className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+                diagramFilter === subId ? 'bg-violet-600 text-white' : 'bg-gray-700 text-gray-300'
+              }`}
+            >
+              {SUBJECT_MAP[subId]?.shortName || subId}
+            </button>
+          ))}
+        </div>
+        
+        {/* Diagrams List */}
+        <div className="space-y-4">
+          {filteredDiagrams.map((diagram, idx) => (
+            <div key={idx} className="bg-gray-800 rounded-xl p-4 border-l-4 border-violet-500">
+              <div className="flex justify-between items-start mb-2">
+                <div>
+                  <h4 className="text-white font-bold text-lg">{diagram.topic}</h4>
+                  <span className={`text-xs px-2 py-1 rounded-full ${SUBJECT_MAP[diagram.subjectId]?.color} text-white`}>
+                    {SUBJECT_MAP[diagram.subjectId]?.shortName}
+                  </span>
+                </div>
+                <span className="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-bold">
+                  {diagram.marks} marks
+                </span>
+              </div>
+              <p className="text-gray-400 mb-3">{diagram.description}</p>
+              <div className="bg-gray-900 rounded-lg p-3">
+                <p className="text-violet-400 text-sm font-medium mb-2">💡 Tips:</p>
+                <ul className="space-y-1">
+                  {diagram.tips.map((tip, tipIdx) => (
+                    <li key={tipIdx} className="text-gray-300 text-sm flex items-start gap-2">
+                      <span className="text-green-400">✓</span> {tip}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="bg-yellow-900/30 rounded-xl p-4 text-center">
+          <p className="text-yellow-400 font-medium">🎨 Practice drawing each diagram at least 3 times!</p>
+        </div>
+      </div>
+    );
+  };
+  
+  // Common Mistakes Render
+  const renderMistakes = () => {
+    const filteredMistakes = mistakeFilter === 'all'
+      ? COMMON_MISTAKES.filter(m => !selectedSubjects?.length || selectedSubjects.includes(m.subjectId))
+      : COMMON_MISTAKES.filter(m => m.subjectId === mistakeFilter);
+    
+    const availableSubjects = [...new Set(COMMON_MISTAKES.filter(m => !selectedSubjects?.length || selectedSubjects.includes(m.subjectId)).map(m => m.subjectId))];
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-red-600 to-rose-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">⚠️ Common Mistakes to Avoid</h3>
+          <p className="text-white/80 text-sm">Learn from others' mistakes - don't repeat them!</p>
+        </div>
+        
+        {/* Filter */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => setMistakeFilter('all')}
+            className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+              mistakeFilter === 'all' ? 'bg-red-600 text-white' : 'bg-gray-700 text-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {availableSubjects.map(subId => (
+            <button
+              key={subId}
+              onClick={() => setMistakeFilter(subId)}
+              className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+                mistakeFilter === subId ? 'bg-red-600 text-white' : 'bg-gray-700 text-gray-300'
+              }`}
+            >
+              {SUBJECT_MAP[subId]?.shortName || subId}
+            </button>
+          ))}
+        </div>
+        
+        {/* Mistakes List */}
+        <div className="space-y-3">
+          {filteredMistakes.map((mistake, idx) => (
+            <div key={idx} className={`bg-gray-800 rounded-xl p-4 border-l-4 ${
+              mistake.impact === 'high' ? 'border-red-500' :
+              mistake.impact === 'medium' ? 'border-yellow-500' : 'border-gray-500'
+            }`}>
+              <div className="flex justify-between items-start mb-2">
+                <span className={`text-xs px-2 py-1 rounded-full ${SUBJECT_MAP[mistake.subjectId]?.color} text-white`}>
+                  {SUBJECT_MAP[mistake.subjectId]?.shortName}
+                </span>
+                <span className={`text-xs px-2 py-1 rounded-full ${
+                  mistake.impact === 'high' ? 'bg-red-500/30 text-red-400' :
+                  mistake.impact === 'medium' ? 'bg-yellow-500/30 text-yellow-400' : 'bg-gray-500/30 text-gray-400'
+                }`}>
+                  {mistake.impact} impact
+                </span>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-start gap-2">
+                  <span className="text-red-400">❌</span>
+                  <p className="text-red-300">{mistake.mistake}</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-green-400">✅</span>
+                  <p className="text-green-300">{mistake.correction}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="bg-green-900/30 rounded-xl p-4">
+          <p className="text-green-400 font-medium text-center">📝 Review this list before every exam!</p>
+        </div>
+      </div>
+    );
+  };
+  
+  // Analytics & Performance Render
+  const renderAnalytics = () => {
+    const totalTasks = tasks.length;
+    const completedTasks = tasks.filter(t => t.completed).length;
+    const taskProgress = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+    
+    const totalFlashcards = filteredFlashcards.length;
+    const masteredFlashcards = filteredFlashcards.filter(f => f.confidence >= 4).length;
+    
+    const totalPYQ = filteredPYQ.length;
+    const practicedPYQ = filteredPYQ.filter(q => q.practiced).length;
+    
+    const totalMockTests = mockTests.length;
+    const completedMockTests = mockTests.filter(t => t.completed).length;
+    const avgMockScore = completedMockTests > 0 
+      ? Math.round(mockTests.filter(t => t.completed).reduce((acc, t) => acc + (t.score || 0), 0) / completedMockTests)
+      : 0;
+    
+    const updateConfidence = (subjectId: string, newConfidence: number) => {
+      setSubjectConfidence(prev => prev.map(s => 
+        s.subjectId === subjectId 
+          ? { ...s, confidence: newConfidence, lastUpdated: new Date().toISOString().split('T')[0] }
+          : s
+      ));
+    };
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">📈 Performance Analytics</h3>
+          <p className="text-white/80 text-sm">Track your progress towards 90%+</p>
+        </div>
+        
+        {/* Overall Progress */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-4">📊 Overall Progress</h4>
+          <div className="grid grid-cols-2 gap-3">
+            <div className="bg-blue-900/30 rounded-lg p-3 text-center">
+              <p className="text-3xl font-bold text-blue-400">{taskProgress}%</p>
+              <p className="text-xs text-gray-400">Tasks Done</p>
+              <p className="text-xs text-blue-300">{completedTasks}/{totalTasks}</p>
+            </div>
+            <div className="bg-purple-900/30 rounded-lg p-3 text-center">
+              <p className="text-3xl font-bold text-purple-400">{masteredFlashcards}</p>
+              <p className="text-xs text-gray-400">Cards Mastered</p>
+              <p className="text-xs text-purple-300">of {totalFlashcards}</p>
+            </div>
+            <div className="bg-orange-900/30 rounded-lg p-3 text-center">
+              <p className="text-3xl font-bold text-orange-400">{practicedPYQ}</p>
+              <p className="text-xs text-gray-400">PYQ Practiced</p>
+              <p className="text-xs text-orange-300">of {totalPYQ}</p>
+            </div>
+            <div className="bg-green-900/30 rounded-lg p-3 text-center">
+              <p className="text-3xl font-bold text-green-400">{avgMockScore || '-'}%</p>
+              <p className="text-xs text-gray-400">Avg Mock Score</p>
+              <p className="text-xs text-green-300">{completedMockTests} tests</p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Subject Confidence */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-4">🎯 Subject Confidence</h4>
+          <p className="text-gray-400 text-sm mb-4">Rate your confidence (0-100) for each subject</p>
+          <div className="space-y-4">
+            {subjectConfidence
+              .filter(s => !selectedSubjects?.length || selectedSubjects.includes(s.subjectId))
+              .map(subject => (
+                <div key={subject.subjectId} className="space-y-2">
+                  <div className="flex justify-between items-center">
+                    <span className="text-white font-medium">{SUBJECT_MAP[subject.subjectId]?.name}</span>
+                    <span className={`font-bold ${
+                      subject.confidence >= 80 ? 'text-green-400' :
+                      subject.confidence >= 60 ? 'text-yellow-400' : 'text-red-400'
+                    }`}>{subject.confidence}%</span>
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={subject.confidence}
+                    onChange={(e) => updateConfidence(subject.subjectId, parseInt(e.target.value))}
+                    className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer"
+                    style={{
+                      background: `linear-gradient(to right, ${
+                        subject.confidence >= 80 ? '#22c55e' : subject.confidence >= 60 ? '#eab308' : '#ef4444'
+                      } ${subject.confidence}%, #374151 ${subject.confidence}%)`
+                    }}
+                  />
+                </div>
+              ))}
+          </div>
+        </div>
+        
+        {/* Study Streak */}
+        <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-xl p-4">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-white/80 text-sm">Current Streak</p>
+              <p className="text-white text-4xl font-bold">{streak} Days 🔥</p>
+            </div>
+            <div className="text-right">
+              <p className="text-white/80 text-sm">Study Time Today</p>
+              <p className="text-white text-2xl font-bold">{dailyGoal.achievedMinutes} min</p>
+            </div>
+          </div>
+        </div>
+        
+        {/* Readiness Score */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-3">🏆 Exam Readiness Score</h4>
+          {(() => {
+            const avgConfidence = subjectConfidence.length > 0 
+              ? Math.round(subjectConfidence.reduce((acc, s) => acc + s.confidence, 0) / subjectConfidence.length)
+              : 0;
+            const readinessScore = Math.round((taskProgress * 0.3) + (avgConfidence * 0.4) + ((practicedPYQ / Math.max(totalPYQ, 1)) * 100 * 0.3));
+            return (
+              <div className="text-center">
+                <p className={`text-6xl font-bold ${
+                  readinessScore >= 80 ? 'text-green-400' :
+                  readinessScore >= 60 ? 'text-yellow-400' : 'text-red-400'
+                }`}>{readinessScore}%</p>
+                <p className="text-gray-400 mt-2">
+                  {readinessScore >= 80 ? '🌟 You\'re well prepared! Keep it up!' :
+                   readinessScore >= 60 ? '💪 Good progress! Push harder!' :
+                   '⚡ More practice needed! You can do it!'}
+                </p>
+              </div>
+            );
+          })()}
+        </div>
+      </div>
+    );
+  };
+  
   const resetProgress = () => {
     if (confirm('Are you sure you want to reset all progress? This cannot be undone!')) {
       const freshTasks = generatePhaseTasks();
@@ -2501,6 +2941,9 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
             { id: 'emergency', label: '🚨' },
             { id: 'writing', label: '✍️' },
             { id: 'mock', label: '📋' },
+            { id: 'diagrams', label: '📊' },
+            { id: 'mistakes', label: '⚠️' },
+            { id: 'analytics', label: '📈' },
             { id: 'calendar', label: '🗓️' },
             { id: 'subjects', label: '📚' },
             { id: 'tips', label: '💡' },
@@ -2532,6 +2975,9 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         {activeTab === 'emergency' && renderEmergency()}
         {activeTab === 'writing' && renderWriting()}
         {activeTab === 'mock' && renderMockTests()}
+        {activeTab === 'diagrams' && renderDiagrams()}
+        {activeTab === 'mistakes' && renderMistakes()}
+        {activeTab === 'analytics' && renderAnalytics()}
         {activeTab === 'calendar' && renderCalendar()}
         {activeTab === 'subjects' && renderSubjects()}
         {activeTab === 'tips' && renderTips()}
