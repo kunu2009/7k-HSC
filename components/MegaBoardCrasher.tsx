@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
 interface PhaseTask {
   id: string;
@@ -17,6 +17,43 @@ interface ExamDate {
   date: string;
   time: string;
   color: string;
+}
+
+interface StudySession {
+  date: string;
+  minutes: number;
+  subjects: string[];
+}
+
+interface DailyGoal {
+  date: string;
+  targetMinutes: number;
+  achievedMinutes: number;
+  tasksTarget: number;
+  tasksCompleted: number;
+  streak: number;
+}
+
+interface QuickFlashcard {
+  id: string;
+  subjectId: string;
+  subject: string;
+  question: string;
+  answer: string;
+  difficulty: 'easy' | 'medium' | 'hard';
+  lastReviewed?: string;
+  confidence: number;
+}
+
+interface PYQItem {
+  id: string;
+  subjectId: string;
+  year: string;
+  question: string;
+  marks: number;
+  type: 'mcq' | 'short' | 'long';
+  answer?: string;
+  practiced: boolean;
 }
 
 interface MegaBoardCrasherProps {
@@ -39,6 +76,189 @@ const SUBJECT_MAP: Record<string, { name: string; shortName: string; color: stri
   'phi': { name: 'Philosophy', shortName: 'Philosophy', color: 'bg-cyan-500' },
   'log': { name: 'Logic', shortName: 'Logic', color: 'bg-gray-500' },
 };
+
+// 90%+ Scoring Strategies for each subject
+const SCORING_STRATEGIES: Record<string, { target: number; strategies: string[]; highWeightageTopics: string[]; mustDo: string[] }> = {
+  'eng': {
+    target: 85,
+    strategies: ['Master letter/application formats - 8-10 marks guaranteed', 'Focus on grammar rules - easy 10 marks', 'Practice précis writing daily', 'Novel/Drama question patterns repeat'],
+    highWeightageTopics: ['Letter Writing (8 marks)', 'Grammar Section (10 marks)', 'Comprehension (8 marks)', 'Essay Writing (8 marks)'],
+    mustDo: ['Learn all letter formats by heart', '3 essays on environment/education/tech', 'Practice 5 comprehension passages', 'Master reported speech & tenses']
+  },
+  'hin': {
+    target: 85,
+    strategies: ['पद्य खंड में अर्थ समझकर याद करें', 'व्याकरण के नियम chart बनाएं', 'पत्र लेखन format याद करें', 'निबंध के 3 topics तैयार रखें'],
+    highWeightageTopics: ['पत्र लेखन (8 marks)', 'निबंध (8 marks)', 'व्याकरण (10 marks)', 'पद्य अर्थग्रहण (8 marks)'],
+    mustDo: ['सभी कविताओं के भावार्थ याद करें', 'संधि विच्छेद practice', 'समास पहचान practice', '10 मुहावरे with examples']
+  },
+  'pol': {
+    target: 90,
+    strategies: ['Constitutional Articles numbers याद करें', 'Current affairs examples use करें', 'Diagrams बनाएं (UN, Parliament)', 'Compare & contrast questions practice'],
+    highWeightageTopics: ['Globalisation (16 marks)', 'World since 1991 (16 marks)', 'Indian Constitution (16 marks)', 'International Organizations (12 marks)'],
+    mustDo: ['Article 1-32 important ones', 'UN organs & functions', '5 current affairs examples per chapter', 'All comparison questions practice']
+  },
+  'eco': {
+    target: 90,
+    strategies: ['Diagrams must be NEAT with labels', 'Elasticity formulas रट लें', 'Numerical solving practice daily', 'Definitions word-to-word याद करें'],
+    highWeightageTopics: ['Demand-Supply & Elasticity (24 marks)', 'National Income (12 marks)', 'Market Forms (12 marks)', 'Index Numbers (8 marks)'],
+    mustDo: ['All elasticity types with formulas', 'Draw demand-supply curves daily', 'National Income methods (3)', '10 numerical problems solved']
+  },
+  'geo': {
+    target: 90,
+    strategies: ['Map work daily 30 mins - 16 marks!', 'Geographical reasons format follow करें', 'Statistics याद करें (population, etc)', 'Diagrams with labeling practice'],
+    highWeightageTopics: ['Map Work (16 marks)', 'Population Geography (12 marks)', 'Economic Activities (16 marks)', 'Transport & Trade (12 marks)'],
+    mustDo: ['India map - all features marked', 'World map - major features', '20 geographical reasons prepared', 'All chapter diagrams drawn once']
+  },
+  'his': {
+    target: 90,
+    strategies: ['Timeline chart बनाएं', 'Important dates list ready रखें', 'Map work for historical places', 'Cause-Effect format use करें'],
+    highWeightageTopics: ['Freedom Struggle (20 marks)', 'World Wars (16 marks)', 'Renaissance & Reforms (12 marks)', 'Modern India (16 marks)'],
+    mustDo: ['30 important dates with events', 'Freedom fighters list with contribution', 'Map - freedom movement places', 'All treaties & agreements']
+  },
+  'soc': {
+    target: 90,
+    strategies: ['Definitions exact words में लिखें', 'Examples from Indian society दें', 'Thinkers के quotes याद करें', 'Comparison questions practice'],
+    highWeightageTopics: ['Social Institutions (16 marks)', 'Social Problems (16 marks)', 'Indian Society (12 marks)', 'Social Change (12 marks)'],
+    mustDo: ['All sociologist names & theories', '10 Indian society examples', 'Caste, class, gender topics', 'Social problems with solutions']
+  },
+  'psy': {
+    target: 90,
+    strategies: ['Case studies format समझें', 'Psychological terms definitions exact', 'Experiments describe properly', 'Application-based answers practice'],
+    highWeightageTopics: ['Intelligence & Aptitude (12 marks)', 'Learning & Memory (12 marks)', 'Personality (12 marks)', 'Mental Health (12 marks)'],
+    mustDo: ['All psychology experiments', 'IQ calculation method', 'Defense mechanisms list', 'Psychological disorders & symptoms']
+  },
+  'phi': {
+    target: 85,
+    strategies: ['Logic arguments practice daily', 'Ethics case studies prepare', 'Philosophers quotes याद करें', 'Syllogism solving technique master'],
+    highWeightageTopics: ['Logic & Reasoning (20 marks)', 'Ethics (16 marks)', 'Indian Philosophy (12 marks)', 'Western Philosophy (12 marks)'],
+    mustDo: ['All syllogism rules', 'Truth table method', 'Major philosophers & their theories', 'Ethics case study answers']
+  },
+  'log': {
+    target: 85,
+    strategies: ['Practice syllogisms daily', 'Truth tables master करें', 'Argument forms याद करें', 'Fallacies identify करना सीखें'],
+    highWeightageTopics: ['Syllogism (20 marks)', 'Truth Tables (16 marks)', 'Arguments (12 marks)', 'Fallacies (12 marks)'],
+    mustDo: ['All valid syllogism forms', 'Truth table for all connectives', 'Identify 10 common fallacies', 'Practice 50 syllogism problems']
+  },
+  'mar': {
+    target: 85,
+    strategies: ['व्याकरण नियम chart बनवा', 'पत्र लेखन format पाठ करा', 'निबंध 3 विषय तयार ठेवा', 'आकलन सरावासाठी'],
+    highWeightageTopics: ['पत्र लेखन (8 marks)', 'निबंध (8 marks)', 'व्याकरण (10 marks)', 'आकलन (8 marks)'],
+    mustDo: ['सर्व पत्र प्रकार', 'संधी व समास', 'वाक्प्रचार व म्हणी', '3 निबंध तयार']
+  },
+  'san': {
+    target: 80,
+    strategies: ['श्लोक अर्थसहित पाठ करें', 'संधि नियम chart बनाएं', 'शब्दरूप धातुरूप daily', 'अनुवाद practice'],
+    highWeightageTopics: ['श्लोक (12 marks)', 'व्याकरण (16 marks)', 'अनुवाद (8 marks)', 'गद्य (12 marks)'],
+    mustDo: ['सभी श्लोक अर्थ सहित', 'संधि 10 प्रकार', 'शब्दरूप 5 important', 'धातुरूप 5 important']
+  }
+};
+
+// Quick Flashcards Data
+const QUICK_FLASHCARDS: QuickFlashcard[] = [
+  // Economics
+  { id: 'eco1', subjectId: 'eco', subject: 'Economics', question: 'What is Elasticity of Demand formula?', answer: 'Ed = (% Change in Qty Demanded) / (% Change in Price)\nOr Ed = (ΔQ/Q) × (P/ΔP)', difficulty: 'medium', confidence: 0 },
+  { id: 'eco2', subjectId: 'eco', subject: 'Economics', question: 'Types of Elasticity of Demand?', answer: '1. Perfectly Elastic (Ed = ∞)\n2. Perfectly Inelastic (Ed = 0)\n3. Unitary Elastic (Ed = 1)\n4. Relatively Elastic (Ed > 1)\n5. Relatively Inelastic (Ed < 1)', difficulty: 'hard', confidence: 0 },
+  { id: 'eco3', subjectId: 'eco', subject: 'Economics', question: 'Law of Demand states?', answer: 'Other things remaining constant, when price of a commodity rises, demand falls and vice versa. (Inverse relationship between Price & Quantity Demanded)', difficulty: 'easy', confidence: 0 },
+  { id: 'eco4', subjectId: 'eco', subject: 'Economics', question: 'Methods of measuring National Income?', answer: '1. Output/Product Method\n2. Income Method\n3. Expenditure Method\nAll three give same result (GDP)', difficulty: 'medium', confidence: 0 },
+  { id: 'eco5', subjectId: 'eco', subject: 'Economics', question: 'What is GDP at Market Price?', answer: 'GDP(MP) = C + I + G + (X - M)\nWhere C=Consumption, I=Investment, G=Govt Expenditure, X=Exports, M=Imports', difficulty: 'hard', confidence: 0 },
+  
+  // Political Science
+  { id: 'pol1', subjectId: 'pol', subject: 'Political Science', question: 'What is Article 17?', answer: 'Abolition of Untouchability - Untouchability is abolished and its practice in any form is forbidden', difficulty: 'easy', confidence: 0 },
+  { id: 'pol2', subjectId: 'pol', subject: 'Political Science', question: 'What is Article 21?', answer: 'Protection of Life and Personal Liberty - No person shall be deprived of his life or personal liberty except according to procedure established by law', difficulty: 'easy', confidence: 0 },
+  { id: 'pol3', subjectId: 'pol', subject: 'Political Science', question: 'What is Globalisation?', answer: 'Integration of economy with world economy through:\n1. Trade liberalization\n2. Foreign investment\n3. Technology transfer\n4. Free movement of capital', difficulty: 'medium', confidence: 0 },
+  { id: 'pol4', subjectId: 'pol', subject: 'Political Science', question: 'UN Security Council permanent members?', answer: 'P5 (Veto Power):\n1. USA 🇺🇸\n2. UK 🇬🇧\n3. France 🇫🇷\n4. Russia 🇷🇺\n5. China 🇨🇳', difficulty: 'easy', confidence: 0 },
+  { id: 'pol5', subjectId: 'pol', subject: 'Political Science', question: 'Cold War ended in which year?', answer: '1991 - With the dissolution of Soviet Union (USSR)\nMarked end of bipolar world and beginning of US hegemony', difficulty: 'medium', confidence: 0 },
+  
+  // Geography
+  { id: 'geo1', subjectId: 'geo', subject: 'Geography', question: 'Population Density formula?', answer: 'Population Density = Total Population / Total Area (per sq km)\nIndia: ~382 persons/sq km (2011)', difficulty: 'easy', confidence: 0 },
+  { id: 'geo2', subjectId: 'geo', subject: 'Geography', question: 'Types of Human Settlements?', answer: 'Rural: 1. Compact/Nucleated 2. Dispersed 3. Linear\nUrban: 1. Town 2. City 3. Metropolis 4. Megalopolis', difficulty: 'medium', confidence: 0 },
+  { id: 'geo3', subjectId: 'geo', subject: 'Geography', question: 'Primary Activities include?', answer: 'Activities directly using natural resources:\n1. Agriculture\n2. Fishing\n3. Mining\n4. Forestry\n5. Animal Husbandry', difficulty: 'easy', confidence: 0 },
+  { id: 'geo4', subjectId: 'geo', subject: 'Geography', question: 'HDI full form & components?', answer: 'Human Development Index\nComponents:\n1. Life Expectancy (Health)\n2. Education (Literacy + Enrollment)\n3. Standard of Living (GNI per capita)', difficulty: 'medium', confidence: 0 },
+  { id: 'geo5', subjectId: 'geo', subject: 'Geography', question: 'Push & Pull factors of Migration?', answer: 'PUSH (from origin): Unemployment, Poverty, Natural disasters, Conflicts\nPULL (to destination): Better jobs, Education, Healthcare, Quality of life', difficulty: 'medium', confidence: 0 },
+  
+  // History
+  { id: 'his1', subjectId: 'his', subject: 'History', question: 'When did Renaissance begin?', answer: '14th Century in Italy (Florence)\nMeaning: "Rebirth" - Revival of Greek & Roman culture\nKey figures: Leonardo da Vinci, Michelangelo', difficulty: 'easy', confidence: 0 },
+  { id: 'his2', subjectId: 'his', subject: 'History', question: 'Important dates of Indian Freedom Struggle?', answer: '1857 - First War of Independence\n1885 - INC Founded\n1919 - Jallianwala Bagh\n1920 - Non-Cooperation\n1930 - Salt March\n1942 - Quit India\n1947 - Independence', difficulty: 'hard', confidence: 0 },
+  { id: 'his3', subjectId: 'his', subject: 'History', question: 'World War I period?', answer: '1914-1918\nCauses: Assassination of Archduke Franz Ferdinand, Nationalism, Imperialism, Alliance system\nResult: Treaty of Versailles (1919)', difficulty: 'medium', confidence: 0 },
+  { id: 'his4', subjectId: 'his', subject: 'History', question: 'World War II period?', answer: '1939-1945\nStarted: Germany invaded Poland\nEnded: Japan surrender after atomic bombs\nHiroshima: Aug 6, 1945\nNagasaki: Aug 9, 1945', difficulty: 'medium', confidence: 0 },
+  { id: 'his5', subjectId: 'his', subject: 'History', question: 'Who founded Indian National Congress?', answer: 'A.O. Hume (Allan Octavian Hume)\nYear: 1885\nPlace: Bombay (Mumbai)\nFirst President: W.C. Bonnerjee', difficulty: 'easy', confidence: 0 },
+  
+  // English
+  { id: 'eng1', subjectId: 'eng', subject: 'English', question: 'Formal Letter format?', answer: "1. Sender's Address\n2. Date\n3. Receiver's Designation & Address\n4. Subject Line\n5. Salutation (Respected Sir/Madam)\n6. Body (3 paragraphs)\n7. Closing (Yours faithfully)\n8. Signature & Name", difficulty: 'medium', confidence: 0 },
+  { id: 'eng2', subjectId: 'eng', subject: 'English', question: 'Active to Passive Voice rule?', answer: 'Object → Subject\nSubject → by + Object\nVerb → be + V3 (Past Participle)\nExample: She writes a letter → A letter is written by her', difficulty: 'medium', confidence: 0 },
+  { id: 'eng3', subjectId: 'eng', subject: 'English', question: 'Direct to Indirect Speech changes?', answer: 'Present → Past\nPast → Past Perfect\nWill → Would\nThis → That\nHere → There\nNow → Then\nToday → That day', difficulty: 'hard', confidence: 0 },
+  { id: 'eng4', subjectId: 'eng', subject: 'English', question: 'Essay structure?', answer: '1. Introduction (Hook + Thesis)\n2. Body Para 1 (Point + Example)\n3. Body Para 2 (Point + Example)\n4. Body Para 3 (Point + Example)\n5. Conclusion (Summary + Final thought)', difficulty: 'easy', confidence: 0 },
+  { id: 'eng5', subjectId: 'eng', subject: 'English', question: 'Précis writing rules?', answer: '1. Read passage 2-3 times\n2. Identify main ideas\n3. Write in 1/3rd of original length\n4. Use your own words\n5. No personal opinions\n6. Write in 3rd person\n7. Give suitable title', difficulty: 'medium', confidence: 0 },
+  
+  // Hindi
+  { id: 'hin1', subjectId: 'hin', subject: 'Hindi', question: 'संधि के कितने प्रकार हैं?', answer: '3 प्रकार:\n1. स्वर संधि (गुण, वृद्धि, यण, अयादि, दीर्घ)\n2. व्यंजन संधि\n3. विसर्ग संधि', difficulty: 'medium', confidence: 0 },
+  { id: 'hin2', subjectId: 'hin', subject: 'Hindi', question: 'समास के प्रकार?', answer: '1. अव्ययीभाव\n2. तत्पुरुष\n3. कर्मधारय\n4. द्विगु\n5. द्वंद्व\n6. बहुव्रीहि', difficulty: 'hard', confidence: 0 },
+  { id: 'hin3', subjectId: 'hin', subject: 'Hindi', question: 'औपचारिक पत्र में क्या-क्या होता है?', answer: '1. दिनांक\n2. सेवा में (प्राप्तकर्ता)\n3. विषय\n4. महोदय/महोदया\n5. मुख्य भाग\n6. धन्यवाद सहित\n7. भवदीय/भवदीया\n8. नाम व पता', difficulty: 'easy', confidence: 0 },
+  
+  // Sociology
+  { id: 'soc1', subjectId: 'soc', subject: 'Sociology', question: 'Who is father of Sociology?', answer: 'Auguste Comte (French philosopher)\nHe coined the term "Sociology" in 1838\nMeaning: Socius (companion) + Logos (study)', difficulty: 'easy', confidence: 0 },
+  { id: 'soc2', subjectId: 'soc', subject: 'Sociology', question: 'Types of Social Groups?', answer: 'Primary Groups: Family, Peer group (face-to-face, intimate)\nSecondary Groups: Clubs, Associations (formal, impersonal)', difficulty: 'medium', confidence: 0 },
+  { id: 'soc3', subjectId: 'soc', subject: 'Sociology', question: 'What is Social Stratification?', answer: 'Division of society into hierarchical layers based on:\n1. Caste\n2. Class\n3. Gender\n4. Ethnicity\nCreates inequality in access to resources', difficulty: 'medium', confidence: 0 },
+  
+  // Psychology
+  { id: 'psy1', subjectId: 'psy', subject: 'Psychology', question: 'IQ Formula?', answer: 'IQ = (Mental Age / Chronological Age) × 100\nAverage IQ = 100\nGenius: Above 140\nMentally Challenged: Below 70', difficulty: 'medium', confidence: 0 },
+  { id: 'psy2', subjectId: 'psy', subject: 'Psychology', question: 'Defense Mechanisms (Freud)?', answer: '1. Repression - Pushing to unconscious\n2. Denial - Refusing to accept\n3. Projection - Blaming others\n4. Rationalization - Logical excuses\n5. Sublimation - Positive outlet', difficulty: 'hard', confidence: 0 },
+  { id: 'psy3', subjectId: 'psy', subject: 'Psychology', question: 'Types of Memory?', answer: '1. Sensory Memory (seconds)\n2. Short-term Memory (20-30 sec)\n3. Long-term Memory (permanent)\nTypes: Episodic, Semantic, Procedural', difficulty: 'medium', confidence: 0 },
+];
+
+// PYQ Important Questions
+const PYQ_QUESTIONS: PYQItem[] = [
+  // Economics PYQs
+  { id: 'pyq-eco1', subjectId: 'eco', year: '2024', question: 'Explain the concept of Elasticity of Demand with types.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-eco2', subjectId: 'eco', year: '2024', question: 'Distinguish between Micro and Macro Economics.', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-eco3', subjectId: 'eco', year: '2023', question: 'Draw and explain the Law of Demand with diagram.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-eco4', subjectId: 'eco', year: '2023', question: 'Explain methods of measuring National Income.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-eco5', subjectId: 'eco', year: '2022', question: 'What are the features of Perfect Competition?', marks: 4, type: 'short', practiced: false },
+  
+  // Political Science PYQs
+  { id: 'pyq-pol1', subjectId: 'pol', year: '2024', question: 'Explain the impact of Globalisation on Indian economy.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-pol2', subjectId: 'pol', year: '2024', question: 'What are the functions of UN Security Council?', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-pol3', subjectId: 'pol', year: '2023', question: 'Explain the changes in world politics after 1991.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-pol4', subjectId: 'pol', year: '2023', question: 'Discuss Fundamental Rights in Indian Constitution.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-pol5', subjectId: 'pol', year: '2022', question: 'What is meant by unipolar world?', marks: 4, type: 'short', practiced: false },
+  
+  // Geography PYQs
+  { id: 'pyq-geo1', subjectId: 'geo', year: '2024', question: 'Give geographical reasons: Population is dense in river valleys.', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-geo2', subjectId: 'geo', year: '2024', question: 'Explain factors affecting distribution of population.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-geo3', subjectId: 'geo', year: '2023', question: 'Distinguish between Rural and Urban settlements.', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-geo4', subjectId: 'geo', year: '2023', question: 'Explain the concept of Human Development Index.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-geo5', subjectId: 'geo', year: '2022', question: 'Write a note on Primary Economic Activities.', marks: 4, type: 'short', practiced: false },
+  
+  // History PYQs
+  { id: 'pyq-his1', subjectId: 'his', year: '2024', question: 'Explain the causes and effects of Renaissance.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-his2', subjectId: 'his', year: '2024', question: 'Write a note on Non-Cooperation Movement.', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-his3', subjectId: 'his', year: '2023', question: 'Explain the causes of World War I.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-his4', subjectId: 'his', year: '2023', question: 'Discuss the role of Mahatma Gandhi in Freedom Struggle.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-his5', subjectId: 'his', year: '2022', question: 'What were the effects of colonialism on India?', marks: 4, type: 'short', practiced: false },
+  
+  // English PYQs
+  { id: 'pyq-eng1', subjectId: 'eng', year: '2024', question: 'Write a formal letter to the Municipal Commissioner about water scarcity in your area.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-eng2', subjectId: 'eng', year: '2024', question: 'Write an essay on "Importance of Education".', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-eng3', subjectId: 'eng', year: '2023', question: 'Change the voice: The students completed the project.', marks: 2, type: 'short', practiced: false },
+  { id: 'pyq-eng4', subjectId: 'eng', year: '2023', question: 'Convert to indirect speech: She said, "I am reading a book."', marks: 2, type: 'short', practiced: false },
+  { id: 'pyq-eng5', subjectId: 'eng', year: '2022', question: 'Write a précis of the given passage.', marks: 4, type: 'short', practiced: false },
+];
+
+// Exam Day Checklist
+const EXAM_DAY_CHECKLIST = [
+  { id: 1, item: '📝 Hall Ticket / Admit Card', critical: true },
+  { id: 2, item: '🪪 School ID Card', critical: true },
+  { id: 3, item: '✏️ Blue & Black Pens (3 each)', critical: true },
+  { id: 4, item: '📏 Geometry Box (for maps/diagrams)', critical: false },
+  { id: 5, item: '⌚ Simple Wristwatch', critical: false },
+  { id: 6, item: '💧 Water Bottle (transparent)', critical: false },
+  { id: 7, item: '🍫 Small snack/chocolate', critical: false },
+  { id: 8, item: '📱 Phone at HOME (not allowed!)', critical: true },
+  { id: 9, item: '😴 8 hours sleep last night', critical: true },
+  { id: 10, item: '🍳 Light breakfast before exam', critical: true },
+  { id: 11, item: '⏰ Reach 30 mins before', critical: true },
+  { id: 12, item: '🧘 5 deep breaths before starting', critical: false },
+];
 
 // All exam dates with subject IDs
 const ALL_EXAM_DATES: ExamDate[] = [
@@ -250,7 +470,7 @@ const generatePhaseTasks = (): PhaseTask[] => {
 };
 
 const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSubjects = [] }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90'>('overview');
   
   // Filter exam dates based on selected subjects
   const EXAM_DATES = useMemo(() => {
@@ -279,6 +499,47 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   });
   const [selectedDay, setSelectedDay] = useState(1);
   
+  // New states for enhanced features
+  const [flashcards, setFlashcards] = useState<QuickFlashcard[]>(() => {
+    const saved = localStorage.getItem('megaCrusherFlashcards');
+    return saved ? JSON.parse(saved) : QUICK_FLASHCARDS;
+  });
+  const [currentFlashcardIndex, setCurrentFlashcardIndex] = useState(0);
+  const [showFlashcardAnswer, setShowFlashcardAnswer] = useState(false);
+  const [flashcardFilter, setFlashcardFilter] = useState<string>('all');
+  
+  const [pyqQuestions, setPyqQuestions] = useState<PYQItem[]>(() => {
+    const saved = localStorage.getItem('megaCrusherPYQ');
+    return saved ? JSON.parse(saved) : PYQ_QUESTIONS;
+  });
+  const [pyqFilter, setPyqFilter] = useState<string>('all');
+  
+  const [dailyGoal, setDailyGoal] = useState<DailyGoal>(() => {
+    const today = new Date().toISOString().split('T')[0];
+    const saved = localStorage.getItem(`megaCrusherGoal_${today}`);
+    return saved ? JSON.parse(saved) : {
+      date: today,
+      targetMinutes: 480,
+      achievedMinutes: 0,
+      tasksTarget: 10,
+      tasksCompleted: 0,
+      streak: 0
+    };
+  });
+  
+  const [studyTimer, setStudyTimer] = useState(0);
+  const [isTimerRunning, setIsTimerRunning] = useState(false);
+  const [showChecklist, setShowChecklist] = useState(false);
+  const [checkedItems, setCheckedItems] = useState<number[]>(() => {
+    const saved = localStorage.getItem('examDayChecklist');
+    return saved ? JSON.parse(saved) : [];
+  });
+  
+  const [streak, setStreak] = useState(() => {
+    const saved = localStorage.getItem('megaCrusherStreak');
+    return saved ? parseInt(saved) : 0;
+  });
+  
   // Storage key based on selected subjects
   const storageKey = useMemo(() => {
     return selectedSubjects?.length > 0 
@@ -286,9 +547,80 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
       : 'megaCrasherTasks';
   }, [selectedSubjects]);
   
+  // Save states
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(tasks));
   }, [tasks, storageKey]);
+  
+  useEffect(() => {
+    localStorage.setItem('megaCrusherFlashcards', JSON.stringify(flashcards));
+  }, [flashcards]);
+  
+  useEffect(() => {
+    localStorage.setItem('megaCrusherPYQ', JSON.stringify(pyqQuestions));
+  }, [pyqQuestions]);
+  
+  useEffect(() => {
+    const today = new Date().toISOString().split('T')[0];
+    localStorage.setItem(`megaCrusherGoal_${today}`, JSON.stringify(dailyGoal));
+  }, [dailyGoal]);
+  
+  useEffect(() => {
+    localStorage.setItem('examDayChecklist', JSON.stringify(checkedItems));
+  }, [checkedItems]);
+  
+  useEffect(() => {
+    localStorage.setItem('megaCrusherStreak', streak.toString());
+  }, [streak]);
+  
+  // Study timer effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isTimerRunning) {
+      interval = setInterval(() => {
+        setStudyTimer(prev => prev + 1);
+        if (studyTimer > 0 && studyTimer % 60 === 0) {
+          setDailyGoal(prev => ({
+            ...prev,
+            achievedMinutes: prev.achievedMinutes + 1
+          }));
+        }
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [isTimerRunning, studyTimer]);
+  
+  // Update streak on daily goal completion
+  useEffect(() => {
+    const completedTasks = tasks.filter(t => t.completed).length;
+    if (dailyGoal.achievedMinutes >= dailyGoal.targetMinutes * 0.8 || completedTasks >= dailyGoal.tasksTarget) {
+      setStreak(prev => prev + 1);
+    }
+  }, [dailyGoal.achievedMinutes, tasks]);
+  
+  // Filtered flashcards based on selected subjects
+  const filteredFlashcards = useMemo(() => {
+    let cards = flashcards;
+    if (selectedSubjects && selectedSubjects.length > 0) {
+      cards = cards.filter(f => selectedSubjects.includes(f.subjectId));
+    }
+    if (flashcardFilter !== 'all') {
+      cards = cards.filter(f => f.subjectId === flashcardFilter);
+    }
+    return cards;
+  }, [flashcards, selectedSubjects, flashcardFilter]);
+  
+  // Filtered PYQ based on selected subjects
+  const filteredPYQ = useMemo(() => {
+    let questions = pyqQuestions;
+    if (selectedSubjects && selectedSubjects.length > 0) {
+      questions = questions.filter(q => selectedSubjects.includes(q.subjectId));
+    }
+    if (pyqFilter !== 'all') {
+      questions = questions.filter(q => q.subjectId === pyqFilter);
+    }
+    return questions;
+  }, [pyqQuestions, selectedSubjects, pyqFilter]);
   
   const toggleTask = (taskId: string) => {
     setTasks(prev => prev.map(t => 
@@ -329,10 +661,77 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         </div>
       )}
       
+      {/* Study Streak & Timer Quick Card */}
+      <div className="grid grid-cols-2 gap-3">
+        <div className="bg-gradient-to-br from-orange-500 to-red-600 rounded-xl p-3 text-white">
+          <div className="flex items-center justify-between">
+            <span className="text-2xl">🔥</span>
+            <span className="text-2xl font-bold">{streak}</span>
+          </div>
+          <p className="text-xs text-white/80 mt-1">Day Streak</p>
+        </div>
+        <div 
+          onClick={() => setActiveTab('score90')}
+          className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-3 text-white cursor-pointer"
+        >
+          <div className="flex items-center justify-between">
+            <span className="text-2xl">⏱️</span>
+            <span className="text-lg font-bold">{dailyGoal.achievedMinutes}m</span>
+          </div>
+          <p className="text-xs text-white/80 mt-1">Today's Study</p>
+        </div>
+      </div>
+      
+      {/* Quick Actions */}
+      <div className="grid grid-cols-4 gap-2">
+        <button 
+          onClick={() => setActiveTab('score90')}
+          className="bg-yellow-500/20 rounded-xl p-3 text-center hover:bg-yellow-500/30 transition-all"
+        >
+          <span className="text-2xl">🎯</span>
+          <p className="text-xs text-yellow-400 mt-1">90%+</p>
+        </button>
+        <button 
+          onClick={() => setActiveTab('flashcards')}
+          className="bg-purple-500/20 rounded-xl p-3 text-center hover:bg-purple-500/30 transition-all"
+        >
+          <span className="text-2xl">⚡</span>
+          <p className="text-xs text-purple-400 mt-1">Flash</p>
+        </button>
+        <button 
+          onClick={() => setActiveTab('pyq')}
+          className="bg-orange-500/20 rounded-xl p-3 text-center hover:bg-orange-500/30 transition-all"
+        >
+          <span className="text-2xl">📝</span>
+          <p className="text-xs text-orange-400 mt-1">PYQ</p>
+        </button>
+        <button 
+          onClick={() => setActiveTab('daily')}
+          className="bg-blue-500/20 rounded-xl p-3 text-center hover:bg-blue-500/30 transition-all"
+        >
+          <span className="text-2xl">📅</span>
+          <p className="text-xs text-blue-400 mt-1">Daily</p>
+        </button>
+      </div>
+      
       {/* Exam Countdown Cards */}
       <div className="bg-gradient-to-r from-red-600 to-orange-500 rounded-xl p-4 text-white">
-        <h3 className="text-xl font-bold mb-3">🎯 Mission: 90%+ in 29 Days</h3>
+        <h3 className="text-xl font-bold mb-3">🎯 Mission: 90%+ in {getDaysUntilExam('2026-03-11')} Days</h3>
         <p className="text-sm opacity-90">From ZERO to HERO - Your boards crash course starts NOW!</p>
+        <div className="mt-3 grid grid-cols-3 gap-2">
+          <div className="bg-white/20 rounded-lg p-2 text-center">
+            <p className="text-xl font-bold">{tasks.filter(t => t.completed).length}</p>
+            <p className="text-xs">Done</p>
+          </div>
+          <div className="bg-white/20 rounded-lg p-2 text-center">
+            <p className="text-xl font-bold">{filteredFlashcards.filter(f => f.confidence >= 4).length}</p>
+            <p className="text-xs">Mastered</p>
+          </div>
+          <div className="bg-white/20 rounded-lg p-2 text-center">
+            <p className="text-xl font-bold">{filteredPYQ.filter(q => q.practiced).length}</p>
+            <p className="text-xs">PYQ Done</p>
+          </div>
+        </div>
       </div>
       
       {/* Next Exams */}
@@ -865,6 +1264,435 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     );
   };
   
+  // 🚀 90%+ Score Strategy Tab
+  const renderScore90 = () => {
+    const userStrategies = selectedSubjects && selectedSubjects.length > 0
+      ? Object.entries(SCORING_STRATEGIES).filter(([id]) => selectedSubjects.includes(id))
+      : Object.entries(SCORING_STRATEGIES).slice(0, 6);
+    
+    const totalTargetMarks = userStrategies.reduce((acc, [_, s]) => acc + s.target, 0);
+    const avgTarget = Math.round(totalTargetMarks / userStrategies.length);
+    
+    return (
+      <div className="space-y-4">
+        {/* 90% Score Card */}
+        <div className="bg-gradient-to-br from-yellow-600 via-orange-500 to-red-600 rounded-xl p-4 text-white">
+          <div className="flex justify-between items-center mb-3">
+            <h3 className="text-xl font-bold">🎯 Target: {avgTarget}%+ Average</h3>
+            <span className="text-3xl">🏆</span>
+          </div>
+          <p className="text-white/90 text-sm">Follow these subject-wise strategies to crack 90%+</p>
+          
+          {/* Streak Counter */}
+          <div className="mt-3 bg-white/20 rounded-lg p-2 flex justify-between items-center">
+            <span className="text-sm">🔥 Study Streak</span>
+            <span className="font-bold text-lg">{streak} days</span>
+          </div>
+        </div>
+        
+        {/* Study Timer */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <div className="flex justify-between items-center mb-3">
+            <h4 className="font-bold text-white">⏱️ Study Timer</h4>
+            <span className="text-2xl font-mono text-green-400">
+              {Math.floor(studyTimer / 3600).toString().padStart(2, '0')}:
+              {Math.floor((studyTimer % 3600) / 60).toString().padStart(2, '0')}:
+              {(studyTimer % 60).toString().padStart(2, '0')}
+            </span>
+          </div>
+          <div className="flex gap-2">
+            <button 
+              onClick={() => setIsTimerRunning(!isTimerRunning)}
+              className={`flex-1 py-2 rounded-lg font-medium ${isTimerRunning ? 'bg-red-500 text-white' : 'bg-green-500 text-white'}`}
+            >
+              {isTimerRunning ? '⏸️ Pause' : '▶️ Start'}
+            </button>
+            <button 
+              onClick={() => { setStudyTimer(0); setIsTimerRunning(false); }}
+              className="px-4 py-2 bg-gray-700 text-gray-300 rounded-lg"
+            >
+              🔄 Reset
+            </button>
+          </div>
+          <div className="mt-3">
+            <div className="flex justify-between text-sm mb-1">
+              <span className="text-gray-400">Today's Progress</span>
+              <span className="text-green-400">{dailyGoal.achievedMinutes}/{dailyGoal.targetMinutes} mins</span>
+            </div>
+            <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-gradient-to-r from-green-500 to-emerald-400 transition-all"
+                style={{ width: `${Math.min(100, (dailyGoal.achievedMinutes / dailyGoal.targetMinutes) * 100)}%` }}
+              ></div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Subject-wise Strategies */}
+        <div className="space-y-3">
+          {userStrategies.map(([subjectId, strategy]) => {
+            const subjectInfo = SUBJECT_MAP[subjectId];
+            return (
+              <div key={subjectId} className={`bg-gray-800 rounded-xl p-4 border-l-4 ${subjectInfo?.color || 'border-gray-500'}`}>
+                <div className="flex justify-between items-start mb-3">
+                  <h4 className="text-white font-bold">{subjectInfo?.name || subjectId}</h4>
+                  <span className="text-2xl font-bold text-yellow-400">{strategy.target}%</span>
+                </div>
+                
+                {/* High Weightage Topics */}
+                <div className="mb-3">
+                  <p className="text-yellow-400 text-xs font-medium mb-1">⭐ HIGH WEIGHTAGE</p>
+                  <div className="flex flex-wrap gap-1">
+                    {strategy.highWeightageTopics.map((topic, i) => (
+                      <span key={i} className="bg-yellow-500/20 text-yellow-300 text-xs px-2 py-1 rounded-full">{topic}</span>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Strategies */}
+                <div className="mb-3">
+                  <p className="text-green-400 text-xs font-medium mb-1">📈 STRATEGIES</p>
+                  <ul className="space-y-1">
+                    {strategy.strategies.map((s, i) => (
+                      <li key={i} className="text-gray-300 text-sm flex items-start gap-2">
+                        <span className="text-green-400">•</span> {s}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                {/* Must Do */}
+                <div className="bg-red-900/30 rounded-lg p-2">
+                  <p className="text-red-400 text-xs font-medium mb-1">🔴 MUST DO</p>
+                  <ul className="space-y-1">
+                    {strategy.mustDo.map((item, i) => (
+                      <li key={i} className="text-gray-300 text-xs flex items-start gap-2">
+                        <span className="text-red-400">✓</span> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        
+        {/* Exam Day Checklist */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <button 
+            onClick={() => setShowChecklist(!showChecklist)}
+            className="w-full flex justify-between items-center"
+          >
+            <h4 className="font-bold text-white">✅ Exam Day Checklist</h4>
+            <span className="text-gray-400">{showChecklist ? '▲' : '▼'}</span>
+          </button>
+          
+          {showChecklist && (
+            <div className="mt-3 space-y-2">
+              {EXAM_DAY_CHECKLIST.map(item => (
+                <label 
+                  key={item.id}
+                  className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-all ${
+                    checkedItems.includes(item.id) ? 'bg-green-900/30' : 'bg-gray-700/50'
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={checkedItems.includes(item.id)}
+                    onChange={(e) => {
+                      if (e.target.checked) {
+                        setCheckedItems(prev => [...prev, item.id]);
+                      } else {
+                        setCheckedItems(prev => prev.filter(i => i !== item.id));
+                      }
+                    }}
+                    className="w-5 h-5 rounded"
+                  />
+                  <span className={`flex-1 ${checkedItems.includes(item.id) ? 'text-green-400 line-through' : 'text-white'}`}>
+                    {item.item}
+                  </span>
+                  {item.critical && <span className="text-red-400 text-xs">MUST!</span>}
+                </label>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+  
+  // 📝 Flashcards Tab
+  const renderFlashcards = () => {
+    const currentCard = filteredFlashcards[currentFlashcardIndex];
+    
+    const updateConfidence = (cardId: string, confidence: number) => {
+      setFlashcards(prev => prev.map(f => 
+        f.id === cardId ? { ...f, confidence, lastReviewed: new Date().toISOString() } : f
+      ));
+    };
+    
+    const nextCard = () => {
+      setShowFlashcardAnswer(false);
+      setCurrentFlashcardIndex(prev => (prev + 1) % filteredFlashcards.length);
+    };
+    
+    const prevCard = () => {
+      setShowFlashcardAnswer(false);
+      setCurrentFlashcardIndex(prev => (prev - 1 + filteredFlashcards.length) % filteredFlashcards.length);
+    };
+    
+    const shuffleCards = () => {
+      setCurrentFlashcardIndex(Math.floor(Math.random() * filteredFlashcards.length));
+      setShowFlashcardAnswer(false);
+    };
+    
+    // Get unique subjects from flashcards
+    const availableSubjects = [...new Set(
+      flashcards
+        .filter(f => !selectedSubjects?.length || selectedSubjects.includes(f.subjectId))
+        .map(f => f.subjectId)
+    )];
+    
+    return (
+      <div className="space-y-4">
+        {/* Progress Header */}
+        <div className="bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl p-4 text-white">
+          <h3 className="text-lg font-bold mb-2">⚡ Quick Revision Flashcards</h3>
+          <p className="text-white/80 text-sm">Swipe through key concepts for rapid revision</p>
+          <div className="mt-2 flex justify-between items-center">
+            <span className="text-sm">{currentFlashcardIndex + 1} / {filteredFlashcards.length}</span>
+            <div className="flex gap-2">
+              <span className="bg-green-500/30 text-green-300 text-xs px-2 py-1 rounded-full">
+                Mastered: {filteredFlashcards.filter(f => f.confidence >= 4).length}
+              </span>
+              <span className="bg-yellow-500/30 text-yellow-300 text-xs px-2 py-1 rounded-full">
+                Learning: {filteredFlashcards.filter(f => f.confidence > 0 && f.confidence < 4).length}
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        {/* Subject Filter */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => setFlashcardFilter('all')}
+            className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+              flashcardFilter === 'all' ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {availableSubjects.map(subId => (
+            <button
+              key={subId}
+              onClick={() => setFlashcardFilter(subId)}
+              className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+                flashcardFilter === subId ? 'bg-blue-500 text-white' : 'bg-gray-700 text-gray-300'
+              }`}
+            >
+              {SUBJECT_MAP[subId]?.shortName || subId}
+            </button>
+          ))}
+        </div>
+        
+        {/* Flashcard */}
+        {currentCard && (
+          <div 
+            onClick={() => setShowFlashcardAnswer(!showFlashcardAnswer)}
+            className="bg-gray-800 rounded-xl p-6 min-h-[300px] flex flex-col cursor-pointer transition-all hover:bg-gray-750"
+          >
+            {/* Card Header */}
+            <div className="flex justify-between items-start mb-4">
+              <span className={`text-xs px-2 py-1 rounded-full ${SUBJECT_MAP[currentCard.subjectId]?.color || 'bg-gray-500'} text-white`}>
+                {currentCard.subject}
+              </span>
+              <span className={`text-xs px-2 py-1 rounded-full ${
+                currentCard.difficulty === 'easy' ? 'bg-green-500/30 text-green-400' :
+                currentCard.difficulty === 'medium' ? 'bg-yellow-500/30 text-yellow-400' :
+                'bg-red-500/30 text-red-400'
+              }`}>
+                {currentCard.difficulty}
+              </span>
+            </div>
+            
+            {/* Question */}
+            <div className="flex-1 flex items-center justify-center">
+              {!showFlashcardAnswer ? (
+                <div className="text-center">
+                  <p className="text-white text-lg font-medium">{currentCard.question}</p>
+                  <p className="text-gray-500 text-sm mt-4">Tap to reveal answer</p>
+                </div>
+              ) : (
+                <div className="text-center">
+                  <p className="text-gray-400 text-sm mb-2">Answer:</p>
+                  <p className="text-green-400 text-base whitespace-pre-line">{currentCard.answer}</p>
+                </div>
+              )}
+            </div>
+            
+            {/* Confidence Rating */}
+            {showFlashcardAnswer && (
+              <div className="mt-4 pt-4 border-t border-gray-700">
+                <p className="text-gray-400 text-xs mb-2 text-center">Rate your confidence:</p>
+                <div className="flex justify-center gap-2">
+                  {[1, 2, 3, 4, 5].map(level => (
+                    <button
+                      key={level}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        updateConfidence(currentCard.id, level);
+                        setTimeout(nextCard, 300);
+                      }}
+                      className={`w-10 h-10 rounded-full font-bold transition-all ${
+                        currentCard.confidence >= level 
+                          ? 'bg-yellow-500 text-white' 
+                          : 'bg-gray-700 text-gray-400 hover:bg-gray-600'
+                      }`}
+                    >
+                      {level}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+        
+        {/* Navigation */}
+        <div className="flex justify-between items-center gap-2">
+          <button onClick={prevCard} className="flex-1 py-3 bg-gray-700 text-white rounded-xl font-medium">
+            ← Previous
+          </button>
+          <button onClick={shuffleCards} className="px-4 py-3 bg-purple-600 text-white rounded-xl">
+            🎲
+          </button>
+          <button onClick={nextCard} className="flex-1 py-3 bg-blue-600 text-white rounded-xl font-medium">
+            Next →
+          </button>
+        </div>
+      </div>
+    );
+  };
+  
+  // 📋 PYQ Practice Tab
+  const renderPYQ = () => {
+    const togglePYQPracticed = (questionId: string) => {
+      setPyqQuestions(prev => prev.map(q => 
+        q.id === questionId ? { ...q, practiced: !q.practiced } : q
+      ));
+    };
+    
+    // Get unique subjects from PYQ
+    const availableSubjects = [...new Set(
+      pyqQuestions
+        .filter(q => !selectedSubjects?.length || selectedSubjects.includes(q.subjectId))
+        .map(q => q.subjectId)
+    )];
+    
+    const practicedCount = filteredPYQ.filter(q => q.practiced).length;
+    
+    return (
+      <div className="space-y-4">
+        {/* PYQ Header */}
+        <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-xl p-4 text-white">
+          <h3 className="text-lg font-bold mb-2">📝 Previous Year Questions</h3>
+          <p className="text-white/80 text-sm">Practice PYQs - Most Repeated = Most Important!</p>
+          <div className="mt-2 flex justify-between items-center">
+            <span className="text-sm">Progress: {practicedCount} / {filteredPYQ.length}</span>
+            <div className="w-32 h-2 bg-white/30 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-white transition-all"
+                style={{ width: `${(practicedCount / filteredPYQ.length) * 100}%` }}
+              ></div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Subject Filter */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => setPyqFilter('all')}
+            className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+              pyqFilter === 'all' ? 'bg-orange-500 text-white' : 'bg-gray-700 text-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {availableSubjects.map(subId => (
+            <button
+              key={subId}
+              onClick={() => setPyqFilter(subId)}
+              className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+                pyqFilter === subId ? 'bg-orange-500 text-white' : 'bg-gray-700 text-gray-300'
+              }`}
+            >
+              {SUBJECT_MAP[subId]?.shortName || subId}
+            </button>
+          ))}
+        </div>
+        
+        {/* PYQ List */}
+        <div className="space-y-3">
+          {filteredPYQ.map(question => (
+            <div 
+              key={question.id}
+              className={`bg-gray-800 rounded-xl p-4 border-l-4 transition-all ${
+                question.practiced ? 'border-green-500 bg-green-900/20' : 'border-orange-500'
+              }`}
+            >
+              <div className="flex justify-between items-start mb-2">
+                <div className="flex gap-2 flex-wrap">
+                  <span className={`text-xs px-2 py-1 rounded-full ${SUBJECT_MAP[question.subjectId]?.color || 'bg-gray-500'} text-white`}>
+                    {SUBJECT_MAP[question.subjectId]?.shortName || question.subjectId}
+                  </span>
+                  <span className="text-xs px-2 py-1 rounded-full bg-gray-700 text-gray-300">
+                    {question.year}
+                  </span>
+                  <span className={`text-xs px-2 py-1 rounded-full ${
+                    question.type === 'long' ? 'bg-purple-500/30 text-purple-400' :
+                    question.type === 'short' ? 'bg-blue-500/30 text-blue-400' :
+                    'bg-green-500/30 text-green-400'
+                  }`}>
+                    {question.marks} marks
+                  </span>
+                </div>
+              </div>
+              
+              <p className="text-white mb-3">{question.question}</p>
+              
+              <button
+                onClick={() => togglePYQPracticed(question.id)}
+                className={`w-full py-2 rounded-lg font-medium transition-all ${
+                  question.practiced 
+                    ? 'bg-green-600 text-white' 
+                    : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                }`}
+              >
+                {question.practiced ? '✅ Practiced' : 'Mark as Practiced'}
+              </button>
+            </div>
+          ))}
+        </div>
+        
+        {/* Quick Stats */}
+        <div className="grid grid-cols-3 gap-2">
+          <div className="bg-purple-900/30 rounded-xl p-3 text-center">
+            <p className="text-xl font-bold text-purple-400">{filteredPYQ.filter(q => q.type === 'long').length}</p>
+            <p className="text-xs text-gray-400">Long Answers</p>
+          </div>
+          <div className="bg-blue-900/30 rounded-xl p-3 text-center">
+            <p className="text-xl font-bold text-blue-400">{filteredPYQ.filter(q => q.type === 'short').length}</p>
+            <p className="text-xs text-gray-400">Short Answers</p>
+          </div>
+          <div className="bg-green-900/30 rounded-xl p-3 text-center">
+            <p className="text-xl font-bold text-green-400">{practicedCount}</p>
+            <p className="text-xs text-gray-400">Practiced</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
   const resetProgress = () => {
     if (confirm('Are you sure you want to reset all progress? This cannot be undone!')) {
       const freshTasks = generatePhaseTasks();
@@ -910,10 +1738,13 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         {/* Tabs */}
         <div className="flex gap-2 mt-4 overflow-x-auto pb-1">
           {[
-            { id: 'overview', label: '📊 Overview' },
-            { id: 'daily', label: '📅 Daily Plan' },
-            { id: 'calendar', label: '🗓️ Calendar' },
-            { id: 'subjects', label: '📚 Subjects' },
+            { id: 'overview', label: '📊 Home' },
+            { id: 'score90', label: '🎯 90%+' },
+            { id: 'daily', label: '📅 Daily' },
+            { id: 'flashcards', label: '⚡ Flash' },
+            { id: 'pyq', label: '📝 PYQ' },
+            { id: 'calendar', label: '🗓️ Cal' },
+            { id: 'subjects', label: '📚 Sub' },
             { id: 'tips', label: '💡 Tips' },
           ].map(tab => (
             <button
@@ -934,7 +1765,10 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
       {/* Content */}
       <div className="overflow-y-auto p-4 pb-20" style={{ height: 'calc(100vh - 140px)' }}>
         {activeTab === 'overview' && renderOverview()}
+        {activeTab === 'score90' && renderScore90()}
         {activeTab === 'daily' && renderDaily()}
+        {activeTab === 'flashcards' && renderFlashcards()}
+        {activeTab === 'pyq' && renderPYQ()}
         {activeTab === 'calendar' && renderCalendar()}
         {activeTab === 'subjects' && renderSubjects()}
         {activeTab === 'tips' && renderTips()}
