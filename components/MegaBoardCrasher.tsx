@@ -56,6 +56,53 @@ interface PYQItem {
   practiced: boolean;
 }
 
+interface WeaknessEntry {
+  subjectId: string;
+  topic: string;
+  attempts: number;
+  correctCount: number;
+  lastAttempt: string;
+  priority: 'high' | 'medium' | 'low';
+}
+
+interface MockTest {
+  id: string;
+  subjectId: string;
+  scheduledDate: string;
+  scheduledTime: string;
+  duration: number;
+  completed: boolean;
+  score?: number;
+  maxScore: number;
+  notes?: string;
+}
+
+interface WritingPractice {
+  id: string;
+  subjectId: string;
+  type: 'essay' | 'letter' | 'long-answer' | 'short-answer' | 'precis';
+  topic: string;
+  date: string;
+  completed: boolean;
+  selfScore?: number;
+  timeSpent?: number;
+  notes?: string;
+}
+
+interface FormulaEntry {
+  subjectId: string;
+  topic: string;
+  formula: string;
+  explanation: string;
+  example?: string;
+}
+
+interface MotivationQuote {
+  text: string;
+  author: string;
+  category: 'focus' | 'persistence' | 'success' | 'exam';
+}
+
 interface MegaBoardCrasherProps {
   onClose: () => void;
   selectedSubjects?: string[]; // Subject IDs like 'eng', 'his', 'pol', etc.
@@ -259,6 +306,141 @@ const EXAM_DAY_CHECKLIST = [
   { id: 11, item: '⏰ Reach 30 mins before', critical: true },
   { id: 12, item: '🧘 5 deep breaths before starting', critical: false },
 ];
+
+// Formula Bank for Quick Reference
+const FORMULA_BANK: FormulaEntry[] = [
+  // Economics Formulas
+  { subjectId: 'eco', topic: 'Elasticity of Demand', formula: 'Ed = (% Change in Qty) / (% Change in Price)', explanation: 'Measures responsiveness of demand to price change', example: 'If price ↑10%, demand ↓20%, Ed = 20/10 = 2 (Elastic)' },
+  { subjectId: 'eco', topic: 'Elasticity (Point Method)', formula: 'Ed = (ΔQ/ΔP) × (P/Q)', explanation: 'Used when calculating at a specific point on curve', example: 'At P=10, Q=100, ΔP=2, ΔQ=20: Ed = (20/2)×(10/100) = 1' },
+  { subjectId: 'eco', topic: 'GDP at MP', formula: 'GDP(MP) = C + I + G + (X - M)', explanation: 'Expenditure method: Consumption + Investment + Govt + Net Exports' },
+  { subjectId: 'eco', topic: 'NNP at FC', formula: 'NNP(FC) = NNP(MP) - Indirect Taxes + Subsidies', explanation: 'National Income calculation at factor cost' },
+  { subjectId: 'eco', topic: 'Per Capita Income', formula: 'PCI = National Income / Population', explanation: 'Average income per person in a country' },
+  { subjectId: 'eco', topic: 'Total Revenue', formula: 'TR = Price × Quantity', explanation: 'Total earnings from sales' },
+  { subjectId: 'eco', topic: 'Marginal Revenue', formula: 'MR = Change in TR / Change in Qty', explanation: 'Additional revenue from one more unit sold' },
+  { subjectId: 'eco', topic: 'Average Cost', formula: 'AC = Total Cost / Quantity', explanation: 'Cost per unit of output' },
+  
+  // Geography Formulas
+  { subjectId: 'geo', topic: 'Population Density', formula: 'PD = Total Population / Total Area', explanation: 'Number of persons per sq km', example: 'India: 1.4B / 3.3M km² = ~424 persons/km²' },
+  { subjectId: 'geo', topic: 'Sex Ratio', formula: 'SR = (Females / Males) × 1000', explanation: 'Number of females per 1000 males', example: 'India (2011): 943 females per 1000 males' },
+  { subjectId: 'geo', topic: 'Literacy Rate', formula: 'LR = (Literates / Population 7+) × 100', explanation: 'Percentage of literate population above age 7' },
+  { subjectId: 'geo', topic: 'Growth Rate', formula: 'GR = ((P2 - P1) / P1) × 100', explanation: 'Percentage increase in population between two periods' },
+  { subjectId: 'geo', topic: 'HDI Components', formula: 'HDI = (LEI + EI + II) / 3', explanation: 'Average of Life Expectancy, Education, and Income indices' },
+  
+  // Psychology Formulas
+  { subjectId: 'psy', topic: 'IQ Formula', formula: 'IQ = (Mental Age / Chronological Age) × 100', explanation: 'Intelligence Quotient calculation', example: 'MA=12, CA=10: IQ = (12/10)×100 = 120' },
+  { subjectId: 'psy', topic: 'Standard Deviation', formula: 'σ = √(Σ(X-μ)² / N)', explanation: 'Measure of score dispersion around mean' },
+  
+  // History Important Dates
+  { subjectId: 'his', topic: 'Important Years', formula: '1857 → 1885 → 1905 → 1919 → 1920 → 1930 → 1942 → 1947', explanation: 'Revolt → INC → Bengal Partition → Jallianwala → NCM → Salt March → Quit India → Independence' },
+  
+  // Political Science Key Numbers
+  { subjectId: 'pol', topic: 'Constitutional Numbers', formula: 'Part I-XXII | 395 Articles | 12 Schedules', explanation: 'Structure of Indian Constitution' },
+  { subjectId: 'pol', topic: 'UN Key Numbers', formula: '193 Members | 5 P5 | 15 UNSC | 6 Principal Organs', explanation: 'UN Structure numbers to remember' },
+];
+
+// Motivation Quotes
+const MOTIVATION_QUOTES: MotivationQuote[] = [
+  { text: "The only way to do great work is to love what you do.", author: "Steve Jobs", category: 'focus' },
+  { text: "Success is not final, failure is not fatal: it is the courage to continue that counts.", author: "Winston Churchill", category: 'persistence' },
+  { text: "Education is the most powerful weapon which you can use to change the world.", author: "Nelson Mandela", category: 'success' },
+  { text: "The future belongs to those who believe in the beauty of their dreams.", author: "Eleanor Roosevelt", category: 'success' },
+  { text: "It does not matter how slowly you go as long as you do not stop.", author: "Confucius", category: 'persistence' },
+  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", category: 'exam' },
+  { text: "The harder you work for something, the greater you'll feel when you achieve it.", author: "Unknown", category: 'exam' },
+  { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson", category: 'focus' },
+  { text: "Your limitation—it's only your imagination.", author: "Unknown", category: 'success' },
+  { text: "Push yourself, because no one else is going to do it for you.", author: "Unknown", category: 'exam' },
+  { text: "Great things never come from comfort zones.", author: "Unknown", category: 'persistence' },
+  { text: "Dream it. Wish it. Do it.", author: "Unknown", category: 'focus' },
+  { text: "Success doesn't just find you. You have to go out and get it.", author: "Unknown", category: 'success' },
+  { text: "The harder you work, the luckier you get.", author: "Gary Player", category: 'exam' },
+  { text: "Don't stop when you're tired. Stop when you're done.", author: "Unknown", category: 'persistence' },
+];
+
+// Last Minute Revision Points (Emergency Mode)
+const LAST_MINUTE_POINTS: Record<string, string[]> = {
+  'eco': [
+    '📊 Demand curve slopes DOWN, Supply curve slopes UP',
+    '🔢 Ed > 1 = Elastic, Ed < 1 = Inelastic, Ed = 1 = Unitary',
+    '💰 GDP = C + I + G + (X-M)',
+    '📈 3 Methods: Output, Income, Expenditure',
+    '🏪 Perfect Competition: Many sellers, identical products, free entry',
+    '🏢 Monopoly: Single seller, unique product, barriers to entry',
+  ],
+  'pol': [
+    '📜 Article 14: Equality before law',
+    '📜 Article 17: Abolition of untouchability',
+    '📜 Article 21: Right to life and liberty',
+    '🌍 P5 Nations: USA, UK, France, Russia, China (Veto power)',
+    '🔄 Cold War ended: 1991 (USSR dissolution)',
+    '🌐 Globalisation: Trade + Investment + Technology integration',
+  ],
+  'geo': [
+    '👥 Population Density = Total Pop / Total Area',
+    '👫 Sex Ratio = Females per 1000 males',
+    '📊 HDI: Health + Education + Living Standard',
+    '🏘️ Push factors: Unemployment, poverty | Pull: Jobs, education',
+    '🌾 Primary activities: Direct use of natural resources',
+    '🗺️ Map work = 16 MARKS (practice daily!)',
+  ],
+  'his': [
+    '🗓️ 1857: First War of Independence',
+    '🗓️ 1885: INC founded by A.O. Hume',
+    '🗓️ 1919: Jallianwala Bagh massacre',
+    '🗓️ 1930: Salt March (Dandi)',
+    '🗓️ 1942: Quit India Movement',
+    '⚔️ WW1: 1914-1918 | WW2: 1939-1945',
+  ],
+  'eng': [
+    '✉️ Formal Letter: Sender → Date → Receiver → Subject → Salutation → Body → Closing',
+    '📝 Essay: Intro (hook) → 3 Body paras → Conclusion',
+    '🔄 Active→Passive: Object becomes Subject, use "by"',
+    '💬 Direct→Indirect: Present→Past, This→That, Now→Then',
+    '📄 Précis: 1/3rd length, own words, no opinions',
+    '✅ Grammar: Subject-Verb agreement, Tense consistency',
+  ],
+  'hin': [
+    '📝 संधि: स्वर + व्यंजन + विसर्ग',
+    '📝 समास: अव्ययीभाव, तत्पुरुष, द्वंद्व, बहुव्रीहि',
+    '✉️ पत्र: दिनांक → सेवा में → विषय → मुख्य भाग → भवदीय',
+    '📜 व्याकरण में 10 अंक - focus!',
+    '📖 भावार्थ: कविता का अर्थ अपने शब्दों में',
+    '✍️ निबंध: भूमिका → मुख्य भाग → निष्कर्ष',
+  ],
+  'soc': [
+    '👤 Auguste Comte: Father of Sociology',
+    '👥 Primary Group: Face-to-face, intimate (family)',
+    '🏢 Secondary Group: Formal, impersonal (office)',
+    '🏛️ Social Institution: Family, Education, Religion, Economy',
+    '⚠️ Social Problems: Poverty, Caste, Gender inequality',
+    '🔄 Social Change: Modernization, Westernization',
+  ],
+  'psy': [
+    '🧠 IQ = (Mental Age / Chronological Age) × 100',
+    '📊 Normal IQ: 90-110',
+    '🔄 Defense Mechanisms: Denial, Projection, Rationalization',
+    '📚 Learning: Classical & Operant Conditioning',
+    '💭 Freud: Id, Ego, Superego',
+    '🧩 Personality: Introvert vs Extrovert',
+  ],
+};
+
+// Writing Practice Topics
+const WRITING_TOPICS: Record<string, { type: string; topics: string[] }[]> = {
+  'eng': [
+    { type: 'essay', topics: ['Importance of Education', 'Environmental Pollution', 'Digital India', 'Women Empowerment', 'Youth and Social Media'] },
+    { type: 'letter', topics: ['Complaint about water supply', 'Job application', 'Request for school leaving certificate', 'To editor about traffic problems'] },
+    { type: 'precis', topics: ['Practice 5 passages from textbook'] },
+  ],
+  'hin': [
+    { type: 'essay', topics: ['शिक्षा का महत्व', 'पर्यावरण प्रदूषण', 'डिजिटल इंडिया', 'युवा और सोशल मीडिया'] },
+    { type: 'letter', topics: ['प्रधानाचार्य को प्रार्थना पत्र', 'संपादक को पत्र', 'मित्र को पत्र'] },
+  ],
+  'mar': [
+    { type: 'essay', topics: ['शिक्षणाचे महत्त्व', 'पर्यावरण प्रदूषण', 'माझा आवडता नेता'] },
+    { type: 'letter', topics: ['मुख्याध्यापकांना अर्ज', 'मित्राला पत्र'] },
+  ],
+};
 
 // All exam dates with subject IDs
 const ALL_EXAM_DATES: ExamDate[] = [
@@ -470,7 +652,7 @@ const generatePhaseTasks = (): PhaseTask[] => {
 };
 
 const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSubjects = [] }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock'>('overview');
   
   // Filter exam dates based on selected subjects
   const EXAM_DATES = useMemo(() => {
@@ -540,6 +722,38 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     return saved ? parseInt(saved) : 0;
   });
   
+  // Mock Tests State
+  const [mockTests, setMockTests] = useState<MockTest[]>(() => {
+    const saved = localStorage.getItem('megaCrusherMockTests');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [showMockTestForm, setShowMockTestForm] = useState(false);
+  
+  // Writing Practice State
+  const [writingPractice, setWritingPractice] = useState<WritingPractice[]>(() => {
+    const saved = localStorage.getItem('megaCrusherWriting');
+    return saved ? JSON.parse(saved) : [];
+  });
+  
+  // Weakness Tracker State
+  const [weaknesses, setWeaknesses] = useState<WeaknessEntry[]>(() => {
+    const saved = localStorage.getItem('megaCrusherWeakness');
+    return saved ? JSON.parse(saved) : [];
+  });
+  
+  // Emergency Mode State
+  const [emergencyMode, setEmergencyMode] = useState(false);
+  const [emergencySubject, setEmergencySubject] = useState<string>('');
+  
+  // Formula Bank Filter
+  const [formulaFilter, setFormulaFilter] = useState<string>('all');
+  
+  // Daily Motivation
+  const [todayQuote] = useState<MotivationQuote>(() => {
+    const dayIndex = new Date().getDate() % MOTIVATION_QUOTES.length;
+    return MOTIVATION_QUOTES[dayIndex];
+  });
+
   // Storage key based on selected subjects
   const storageKey = useMemo(() => {
     return selectedSubjects?.length > 0 
@@ -572,6 +786,19 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   useEffect(() => {
     localStorage.setItem('megaCrusherStreak', streak.toString());
   }, [streak]);
+  
+  // Save new states
+  useEffect(() => {
+    localStorage.setItem('megaCrusherMockTests', JSON.stringify(mockTests));
+  }, [mockTests]);
+  
+  useEffect(() => {
+    localStorage.setItem('megaCrusherWriting', JSON.stringify(writingPractice));
+  }, [writingPractice]);
+  
+  useEffect(() => {
+    localStorage.setItem('megaCrusherWeakness', JSON.stringify(weaknesses));
+  }, [weaknesses]);
   
   // Study timer effect
   useEffect(() => {
@@ -649,6 +876,12 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   
   const renderOverview = () => (
     <div className="space-y-6">
+      {/* Daily Motivation Quote */}
+      <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl p-4">
+        <p className="text-white italic text-lg mb-2">"{todayQuote.text}"</p>
+        <p className="text-white/70 text-sm text-right">— {todayQuote.author}</p>
+      </div>
+      
       {/* User's Subjects Banner */}
       {userSubjectNames.length > 0 && (
         <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-3">
@@ -682,7 +915,7 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         </div>
       </div>
       
-      {/* Quick Actions */}
+      {/* Quick Actions Row 1 */}
       <div className="grid grid-cols-4 gap-2">
         <button 
           onClick={() => setActiveTab('score90')}
@@ -711,6 +944,38 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         >
           <span className="text-2xl">📅</span>
           <p className="text-xs text-blue-400 mt-1">Daily</p>
+        </button>
+      </div>
+      
+      {/* Quick Actions Row 2 - New Features */}
+      <div className="grid grid-cols-4 gap-2">
+        <button 
+          onClick={() => setActiveTab('formulas')}
+          className="bg-cyan-500/20 rounded-xl p-3 text-center hover:bg-cyan-500/30 transition-all"
+        >
+          <span className="text-2xl">📐</span>
+          <p className="text-xs text-cyan-400 mt-1">Formula</p>
+        </button>
+        <button 
+          onClick={() => setActiveTab('emergency')}
+          className="bg-red-500/20 rounded-xl p-3 text-center hover:bg-red-500/30 transition-all animate-pulse"
+        >
+          <span className="text-2xl">🚨</span>
+          <p className="text-xs text-red-400 mt-1">Emergency</p>
+        </button>
+        <button 
+          onClick={() => setActiveTab('writing')}
+          className="bg-pink-500/20 rounded-xl p-3 text-center hover:bg-pink-500/30 transition-all"
+        >
+          <span className="text-2xl">✍️</span>
+          <p className="text-xs text-pink-400 mt-1">Writing</p>
+        </button>
+        <button 
+          onClick={() => setActiveTab('mock')}
+          className="bg-indigo-500/20 rounded-xl p-3 text-center hover:bg-indigo-500/30 transition-all"
+        >
+          <span className="text-2xl">📋</span>
+          <p className="text-xs text-indigo-400 mt-1">Mock</p>
         </button>
       </div>
       
@@ -1693,6 +1958,401 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     );
   };
   
+  // ============ NEW RENDER FUNCTIONS ============
+  
+  // Formula Bank Render
+  const renderFormulas = () => {
+    const filteredFormulas = formulaFilter === 'all' 
+      ? FORMULA_BANK.filter(f => !selectedSubjects?.length || selectedSubjects.includes(f.subjectId))
+      : FORMULA_BANK.filter(f => f.subjectId === formulaFilter);
+    
+    const availableSubjects = [...new Set(FORMULA_BANK.filter(f => !selectedSubjects?.length || selectedSubjects.includes(f.subjectId)).map(f => f.subjectId))];
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">📐 Formula Quick Reference</h3>
+          <p className="text-white/80 text-sm">All important formulas at your fingertips</p>
+        </div>
+        
+        {/* Filter */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => setFormulaFilter('all')}
+            className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+              formulaFilter === 'all' ? 'bg-cyan-600 text-white' : 'bg-gray-700 text-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {availableSubjects.map(subId => (
+            <button
+              key={subId}
+              onClick={() => setFormulaFilter(subId)}
+              className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+                formulaFilter === subId ? 'bg-cyan-600 text-white' : 'bg-gray-700 text-gray-300'
+              }`}
+            >
+              {SUBJECT_MAP[subId]?.shortName || subId}
+            </button>
+          ))}
+        </div>
+        
+        {/* Formulas List */}
+        <div className="space-y-3">
+          {filteredFormulas.map((formula, idx) => (
+            <div key={idx} className="bg-gray-800 rounded-xl p-4 border-l-4 border-cyan-500">
+              <div className="flex justify-between items-start mb-2">
+                <span className="text-cyan-400 font-medium">{formula.topic}</span>
+                <span className="bg-cyan-500/20 text-cyan-400 text-xs px-2 py-1 rounded">
+                  {SUBJECT_MAP[formula.subjectId]?.shortName}
+                </span>
+              </div>
+              <div className="bg-gray-900 rounded-lg p-3 mb-2 font-mono text-yellow-300 text-lg">
+                {formula.formula}
+              </div>
+              <p className="text-gray-400 text-sm">{formula.explanation}</p>
+              {formula.example && (
+                <p className="text-green-400 text-sm mt-2">📝 Example: {formula.example}</p>
+              )}
+            </div>
+          ))}
+        </div>
+        
+        <div className="text-center text-gray-500 text-sm">
+          Total: {filteredFormulas.length} formulas
+        </div>
+      </div>
+    );
+  };
+  
+  // Emergency Last-Minute Mode Render
+  const renderEmergency = () => {
+    const subjectsWithEmergency = Object.keys(LAST_MINUTE_POINTS).filter(
+      subId => !selectedSubjects?.length || selectedSubjects.includes(subId)
+    );
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-red-600 to-orange-600 rounded-xl p-4 animate-pulse">
+          <h3 className="text-xl font-bold text-white mb-2">🚨 EMERGENCY MODE</h3>
+          <p className="text-white/80 text-sm">Last-minute key points for quick revision</p>
+        </div>
+        
+        {/* Subject Selection */}
+        <div className="grid grid-cols-3 gap-2">
+          {subjectsWithEmergency.map(subId => (
+            <button
+              key={subId}
+              onClick={() => setEmergencySubject(subId === emergencySubject ? '' : subId)}
+              className={`p-3 rounded-xl text-center transition-all ${
+                emergencySubject === subId 
+                  ? 'bg-red-600 text-white scale-105' 
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+              }`}
+            >
+              <span className="text-2xl block mb-1">{
+                subId === 'eco' ? '💰' : subId === 'pol' ? '⚖️' : subId === 'geo' ? '🌍' :
+                subId === 'his' ? '📜' : subId === 'eng' ? '📖' : subId === 'hin' ? '🔤' :
+                subId === 'soc' ? '👥' : subId === 'psy' ? '🧠' : '📚'
+              }</span>
+              <span className="text-xs">{SUBJECT_MAP[subId]?.shortName}</span>
+            </button>
+          ))}
+        </div>
+        
+        {/* Emergency Points */}
+        {emergencySubject && LAST_MINUTE_POINTS[emergencySubject] && (
+          <div className="space-y-2">
+            <h4 className="text-white font-bold text-lg flex items-center gap-2">
+              🎯 {SUBJECT_MAP[emergencySubject]?.name} - Key Points
+            </h4>
+            {LAST_MINUTE_POINTS[emergencySubject].map((point, idx) => (
+              <div key={idx} className="bg-gray-800 rounded-lg p-3 border-l-4 border-red-500">
+                <p className="text-white">{point}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        
+        {!emergencySubject && (
+          <div className="bg-gray-800 rounded-xl p-6 text-center">
+            <span className="text-4xl mb-3 block">👆</span>
+            <p className="text-gray-400">Select a subject above to see last-minute revision points</p>
+          </div>
+        )}
+        
+        {/* Quick Tips */}
+        <div className="bg-yellow-900/30 rounded-xl p-4">
+          <h4 className="text-yellow-400 font-bold mb-3">⚡ Emergency Exam Tips</h4>
+          <ul className="space-y-2 text-sm text-gray-300">
+            <li>✅ Focus on high-weightage topics only</li>
+            <li>✅ Revise formulas and diagrams</li>
+            <li>✅ Read important definitions</li>
+            <li>✅ Practice 2-3 PYQ answers mentally</li>
+            <li>✅ Stay calm - you've prepared well!</li>
+          </ul>
+        </div>
+      </div>
+    );
+  };
+  
+  // Writing Practice Render
+  const renderWriting = () => {
+    const addWritingPractice = (subjectId: string, type: string, topic: string) => {
+      const newPractice: WritingPractice = {
+        id: `writing-${Date.now()}`,
+        subjectId,
+        type: type as any,
+        topic,
+        date: new Date().toISOString().split('T')[0],
+        completed: false
+      };
+      setWritingPractice(prev => [...prev, newPractice]);
+    };
+    
+    const toggleWritingComplete = (id: string, score?: number) => {
+      setWritingPractice(prev => prev.map(w => 
+        w.id === id ? { ...w, completed: !w.completed, selfScore: score } : w
+      ));
+    };
+    
+    const availableSubjects = Object.keys(WRITING_TOPICS).filter(
+      subId => !selectedSubjects?.length || selectedSubjects.includes(subId)
+    );
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">✍️ Writing Practice</h3>
+          <p className="text-white/80 text-sm">Track your essay, letter & answer writing practice</p>
+        </div>
+        
+        {/* Progress Stats */}
+        <div className="grid grid-cols-3 gap-2">
+          <div className="bg-purple-900/30 rounded-xl p-3 text-center">
+            <p className="text-2xl font-bold text-purple-400">{writingPractice.length}</p>
+            <p className="text-xs text-gray-400">Total</p>
+          </div>
+          <div className="bg-green-900/30 rounded-xl p-3 text-center">
+            <p className="text-2xl font-bold text-green-400">{writingPractice.filter(w => w.completed).length}</p>
+            <p className="text-xs text-gray-400">Done</p>
+          </div>
+          <div className="bg-yellow-900/30 rounded-xl p-3 text-center">
+            <p className="text-2xl font-bold text-yellow-400">{writingPractice.filter(w => !w.completed).length}</p>
+            <p className="text-xs text-gray-400">Pending</p>
+          </div>
+        </div>
+        
+        {/* Suggested Topics */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-3">📝 Quick Add Practice</h4>
+          {availableSubjects.map(subId => (
+            <div key={subId} className="mb-4">
+              <p className="text-gray-400 text-sm mb-2">{SUBJECT_MAP[subId]?.name}</p>
+              <div className="flex flex-wrap gap-2">
+                {WRITING_TOPICS[subId]?.map((group, gIdx) => (
+                  group.topics.slice(0, 2).map((topic, tIdx) => (
+                    <button
+                      key={`${gIdx}-${tIdx}`}
+                      onClick={() => addWritingPractice(subId, group.type, topic)}
+                      className="bg-gray-700 hover:bg-purple-600 text-gray-300 hover:text-white text-xs px-3 py-1 rounded-full transition-all"
+                    >
+                      + {group.type}: {topic.substring(0, 20)}...
+                    </button>
+                  ))
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        {/* Practice List */}
+        {writingPractice.length > 0 && (
+          <div className="space-y-2">
+            <h4 className="text-white font-bold">Your Practice List</h4>
+            {writingPractice.slice().reverse().map(practice => (
+              <div key={practice.id} className={`bg-gray-800 rounded-lg p-3 border-l-4 ${
+                practice.completed ? 'border-green-500' : 'border-purple-500'
+              }`}>
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-purple-400 text-xs uppercase">{practice.type}</span>
+                    <p className="text-white">{practice.topic}</p>
+                    <p className="text-gray-500 text-xs">{SUBJECT_MAP[practice.subjectId]?.name} • {practice.date}</p>
+                  </div>
+                  <button
+                    onClick={() => toggleWritingComplete(practice.id)}
+                    className={`p-2 rounded-lg ${
+                      practice.completed ? 'bg-green-600' : 'bg-gray-700 hover:bg-purple-600'
+                    }`}
+                  >
+                    {practice.completed ? '✅' : '⬜'}
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+  
+  // Mock Test Scheduler Render
+  const renderMockTests = () => {
+    const [newTestSubject, setNewTestSubject] = useState('');
+    const [newTestDate, setNewTestDate] = useState('');
+    const [newTestTime, setNewTestTime] = useState('10:00');
+    
+    const addMockTest = () => {
+      if (!newTestSubject || !newTestDate) return;
+      const newTest: MockTest = {
+        id: `mock-${Date.now()}`,
+        subjectId: newTestSubject,
+        scheduledDate: newTestDate,
+        scheduledTime: newTestTime,
+        duration: 180,
+        completed: false,
+        maxScore: 100
+      };
+      setMockTests(prev => [...prev, newTest]);
+      setShowMockTestForm(false);
+      setNewTestSubject('');
+      setNewTestDate('');
+    };
+    
+    const completeTest = (id: string, score: number) => {
+      setMockTests(prev => prev.map(t => 
+        t.id === id ? { ...t, completed: true, score } : t
+      ));
+    };
+    
+    const upcomingTests = mockTests.filter(t => !t.completed).sort((a, b) => 
+      new Date(a.scheduledDate).getTime() - new Date(b.scheduledDate).getTime()
+    );
+    const completedTests = mockTests.filter(t => t.completed);
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-indigo-600 to-violet-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">📋 Mock Test Scheduler</h3>
+          <p className="text-white/80 text-sm">Schedule and track your practice tests</p>
+        </div>
+        
+        {/* Stats */}
+        <div className="grid grid-cols-3 gap-2">
+          <div className="bg-indigo-900/30 rounded-xl p-3 text-center">
+            <p className="text-2xl font-bold text-indigo-400">{upcomingTests.length}</p>
+            <p className="text-xs text-gray-400">Scheduled</p>
+          </div>
+          <div className="bg-green-900/30 rounded-xl p-3 text-center">
+            <p className="text-2xl font-bold text-green-400">{completedTests.length}</p>
+            <p className="text-xs text-gray-400">Completed</p>
+          </div>
+          <div className="bg-yellow-900/30 rounded-xl p-3 text-center">
+            <p className="text-2xl font-bold text-yellow-400">
+              {completedTests.length > 0 
+                ? Math.round(completedTests.reduce((acc, t) => acc + (t.score || 0), 0) / completedTests.length)
+                : '-'
+              }%
+            </p>
+            <p className="text-xs text-gray-400">Avg Score</p>
+          </div>
+        </div>
+        
+        {/* Add New Test */}
+        <button
+          onClick={() => setShowMockTestForm(!showMockTestForm)}
+          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-medium transition-all"
+        >
+          {showMockTestForm ? '✕ Cancel' : '+ Schedule New Mock Test'}
+        </button>
+        
+        {showMockTestForm && (
+          <div className="bg-gray-800 rounded-xl p-4 space-y-3">
+            <select
+              value={newTestSubject}
+              onChange={(e) => setNewTestSubject(e.target.value)}
+              className="w-full bg-gray-700 text-white p-3 rounded-lg"
+            >
+              <option value="">Select Subject</option>
+              {(selectedSubjects?.length ? selectedSubjects : Object.keys(SUBJECT_MAP)).map(subId => (
+                <option key={subId} value={subId}>{SUBJECT_MAP[subId]?.name}</option>
+              ))}
+            </select>
+            <input
+              type="date"
+              value={newTestDate}
+              onChange={(e) => setNewTestDate(e.target.value)}
+              className="w-full bg-gray-700 text-white p-3 rounded-lg"
+            />
+            <input
+              type="time"
+              value={newTestTime}
+              onChange={(e) => setNewTestTime(e.target.value)}
+              className="w-full bg-gray-700 text-white p-3 rounded-lg"
+            />
+            <button
+              onClick={addMockTest}
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+            >
+              ✅ Schedule Test
+            </button>
+          </div>
+        )}
+        
+        {/* Upcoming Tests */}
+        {upcomingTests.length > 0 && (
+          <div className="space-y-2">
+            <h4 className="text-white font-bold">📅 Upcoming Tests</h4>
+            {upcomingTests.map(test => (
+              <div key={test.id} className="bg-gray-800 rounded-lg p-4 border-l-4 border-indigo-500">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <p className="text-white font-medium">{SUBJECT_MAP[test.subjectId]?.name}</p>
+                    <p className="text-gray-400 text-sm">{test.scheduledDate} at {test.scheduledTime}</p>
+                  </div>
+                  <button
+                    onClick={() => {
+                      const score = prompt('Enter your score (0-100):');
+                      if (score) completeTest(test.id, parseInt(score));
+                    }}
+                    className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm"
+                  >
+                    Complete
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+        
+        {/* Completed Tests */}
+        {completedTests.length > 0 && (
+          <div className="space-y-2">
+            <h4 className="text-white font-bold">✅ Completed Tests</h4>
+            {completedTests.slice().reverse().slice(0, 5).map(test => (
+              <div key={test.id} className="bg-gray-800 rounded-lg p-4 border-l-4 border-green-500">
+                <div className="flex justify-between items-center">
+                  <div>
+                    <p className="text-white font-medium">{SUBJECT_MAP[test.subjectId]?.name}</p>
+                    <p className="text-gray-400 text-sm">{test.scheduledDate}</p>
+                  </div>
+                  <span className={`text-2xl font-bold ${
+                    (test.score || 0) >= 90 ? 'text-green-400' :
+                    (test.score || 0) >= 75 ? 'text-yellow-400' : 'text-red-400'
+                  }`}>
+                    {test.score}%
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+  
   const resetProgress = () => {
     if (confirm('Are you sure you want to reset all progress? This cannot be undone!')) {
       const freshTasks = generatePhaseTasks();
@@ -1738,23 +2398,28 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         {/* Tabs */}
         <div className="flex gap-2 mt-4 overflow-x-auto pb-1">
           {[
-            { id: 'overview', label: '📊 Home' },
-            { id: 'score90', label: '🎯 90%+' },
-            { id: 'daily', label: '📅 Daily' },
-            { id: 'flashcards', label: '⚡ Flash' },
-            { id: 'pyq', label: '📝 PYQ' },
-            { id: 'calendar', label: '🗓️ Cal' },
-            { id: 'subjects', label: '📚 Sub' },
-            { id: 'tips', label: '💡 Tips' },
+            { id: 'overview', label: '🏠' },
+            { id: 'score90', label: '🎯' },
+            { id: 'daily', label: '📅' },
+            { id: 'flashcards', label: '⚡' },
+            { id: 'pyq', label: '📝' },
+            { id: 'formulas', label: '📐' },
+            { id: 'emergency', label: '🚨' },
+            { id: 'writing', label: '✍️' },
+            { id: 'mock', label: '📋' },
+            { id: 'calendar', label: '🗓️' },
+            { id: 'subjects', label: '📚' },
+            { id: 'tips', label: '💡' },
           ].map(tab => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-all ${
+              className={`px-3 py-2 rounded-full text-lg transition-all ${
                 activeTab === tab.id 
-                  ? 'bg-white text-orange-600' 
+                  ? 'bg-white text-orange-600 scale-110' 
                   : 'bg-white/20 text-white hover:bg-white/30'
               }`}
+              title={tab.id}
             >
               {tab.label}
             </button>
@@ -1769,6 +2434,10 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         {activeTab === 'daily' && renderDaily()}
         {activeTab === 'flashcards' && renderFlashcards()}
         {activeTab === 'pyq' && renderPYQ()}
+        {activeTab === 'formulas' && renderFormulas()}
+        {activeTab === 'emergency' && renderEmergency()}
+        {activeTab === 'writing' && renderWriting()}
+        {activeTab === 'mock' && renderMockTests()}
         {activeTab === 'calendar' && renderCalendar()}
         {activeTab === 'subjects' && renderSubjects()}
         {activeTab === 'tips' && renderTips()}
