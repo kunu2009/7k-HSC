@@ -126,6 +126,31 @@ interface CommonMistake {
   impact: 'high' | 'medium' | 'low';
 }
 
+interface MindMapNode {
+  id: string;
+  label: string;
+  children?: MindMapNode[];
+}
+
+interface MindMapData {
+  subjectId: string;
+  chapter: string;
+  centralTopic: string;
+  nodes: MindMapNode[];
+  tips: string[];
+}
+
+interface VoiceNote {
+  id: string;
+  subjectId: string;
+  topic: string;
+  audioBlob?: Blob;
+  audioUrl?: string;
+  duration: number;
+  createdAt: string;
+  transcription?: string;
+}
+
 interface MegaBoardCrasherProps {
   onClose: () => void;
   selectedSubjects?: string[]; // Subject IDs like 'eng', 'his', 'pol', etc.
@@ -560,6 +585,238 @@ const EXAM_TIME_TIPS: Record<string, { totalTime: number; sections: { name: stri
   },
 };
 
+// Mind Maps for Visual Learning
+const MIND_MAPS: MindMapData[] = [
+  {
+    subjectId: 'eco',
+    chapter: 'Demand Analysis',
+    centralTopic: 'DEMAND',
+    nodes: [
+      { id: 'def', label: '📖 Definition', children: [
+        { id: 'def1', label: 'Desire + Ability + Willingness' },
+        { id: 'def2', label: 'At a given price & time' }
+      ]},
+      { id: 'types', label: '📊 Types', children: [
+        { id: 't1', label: 'Individual vs Market' },
+        { id: 't2', label: 'Direct vs Derived' },
+        { id: 't3', label: 'Joint vs Composite' }
+      ]},
+      { id: 'factors', label: '🔑 Determinants', children: [
+        { id: 'f1', label: 'Price (inverse)' },
+        { id: 'f2', label: 'Income (direct/inverse)' },
+        { id: 'f3', label: 'Substitute prices' },
+        { id: 'f4', label: 'Complement prices' },
+        { id: 'f5', label: 'Tastes & Preferences' }
+      ]},
+      { id: 'law', label: '📈 Law of Demand', children: [
+        { id: 'l1', label: 'Price ↑ = Quantity ↓' },
+        { id: 'l2', label: 'Inverse relationship' },
+        { id: 'l3', label: 'Ceteris paribus' }
+      ]},
+      { id: 'exceptions', label: '⚠️ Exceptions', children: [
+        { id: 'e1', label: 'Giffen Goods' },
+        { id: 'e2', label: 'Veblen Goods' },
+        { id: 'e3', label: 'Expectation of price rise' }
+      ]}
+    ],
+    tips: ['Draw demand curve sloping DOWN', 'Remember: Price on Y-axis, Quantity on X-axis']
+  },
+  {
+    subjectId: 'eco',
+    chapter: 'Elasticity of Demand',
+    centralTopic: 'ELASTICITY',
+    nodes: [
+      { id: 'def', label: '📖 Definition', children: [
+        { id: 'd1', label: 'Responsiveness of demand' },
+        { id: 'd2', label: 'To change in price/income' }
+      ]},
+      { id: 'types', label: '📊 Types', children: [
+        { id: 't1', label: 'Price Elasticity (Ed)' },
+        { id: 't2', label: 'Income Elasticity (Ey)' },
+        { id: 't3', label: 'Cross Elasticity (Ec)' }
+      ]},
+      { id: 'degrees', label: '📈 Degrees (Ed)', children: [
+        { id: 'dg1', label: 'Ed > 1 = Elastic' },
+        { id: 'dg2', label: 'Ed < 1 = Inelastic' },
+        { id: 'dg3', label: 'Ed = 1 = Unitary' },
+        { id: 'dg4', label: 'Ed = 0 = Perfectly Inelastic' },
+        { id: 'dg5', label: 'Ed = ∞ = Perfectly Elastic' }
+      ]},
+      { id: 'formula', label: '🔢 Formula', children: [
+        { id: 'f1', label: 'Ed = %ΔQ / %ΔP' },
+        { id: 'f2', label: 'Ed = (ΔQ/Q) ÷ (ΔP/P)' }
+      ]}
+    ],
+    tips: ['Ed is always negative (ignore sign)', 'Luxuries = Elastic, Necessities = Inelastic']
+  },
+  {
+    subjectId: 'pol',
+    chapter: 'United Nations',
+    centralTopic: 'UN ORGANIZATION',
+    nodes: [
+      { id: 'organs', label: '🏛️ 6 Main Organs', children: [
+        { id: 'o1', label: 'General Assembly (193 members)' },
+        { id: 'o2', label: 'Security Council (15 members)' },
+        { id: 'o3', label: 'ECOSOC' },
+        { id: 'o4', label: 'ICJ (Hague)' },
+        { id: 'o5', label: 'Secretariat (Secretary General)' },
+        { id: 'o6', label: 'Trusteeship Council' }
+      ]},
+      { id: 'sc', label: '🛡️ Security Council', children: [
+        { id: 'sc1', label: 'P5: USA, UK, France, Russia, China' },
+        { id: 'sc2', label: 'Veto Power to P5' },
+        { id: 'sc3', label: '10 Non-permanent (2yr term)' }
+      ]},
+      { id: 'agencies', label: '🌐 Specialized Agencies', children: [
+        { id: 'a1', label: 'WHO - Health' },
+        { id: 'a2', label: 'UNESCO - Education' },
+        { id: 'a3', label: 'ILO - Labour' },
+        { id: 'a4', label: 'IMF - Finance' }
+      ]},
+      { id: 'india', label: '🇮🇳 India & UN', children: [
+        { id: 'i1', label: 'Founding member (1945)' },
+        { id: 'i2', label: 'Demands permanent seat' },
+        { id: 'i3', label: 'G4 with Brazil, Germany, Japan' }
+      ]}
+    ],
+    tips: ['Remember P5 = 5 Permanent members with VETO', 'UN HQ in New York, ICJ in The Hague']
+  },
+  {
+    subjectId: 'geo',
+    chapter: 'Population',
+    centralTopic: 'POPULATION GEOGRAPHY',
+    nodes: [
+      { id: 'concepts', label: '📊 Key Concepts', children: [
+        { id: 'c1', label: 'Density = Pop/Area' },
+        { id: 'c2', label: 'Sex Ratio = F per 1000 M' },
+        { id: 'c3', label: 'Growth Rate = Birth - Death' }
+      ]},
+      { id: 'distribution', label: '🗺️ Distribution Factors', children: [
+        { id: 'd1', label: 'Physical: Climate, Terrain, Water' },
+        { id: 'd2', label: 'Economic: Jobs, Resources' },
+        { id: 'd3', label: 'Social: Education, Healthcare' }
+      ]},
+      { id: 'pyramid', label: '📈 Population Pyramid', children: [
+        { id: 'p1', label: 'Expansive: Wide base (young)' },
+        { id: 'p2', label: 'Constrictive: Narrow base' },
+        { id: 'p3', label: 'Stationary: Equal sides' }
+      ]},
+      { id: 'migration', label: '🚶 Migration', children: [
+        { id: 'm1', label: 'Push: Unemployment, Poverty' },
+        { id: 'm2', label: 'Pull: Jobs, Education, Services' },
+        { id: 'm3', label: 'Rural to Urban' }
+      ]}
+    ],
+    tips: ['India Sex Ratio ~943 (Census 2011)', 'Draw pyramids in exams for extra marks']
+  },
+  {
+    subjectId: 'his',
+    chapter: 'Indian National Movement',
+    centralTopic: 'FREEDOM STRUGGLE',
+    nodes: [
+      { id: 'phases', label: '📅 3 Phases', children: [
+        { id: 'ph1', label: 'Moderate (1885-1905)' },
+        { id: 'ph2', label: 'Extremist (1905-1919)' },
+        { id: 'ph3', label: 'Gandhian (1919-1947)' }
+      ]},
+      { id: 'movements', label: '✊ Major Movements', children: [
+        { id: 'mv1', label: '1920: Non-Cooperation' },
+        { id: 'mv2', label: '1930: Civil Disobedience' },
+        { id: 'mv3', label: '1942: Quit India' }
+      ]},
+      { id: 'leaders', label: '👤 Key Leaders', children: [
+        { id: 'l1', label: 'Gandhi - Nonviolence' },
+        { id: 'l2', label: 'Tilak - Swaraj is birthright' },
+        { id: 'l3', label: 'Bose - Armed struggle' },
+        { id: 'l4', label: 'Nehru - First PM' }
+      ]},
+      { id: 'dates', label: '🗓️ Important Dates', children: [
+        { id: 'dt1', label: '1857: First War' },
+        { id: 'dt2', label: '1885: INC founded' },
+        { id: 'dt3', label: '1947: Independence' }
+      ]}
+    ],
+    tips: ['Timeline questions are common - memorize dates!', 'Connect leaders with their contributions']
+  },
+  {
+    subjectId: 'eng',
+    chapter: 'Letter Writing',
+    centralTopic: 'LETTER FORMAT',
+    nodes: [
+      { id: 'formal', label: '📝 Formal Letter', children: [
+        { id: 'f1', label: "1. Sender's Address" },
+        { id: 'f2', label: '2. Date' },
+        { id: 'f3', label: "3. Receiver's Address" },
+        { id: 'f4', label: '4. Subject Line' },
+        { id: 'f5', label: '5. Salutation (Sir/Madam)' },
+        { id: 'f6', label: '6. Body (3 paragraphs)' },
+        { id: 'f7', label: '7. Closing (Yours faithfully)' }
+      ]},
+      { id: 'informal', label: '💌 Informal Letter', children: [
+        { id: 'i1', label: 'Address + Date' },
+        { id: 'i2', label: 'Dear [Name]' },
+        { id: 'i3', label: 'Casual body' },
+        { id: 'i4', label: 'Yours lovingly' }
+      ]},
+      { id: 'tips', label: '💡 Scoring Tips', children: [
+        { id: 't1', label: 'Follow exact format' },
+        { id: 't2', label: 'Use formal vocabulary' },
+        { id: 't3', label: 'Keep paragraphs short' }
+      ]}
+    ],
+    tips: ['8 marks for format - never skip!', 'Practice 5 types: Complaint, Application, Editor, Enquiry, Order']
+  },
+  {
+    subjectId: 'hin',
+    chapter: 'व्याकरण',
+    centralTopic: 'हिंदी व्याकरण',
+    nodes: [
+      { id: 'sandhi', label: '📝 संधि', children: [
+        { id: 's1', label: 'स्वर संधि' },
+        { id: 's2', label: 'व्यंजन संधि' },
+        { id: 's3', label: 'विसर्ग संधि' }
+      ]},
+      { id: 'samas', label: '📝 समास', children: [
+        { id: 'sm1', label: 'अव्ययीभाव' },
+        { id: 'sm2', label: 'तत्पुरुष' },
+        { id: 'sm3', label: 'द्वंद्व' },
+        { id: 'sm4', label: 'बहुव्रीहि' }
+      ]},
+      { id: 'alankar', label: '✨ अलंकार', children: [
+        { id: 'a1', label: 'उपमा: जैसे, सा, सी' },
+        { id: 'a2', label: 'रूपक: आरोप' },
+        { id: 'a3', label: 'अनुप्रास: वर्ण दोहराव' }
+      ]}
+    ],
+    tips: ['10 marks grammar section - master it!', 'Make charts for quick revision']
+  },
+  {
+    subjectId: 'san',
+    chapter: 'संस्कृत व्याकरण',
+    centralTopic: 'संस्कृत व्याकरण',
+    nodes: [
+      { id: 'sandhi', label: '📜 संधि', children: [
+        { id: 's1', label: 'गुण: अ+इ=ए, अ+उ=ओ' },
+        { id: 's2', label: 'वृद्धि: अ+ए=ऐ, अ+ओ=औ' },
+        { id: 's3', label: 'यण: इ+अ=य, उ+अ=व' }
+      ]},
+      { id: 'vibhakti', label: '📝 विभक्ति', children: [
+        { id: 'v1', label: 'प्रथमा: कर्ता (ने)' },
+        { id: 'v2', label: 'द्वितीया: कर्म (को)' },
+        { id: 'v3', label: 'तृतीया: करण (से/द्वारा)' },
+        { id: 'v4', label: 'चतुर्थी: सम्प्रदान (के लिए)' },
+        { id: 'v5', label: 'सप्तमी: अधिकरण (में/पर)' }
+      ]},
+      { id: 'dhatu', label: '🔤 धातु रूप', children: [
+        { id: 'd1', label: 'लट् = वर्तमान' },
+        { id: 'd2', label: 'लृट् = भविष्यत्' },
+        { id: 'd3', label: 'लङ् = भूतकाल' }
+      ]}
+    ],
+    tips: ['विभक्ति = 7 types - make table', 'Practice 10 dhatu forms daily']
+  }
+];
+
 // Last Minute Revision Points (Emergency Mode)
 const LAST_MINUTE_POINTS: Record<string, string[]> = {
   'eco': [
@@ -877,7 +1134,7 @@ const generatePhaseTasks = (): PhaseTask[] => {
 };
 
 const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSubjects = [] }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock' | 'diagrams' | 'mistakes' | 'analytics'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock' | 'diagrams' | 'mistakes' | 'analytics' | 'mindmaps' | 'recorder'>('overview');
   
   // Filter exam dates based on selected subjects
   const EXAM_DATES = useMemo(() => {
@@ -996,6 +1253,21 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   // Diagram and Mistakes filter
   const [diagramFilter, setDiagramFilter] = useState<string>('all');
   const [mistakeFilter, setMistakeFilter] = useState<string>('all');
+  
+  // Mind Maps
+  const [mindMapFilter, setMindMapFilter] = useState<string>('all');
+  const [expandedNodes, setExpandedNodes] = useState<Set<string>>(new Set());
+  
+  // Voice Notes
+  const [voiceNotes, setVoiceNotes] = useState<VoiceNote[]>(() => {
+    const saved = localStorage.getItem('megaCrusherVoiceNotes');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [isRecording, setIsRecording] = useState(false);
+  const [recordingTime, setRecordingTime] = useState(0);
+  const [mediaRecorder, setMediaRecorder] = useState<MediaRecorder | null>(null);
+  const [recordingSubject, setRecordingSubject] = useState<string>('');
+  const [recordingTopic, setRecordingTopic] = useState<string>('');
 
   // Storage key based on selected subjects
   const storageKey = useMemo(() => {
@@ -1046,6 +1318,23 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   useEffect(() => {
     localStorage.setItem('megaCrusherConfidence', JSON.stringify(subjectConfidence));
   }, [subjectConfidence]);
+  
+  // Save voice notes (without audio blob, just metadata)
+  useEffect(() => {
+    const notesMetadata = voiceNotes.map(({ audioBlob, ...rest }) => rest);
+    localStorage.setItem('megaCrusherVoiceNotes', JSON.stringify(notesMetadata));
+  }, [voiceNotes]);
+  
+  // Recording timer
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+    if (isRecording) {
+      interval = setInterval(() => {
+        setRecordingTime(prev => prev + 1);
+      }, 1000);
+    }
+    return () => clearInterval(interval);
+  }, [isRecording]);
   
   // Study timer effect
   useEffect(() => {
@@ -2887,6 +3176,341 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     );
   };
   
+  // Mind Maps Render
+  const renderMindMaps = () => {
+    const filteredMaps = mindMapFilter === 'all'
+      ? MIND_MAPS.filter(m => !selectedSubjects?.length || selectedSubjects.includes(m.subjectId))
+      : MIND_MAPS.filter(m => m.subjectId === mindMapFilter);
+    
+    const availableSubjects = [...new Set(MIND_MAPS.filter(m => !selectedSubjects?.length || selectedSubjects.includes(m.subjectId)).map(m => m.subjectId))];
+    
+    const toggleNode = (nodeId: string) => {
+      setExpandedNodes(prev => {
+        const newSet = new Set(prev);
+        if (newSet.has(nodeId)) {
+          newSet.delete(nodeId);
+        } else {
+          newSet.add(nodeId);
+        }
+        return newSet;
+      });
+    };
+    
+    const renderNode = (node: MindMapNode, level: number = 0) => {
+      const hasChildren = node.children && node.children.length > 0;
+      const isExpanded = expandedNodes.has(node.id);
+      
+      return (
+        <div key={node.id} className={`${level > 0 ? 'ml-4 border-l-2 border-gray-600 pl-3' : ''}`}>
+          <button
+            onClick={() => hasChildren && toggleNode(node.id)}
+            className={`flex items-center gap-2 w-full text-left py-1 px-2 rounded-lg transition-colors ${
+              hasChildren ? 'hover:bg-gray-700 cursor-pointer' : 'cursor-default'
+            }`}
+          >
+            {hasChildren && (
+              <span className={`transform transition-transform ${isExpanded ? 'rotate-90' : ''}`}>▶</span>
+            )}
+            <span className={`${
+              level === 0 ? 'text-lg font-bold text-yellow-400' :
+              level === 1 ? 'text-white font-medium' : 'text-gray-300'
+            }`}>{node.label}</span>
+          </button>
+          {hasChildren && isExpanded && (
+            <div className="mt-1">
+              {node.children!.map(child => renderNode(child, level + 1))}
+            </div>
+          )}
+        </div>
+      );
+    };
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">🧠 Mind Maps</h3>
+          <p className="text-white/80 text-sm">Visual learning for better retention</p>
+        </div>
+        
+        {/* Filter */}
+        <div className="flex gap-2 overflow-x-auto pb-2">
+          <button
+            onClick={() => setMindMapFilter('all')}
+            className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+              mindMapFilter === 'all' ? 'bg-cyan-600 text-white' : 'bg-gray-700 text-gray-300'
+            }`}
+          >
+            All
+          </button>
+          {availableSubjects.map(subId => (
+            <button
+              key={subId}
+              onClick={() => setMindMapFilter(subId)}
+              className={`px-3 py-1 rounded-full text-sm whitespace-nowrap ${
+                mindMapFilter === subId ? 'bg-cyan-600 text-white' : 'bg-gray-700 text-gray-300'
+              }`}
+            >
+              {SUBJECT_MAP[subId]?.shortName || subId}
+            </button>
+          ))}
+        </div>
+        
+        {/* Mind Maps */}
+        <div className="space-y-4">
+          {filteredMaps.map((mindMap, idx) => (
+            <div key={idx} className="bg-gray-800 rounded-xl p-4">
+              <div className="flex justify-between items-start mb-4">
+                <div>
+                  <h4 className="text-white font-bold text-lg">{mindMap.chapter}</h4>
+                  <span className={`text-xs px-2 py-1 rounded-full ${SUBJECT_MAP[mindMap.subjectId]?.color} text-white`}>
+                    {SUBJECT_MAP[mindMap.subjectId]?.shortName}
+                  </span>
+                </div>
+                <button
+                  onClick={() => {
+                    // Expand all nodes for this map
+                    const allNodeIds = new Set<string>();
+                    const collectIds = (nodes: MindMapNode[]) => {
+                      nodes.forEach(n => {
+                        allNodeIds.add(n.id);
+                        if (n.children) collectIds(n.children);
+                      });
+                    };
+                    collectIds(mindMap.nodes);
+                    setExpandedNodes(prev => {
+                      const newSet = new Set(prev);
+                      let allExpanded = true;
+                      allNodeIds.forEach(id => {
+                        if (!newSet.has(id)) allExpanded = false;
+                      });
+                      if (allExpanded) {
+                        allNodeIds.forEach(id => newSet.delete(id));
+                      } else {
+                        allNodeIds.forEach(id => newSet.add(id));
+                      }
+                      return newSet;
+                    });
+                  }}
+                  className="text-xs bg-cyan-600/30 text-cyan-400 px-2 py-1 rounded"
+                >
+                  Toggle All
+                </button>
+              </div>
+              
+              {/* Central Topic */}
+              <div className="bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl p-3 mb-4 text-center">
+                <span className="text-xl font-bold text-white">🎯 {mindMap.centralTopic}</span>
+              </div>
+              
+              {/* Branches */}
+              <div className="bg-gray-900 rounded-lg p-3 space-y-2">
+                {mindMap.nodes.map(node => renderNode(node))}
+              </div>
+              
+              {/* Tips */}
+              {mindMap.tips.length > 0 && (
+                <div className="mt-3 bg-blue-900/30 rounded-lg p-3">
+                  <p className="text-blue-400 text-sm font-medium mb-1">💡 Tips:</p>
+                  {mindMap.tips.map((tip, tipIdx) => (
+                    <p key={tipIdx} className="text-gray-300 text-sm">• {tip}</p>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        
+        <div className="bg-cyan-900/30 rounded-xl p-4 text-center">
+          <p className="text-cyan-400 font-medium">🧠 Mind maps help you remember 10x better!</p>
+        </div>
+      </div>
+    );
+  };
+  
+  // Voice Recorder Render
+  const renderVoiceRecorder = () => {
+    const formatTime = (seconds: number) => {
+      const mins = Math.floor(seconds / 60);
+      const secs = seconds % 60;
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    };
+    
+    const startRecording = async () => {
+      if (!recordingSubject || !recordingTopic) {
+        alert('Please select a subject and enter a topic!');
+        return;
+      }
+      
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        const recorder = new MediaRecorder(stream);
+        const chunks: Blob[] = [];
+        
+        recorder.ondataavailable = (e) => chunks.push(e.data);
+        recorder.onstop = () => {
+          const blob = new Blob(chunks, { type: 'audio/webm' });
+          const url = URL.createObjectURL(blob);
+          const newNote: VoiceNote = {
+            id: `vn_${Date.now()}`,
+            subjectId: recordingSubject,
+            topic: recordingTopic,
+            audioBlob: blob,
+            audioUrl: url,
+            duration: recordingTime,
+            createdAt: new Date().toISOString(),
+          };
+          setVoiceNotes(prev => [newNote, ...prev]);
+          setRecordingTime(0);
+          setRecordingTopic('');
+          stream.getTracks().forEach(track => track.stop());
+        };
+        
+        recorder.start();
+        setMediaRecorder(recorder);
+        setIsRecording(true);
+      } catch (err) {
+        alert('Unable to access microphone. Please allow microphone access.');
+      }
+    };
+    
+    const stopRecording = () => {
+      if (mediaRecorder) {
+        mediaRecorder.stop();
+        setIsRecording(false);
+        setMediaRecorder(null);
+      }
+    };
+    
+    const deleteNote = (id: string) => {
+      const note = voiceNotes.find(n => n.id === id);
+      if (note?.audioUrl) {
+        URL.revokeObjectURL(note.audioUrl);
+      }
+      setVoiceNotes(prev => prev.filter(n => n.id !== id));
+    };
+    
+    const filteredNotes = voiceNotes.filter(n => 
+      !selectedSubjects?.length || selectedSubjects.includes(n.subjectId)
+    );
+    
+    return (
+      <div className="space-y-4">
+        <div className="bg-gradient-to-r from-pink-600 to-rose-600 rounded-xl p-4">
+          <h3 className="text-xl font-bold text-white mb-2">🎙️ Voice Notes</h3>
+          <p className="text-white/80 text-sm">Record revision notes for on-the-go learning</p>
+        </div>
+        
+        {/* Recording Section */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-4">📝 New Recording</h4>
+          
+          {!isRecording ? (
+            <div className="space-y-3">
+              <div>
+                <label className="text-gray-400 text-sm">Subject</label>
+                <select
+                  value={recordingSubject}
+                  onChange={(e) => setRecordingSubject(e.target.value)}
+                  className="w-full mt-1 bg-gray-700 border border-gray-600 rounded-lg p-2 text-white"
+                >
+                  <option value="">Select subject...</option>
+                  {(selectedSubjects?.length ? selectedSubjects : Object.keys(SUBJECT_MAP)).map(subId => (
+                    <option key={subId} value={subId}>{SUBJECT_MAP[subId]?.name}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className="text-gray-400 text-sm">Topic</label>
+                <input
+                  type="text"
+                  value={recordingTopic}
+                  onChange={(e) => setRecordingTopic(e.target.value)}
+                  placeholder="e.g., Demand Analysis key points"
+                  className="w-full mt-1 bg-gray-700 border border-gray-600 rounded-lg p-2 text-white placeholder-gray-500"
+                />
+              </div>
+              <button
+                onClick={startRecording}
+                disabled={!recordingSubject || !recordingTopic}
+                className={`w-full py-3 rounded-xl font-bold text-lg flex items-center justify-center gap-2 ${
+                  recordingSubject && recordingTopic
+                    ? 'bg-red-500 text-white hover:bg-red-600'
+                    : 'bg-gray-600 text-gray-400 cursor-not-allowed'
+                }`}
+              >
+                🎙️ Start Recording
+              </button>
+            </div>
+          ) : (
+            <div className="text-center space-y-4">
+              <div className="animate-pulse">
+                <div className="w-24 h-24 mx-auto bg-red-500 rounded-full flex items-center justify-center">
+                  <span className="text-4xl">🎙️</span>
+                </div>
+              </div>
+              <p className="text-red-400 text-3xl font-mono">{formatTime(recordingTime)}</p>
+              <p className="text-gray-400">Recording: {recordingTopic}</p>
+              <button
+                onClick={stopRecording}
+                className="w-full py-3 rounded-xl font-bold text-lg bg-gray-600 text-white hover:bg-gray-500 flex items-center justify-center gap-2"
+              >
+                ⏹️ Stop & Save
+              </button>
+            </div>
+          )}
+        </div>
+        
+        {/* Saved Notes */}
+        <div className="bg-gray-800 rounded-xl p-4">
+          <h4 className="text-white font-bold mb-4">🎧 Your Voice Notes ({filteredNotes.length})</h4>
+          
+          {filteredNotes.length === 0 ? (
+            <div className="text-center py-8">
+              <p className="text-4xl mb-2">🎙️</p>
+              <p className="text-gray-400">No voice notes yet</p>
+              <p className="text-gray-500 text-sm">Record your first revision note!</p>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {filteredNotes.map(note => (
+                <div key={note.id} className="bg-gray-700 rounded-lg p-3">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h5 className="text-white font-medium">{note.topic}</h5>
+                      <div className="flex items-center gap-2 text-sm">
+                        <span className={`px-2 py-0.5 rounded-full ${SUBJECT_MAP[note.subjectId]?.color} text-white text-xs`}>
+                          {SUBJECT_MAP[note.subjectId]?.shortName}
+                        </span>
+                        <span className="text-gray-400">{formatTime(note.duration)}</span>
+                        <span className="text-gray-500">{new Date(note.createdAt).toLocaleDateString()}</span>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => deleteNote(note.id)}
+                      className="text-red-400 hover:text-red-300 p-1"
+                    >
+                      🗑️
+                    </button>
+                  </div>
+                  {note.audioUrl && (
+                    <audio controls className="w-full h-10" src={note.audioUrl}>
+                      Your browser does not support audio.
+                    </audio>
+                  )}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+        
+        <div className="bg-pink-900/30 rounded-xl p-4">
+          <p className="text-pink-400 font-medium text-center">💡 Tip: Listen to your notes while commuting!</p>
+          <p className="text-gray-400 text-sm text-center mt-1">Note: Audio is stored in this session only</p>
+        </div>
+      </div>
+    );
+  };
+  
   const resetProgress = () => {
     if (confirm('Are you sure you want to reset all progress? This cannot be undone!')) {
       const freshTasks = generatePhaseTasks();
@@ -2938,9 +3562,11 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
             { id: 'flashcards', label: '⚡' },
             { id: 'pyq', label: '📝' },
             { id: 'formulas', label: '📐' },
+            { id: 'mindmaps', label: '🧠' },
             { id: 'emergency', label: '🚨' },
             { id: 'writing', label: '✍️' },
             { id: 'mock', label: '📋' },
+            { id: 'recorder', label: '🎙️' },
             { id: 'diagrams', label: '📊' },
             { id: 'mistakes', label: '⚠️' },
             { id: 'analytics', label: '📈' },
@@ -2975,6 +3601,8 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         {activeTab === 'emergency' && renderEmergency()}
         {activeTab === 'writing' && renderWriting()}
         {activeTab === 'mock' && renderMockTests()}
+        {activeTab === 'mindmaps' && renderMindMaps()}
+        {activeTab === 'recorder' && renderVoiceRecorder()}
         {activeTab === 'diagrams' && renderDiagrams()}
         {activeTab === 'mistakes' && renderMistakes()}
         {activeTab === 'analytics' && renderAnalytics()}
