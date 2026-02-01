@@ -251,6 +251,30 @@ const QUICK_FLASHCARDS: QuickFlashcard[] = [
   { id: 'psy1', subjectId: 'psy', subject: 'Psychology', question: 'IQ Formula?', answer: 'IQ = (Mental Age / Chronological Age) × 100\nAverage IQ = 100\nGenius: Above 140\nMentally Challenged: Below 70', difficulty: 'medium', confidence: 0 },
   { id: 'psy2', subjectId: 'psy', subject: 'Psychology', question: 'Defense Mechanisms (Freud)?', answer: '1. Repression - Pushing to unconscious\n2. Denial - Refusing to accept\n3. Projection - Blaming others\n4. Rationalization - Logical excuses\n5. Sublimation - Positive outlet', difficulty: 'hard', confidence: 0 },
   { id: 'psy3', subjectId: 'psy', subject: 'Psychology', question: 'Types of Memory?', answer: '1. Sensory Memory (seconds)\n2. Short-term Memory (20-30 sec)\n3. Long-term Memory (permanent)\nTypes: Episodic, Semantic, Procedural', difficulty: 'medium', confidence: 0 },
+  
+  // Sanskrit Flashcards
+  { id: 'san1', subjectId: 'san', subject: 'Sanskrit', question: 'संधि के कितने प्रकार हैं?', answer: 'तीन प्रकार:\n1. स्वर संधि (अच् संधि)\n2. व्यञ्जन संधि (हल् संधि)\n3. विसर्ग संधि', difficulty: 'medium', confidence: 0 },
+  { id: 'san2', subjectId: 'san', subject: 'Sanskrit', question: 'गुण संधि का नियम?', answer: 'अ/आ + इ/ई = ए\nअ/आ + उ/ऊ = ओ\nअ/आ + ऋ = अर्\nउदाहरण: देव + इन्द्र = देवेन्द्र', difficulty: 'medium', confidence: 0 },
+  { id: 'san3', subjectId: 'san', subject: 'Sanskrit', question: 'वृद्धि संधि का नियम?', answer: 'अ/आ + ए/ऐ = ऐ\nअ/आ + ओ/औ = औ\nउदाहरण: एक + एक = एकैक\nमहा + औषधि = महौषधि', difficulty: 'hard', confidence: 0 },
+  { id: 'san4', subjectId: 'san', subject: 'Sanskrit', question: 'लट् लकार (वर्तमान काल) - भू धातु?', answer: 'एकवचन: भवति, भवतः, भवन्ति\nद्विवचन: भवतः, भवतः, भवतः\nबहुवचन: भवन्ति, भवन्ति, भवन्ति', difficulty: 'medium', confidence: 0 },
+  { id: 'san5', subjectId: 'san', subject: 'Sanskrit', question: 'राम शब्द रूप (पुल्लिङ्ग)?', answer: 'प्रथमा: रामः, रामौ, रामाः\nद्वितीया: रामम्, रामौ, रामान्\nतृतीया: रामेण, रामाभ्याम्, रामैः', difficulty: 'hard', confidence: 0 },
+  { id: 'san6', subjectId: 'san', subject: 'Sanskrit', question: 'विभक्ति कितनी होती हैं?', answer: 'सात विभक्ति:\n1. प्रथमा (कर्ता)\n2. द्वितीया (कर्म)\n3. तृतीया (करण)\n4. चतुर्थी (सम्प्रदान)\n5. पञ्चमी (अपादान)\n6. षष्ठी (सम्बन्ध)\n7. सप्तमी (अधिकरण)', difficulty: 'easy', confidence: 0 },
+  { id: 'san7', subjectId: 'san', subject: 'Sanskrit', question: 'प्रसिद्ध श्लोक - विद्या ददाति विनयम्?', answer: 'विद्या ददाति विनयं विनयाद्याति पात्रताम्।\nपात्रत्वाद्धनमाप्नोति धनाद्धर्मं ततः सुखम्॥\nअर्थ: विद्या से विनय, विनय से पात्रता, पात्रता से धन, धन से धर्म, धर्म से सुख मिलता है।', difficulty: 'medium', confidence: 0 },
+  { id: 'san8', subjectId: 'san', subject: 'Sanskrit', question: 'लृट् लकार (भविष्यत् काल) - पठ् धातु?', answer: 'एकवचन: पठिष्यति, पठिष्यतः, पठिष्यन्ति\nप्रथम पुरुष: पठिष्यति\nमध्यम पुरुष: पठिष्यसि\nउत्तम पुरुष: पठिष्यामि', difficulty: 'hard', confidence: 0 },
+  
+  // Marathi Flashcards
+  { id: 'mar1', subjectId: 'mar', subject: 'Marathi', question: 'संधी म्हणजे काय?', answer: 'दोन शब्द एकत्र येताना त्यांच्यातील स्वरांचा किंवा व्यंजनांचा मेळ होणे म्हणजे संधी.\nप्रकार: स्वरसंधी, व्यंजनसंधी, विसर्गसंधी', difficulty: 'medium', confidence: 0 },
+  { id: 'mar2', subjectId: 'mar', subject: 'Marathi', question: 'समास म्हणजे काय?', answer: 'दोन किंवा अधिक शब्दांचे एकत्रीकरण करून एक शब्द बनवणे.\nप्रकार: अव्ययीभाव, तत्पुरुष, द्वंद्व, बहुव्रीही, कर्मधारय, द्विगू', difficulty: 'medium', confidence: 0 },
+  { id: 'mar3', subjectId: 'mar', subject: 'Marathi', question: 'अलंकार कोणते?', answer: 'शब्दालंकार: अनुप्रास, यमक\nअर्थालंकार: उपमा, रूपक, उत्प्रेक्षा, अतिशयोक्ती, दृष्टांत', difficulty: 'hard', confidence: 0 },
+  { id: 'mar4', subjectId: 'mar', subject: 'Marathi', question: 'पत्र लेखनाचे प्रकार?', answer: '1. औपचारिक पत्र (अर्ज, तक्रार)\n2. अनौपचारिक पत्र (मित्राला, नातेवाईकांना)\n3. व्यावसायिक पत्र', difficulty: 'easy', confidence: 0 },
+  
+  // More Economics
+  { id: 'eco6', subjectId: 'eco', subject: 'Economics', question: 'Features of Monopoly?', answer: '1. Single Seller\n2. No close substitutes\n3. Price Maker\n4. Barriers to entry\n5. Firm = Industry\n6. Abnormal profits in long run', difficulty: 'medium', confidence: 0 },
+  { id: 'eco7', subjectId: 'eco', subject: 'Economics', question: 'Factors affecting Elasticity?', answer: '1. Nature of commodity\n2. Availability of substitutes\n3. Number of uses\n4. Proportion of income spent\n5. Time period\n6. Habits & customs', difficulty: 'hard', confidence: 0 },
+  
+  // More Political Science
+  { id: 'pol6', subjectId: 'pol', subject: 'Political Science', question: 'Organs of UN?', answer: '6 Principal Organs:\n1. General Assembly\n2. Security Council\n3. Economic & Social Council\n4. Trusteeship Council\n5. International Court of Justice\n6. Secretariat', difficulty: 'medium', confidence: 0 },
+  { id: 'pol7', subjectId: 'pol', subject: 'Political Science', question: 'Directive Principles (DPSP) Articles?', answer: 'Article 36-51\nPart IV of Constitution\nNot justiciable (not enforceable by court)\nGovernment shall endeavour to follow', difficulty: 'medium', confidence: 0 },
 ];
 
 // PYQ Important Questions
@@ -289,6 +313,33 @@ const PYQ_QUESTIONS: PYQItem[] = [
   { id: 'pyq-eng3', subjectId: 'eng', year: '2023', question: 'Change the voice: The students completed the project.', marks: 2, type: 'short', practiced: false },
   { id: 'pyq-eng4', subjectId: 'eng', year: '2023', question: 'Convert to indirect speech: She said, "I am reading a book."', marks: 2, type: 'short', practiced: false },
   { id: 'pyq-eng5', subjectId: 'eng', year: '2022', question: 'Write a précis of the given passage.', marks: 4, type: 'short', practiced: false },
+  
+  // Sanskrit PYQs
+  { id: 'pyq-san1', subjectId: 'san', year: '2024', question: 'निम्नलिखित श्लोक का हिन्दी में अनुवाद कीजिए।', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-san2', subjectId: 'san', year: '2024', question: 'गुण संधि के पाँच उदाहरण लिखिए।', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-san3', subjectId: 'san', year: '2023', question: 'राम शब्द के सभी विभक्ति रूप लिखिए।', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-san4', subjectId: 'san', year: '2023', question: 'लट् लकार में भू धातु के रूप लिखिए।', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-san5', subjectId: 'san', year: '2022', question: 'संधि विच्छेद कीजिए: देवालयः, महौषधिः, नयनम्', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-san6', subjectId: 'san', year: '2024', question: 'विद्या ददाति विनयम् श्लोक का अर्थ स्पष्ट कीजिए।', marks: 8, type: 'long', practiced: false },
+  
+  // Hindi PYQs
+  { id: 'pyq-hin1', subjectId: 'hin', year: '2024', question: 'किसी भी एक विषय पर निबंध लिखिए: शिक्षा का महत्व / पर्यावरण प्रदूषण', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-hin2', subjectId: 'hin', year: '2024', question: 'प्रधानाचार्य को अवकाश के लिए प्रार्थना पत्र लिखिए।', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-hin3', subjectId: 'hin', year: '2023', question: 'निम्नलिखित शब्दों का संधि-विच्छेद कीजिए।', marks: 4, type: 'short', practiced: false },
+  { id: 'pyq-hin4', subjectId: 'hin', year: '2023', question: 'समास के प्रकारों को उदाहरण सहित समझाइए।', marks: 8, type: 'long', practiced: false },
+  
+  // Marathi PYQs
+  { id: 'pyq-mar1', subjectId: 'mar', year: '2024', question: 'खालील विषयावर निबंध लिहा: शिक्षणाचे महत्त्व', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-mar2', subjectId: 'mar', year: '2024', question: 'मुख्याध्यापकांना सुट्टीसाठी अर्ज लिहा।', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-mar3', subjectId: 'mar', year: '2023', question: 'संधी व समास यांतील फरक स्पष्ट करा।', marks: 4, type: 'short', practiced: false },
+  
+  // Sociology PYQs
+  { id: 'pyq-soc1', subjectId: 'soc', year: '2024', question: 'Explain the concept of Social Stratification with examples.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-soc2', subjectId: 'soc', year: '2023', question: 'Distinguish between Primary and Secondary Groups.', marks: 4, type: 'short', practiced: false },
+  
+  // Psychology PYQs
+  { id: 'pyq-psy1', subjectId: 'psy', year: '2024', question: 'Explain the concept of Intelligence and its measurement.', marks: 8, type: 'long', practiced: false },
+  { id: 'pyq-psy2', subjectId: 'psy', year: '2023', question: 'Describe Defense Mechanisms according to Freud.', marks: 8, type: 'long', practiced: false },
 ];
 
 // Exam Day Checklist
@@ -336,6 +387,21 @@ const FORMULA_BANK: FormulaEntry[] = [
   // Political Science Key Numbers
   { subjectId: 'pol', topic: 'Constitutional Numbers', formula: 'Part I-XXII | 395 Articles | 12 Schedules', explanation: 'Structure of Indian Constitution' },
   { subjectId: 'pol', topic: 'UN Key Numbers', formula: '193 Members | 5 P5 | 15 UNSC | 6 Principal Organs', explanation: 'UN Structure numbers to remember' },
+  
+  // Sanskrit Grammar Rules
+  { subjectId: 'san', topic: 'गुण संधि', formula: 'अ/आ + इ/ई = ए | अ/आ + उ/ऊ = ओ | अ/आ + ऋ = अर्', explanation: 'When अ/आ meets इ/ई/उ/ऊ/ऋ', example: 'देव + इन्द्र = देवेन्द्र, महा + उत्सव = महोत्सव' },
+  { subjectId: 'san', topic: 'वृद्धि संधि', formula: 'अ/आ + ए/ऐ = ऐ | अ/आ + ओ/औ = औ', explanation: 'When अ/आ meets ए/ऐ/ओ/औ', example: 'एक + एक = एकैक, महा + औषधि = महौषधि' },
+  { subjectId: 'san', topic: 'दीर्घ संधि', formula: 'अ + अ = आ | इ + इ = ई | उ + उ = ऊ', explanation: 'Same vowels combine to become long', example: 'विद्या + आलय = विद्यालय' },
+  { subjectId: 'san', topic: 'यण् संधि', formula: 'इ/ई + स्वर = य् | उ/ऊ + स्वर = व् | ऋ + स्वर = र्', explanation: 'इ/उ/ऋ before different vowel', example: 'इति + आदि = इत्यादि, सु + आगतम् = स्वागतम्' },
+  { subjectId: 'san', topic: 'विभक्ति सूत्र', formula: 'प्र-द्वि-तृ-च-पं-ष-स (1-7)', explanation: 'प्रथमा, द्वितीया, तृतीया, चतुर्थी, पञ्चमी, षष्ठी, सप्तमी' },
+  { subjectId: 'san', topic: 'लकार (काल)', formula: 'लट् = वर्तमान | लृट् = भविष्यत् | लङ् = अनद्यतन भूत', explanation: 'Tenses in Sanskrit verbs' },
+  
+  // Hindi Grammar
+  { subjectId: 'hin', topic: 'स्वर संधि प्रकार', formula: 'दीर्घ | गुण | वृद्धि | यण | अयादि', explanation: '5 types of vowel sandhi in Hindi', example: 'विद्या+आलय=विद्यालय (दीर्घ)' },
+  { subjectId: 'hin', topic: 'समास प्रकार', formula: 'अव्ययी | तत्पुरुष | कर्मधारय | द्विगु | द्वंद्व | बहुव्रीहि', explanation: '6 types of compound words' },
+  
+  // Marathi Grammar
+  { subjectId: 'mar', topic: 'विभक्ती प्रत्यय', formula: 'प्रथमा (कर्ता) → सप्तमी (अधिकरण)', explanation: '7 विभक्ती in Marathi grammar', example: 'राम-ने-ला-स-हून-चा-त' },
 ];
 
 // Motivation Quotes
@@ -355,6 +421,12 @@ const MOTIVATION_QUOTES: MotivationQuote[] = [
   { text: "Success doesn't just find you. You have to go out and get it.", author: "Unknown", category: 'success' },
   { text: "The harder you work, the luckier you get.", author: "Gary Player", category: 'exam' },
   { text: "Don't stop when you're tired. Stop when you're done.", author: "Unknown", category: 'persistence' },
+  { text: "आज की मेहनत, कल की कामयाबी", author: "Hindi Proverb", category: 'exam' },
+  { text: "विद्या ददाति विनयम् - Knowledge gives humility", author: "Sanskrit Shlok", category: 'success' },
+  { text: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन - Focus on action, not results", author: "Bhagavad Gita", category: 'focus' },
+  { text: "90% is not a dream, it's a decision!", author: "7k-HSC", category: 'exam' },
+  { text: "Every chapter you complete is one step closer to success.", author: "7k-HSC", category: 'persistence' },
+  { text: "Board exams don't define you, but your preparation shows your dedication.", author: "7k-HSC", category: 'exam' },
 ];
 
 // Last Minute Revision Points (Emergency Mode)
@@ -423,6 +495,22 @@ const LAST_MINUTE_POINTS: Record<string, string[]> = {
     '💭 Freud: Id, Ego, Superego',
     '🧩 Personality: Introvert vs Extrovert',
   ],
+  'san': [
+    '📜 संधि: स्वर + व्यंजन + विसर्ग (3 प्रकार)',
+    '🔤 गुण संधि: अ/आ + इ/ई = ए | अ/आ + उ/ऊ = ओ',
+    '🔤 वृद्धि संधि: अ/आ + ए/ऐ = ऐ | अ/आ + ओ/औ = औ',
+    '📝 7 विभक्ति: प्रथमा → सप्तमी (कर्ता से अधिकरण)',
+    '🕉️ श्लोक: विद्या ददाति विनयम् - विद्या से विनय मिलता है',
+    '📖 धातु रूप: लट् (वर्तमान), लृट् (भविष्यत्), लङ् (भूत)',
+  ],
+  'mar': [
+    '📝 संधी: स्वरसंधी, व्यंजनसंधी, विसर्गसंधी',
+    '📖 समास: अव्ययीभाव, तत्पुरुष, द्वंद्व, बहुव्रीही',
+    '✨ अलंकार: उपमा, रूपक, अनुप्रास, यमक',
+    '✉️ पत्र: औपचारिक (अर्ज), अनौपचारिक (मित्राला)',
+    '📜 व्याकरण: विभक्ती, प्रत्यय, उपसर्ग',
+    '✍️ निबंध: प्रस्तावना → मुख्य भाग → समारोप',
+  ],
 };
 
 // Writing Practice Topics
@@ -435,10 +523,16 @@ const WRITING_TOPICS: Record<string, { type: string; topics: string[] }[]> = {
   'hin': [
     { type: 'essay', topics: ['शिक्षा का महत्व', 'पर्यावरण प्रदूषण', 'डिजिटल इंडिया', 'युवा और सोशल मीडिया'] },
     { type: 'letter', topics: ['प्रधानाचार्य को प्रार्थना पत्र', 'संपादक को पत्र', 'मित्र को पत्र'] },
+    { type: 'grammar', topics: ['संधि विच्छेद', 'समास पहचान', 'वाक्य शुद्धि'] },
   ],
   'mar': [
     { type: 'essay', topics: ['शिक्षणाचे महत्त्व', 'पर्यावरण प्रदूषण', 'माझा आवडता नेता'] },
     { type: 'letter', topics: ['मुख्याध्यापकांना अर्ज', 'मित्राला पत्र'] },
+  ],
+  'san': [
+    { type: 'shlok', topics: ['विद्या ददाति विनयम्', 'परोपकाराय सतां विभूतयः', 'सत्यमेव जयते'] },
+    { type: 'translation', topics: ['श्लोक से हिंदी अनुवाद', 'हिंदी से संस्कृत अनुवाद'] },
+    { type: 'grammar', topics: ['संधि विच्छेद', 'शब्द रूप', 'धातु रूप'] },
   ],
 };
 
