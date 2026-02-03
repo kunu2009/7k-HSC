@@ -205,18 +205,21 @@ interface SubjectMarkingScheme {
 
 interface PassageQuestion {
   id: string;
+  questionType: 'A1' | 'A2' | 'A3' | 'A4' | 'A5';
+  activityType: string; // e.g., "Complete the sentences", "True/False", "Personal Response", "Grammar", "Mind Map"
   question: string;
   marks: number;
-  type: 'factual' | 'inference' | 'vocabulary' | 'grammar' | 'summary';
+  options?: string[]; // For MCQ, True/False, Match columns
   answer: string;
+  subQuestions?: { q: string; a: string }[]; // For activities with multiple parts
 }
 
 interface EnglishPassage {
   id: string;
   title: string;
   type: 'seen' | 'unseen';
-  source: string; // Book name or "Board Paper 2023" etc.
-  year?: string; // For board paper passages
+  source: string;
+  year?: string;
   passage: string;
   wordCount: number;
   difficulty: 'easy' | 'medium' | 'hard';
@@ -1587,47 +1590,148 @@ const generatePhaseTasks = (): PhaseTask[] => {
 };
 
 // English Passage Practice - Seen & Unseen (From Board Papers & Textbooks)
+// Following Maharashtra HSC Board Paper Pattern: A1-A5 Activities
 const ENGLISH_PASSAGES: EnglishPassage[] = [
   // ===== SEEN PASSAGES (From Textbook - Yuvakbharati) =====
   {
     id: 'seen-1',
     title: 'An Astrologer\'s Day - R.K. Narayan',
     type: 'seen',
-    source: 'Yuvakbharati - Section I',
+    source: 'Yuvakbharati - Prose',
     passage: `He had a working analysis of mankind's troubles: marriage, money, and the tangles of human ties. Long practice had sharpened his perception. Within five minutes he understood what was wrong. He charged three pies per question, never opened his mouth till the other had spoken for at least ten minutes, which provided him enough stuff for a dozen answers and advices. When he told the person before him, gazing at his palm, "In many ways you are not getting the fullest results for your efforts," nine out of ten were disposed to agree with him. Or he questioned: "Is there any woman in your family, maybe even a distant relative who is not well disposed towards you?" Or he gave an analysis of character: "Most of your troubles are due to your nature. How can you be otherwise with Saturn where he is?"`,
     wordCount: 145,
     difficulty: 'medium',
     questions: [
-      { id: 'seen-1-q1', question: 'What were the three main categories of mankind\'s troubles according to the astrologer?', marks: 2, type: 'factual', answer: 'Marriage, money, and the tangles of human ties.' },
-      { id: 'seen-1-q2', question: 'How did the astrologer gather information before giving advice?', marks: 2, type: 'inference', answer: 'He never opened his mouth till the other person had spoken for at least ten minutes, which provided him enough material for answers.' },
-      { id: 'seen-1-q3', question: 'Find the word from the passage which means "to make sharp".', marks: 1, type: 'vocabulary', answer: 'Sharpened' },
-      { id: 'seen-1-q4', question: 'What strategy did the astrologer use to make people agree with him?', marks: 2, type: 'inference', answer: 'He made vague, general statements like "you are not getting the fullest results for your efforts" which most people could relate to.' },
+      { 
+        id: 'seen-1-A1', 
+        questionType: 'A1', 
+        activityType: 'Complete the sentences',
+        question: 'Complete the following sentences:',
+        marks: 2, 
+        subQuestions: [
+          { q: 'The astrologer charged _____ per question.', a: 'three pies' },
+          { q: 'Long practice had sharpened his _____.', a: 'perception' },
+          { q: 'He never opened his mouth till the other had spoken for at least _____ minutes.', a: 'ten' },
+          { q: 'Nine out of ten were disposed to _____ with him.', a: 'agree' },
+        ],
+        answer: 'See sub-questions above'
+      },
+      { 
+        id: 'seen-1-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What were the three main categories of mankind\'s troubles according to the astrologer? How did he use his understanding of these troubles?',
+        marks: 2, 
+        answer: 'The three main categories were: (1) Marriage, (2) Money, and (3) The tangles of human ties. He used this understanding to give vague, general statements that most people could relate to, making them agree with his analysis.'
+      },
+      { 
+        id: 'seen-1-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'Do you think the astrologer was genuine or a clever fraud? Give your personal opinion with reasons.',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: The astrologer appears to be a clever fraud rather than genuine. He uses psychological tricks - waiting for people to speak first to gather information, making vague statements that apply to everyone, and using astrology jargon to appear credible. However, one could argue he provides emotional comfort to people.'
+      },
+      { 
+        id: 'seen-1-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find from the passage words that mean: (i) confused situations (ii) ability to understand',
+        marks: 1, 
+        answer: '(i) tangles (ii) perception'
+      },
+      { 
+        id: 'seen-1-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Word Formation',
+        question: 'Make sentences using the noun forms of: (i) disposed (ii) questioned',
+        marks: 1, 
+        answer: '(i) disposition - His cheerful disposition made him popular. (ii) question - The question was difficult to answer.'
+      },
+      { 
+        id: 'seen-1-A5', 
+        questionType: 'A5', 
+        activityType: 'Mind Map',
+        question: 'Complete the Mind Map showing the astrologer\'s techniques:',
+        marks: 2, 
+        answer: 'ASTROLOGER\'S TECHNIQUES → [1. Listened for 10 mins first] [2. Made vague statements] [3. Used general troubles (marriage/money/family)] [4. Blamed Saturn/planets] [5. Asked leading questions about family]'
+      },
     ],
-    tips: ['Focus on the astrologer\'s clever techniques', 'Understand how he reads people\'s psychology', 'Note the irony in his "profession"'],
+    tips: ['Focus on the astrologer\'s clever psychology', 'For A3, give YOUR opinion with reasons', 'Mind map should have at least 4-5 branches'],
     practiced: false,
   },
   {
     id: 'seen-2',
     title: 'On Saying Please - A.G. Gardiner',
     type: 'seen',
-    source: 'Yuvakbharati - Section I',
+    source: 'Yuvakbharati - Prose',
     passage: `A few weeks ago I was at a well-known restaurant. A lift-man refused to take me up in the lift because I did not say "please". There was no legal compulsion to say it, yet he refused. But when I reflect upon this refusal, I see in it a gesture of self-respect, and a reminder to the community that good manners are essential to social intercourse. The law cannot compel us to be civil but social pressure can. We have no right to inflict physical violence but we have no right to inflict spiritual violence either. The words "please" and "thank you" are not merely civilities. They are the small change of social intercourse that keeps the machinery of life running smoothly.`,
     wordCount: 128,
     difficulty: 'medium',
     questions: [
-      { id: 'seen-2-q1', question: 'Why did the lift-man refuse to take the author up?', marks: 2, type: 'factual', answer: 'Because the author did not say "please".' },
-      { id: 'seen-2-q2', question: 'According to the passage, what are "please" and "thank you" compared to?', marks: 2, type: 'inference', answer: 'They are compared to "small change of social intercourse" that keeps the machinery of life running smoothly.' },
-      { id: 'seen-2-q3', question: 'Find a word from the passage that means "conversation or dealings between people".', marks: 1, type: 'vocabulary', answer: 'Intercourse' },
-      { id: 'seen-2-q4', question: 'What two types of violence does the author mention?', marks: 2, type: 'factual', answer: 'Physical violence and spiritual violence.' },
+      { 
+        id: 'seen-2-A1', 
+        questionType: 'A1', 
+        activityType: 'True or False',
+        question: 'State whether True or False:',
+        marks: 2, 
+        options: [
+          'There is legal compulsion to say "please". - FALSE',
+          'The lift-man showed self-respect by his refusal. - TRUE',
+          'Law can compel us to be civil. - FALSE',
+          '"Please" and "thank you" are just empty formalities. - FALSE'
+        ],
+        answer: '1. FALSE 2. TRUE 3. FALSE 4. FALSE'
+      },
+      { 
+        id: 'seen-2-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What are the two types of violence mentioned? What comparison does the author make about "please" and "thank you"?',
+        marks: 2, 
+        answer: 'The two types of violence are: (1) Physical violence (2) Spiritual violence. The author compares "please" and "thank you" to "small change of social intercourse" - just as small coins keep daily transactions running, these words keep social interactions smooth.'
+      },
+      { 
+        id: 'seen-2-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'Describe an incident from your life where good manners (or lack of them) made a significant difference.',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: Once at a crowded bus stop, an elderly person was struggling. When I said "Please let this uncle sit" politely, people immediately made space. However, another time when someone rudely pushed, it led to an argument. This showed me that courtesy opens doors while rudeness closes them.'
+      },
+      { 
+        id: 'seen-2-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words from the passage meaning: (i) to force (ii) interaction between people',
+        marks: 1, 
+        answer: '(i) compel (ii) intercourse'
+      },
+      { 
+        id: 'seen-2-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Do as Directed',
+        question: 'Rewrite: "The law cannot compel us to be civil." (Begin with: We...)',
+        marks: 1, 
+        answer: 'We cannot be compelled by the law to be civil.'
+      },
+      { 
+        id: 'seen-2-A5', 
+        questionType: 'A5', 
+        activityType: 'Summary',
+        question: 'Write a brief summary of the passage in about 50 words.',
+        marks: 2, 
+        answer: 'The author describes how a lift-man refused service because he didn\'t say "please". He argues that while law cannot enforce courtesy, social pressure can. Words like "please" and "thank you" prevent spiritual violence and act as the lubricant that keeps social machinery running smoothly.'
+      },
     ],
-    tips: ['Understand the importance of courtesy', 'Focus on the metaphor of "small change"', 'Note the difference between legal and moral obligations'],
+    tips: ['Remember: civility vs legality theme', 'A3 must be personal - use "I" and real/realistic examples', 'Summary should be within word limit'],
     practiced: false,
   },
   {
     id: 'seen-3',
     title: 'Indian Weavers - Sarojini Naidu',
     type: 'seen',
-    source: 'Yuvakbharati - Poetry Section',
+    source: 'Yuvakbharati - Poetry',
     passage: `Weavers, weaving at break of day,
 Why do you weave a garment so gay?
 Blue as the wing of a halcyon wild,
@@ -1645,214 +1749,71 @@ We weave a dead man's funeral shroud.`,
     wordCount: 98,
     difficulty: 'easy',
     questions: [
-      { id: 'seen-3-q1', question: 'What three stages of life are represented in the poem?', marks: 2, type: 'factual', answer: 'Birth (new-born child), Marriage (queen\'s marriage veil), and Death (funeral shroud).' },
-      { id: 'seen-3-q2', question: 'What colors are associated with birth in the poem?', marks: 1, type: 'factual', answer: 'Blue (as the wing of a halcyon wild).' },
-      { id: 'seen-3-q3', question: 'What is a "halcyon"?', marks: 1, type: 'vocabulary', answer: 'A kingfisher bird known for its bright blue color.' },
-      { id: 'seen-3-q4', question: 'How does the mood change from the first stanza to the last?', marks: 2, type: 'inference', answer: 'The mood changes from joyful (gay garment for birth) to solemn and still (funeral shroud in moonlight chill).' },
+      { 
+        id: 'seen-3-A1', 
+        questionType: 'A1', 
+        activityType: 'Match the Columns',
+        question: 'Match the following:',
+        marks: 2, 
+        options: [
+          'Break of day → Birth/New-born child',
+          'Fall of night → Marriage',
+          'Moonlight chill → Death',
+          'Blue color → Halcyon/Kingfisher',
+          'Purple and green → Peacock plumes',
+          'White color → Funeral shroud'
+        ],
+        answer: 'Break of day - Birth | Fall of night - Marriage | Moonlight chill - Death | Blue - Halcyon | Purple/Green - Peacock | White - Funeral'
+      },
+      { 
+        id: 'seen-3-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'Explain the symbolic significance of the three times of day mentioned in the poem.',
+        marks: 2, 
+        answer: 'Break of day (morning) symbolizes Birth - new beginnings, hope, freshness of life. Fall of night (evening) symbolizes Marriage - the peak/fullness of life, celebration. Moonlight chill (night) symbolizes Death - cold, end of life journey. Together they represent the complete cycle of human life.'
+      },
+      { 
+        id: 'seen-3-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'Which stage of life (birth, marriage, death) do you think is most beautifully described in the poem? Why?',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: I find the marriage stanza most beautiful because the imagery of peacock plumes with purple and green creates vivid colors, and calling it "marriage-veils of a queen" elevates an ordinary bride to royalty, showing the importance of marriage in Indian culture.'
+      },
+      { 
+        id: 'seen-3-A4a', 
+        questionType: 'A4', 
+        activityType: 'Poetic Devices',
+        question: 'Identify the figure of speech: "Blue as the wing of a halcyon wild"',
+        marks: 1, 
+        answer: 'Simile - comparison using "as" between the blue color and halcyon\'s wing'
+      },
+      { 
+        id: 'seen-3-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Rhyme Scheme',
+        question: 'Write the rhyme scheme of the first stanza.',
+        marks: 1, 
+        answer: 'AABB (day-gay, wild-child)'
+      },
+      { 
+        id: 'seen-3-A5', 
+        questionType: 'A5', 
+        activityType: 'Mind Map - Life Cycle',
+        question: 'Create a mind map showing: Stage of Life → Time of Day → Color → Garment',
+        marks: 2, 
+        answer: 'BIRTH → Morning → Blue → Baby robes | MARRIAGE → Evening → Purple/Green → Marriage veil | DEATH → Night → White → Funeral shroud'
+      },
     ],
-    tips: ['Memorize the color symbolism', 'Understand the life cycle metaphor', 'Focus on poetic devices - imagery, symbolism'],
+    tips: ['Memorize the color symbolism', 'Know figures of speech', 'Rhyme scheme is always asked'],
     practiced: false,
   },
   {
     id: 'seen-4',
-    title: 'The Inchcape Rock - Robert Southey',
-    type: 'seen',
-    source: 'Yuvakbharati - Poetry Section',
-    passage: `No stir in the air, no stir in the sea,
-The ship was still as she could be,
-Her sails from heaven received no motion,
-Her keel was steady in the ocean.
-
-The Abbot of Aberbrothok
-Had placed that bell on the Inchcape Rock;
-On a buoy in the storm it floated and swung,
-And over the waves its warning rung.
-
-When the Rock was hid by the surge's swell,
-The mariners heard the warning bell;
-And then they knew the perilous Rock,
-And blest the Abbot of Aberbrothok.`,
-    wordCount: 95,
-    difficulty: 'medium',
-    questions: [
-      { id: 'seen-4-q1', question: 'Who placed the bell on the Inchcape Rock and why?', marks: 2, type: 'factual', answer: 'The Abbot of Aberbrothok placed the bell to warn sailors about the dangerous rock hidden under water.' },
-      { id: 'seen-4-q2', question: 'What was the condition of the sea in the opening stanza?', marks: 2, type: 'factual', answer: 'The sea was completely calm - no stir in air or sea, the ship was still, sails received no motion.' },
-      { id: 'seen-4-q3', question: 'Find the word meaning "dangerous".', marks: 1, type: 'vocabulary', answer: 'Perilous' },
-      { id: 'seen-4-q4', question: 'Why did the mariners bless the Abbot?', marks: 2, type: 'inference', answer: 'Because the warning bell saved them from crashing into the hidden dangerous rock.' },
-    ],
-    tips: ['Learn the complete story of Sir Ralph the Rover', 'Understand poetic justice theme', 'Focus on rhyme scheme and imagery'],
-    practiced: false,
-  },
-  {
-    id: 'seen-5',
-    title: 'The Sign of Four - Arthur Conan Doyle',
-    type: 'seen',
-    source: 'Yuvakbharati - Novel Section',
-    passage: `Sherlock Holmes took his bottle from the corner of the mantelpiece, and his hypodermic syringe from its neat morocco case. With his long, white, nervous fingers he adjusted the delicate needle and rolled back his left shirtcuff. For some little time his eyes rested thoughtfully upon the sinewy forearm and wrist, all dotted and scarred with innumerable puncture-marks. Finally, he thrust the sharp point home, pressed down the tiny piston, and sank back into the velvet-lined armchair with a long sigh of satisfaction.`,
-    wordCount: 90,
-    difficulty: 'hard',
-    questions: [
-      { id: 'seen-5-q1', question: 'What habit of Holmes is described in this passage?', marks: 2, type: 'inference', answer: 'His drug addiction (cocaine/morphine injection habit).' },
-      { id: 'seen-5-q2', question: 'What evidence shows this was not the first time Holmes did this?', marks: 2, type: 'inference', answer: 'His arm was "dotted and scarred with innumerable puncture-marks".' },
-      { id: 'seen-5-q3', question: 'Find a word meaning "made of muscle, tough".', marks: 1, type: 'vocabulary', answer: 'Sinewy' },
-      { id: 'seen-5-q4', question: 'What is a "morocco case"?', marks: 1, type: 'vocabulary', answer: 'A case made of fine goatskin leather.' },
-    ],
-    tips: ['Understand Holmes\' complex character', 'Note the detailed description technique', 'This passage often appears in board exams'],
-    practiced: false,
-  },
-  
-  // ===== UNSEEN PASSAGES (From Previous Board Papers) =====
-  {
-    id: 'unseen-2023-1',
-    title: 'The Power of Reading',
-    type: 'unseen',
-    source: 'HSC Board Paper',
-    year: '2023',
-    passage: `Reading is to the mind what exercise is to the body. It strengthens our mental muscles, expands our vocabulary, and opens windows to worlds we might never physically visit. In today's digital age, where short attention spans are the norm, reading long-form content is becoming increasingly rare. Yet, research consistently shows that those who read regularly demonstrate better analytical thinking, improved memory, and enhanced empathy. Unlike passive entertainment like television, reading is an active process that engages our imagination, forcing us to create mental images and make connections. The benefits extend beyond cognition; regular readers report lower stress levels and better sleep quality.`,
-    wordCount: 105,
-    difficulty: 'medium',
-    questions: [
-      { id: 'unseen-2023-1-q1', question: 'What comparison does the author make in the opening line?', marks: 2, type: 'factual', answer: 'Reading is to the mind what exercise is to the body.' },
-      { id: 'unseen-2023-1-q2', question: 'Why is reading becoming rare in the digital age?', marks: 2, type: 'inference', answer: 'Because of short attention spans that have become the norm in the digital age.' },
-      { id: 'unseen-2023-1-q3', question: 'How is reading different from watching television according to the passage?', marks: 2, type: 'inference', answer: 'Reading is an active process that engages imagination and forces mental creation, while television is passive entertainment.' },
-      { id: 'unseen-2023-1-q4', question: 'Find words meaning: (a) understanding others\' feelings (b) related to mental processes', marks: 2, type: 'vocabulary', answer: '(a) Empathy (b) Cognition' },
-    ],
-    tips: ['Read the entire passage once before answering', 'Underline key points', 'For vocabulary, use context clues'],
-    practiced: false,
-  },
-  {
-    id: 'unseen-2023-2',
-    title: 'Environmental Conservation',
-    type: 'unseen',
-    source: 'HSC Board Paper',
-    year: '2023',
-    passage: `The crisis facing our environment is no longer a distant threat but an immediate reality. Glaciers are melting at unprecedented rates, sea levels are rising, and extreme weather events have become commonplace. Yet, amidst this gloom, there are glimmers of hope. Young people worldwide are leading the charge for change, organizing protests, and demanding accountability from governments and corporations. Technology too offers solutions: solar and wind energy are becoming more affordable, electric vehicles are gaining popularity, and innovative carbon capture methods are being developed. The key lies in collective action – every individual choice, from reducing plastic usage to choosing sustainable products, contributes to the larger goal of planetary preservation.`,
-    wordCount: 112,
-    difficulty: 'medium',
-    questions: [
-      { id: 'unseen-2023-2-q1', question: 'What evidence of environmental crisis is mentioned in the passage?', marks: 2, type: 'factual', answer: 'Glaciers melting at unprecedented rates, rising sea levels, and extreme weather events.' },
-      { id: 'unseen-2023-2-q2', question: 'Who is leading the fight for environmental change according to the passage?', marks: 2, type: 'factual', answer: 'Young people worldwide are leading the charge through protests and demanding accountability.' },
-      { id: 'unseen-2023-2-q3', question: 'What technological solutions does the author mention?', marks: 2, type: 'factual', answer: 'Solar and wind energy, electric vehicles, and carbon capture methods.' },
-      { id: 'unseen-2023-2-q4', question: 'Find words meaning: (a) never done before (b) keeping something safe', marks: 2, type: 'vocabulary', answer: '(a) Unprecedented (b) Preservation' },
-    ],
-    tips: ['Environmental topics are common - learn vocabulary', 'Structure your answers in points for clarity'],
-    practiced: false,
-  },
-  {
-    id: 'unseen-2022-1',
-    title: 'The Art of Communication',
-    type: 'unseen',
-    source: 'HSC Board Paper',
-    year: '2022',
-    passage: `Effective communication is the cornerstone of human relationships and professional success. It encompasses not just the words we speak but also our body language, tone, and the ability to listen actively. In an era dominated by text messages and emails, we often forget that these written forms lack the nuances of face-to-face interaction. Misunderstandings proliferate when sarcasm is mistaken for sincerity or when the absence of visual cues leads to misinterpretation. The best communicators understand that listening is as important as speaking. They ask clarifying questions, acknowledge others\' viewpoints, and respond thoughtfully rather than reactively. Developing these skills requires conscious effort and practice but yields dividends in both personal and professional spheres.`,
-    wordCount: 118,
-    difficulty: 'hard',
-    questions: [
-      { id: 'unseen-2022-1-q1', question: 'What aspects does effective communication encompass besides words?', marks: 2, type: 'factual', answer: 'Body language, tone, and the ability to listen actively.' },
-      { id: 'unseen-2022-1-q2', question: 'Why do written communications like texts and emails lead to misunderstandings?', marks: 2, type: 'inference', answer: 'Because they lack nuances of face-to-face interaction, visual cues, and sarcasm can be mistaken for sincerity.' },
-      { id: 'unseen-2022-1-q3', question: 'What qualities do the best communicators possess?', marks: 2, type: 'inference', answer: 'They listen well, ask clarifying questions, acknowledge others\' viewpoints, and respond thoughtfully.' },
-      { id: 'unseen-2022-1-q4', question: 'Find words meaning: (a) spread rapidly (b) subtle differences', marks: 2, type: 'vocabulary', answer: '(a) Proliferate (b) Nuances' },
-    ],
-    tips: ['Communication skills topics are frequent', 'Answer vocabulary questions using context'],
-    practiced: false,
-  },
-  {
-    id: 'unseen-2022-2',
-    title: 'Mental Health Awareness',
-    type: 'unseen',
-    source: 'HSC Board Paper',
-    year: '2022',
-    passage: `Mental health has long been stigmatized in our society, often dismissed as a sign of weakness or something that doesn't require serious attention. However, this perception is rapidly changing. The pandemic brought mental health issues to the forefront, with millions experiencing anxiety, depression, and isolation. Schools and workplaces are now implementing mental wellness programs, and conversations about psychological well-being have become more commonplace. Seeking help from a counselor or therapist is no longer viewed as shameful but as a sign of self-awareness and strength. The journey towards complete destigmatization is long, but every conversation that normalizes mental health struggles brings us closer to a society where emotional well-being is valued equally with physical health.`,
-    wordCount: 120,
-    difficulty: 'medium',
-    questions: [
-      { id: 'unseen-2022-2-q1', question: 'How was mental health traditionally perceived in society?', marks: 2, type: 'factual', answer: 'It was stigmatized, dismissed as a sign of weakness, and not given serious attention.' },
-      { id: 'unseen-2022-2-q2', question: 'What impact did the pandemic have on mental health awareness?', marks: 2, type: 'inference', answer: 'It brought mental health issues to the forefront as millions experienced anxiety, depression, and isolation.' },
-      { id: 'unseen-2022-2-q3', question: 'How is seeking professional help viewed now compared to before?', marks: 2, type: 'inference', answer: 'It is now viewed as a sign of self-awareness and strength, not as shameful.' },
-      { id: 'unseen-2022-2-q4', question: 'Find words meaning: (a) marked with social disgrace (b) removing stigma', marks: 2, type: 'vocabulary', answer: '(a) Stigmatized (b) Destigmatization' },
-    ],
-    tips: ['Mental health is a trending topic - important for 2024 exam', 'Learn related vocabulary'],
-    practiced: false,
-  },
-  {
-    id: 'unseen-2021-1',
-    title: 'Digital Education',
-    type: 'unseen',
-    source: 'HSC Board Paper',
-    year: '2021',
-    passage: `The shift to online education during the pandemic was both a necessity and an experiment on a global scale. While it ensured continuity of learning, it also exposed the deep digital divide that exists in our society. Students in urban areas with stable internet connections and personal devices adapted relatively quickly, while those in rural areas struggled with connectivity issues and lack of resources. However, this challenge also spurred innovation. Educators developed creative solutions, from low-bandwidth teaching tools to phone-based learning platforms. The experience has permanently altered the educational landscape, with hybrid models combining online and offline learning likely to become the norm. The key lesson: technology is a tool, not a replacement for human connection in education.`,
-    wordCount: 122,
-    difficulty: 'medium',
-    questions: [
-      { id: 'unseen-2021-1-q1', question: 'What did the shift to online education expose?', marks: 2, type: 'factual', answer: 'It exposed the deep digital divide in society between urban and rural areas.' },
-      { id: 'unseen-2021-1-q2', question: 'What challenges did rural students face?', marks: 2, type: 'factual', answer: 'Connectivity issues and lack of resources (devices, internet).' },
-      { id: 'unseen-2021-1-q3', question: 'What innovations emerged from these challenges?', marks: 2, type: 'inference', answer: 'Low-bandwidth teaching tools and phone-based learning platforms.' },
-      { id: 'unseen-2021-1-q4', question: 'What is the key lesson mentioned about technology in education?', marks: 2, type: 'inference', answer: 'Technology is a tool, not a replacement for human connection in education.' },
-    ],
-    tips: ['Education-related passages appear frequently', 'Focus on cause-effect relationships'],
-    practiced: false,
-  },
-  {
-    id: 'unseen-2020-1',
-    title: 'Space Exploration',
-    type: 'unseen',
-    source: 'HSC Board Paper',
-    year: '2020',
-    passage: `India's space program has come a long way since its humble beginnings when scientists transported rocket parts on bicycles. Today, ISRO is recognized globally for its cost-effective missions and impressive achievements. The Mars Orbiter Mission, completed at a fraction of the cost of similar Western missions, demonstrated India's technological prowess. The recent Chandrayaan missions have placed India among the elite group of nations with lunar exploration capabilities. Beyond the scientific achievements, the space program serves as an inspiration for millions of young Indians, encouraging them to pursue careers in science and technology. It proves that constraints can breed creativity, and that with determination, nations can achieve the extraordinary.`,
-    wordCount: 110,
-    difficulty: 'easy',
-    questions: [
-      { id: 'unseen-2020-1-q1', question: 'How did India\'s space program begin?', marks: 2, type: 'factual', answer: 'With humble beginnings when scientists transported rocket parts on bicycles.' },
-      { id: 'unseen-2020-1-q2', question: 'What made the Mars Orbiter Mission significant?', marks: 2, type: 'inference', answer: 'It was completed at a fraction of the cost of similar Western missions, demonstrating India\'s technological prowess.' },
-      { id: 'unseen-2020-1-q3', question: 'What impact does the space program have beyond scientific achievements?', marks: 2, type: 'inference', answer: 'It inspires millions of young Indians to pursue careers in science and technology.' },
-      { id: 'unseen-2020-1-q4', question: 'Find words meaning: (a) exceptional skill (b) limitations', marks: 2, type: 'vocabulary', answer: '(a) Prowess (b) Constraints' },
-    ],
-    tips: ['ISRO achievements are common topics', 'Know major missions like Chandrayaan, Mangalyaan'],
-    practiced: false,
-  },
-  {
-    id: 'unseen-2019-1',
-    title: 'Importance of Sports',
-    type: 'unseen',
-    source: 'HSC Board Paper',
-    year: '2019',
-    passage: `Sports education in schools has traditionally been sidelined in favor of academic subjects. However, research increasingly shows that physical activity is not just beneficial for health but also enhances academic performance. Regular exercise improves concentration, memory, and cognitive function. Team sports teach valuable life lessons: cooperation, leadership, handling failure, and graceful winning. Countries that prioritize sports education consistently report better physical and mental health outcomes among their youth. The argument that sports take away time from studies is flawed; in reality, a healthy body supports a healthy mind. Schools must view physical education not as a luxury but as an essential component of holistic development.`,
-    wordCount: 108,
-    difficulty: 'easy',
-    questions: [
-      { id: 'unseen-2019-1-q1', question: 'How has sports education been traditionally treated in schools?', marks: 2, type: 'factual', answer: 'It has been sidelined in favor of academic subjects.' },
-      { id: 'unseen-2019-1-q2', question: 'What benefits of physical activity are mentioned for academics?', marks: 2, type: 'factual', answer: 'Improves concentration, memory, and cognitive function.' },
-      { id: 'unseen-2019-1-q3', question: 'What life lessons do team sports teach?', marks: 2, type: 'factual', answer: 'Cooperation, leadership, handling failure, and graceful winning.' },
-      { id: 'unseen-2019-1-q4', question: 'Why is the argument against sports education called "flawed"?', marks: 2, type: 'inference', answer: 'Because a healthy body supports a healthy mind - physical activity actually improves academic performance.' },
-    ],
-    tips: ['Sports and education balance is a classic topic', 'Remember key benefits for both health and academics'],
-    practiced: false,
-  },
-  {
-    id: 'unseen-2024-1',
-    title: 'Artificial Intelligence and Society',
-    type: 'unseen',
-    source: 'HSC Board Paper',
-    year: '2024',
-    passage: `Artificial Intelligence is no longer the stuff of science fiction; it is deeply integrated into our daily lives. From personalized recommendations on streaming platforms to voice assistants and automated customer service, AI touches almost every aspect of modern existence. While the benefits are undeniable – increased efficiency, personalized experiences, and solutions to complex problems – concerns about job displacement and privacy invasion persist. The ethical dimensions of AI decision-making, particularly in critical areas like healthcare and criminal justice, demand careful consideration. As we stand at this technological crossroads, the choices we make today will shape the relationship between humans and machines for generations to come.`,
-    wordCount: 105,
-    difficulty: 'hard',
-    questions: [
-      { id: 'unseen-2024-1-q1', question: 'Give examples of AI integration in daily life from the passage.', marks: 2, type: 'factual', answer: 'Personalized recommendations on streaming platforms, voice assistants, and automated customer service.' },
-      { id: 'unseen-2024-1-q2', question: 'What concerns about AI are mentioned in the passage?', marks: 2, type: 'factual', answer: 'Job displacement, privacy invasion, and ethical dimensions of AI decision-making.' },
-      { id: 'unseen-2024-1-q3', question: 'In which critical areas does AI decision-making need careful consideration?', marks: 2, type: 'factual', answer: 'Healthcare and criminal justice.' },
-      { id: 'unseen-2024-1-q4', question: 'Find words meaning: (a) removal from position (b) area of junction', marks: 2, type: 'vocabulary', answer: '(a) Displacement (b) Crossroads' },
-    ],
-    tips: ['AI is highly relevant for 2025-26 exams', 'Learn vocabulary related to technology and ethics'],
-    practiced: false,
-  },
-  
-  // ===== MORE SEEN PASSAGES (Additional Textbook Content) =====
-  {
-    id: 'seen-6',
     title: 'Father Returning Home - Dilip Chitre',
     type: 'seen',
-    source: 'Yuvakbharati - Poetry Section',
+    source: 'Yuvakbharati - Poetry',
     passage: `My father travels on the late evening train
 Standing among silent commuters in the yellow light
 Suburbs slide past his unseeing eyes
@@ -1871,63 +1832,808 @@ Dreaming of its mortgage and its new furniture.`,
     wordCount: 115,
     difficulty: 'medium',
     questions: [
-      { id: 'seen-6-q1', question: 'Describe the physical condition of the father as depicted in the poem.', marks: 2, type: 'factual', answer: 'His shirt and pants are soggy, black raincoat stained with mud, bag falling apart, and eyes dimmed by age.' },
-      { id: 'seen-6-q2', question: 'What does the father do after reaching home?', marks: 2, type: 'factual', answer: 'He drinks weak tea, eats a stale chapatti, reads a book, and thinks about the past.' },
-      { id: 'seen-6-q3', question: 'What themes does this poem explore?', marks: 2, type: 'inference', answer: 'Alienation, urban loneliness, generation gap, and the monotony of working-class life.' },
-      { id: 'seen-6-q4', question: 'Find words meaning: (a) people who travel regularly (b) wet and sticky', marks: 2, type: 'vocabulary', answer: '(a) Commuters (b) Soggy' },
+      { 
+        id: 'seen-4-A1', 
+        questionType: 'A1', 
+        activityType: 'Complete the Web',
+        question: 'Complete the web diagram about father\'s condition:',
+        marks: 2, 
+        subQuestions: [
+          { q: 'Clothes condition:', a: 'soggy shirt and pants, muddy raincoat' },
+          { q: 'Bag condition:', a: 'stuffed with books, falling apart' },
+          { q: 'Physical state:', a: 'eyes dimmed by age' },
+          { q: 'Food at home:', a: 'weak tea, stale chapatti' },
+        ],
+        answer: 'See sub-questions'
+      },
+      { 
+        id: 'seen-4-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'Describe the contrast between the father\'s life and "the whole world" as presented in the poem.',
+        marks: 2, 
+        answer: 'The father lives a life of exhaustion and deprivation - traveling in crowded trains, wearing worn-out clothes, eating stale food, sitting alone till midnight. In contrast, "the whole world" is comfortable - "washed and fed", sleeping peacefully, dreaming of material possessions like mortgages and new furniture. The father is isolated while others are content.'
+      },
+      { 
+        id: 'seen-4-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'The poem shows alienation of the elderly. Do you think this is common in modern families? Share your view.',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: Yes, unfortunately this alienation is increasingly common. With nuclear families and busy lifestyles, elderly parents often feel lonely even when living with children. We should make conscious efforts to spend quality time with our parents and grandparents.'
+      },
+      { 
+        id: 'seen-4-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) people who travel daily to work (ii) wet and damp',
+        marks: 1, 
+        answer: '(i) commuters (ii) soggy'
+      },
+      { 
+        id: 'seen-4-A4b', 
+        questionType: 'A4', 
+        activityType: 'Poetic Devices',
+        question: 'Identify the figure of speech: "Suburbs slide past his unseeing eyes"',
+        marks: 1, 
+        answer: 'Transferred Epithet - "unseeing" actually describes the father\'s mental state (disinterest) but is transferred to "eyes". Also contains Alliteration (Suburbs slide).'
+      },
+      { 
+        id: 'seen-4-A5', 
+        questionType: 'A5', 
+        activityType: 'Poetic Appreciation',
+        question: 'Write 4-5 lines appreciating the poem covering: Theme, Imagery, Language.',
+        marks: 2, 
+        answer: 'Theme: The poem highlights urban alienation and the isolation of a working-class father. Imagery: Vivid images of soggy clothes, yellow light, stale food create a melancholic atmosphere. Language: Simple yet powerful - words like "unseeing", "dimmed", "stale" convey emotional emptiness. The poem movingly depicts the loneliness hidden in ordinary urban life.'
+      },
     ],
-    tips: ['Important poem for board exams', 'Focus on imagery of alienation', 'Understand the contrast between father\'s life and world\'s comforts'],
+    tips: ['Very important poem - appears frequently', 'Transferred epithet is a key device here', 'Appreciate both imagery and theme'],
     practiced: false,
   },
   {
-    id: 'seen-7',
-    title: 'Shala (School) - Milind Bokil',
+    id: 'seen-5',
+    title: 'The Sign of Four - Arthur Conan Doyle (Chapter 1)',
     type: 'seen',
-    source: 'Yuvakbharati - Prose Section (Translated)',
-    passage: `Those were the days of innocence, when a glance could send the heart racing and a smile could brighten an entire week. Mukund was fourteen, caught in that strange territory between childhood and youth. Shirodkar ma'am's mathematics class was torture, but the real reason for his distraction sat two benches ahead, her braids neatly tied with red ribbons. Shrimati Joshi, or Shiri as she was called by friends. Every day he would find some excuse to walk past her desk, to catch a glimpse, to perhaps one day gather the courage to speak. But what do you say to someone whose mere presence makes you forget your own name?`,
-    wordCount: 112,
+    source: 'Yuvakbharati - Novel',
+    passage: `Sherlock Holmes took his bottle from the corner of the mantelpiece, and his hypodermic syringe from its neat morocco case. With his long, white, nervous fingers he adjusted the delicate needle and rolled back his left shirtcuff. For some little time his eyes rested thoughtfully upon the sinewy forearm and wrist, all dotted and scarred with innumerable puncture-marks. Finally, he thrust the sharp point home, pressed down the tiny piston, and sank back into the velvet-lined armchair with a long sigh of satisfaction. "Which is it to-day," I asked, "morphine or cocaine?" "It is cocaine," he said, "a seven-per-cent solution. Would you care to try it?"`,
+    wordCount: 118,
+    difficulty: 'hard',
+    questions: [
+      { 
+        id: 'seen-5-A1', 
+        questionType: 'A1', 
+        activityType: 'Choose the Correct',
+        question: 'Choose the correct option:',
+        marks: 2, 
+        options: [
+          'Holmes kept his syringe in a: (a) leather case (b) morocco case (c) wooden box - Answer: (b)',
+          'The solution was: (a) 5% (b) 10% (c) 7% - Answer: (c)',
+          'Holmes\' fingers were described as: (a) short and thick (b) long, white, nervous (c) strong - Answer: (b)',
+          'The narrator is: (a) Holmes (b) Watson (c) Mary - Answer: (b)'
+        ],
+        answer: '(b) morocco case, (c) 7%, (b) long white nervous, (b) Watson'
+      },
+      { 
+        id: 'seen-5-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What evidence in the passage shows that Holmes was a regular drug user? How does Watson feel about this habit?',
+        marks: 2, 
+        answer: 'Evidence: Holmes\' forearm was "dotted and scarred with innumerable puncture-marks" - showing repeated injections over time. He casually offered cocaine to Watson ("Would you care to try it?") showing it was routine. Watson\'s question "Which is it to-day" implies this was a daily occurrence. Watson appears concerned but resigned to this habit.'
+      },
+      { 
+        id: 'seen-5-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'Holmes is shown as a genius who uses drugs. What is your opinion about such character portrayal in literature?',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: While Holmes is admirable for his intellect, the drug use portrayal is problematic. It could glamorize substance abuse. However, Doyle perhaps showed this to make Holmes more human and flawed. Good literature shows characters with both strengths and weaknesses.'
+      },
+      { 
+        id: 'seen-5-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) muscular and strong (ii) countless',
+        marks: 1, 
+        answer: '(i) sinewy (ii) innumerable'
+      },
+      { 
+        id: 'seen-5-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Voice',
+        question: 'Change the voice: "Holmes took his bottle from the mantelpiece."',
+        marks: 1, 
+        answer: 'The bottle was taken by Holmes from the mantelpiece.'
+      },
+      { 
+        id: 'seen-5-A5', 
+        questionType: 'A5', 
+        activityType: 'Character Sketch',
+        question: 'Based on this extract, write 4-5 points about Holmes\' character.',
+        marks: 2, 
+        answer: 'Holmes\' Character: (1) Methodical and precise - adjusts needle carefully (2) Addicted to drugs - regular cocaine/morphine user (3) Unhealthy coping mechanism for boredom (4) Physically marked by his addiction (5) Casual attitude toward dangerous substances (6) Intellectually superior but personally flawed.'
+      },
+    ],
+    tips: ['Sign of Four questions focus on Holmes\' character', 'Know the relationship between Holmes and Watson', 'Drug addiction theme is important'],
+    practiced: false,
+  },
+  
+  // ===== UNSEEN PASSAGES (From Previous Board Papers - A1-A5 Format) =====
+  {
+    id: 'unseen-2024-1',
+    title: 'Artificial Intelligence in Education',
+    type: 'unseen',
+    source: 'HSC Board Pattern',
+    year: '2024',
+    passage: `Artificial Intelligence is revolutionizing the educational landscape in unprecedented ways. Personalized learning, once a distant dream, is now a reality. AI-powered platforms can analyze a student's learning patterns, strengths, and weaknesses to create customized study plans. Virtual tutors are available round-the-clock, patiently explaining concepts until the student grasps them. Language learning apps use AI to correct pronunciation and provide real-time feedback. However, this digital transformation raises concerns. Over-reliance on technology may diminish critical thinking skills. The human touch in education - the inspiring teacher, the mentor who sees potential - cannot be replicated by algorithms. Moreover, the digital divide means these benefits remain inaccessible to many. The challenge lies in harnessing AI's power while preserving the irreplaceable human elements of education.`,
+    wordCount: 125,
+    difficulty: 'medium',
+    questions: [
+      { 
+        id: 'unseen-2024-1-A1', 
+        questionType: 'A1', 
+        activityType: 'Complete the sentences',
+        question: 'Complete the following based on the passage:',
+        marks: 2, 
+        subQuestions: [
+          { q: 'AI platforms analyze learning patterns to create _____ study plans.', a: 'customized/personalized' },
+          { q: 'Virtual tutors are available _____.', a: 'round-the-clock / 24x7' },
+          { q: 'Language apps use AI for _____ correction.', a: 'pronunciation' },
+          { q: 'The human element that cannot be replicated is _____.', a: 'the inspiring teacher / mentor' },
+        ],
+        answer: 'See sub-questions'
+      },
+      { 
+        id: 'unseen-2024-1-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What are the benefits and concerns of AI in education according to the passage?',
+        marks: 2, 
+        answer: 'Benefits: (1) Personalized learning plans based on individual patterns (2) 24/7 availability of virtual tutors (3) Real-time feedback for language learning. Concerns: (1) May diminish critical thinking (2) Cannot replace human teachers/mentors (3) Digital divide makes it inaccessible to many.'
+      },
+      { 
+        id: 'unseen-2024-1-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'Do you think AI can replace teachers in the future? Express your opinion.',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: I believe AI cannot fully replace teachers. While AI can deliver information and assess learning, it cannot provide emotional support, understand personal struggles, or inspire students the way a human teacher can. The best approach would be AI-assisted teaching where technology handles routine tasks while teachers focus on mentoring and motivation.'
+      },
+      { 
+        id: 'unseen-2024-1-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words from the passage meaning: (i) never happened before (ii) step-by-step procedures in computing',
+        marks: 1, 
+        answer: '(i) unprecedented (ii) algorithms'
+      },
+      { 
+        id: 'unseen-2024-1-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Do as Directed',
+        question: 'Transform: "AI is revolutionizing education." (Begin with: Education...)',
+        marks: 1, 
+        answer: 'Education is being revolutionized by AI.'
+      },
+      { 
+        id: 'unseen-2024-1-A5', 
+        questionType: 'A5', 
+        activityType: 'Mind Map',
+        question: 'Create a mind map on "AI in Education" with at least 4 branches.',
+        marks: 2, 
+        answer: 'AI IN EDUCATION → [Benefits: Personalized learning, 24/7 tutors, Instant feedback] [Concerns: Less critical thinking, Digital divide, No human touch] [Applications: Language apps, Study planners, Virtual tutors] [Challenge: Balance technology with human elements]'
+      },
+    ],
+    tips: ['AI topics are trending - practice more', 'For A3, give balanced view', 'Mind maps need at least 4 branches with sub-points'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2024-2',
+    title: 'Climate Change and Youth Action',
+    type: 'unseen',
+    source: 'HSC Board Pattern',
+    year: '2024',
+    passage: `The climate crisis has found its most passionate advocates in the young. Across the globe, students are walking out of classrooms, organizing protests, and demanding immediate action from world leaders. They argue, rightly, that it is their future at stake. Rising sea levels, extreme weather events, and biodiversity loss will shape their lives far more than any previous generation. Youth-led movements like Fridays for Future have mobilized millions. Social media amplifies their voices, enabling global coordination that was impossible a decade ago. Yet critics argue that passion without scientific understanding can lead to misguided solutions. The youth counter that they are not proposing solutions - they are demanding that adults implement what scientists have long recommended. This intergenerational dialogue, sometimes confrontational, is essential for meaningful climate action.`,
+    wordCount: 130,
+    difficulty: 'medium',
+    questions: [
+      { 
+        id: 'unseen-2024-2-A1', 
+        questionType: 'A1', 
+        activityType: 'True or False',
+        question: 'State whether True or False:',
+        marks: 2, 
+        options: [
+          'Young people are passive about climate change. - FALSE',
+          'Social media helps global coordination of youth movements. - TRUE',
+          'Youth claim to have all the solutions. - FALSE',
+          'Intergenerational dialogue is harmful for climate action. - FALSE'
+        ],
+        answer: '1. FALSE 2. TRUE 3. FALSE 4. FALSE'
+      },
+      { 
+        id: 'unseen-2024-2-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What is the main argument of the youth? How do they respond to critics?',
+        marks: 2, 
+        answer: 'Main argument: It is their future at stake - climate change effects like rising sea levels and extreme weather will affect their lives more than previous generations. Response to critics: They are not proposing new solutions but demanding that adults implement what scientists have already recommended.'
+      },
+      { 
+        id: 'unseen-2024-2-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'What can you, as a student, do to contribute to climate action in your community?',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: As a student, I can: (1) Reduce personal plastic use (2) Organize awareness campaigns in school (3) Plant trees with friends (4) Use public transport or cycling (5) Spread awareness on social media (6) Participate in local clean-up drives (7) Influence family to adopt sustainable practices.'
+      },
+      { 
+        id: 'unseen-2024-2-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) variety of plant and animal life (ii) makes louder/stronger',
+        marks: 1, 
+        answer: '(i) biodiversity (ii) amplifies'
+      },
+      { 
+        id: 'unseen-2024-2-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Transformation',
+        question: 'Combine: "Youth are passionate. They demand action." (Use: not only...but also)',
+        marks: 1, 
+        answer: 'Youth are not only passionate but also demand action.'
+      },
+      { 
+        id: 'unseen-2024-2-A5', 
+        questionType: 'A5', 
+        activityType: 'Summary',
+        question: 'Summarize the passage in about 50 words.',
+        marks: 2, 
+        answer: 'Young people worldwide are leading climate activism through protests and movements like Fridays for Future. Using social media for global coordination, they demand that adults implement scientific recommendations. While critics question their approach, the youth argue that it is their future at stake, making intergenerational dialogue essential for climate action.'
+      },
+    ],
+    tips: ['Climate + Youth = Common topic', 'A3 must include practical, doable actions', 'Summary should capture main points within word limit'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2023-1',
+    title: 'Mental Health Awareness',
+    type: 'unseen',
+    source: 'HSC Board Pattern',
+    year: '2023',
+    passage: `Mental health has emerged from the shadows into mainstream discourse, yet stigma persists. For decades, psychological struggles were dismissed as weakness or attention-seeking. Today, we understand that mental health is as crucial as physical health - both require care, attention, and sometimes professional intervention. The COVID-19 pandemic accelerated this shift, as millions experienced anxiety, depression, and isolation. Schools now incorporate emotional wellness programs, and workplaces offer mental health days. Celebrities and athletes openly discuss their struggles, normalizing conversations that were once taboo. However, access to mental healthcare remains unequal. Rural areas lack trained professionals, and treatment costs can be prohibitive. The journey from awareness to accessibility is long, but every conversation that destigmatizes mental health brings us closer to a society where seeking help is seen as strength, not shame.`,
+    wordCount: 135,
+    difficulty: 'medium',
+    questions: [
+      { 
+        id: 'unseen-2023-1-A1', 
+        questionType: 'A1', 
+        activityType: 'Complete the Web',
+        question: 'Complete the web showing "Changes in Mental Health Perception":',
+        marks: 2, 
+        subQuestions: [
+          { q: 'Earlier perception:', a: 'weakness, attention-seeking' },
+          { q: 'Current understanding:', a: 'as important as physical health' },
+          { q: 'Impact of COVID-19:', a: 'increased awareness, millions affected' },
+          { q: 'Steps taken:', a: 'wellness programs, mental health days' },
+        ],
+        answer: 'See sub-questions'
+      },
+      { 
+        id: 'unseen-2023-1-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What barriers to mental healthcare are mentioned? What positive changes have occurred?',
+        marks: 2, 
+        answer: 'Barriers: (1) Stigma still persists (2) Rural areas lack professionals (3) Treatment costs are prohibitive (4) Unequal access. Positive changes: (1) Wellness programs in schools (2) Mental health days at work (3) Celebrities openly discussing struggles (4) Conversations becoming normalized.'
+      },
+      { 
+        id: 'unseen-2023-1-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'How can students help reduce mental health stigma in their schools?',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: Students can: (1) Be kind and non-judgmental to peers (2) Learn about mental health in clubs (3) Avoid using terms like "crazy" casually (4) Support friends who are struggling (5) Organize awareness sessions (6) Encourage open conversations (7) Know when to involve adults for serious issues.'
+      },
+      { 
+        id: 'unseen-2023-1-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) social disgrace attached to something (ii) forbidden to discuss',
+        marks: 1, 
+        answer: '(i) stigma (ii) taboo'
+      },
+      { 
+        id: 'unseen-2023-1-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Tense',
+        question: 'Rewrite in Present Perfect: "Schools incorporate wellness programs."',
+        marks: 1, 
+        answer: 'Schools have incorporated wellness programs.'
+      },
+      { 
+        id: 'unseen-2023-1-A5', 
+        questionType: 'A5', 
+        activityType: 'Mind Map',
+        question: 'Create a mind map on "Mental Health" covering: Stigma, Pandemic Impact, Solutions, Challenges.',
+        marks: 2, 
+        answer: 'MENTAL HEALTH → [Stigma: earlier seen as weakness, taboo topic] [Pandemic Impact: increased anxiety/depression, highlighted need] [Solutions: wellness programs, mental health days, open conversations] [Challenges: lack of professionals, high costs, rural access]'
+      },
+    ],
+    tips: ['Mental health is highly relevant topic', 'Know terms: stigma, taboo, destigmatize', 'A3 should have practical school-based suggestions'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2023-2',
+    title: 'The Power of Reading',
+    type: 'unseen',
+    source: 'HSC Board Pattern',
+    year: '2023',
+    passage: `Reading is to the mind what exercise is to the body - it strengthens, expands, and keeps us mentally agile. In an era of diminishing attention spans, where information comes in tweets and reels, the ability to engage with long-form content is becoming rare and valuable. Research consistently shows that regular readers demonstrate superior analytical thinking, expanded vocabulary, and enhanced empathy - they literally experience other lives through books. Unlike passive entertainment, reading is an active process that engages our imagination, forcing us to create mental images and draw connections. The benefits extend beyond cognition: regular readers report lower stress levels, improved sleep quality, and a greater sense of connection with humanity. Libraries, both physical and digital, offer free access to this transformative resource. In a world of expensive therapies and wellness products, reading remains the most accessible path to personal growth.`,
+    wordCount: 145,
     difficulty: 'easy',
     questions: [
-      { id: 'seen-7-q1', question: 'What age was Mukund and how is this phase described?', marks: 2, type: 'factual', answer: 'Mukund was fourteen, caught in that strange territory between childhood and youth.' },
-      { id: 'seen-7-q2', question: 'Why was mathematics class described as "torture"?', marks: 2, type: 'inference', answer: 'Because Mukund was distracted by Shiri who sat two benches ahead.' },
-      { id: 'seen-7-q3', question: 'What did Mukund do to get Shiri\'s attention?', marks: 2, type: 'factual', answer: 'He would find excuses to walk past her desk and catch a glimpse of her.' },
-      { id: 'seen-7-q4', question: 'What theme does this passage explore?', marks: 2, type: 'inference', answer: 'First love, adolescence, innocent romance, and school memories.' },
+      { 
+        id: 'unseen-2023-2-A1', 
+        questionType: 'A1', 
+        activityType: 'Complete the sentences',
+        question: 'Complete the following:',
+        marks: 2, 
+        subQuestions: [
+          { q: 'Reading is to the mind what _____ is to the body.', a: 'exercise' },
+          { q: 'Information now comes in _____ and _____.', a: 'tweets and reels' },
+          { q: 'Reading is an _____ process unlike passive entertainment.', a: 'active' },
+          { q: 'Libraries offer _____ access to books.', a: 'free' },
+        ],
+        answer: 'See sub-questions'
+      },
+      { 
+        id: 'unseen-2023-2-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'List the benefits of reading mentioned in the passage. How does reading differ from passive entertainment?',
+        marks: 2, 
+        answer: 'Benefits: (1) Superior analytical thinking (2) Expanded vocabulary (3) Enhanced empathy (4) Lower stress (5) Improved sleep (6) Greater connection with humanity. Reading vs Passive Entertainment: Reading is active - it engages imagination, forces creation of mental images and drawing connections, while passive entertainment (like TV) requires no such mental engagement.'
+      },
+      { 
+        id: 'unseen-2023-2-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'What type of books do you prefer to read and why? How has reading helped you?',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: I prefer fiction, especially adventure novels. Reading Harry Potter improved my English vocabulary significantly. It also helps me relax before sleep and takes me to magical worlds. When stressed during exams, reading for 15 minutes helps me calm down and refocus.'
+      },
+      { 
+        id: 'unseen-2023-2-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) quick and active mentally (ii) changing completely',
+        marks: 1, 
+        answer: '(i) agile (ii) transformative'
+      },
+      { 
+        id: 'unseen-2023-2-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Voice',
+        question: 'Change to Passive: "Reading strengthens the mind."',
+        marks: 1, 
+        answer: 'The mind is strengthened by reading.'
+      },
+      { 
+        id: 'unseen-2023-2-A5', 
+        questionType: 'A5', 
+        activityType: 'Summary',
+        question: 'Write a summary of the passage in about 50 words.',
+        marks: 2, 
+        answer: 'Reading, like exercise for the body, keeps the mind strong and agile. In an age of short attention spans, it offers superior analytical thinking, vocabulary expansion, empathy, and stress reduction. Unlike passive entertainment, reading actively engages imagination. Libraries provide free access to this transformative and accessible path to personal growth.'
+      },
     ],
-    tips: ['Shala is from Marathi literature - cultural context important', 'Focus on themes of adolescence and first love'],
+    tips: ['Simple passage but practice A5 summary well', 'Note the analogy: reading = exercise', 'Personal response should include specific examples'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2022-1',
+    title: 'Digital Divide in Education',
+    type: 'unseen',
+    source: 'HSC Board Pattern',
+    year: '2022',
+    passage: `The COVID-19 pandemic forced a global experiment in online education, revealing a stark reality: the digital divide is as pronounced as ever. While affluent students seamlessly transitioned to video classes with high-speed internet and personal laptops, millions struggled with shared devices, unreliable connectivity, and unsuitable learning environments. In India alone, it is estimated that 30% of students could not access online education. Rural areas were particularly affected - a study found students walking kilometers to find network signals, or entire villages sharing a single smartphone for educational content. Teachers, too, faced challenges: many were unfamiliar with digital tools, and engaging students through a screen requires different skills than classroom teaching. The pandemic didn't create inequality in education; it simply illuminated and amplified existing disparities that were easy to ignore when schools were physically open.`,
+    wordCount: 140,
+    difficulty: 'medium',
+    questions: [
+      { 
+        id: 'unseen-2022-1-A1', 
+        questionType: 'A1', 
+        activityType: 'True or False',
+        question: 'State whether True or False:',
+        marks: 2, 
+        options: [
+          'All students benefited equally from online education. - FALSE',
+          '30% of Indian students could not access online education. - TRUE',
+          'Rural students sometimes walked kilometers for network signals. - TRUE',
+          'The pandemic created educational inequality. - FALSE (it revealed existing inequality)'
+        ],
+        answer: '1. FALSE 2. TRUE 3. TRUE 4. FALSE'
+      },
+      { 
+        id: 'unseen-2022-1-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'Contrast the experience of affluent students with those facing digital divide during pandemic education.',
+        marks: 2, 
+        answer: 'Affluent students: Seamlessly transitioned, had high-speed internet, personal laptops, suitable learning environment. Struggling students: Shared devices, unreliable connectivity, unsuitable environments, some walked kilometers for signals, entire villages shared one smartphone.'
+      },
+      { 
+        id: 'unseen-2022-1-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'What was your experience of online education during COVID-19? What challenges did you face?',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: My experience was mixed. Initially, internet connectivity was poor, and my younger sibling and I had to share one phone. Our eyes would hurt from screen time. However, I could rewatch recorded lectures. The biggest challenge was staying focused at home with many distractions.'
+      },
+      { 
+        id: 'unseen-2022-1-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) wealthy (ii) showed clearly',
+        marks: 1, 
+        answer: '(i) affluent (ii) illuminated'
+      },
+      { 
+        id: 'unseen-2022-1-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Combine sentences',
+        question: 'Combine using "not only...but also": "The pandemic affected students. It also affected teachers."',
+        marks: 1, 
+        answer: 'The pandemic affected not only students but also teachers.'
+      },
+      { 
+        id: 'unseen-2022-1-A5', 
+        questionType: 'A5', 
+        activityType: 'Mind Map',
+        question: 'Create a mind map showing "Digital Divide in Education" with 4 branches.',
+        marks: 2, 
+        answer: 'DIGITAL DIVIDE → [Affluent: high-speed internet, laptops, smooth transition] [Underprivileged: shared devices, no connectivity, walking for signals] [Teachers: unfamiliar with digital tools, different skills needed] [Impact: 30% Indians couldn\'t access, rural areas worst affected, existing inequality exposed]'
+      },
+    ],
+    tips: ['This was a real COVID-era issue - relate to personal experience', 'Use statistics from passage in answers', 'Contrast questions need both sides'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2022-2',
+    title: 'Space Exploration: India\'s Journey',
+    type: 'unseen',
+    source: 'HSC Board Pattern',
+    year: '2022',
+    passage: `India's space journey began with a humble start - scientists transported rocket parts on bicycles and bullock carts. Today, ISRO stands among the world's premier space agencies, renowned for achieving more with less. The Mars Orbiter Mission, at a cost lower than many Hollywood sci-fi movies, demonstrated frugal engineering at its finest. Chandrayaan-3's successful lunar landing made India only the fourth country to soft-land on the Moon, and the first to reach the lunar south pole. These achievements inspire millions of young Indians to dream of careers in science. Critics question the expense of space research in a developing nation, but the benefits are tangible: weather prediction saves farmers and fishermen, satellite communication connects remote areas, and GPS navigation transforms logistics. Beyond practical benefits, space exploration speaks to something deeper - humanity's eternal quest to explore the unknown and push the boundaries of what's possible.`,
+    wordCount: 150,
+    difficulty: 'easy',
+    questions: [
+      { 
+        id: 'unseen-2022-2-A1', 
+        questionType: 'A1', 
+        activityType: 'Complete the sentences',
+        question: 'Complete the following:',
+        marks: 2, 
+        subQuestions: [
+          { q: 'Early rocket parts were transported on _____ and _____.', a: 'bicycles and bullock carts' },
+          { q: 'Chandrayaan-3 made India the _____ country to soft-land on Moon.', a: 'fourth' },
+          { q: 'India was the first to reach the _____.', a: 'lunar south pole' },
+          { q: 'ISRO is known for _____ engineering.', a: 'frugal' },
+        ],
+        answer: 'See sub-questions'
+      },
+      { 
+        id: 'unseen-2022-2-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What practical benefits of space research are mentioned? How does the passage respond to critics?',
+        marks: 2, 
+        answer: 'Practical benefits: (1) Weather prediction helps farmers and fishermen (2) Satellite communication connects remote areas (3) GPS navigation transforms logistics. Response to critics: These tangible benefits justify the expense. Also, space exploration fulfills humanity\'s deeper quest to explore the unknown and push boundaries.'
+      },
+      { 
+        id: 'unseen-2022-2-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'How do you feel about India\'s space achievements? Would you like to work in space science? Why?',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: I feel extremely proud of ISRO\'s achievements, especially Chandrayaan-3. The fact that India achieved the lunar landing at low cost shows Indian ingenuity. Yes, I would love to work in space science - the idea of contributing to humanity\'s understanding of the universe is exciting, and ISRO offers opportunities to make a real impact.'
+      },
+      { 
+        id: 'unseen-2022-2-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) economical/thrifty (ii) real/touchable',
+        marks: 1, 
+        answer: '(i) frugal (ii) tangible'
+      },
+      { 
+        id: 'unseen-2022-2-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Transformation',
+        question: 'Transform: "ISRO is renowned for achieving more with less." (Use: known)',
+        marks: 1, 
+        answer: 'ISRO is known for achieving more with less.'
+      },
+      { 
+        id: 'unseen-2022-2-A5', 
+        questionType: 'A5', 
+        activityType: 'Summary',
+        question: 'Summarize the passage in about 50 words.',
+        marks: 2, 
+        answer: 'ISRO evolved from humble beginnings to becoming a premier space agency known for frugal engineering. Chandrayaan-3 made India the fourth nation to moon-land and first to reach the lunar south pole. Despite critics, space research provides tangible benefits like weather prediction and communication, while inspiring millions and fulfilling humanity\'s quest for exploration.'
+      },
+    ],
+    tips: ['ISRO achievements frequently asked', 'Know: Chandrayaan, Mangalyaan, frugal engineering', 'Connect to national pride in A3'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2021-1',
+    title: 'Social Media: Boon or Bane?',
+    type: 'unseen',
+    source: 'HSC Board Pattern',
+    year: '2021',
+    passage: `Social media has transformed from a novelty to a necessity in just two decades. It connects us across continents, gives voice to the voiceless, and democratizes information. Movements like #MeToo and environmental activism gained momentum through viral sharing. Small businesses reach customers without expensive advertising. During the pandemic, it kept us connected when physical distancing was mandatory. However, the darker side is equally significant. Cyberbullying has driven young people to depression and worse. The spread of misinformation threatens democracies. The addictive design of these platforms, engineered to maximize engagement, erodes our attention spans and mental peace. Studies link heavy social media use to anxiety, sleep disorders, and feelings of inadequacy. The platforms profit from our attention, often at the cost of our wellbeing. Perhaps the answer lies not in abandoning social media but in using it mindfully - being intentional about when, how, and why we engage.`,
+    wordCount: 150,
+    difficulty: 'medium',
+    questions: [
+      { 
+        id: 'unseen-2021-1-A1', 
+        questionType: 'A1', 
+        activityType: 'Match the Columns',
+        question: 'Match the following:',
+        marks: 2, 
+        options: [
+          'Positive: Connects across continents | Gives voice to voiceless | Helps small businesses | Kept connected during pandemic',
+          'Negative: Cyberbullying | Misinformation | Addiction | Anxiety and sleep disorders'
+        ],
+        answer: 'Positive effects matched with: global connection, democratization, business reach, pandemic communication. Negative effects matched with: bullying, fake news, addictive design, mental health issues.'
+      },
+      { 
+        id: 'unseen-2021-1-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'According to the passage, what are the harmful effects of social media? What solution does the author suggest?',
+        marks: 2, 
+        answer: 'Harmful effects: (1) Cyberbullying causes depression (2) Misinformation threatens democracies (3) Addictive design erodes attention spans (4) Causes anxiety, sleep disorders, feelings of inadequacy. Solution: Not abandoning but using mindfully - being intentional about when, how, and why we engage with social media.'
+      },
+      { 
+        id: 'unseen-2021-1-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'Do you think social media is more beneficial or harmful for students? Give your personal opinion with examples.',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: I believe social media is a double-edged sword for students. It helps me learn (YouTube tutorials, study groups) and stay connected. But I\'ve seen friends waste hours scrolling and compare themselves to influencers. For me, limiting use to 1 hour daily and following educational accounts has made it more beneficial than harmful.'
+      },
+      { 
+        id: 'unseen-2021-1-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) makes equal for all (ii) wears away gradually',
+        marks: 1, 
+        answer: '(i) democratizes (ii) erodes'
+      },
+      { 
+        id: 'unseen-2021-1-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Clauses',
+        question: 'Identify the type of clause: "when physical distancing was mandatory"',
+        marks: 1, 
+        answer: 'Adverb clause of time (modifies "kept connected", tells when)'
+      },
+      { 
+        id: 'unseen-2021-1-A5', 
+        questionType: 'A5', 
+        activityType: 'Mind Map',
+        question: 'Create a mind map on "Social Media" with branches for: Benefits, Harms, Solution.',
+        marks: 2, 
+        answer: 'SOCIAL MEDIA → [Benefits: Global connection, Voice to voiceless, Business reach, #MeToo movements] [Harms: Cyberbullying, Misinformation, Addiction, Anxiety/sleep issues, Attention erosion] [Solution: Mindful use, Intentional engagement, Not abandonment but controlled use]'
+      },
+    ],
+    tips: ['Balanced view needed - both good and bad', 'A3: Personal experience makes answer strong', 'Mindful usage is key takeaway'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2020-1',
+    title: 'Water Conservation',
+    type: 'unseen',
+    source: 'HSC Board Pattern',
+    year: '2020',
+    passage: `Water, the most essential resource for life, is becoming increasingly scarce. While 71% of Earth's surface is covered with water, only 2.5% is freshwater, and a mere 1% is accessible for human use. India, with 18% of the world's population, has access to only 4% of freshwater resources. The situation is worsening due to population growth, industrialization, and climate change. Rivers are polluted, groundwater levels are depleting at alarming rates, and traditional water harvesting systems have fallen into disuse. Chennai faced a severe water crisis in 2019, with reservoirs running dry. However, solutions exist. Rainwater harvesting, watershed management, and efficient irrigation techniques can significantly address water scarcity. Israel, a desert nation, has become a water exporter through technology and conservation. Every individual can contribute: fixing leaky taps, taking shorter showers, and treating water as the precious resource it is. Water saved today ensures survival tomorrow.`,
+    wordCount: 155,
+    difficulty: 'easy',
+    questions: [
+      { 
+        id: 'unseen-2020-1-A1', 
+        questionType: 'A1', 
+        activityType: 'Complete with Statistics',
+        question: 'Complete with correct figures from the passage:',
+        marks: 2, 
+        subQuestions: [
+          { q: '_____ % of Earth\'s surface is water.', a: '71%' },
+          { q: '_____ % of total water is freshwater.', a: '2.5%' },
+          { q: 'India has _____ % of world population.', a: '18%' },
+          { q: 'India has access to only _____ % of freshwater.', a: '4%' },
+        ],
+        answer: 'See sub-questions'
+      },
+      { 
+        id: 'unseen-2020-1-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What causes are mentioned for water scarcity? What solutions are suggested?',
+        marks: 2, 
+        answer: 'Causes: (1) Population growth (2) Industrialization (3) Climate change (4) River pollution (5) Groundwater depletion (6) Traditional harvesting systems abandoned. Solutions: (1) Rainwater harvesting (2) Watershed management (3) Efficient irrigation (4) Individual actions: fixing leaks, shorter showers.'
+      },
+      { 
+        id: 'unseen-2020-1-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'What steps can you take at home to conserve water? Suggest at least 4 measures.',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: (1) Fix leaky taps immediately (2) Take bucket baths instead of showers (3) Reuse RO waste water for plants (4) Run washing machine only with full load (5) Collect rainwater for gardening (6) Turn off tap while brushing teeth (7) Use water-efficient appliances.'
+      },
+      { 
+        id: 'unseen-2020-1-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) in short supply (ii) reducing rapidly',
+        marks: 1, 
+        answer: '(i) scarce (ii) depleting'
+      },
+      { 
+        id: 'unseen-2020-1-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Transformation',
+        question: 'Transform: "Water saved today ensures survival tomorrow." (Begin: If...)',
+        marks: 1, 
+        answer: 'If water is saved today, survival tomorrow is ensured.'
+      },
+      { 
+        id: 'unseen-2020-1-A5', 
+        questionType: 'A5', 
+        activityType: 'Summary',
+        question: 'Write a summary in about 50 words covering the problem, causes, and solutions.',
+        marks: 2, 
+        answer: 'Fresh water is increasingly scarce - only 1% is accessible. India, with 18% of world population, has merely 4% freshwater. Population growth, pollution, and depleting groundwater worsen the crisis. Solutions include rainwater harvesting, watershed management, and individual conservation efforts. Water conservation today ensures survival tomorrow.'
+      },
+    ],
+    tips: ['Remember key statistics', 'Water conservation is evergreen topic', 'A3: Give practical, doable home solutions'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2019-1',
+    title: 'Importance of Sports',
+    type: 'unseen',
+    source: 'HSC Board Pattern',
+    year: '2019',
+    passage: `In the academic race, sports often become the first casualty. Parents and schools prioritize grades, viewing physical activity as a distraction from "real" studies. This short-sighted approach ignores decades of research showing that physical fitness enhances academic performance. Exercise increases blood flow to the brain, improving concentration and memory. Team sports teach crucial life skills: cooperation, leadership, handling pressure, accepting defeat gracefully, and winning with humility. Countries that prioritize sports education consistently report better physical and mental health outcomes among their youth. In India, despite producing world-class athletes like P.V. Sindhu and Neeraj Chopra, sports infrastructure in most schools remains inadequate. The obsession with academic marks creates stressed, unfit students ill-prepared for life's challenges. A balanced approach - where sports are given equal importance - creates well-rounded individuals who are not just book-smart but also physically healthy, emotionally resilient, and socially adept.`,
+    wordCount: 148,
+    difficulty: 'easy',
+    questions: [
+      { 
+        id: 'unseen-2019-1-A1', 
+        questionType: 'A1', 
+        activityType: 'True or False',
+        question: 'State whether True or False:',
+        marks: 2, 
+        options: [
+          'Sports and physical activity enhance academic performance. - TRUE',
+          'Most Indian schools have excellent sports infrastructure. - FALSE',
+          'Countries prioritizing sports have better health outcomes. - TRUE',
+          'Focusing only on academics creates well-rounded individuals. - FALSE'
+        ],
+        answer: '1. TRUE 2. FALSE 3. TRUE 4. FALSE'
+      },
+      { 
+        id: 'unseen-2019-1-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What life skills do team sports teach? How does exercise benefit academics?',
+        marks: 2, 
+        answer: 'Life skills from sports: (1) Cooperation (2) Leadership (3) Handling pressure (4) Accepting defeat gracefully (5) Winning with humility. Academic benefits: Exercise increases blood flow to the brain, which improves concentration and memory.'
+      },
+      { 
+        id: 'unseen-2019-1-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'Which sport do you play or would like to learn? How has it helped you (or how could it help)?',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: I play badminton regularly. It has improved my reflexes and stamina. After playing, I feel refreshed and can concentrate better on studies. It also taught me to accept defeat - initially I would get upset losing, but now I focus on improving. The game has also helped me make friends.'
+      },
+      { 
+        id: 'unseen-2019-1-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) victim/loss (ii) able to recover quickly',
+        marks: 1, 
+        answer: '(i) casualty (ii) resilient'
+      },
+      { 
+        id: 'unseen-2019-1-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Word Formation',
+        question: 'Form adjectives from: (i) health (ii) emotion',
+        marks: 1, 
+        answer: '(i) healthy (ii) emotional'
+      },
+      { 
+        id: 'unseen-2019-1-A5', 
+        questionType: 'A5', 
+        activityType: 'Mind Map',
+        question: 'Create a mind map on "Benefits of Sports" with at least 4 branches.',
+        marks: 2, 
+        answer: 'BENEFITS OF SPORTS → [Physical: fitness, blood flow, stamina] [Academic: better concentration, improved memory] [Life Skills: cooperation, leadership, handling pressure, graceful losing] [Mental Health: stress relief, resilience, emotional balance]'
+      },
+    ],
+    tips: ['Sports + academics balance is key message', 'Name Indian athletes if relevant', 'A5 mind map should cover multiple aspects'],
     practiced: false,
   },
   {
     id: 'unseen-practice-1',
-    title: 'Climate Change Impact',
-    type: 'unseen',
-    source: 'Practice Passage',
-    passage: `The scientific consensus on climate change is overwhelming: human activities, particularly the burning of fossil fuels, are causing unprecedented changes to Earth's climate system. The consequences are visible everywhere – from the bleaching of coral reefs to the intensification of hurricanes, from prolonged droughts to devastating floods. Small island nations face the existential threat of rising sea levels. Agricultural patterns are shifting, threatening food security for millions. Yet, the window for meaningful action, while narrowing, remains open. The Paris Agreement represented a global commitment to limiting temperature rise, but implementation has been inconsistent. Individual choices – reducing meat consumption, minimizing air travel, choosing renewable energy – combined with systemic changes in policy and industry, can still alter our trajectory.`,
-    wordCount: 118,
-    difficulty: 'hard',
-    questions: [
-      { id: 'unseen-practice-1-q1', question: 'What is the main cause of climate change according to the passage?', marks: 2, type: 'factual', answer: 'Human activities, particularly the burning of fossil fuels.' },
-      { id: 'unseen-practice-1-q2', question: 'List any four consequences of climate change mentioned.', marks: 2, type: 'factual', answer: 'Bleaching of coral reefs, intensification of hurricanes, prolonged droughts, devastating floods, rising sea levels, shifting agricultural patterns.' },
-      { id: 'unseen-practice-1-q3', question: 'What individual actions are suggested to combat climate change?', marks: 2, type: 'factual', answer: 'Reducing meat consumption, minimizing air travel, and choosing renewable energy.' },
-      { id: 'unseen-practice-1-q4', question: 'Find words meaning: (a) general agreement (b) threatening existence', marks: 2, type: 'vocabulary', answer: '(a) Consensus (b) Existential' },
-    ],
-    tips: ['Climate topics are recurring - master the vocabulary', 'Paris Agreement knowledge helpful'],
-    practiced: false,
-  },
-  {
-    id: 'unseen-practice-2',
     title: 'Women Empowerment',
     type: 'unseen',
     source: 'Practice Passage',
-    passage: `The empowerment of women is not merely a matter of social justice; it is an economic imperative. Studies consistently show that when women participate fully in the workforce, economies grow significantly. Educating a girl child creates ripple effects across generations – she is more likely to educate her own children, maintain better family health, and contribute to her community. Yet, barriers persist: discriminatory laws, cultural norms that prioritize boys' education, safety concerns, and unequal domestic responsibilities. Progress has been made – more girls are in school, more women in leadership positions, and legal protections have strengthened. But the journey toward true equality requires continuous effort, challenging deep-rooted prejudices, and creating environments where every woman can realize her full potential.`,
-    wordCount: 125,
+    passage: `Women empowerment is not merely a matter of social justice; it is an economic necessity. Studies consistently show that when women participate fully in the workforce, GDP grows significantly. Educating a girl creates ripple effects - she is more likely to educate her own children, ensure better family health, and contribute meaningfully to her community. Yet barriers persist: discriminatory laws, cultural norms that prioritize boys' education, safety concerns, and the burden of unpaid domestic work. Progress has been made - literacy rates have improved, more women hold leadership positions, and legal protections have strengthened. Indian women have excelled in every field from space to sports, politics to business. But the journey is incomplete. Child marriage still exists, workplace harassment continues, and glass ceilings remain. True empowerment requires changing mindsets - recognizing that investing in women's potential benefits not just women but entire societies.`,
+    wordCount: 148,
     difficulty: 'medium',
     questions: [
-      { id: 'unseen-practice-2-q1', question: 'Why is women\'s empowerment called an "economic imperative"?', marks: 2, type: 'inference', answer: 'Because when women participate fully in the workforce, economies grow significantly.' },
-      { id: 'unseen-practice-2-q2', question: 'What are the benefits of educating a girl child?', marks: 2, type: 'factual', answer: 'She is more likely to educate her own children, maintain better family health, and contribute to her community.' },
-      { id: 'unseen-practice-2-q3', question: 'What barriers to women\'s empowerment are mentioned?', marks: 2, type: 'factual', answer: 'Discriminatory laws, cultural norms favoring boys, safety concerns, and unequal domestic responsibilities.' },
-      { id: 'unseen-practice-2-q4', question: 'Find words meaning: (a) spreading effects (b) deeply established', marks: 2, type: 'vocabulary', answer: '(a) Ripple effects (b) Deep-rooted' },
+      { 
+        id: 'unseen-practice-1-A1', 
+        questionType: 'A1', 
+        activityType: 'Complete the Web',
+        question: 'Complete the web showing aspects of women empowerment:',
+        marks: 2, 
+        subQuestions: [
+          { q: 'Economic importance:', a: 'GDP growth when women work' },
+          { q: 'Benefits of educating girls:', a: 'educate own children, better family health, community contribution' },
+          { q: 'Barriers:', a: 'discriminatory laws, cultural norms, safety concerns, domestic work burden' },
+          { q: 'Progress made:', a: 'literacy improved, more women leaders, stronger laws' },
+        ],
+        answer: 'See sub-questions'
+      },
+      { 
+        id: 'unseen-practice-1-A2', 
+        questionType: 'A2', 
+        activityType: 'Complex Factual',
+        question: 'What barriers to women\'s empowerment are mentioned? What progress has been made?',
+        marks: 2, 
+        answer: 'Barriers: (1) Discriminatory laws (2) Cultural norms favoring boys (3) Safety concerns (4) Unpaid domestic work burden. Progress: (1) Improved literacy rates (2) More women in leadership (3) Stronger legal protections (4) Women excelling in space, sports, politics, business.'
+      },
+      { 
+        id: 'unseen-practice-1-A3', 
+        questionType: 'A3', 
+        activityType: 'Personal Response',
+        question: 'Name a woman who inspires you and explain why.',
+        marks: 2, 
+        answer: 'Personal response expected. Sample: Kalpana Chawla inspires me greatly. Despite coming from a small town, she became a NASA astronaut. She proved that with determination, girls can achieve anything. Even after the Columbia disaster, her legacy continues to inspire millions of Indian girls to pursue science.'
+      },
+      { 
+        id: 'unseen-practice-1-A4a', 
+        questionType: 'A4', 
+        activityType: 'Vocabulary',
+        question: 'Find words meaning: (i) spreading effects (ii) invisible barrier to advancement',
+        marks: 1, 
+        answer: '(i) ripple effects (ii) glass ceiling'
+      },
+      { 
+        id: 'unseen-practice-1-A4b', 
+        questionType: 'A4', 
+        activityType: 'Grammar - Assertive to Exclamatory',
+        question: 'Transform: "Women have excelled in every field."',
+        marks: 1, 
+        answer: 'How wonderfully women have excelled in every field!'
+      },
+      { 
+        id: 'unseen-practice-1-A5', 
+        questionType: 'A5', 
+        activityType: 'Summary',
+        question: 'Summarize the passage in about 50 words.',
+        marks: 2, 
+        answer: 'Women\'s empowerment is economically essential as it boosts GDP. Educated women create positive ripple effects through better childcare and community contribution. Despite progress in literacy and leadership, barriers like discrimination, safety concerns, and cultural bias persist. True empowerment requires changing mindsets, benefiting not just women but entire societies.'
+      },
     ],
-    tips: ['Women empowerment is an important social topic', 'Remember statistics and key arguments'],
+    tips: ['Women empowerment is socially important topic', 'Know inspiring Indian women examples', 'Connect economic and social aspects'],
     practiced: false,
   },
 ];
@@ -4825,44 +5531,97 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
             </div>
           </div>
           
-          {/* Questions */}
+          {/* Questions - HSC Board A1-A5 Format */}
           <div className="p-4 space-y-4">
-            <h4 className="text-gray-400 text-sm font-medium">❓ COMPREHENSION QUESTIONS:</h4>
+            <h4 className="text-gray-400 text-sm font-medium">❓ ACTIVITIES (HSC BOARD FORMAT):</h4>
             
             {currentPassage.questions.map((q, idx) => (
               <div key={q.id} className="bg-gray-900 rounded-lg p-4">
                 <div className="flex items-start gap-3 mb-3">
-                  <span className={`px-2 py-1 rounded text-xs font-bold ${
-                    q.type === 'factual' ? 'bg-blue-600' :
-                    q.type === 'inference' ? 'bg-purple-600' :
-                    q.type === 'vocabulary' ? 'bg-green-600' :
-                    q.type === 'grammar' ? 'bg-yellow-600' :
-                    'bg-orange-600'
+                  {/* Question Type Badge - A1, A2, A3, A4, A5 */}
+                  <span className={`px-3 py-1 rounded text-xs font-bold ${
+                    q.questionType === 'A1' ? 'bg-blue-600' :
+                    q.questionType === 'A2' ? 'bg-purple-600' :
+                    q.questionType === 'A3' ? 'bg-orange-600' :
+                    q.questionType === 'A4' ? 'bg-green-600' :
+                    'bg-pink-600'
                   } text-white`}>
-                    Q{idx + 1}
+                    {q.questionType}
                   </span>
                   <div className="flex-1">
-                    <p className="text-white">{q.question}</p>
+                    {/* Activity Type Label */}
+                    <p className="text-yellow-400 text-xs font-medium mb-1">{q.activityType}</p>
+                    <p className="text-white font-medium">{q.question}</p>
                     <p className="text-gray-500 text-xs mt-1">
-                      [{q.marks} marks • {q.type}]
+                      [{q.marks} marks]
                     </p>
                   </div>
                 </div>
                 
-                {/* Answer Input */}
-                <textarea
-                  value={passageAnswers[q.id] || ''}
-                  onChange={(e) => setPassageAnswers(prev => ({ ...prev, [q.id]: e.target.value }))}
-                  placeholder="Write your answer here..."
-                  className="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white text-sm resize-none"
-                  rows={2}
-                />
+                {/* Sub-Questions for multi-part activities */}
+                {q.subQuestions && q.subQuestions.length > 0 && (
+                  <div className="space-y-3 mt-3 pl-4 border-l-2 border-gray-700">
+                    {q.subQuestions.map((sq, i) => (
+                      <div key={i} className="bg-gray-800/50 rounded-lg p-3">
+                        <p className="text-gray-200 text-sm mb-2">
+                          <span className="text-blue-400 font-medium">({String.fromCharCode(97 + i)})</span> {sq.q}
+                        </p>
+                        <input
+                          type="text"
+                          value={passageAnswers[`${q.id}-${i}`] || ''}
+                          onChange={(e) => setPassageAnswers(prev => ({ ...prev, [`${q.id}-${i}`]: e.target.value }))}
+                          placeholder="Your answer..."
+                          className="w-full bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white text-sm"
+                        />
+                        {showPassageAnswers && (
+                          <p className="text-green-400 text-sm mt-2">
+                            <span className="font-medium">✓ Answer:</span> {sq.a}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+                
+                {/* Options for MCQ/True-False/Match */}
+                {q.options && q.options.length > 0 && !q.subQuestions && (
+                  <div className="mt-3 space-y-2">
+                    {q.options.map((opt, i) => (
+                      <button
+                        key={i}
+                        onClick={() => setPassageAnswers(prev => ({ ...prev, [q.id]: opt }))}
+                        className={`w-full text-left p-3 rounded-lg text-sm transition-all ${
+                          passageAnswers[q.id] === opt
+                            ? 'bg-blue-600 text-white'
+                            : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                        }`}
+                      >
+                        {String.fromCharCode(65 + i)}) {opt}
+                      </button>
+                    ))}
+                  </div>
+                )}
+                
+                {/* Text Answer Input for non-MCQ, non-subquestion types */}
+                {!q.subQuestions && !q.options && (
+                  <textarea
+                    value={passageAnswers[q.id] || ''}
+                    onChange={(e) => setPassageAnswers(prev => ({ ...prev, [q.id]: e.target.value }))}
+                    placeholder={
+                      q.questionType === 'A3' ? "Share your personal opinion..." :
+                      q.questionType === 'A5' ? "Draw your mind map / Write summary..." :
+                      "Write your answer here..."
+                    }
+                    className="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white text-sm resize-none mt-3"
+                    rows={q.questionType === 'A5' ? 5 : q.questionType === 'A3' ? 4 : 2}
+                  />
+                )}
                 
                 {/* Show Answer */}
-                {showPassageAnswers && (
+                {showPassageAnswers && !q.subQuestions && (
                   <div className="mt-3 p-3 bg-green-900/30 rounded-lg border border-green-600/30">
                     <p className="text-green-400 text-xs font-medium mb-1">✓ MODEL ANSWER:</p>
-                    <p className="text-green-200 text-sm">{q.answer}</p>
+                    <p className="text-green-200 text-sm whitespace-pre-wrap">{q.answer}</p>
                   </div>
                 )}
               </div>
@@ -4952,16 +5711,21 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
           </div>
         </div>
         
-        {/* Quick Tips Card */}
+        {/* Quick Tips Card - HSC Board A1-A5 Format */}
         <div className="bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-xl p-4 border border-orange-500/30">
-          <h4 className="text-orange-400 font-bold mb-2">🎯 Comprehension Tips for 8/8 Marks:</h4>
+          <h4 className="text-orange-400 font-bold mb-2">🎯 HSC Board A1-A5 Strategy for 8/8 Marks:</h4>
           <div className="text-orange-200 text-sm space-y-2">
-            <p>1️⃣ <strong>First Read:</strong> Skim the passage for overall meaning (1 min)</p>
-            <p>2️⃣ <strong>Read Questions:</strong> Know what to look for before detailed reading</p>
-            <p>3️⃣ <strong>Second Read:</strong> Read carefully, underline key points</p>
-            <p>4️⃣ <strong>Vocabulary Questions:</strong> Use context clues, check prefix/suffix</p>
-            <p>5️⃣ <strong>Inference:</strong> "Read between the lines" - what's implied?</p>
-            <p>6️⃣ <strong>Answer Format:</strong> Start with the key word from the question</p>
+            <p><span className="bg-blue-600 px-2 py-0.5 rounded text-xs text-white font-bold mr-2">A1</span> <strong>Activity Based:</strong> Complete sentences, True/False, Match columns - Direct from passage (2 marks)</p>
+            <p><span className="bg-purple-600 px-2 py-0.5 rounded text-xs text-white font-bold mr-2">A2</span> <strong>Complex Factual:</strong> Requires understanding & detailed answer (2 marks)</p>
+            <p><span className="bg-orange-600 px-2 py-0.5 rounded text-xs text-white font-bold mr-2">A3</span> <strong>Personal Response:</strong> Your opinion with reasons - no wrong answer! (2 marks)</p>
+            <p><span className="bg-green-600 px-2 py-0.5 rounded text-xs text-white font-bold mr-2">A4</span> <strong>Vocabulary/Grammar:</strong> Word meanings, antonyms, tense, voice (2 marks)</p>
+            <p><span className="bg-pink-600 px-2 py-0.5 rounded text-xs text-white font-bold mr-2">A5</span> <strong>Mind Map/Summary:</strong> Visual representation or brief summary (2 marks)</p>
+            <div className="mt-3 pt-3 border-t border-orange-500/30">
+              <p className="font-bold text-orange-300">💡 Pro Tips:</p>
+              <p>• Read passage twice - first skim, then detailed</p>
+              <p>• A3 is easiest - just express your opinion clearly</p>
+              <p>• For A5 Mind Map, cover all key points from passage</p>
+            </div>
           </div>
         </div>
       </div>
