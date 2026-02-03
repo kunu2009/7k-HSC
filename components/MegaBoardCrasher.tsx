@@ -203,6 +203,29 @@ interface SubjectMarkingScheme {
   sections: MarkingSchemeItem[];
 }
 
+interface PassageQuestion {
+  id: string;
+  question: string;
+  marks: number;
+  type: 'factual' | 'inference' | 'vocabulary' | 'grammar' | 'summary';
+  answer: string;
+}
+
+interface EnglishPassage {
+  id: string;
+  title: string;
+  type: 'seen' | 'unseen';
+  source: string; // Book name or "Board Paper 2023" etc.
+  year?: string; // For board paper passages
+  passage: string;
+  wordCount: number;
+  difficulty: 'easy' | 'medium' | 'hard';
+  questions: PassageQuestion[];
+  tips: string[];
+  practiced: boolean;
+  score?: number;
+}
+
 interface MegaBoardCrasherProps {
   onClose: () => void;
   selectedSubjects?: string[]; // Subject IDs like 'eng', 'his', 'pol', etc.
@@ -1563,8 +1586,354 @@ const generatePhaseTasks = (): PhaseTask[] => {
   return tasks;
 };
 
+// English Passage Practice - Seen & Unseen (From Board Papers & Textbooks)
+const ENGLISH_PASSAGES: EnglishPassage[] = [
+  // ===== SEEN PASSAGES (From Textbook - Yuvakbharati) =====
+  {
+    id: 'seen-1',
+    title: 'An Astrologer\'s Day - R.K. Narayan',
+    type: 'seen',
+    source: 'Yuvakbharati - Section I',
+    passage: `He had a working analysis of mankind's troubles: marriage, money, and the tangles of human ties. Long practice had sharpened his perception. Within five minutes he understood what was wrong. He charged three pies per question, never opened his mouth till the other had spoken for at least ten minutes, which provided him enough stuff for a dozen answers and advices. When he told the person before him, gazing at his palm, "In many ways you are not getting the fullest results for your efforts," nine out of ten were disposed to agree with him. Or he questioned: "Is there any woman in your family, maybe even a distant relative who is not well disposed towards you?" Or he gave an analysis of character: "Most of your troubles are due to your nature. How can you be otherwise with Saturn where he is?"`,
+    wordCount: 145,
+    difficulty: 'medium',
+    questions: [
+      { id: 'seen-1-q1', question: 'What were the three main categories of mankind\'s troubles according to the astrologer?', marks: 2, type: 'factual', answer: 'Marriage, money, and the tangles of human ties.' },
+      { id: 'seen-1-q2', question: 'How did the astrologer gather information before giving advice?', marks: 2, type: 'inference', answer: 'He never opened his mouth till the other person had spoken for at least ten minutes, which provided him enough material for answers.' },
+      { id: 'seen-1-q3', question: 'Find the word from the passage which means "to make sharp".', marks: 1, type: 'vocabulary', answer: 'Sharpened' },
+      { id: 'seen-1-q4', question: 'What strategy did the astrologer use to make people agree with him?', marks: 2, type: 'inference', answer: 'He made vague, general statements like "you are not getting the fullest results for your efforts" which most people could relate to.' },
+    ],
+    tips: ['Focus on the astrologer\'s clever techniques', 'Understand how he reads people\'s psychology', 'Note the irony in his "profession"'],
+    practiced: false,
+  },
+  {
+    id: 'seen-2',
+    title: 'On Saying Please - A.G. Gardiner',
+    type: 'seen',
+    source: 'Yuvakbharati - Section I',
+    passage: `A few weeks ago I was at a well-known restaurant. A lift-man refused to take me up in the lift because I did not say "please". There was no legal compulsion to say it, yet he refused. But when I reflect upon this refusal, I see in it a gesture of self-respect, and a reminder to the community that good manners are essential to social intercourse. The law cannot compel us to be civil but social pressure can. We have no right to inflict physical violence but we have no right to inflict spiritual violence either. The words "please" and "thank you" are not merely civilities. They are the small change of social intercourse that keeps the machinery of life running smoothly.`,
+    wordCount: 128,
+    difficulty: 'medium',
+    questions: [
+      { id: 'seen-2-q1', question: 'Why did the lift-man refuse to take the author up?', marks: 2, type: 'factual', answer: 'Because the author did not say "please".' },
+      { id: 'seen-2-q2', question: 'According to the passage, what are "please" and "thank you" compared to?', marks: 2, type: 'inference', answer: 'They are compared to "small change of social intercourse" that keeps the machinery of life running smoothly.' },
+      { id: 'seen-2-q3', question: 'Find a word from the passage that means "conversation or dealings between people".', marks: 1, type: 'vocabulary', answer: 'Intercourse' },
+      { id: 'seen-2-q4', question: 'What two types of violence does the author mention?', marks: 2, type: 'factual', answer: 'Physical violence and spiritual violence.' },
+    ],
+    tips: ['Understand the importance of courtesy', 'Focus on the metaphor of "small change"', 'Note the difference between legal and moral obligations'],
+    practiced: false,
+  },
+  {
+    id: 'seen-3',
+    title: 'Indian Weavers - Sarojini Naidu',
+    type: 'seen',
+    source: 'Yuvakbharati - Poetry Section',
+    passage: `Weavers, weaving at break of day,
+Why do you weave a garment so gay?
+Blue as the wing of a halcyon wild,
+We weave the robes of a new-born child.
+
+Weavers, weaving at fall of night,
+Why do you weave a garment so bright?
+Like the plumes of a peacock, purple and green,
+We weave the marriage-veils of a queen.
+
+Weavers, weaving solemn and still,
+What do you weave in the moonlight chill?
+White as a feather and white as a cloud,
+We weave a dead man's funeral shroud.`,
+    wordCount: 98,
+    difficulty: 'easy',
+    questions: [
+      { id: 'seen-3-q1', question: 'What three stages of life are represented in the poem?', marks: 2, type: 'factual', answer: 'Birth (new-born child), Marriage (queen\'s marriage veil), and Death (funeral shroud).' },
+      { id: 'seen-3-q2', question: 'What colors are associated with birth in the poem?', marks: 1, type: 'factual', answer: 'Blue (as the wing of a halcyon wild).' },
+      { id: 'seen-3-q3', question: 'What is a "halcyon"?', marks: 1, type: 'vocabulary', answer: 'A kingfisher bird known for its bright blue color.' },
+      { id: 'seen-3-q4', question: 'How does the mood change from the first stanza to the last?', marks: 2, type: 'inference', answer: 'The mood changes from joyful (gay garment for birth) to solemn and still (funeral shroud in moonlight chill).' },
+    ],
+    tips: ['Memorize the color symbolism', 'Understand the life cycle metaphor', 'Focus on poetic devices - imagery, symbolism'],
+    practiced: false,
+  },
+  {
+    id: 'seen-4',
+    title: 'The Inchcape Rock - Robert Southey',
+    type: 'seen',
+    source: 'Yuvakbharati - Poetry Section',
+    passage: `No stir in the air, no stir in the sea,
+The ship was still as she could be,
+Her sails from heaven received no motion,
+Her keel was steady in the ocean.
+
+The Abbot of Aberbrothok
+Had placed that bell on the Inchcape Rock;
+On a buoy in the storm it floated and swung,
+And over the waves its warning rung.
+
+When the Rock was hid by the surge's swell,
+The mariners heard the warning bell;
+And then they knew the perilous Rock,
+And blest the Abbot of Aberbrothok.`,
+    wordCount: 95,
+    difficulty: 'medium',
+    questions: [
+      { id: 'seen-4-q1', question: 'Who placed the bell on the Inchcape Rock and why?', marks: 2, type: 'factual', answer: 'The Abbot of Aberbrothok placed the bell to warn sailors about the dangerous rock hidden under water.' },
+      { id: 'seen-4-q2', question: 'What was the condition of the sea in the opening stanza?', marks: 2, type: 'factual', answer: 'The sea was completely calm - no stir in air or sea, the ship was still, sails received no motion.' },
+      { id: 'seen-4-q3', question: 'Find the word meaning "dangerous".', marks: 1, type: 'vocabulary', answer: 'Perilous' },
+      { id: 'seen-4-q4', question: 'Why did the mariners bless the Abbot?', marks: 2, type: 'inference', answer: 'Because the warning bell saved them from crashing into the hidden dangerous rock.' },
+    ],
+    tips: ['Learn the complete story of Sir Ralph the Rover', 'Understand poetic justice theme', 'Focus on rhyme scheme and imagery'],
+    practiced: false,
+  },
+  {
+    id: 'seen-5',
+    title: 'The Sign of Four - Arthur Conan Doyle',
+    type: 'seen',
+    source: 'Yuvakbharati - Novel Section',
+    passage: `Sherlock Holmes took his bottle from the corner of the mantelpiece, and his hypodermic syringe from its neat morocco case. With his long, white, nervous fingers he adjusted the delicate needle and rolled back his left shirtcuff. For some little time his eyes rested thoughtfully upon the sinewy forearm and wrist, all dotted and scarred with innumerable puncture-marks. Finally, he thrust the sharp point home, pressed down the tiny piston, and sank back into the velvet-lined armchair with a long sigh of satisfaction.`,
+    wordCount: 90,
+    difficulty: 'hard',
+    questions: [
+      { id: 'seen-5-q1', question: 'What habit of Holmes is described in this passage?', marks: 2, type: 'inference', answer: 'His drug addiction (cocaine/morphine injection habit).' },
+      { id: 'seen-5-q2', question: 'What evidence shows this was not the first time Holmes did this?', marks: 2, type: 'inference', answer: 'His arm was "dotted and scarred with innumerable puncture-marks".' },
+      { id: 'seen-5-q3', question: 'Find a word meaning "made of muscle, tough".', marks: 1, type: 'vocabulary', answer: 'Sinewy' },
+      { id: 'seen-5-q4', question: 'What is a "morocco case"?', marks: 1, type: 'vocabulary', answer: 'A case made of fine goatskin leather.' },
+    ],
+    tips: ['Understand Holmes\' complex character', 'Note the detailed description technique', 'This passage often appears in board exams'],
+    practiced: false,
+  },
+  
+  // ===== UNSEEN PASSAGES (From Previous Board Papers) =====
+  {
+    id: 'unseen-2023-1',
+    title: 'The Power of Reading',
+    type: 'unseen',
+    source: 'HSC Board Paper',
+    year: '2023',
+    passage: `Reading is to the mind what exercise is to the body. It strengthens our mental muscles, expands our vocabulary, and opens windows to worlds we might never physically visit. In today's digital age, where short attention spans are the norm, reading long-form content is becoming increasingly rare. Yet, research consistently shows that those who read regularly demonstrate better analytical thinking, improved memory, and enhanced empathy. Unlike passive entertainment like television, reading is an active process that engages our imagination, forcing us to create mental images and make connections. The benefits extend beyond cognition; regular readers report lower stress levels and better sleep quality.`,
+    wordCount: 105,
+    difficulty: 'medium',
+    questions: [
+      { id: 'unseen-2023-1-q1', question: 'What comparison does the author make in the opening line?', marks: 2, type: 'factual', answer: 'Reading is to the mind what exercise is to the body.' },
+      { id: 'unseen-2023-1-q2', question: 'Why is reading becoming rare in the digital age?', marks: 2, type: 'inference', answer: 'Because of short attention spans that have become the norm in the digital age.' },
+      { id: 'unseen-2023-1-q3', question: 'How is reading different from watching television according to the passage?', marks: 2, type: 'inference', answer: 'Reading is an active process that engages imagination and forces mental creation, while television is passive entertainment.' },
+      { id: 'unseen-2023-1-q4', question: 'Find words meaning: (a) understanding others\' feelings (b) related to mental processes', marks: 2, type: 'vocabulary', answer: '(a) Empathy (b) Cognition' },
+    ],
+    tips: ['Read the entire passage once before answering', 'Underline key points', 'For vocabulary, use context clues'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2023-2',
+    title: 'Environmental Conservation',
+    type: 'unseen',
+    source: 'HSC Board Paper',
+    year: '2023',
+    passage: `The crisis facing our environment is no longer a distant threat but an immediate reality. Glaciers are melting at unprecedented rates, sea levels are rising, and extreme weather events have become commonplace. Yet, amidst this gloom, there are glimmers of hope. Young people worldwide are leading the charge for change, organizing protests, and demanding accountability from governments and corporations. Technology too offers solutions: solar and wind energy are becoming more affordable, electric vehicles are gaining popularity, and innovative carbon capture methods are being developed. The key lies in collective action – every individual choice, from reducing plastic usage to choosing sustainable products, contributes to the larger goal of planetary preservation.`,
+    wordCount: 112,
+    difficulty: 'medium',
+    questions: [
+      { id: 'unseen-2023-2-q1', question: 'What evidence of environmental crisis is mentioned in the passage?', marks: 2, type: 'factual', answer: 'Glaciers melting at unprecedented rates, rising sea levels, and extreme weather events.' },
+      { id: 'unseen-2023-2-q2', question: 'Who is leading the fight for environmental change according to the passage?', marks: 2, type: 'factual', answer: 'Young people worldwide are leading the charge through protests and demanding accountability.' },
+      { id: 'unseen-2023-2-q3', question: 'What technological solutions does the author mention?', marks: 2, type: 'factual', answer: 'Solar and wind energy, electric vehicles, and carbon capture methods.' },
+      { id: 'unseen-2023-2-q4', question: 'Find words meaning: (a) never done before (b) keeping something safe', marks: 2, type: 'vocabulary', answer: '(a) Unprecedented (b) Preservation' },
+    ],
+    tips: ['Environmental topics are common - learn vocabulary', 'Structure your answers in points for clarity'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2022-1',
+    title: 'The Art of Communication',
+    type: 'unseen',
+    source: 'HSC Board Paper',
+    year: '2022',
+    passage: `Effective communication is the cornerstone of human relationships and professional success. It encompasses not just the words we speak but also our body language, tone, and the ability to listen actively. In an era dominated by text messages and emails, we often forget that these written forms lack the nuances of face-to-face interaction. Misunderstandings proliferate when sarcasm is mistaken for sincerity or when the absence of visual cues leads to misinterpretation. The best communicators understand that listening is as important as speaking. They ask clarifying questions, acknowledge others\' viewpoints, and respond thoughtfully rather than reactively. Developing these skills requires conscious effort and practice but yields dividends in both personal and professional spheres.`,
+    wordCount: 118,
+    difficulty: 'hard',
+    questions: [
+      { id: 'unseen-2022-1-q1', question: 'What aspects does effective communication encompass besides words?', marks: 2, type: 'factual', answer: 'Body language, tone, and the ability to listen actively.' },
+      { id: 'unseen-2022-1-q2', question: 'Why do written communications like texts and emails lead to misunderstandings?', marks: 2, type: 'inference', answer: 'Because they lack nuances of face-to-face interaction, visual cues, and sarcasm can be mistaken for sincerity.' },
+      { id: 'unseen-2022-1-q3', question: 'What qualities do the best communicators possess?', marks: 2, type: 'inference', answer: 'They listen well, ask clarifying questions, acknowledge others\' viewpoints, and respond thoughtfully.' },
+      { id: 'unseen-2022-1-q4', question: 'Find words meaning: (a) spread rapidly (b) subtle differences', marks: 2, type: 'vocabulary', answer: '(a) Proliferate (b) Nuances' },
+    ],
+    tips: ['Communication skills topics are frequent', 'Answer vocabulary questions using context'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2022-2',
+    title: 'Mental Health Awareness',
+    type: 'unseen',
+    source: 'HSC Board Paper',
+    year: '2022',
+    passage: `Mental health has long been stigmatized in our society, often dismissed as a sign of weakness or something that doesn't require serious attention. However, this perception is rapidly changing. The pandemic brought mental health issues to the forefront, with millions experiencing anxiety, depression, and isolation. Schools and workplaces are now implementing mental wellness programs, and conversations about psychological well-being have become more commonplace. Seeking help from a counselor or therapist is no longer viewed as shameful but as a sign of self-awareness and strength. The journey towards complete destigmatization is long, but every conversation that normalizes mental health struggles brings us closer to a society where emotional well-being is valued equally with physical health.`,
+    wordCount: 120,
+    difficulty: 'medium',
+    questions: [
+      { id: 'unseen-2022-2-q1', question: 'How was mental health traditionally perceived in society?', marks: 2, type: 'factual', answer: 'It was stigmatized, dismissed as a sign of weakness, and not given serious attention.' },
+      { id: 'unseen-2022-2-q2', question: 'What impact did the pandemic have on mental health awareness?', marks: 2, type: 'inference', answer: 'It brought mental health issues to the forefront as millions experienced anxiety, depression, and isolation.' },
+      { id: 'unseen-2022-2-q3', question: 'How is seeking professional help viewed now compared to before?', marks: 2, type: 'inference', answer: 'It is now viewed as a sign of self-awareness and strength, not as shameful.' },
+      { id: 'unseen-2022-2-q4', question: 'Find words meaning: (a) marked with social disgrace (b) removing stigma', marks: 2, type: 'vocabulary', answer: '(a) Stigmatized (b) Destigmatization' },
+    ],
+    tips: ['Mental health is a trending topic - important for 2024 exam', 'Learn related vocabulary'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2021-1',
+    title: 'Digital Education',
+    type: 'unseen',
+    source: 'HSC Board Paper',
+    year: '2021',
+    passage: `The shift to online education during the pandemic was both a necessity and an experiment on a global scale. While it ensured continuity of learning, it also exposed the deep digital divide that exists in our society. Students in urban areas with stable internet connections and personal devices adapted relatively quickly, while those in rural areas struggled with connectivity issues and lack of resources. However, this challenge also spurred innovation. Educators developed creative solutions, from low-bandwidth teaching tools to phone-based learning platforms. The experience has permanently altered the educational landscape, with hybrid models combining online and offline learning likely to become the norm. The key lesson: technology is a tool, not a replacement for human connection in education.`,
+    wordCount: 122,
+    difficulty: 'medium',
+    questions: [
+      { id: 'unseen-2021-1-q1', question: 'What did the shift to online education expose?', marks: 2, type: 'factual', answer: 'It exposed the deep digital divide in society between urban and rural areas.' },
+      { id: 'unseen-2021-1-q2', question: 'What challenges did rural students face?', marks: 2, type: 'factual', answer: 'Connectivity issues and lack of resources (devices, internet).' },
+      { id: 'unseen-2021-1-q3', question: 'What innovations emerged from these challenges?', marks: 2, type: 'inference', answer: 'Low-bandwidth teaching tools and phone-based learning platforms.' },
+      { id: 'unseen-2021-1-q4', question: 'What is the key lesson mentioned about technology in education?', marks: 2, type: 'inference', answer: 'Technology is a tool, not a replacement for human connection in education.' },
+    ],
+    tips: ['Education-related passages appear frequently', 'Focus on cause-effect relationships'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2020-1',
+    title: 'Space Exploration',
+    type: 'unseen',
+    source: 'HSC Board Paper',
+    year: '2020',
+    passage: `India's space program has come a long way since its humble beginnings when scientists transported rocket parts on bicycles. Today, ISRO is recognized globally for its cost-effective missions and impressive achievements. The Mars Orbiter Mission, completed at a fraction of the cost of similar Western missions, demonstrated India's technological prowess. The recent Chandrayaan missions have placed India among the elite group of nations with lunar exploration capabilities. Beyond the scientific achievements, the space program serves as an inspiration for millions of young Indians, encouraging them to pursue careers in science and technology. It proves that constraints can breed creativity, and that with determination, nations can achieve the extraordinary.`,
+    wordCount: 110,
+    difficulty: 'easy',
+    questions: [
+      { id: 'unseen-2020-1-q1', question: 'How did India\'s space program begin?', marks: 2, type: 'factual', answer: 'With humble beginnings when scientists transported rocket parts on bicycles.' },
+      { id: 'unseen-2020-1-q2', question: 'What made the Mars Orbiter Mission significant?', marks: 2, type: 'inference', answer: 'It was completed at a fraction of the cost of similar Western missions, demonstrating India\'s technological prowess.' },
+      { id: 'unseen-2020-1-q3', question: 'What impact does the space program have beyond scientific achievements?', marks: 2, type: 'inference', answer: 'It inspires millions of young Indians to pursue careers in science and technology.' },
+      { id: 'unseen-2020-1-q4', question: 'Find words meaning: (a) exceptional skill (b) limitations', marks: 2, type: 'vocabulary', answer: '(a) Prowess (b) Constraints' },
+    ],
+    tips: ['ISRO achievements are common topics', 'Know major missions like Chandrayaan, Mangalyaan'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2019-1',
+    title: 'Importance of Sports',
+    type: 'unseen',
+    source: 'HSC Board Paper',
+    year: '2019',
+    passage: `Sports education in schools has traditionally been sidelined in favor of academic subjects. However, research increasingly shows that physical activity is not just beneficial for health but also enhances academic performance. Regular exercise improves concentration, memory, and cognitive function. Team sports teach valuable life lessons: cooperation, leadership, handling failure, and graceful winning. Countries that prioritize sports education consistently report better physical and mental health outcomes among their youth. The argument that sports take away time from studies is flawed; in reality, a healthy body supports a healthy mind. Schools must view physical education not as a luxury but as an essential component of holistic development.`,
+    wordCount: 108,
+    difficulty: 'easy',
+    questions: [
+      { id: 'unseen-2019-1-q1', question: 'How has sports education been traditionally treated in schools?', marks: 2, type: 'factual', answer: 'It has been sidelined in favor of academic subjects.' },
+      { id: 'unseen-2019-1-q2', question: 'What benefits of physical activity are mentioned for academics?', marks: 2, type: 'factual', answer: 'Improves concentration, memory, and cognitive function.' },
+      { id: 'unseen-2019-1-q3', question: 'What life lessons do team sports teach?', marks: 2, type: 'factual', answer: 'Cooperation, leadership, handling failure, and graceful winning.' },
+      { id: 'unseen-2019-1-q4', question: 'Why is the argument against sports education called "flawed"?', marks: 2, type: 'inference', answer: 'Because a healthy body supports a healthy mind - physical activity actually improves academic performance.' },
+    ],
+    tips: ['Sports and education balance is a classic topic', 'Remember key benefits for both health and academics'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-2024-1',
+    title: 'Artificial Intelligence and Society',
+    type: 'unseen',
+    source: 'HSC Board Paper',
+    year: '2024',
+    passage: `Artificial Intelligence is no longer the stuff of science fiction; it is deeply integrated into our daily lives. From personalized recommendations on streaming platforms to voice assistants and automated customer service, AI touches almost every aspect of modern existence. While the benefits are undeniable – increased efficiency, personalized experiences, and solutions to complex problems – concerns about job displacement and privacy invasion persist. The ethical dimensions of AI decision-making, particularly in critical areas like healthcare and criminal justice, demand careful consideration. As we stand at this technological crossroads, the choices we make today will shape the relationship between humans and machines for generations to come.`,
+    wordCount: 105,
+    difficulty: 'hard',
+    questions: [
+      { id: 'unseen-2024-1-q1', question: 'Give examples of AI integration in daily life from the passage.', marks: 2, type: 'factual', answer: 'Personalized recommendations on streaming platforms, voice assistants, and automated customer service.' },
+      { id: 'unseen-2024-1-q2', question: 'What concerns about AI are mentioned in the passage?', marks: 2, type: 'factual', answer: 'Job displacement, privacy invasion, and ethical dimensions of AI decision-making.' },
+      { id: 'unseen-2024-1-q3', question: 'In which critical areas does AI decision-making need careful consideration?', marks: 2, type: 'factual', answer: 'Healthcare and criminal justice.' },
+      { id: 'unseen-2024-1-q4', question: 'Find words meaning: (a) removal from position (b) area of junction', marks: 2, type: 'vocabulary', answer: '(a) Displacement (b) Crossroads' },
+    ],
+    tips: ['AI is highly relevant for 2025-26 exams', 'Learn vocabulary related to technology and ethics'],
+    practiced: false,
+  },
+  
+  // ===== MORE SEEN PASSAGES (Additional Textbook Content) =====
+  {
+    id: 'seen-6',
+    title: 'Father Returning Home - Dilip Chitre',
+    type: 'seen',
+    source: 'Yuvakbharati - Poetry Section',
+    passage: `My father travels on the late evening train
+Standing among silent commuters in the yellow light
+Suburbs slide past his unseeing eyes
+His shirt and pants are soggy and his black raincoat
+Stained with mud and his bag stuffed with books
+Is falling apart. His eyes dimmed by age
+Fade homeward through the humid monsoon night.
+
+Now I see him
+Drinking weak tea, eating a stale chapatti
+Reading a book, thinking about the past,
+His father, his grandchildren, their happy faces,
+Sitting till midnight while the radio hums
+And the whole world sleeps, washed and fed,
+Dreaming of its mortgage and its new furniture.`,
+    wordCount: 115,
+    difficulty: 'medium',
+    questions: [
+      { id: 'seen-6-q1', question: 'Describe the physical condition of the father as depicted in the poem.', marks: 2, type: 'factual', answer: 'His shirt and pants are soggy, black raincoat stained with mud, bag falling apart, and eyes dimmed by age.' },
+      { id: 'seen-6-q2', question: 'What does the father do after reaching home?', marks: 2, type: 'factual', answer: 'He drinks weak tea, eats a stale chapatti, reads a book, and thinks about the past.' },
+      { id: 'seen-6-q3', question: 'What themes does this poem explore?', marks: 2, type: 'inference', answer: 'Alienation, urban loneliness, generation gap, and the monotony of working-class life.' },
+      { id: 'seen-6-q4', question: 'Find words meaning: (a) people who travel regularly (b) wet and sticky', marks: 2, type: 'vocabulary', answer: '(a) Commuters (b) Soggy' },
+    ],
+    tips: ['Important poem for board exams', 'Focus on imagery of alienation', 'Understand the contrast between father\'s life and world\'s comforts'],
+    practiced: false,
+  },
+  {
+    id: 'seen-7',
+    title: 'Shala (School) - Milind Bokil',
+    type: 'seen',
+    source: 'Yuvakbharati - Prose Section (Translated)',
+    passage: `Those were the days of innocence, when a glance could send the heart racing and a smile could brighten an entire week. Mukund was fourteen, caught in that strange territory between childhood and youth. Shirodkar ma'am's mathematics class was torture, but the real reason for his distraction sat two benches ahead, her braids neatly tied with red ribbons. Shrimati Joshi, or Shiri as she was called by friends. Every day he would find some excuse to walk past her desk, to catch a glimpse, to perhaps one day gather the courage to speak. But what do you say to someone whose mere presence makes you forget your own name?`,
+    wordCount: 112,
+    difficulty: 'easy',
+    questions: [
+      { id: 'seen-7-q1', question: 'What age was Mukund and how is this phase described?', marks: 2, type: 'factual', answer: 'Mukund was fourteen, caught in that strange territory between childhood and youth.' },
+      { id: 'seen-7-q2', question: 'Why was mathematics class described as "torture"?', marks: 2, type: 'inference', answer: 'Because Mukund was distracted by Shiri who sat two benches ahead.' },
+      { id: 'seen-7-q3', question: 'What did Mukund do to get Shiri\'s attention?', marks: 2, type: 'factual', answer: 'He would find excuses to walk past her desk and catch a glimpse of her.' },
+      { id: 'seen-7-q4', question: 'What theme does this passage explore?', marks: 2, type: 'inference', answer: 'First love, adolescence, innocent romance, and school memories.' },
+    ],
+    tips: ['Shala is from Marathi literature - cultural context important', 'Focus on themes of adolescence and first love'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-practice-1',
+    title: 'Climate Change Impact',
+    type: 'unseen',
+    source: 'Practice Passage',
+    passage: `The scientific consensus on climate change is overwhelming: human activities, particularly the burning of fossil fuels, are causing unprecedented changes to Earth's climate system. The consequences are visible everywhere – from the bleaching of coral reefs to the intensification of hurricanes, from prolonged droughts to devastating floods. Small island nations face the existential threat of rising sea levels. Agricultural patterns are shifting, threatening food security for millions. Yet, the window for meaningful action, while narrowing, remains open. The Paris Agreement represented a global commitment to limiting temperature rise, but implementation has been inconsistent. Individual choices – reducing meat consumption, minimizing air travel, choosing renewable energy – combined with systemic changes in policy and industry, can still alter our trajectory.`,
+    wordCount: 118,
+    difficulty: 'hard',
+    questions: [
+      { id: 'unseen-practice-1-q1', question: 'What is the main cause of climate change according to the passage?', marks: 2, type: 'factual', answer: 'Human activities, particularly the burning of fossil fuels.' },
+      { id: 'unseen-practice-1-q2', question: 'List any four consequences of climate change mentioned.', marks: 2, type: 'factual', answer: 'Bleaching of coral reefs, intensification of hurricanes, prolonged droughts, devastating floods, rising sea levels, shifting agricultural patterns.' },
+      { id: 'unseen-practice-1-q3', question: 'What individual actions are suggested to combat climate change?', marks: 2, type: 'factual', answer: 'Reducing meat consumption, minimizing air travel, and choosing renewable energy.' },
+      { id: 'unseen-practice-1-q4', question: 'Find words meaning: (a) general agreement (b) threatening existence', marks: 2, type: 'vocabulary', answer: '(a) Consensus (b) Existential' },
+    ],
+    tips: ['Climate topics are recurring - master the vocabulary', 'Paris Agreement knowledge helpful'],
+    practiced: false,
+  },
+  {
+    id: 'unseen-practice-2',
+    title: 'Women Empowerment',
+    type: 'unseen',
+    source: 'Practice Passage',
+    passage: `The empowerment of women is not merely a matter of social justice; it is an economic imperative. Studies consistently show that when women participate fully in the workforce, economies grow significantly. Educating a girl child creates ripple effects across generations – she is more likely to educate her own children, maintain better family health, and contribute to her community. Yet, barriers persist: discriminatory laws, cultural norms that prioritize boys' education, safety concerns, and unequal domestic responsibilities. Progress has been made – more girls are in school, more women in leadership positions, and legal protections have strengthened. But the journey toward true equality requires continuous effort, challenging deep-rooted prejudices, and creating environments where every woman can realize her full potential.`,
+    wordCount: 125,
+    difficulty: 'medium',
+    questions: [
+      { id: 'unseen-practice-2-q1', question: 'Why is women\'s empowerment called an "economic imperative"?', marks: 2, type: 'inference', answer: 'Because when women participate fully in the workforce, economies grow significantly.' },
+      { id: 'unseen-practice-2-q2', question: 'What are the benefits of educating a girl child?', marks: 2, type: 'factual', answer: 'She is more likely to educate her own children, maintain better family health, and contribute to her community.' },
+      { id: 'unseen-practice-2-q3', question: 'What barriers to women\'s empowerment are mentioned?', marks: 2, type: 'factual', answer: 'Discriminatory laws, cultural norms favoring boys, safety concerns, and unequal domestic responsibilities.' },
+      { id: 'unseen-practice-2-q4', question: 'Find words meaning: (a) spreading effects (b) deeply established', marks: 2, type: 'vocabulary', answer: '(a) Ripple effects (b) Deep-rooted' },
+    ],
+    tips: ['Women empowerment is an important social topic', 'Remember statistics and key arguments'],
+    practiced: false,
+  },
+];
+
 const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSubjects = [] }) => {
-  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock' | 'diagrams' | 'mistakes' | 'analytics' | 'mindmaps' | 'recorder' | 'checklist' | 'quickrev' | 'answerguide' | 'pomodoro' | 'affirmations' | 'marking'>('overview');
+  const [activeTab, setActiveTab] = useState<'overview' | 'daily' | 'calendar' | 'subjects' | 'tips' | 'flashcards' | 'pyq' | 'score90' | 'formulas' | 'emergency' | 'writing' | 'mock' | 'diagrams' | 'mistakes' | 'analytics' | 'mindmaps' | 'recorder' | 'checklist' | 'quickrev' | 'answerguide' | 'pomodoro' | 'affirmations' | 'marking' | 'passages'>('overview');
   
   // Filter exam dates based on selected subjects
   const EXAM_DATES = useMemo(() => {
@@ -1727,6 +2096,20 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   // Marking Scheme
   const [markingSchemeFilter, setMarkingSchemeFilter] = useState<string>('all');
 
+  // English Passage Practice
+  const [passageType, setPassageType] = useState<'all' | 'seen' | 'unseen'>('all');
+  const [currentPassageIndex, setCurrentPassageIndex] = useState(0);
+  const [passageAnswers, setPassageAnswers] = useState<Record<string, string>>({});
+  const [showPassageAnswers, setShowPassageAnswers] = useState(false);
+  const [practicedPassages, setPracticedPassages] = useState<string[]>(() => {
+    const saved = localStorage.getItem('practicedPassages');
+    return saved ? JSON.parse(saved) : [];
+  });
+  const [passageScores, setPassageScores] = useState<Record<string, number>>(() => {
+    const saved = localStorage.getItem('passageScores');
+    return saved ? JSON.parse(saved) : {};
+  });
+
   // Storage key based on selected subjects
   const storageKey = useMemo(() => {
     return selectedSubjects?.length > 0 
@@ -1792,6 +2175,15 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
   useEffect(() => {
     localStorage.setItem('megaCrusherPomodoro', JSON.stringify(pomodoroSessions));
   }, [pomodoroSessions]);
+  
+  // Save passage practice progress
+  useEffect(() => {
+    localStorage.setItem('practicedPassages', JSON.stringify(practicedPassages));
+  }, [practicedPassages]);
+  
+  useEffect(() => {
+    localStorage.setItem('passageScores', JSON.stringify(passageScores));
+  }, [passageScores]);
   
   // Pomodoro timer effect
   useEffect(() => {
@@ -4280,6 +4672,302 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
     );
   };
   
+  // English Passage Practice Render
+  const renderPassages = () => {
+    // Filter passages based on type
+    const filteredPassages = passageType === 'all' 
+      ? ENGLISH_PASSAGES 
+      : ENGLISH_PASSAGES.filter(p => p.type === passageType);
+    
+    const currentPassage = filteredPassages[currentPassageIndex] || filteredPassages[0];
+    
+    if (!currentPassage) {
+      return (
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-white mb-4">📖 English Passage Practice</h2>
+          <div className="bg-gray-800 rounded-xl p-6 text-center">
+            <p className="text-gray-400">No passages available</p>
+          </div>
+        </div>
+      );
+    }
+    
+    const isPracticed = practicedPassages.includes(currentPassage.id);
+    const savedScore = passageScores[currentPassage.id];
+    const totalMarks = currentPassage.questions.reduce((sum, q) => sum + q.marks, 0);
+    
+    const markPassagePracticed = (score?: number) => {
+      if (!practicedPassages.includes(currentPassage.id)) {
+        setPracticedPassages(prev => [...prev, currentPassage.id]);
+      }
+      if (score !== undefined) {
+        setPassageScores(prev => ({ ...prev, [currentPassage.id]: score }));
+      }
+      setShowPassageAnswers(true);
+    };
+    
+    const goToNextPassage = () => {
+      setCurrentPassageIndex(prev => (prev + 1) % filteredPassages.length);
+      setShowPassageAnswers(false);
+      setPassageAnswers({});
+    };
+    
+    const goToPrevPassage = () => {
+      setCurrentPassageIndex(prev => prev === 0 ? filteredPassages.length - 1 : prev - 1);
+      setShowPassageAnswers(false);
+      setPassageAnswers({});
+    };
+    
+    const seenCount = ENGLISH_PASSAGES.filter(p => p.type === 'seen').length;
+    const unseenCount = ENGLISH_PASSAGES.filter(p => p.type === 'unseen').length;
+    const practicedSeenCount = ENGLISH_PASSAGES.filter(p => p.type === 'seen' && practicedPassages.includes(p.id)).length;
+    const practicedUnseenCount = ENGLISH_PASSAGES.filter(p => p.type === 'unseen' && practicedPassages.includes(p.id)).length;
+    
+    return (
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold text-white mb-4">📖 English Passage Practice</h2>
+        
+        {/* Stats Cards */}
+        <div className="grid grid-cols-3 gap-3 mb-4">
+          <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-xl p-3 text-center">
+            <p className="text-green-200 text-xs">Seen (Textbook)</p>
+            <p className="text-2xl font-bold text-white">{practicedSeenCount}/{seenCount}</p>
+          </div>
+          <div className="bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl p-3 text-center">
+            <p className="text-purple-200 text-xs">Unseen (Board)</p>
+            <p className="text-2xl font-bold text-white">{practicedUnseenCount}/{unseenCount}</p>
+          </div>
+          <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl p-3 text-center">
+            <p className="text-blue-200 text-xs">Total Done</p>
+            <p className="text-2xl font-bold text-white">{practicedPassages.length}/{ENGLISH_PASSAGES.length}</p>
+          </div>
+        </div>
+        
+        {/* Type Filter */}
+        <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
+          {[
+            { id: 'all', label: '📚 All Passages', count: ENGLISH_PASSAGES.length },
+            { id: 'seen', label: '📗 Seen (Textbook)', count: seenCount },
+            { id: 'unseen', label: '📘 Unseen (Board Papers)', count: unseenCount },
+          ].map(type => (
+            <button
+              key={type.id}
+              onClick={() => { setPassageType(type.id as any); setCurrentPassageIndex(0); setShowPassageAnswers(false); }}
+              className={`px-3 py-2 rounded-lg text-sm whitespace-nowrap transition-all ${
+                passageType === type.id 
+                  ? 'bg-blue-600 text-white' 
+                  : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+              }`}
+            >
+              {type.label} ({type.count})
+            </button>
+          ))}
+        </div>
+        
+        {/* Navigation */}
+        <div className="flex items-center justify-between mb-4">
+          <button
+            onClick={goToPrevPassage}
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white"
+          >
+            ← Previous
+          </button>
+          <span className="text-gray-400">
+            {currentPassageIndex + 1} / {filteredPassages.length}
+          </span>
+          <button
+            onClick={goToNextPassage}
+            className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white"
+          >
+            Next →
+          </button>
+        </div>
+        
+        {/* Current Passage */}
+        <div className="bg-gray-800 rounded-xl overflow-hidden">
+          {/* Header */}
+          <div className={`p-4 ${currentPassage.type === 'seen' ? 'bg-green-600/20' : 'bg-purple-600/20'}`}>
+            <div className="flex items-center justify-between mb-2">
+              <span className={`px-2 py-1 rounded text-xs font-medium ${
+                currentPassage.type === 'seen' ? 'bg-green-600 text-white' : 'bg-purple-600 text-white'
+              }`}>
+                {currentPassage.type === 'seen' ? '📗 SEEN' : '📘 UNSEEN'}
+              </span>
+              {isPracticed && (
+                <span className="px-2 py-1 bg-green-500 rounded text-xs text-white">
+                  ✓ Practiced {savedScore !== undefined && `(${savedScore}/${totalMarks})`}
+                </span>
+              )}
+            </div>
+            <h3 className="text-xl font-bold text-white">{currentPassage.title}</h3>
+            <p className="text-gray-400 text-sm">
+              {currentPassage.source} {currentPassage.year && `• ${currentPassage.year}`} • {currentPassage.wordCount} words
+            </p>
+            <div className="flex gap-2 mt-2">
+              <span className={`px-2 py-1 rounded text-xs ${
+                currentPassage.difficulty === 'easy' ? 'bg-green-600/30 text-green-400' :
+                currentPassage.difficulty === 'medium' ? 'bg-yellow-600/30 text-yellow-400' :
+                'bg-red-600/30 text-red-400'
+              }`}>
+                {currentPassage.difficulty.toUpperCase()}
+              </span>
+              <span className="px-2 py-1 bg-blue-600/30 text-blue-400 rounded text-xs">
+                {totalMarks} Marks
+              </span>
+            </div>
+          </div>
+          
+          {/* Passage Text */}
+          <div className="p-4 border-b border-gray-700">
+            <h4 className="text-gray-400 text-sm mb-2 font-medium">📄 PASSAGE:</h4>
+            <div className="bg-gray-900 rounded-lg p-4 text-gray-200 leading-relaxed whitespace-pre-wrap text-sm">
+              {currentPassage.passage}
+            </div>
+          </div>
+          
+          {/* Questions */}
+          <div className="p-4 space-y-4">
+            <h4 className="text-gray-400 text-sm font-medium">❓ COMPREHENSION QUESTIONS:</h4>
+            
+            {currentPassage.questions.map((q, idx) => (
+              <div key={q.id} className="bg-gray-900 rounded-lg p-4">
+                <div className="flex items-start gap-3 mb-3">
+                  <span className={`px-2 py-1 rounded text-xs font-bold ${
+                    q.type === 'factual' ? 'bg-blue-600' :
+                    q.type === 'inference' ? 'bg-purple-600' :
+                    q.type === 'vocabulary' ? 'bg-green-600' :
+                    q.type === 'grammar' ? 'bg-yellow-600' :
+                    'bg-orange-600'
+                  } text-white`}>
+                    Q{idx + 1}
+                  </span>
+                  <div className="flex-1">
+                    <p className="text-white">{q.question}</p>
+                    <p className="text-gray-500 text-xs mt-1">
+                      [{q.marks} marks • {q.type}]
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Answer Input */}
+                <textarea
+                  value={passageAnswers[q.id] || ''}
+                  onChange={(e) => setPassageAnswers(prev => ({ ...prev, [q.id]: e.target.value }))}
+                  placeholder="Write your answer here..."
+                  className="w-full bg-gray-800 border border-gray-600 rounded-lg p-3 text-white text-sm resize-none"
+                  rows={2}
+                />
+                
+                {/* Show Answer */}
+                {showPassageAnswers && (
+                  <div className="mt-3 p-3 bg-green-900/30 rounded-lg border border-green-600/30">
+                    <p className="text-green-400 text-xs font-medium mb-1">✓ MODEL ANSWER:</p>
+                    <p className="text-green-200 text-sm">{q.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+          
+          {/* Tips */}
+          <div className="p-4 bg-blue-900/20 border-t border-gray-700">
+            <h4 className="text-blue-400 text-sm font-medium mb-2">💡 TIPS FOR THIS PASSAGE:</h4>
+            <ul className="text-blue-200 text-sm space-y-1">
+              {currentPassage.tips.map((tip, i) => (
+                <li key={i}>• {tip}</li>
+              ))}
+            </ul>
+          </div>
+          
+          {/* Action Buttons */}
+          <div className="p-4 flex gap-3">
+            {!showPassageAnswers ? (
+              <>
+                <button
+                  onClick={() => markPassagePracticed()}
+                  className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium"
+                >
+                  📝 Show Answers
+                </button>
+                <button
+                  onClick={() => {
+                    const score = prompt(`Rate yourself out of ${totalMarks} marks:`);
+                    if (score) {
+                      markPassagePracticed(parseInt(score));
+                    }
+                  }}
+                  className="flex-1 py-3 bg-green-600 hover:bg-green-700 rounded-lg text-white font-medium"
+                >
+                  ✓ Mark Complete with Score
+                </button>
+              </>
+            ) : (
+              <button
+                onClick={goToNextPassage}
+                className="flex-1 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg text-white font-medium"
+              >
+                Next Passage →
+              </button>
+            )}
+          </div>
+        </div>
+        
+        {/* Passage List */}
+        <div className="bg-gray-800 rounded-xl p-4 mt-4">
+          <h4 className="text-white font-medium mb-3">📋 All {passageType === 'all' ? '' : passageType.toUpperCase()} Passages</h4>
+          <div className="space-y-2 max-h-64 overflow-y-auto">
+            {filteredPassages.map((passage, idx) => (
+              <button
+                key={passage.id}
+                onClick={() => { setCurrentPassageIndex(idx); setShowPassageAnswers(false); setPassageAnswers({}); }}
+                className={`w-full text-left p-3 rounded-lg transition-all ${
+                  currentPassageIndex === idx 
+                    ? 'bg-blue-600 text-white' 
+                    : practicedPassages.includes(passage.id)
+                      ? 'bg-green-900/30 text-green-200 hover:bg-green-900/50'
+                      : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <span className={`text-xs px-2 py-0.5 rounded ${
+                      passage.type === 'seen' ? 'bg-green-600/30 text-green-400' : 'bg-purple-600/30 text-purple-400'
+                    }`}>
+                      {passage.type}
+                    </span>
+                    <span className="font-medium text-sm">{passage.title}</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    {passageScores[passage.id] !== undefined && (
+                      <span className="text-xs bg-blue-600/30 text-blue-400 px-2 py-0.5 rounded">
+                        {passageScores[passage.id]}/{passage.questions.reduce((s, q) => s + q.marks, 0)}
+                      </span>
+                    )}
+                    {practicedPassages.includes(passage.id) && <span className="text-green-400">✓</span>}
+                  </div>
+                </div>
+                <p className="text-xs text-gray-400 mt-1">{passage.source} {passage.year && `• ${passage.year}`}</p>
+              </button>
+            ))}
+          </div>
+        </div>
+        
+        {/* Quick Tips Card */}
+        <div className="bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-xl p-4 border border-orange-500/30">
+          <h4 className="text-orange-400 font-bold mb-2">🎯 Comprehension Tips for 8/8 Marks:</h4>
+          <div className="text-orange-200 text-sm space-y-2">
+            <p>1️⃣ <strong>First Read:</strong> Skim the passage for overall meaning (1 min)</p>
+            <p>2️⃣ <strong>Read Questions:</strong> Know what to look for before detailed reading</p>
+            <p>3️⃣ <strong>Second Read:</strong> Read carefully, underline key points</p>
+            <p>4️⃣ <strong>Vocabulary Questions:</strong> Use context clues, check prefix/suffix</p>
+            <p>5️⃣ <strong>Inference:</strong> "Read between the lines" - what's implied?</p>
+            <p>6️⃣ <strong>Answer Format:</strong> Start with the key word from the question</p>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  
   // Pomodoro Timer Render
   const renderPomodoro = () => {
     const formatPomodoroTime = (seconds: number) => {
@@ -4735,6 +5423,7 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
             { id: 'mindmaps', label: '🧠' },
             { id: 'emergency', label: '🚨' },
             { id: 'answerguide', label: '✍️' },
+            { id: 'passages', label: '📖' },
             { id: 'writing', label: '📚' },
             { id: 'mock', label: '📋' },
             { id: 'recorder', label: '🎙️' },
@@ -4777,6 +5466,7 @@ const MegaBoardCrasher: React.FC<MegaBoardCrasherProps> = ({ onClose, selectedSu
         {activeTab === 'mindmaps' && renderMindMaps()}
         {activeTab === 'emergency' && renderEmergency()}
         {activeTab === 'answerguide' && renderAnswerGuide()}
+        {activeTab === 'passages' && renderPassages()}
         {activeTab === 'writing' && renderWriting()}
         {activeTab === 'mock' && renderMockTests()}
         {activeTab === 'recorder' && renderVoiceRecorder()}
