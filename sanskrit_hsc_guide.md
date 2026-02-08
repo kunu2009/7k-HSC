@@ -111,53 +111,203 @@ Classify 6 out of 8 words into correct columns (0.5 marks each).
 ### अवबोधनम् (Comprehension) - 2 Marks
 | Task | Description |
 |------|-------------|
-| पूर्णवाक्येन उत्तरत | Answer in complete Sanskrit sentences |
-| उचितं कारणं चित्वा | Choose the correct reason |
+| पूर्णवाक्येन उत्तरत | Answer in complete Sanskrit sentences (NOT one-word!) |
+| उचितं कारणं चित्वा | Choose the correct reason (look for similar lines in passage) |
 | सत्यं वा असत्यं लिखत | Write True or False |
-| शब्द चतुष्कोणं पूरयत | Fill in the word box |
+| शब्द चतुष्कोणं पूरयत | Fill in the word box/square |
+| प्रवाही-जाल पूरयत | Complete the flow chart |
 
 ### शब्दज्ञानम् (Vocabulary/Analysis) - 2 Marks
 | Task | Description |
 |------|-------------|
-| नामस्थाने सर्वनाम | Replace noun with pronoun (तत् table) |
+| नामस्थाने सर्वनाम | Replace noun with pronoun (match Gender, Number, Case!) |
 | विशेषण-विशेष्य सम्बन्ध | Identify adjective-noun pairs |
 | विरुद्धार्थक/समानार्थक शब्द | Find antonyms/synonyms |
 | सन्धि विग्रह | Split combined words |
+| प्रश्न निर्माणम् | Form question using किम् pronoun (MUST end with ?) |
 
 ## Question 2(C): Anvaya or Saralārtha - 4 Marks
 
-### Option 1: अन्वय पूर्तिः (Prose Order Completion)
+### Option 1: अन्वय पूर्तिः (Prose Order Completion) ⭐ RECOMMENDED
 - Fill **8 blanks** from मञ्जूषा (word box)
-- 0.5 marks per correct word
-- **Safer choice** if you know the verse well!
+- **0.5 marks per correct word = Guaranteed 4/4 if correct!**
+- Objective task - no interpretation errors
+- **Choose this if you know the verse well!**
 
 ### Option 2: सरलार्थ (Simple Translation)
 - Translate verse into medium language (English/Marathi/Hindi)
-- Risk of losing marks due to poor phrasing
+- ⚠️ Risk of losing marks due to:
+  - Poor phrasing
+  - Wrong word order
+  - Changed meaning interpretation
 
-## 📖 Prescribed Poetry Chapters (द्वितीय मण्डलम्):
+### 🎯 Strategy: Choose Anvaya for Perfect Marks!
+- Anvaya is **objective** (right/wrong answers)
+- Saralārtha is **subjective** (interpretation can cost marks)
+- Pre-exam: **Memorize Anvaya** of important verses
 
-### 1. क्षणं मनोविनोदनम् (Entertainment for a Moment)
-- Humorous and witty verses (विनोद प्रधान सुभाषितानि)
+---
 
-### 2. उत्सवप्रिया देवभूमिः (Festival-Loving Divine Land)
-- Maharashtra's temples: Pandharpur, Jejuri
-- Festivals: Ganeshotsav, Dasara
-- Source: *श्री देवदेवेश्वर महाकाव्यम्*
+## 📖 Prescribed Poetry Chapters (द्वितीय मण्डलम्) - DETAILED
 
-### 3. मोदं वितनोतु संवादः (May the Dialogue Spread Joy)
-- Dialogue format verses
-- Puns (श्लेष) between characters
-- Shiva-Parvati, Krishna conversations
+### Chapter 1: क्षणं मनोविनोदनम् (Entertainment for a Moment)
 
-### 4. भावेन भावः क्रियया क्रिया (Action by Emotion)
-- Ethical and philosophical verses
-- Health (पथ्य/diet importance)
-- Value of applied knowledge
+**Theme:** Witty and humorous verses (विनोद प्रधान सुभाषितानि)
 
-### ⚠️ Important Rules:
-1. **प्रश्न निर्माणम्** MUST end with **? (question mark)** - Full stop = 0 marks!
-2. Know the **source text names** (पाठस्य नाम, ग्रन्थस्य नाम)
+#### 🐫 Key Verse 1: The Camel's Wedding (उष्ट्रविवाहः)
+> At a camel's wedding, donkeys sing. The camel praises the voice, the donkey praises the beauty!
+
+**Sanskrit Line:** "अहो रूपम् अहो ध्वनिः" (Aho rūpam aho dhvaniḥ)
+- **Meaning:** "Oh what beauty! Oh what voice!" (mutual false flattery)
+- **Moral:** Fools praise each other to hide their flaws
+
+#### 🧵 Key Verse 2: The Beggar and Cotton (भिक्षुक-तूल तुलना)
+> A beggar is lighter than cotton, yet the wind doesn't carry him away.
+
+**Why?** "माध्यं प्रार्थित इति" - The wind fears the beggar will ask for something!
+- **Alankar:** उत्प्रेक्षा (Poetic Fancy)
+- **Humor:** Even the wind avoids a persistent beggar!
+
+#### Other Humorous Themes:
+- Lazy people making excuses
+- Foolish scholars
+- Ironic situations
+
+---
+
+### Chapter 2: उत्सवप्रिया देवभूमिः (Festival-Loving Divine Land)
+
+**Theme:** Geography, deities, and festivals of **Maharashtra**
+
+**Source:** श्री देवदेवेश्वर महाकाव्यम् by **पण्डित वासंतराव शेलके**
+
+#### 🏔️ Geography Mentioned:
+| Place | Sanskrit | Significance |
+|-------|----------|--------------|
+| Sahyadri Mountains | सह्याद्रि पर्वतः | Backbone of Maharashtra |
+| Godavari River | गोदावरी नदी | Sacred river |
+| Krishna River | कृष्णा नदी | Important river |
+
+#### 🛕 Religious Sites (तीर्थक्षेत्राणि):
+| Place | Deity | Sanskrit Name |
+|-------|-------|---------------|
+| **Pandharpur** | Vitthal (Vishnu) | पण्ढरपुरम् / विठ्ठलः |
+| **Jejuri** | Khandoba | जेजुरी / खण्डोबा |
+| **Morgaon** | Ganesha | मोरगाव / गणेशः |
+| **Narsobachi Wadi** | Dattatreya | नृसिंहवाडी / दत्तात्रेयः |
+| **Tuljapur** | Tulja Bhavani | तुळजापुर / तुळजाभवानी |
+| **Kolhapur** | Mahalakshmi | कोल्हापुर / महालक्ष्मी |
+
+#### 🎉 Festivals (उत्सवाः):
+- गणेशोत्सव (Ganeshotsav)
+- दशहरा / विजयादशमी (Dasara)
+- दीपावली (Diwali)
+- आषाढी एकादशी (Ashadhi Ekadashi - Pandharpur Wari)
+
+---
+
+### Chapter 3: मोदं वितनोतु संवादः (May Dialogue Spread Joy)
+
+**Theme:** Verses in **dialogue format** using **श्लेष (Puns)**
+
+#### 🔱 Key Dialogue 1: Shiva-Parvati (शिव-पार्वती संवादः)
+Names with double meanings:
+
+| Name | Meaning 1 | Meaning 2 |
+|------|-----------|-----------|
+| **नीलकण्ठः** | Lord Shiva (blue throat) | Peacock |
+| **पशुपतिः** | Lord of beings (Shiva) | Lord of animals |
+| **गिरिजा** | Daughter of mountain (Parvati) | Born of mountain |
+| **शूलपाणिः** | Trident-holder (Shiva) | One with thorns in hand |
+
+**Humor:** Parvati teases Shiva using puns on his names!
+
+#### 🦢 Key Dialogue 2: Swan at Mansarovar (हंस-मानसरोवर)
+- Swan describes the beauty of Mansarovar lake
+- Uses poetic imagery
+- Theme: Longing for divine abode
+
+#### 🪈 Key Dialogue 3: Krishna Conversations
+- Playful exchanges with Gopis
+- Puns on names and situations
+- Rasika (aesthetic) verses
+
+---
+
+### Chapter 4: भावेन भावः क्रियया क्रिया (Action by Emotion)
+
+**Theme:** Ethics, morality, and determination (नैतिक सुभाषितानि)
+
+#### 📚 Key Verse 1: Useless Knowledge (निष्फल विद्या)
+> पुस्तकस्था तु या विद्या, परहस्तगतं धनम्।
+> कार्यकाले समुत्पन्ने, न सा विद्या न तद् धनम्॥
+
+**Translation:**
+- Knowledge only in books
+- Wealth in another's hands
+- Both are **useless when you need them!**
+
+**Moral:** Applied knowledge > Theoretical knowledge
+
+#### 💊 Key Verse 2: Health and Diet (पथ्य)
+> पथ्ये सति गदार्तस्य किमौषधनिषेवणैः।
+> पथ्येऽसति गदार्तस्य किमौषधनिषेवणैः॥
+
+**Translation:**
+- If you follow proper diet (पथ्य), why need medicine?
+- If you don't follow diet, what use is medicine?
+
+**Moral:** Prevention (diet) > Cure (medicine)
+
+#### 🐝 Key Verse 3: The Determined Bee (भ्रमर-कमल)
+> रात्रिर्गमिष्यति भविष्यति सुप्रभातम्...
+
+**Story:** A bee trapped in a closed lotus at night
+- Bee thinks: "Night will pass, dawn will come, lotus will open"
+- **Tragic end:** An elephant crushes the lotus before dawn
+
+**Moral:** Determination is noble, but fate can be cruel
+- Also: Don't get trapped in temporary pleasures (lotus = material world)
+
+#### Other Ethical Themes:
+- Value of good company (सत्सङ्गति)
+- Importance of time (कालस्य महत्त्वम्)
+- Self-reliance (स्वावलम्बनम्)
+
+---
+
+## 🎯 Poetry Section - Scoring Strategy
+
+### For Maximum Marks (12/12):
+
+#### Q2(A) & Q2(B) - 8 Marks:
+1. **Complete sentences** - Never give one-word answers!
+2. **Question mark (?)** - MUST end प्रश्न निर्माणम् with ?
+3. **Pronoun matching** - Same लिङ्ग, वचन, विभक्ति as noun
+4. **Look for clues** - Correct reason often uses similar words from passage
+
+#### Q2(C) - 4 Marks:
+1. **Choose Anvaya** if you know the verse = Guaranteed 4/4
+2. **Only choose Saralārtha** if you're very confident in translation
+3. **Pre-memorize** Anvaya of frequently asked verses
+
+### Common Mistakes to Avoid:
+| Mistake | Consequence |
+|---------|-------------|
+| Ending question with full stop (।) | 0 marks |
+| One-word answers in comprehension | Half marks |
+| Wrong gender/number in pronoun | 0 marks |
+| Not underlining filled words | Marks at risk |
+
+---
+
+## 📝 Important Source References
+
+| Chapter | Source Text | Author |
+|---------|-------------|--------|
+| उत्सवप्रिया देवभूमिः | श्री देवदेवेश्वर महाकाव्यम् | पं. वासंतराव शेलके |
+
+⚠️ **Board asks:** "पाठस्य नाम लिखत" or "ग्रन्थस्य नाम लिखत" = 1 easy mark!
 
 ---
 
@@ -579,6 +729,117 @@ Parallel sentence reflecting same idea
 | लृट् | Simple Future | भविष्यत् |
 | लोट् | Imperative | आज्ञार्थ |
 | विधिलिङ् | Potential | सम्भावना |
+
+---
+
+# 🇮🇳 Revolutionary Literature & Historical Context
+
+## Supplementary Chapter: कार्यं वा साध्येयं देहं वा पातयेयम्
+*("I shall either accomplish the task or let my body perish")*
+
+**Source:** शिवराजविजय by पण्डित अम्बिकादत्त व्यास
+
+**Story:** A loyal spy of Chhatrapati Shivaji Maharaj must deliver a letter during a terrible storm and dense darkness.
+
+**Theme:** 
+- Unmatched loyalty
+- Readiness to sacrifice life for duty
+- Determination against all odds
+
+---
+
+## स्वातंत्र्यवीर विनायक दामोदर सावरकर
+
+### Historical Contributions:
+
+| Achievement | Details |
+|-------------|---------|
+| **1857 का प्रथम स्वतंत्रता संग्राम** | First to call 1857 uprising "First War of Independence" |
+| **Banned Book** | "1857 - The First War of Independence" confiscated under Sedition Law |
+| **Biography** | Wrote biography of Italian revolutionary **Joseph Mazzini** |
+| **Revolutionary Organization** | Founded **अभिनव भारत** (formerly Mitra Mela) with brother Ganesh |
+
+### अभिनव भारत (Abhinav Bharat):
+- Secret revolutionary organization
+- Goal: Weaken and uproot British rule
+- Members received revolutionary literature and weapons from England
+
+### Consequences:
+- Held responsible for murder of British collector Jackson
+- Sentenced to **50 years rigorous imprisonment** at Andaman (Cellular Jail)
+- Tried under Sedition Law
+
+---
+
+## Related Revolutionary Poems in Curriculum:
+
+### 1. "शिवाजीचे उद्गार" (Shivaji's Words)
+- Published in **केसरी** newspaper (1897)
+- Led to arrest of **लोकमान्य तिलक** for treason
+
+### 2. "जलियाँवाला बाग" (Jallianwala Bagh)
+- By **कुसुमाग्रज** (V.V. Shirwadkar)
+- Describes the 1919 massacre
+- Marathi poet laureate
+
+### 3. "उत्सवप्रिया देवभूमिः"
+- By पण्डित वासंतराव शेलके
+- Praises Maharashtra's deities and geography
+- From श्री देवदेवेश्वर महाकाव्यम्
+
+---
+
+# 📊 Vocabulary Quick Reference (Extended)
+
+## Synonyms (समानार्थक शब्दाः)
+
+| Word | Meaning | Synonyms |
+|------|---------|----------|
+| अग्निः | Fire | पावकः, अनलः, वह्निः, हुताशनः |
+| मार्जारः | Cat | विडालः, बिडालः |
+| सहस्रांशुः | Sun | भास्करः, रविः, सूर्यः, आदित्यः, दिनकरः |
+| अम्भः | Water | जलम्, सलिलम्, तोयम्, वारि, नीरम्, उदकम् |
+| गजः | Elephant | हस्ती, करी, नागः, कुञ्जरः |
+| वायुः | Wind | पवनः, अनिलः, मारुतः, समीरः |
+| पृथ्वी | Earth | भूमिः, धरा, वसुधा, मेदिनी |
+| आकाशः | Sky | गगनम्, नभः, व्योम, अम्बरम् |
+| चन्द्रः | Moon | शशी, इन्दुः, शशाङ्कः, निशाकरः |
+
+## Antonyms (विरुद्धार्थक शब्दाः)
+
+| Word | Antonym |
+|------|---------|
+| विद्वान् (Scholar) | मूर्खः (Fool) |
+| दत्तवान् (Gave) | अदत्तवान् (Did not give) |
+| सत्यम् (Truth) | असत्यम् (False) |
+| सुखम् (Happiness) | दुःखम् (Sorrow) |
+| धर्मः (Righteousness) | अधर्मः (Unrighteousness) |
+| प्रवेशः (Entry) | निर्गमः (Exit) |
+| आगमनम् (Coming) | गमनम् (Going) |
+| उदयः (Rise) | अस्तः (Set) |
+
+---
+
+# ✅ Final Exam Checklist
+
+## Before Exam:
+- [ ] Read विभाग ५ (Literature) **twice** on day before
+- [ ] Memorize **Anvaya** of important verses
+- [ ] Practice **समास** and **कृदन्त-तद्धितान्त** tables
+- [ ] Know **source texts** (ग्रन्थस्य नाम) for each chapter
+
+## During Exam:
+- [ ] End all questions with **? (question mark)**
+- [ ] Write **complete sentences** for comprehension
+- [ ] **Underline** all filled-in words
+- [ ] **Draw tables/diagrams** exactly as shown
+- [ ] **Rewrite full sentences** in MCQ-type questions
+- [ ] Match **Gender, Number, Case** for pronouns
+
+## Time Check:
+- [ ] Don't spend more than 20 min on any section
+- [ ] Keep 20 minutes for revision
+- [ ] Check विसर्ग (:) and हलन्त spellings
 
 ---
 
