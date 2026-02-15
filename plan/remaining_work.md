@@ -4,6 +4,26 @@ This file tracks what's **left to do** or improve in the 7k HSC app. Each sectio
 
 ---
 
+## 0. UI/UX Cleanup (NEWLY ADDED - Feb 16, 2026)
+
+### ✅ Completed
+- **CountdownTimer**: Now hides prelims countdown (since it's past Jan 1, 2026), shows "Exams in Progress" UI during board exams, and completion message after exams end
+- **SubjectCountdown**: Shows "Exam Complete" for past exams, alert for today's exam, and countdown for future exams
+- **SubjectStudyTools**: New component added - subject-specific tools now appear within each subject's detail page
+
+### 🔲 TODO: Dashboard Decluttering
+The dashboard (`App.tsx` renderDashboard) currently has 40+ study tool buttons, many of which are subject-specific (History Hub, Hindi Grammar, Economics Tools, etc.).
+
+**Recommendation:**
+1. Keep only universal tools on dashboard (Pomodoro, Quick Test, Streaks, Error Log, Goals, etc.)
+2. Remove subject-specific tools from dashboard - they're now accessible via Subject Detail → SubjectStudyTools
+3. This will make the dashboard cleaner and less overwhelming
+
+**Files to modify:**
+- `App.tsx` - Remove rows 7B through 7H (Arts Boosters, Arts Tools, Study Hubs, etc.)
+
+---
+
 ## 1. Content Completion (HIGH PRIORITY)
 
 | Subject      | File           | Size  | Status                |
