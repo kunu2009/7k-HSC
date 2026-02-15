@@ -179,6 +179,7 @@ import Last24HoursRevision from "./components/Last24HoursRevision";
 import DailyMotivation from "./components/DailyMotivation";
 import TodaysFocus from "./components/TodaysFocus";
 import PolScienceBoardCrasher from "./components/PolScienceBoardCrasher";
+import EcoBoardCrasher from "./components/EcoBoardCrasher";
 import { useProgress } from "./hooks/useProgress";
 import { useChapterCompletion } from "./hooks/useChapterCompletion";
 import { explainConcept } from "./services/geminiService";
@@ -317,6 +318,7 @@ const App: React.FC = () => {
   const [showLast24Hours, setShowLast24Hours] = useState(false);
   const [showPolScienceBoardCrasher, setShowPolScienceBoardCrasher] =
     useState(false);
+  const [showEcoBoardCrasher, setShowEcoBoardCrasher] = useState(false);
 
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -419,6 +421,7 @@ const App: React.FC = () => {
     const closeAnyOpenModal = (): boolean => {
       // Check all modal states and close the first open one
       const modalSetters = [
+        { state: showEcoBoardCrasher, setter: setShowEcoBoardCrasher },
         {
           state: showPolScienceBoardCrasher,
           setter: setShowPolScienceBoardCrasher,
@@ -707,6 +710,7 @@ const App: React.FC = () => {
     showArtsCurrentAffairs,
     showLast24Hours,
     showPolScienceBoardCrasher,
+    showEcoBoardCrasher,
     aiModalOpen,
   ]);
   // ==================== END BACK BUTTON HANDLING ====================
@@ -1820,6 +1824,7 @@ const App: React.FC = () => {
               // Map tool IDs to their respective setShow functions
               const toolHandlers: Record<string, () => void> = {
                 // Economics
+                ecoBoardCrasher: () => setShowEcoBoardCrasher(true),
                 ecoStudyHub: () => setShowEcoStudyHub(true),
                 ecoFormulaBank: () => setShowEcoFormulaBank(true),
                 ecoGraphPractice: () => setShowEcoGraphPractice(true),
@@ -3204,6 +3209,10 @@ const App: React.FC = () => {
         <PolScienceBoardCrasher
           onClose={() => setShowPolScienceBoardCrasher(false)}
         />
+      )}
+
+      {showEcoBoardCrasher && (
+        <EcoBoardCrasher onClose={() => setShowEcoBoardCrasher(false)} />
       )}
     </div>
   );

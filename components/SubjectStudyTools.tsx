@@ -42,12 +42,19 @@ const SUBJECT_TOOLS: Record<
   // Economics tools
   eco: [
     {
+      id: "ecoBoardCrasher",
+      name: "🎯 BOARD CRASHER",
+      description: "PYQs + Formulas + Model Answers",
+      icon: <Zap size={20} />,
+      color: "bg-indigo-600",
+      featured: true,
+    },
+    {
       id: "ecoStudyHub",
       name: "Economics Hub",
       description: "Complete study dashboard",
       icon: <TrendingUp size={20} />,
       color: "bg-emerald-500",
-      featured: true,
     },
     {
       id: "ecoFormulaBank",
