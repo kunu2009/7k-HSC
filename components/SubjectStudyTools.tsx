@@ -1,9 +1,24 @@
-import React from 'react';
+import React from "react";
 import {
-  BookOpen, Brain, PenTool, TrendingUp, Calculator, Globe, Users,
-  FileText, Clock, Calendar, Target, Award, Zap, Map, BookA,
-  Flame, ChevronRight, Sparkles
-} from 'lucide-react';
+  BookOpen,
+  Brain,
+  PenTool,
+  TrendingUp,
+  Calculator,
+  Globe,
+  Users,
+  FileText,
+  Clock,
+  Calendar,
+  Target,
+  Award,
+  Zap,
+  Map,
+  BookA,
+  Flame,
+  ChevronRight,
+  Sparkles,
+} from "lucide-react";
 
 interface SubjectStudyToolsProps {
   subjectId: string;
@@ -13,116 +28,421 @@ interface SubjectStudyToolsProps {
 }
 
 // Define which tools are available for each subject
-const SUBJECT_TOOLS: Record<string, Array<{
-  id: string;
-  name: string;
-  description: string;
-  icon: React.ReactNode;
-  color: string;
-  featured?: boolean;
-}>> = {
+const SUBJECT_TOOLS: Record<
+  string,
+  Array<{
+    id: string;
+    name: string;
+    description: string;
+    icon: React.ReactNode;
+    color: string;
+    featured?: boolean;
+  }>
+> = {
   // Economics tools
   eco: [
-    { id: 'ecoStudyHub', name: 'Economics Hub', description: 'Complete study dashboard', icon: <TrendingUp size={20} />, color: 'bg-emerald-500', featured: true },
-    { id: 'ecoFormulaBank', name: 'Formula Bank', description: 'All formulas at one place', icon: <Calculator size={20} />, color: 'bg-blue-500' },
-    { id: 'ecoGraphPractice', name: 'Graph Practice', description: 'Draw & understand graphs', icon: <TrendingUp size={20} />, color: 'bg-purple-500' },
-    { id: 'ecoNumericalSolver', name: 'Numerical Solver', description: 'Step-by-step solutions', icon: <Calculator size={20} />, color: 'bg-orange-500' },
-    { id: 'ecoElasticityCalc', name: 'Elasticity Calculator', description: 'Calculate elasticity values', icon: <Target size={20} />, color: 'bg-cyan-500' },
-    { id: 'economicsCaseStudies', name: 'Case Studies', description: 'Real-world applications', icon: <BookOpen size={20} />, color: 'bg-amber-500' },
+    {
+      id: "ecoStudyHub",
+      name: "Economics Hub",
+      description: "Complete study dashboard",
+      icon: <TrendingUp size={20} />,
+      color: "bg-emerald-500",
+      featured: true,
+    },
+    {
+      id: "ecoFormulaBank",
+      name: "Formula Bank",
+      description: "All formulas at one place",
+      icon: <Calculator size={20} />,
+      color: "bg-blue-500",
+    },
+    {
+      id: "ecoGraphPractice",
+      name: "Graph Practice",
+      description: "Draw & understand graphs",
+      icon: <TrendingUp size={20} />,
+      color: "bg-purple-500",
+    },
+    {
+      id: "ecoNumericalSolver",
+      name: "Numerical Solver",
+      description: "Step-by-step solutions",
+      icon: <Calculator size={20} />,
+      color: "bg-orange-500",
+    },
+    {
+      id: "ecoElasticityCalc",
+      name: "Elasticity Calculator",
+      description: "Calculate elasticity values",
+      icon: <Target size={20} />,
+      color: "bg-cyan-500",
+    },
+    {
+      id: "economicsCaseStudies",
+      name: "Case Studies",
+      description: "Real-world applications",
+      icon: <BookOpen size={20} />,
+      color: "bg-amber-500",
+    },
   ],
   // History tools
   his: [
-    { id: 'historyStudyHub', name: 'History Hub', description: 'Complete history resources', icon: <BookOpen size={20} />, color: 'bg-orange-500', featured: true },
-    { id: 'historyTimelineQuiz', name: 'Timeline Quiz', description: 'Test your chronology', icon: <Clock size={20} />, color: 'bg-teal-500' },
-    { id: 'historyChapterSummary', name: 'Chapter Summaries', description: 'Quick revision notes', icon: <FileText size={20} />, color: 'bg-amber-500' },
-    { id: 'historyMapWork', name: 'Map Work', description: 'Practice map questions', icon: <Map size={20} />, color: 'bg-green-500' },
-    { id: 'importantDates', name: 'Important Dates', description: 'Key dates to remember', icon: <Calendar size={20} />, color: 'bg-red-500' },
-    { id: 'importantPersons', name: 'Important Persons', description: 'Key personalities', icon: <Award size={20} />, color: 'bg-rose-500' },
-    { id: 'importantEvents', name: 'Important Events', description: 'Major historical events', icon: <Zap size={20} />, color: 'bg-indigo-500' },
-    { id: 'eventSorting', name: 'Event Sorting', description: 'Arrange events chronologically', icon: <Clock size={20} />, color: 'bg-violet-500' },
+    {
+      id: "historyStudyHub",
+      name: "History Hub",
+      description: "Complete history resources",
+      icon: <BookOpen size={20} />,
+      color: "bg-orange-500",
+      featured: true,
+    },
+    {
+      id: "historyTimelineQuiz",
+      name: "Timeline Quiz",
+      description: "Test your chronology",
+      icon: <Clock size={20} />,
+      color: "bg-teal-500",
+    },
+    {
+      id: "historyChapterSummary",
+      name: "Chapter Summaries",
+      description: "Quick revision notes",
+      icon: <FileText size={20} />,
+      color: "bg-amber-500",
+    },
+    {
+      id: "historyMapWork",
+      name: "Map Work",
+      description: "Practice map questions",
+      icon: <Map size={20} />,
+      color: "bg-green-500",
+    },
+    {
+      id: "importantDates",
+      name: "Important Dates",
+      description: "Key dates to remember",
+      icon: <Calendar size={20} />,
+      color: "bg-red-500",
+    },
+    {
+      id: "importantPersons",
+      name: "Important Persons",
+      description: "Key personalities",
+      icon: <Award size={20} />,
+      color: "bg-rose-500",
+    },
+    {
+      id: "importantEvents",
+      name: "Important Events",
+      description: "Major historical events",
+      icon: <Zap size={20} />,
+      color: "bg-indigo-500",
+    },
+    {
+      id: "eventSorting",
+      name: "Event Sorting",
+      description: "Arrange events chronologically",
+      icon: <Clock size={20} />,
+      color: "bg-violet-500",
+    },
   ],
   // Political Science tools
   pol: [
-    { id: 'politicalScienceStudyHub', name: 'Pol Science Hub', description: 'Complete resources', icon: <Globe size={20} />, color: 'bg-indigo-500', featured: true },
-    { id: 'politicalScienceHub', name: 'Concept Hub', description: 'Core concepts explained', icon: <Brain size={20} />, color: 'bg-blue-500' },
-    { id: 'constitutionalArticles', name: 'Constitution Articles', description: 'Important articles', icon: <FileText size={20} />, color: 'bg-amber-500' },
-    { id: 'currentAffairs', name: 'Current Affairs', description: 'Latest updates', icon: <Globe size={20} />, color: 'bg-emerald-500' },
+    {
+      id: "politicalScienceStudyHub",
+      name: "Pol Science Hub",
+      description: "Complete resources",
+      icon: <Globe size={20} />,
+      color: "bg-indigo-500",
+      featured: true,
+    },
+    {
+      id: "politicalScienceHub",
+      name: "Concept Hub",
+      description: "Core concepts explained",
+      icon: <Brain size={20} />,
+      color: "bg-blue-500",
+    },
+    {
+      id: "constitutionalArticles",
+      name: "Constitution Articles",
+      description: "Important articles",
+      icon: <FileText size={20} />,
+      color: "bg-amber-500",
+    },
+    {
+      id: "currentAffairs",
+      name: "Current Affairs",
+      description: "Latest updates",
+      icon: <Globe size={20} />,
+      color: "bg-emerald-500",
+    },
   ],
   // English tools
   eng: [
-    { id: 'englishStudyHub', name: 'English Hub', description: 'Complete English resources', icon: <BookA size={20} />, color: 'bg-blue-500', featured: true },
-    { id: 'englishWritingSkills', name: 'Writing Skills', description: 'Essay, letter, report', icon: <PenTool size={20} />, color: 'bg-purple-500' },
-    { id: 'grammarMaster', name: 'Grammar Master', description: 'Practice grammar', icon: <BookOpen size={20} />, color: 'bg-green-500' },
-    { id: 'literatureAnalysis', name: 'Literature Analysis', description: 'Prose & poetry', icon: <BookOpen size={20} />, color: 'bg-rose-500' },
-    { id: 'writingTemplates', name: 'Writing Templates', description: 'Ready formats', icon: <FileText size={20} />, color: 'bg-amber-500' },
+    {
+      id: "englishStudyHub",
+      name: "English Hub",
+      description: "Complete English resources",
+      icon: <BookA size={20} />,
+      color: "bg-blue-500",
+      featured: true,
+    },
+    {
+      id: "englishWritingSkills",
+      name: "Writing Skills",
+      description: "Essay, letter, report",
+      icon: <PenTool size={20} />,
+      color: "bg-purple-500",
+    },
+    {
+      id: "grammarMaster",
+      name: "Grammar Master",
+      description: "Practice grammar",
+      icon: <BookOpen size={20} />,
+      color: "bg-green-500",
+    },
+    {
+      id: "literatureAnalysis",
+      name: "Literature Analysis",
+      description: "Prose & poetry",
+      icon: <BookOpen size={20} />,
+      color: "bg-rose-500",
+    },
+    {
+      id: "writingTemplates",
+      name: "Writing Templates",
+      description: "Ready formats",
+      icon: <FileText size={20} />,
+      color: "bg-amber-500",
+    },
   ],
   // Hindi tools
   hin: [
-    { id: 'hindiStudyHub', name: 'Hindi Hub', description: 'संपूर्ण हिंदी संसाधन', icon: <BookA size={20} />, color: 'bg-orange-500', featured: true },
-    { id: 'hindiGrammarHub', name: 'व्याकरण Hub', description: 'Hindi grammar practice', icon: <Brain size={20} />, color: 'bg-rose-500' },
-    { id: 'hindiSahitya', name: 'साहित्य', description: 'Literature analysis', icon: <BookOpen size={20} />, color: 'bg-pink-500' },
+    {
+      id: "hindiStudyHub",
+      name: "Hindi Hub",
+      description: "संपूर्ण हिंदी संसाधन",
+      icon: <BookA size={20} />,
+      color: "bg-orange-500",
+      featured: true,
+    },
+    {
+      id: "hindiGrammarHub",
+      name: "व्याकरण Hub",
+      description: "Hindi grammar practice",
+      icon: <Brain size={20} />,
+      color: "bg-rose-500",
+    },
+    {
+      id: "hindiSahitya",
+      name: "साहित्य",
+      description: "Literature analysis",
+      icon: <BookOpen size={20} />,
+      color: "bg-pink-500",
+    },
   ],
   // Geography tools
   geo: [
-    { id: 'geographyStudyHub', name: 'Geography Hub', description: 'Complete resources', icon: <Globe size={20} />, color: 'bg-emerald-500', featured: true },
-    { id: 'geographyConcepts', name: 'Key Concepts', description: 'Important concepts', icon: <Target size={20} />, color: 'bg-teal-500' },
-    { id: 'artsMapMaster', name: 'Map Master', description: 'Practice map work', icon: <Map size={20} />, color: 'bg-green-500' },
+    {
+      id: "geographyStudyHub",
+      name: "Geography Hub",
+      description: "Complete resources",
+      icon: <Globe size={20} />,
+      color: "bg-emerald-500",
+      featured: true,
+    },
+    {
+      id: "geographyConcepts",
+      name: "Key Concepts",
+      description: "Important concepts",
+      icon: <Target size={20} />,
+      color: "bg-teal-500",
+    },
+    {
+      id: "artsMapMaster",
+      name: "Map Master",
+      description: "Practice map work",
+      icon: <Map size={20} />,
+      color: "bg-green-500",
+    },
   ],
   // Sociology tools
   soc: [
-    { id: 'sociologyHub', name: 'Sociology Hub', description: 'Complete resources', icon: <Users size={20} />, color: 'bg-violet-500', featured: true },
-    { id: 'conceptGrouping', name: 'Concept Groups', description: 'Related concepts', icon: <Users size={20} />, color: 'bg-purple-500' },
+    {
+      id: "sociologyHub",
+      name: "Sociology Hub",
+      description: "Complete resources",
+      icon: <Users size={20} />,
+      color: "bg-violet-500",
+      featured: true,
+    },
+    {
+      id: "conceptGrouping",
+      name: "Concept Groups",
+      description: "Related concepts",
+      icon: <Users size={20} />,
+      color: "bg-purple-500",
+    },
   ],
   // Psychology tools
   psy: [
-    { id: 'psychologyHub', name: 'Psychology Hub', description: 'Complete resources', icon: <Brain size={20} />, color: 'bg-cyan-500', featured: true },
+    {
+      id: "psychologyHub",
+      name: "Psychology Hub",
+      description: "Complete resources",
+      icon: <Brain size={20} />,
+      color: "bg-cyan-500",
+      featured: true,
+    },
   ],
   // Sanskrit tools
   san: [
-    { id: 'sanskritShlokBank', name: 'श्लोक Bank', description: 'Important shlokas', icon: <BookA size={20} />, color: 'bg-amber-500', featured: true },
+    {
+      id: "sanskritShlokBank",
+      name: "श्लोक Bank",
+      description: "Important shlokas",
+      icon: <BookA size={20} />,
+      color: "bg-amber-500",
+      featured: true,
+    },
   ],
   // OCM tools
   ocm: [
-    { id: 'definitionBuilder', name: 'Definition Builder', description: 'Build perfect definitions', icon: <FileText size={20} />, color: 'bg-indigo-500', featured: true },
-    { id: 'conceptGrouping', name: 'Concept Groups', description: 'Related management concepts', icon: <Target size={20} />, color: 'bg-purple-500' },
+    {
+      id: "definitionBuilder",
+      name: "Definition Builder",
+      description: "Build perfect definitions",
+      icon: <FileText size={20} />,
+      color: "bg-indigo-500",
+      featured: true,
+    },
+    {
+      id: "conceptGrouping",
+      name: "Concept Groups",
+      description: "Related management concepts",
+      icon: <Target size={20} />,
+      color: "bg-purple-500",
+    },
   ],
   // SP tools
   sp: [
-    { id: 'definitionBuilder', name: 'Definition Builder', description: 'Corporate terminology', icon: <FileText size={20} />, color: 'bg-purple-500', featured: true },
+    {
+      id: "definitionBuilder",
+      name: "Definition Builder",
+      description: "Corporate terminology",
+      icon: <FileText size={20} />,
+      color: "bg-purple-500",
+      featured: true,
+    },
   ],
   // BK tools
   bk: [
-    { id: 'ecoFormulaBank', name: 'Formula Bank', description: 'Accounting formulas', icon: <Calculator size={20} />, color: 'bg-rose-500', featured: true },
+    {
+      id: "ecoFormulaBank",
+      name: "Formula Bank",
+      description: "Accounting formulas",
+      icon: <Calculator size={20} />,
+      color: "bg-rose-500",
+      featured: true,
+    },
   ],
   // Physics tools
   phy: [
-    { id: 'formulaBank', name: 'Formula Bank', description: 'All physics formulas', icon: <Calculator size={20} />, color: 'bg-blue-600', featured: true },
-    { id: 'chainDiagram', name: 'Derivation Chains', description: 'Step by step derivations', icon: <Zap size={20} />, color: 'bg-indigo-500' },
+    {
+      id: "formulaBank",
+      name: "Formula Bank",
+      description: "All physics formulas",
+      icon: <Calculator size={20} />,
+      color: "bg-blue-600",
+      featured: true,
+    },
+    {
+      id: "chainDiagram",
+      name: "Derivation Chains",
+      description: "Step by step derivations",
+      icon: <Zap size={20} />,
+      color: "bg-indigo-500",
+    },
   ],
   // Chemistry tools
   chem: [
-    { id: 'formulaBank', name: 'Formula Bank', description: 'All chemistry formulas', icon: <Calculator size={20} />, color: 'bg-teal-500', featured: true },
-    { id: 'chainDiagram', name: 'Reaction Chains', description: 'Chemical reactions flow', icon: <Zap size={20} />, color: 'bg-emerald-500' },
+    {
+      id: "formulaBank",
+      name: "Formula Bank",
+      description: "All chemistry formulas",
+      icon: <Calculator size={20} />,
+      color: "bg-teal-500",
+      featured: true,
+    },
+    {
+      id: "chainDiagram",
+      name: "Reaction Chains",
+      description: "Chemical reactions flow",
+      icon: <Zap size={20} />,
+      color: "bg-emerald-500",
+    },
   ],
   // Math tools
   math: [
-    { id: 'formulaBank', name: 'Formula Bank', description: 'All math formulas', icon: <Calculator size={20} />, color: 'bg-blue-500', featured: true },
+    {
+      id: "formulaBank",
+      name: "Formula Bank",
+      description: "All math formulas",
+      icon: <Calculator size={20} />,
+      color: "bg-blue-500",
+      featured: true,
+    },
   ],
   // Biology tools
   bio: [
-    { id: 'chainDiagram', name: 'Diagram Practice', description: 'Label & draw diagrams', icon: <Target size={20} />, color: 'bg-green-500', featured: true },
+    {
+      id: "chainDiagram",
+      name: "Diagram Practice",
+      description: "Label & draw diagrams",
+      icon: <Target size={20} />,
+      color: "bg-green-500",
+      featured: true,
+    },
   ],
 };
 
 // Universal tools available for all subjects
 const UNIVERSAL_TOOLS = [
-  { id: 'quickRevisionQuiz', name: 'Quick Quiz', description: 'Test yourself', icon: <Zap size={20} />, color: 'bg-yellow-500' },
-  { id: 'oneMinuteChallenge', name: '1 Min Challenge', description: 'Speed test', icon: <Clock size={20} />, color: 'bg-red-500' },
-  { id: 'pyqBank', name: 'PYQ Bank', description: 'Previous year questions', icon: <FileText size={20} />, color: 'bg-slate-500' },
-  { id: 'mockTest', name: 'Mock Test', description: 'Full paper simulation', icon: <Target size={20} />, color: 'bg-indigo-500' },
+  {
+    id: "last24Hours",
+    name: "Last 24 Hrs",
+    description: "Exam day revision",
+    icon: <Clock size={20} />,
+    color: "bg-red-500",
+  },
+  {
+    id: "quickRevisionQuiz",
+    name: "Quick Quiz",
+    description: "Test yourself",
+    icon: <Zap size={20} />,
+    color: "bg-yellow-500",
+  },
+  {
+    id: "oneMinuteChallenge",
+    name: "1 Min Challenge",
+    description: "Speed test",
+    icon: <Clock size={20} />,
+    color: "bg-orange-500",
+  },
+  {
+    id: "mockTest",
+    name: "Mock Test",
+    description: "Full paper simulation",
+    icon: <Target size={20} />,
+    color: "bg-indigo-500",
+  },
 ];
 
-const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({ subjectId, subjectName, onOpenTool }) => {
+const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({
+  subjectId,
+  subjectName,
+  onOpenTool,
+}) => {
   const subjectTools = SUBJECT_TOOLS[subjectId] || [];
 
   // If no specific tools for this subject, don't show the section
@@ -130,8 +450,8 @@ const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({ subjectId, subjec
     return null;
   }
 
-  const featuredTool = subjectTools.find(t => t.featured);
-  const otherTools = subjectTools.filter(t => !t.featured);
+  const featuredTool = subjectTools.find((t) => t.featured);
+  const otherTools = subjectTools.filter((t) => !t.featured);
 
   return (
     <div className="mb-6">
@@ -150,8 +470,12 @@ const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({ subjectId, subjec
             {featuredTool.icon}
           </div>
           <div className="text-left flex-1">
-            <span className="text-white font-bold block text-lg">{featuredTool.name}</span>
-            <span className="text-white/80 text-xs">{featuredTool.description}</span>
+            <span className="text-white font-bold block text-lg">
+              {featuredTool.name}
+            </span>
+            <span className="text-white/80 text-xs">
+              {featuredTool.description}
+            </span>
           </div>
           <ChevronRight className="text-white/70" size={24} />
         </button>
@@ -166,7 +490,9 @@ const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({ subjectId, subjec
               onClick={() => onOpenTool(tool.id)}
               className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-slate-200 dark:hover:border-slate-700 transition flex flex-col items-center gap-2"
             >
-              <div className={`w-10 h-10 rounded-xl ${tool.color} text-white flex items-center justify-center`}>
+              <div
+                className={`w-10 h-10 rounded-xl ${tool.color} text-white flex items-center justify-center`}
+              >
                 {tool.icon}
               </div>
               <span className="text-xs font-semibold text-slate-600 dark:text-slate-300 text-center leading-tight">
@@ -189,8 +515,12 @@ const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({ subjectId, subjec
               onClick={() => onOpenTool(tool.id)}
               className="bg-slate-50 dark:bg-slate-800 p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition flex flex-col items-center gap-1"
             >
-              <div className={`w-8 h-8 rounded-lg ${tool.color} text-white flex items-center justify-center`}>
-                {React.cloneElement(tool.icon as React.ReactElement, { size: 16 })}
+              <div
+                className={`w-8 h-8 rounded-lg ${tool.color} text-white flex items-center justify-center`}
+              >
+                {React.cloneElement(tool.icon as React.ReactElement, {
+                  size: 16,
+                })}
               </div>
               <span className="text-[10px] font-medium text-slate-500 dark:text-slate-400 text-center">
                 {tool.name}

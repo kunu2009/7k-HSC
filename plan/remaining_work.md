@@ -4,23 +4,25 @@ This file tracks what's **left to do** or improve in the 7k HSC app. Each sectio
 
 ---
 
-## 0. UI/UX Cleanup (NEWLY ADDED - Feb 16, 2026)
+## 0. UI/UX Enhancements (Updated - Feb 16, 2026)
 
-### ✅ Completed
-- **CountdownTimer**: Now hides prelims countdown (since it's past Jan 1, 2026), shows "Exams in Progress" UI during board exams, and completion message after exams end
-- **SubjectCountdown**: Shows "Exam Complete" for past exams, alert for today's exam, and countdown for future exams
-- **SubjectStudyTools**: New component added - subject-specific tools now appear within each subject's detail page
+### ✅ Completed (Session 1)
+- **CountdownTimer**: Smart date handling - hides prelims (past), shows "in progress" during boards, completion after
+- **SubjectCountdown**: Shows "Exam Complete" for past exams, alert for today's exam  
+- **SubjectStudyTools**: Subject-specific tools now appear within each subject's detail page
+- **Dashboard Cleanup**: Reduced from 40+ tools to ~16 essential universal tools
 
-### 🔲 TODO: Dashboard Decluttering
-The dashboard (`App.tsx` renderDashboard) currently has 40+ study tool buttons, many of which are subject-specific (History Hub, Hindi Grammar, Economics Tools, etc.).
+### ✅ Completed (Session 2 - Feb 16, 2026)
+- **ExamDayBanner**: New component showing today's exam prominently with tips, or next upcoming exam
+- **Last24HoursRevision**: New exam-day quick revision tool with overview, key flashcards, must-know points
+- **DailyMotivation**: New component for daily study motivation and streak encouragement
+- **Subject Detail Enhancement**: Shows "Last 24 Hours" button when exam is within 3 days
+- **Animation**: Added pulse-slow animation for exam alerts
 
-**Recommendation:**
-1. Keep only universal tools on dashboard (Pomodoro, Quick Test, Streaks, Error Log, Goals, etc.)
-2. Remove subject-specific tools from dashboard - they're now accessible via Subject Detail → SubjectStudyTools
-3. This will make the dashboard cleaner and less overwhelming
-
-**Files to modify:**
-- `App.tsx` - Remove rows 7B through 7H (Arts Boosters, Arts Tools, Study Hubs, etc.)
+### 🔲 Remaining UI Tasks
+1. Add DailyMotivation to dashboard (component created but not yet integrated)
+2. Consider adding exam-specific tips per subject
+3. Add notification reminders for exams (requires PWA push notifications)
 
 ---
 

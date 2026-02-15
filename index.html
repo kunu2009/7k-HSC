@@ -1,93 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta name="description" content="7k 12th - The Ultimate Maharashtra HSC Study App with Flashcards, MCQs, Reels & More" />
-    <meta name="theme-color" content="#6366f1" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="7k 12th" />
-    
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json" />
-    
-    <!-- Favicon & Icons -->
-    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
-    <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
-    
-    <title>7k 12th - HSC Study App</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            animation: {
-              'spin-slow': 'spin 3s linear infinite',
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <meta
+            name="description"
+            content="7k 12th - The Ultimate Maharashtra HSC Study App with Flashcards, MCQs, Reels & More"
+        />
+        <meta name="theme-color" content="#6366f1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+        <meta name="apple-mobile-web-app-title" content="7k 12th" />
+
+        <!-- PWA Manifest -->
+        <link rel="manifest" href="/manifest.json" />
+
+        <!-- Favicon & Icons -->
+        <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
+
+        <title>7k 12th - HSC Study App</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            sans: ["Inter", "sans-serif"],
+                        },
+                        animation: {
+                            "spin-slow": "spin 3s linear infinite",
+                            "pulse-slow":
+                                "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                            "bounce-slow": "bounce 2s infinite",
+                        },
+                    },
+                },
+            };
+        </script>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            body {
+                font-family: "Inter", sans-serif;
             }
-          }
-        }
-      }
-    </script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      /* Hide scrollbar for clean reel experience */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-      .card-flip {
-        perspective: 1000px;
-      }
-      .card-inner {
-        transition: transform 0.6s;
-        transform-style: preserve-3d;
-      }
-      .card-front, .card-back {
-        backface-visibility: hidden;
-      }
-      .card-back {
-        transform: rotateY(180deg);
-      }
-      .flipped {
-        transform: rotateY(180deg);
-      }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
-    "react/": "https://aistudiocdn.com/react@^19.2.0/",
-    "react": "https://aistudiocdn.com/react@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
-  }
-}
-</script>
-</head>
-  <body class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-    
-    <!-- Service Worker Registration -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js')
-            .then(reg => console.log('SW registered:', reg.scope))
-            .catch(err => console.log('SW registration failed:', err));
-        });
-      }
-    </script>
-  </body>
+            /* Hide scrollbar for clean reel experience */
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+            .card-flip {
+                perspective: 1000px;
+            }
+            .card-inner {
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
+            }
+            .card-front,
+            .card-back {
+                backface-visibility: hidden;
+            }
+            .card-back {
+                transform: rotateY(180deg);
+            }
+            .flipped {
+                transform: rotateY(180deg);
+            }
+        </style>
+        <script type="importmap">
+            {
+                "imports": {
+                    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+                    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+                    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+                    "react": "https://aistudiocdn.com/react@^19.2.0",
+                    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+                }
+            }
+        </script>
+    </head>
+    <body
+        class="bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300"
+    >
+        <div id="root"></div>
+        <script type="module" src="/index.tsx"></script>
+
+        <!-- Service Worker Registration -->
+        <script>
+            if ("serviceWorker" in navigator) {
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker
+                        .register("/sw.js")
+                        .then((reg) => console.log("SW registered:", reg.scope))
+                        .catch((err) =>
+                            console.log("SW registration failed:", err),
+                        );
+                });
+            }
+        </script>
+    </body>
 </html>

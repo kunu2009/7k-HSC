@@ -116,6 +116,7 @@ import StudyWrapped2025 from "./components/StudyWrapped2025";
 import QuickStatsWidget from "./components/QuickStatsWidget";
 import SubjectCountdown from "./components/SubjectCountdown";
 import ChapterProgressWidget from "./components/ChapterProgressWidget";
+import ExamDayBanner from "./components/ExamDayBanner";
 import EcoStudyHub from "./components/EcoStudyHub";
 import EcoFormulaBank from "./components/EcoFormulaBank";
 import EcoGraphPractice from "./components/EcoGraphPractice";
@@ -174,6 +175,9 @@ import MistakeMeter from "./components/MistakeMeter";
 import RepetitionTracker from "./components/RepetitionTracker";
 import SpeedChallenge from "./components/SpeedChallenge";
 import SubjectStudyTools from "./components/SubjectStudyTools";
+import Last24HoursRevision from "./components/Last24HoursRevision";
+import DailyMotivation from "./components/DailyMotivation";
+import TodaysFocus from "./components/TodaysFocus";
 import { useProgress } from "./hooks/useProgress";
 import { useChapterCompletion } from "./hooks/useChapterCompletion";
 import { explainConcept } from "./services/geminiService";
@@ -309,6 +313,7 @@ const App: React.FC = () => {
   const [showArtsWritingGuide, setShowArtsWritingGuide] = useState(false);
   const [showArtsCurrentAffairs, setShowArtsCurrentAffairs] = useState(false);
   const [showMegaBoardCrasher, setShowMegaBoardCrasher] = useState(false);
+  const [showLast24Hours, setShowLast24Hours] = useState(false);
 
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -390,6 +395,20 @@ const App: React.FC = () => {
     db.saveSettings({ darkMode });
   }, [darkMode]);
 
+  // Create a map of completed chapters for TodaysFocus component
+  const completedChaptersMap = React.useMemo(() => {
+    const map: Record<string, boolean> = {};
+    filteredSubjectsForHook.forEach((subject) => {
+      subject.chapters.forEach((chapter) => {
+        map[`${subject.id}_${chapter.id}`] = isChapterCompleted(
+          subject.id,
+          chapter.id,
+        );
+      });
+    });
+    return map;
+  }, [filteredSubjectsForHook, isChapterCompleted]);
+
   // ==================== BACK BUTTON HANDLING ====================
   // Handle Android/Mobile back button to navigate within the app instead of exiting
   useEffect(() => {
@@ -397,6 +416,7 @@ const App: React.FC = () => {
     const closeAnyOpenModal = (): boolean => {
       // Check all modal states and close the first open one
       const modalSetters = [
+        { state: showLast24Hours, setter: setShowLast24Hours },
         { state: showMegaBoardCrasher, setter: setShowMegaBoardCrasher },
         { state: showPomodoro, setter: setShowPomodoro },
         { state: showStudyStreak, setter: setShowStudyStreak },
@@ -678,6 +698,7 @@ const App: React.FC = () => {
     showArtsMapMaster,
     showArtsWritingGuide,
     showArtsCurrentAffairs,
+    showLast24Hours,
     aiModalOpen,
   ]);
   // ==================== END BACK BUTTON HANDLING ====================
@@ -1127,6 +1148,22 @@ const App: React.FC = () => {
             </button>
           )}
 
+          {/* 📅 EXAM DAY BANNER - Shows today's exam or next upcoming */}
+          <ExamDayBanner
+            stream={selectedStream}
+            onOpenSubject={(subjectId) => {
+              const subject = filteredSubjects.find((s) => s.id === subjectId);
+              if (subject) selectSubject(subject);
+            }}
+          />
+
+          {/* 🔥 Daily Motivation - Study streak encouragement */}
+          <DailyMotivation
+            streak={getStudyStats().currentStreak || 0}
+            todayMinutes={getStudyStats().totalFlashcardsReviewed * 2} // Estimate: 2 min per flashcard
+            onStartStudy={() => setShowPomodoro(true)}
+          />
+
           {/* Countdown Timer */}
           <div className="mb-6">
             <CountdownTimer stream={selectedStream} />
@@ -1153,6 +1190,14 @@ const App: React.FC = () => {
 
           {/* Weakness Analysis Section */}
           <WeaknessAnalysis />
+
+          {/* 🎯 Today's Focus - Smart study recommendations */}
+          <TodaysFocus
+            stream={selectedStream}
+            subjects={filteredSubjects}
+            completedChapters={completedChaptersMap}
+            onSelectSubject={selectSubject}
+          />
 
           <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">
             <BookOpen
@@ -1572,6 +1617,46 @@ const App: React.FC = () => {
         </div>
 
         <div className="px-6 -mt-6 pb-24 relative z-40">
+          {/* 🚨 LAST 24 HOURS REVISION - Shows when exam is close */}
+          {(() => {
+            const examDate = getSubjectBoardExamDate(
+              selectedStream,
+              selectedSubject.id,
+            );
+            if (!examDate) return null;
+            const now = new Date();
+            const daysUntil = Math.ceil(
+              (examDate.getTime() - now.getTime()) / (1000 * 60 * 60 * 24),
+            );
+            // Show if exam is within 3 days or today
+            if (daysUntil <= 3 && daysUntil >= 0) {
+              return (
+                <button
+                  onClick={() => setShowLast24Hours(true)}
+                  className="w-full mb-6 bg-gradient-to-r from-red-500 via-orange-500 to-amber-500 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all animate-pulse-slow"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl">
+                      ⏰
+                    </div>
+                    <div className="text-left flex-1">
+                      <h3 className="text-lg font-black text-white">
+                        {daysUntil === 0
+                          ? "🚨 EXAM TODAY!"
+                          : `${daysUntil} Day${daysUntil > 1 ? "s" : ""} Left!`}
+                      </h3>
+                      <p className="text-white/80 text-sm">
+                        Tap for Last 24 Hours Quick Revision
+                      </p>
+                    </div>
+                    <ChevronRight className="text-white/70" size={24} />
+                  </div>
+                </button>
+              );
+            }
+            return null;
+          })()}
+
           {/* Dedicated Economics Promo Card */}
           {selectedSubject.id === "eco" && (
             <a
@@ -1748,6 +1833,7 @@ const App: React.FC = () => {
                 formulaBank: () => setShowFormulaBank(true),
                 chainDiagram: () => setShowChainDiagram(true),
                 // Universal
+                last24Hours: () => setShowLast24Hours(true),
                 quickRevisionQuiz: () => setShowQuickRevisionQuiz(true),
                 oneMinuteChallenge: () => setShowOneMinuteChallenge(true),
                 pyqBank: () => setShowPYQBank(true),
@@ -3066,6 +3152,13 @@ const App: React.FC = () => {
           onClose={() => setShowSyllabusCrusher82(false)}
           subjects={getFilteredSubjects()}
           darkMode={darkMode}
+        />
+      )}
+
+      {showLast24Hours && selectedSubject && (
+        <Last24HoursRevision
+          subject={selectedSubject}
+          onClose={() => setShowLast24Hours(false)}
         />
       )}
     </div>
