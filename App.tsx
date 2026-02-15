@@ -178,6 +178,7 @@ import SubjectStudyTools from "./components/SubjectStudyTools";
 import Last24HoursRevision from "./components/Last24HoursRevision";
 import DailyMotivation from "./components/DailyMotivation";
 import TodaysFocus from "./components/TodaysFocus";
+import PolScienceBoardCrasher from "./components/PolScienceBoardCrasher";
 import { useProgress } from "./hooks/useProgress";
 import { useChapterCompletion } from "./hooks/useChapterCompletion";
 import { explainConcept } from "./services/geminiService";
@@ -311,9 +312,10 @@ const App: React.FC = () => {
   const [showArtsMasterQuiz, setShowArtsMasterQuiz] = useState(false);
   const [showArtsMapMaster, setShowArtsMapMaster] = useState(false);
   const [showArtsWritingGuide, setShowArtsWritingGuide] = useState(false);
-  const [showArtsCurrentAffairs, setShowArtsCurrentAffairs] = useState(false);
   const [showMegaBoardCrasher, setShowMegaBoardCrasher] = useState(false);
   const [showLast24Hours, setShowLast24Hours] = useState(false);
+  const [showPolScienceBoardCrasher, setShowPolScienceBoardCrasher] =
+    useState(false);
 
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -416,6 +418,10 @@ const App: React.FC = () => {
     const closeAnyOpenModal = (): boolean => {
       // Check all modal states and close the first open one
       const modalSetters = [
+        {
+          state: showPolScienceBoardCrasher,
+          setter: setShowPolScienceBoardCrasher,
+        },
         { state: showLast24Hours, setter: setShowLast24Hours },
         { state: showMegaBoardCrasher, setter: setShowMegaBoardCrasher },
         { state: showPomodoro, setter: setShowPomodoro },
@@ -699,6 +705,7 @@ const App: React.FC = () => {
     showArtsWritingGuide,
     showArtsCurrentAffairs,
     showLast24Hours,
+    showPolScienceBoardCrasher,
     aiModalOpen,
   ]);
   // ==================== END BACK BUTTON HANDLING ====================
@@ -1125,7 +1132,7 @@ const App: React.FC = () => {
           {selectedStream === Stream.ARTS && (
             <button
               onClick={() => setShowMegaBoardCrasher(true)}
-              className="w-full mb-6 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all group"
+              className="w-full mb-4 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all group"
             >
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
@@ -1144,6 +1151,34 @@ const App: React.FC = () => {
                 <div className="bg-white/20 rounded-full p-2 group-hover:bg-white/30 transition-colors">
                   <ChevronRight className="w-6 h-6 text-white" />
                 </div>
+              </div>
+            </button>
+          )}
+
+          {/* 🏛️ POLITICAL SCIENCE URGENT - Exam in 3 Days */}
+          {selectedStream === Stream.ARTS && (
+            <button
+              onClick={() => setShowPolScienceBoardCrasher(true)}
+              className="w-full mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all animate-pulse-slow"
+            >
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl">
+                  🏛️
+                </div>
+                <div className="text-left flex-1">
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-lg font-black text-white">
+                      Political Science
+                    </h3>
+                    <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-bold animate-bounce">
+                      3 DAYS!
+                    </span>
+                  </div>
+                  <p className="text-white/80 text-sm">
+                    All PYQs + Model Answers + Last Min Points
+                  </p>
+                </div>
+                <ChevronRight className="text-white/70" size={24} />
               </div>
             </button>
           )}
@@ -1803,6 +1838,8 @@ const App: React.FC = () => {
                 politicalScienceStudyHub: () =>
                   setShowPoliticalScienceStudyHub(true),
                 politicalScienceHub: () => setShowPoliticalScienceHub(true),
+                polScienceBoardCrasher: () =>
+                  setShowPolScienceBoardCrasher(true),
                 constitutionalArticles: () =>
                   setShowConstitutionalArticles(true),
                 currentAffairs: () => setShowCurrentAffairs(true),
@@ -3159,6 +3196,12 @@ const App: React.FC = () => {
         <Last24HoursRevision
           subject={selectedSubject}
           onClose={() => setShowLast24Hours(false)}
+        />
+      )}
+
+      {showPolScienceBoardCrasher && (
+        <PolScienceBoardCrasher
+          onClose={() => setShowPolScienceBoardCrasher(false)}
         />
       )}
     </div>

@@ -16,8 +16,25 @@ This file tracks what's **left to do** or improve in the 7k HSC app. Each sectio
 - **ExamDayBanner**: New component showing today's exam prominently with tips, or next upcoming exam
 - **Last24HoursRevision**: New exam-day quick revision tool with overview, key flashcards, must-know points
 - **DailyMotivation**: New component for daily study motivation and streak encouragement
+- **TodaysFocus**: Smart study recommendations based on exam dates and completion
 - **Subject Detail Enhancement**: Shows "Last 24 Hours" button when exam is within 3 days
 - **Animation**: Added pulse-slow animation for exam alerts
+
+### ✅ Completed (Session 3 - Feb 16, 2026) - Political Science Board Crasher
+- **politicalScienceBoardCrasher.ts**: Comprehensive exam data file with:
+  - Chapter-wise must-know concepts and definitions
+  - All PYQ MCQs (2019-2025) with answers
+  - 4-mark short answer questions with model answers
+  - 8-mark long answer questions with detailed model answers
+  - Important dates, persons, organizations
+  - Full forms and exam tips
+- **PolScienceBoardCrasher.tsx**: Interactive component with:
+  - Chapter-wise tabs
+  - Expandable sections for MCQs, short answers, long answers
+  - Last-minute revision points
+  - Paper pattern and weightage info
+- **Dashboard Banner**: Urgent "3 DAYS!" banner for Political Science on Arts dashboard
+- **SubjectStudyTools**: Added Board Crasher as featured tool for pol subject
 
 ### 🔲 Remaining UI Tasks
 1. Add DailyMotivation to dashboard (component created but not yet integrated)

@@ -148,12 +148,19 @@ const SUBJECT_TOOLS: Record<
   // Political Science tools
   pol: [
     {
+      id: "polScienceBoardCrasher",
+      name: "🚨 BOARD CRASHER",
+      description: "Exam in 3 days! All PYQs + Answers",
+      icon: <Zap size={20} />,
+      color: "bg-red-500",
+      featured: true,
+    },
+    {
       id: "politicalScienceStudyHub",
       name: "Pol Science Hub",
       description: "Complete resources",
       icon: <Globe size={20} />,
       color: "bg-indigo-500",
-      featured: true,
     },
     {
       id: "politicalScienceHub",
