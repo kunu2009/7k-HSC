@@ -312,6 +312,7 @@ const App: React.FC = () => {
   const [showArtsMasterQuiz, setShowArtsMasterQuiz] = useState(false);
   const [showArtsMapMaster, setShowArtsMapMaster] = useState(false);
   const [showArtsWritingGuide, setShowArtsWritingGuide] = useState(false);
+  const [showArtsCurrentAffairs, setShowArtsCurrentAffairs] = useState(false);
   const [showMegaBoardCrasher, setShowMegaBoardCrasher] = useState(false);
   const [showLast24Hours, setShowLast24Hours] = useState(false);
   const [showPolScienceBoardCrasher, setShowPolScienceBoardCrasher] =
