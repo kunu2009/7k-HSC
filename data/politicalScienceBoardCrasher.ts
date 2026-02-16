@@ -3746,6 +3746,908 @@ India-China relations remain complex, requiring careful management of difference
       "Include current examples (G20, Ukraine war, etc.)",
     ],
   },
+
+  // ==================== TEXTBOOK BACK EXERCISES ====================
+  textbookExercises: {
+    chapter1: {
+      title: "Chapter 1: The World Since 1991",
+      exercises: [
+        {
+          type: "concept",
+          q: "State the appropriate concept: When a state influences other states without the use of military force.",
+          answer: "Soft Power",
+          marks: 1,
+        },
+        {
+          type: "concept",
+          q: "State the appropriate concept: A state with a leading position in international politics with abilities to influence global politics and fulfill its own interest.",
+          answer: "Superpower",
+          marks: 1,
+        },
+        {
+          type: "conceptMap",
+          q: "Complete the concept map: BIMSTEC Countries",
+          answer:
+            "India, Bangladesh, Myanmar, Sri Lanka, Thailand, Nepal, Bhutan",
+          marks: 4,
+        },
+        {
+          type: "conceptMap",
+          q: "Complete the concept map: Shanghai Cooperation Organisation (Founders)",
+          answer:
+            "China, Russia, Kazakhstan, Kyrgyzstan, Tajikistan, Uzbekistan",
+          marks: 4,
+        },
+        {
+          type: "map",
+          q: "Name any four countries in the Schengen area.",
+          answer:
+            "Germany, France, Italy, Spain, Netherlands, Belgium, Austria, Portugal, Greece, Poland (any 4)",
+          marks: 2,
+        },
+        {
+          type: "map",
+          q: "Name any two non-European Union countries within Schengen area.",
+          answer: "Switzerland, Norway, Iceland, Liechtenstein (any 2)",
+          marks: 2,
+        },
+        {
+          type: "trueFalse",
+          q: "SAARC is important for trade in South Asia.",
+          answer:
+            "TRUE. SAARC promotes economic cooperation, preferential trading arrangement (SAFTA), reduces tariffs, and enhances regional connectivity among member nations.",
+          marks: 2,
+        },
+        {
+          type: "trueFalse",
+          q: "'Maastricht' Treaty was signed for the defence of Europe.",
+          answer:
+            "FALSE. The Maastricht Treaty (1992) was signed for European integration and creation of the European Union, not specifically for defence. It established common citizenship, single currency (Euro), and common foreign policy.",
+          marks: 2,
+        },
+        {
+          type: "trueFalse",
+          q: "The decade of 1980s is seen as the golden age of humanitarian intervention.",
+          answer:
+            "FALSE. The 1990s is considered the golden age of humanitarian intervention, not the 1980s. After the Cold War, interventions in Somalia, Bosnia, Kosovo, and East Timor occurred in the 1990s.",
+          marks: 2,
+        },
+        {
+          type: "opinion",
+          q: "Express your opinion on: Humanitarian intervention",
+          answer:
+            "Humanitarian intervention refers to military action by states or international organizations to protect human rights. Arguments FOR: Responsibility to Protect (R2P), prevent genocide/ethnic cleansing. Arguments AGAINST: Violation of sovereignty, selective application, can be misused. My Opinion: Justified only with UN authorization and as last resort to prevent mass atrocities.",
+          marks: 4,
+        },
+        {
+          type: "opinion",
+          q: "Express your opinion on: Regionalism in international politics",
+          answer:
+            "Regionalism involves cooperation among countries in a geographical region. Positive aspects: Economic integration (EU, ASEAN), collective security, bargaining power. Negative aspects: May exclude others, trade diversion. My Opinion: Regionalism is beneficial for development but should not become exclusive blocs that undermine global cooperation.",
+          marks: 4,
+        },
+        {
+          type: "shortAnswer",
+          q: "Explain the term soft power with examples.",
+          answer:
+            "Soft Power (coined by Joseph Nye) is the ability to influence others through attraction rather than coercion. Sources: Culture (Hollywood, Bollywood), Values (democracy, human rights), Foreign policies (aid, diplomacy). Examples: American soft power through Hollywood films, music, universities. India's soft power through yoga, cuisine, IT sector, Bollywood. Japan's anime and technology. Unlike hard power (military force), soft power wins hearts and minds.",
+          marks: 5,
+        },
+        {
+          type: "longAnswer",
+          q: "Discuss the European Union with help of given points: (a) History (b) European Commission (c) European Parliament (d) European Council (e) European Court of Justice",
+          answer: `**European Union**
+
+**(a) History:**
+- 1951: European Coal and Steel Community (ECSC) formed
+- 1957: Treaty of Rome - European Economic Community (EEC)
+- 1992: Maastricht Treaty - EU formally established
+- 2002: Euro currency introduced
+- Currently 27 member states (after Brexit 2020)
+
+**(b) European Commission:**
+- Executive body of EU
+- Proposes legislation
+- Implements decisions
+- Headquarters in Brussels
+- One Commissioner from each member state
+
+**(c) European Parliament:**
+- Directly elected legislative body
+- 705 members (MEPs)
+- Co-decides laws with Council
+- Approves EU budget
+- Meets in Strasbourg and Brussels
+
+**(d) European Council:**
+- Heads of state/government
+- Sets EU's overall political direction
+- Summit meetings quarterly
+- President serves 2.5 year term
+
+**(e) European Court of Justice:**
+- Supreme court of EU
+- Located in Luxembourg
+- Interprets EU law
+- Ensures uniform application
+- Rulings binding on all member states`,
+          marks: 10,
+        },
+      ],
+    },
+    chapter2: {
+      title: "Chapter 2: Evolving World Order",
+      exercises: [
+        {
+          type: "mcq",
+          q: "One of the important trends in the post 1989 international relations was:",
+          options: [
+            "End of bipolarity",
+            "Rise of regionalism in Asia",
+            "End of non-alignment",
+            "Demand for new international economic order",
+          ],
+          correct: 0,
+          answer:
+            "End of bipolarity - After 1989 (fall of Berlin Wall), the bipolar world order ended, leading to US unipolarity.",
+          marks: 1,
+        },
+        {
+          type: "mcq",
+          q: "The 'Maastricht' Treaty is with reference to:",
+          options: [
+            "United Nations Peace Keeping Force",
+            "European Union",
+            "American interventions in Kuwait",
+            "Creation of BRICS",
+          ],
+          correct: 1,
+          answer:
+            "European Union - The Maastricht Treaty (1992) formally created the European Union.",
+          marks: 1,
+        },
+      ],
+    },
+    chapter3: {
+      title: "Chapter 3: Contemporary Issues",
+      exercises: [
+        {
+          type: "mcq",
+          q: "The Rio de Janeiro Earth Summit (1992) focused on:",
+          options: [
+            "Environment and development",
+            "Nuclear non-proliferation",
+            "International trade",
+            "Gender issues",
+          ],
+          correct: 0,
+          answer:
+            "Environment and development - The Earth Summit addressed sustainable development and environmental protection.",
+          marks: 1,
+        },
+        {
+          type: "mcq",
+          q: "Today the Indian approach to gender issues focuses on:",
+          options: ["Education", "Welfare", "Development", "Empowerment"],
+          correct: 3,
+          answer:
+            "Empowerment - Current approach focuses on women's empowerment through political participation, economic independence, and legal rights.",
+          marks: 1,
+        },
+        {
+          type: "concept",
+          q: "Introduction of high yielding variety of seeds and irrigation methods.",
+          answer: "Green Revolution",
+          marks: 1,
+        },
+        {
+          type: "concept",
+          q: "Think tank of the Government of India, providing both directional and policy inputs.",
+          answer: "NITI Aayog (National Institution for Transforming India)",
+          marks: 1,
+        },
+        {
+          type: "trueFalse",
+          q: "Planning Commission was created to promote agriculture in India.",
+          answer:
+            "FALSE. Planning Commission (1950) was created for overall economic planning and development, not specifically for agriculture. It formulated Five Year Plans for balanced economic growth across all sectors.",
+          marks: 2,
+        },
+        {
+          type: "trueFalse",
+          q: "National Commission for Women was set up to protect rights for women in India.",
+          answer:
+            "TRUE. NCW was established in 1992 under the National Commission for Women Act, 1990 to review constitutional and legal safeguards for women, recommend remedial measures, and address complaints related to women's rights.",
+          marks: 2,
+        },
+        {
+          type: "correlation",
+          q: "Explain the co-relation between Women Empowerment and Sustainable Development.",
+          answer:
+            "Women empowerment and sustainable development are interconnected. Empowered women contribute to economic growth, educated women make better health/environmental choices, gender equality ensures balanced development, women's participation improves governance. SDG 5 (Gender Equality) is linked to all other SDGs.",
+          marks: 3,
+        },
+        {
+          type: "correlation",
+          q: "Explain the co-relation between Poverty and Development.",
+          answer:
+            "Poverty and development are inversely related. Development reduces poverty through employment, education, and healthcare. Poverty hinders development by limiting human capital and productivity. Inclusive development is essential - growth must reach all sections. Poverty is both cause and consequence of underdevelopment.",
+          marks: 3,
+        },
+        {
+          type: "opinion",
+          q: "There is a need to protect the environment.",
+          answer:
+            "Yes, environmental protection is crucial. Reasons: Climate change threatens survival, biodiversity loss affects ecosystem balance, pollution causes health problems, natural resources are depleting. Actions needed: Sustainable development, renewable energy, conservation, international cooperation (Paris Agreement). Future generations depend on our environmental stewardship today.",
+          marks: 4,
+        },
+        {
+          type: "shortAnswer",
+          q: "What is the Green Revolution?",
+          answer:
+            "Green Revolution (1960s-70s) was agricultural transformation using: High Yielding Variety (HYV) seeds, modern irrigation (tube wells, canals), chemical fertilizers and pesticides, mechanization of farming. Results: Increased food production, self-sufficiency in food grains. Criticism: Benefited large farmers, regional disparities, environmental concerns.",
+          marks: 5,
+        },
+        {
+          type: "shortAnswer",
+          q: "What is empowerment? Suggest measures for empowerment of women.",
+          answer: `**Empowerment**: Process of gaining power and control over one's life, decisions, and resources.
+
+**Measures for Women Empowerment:**
+1. **Education**: Free and compulsory education, scholarships
+2. **Economic**: Self-Help Groups, MUDRA loans, skill development
+3. **Political**: Reservation in Panchayats/local bodies, encourage leadership
+4. **Legal**: Strong laws against dowry, domestic violence, harassment
+5. **Health**: Maternal health programs, nutrition schemes
+6. **Social**: Awareness campaigns against discrimination, change mindsets`,
+          marks: 5,
+        },
+        {
+          type: "longAnswer",
+          q: "Explain conditions of women in India: (a) Economic inequality (b) Trafficking exploration (c) Literacy rate (d) Political representation",
+          answer: `**Conditions of Women in India**
+
+**(a) Economic Inequality:**
+- Wage gap: Women earn 20-30% less for same work
+- Low workforce participation (22% vs 75% men)
+- Unpaid domestic work not valued
+- Limited access to credit and property
+- Glass ceiling in corporate sector
+
+**(b) Trafficking and Exploitation:**
+- Human trafficking for forced labor, prostitution
+- Immoral Traffic Prevention Act exists but enforcement weak
+- Domestic violence affects 1 in 3 women
+- Dowry deaths still occur despite laws
+- Workplace harassment (Vishakha Guidelines, POSH Act)
+
+**(c) Literacy Rate:**
+- Female literacy: 65.46% (Census 2011)
+- Gender gap: Male 82%, Female 65%
+- Rural-urban divide significant
+- Dropout rates higher for girls
+- Government schemes: Beti Bachao Beti Padhao
+
+**(d) Political Representation:**
+- Parliament: Only 14% women MPs
+- 33% reservation in Panchayats successful
+- Women's Reservation Bill pending for Parliament
+- More women in local governance
+- Need for greater political empowerment`,
+          marks: 10,
+        },
+      ],
+    },
+    chapter4: {
+      title: "Chapter 4: India's Challenges",
+      exercises: [
+        {
+          type: "mcq",
+          q: "'Unity in diversity' is one of the important Indian value associated with:",
+          options: [
+            "Panchayati Raj",
+            "National integration",
+            "Concept of a nation",
+            "Concept of 'melting pot'",
+          ],
+          correct: 1,
+          answer:
+            "National integration - Unity in diversity is the cornerstone of India's national integration, celebrating pluralism.",
+          marks: 1,
+        },
+        {
+          type: "mcq",
+          q: "Charu Majumdar is associated with the:",
+          options: [
+            "JKLF",
+            "Naxal movement",
+            "Hizb-ul-Mujahideen",
+            "Assam Oil Blockage",
+          ],
+          correct: 1,
+          answer:
+            "Naxal movement - Charu Majumdar was the founder and leader of the Naxalite movement that began in Naxalbari, West Bengal in 1967.",
+          marks: 1,
+        },
+        {
+          type: "incorrectPair",
+          q: "Identify the incorrect pair: (i) Jawaharlal Nehru - Discovery of India (ii) Struggle for rights of Tamil - LTTE (iii) National Integration Council - Article 370",
+          answer:
+            "(iii) is incorrect. National Integration Council was formed in 1961 to address communal harmony, not related to Article 370. Article 370 gave special status to J&K. Correct pair: National Integration Council - Communal harmony.",
+          marks: 1,
+        },
+        {
+          type: "oddOne",
+          q: "Find the odd one: Naxalism, Nationalism, Terrorism, Extremism",
+          answer:
+            "Nationalism - It is positive (love for nation), while Naxalism, Terrorism, and Extremism are negative/violent ideologies.",
+          marks: 1,
+        },
+        {
+          type: "concept",
+          q: "Threat/use of violence with an intention to create panic in the society.",
+          answer: "Terrorism",
+          marks: 1,
+        },
+        {
+          type: "concept",
+          q: "Involvement of people in decision making process of state.",
+          answer: "Participatory Democracy / Democratic Participation",
+          marks: 1,
+        },
+        {
+          type: "conceptMap",
+          q: "Complete the concept map: Values of National Integration",
+          answer:
+            "Democracy, Secularism, Unity in Diversity, Tolerance, Fraternity, Social Justice, Equality",
+          marks: 4,
+        },
+        {
+          type: "trueFalse",
+          q: "Democracy is required to establish national integration and social transformation.",
+          answer:
+            "TRUE. Democracy provides framework for peaceful resolution of conflicts, representation of diverse groups, rule of law, and inclusive governance essential for national integration and social change.",
+          marks: 2,
+        },
+        {
+          type: "trueFalse",
+          q: "National movement in India played an important role in national integration.",
+          answer:
+            "TRUE. The freedom movement united diverse Indians against colonial rule, created national consciousness, brought together different castes/religions/regions, and established foundation for democratic, secular republic.",
+          marks: 2,
+        },
+        {
+          type: "correlation",
+          q: "Explain the co-relation between National Unity and Regional Aspirations.",
+          answer:
+            "National unity and regional aspirations can coexist through federalism. Regional aspirations (language, culture, development) are legitimate democratic demands. Healthy regionalism strengthens national unity through diversity. Problems arise only when regionalism becomes separatism. Constitution accommodates regional diversity through states reorganization, language rights, and special provisions.",
+          marks: 3,
+        },
+        {
+          type: "opinion",
+          q: "Peace and stability are needed for the nation's progress.",
+          answer:
+            "Yes, peace and stability are prerequisites for development. Reasons: Investment flows to stable regions, education and healthcare need peaceful environment, economic activities require law and order, social progress impossible amidst violence. Examples: Conflict areas face underdevelopment (J&K, Northeast before). Peace dividend enables human development. However, unjust peace maintaining inequality is unsustainable.",
+          marks: 4,
+        },
+        {
+          type: "shortAnswer",
+          q: "What is left wing extremism in India?",
+          answer: `**Left Wing Extremism (LWE) / Naxalism:**
+
+**Origin**: Started in 1967 at Naxalbari, West Bengal
+**Leaders**: Charu Majumdar, Kanu Sanyal
+**Ideology**: Maoist/Communist, armed revolution against state
+**Causes**: Poverty, landlessness, tribal exploitation, governance failure
+**Affected Areas**: Red corridor (Chhattisgarh, Jharkhand, Odisha, parts of Maharashtra, AP)
+**Government Response**: Security operations + development (SAMADHAN doctrine)
+**Current Status**: Declining but still a security challenge`,
+          marks: 5,
+        },
+        {
+          type: "shortAnswer",
+          q: "Explain cross border terrorism in Jammu and Kashmir.",
+          answer: `**Cross Border Terrorism in J&K:**
+
+**Definition**: Terrorism sponsored/supported from across international borders (Pakistan)
+**Origins**: Post-1989 insurgency, after Soviet withdrawal from Afghanistan
+**Groups**: Lashkar-e-Taiba, Jaish-e-Mohammed, Hizbul Mujahideen
+**Methods**: Infiltration, training camps in PoK, financing, arms supply
+**Major Attacks**: Parliament attack (2001), Mumbai (2008), Uri (2016), Pulwama (2019)
+**India's Response**: Border fencing, surgical strikes, diplomatic pressure, Balakot airstrikes
+**Current Status**: Article 370 abrogated (2019), reduced violence, enhanced security`,
+          marks: 5,
+        },
+      ],
+    },
+    chapter5: {
+      title: "Chapter 5: Good Governance",
+      exercises: [
+        {
+          type: "mcq",
+          q: "The concept of Lokpal is taken from:",
+          options: ["United States", "United Kingdom", "Sweden", "Russia"],
+          correct: 2,
+          answer:
+            "Sweden - The concept of Ombudsman (Lokpal) originated in Sweden in 1809.",
+          marks: 1,
+        },
+        {
+          type: "mcq",
+          q: "The concept of 'citizens charter' is part of:",
+          options: [
+            "POSDCORB",
+            "Development administration",
+            "Good governance",
+            "NGO activity",
+          ],
+          correct: 2,
+          answer:
+            "Good governance - Citizens Charter ensures transparency, accountability and citizen-centric services.",
+          marks: 1,
+        },
+        {
+          type: "concept",
+          q: "Person investigating complaints against government officials.",
+          answer: "Ombudsman / Lokpal / Lokayukta",
+          marks: 1,
+        },
+        {
+          type: "conceptMap",
+          q: "Complete the concept map: Values of Good Governance",
+          answer:
+            "Participation, Rule of Law, Transparency, Responsiveness, Accountability, Consensus Oriented, Equity, Effectiveness, Efficiency",
+          marks: 4,
+        },
+        {
+          type: "trueFalse",
+          q: "Lokayukta can investigate complaints against political executives.",
+          answer:
+            "TRUE. Lokayukta at state level can investigate complaints of corruption and maladministration against ministers, MLAs, and public servants. First established in Maharashtra (1971).",
+          marks: 2,
+        },
+        {
+          type: "trueFalse",
+          q: "Good Governance aims at efficient use of natural resources.",
+          answer:
+            "TRUE. Good governance includes sustainable development, environmental protection, and efficient resource management for present and future generations.",
+          marks: 2,
+        },
+        {
+          type: "correlation",
+          q: "Explain co-relation between Good Governance and E-Governance.",
+          answer:
+            "E-Governance is a tool to achieve good governance. E-Governance enables: Transparency through online services, accessibility 24/7, reduced corruption by minimizing human contact, efficiency through digital processes, citizen participation through portals. Examples: Digital India, e-filing, online grievance redressal. E-Governance makes good governance principles operational.",
+          marks: 3,
+        },
+        {
+          type: "opinion",
+          q: "E-governance speeds up governmental processes.",
+          answer:
+            "Yes, e-governance accelerates government functioning. Benefits: Online applications reduce waiting time, instant approvals possible, paperless reduces delays, data accessibility improves decisions, tracking enables monitoring. Examples: Passport Seva, GST portal, DigiLocker. However, digital divide and cybersecurity remain challenges. Overall, e-governance significantly improves speed and efficiency.",
+          marks: 4,
+        },
+        {
+          type: "opinion",
+          q: "E-governance brought administration closer to people.",
+          answer:
+            "Yes, e-governance bridges gap between government and citizens. Ways: 24/7 access to services (no office visits), information transparency, grievance redressal portals, mobile governance, reduced intermediaries. Examples: UMANG app, MyGov platform, e-District services. Digital inclusion initiatives extend reach to villages. E-governance democratizes access to government services.",
+          marks: 4,
+        },
+        {
+          type: "shortAnswer",
+          q: "Explain various institutions protecting rights of different sections in India.",
+          answer: `**Rights Protection Institutions:**
+
+1. **National Human Rights Commission (NHRC)**: Protects human rights violations
+2. **National Commission for Women (NCW)**: Women's rights and complaints
+3. **National Commission for Minorities (NCM)**: Minority rights protection
+4. **National Commission for SC/ST**: Scheduled Castes/Tribes safeguards
+5. **National Commission for Backward Classes**: OBC rights
+6. **Child Rights Commission**: Children's protection
+7. **Lokpal/Lokayukta**: Anti-corruption ombudsman
+8. **Central/State Information Commissions**: RTI implementation`,
+          marks: 5,
+        },
+        {
+          type: "longAnswer",
+          q: "Explain in detail the values of Good Governance: (a) Participation (b) Transparency (c) Responsiveness (d) Accountability",
+          answer: `**Values of Good Governance**
+
+**(a) Participation:**
+- Involvement of citizens in decision-making
+- Voting, public consultations, civil society engagement
+- Decentralization through Panchayati Raj
+- Right to Information enables informed participation
+- Participatory budgeting in some areas
+
+**(b) Transparency:**
+- Open government, free flow of information
+- RTI Act 2005 ensures access to information
+- E-governance portals publish data
+- Proactive disclosure of policies
+- Reduces corruption, builds trust
+
+**(c) Responsiveness:**
+- Government addresses citizen needs promptly
+- Grievance redressal mechanisms
+- Time-bound service delivery (Citizens Charter)
+- Feedback mechanisms
+- Adaptive policies based on outcomes
+
+**(d) Accountability:**
+- Answerability of public officials
+- Parliamentary oversight, CAG audits
+- Judicial review of executive actions
+- Lokpal/Lokayukta for corruption
+- Performance audits and social audits
+- Media and civil society as watchdogs`,
+          marks: 10,
+        },
+      ],
+    },
+    chapter6: {
+      title: "Chapter 6: India's Foreign Policy",
+      exercises: [
+        {
+          type: "mcq",
+          q: "The core of non-alignment was:",
+          options: [
+            "Independent understanding of world affairs",
+            "Participation in cold war",
+            "Democratic socialism as policy",
+            "Policy of regionalism",
+          ],
+          correct: 0,
+          answer:
+            "Independent understanding of world affairs - NAM meant independent foreign policy, not alignment with either superpower bloc.",
+          marks: 1,
+        },
+        {
+          type: "mcq",
+          q: "Farakka Agreement about sharing of river waters is between India and:",
+          options: ["Bangladesh", "Pakistan", "China", "Nepal"],
+          correct: 0,
+          answer:
+            "Bangladesh - The Farakka Agreement (1996) governs sharing of Ganga waters between India and Bangladesh.",
+          marks: 1,
+        },
+        {
+          type: "incorrectPair",
+          q: "Identify incorrect pair: (a) NATO - Europe (b) ANZUS - Africa (c) SEATO - South East Asia (d) CENTO - West Asia",
+          answer:
+            "(b) ANZUS - Africa is incorrect. ANZUS (Australia, New Zealand, United States Security Treaty) is for Pacific region, not Africa. Correct: ANZUS - Pacific/Oceania.",
+          marks: 1,
+        },
+        {
+          type: "trueFalse",
+          q: "Myanmar has been a traditional friend of India.",
+          answer:
+            "TRUE. India and Myanmar share historical ties, Buddhist heritage, 1600 km border, cultural links with Northeast India. India follows 'Act East' policy with Myanmar. Cooperation in connectivity (Kaladan project), counter-insurgency.",
+          marks: 2,
+        },
+        {
+          type: "trueFalse",
+          q: "In changing world order of 1990s, the issue of terrorism has been dominant.",
+          answer:
+            "TRUE. Post-Cold War, terrorism emerged as major global security challenge. 9/11 (2001) made it dominant issue. Global War on Terror, UN resolutions, international cooperation against terrorism became central to world politics.",
+          marks: 2,
+        },
+        {
+          type: "trueFalse",
+          q: "The Sagarmala project is a comprehensive road connectivity plan.",
+          answer:
+            "FALSE. Sagarmala is a port-led development and coastal connectivity initiative, not road connectivity. It focuses on port modernization, coastal shipping, and port-linked industrialization. Road connectivity is under Bharatmala project.",
+          marks: 2,
+        },
+        {
+          type: "opinion",
+          q: "India's role in the Indian Ocean.",
+          answer:
+            "India's strategic interest in Indian Ocean is vital. Role: Security provider (anti-piracy), SAGAR (Security and Growth for All in the Region) doctrine, Quad partnership, disaster relief (2004 tsunami), humanitarian assistance. Challenges: Chinese presence (string of pearls), protecting sea lanes. India must balance being net security provider with inclusive development for all Indian Ocean nations.",
+          marks: 4,
+        },
+        {
+          type: "shortAnswer",
+          q: "Write a note on India's relations with Africa.",
+          answer: `**India-Africa Relations:**
+
+**Historical**: NAM partnership, solidarity against colonialism
+**Political**: India-Africa Forum Summit, UN cooperation
+**Economic**: Trade $70 billion+, Indian investments, IT, pharma
+**Development**: ITEC program, scholarships, capacity building
+**Healthcare**: Generic medicines (Pharmacy of Global South), COVID vaccines
+**Security**: Training, joint exercises, counter-terrorism
+**Diaspora**: Large Indian community in East/South Africa
+**Challenges**: China's growing influence in Africa`,
+          marks: 5,
+        },
+        {
+          type: "shortAnswer",
+          q: "Discuss briefly India-China relations.",
+          answer: `**India-China Relations:**
+
+**Historical**: Panchsheel (1954), 1962 War, boundary dispute
+**Border Issues**: LAC undefined, Aksai Chin, Arunachal Pradesh claims
+**Recent Tensions**: Doklam (2017), Galwan (2020)
+**Trade**: $100+ billion, trade deficit concerns
+**Cooperation**: BRICS, SCO, climate change
+**Competition**: Strategic rivalry, Indian Ocean, influence in South Asia
+**Current Status**: Complex relationship - cooperation + competition
+**Way Forward**: Dialogue, confidence building measures, peaceful resolution`,
+          marks: 5,
+        },
+        {
+          type: "longAnswer",
+          q: "Explain the factors influencing Indian foreign policy: (a) Geography (b) History (c) International System (d) Economy (e) Polity",
+          answer: `**Factors Influencing Indian Foreign Policy**
+
+**(a) Geography:**
+- Strategic location: Land bridge between West & East Asia
+- Indian Ocean centrality: Sea lanes, trade routes
+- Neighbors: 7 land borders, complex relations
+- Himalayan barrier: China, natural defense
+- Natural resources: Access to energy sources
+
+**(b) History:**
+- Colonial experience: Anti-imperialism, NAM
+- Partition legacy: Pakistan relations
+- Civilizational ties: Cultural diplomacy
+- Independence struggle values: Peace, non-violence
+
+**(c) International System:**
+- Cold War: Non-alignment
+- Post-Cold War: Strategic autonomy
+- Multipolarity: Multi-alignment approach
+- Global institutions: UN, WTO, reform advocacy
+
+**(d) Economy:**
+- Trade relations: Market access needs
+- Energy security: Oil/gas imports
+- Investment: FDI attraction
+- Technology: Partnerships for development
+- Economic growth: Shapes diplomatic priorities
+
+**(e) Polity:**
+- Democratic values: Human rights advocacy
+- Federal structure: State involvement in foreign policy
+- Coalition politics: Domestic consensus needed
+- Public opinion: Shapes policy options
+- Parliament: Oversight and debate`,
+          marks: 10,
+        },
+        {
+          type: "shortAnswer",
+          q: "Explain the principles of Indian Foreign Policy.",
+          answer: `**Principles of Indian Foreign Policy:**
+
+1. **Non-Alignment (NAM)**: Independent policy, not joining military blocs
+2. **Panchsheel (Five Principles)**:
+   - Mutual respect for sovereignty
+   - Non-aggression
+   - Non-interference in internal affairs
+   - Equality and mutual benefit
+   - Peaceful coexistence
+3. **Sovereignty & Territorial Integrity**: Respect for nation-state system
+4. **Non-Intervention**: No interference in internal affairs
+5. **Peaceful Settlement of Disputes**: Dialogue over confrontation
+6. **Active Participation in International Organizations**: UN, regional bodies
+7. **South-South Cooperation**: Solidarity with developing nations`,
+          marks: 5,
+        },
+      ],
+    },
+  },
+
+  // ==================== MIND FACES PROBABLE QUESTIONS 2026 ====================
+  probableQuestions2026: {
+    q80_100Words: [
+      {
+        q: "Discuss the Role of the state towards achieving objectives of Economic Development and Social Change. (Chapter 2)",
+        answer: `**Role of State in Economic Development & Social Change:**
+
+**Economic Development:**
+1. **Planning**: NITI Aayog (replaced Planning Commission), Five Year Plans
+2. **Investment**: Public sector in infrastructure, strategic industries
+3. **Regulation**: Controlling monopolies, consumer protection
+4. **Redistribution**: Progressive taxation, subsidies
+5. **Liberalization**: LPG reforms (1991), ease of doing business
+
+**Social Change:**
+1. **Education**: RTE Act, scholarships, skill development
+2. **Healthcare**: Ayushman Bharat, public health programs
+3. **Social Justice**: Reservations, anti-discrimination laws
+4. **Women Empowerment**: Legal reforms, schemes like BBBP
+5. **Poverty Alleviation**: MGNREGA, food security
+
+**Conclusion**: State plays dual role as enabler and provider for inclusive development.`,
+        marks: 5,
+        chapter: 2,
+      },
+      {
+        q: "Explain various measures for Empowerment of Women in India. (Chapter 3)",
+        answer: `**Measures for Women Empowerment in India:**
+
+**Constitutional Provisions:**
+- Article 14: Equality before law
+- Article 15(3): Special provisions for women
+- Article 39: Equal pay for equal work
+- 73rd/74th Amendments: 33% reservation in local bodies
+
+**Legislative Measures:**
+- Dowry Prohibition Act, PCPNDT Act
+- Protection of Women from Domestic Violence Act
+- Sexual Harassment at Workplace Act (POSH)
+- Maternity Benefit Amendment Act
+
+**Government Schemes:**
+- Beti Bachao Beti Padhao
+- Sukanya Samriddhi Yojana
+- MUDRA loans for women entrepreneurs
+- One Stop Centre (Sakhi centres)
+
+**Economic Measures:**
+- Self-Help Groups (SHGs)
+- Skill development programs
+- Microfinance initiatives
+
+**Conclusion**: Multi-pronged approach needed for true empowerment.`,
+        marks: 5,
+        chapter: 3,
+      },
+      {
+        q: "Explain Green Revolution in detail. (Chapter 3)",
+        answer: `**Green Revolution in India:**
+
+**Definition**: Agricultural transformation (1960s-70s) using modern technology to increase food production.
+
+**Background**: Food crisis, dependence on imports (PL-480), famine threats
+
+**Key Features:**
+1. High Yielding Variety (HYV) seeds - IR-8 rice, Mexican wheat
+2. Chemical fertilizers and pesticides
+3. Modern irrigation - tube wells, canals
+4. Mechanization - tractors, harvesters
+5. Institutional credit and support
+
+**Architects**: M.S. Swaminathan (India), Norman Borlaug (Global)
+
+**Impact:**
+- Positive: Self-sufficiency, Green Revolution states (Punjab, Haryana)
+- Negative: Regional disparity, environmental damage, small farmer exclusion
+
+**Current**: Second Green Revolution, sustainable agriculture focus
+
+**Conclusion**: Revolutionary for food security but needs sustainable approach.`,
+        marks: 5,
+        chapter: 3,
+      },
+      {
+        q: "Explain cross-border terrorism in Jammu & Kashmir. (Chapter 4)",
+        answer: `**Cross-Border Terrorism in J&K:**
+
+**Definition**: Terrorism planned, financed, trained, and executed with support from across international border (Pakistan).
+
+**Historical Background:**
+- Post-1989 insurgency began
+- Afghan Mujahideen diverted to Kashmir
+- ISI (Pakistan intelligence) involvement
+
+**Major Terror Groups:**
+- Lashkar-e-Taiba, Jaish-e-Mohammed
+- Hizbul Mujahideen
+
+**Methods:**
+- Infiltration across LoC
+- Terror financing (hawala, fake currency)
+- Training camps in Pakistan-occupied Kashmir
+- Radicalization and recruitment
+
+**Major Attacks**: Parliament (2001), Mumbai (2008), Uri (2016), Pulwama (2019)
+
+**India's Response:**
+- Surgical strikes (2016), Balakot airstrike (2019)
+- Border fencing, enhanced surveillance
+- Diplomatic isolation of Pakistan
+- Article 370 abrogation (2019)
+
+**Conclusion**: Continues to be major security challenge requiring multi-pronged response.`,
+        marks: 5,
+        chapter: 4,
+      },
+      {
+        q: "What is left-wing extremism in India? (Chapter 4)",
+        answer: `**Left-Wing Extremism (LWE) / Naxalism:**
+
+**Definition**: Armed movement inspired by Maoist ideology aiming to overthrow state through revolution.
+
+**Origin**: 1967, Naxalbari village, West Bengal
+**Founders**: Charu Majumdar, Kanu Sanyal
+
+**Ideology:**
+- Maoist/Communist revolution
+- Land to the tiller
+- Overthrow of 'feudal' state
+
+**Causes:**
+- Landlessness and poverty
+- Tribal displacement and exploitation
+- Governance vacuum
+- Forest rights denial
+
+**Affected Areas**: Red Corridor - Chhattisgarh, Jharkhand, Odisha, Bihar, Andhra Pradesh, Maharashtra
+
+**Government Response:**
+- Security operations
+- Development schemes (roads, schools, healthcare)
+- Surrender and rehabilitation policy
+- SAMADHAN doctrine
+
+**Current Status**: Declining but still active in certain pockets
+
+**Conclusion**: Requires balanced approach of security + development.`,
+        marks: 5,
+        chapter: 4,
+      },
+    ],
+    q150_200Words: [
+      {
+        q: "Explain in detail the European Union. (Chapter 1)",
+        chapter: 1,
+        points: [
+          "History",
+          "European Commission",
+          "European Parliament",
+          "European Council",
+          "European Court of Justice",
+        ],
+      },
+      {
+        q: "Discuss the impact of Globalisation. (Chapter 2)",
+        chapter: 2,
+        points: [
+          "Impact on Technology",
+          "Social Impact",
+          "Cultural Impact",
+          "Political Impact",
+          "Economic Impact",
+        ],
+      },
+      {
+        q: "Explain factors influencing Indian foreign policy. (Chapter 6)",
+        chapter: 6,
+        points: [
+          "History",
+          "Economics",
+          "Polity",
+          "Geography",
+          "International System",
+        ],
+      },
+      {
+        q: "Explain the principles of Indian foreign policy. (Chapter 6)",
+        chapter: 6,
+        points: [
+          "Non-Alignment",
+          "Sovereignty and territorial integrity",
+          "Non-intervention in internal affairs",
+          "Belief in peaceful co-existence",
+          "Active participation in international organisations",
+        ],
+      },
+      {
+        q: "Discuss the role of state in contemporary period. (Chapter 2)",
+        chapter: 2,
+        points: [
+          "Governance",
+          "Economic development",
+          "Welfare",
+          "Nation building",
+          "Peace and Order",
+        ],
+      },
+    ],
+  },
 };
 
 export default POLITICAL_SCIENCE_BOARD_CRASHER;
