@@ -291,78 +291,54 @@ export const POLITICAL_SCIENCE_BOARD_CRASHER = {
       {
         q: "What is Unipolarity? (4 marks)",
         year: 2024,
-        modelAnswer: `**Unipolarity:**
+        modelAnswer: `**Unipolarity**
 
-1. **Definition**: International system where one state (superpower) dominates global politics, economy, and military.
+Unipolarity refers to an international system where a single state dominates global politics, economy, and military affairs. After the disintegration of the Soviet Union in 1991, the United States emerged as the sole superpower, marking the beginning of a unipolar world order.
 
-2. **Example**: USA after 1991 (Post-Cold War)
+In a unipolar system, the dominant power has the ability to shape international norms and rules according to its interests. The United States demonstrated this through interventions in the Gulf War (1991), Kosovo (1999), Afghanistan (2001), and Iraq (2003). Other states cannot effectively challenge the superpower militarily or economically.
 
-3. **Features**:
-   - Single dominant power
-   - Ability to shape international norms
-   - Can intervene anywhere (Gulf War, Kosovo)
-   - Other states cannot challenge militarily
-
-4. **Period**: 1991 to approximately 2008 (until rise of China, BRICS)`,
+The unipolar moment lasted from 1991 to approximately 2008, when the global financial crisis and the rise of emerging powers like China and India began shifting the world towards multipolarity. Critics argue that unipolarity led to American unilateralism and bypassing of international institutions like the United Nations.`,
       },
       {
         q: "Explain the causes of USSR disintegration. (4 marks)",
         year: 2023,
-        modelAnswer: `**Causes of USSR Disintegration:**
+        modelAnswer: `**Causes of USSR Disintegration**
 
-1. **Economic Crisis**:
-   - Centrally planned economy failed
-   - 25% GDP spent on military
-   - Consumer goods shortages
+The Union of Soviet Socialist Republics (USSR) disintegrated on December 26, 1991, due to a combination of economic, political, and social factors.
 
-2. **Failed Reforms**:
-   - Glasnost (openness) exposed failures
-   - Perestroika created economic chaos
+The primary cause was the severe economic crisis facing the Soviet system. The centrally planned economy failed to compete with Western market economies. Nearly 25% of GDP was spent on military expenditure, leading to chronic shortages of consumer goods and declining living standards for ordinary citizens.
 
-3. **Nationalism**:
-   - Baltic states demanded independence
-   - Ethnic republics sought freedom
+The reforms introduced by Mikhail Gorbachev accelerated the collapse. Glasnost (openness) exposed the failures of the communist system, while Perestroika (economic restructuring) created chaos without delivering promised improvements. These reforms weakened Communist Party control without providing effective alternatives.
 
-4. **Arms Race Exhaustion**:
-   - Could not match US technology (Star Wars/SDI)
-   - Afghanistan war (1979-89) drained resources
+Rising nationalism in various republics proved fatal to Soviet unity. The Baltic states of Estonia, Latvia, and Lithuania demanded independence, followed by Ukraine and Central Asian republics. Ethnic tensions that had been suppressed for decades erupted throughout the union.
 
-5. **Leadership Crisis**:
-   - Gorbachev lost control
-   - August 1991 coup failed`,
+The exhausting arms race with America and the disastrous Afghanistan war (1979-1989) drained Soviet resources and morale, contributing to the ultimate collapse of the superpower.`,
       },
       {
         q: "What is the New World Order? (4 marks)",
         year: 2022,
-        modelAnswer: `**New World Order:**
+        modelAnswer: `**New World Order**
 
-1. **Definition**: Term for post-Cold War international system announced by US President George H.W. Bush in 1991.
+The term "New World Order" refers to the post-Cold War international system announced by US President George H.W. Bush in 1991, following the Gulf War victory and the collapse of the Soviet Union.
 
-2. **Features**:
-   - US as sole superpower
-   - Emphasis on democracy and human rights
-   - UN and international organizations strengthened
-   - Market economy as model
+The New World Order envisioned a rules-based international system with the United States as the sole superpower and guarantor of global stability. It emphasized the spread of democracy, human rights, and market economics as universal values. International organizations, particularly the United Nations, were expected to play a strengthened role in maintaining peace and resolving conflicts through collective security mechanisms.
 
-3. **Principles**:
-   - Rule-based international order
-   - Collective security through UN
-   - Spread of liberal democracy
+The principles of this new order included respect for sovereignty, peaceful resolution of disputes, and cooperation against common threats. The Gulf War of 1991 was presented as a model of international cooperation under UN authorization against aggression.
 
-4. **Criticism**: Seen by some as Western/American hegemony disguised as global order.`,
+However, critics viewed the New World Order as American hegemony disguised in multilateral clothing. They argued it served Western interests while marginalizing developing nations' concerns about economic justice and genuine equality in international relations.`,
       },
       {
         q: "Distinguish between Cold War and Hot War. (4 marks)",
         year: 2021,
-        modelAnswer: `**Cold War vs Hot War:**
+        modelAnswer: `**Distinction between Cold War and Hot War**
 
-| Aspect | Cold War | Hot War |
-|--------|----------|---------|
-| **Nature** | Ideological rivalry | Actual military conflict |
-| **Direct Fighting** | No direct combat between superpowers | Direct armed engagement |
-| **Methods** | Propaganda, proxy wars, arms race | Use of weapons, casualties |
-| **Duration** | Lasted 44 years (1947-1991) | Usually shorter, intense |
-| **Example** | USA-USSR rivalry | World War I, II |`,
+The Cold War and Hot War represent two fundamentally different types of international conflict, distinguished by the nature and intensity of confrontation between states.
+
+A Hot War involves direct military confrontation between opposing forces, with actual combat, use of weapons, and resulting casualties. Examples include World War I, World War II, and the recent conflicts in Iraq and Afghanistan. Hot wars are typically intense but relatively shorter in duration, ending with clear military victory or negotiated settlement.
+
+The Cold War, in contrast, was an ideological, political, and economic rivalry between the United States and the Soviet Union from 1947 to 1991. Despite intense hostility, the two superpowers never engaged in direct military combat against each other. Instead, they competed through propaganda, espionage, arms race, space race, and proxy wars in third countries like Korea, Vietnam, and Afghanistan.
+
+The Cold War lasted 44 years precisely because both sides possessed nuclear weapons, making direct conflict potentially catastrophic for humanity. This "balance of terror" forced competition into non-military channels while the threat of mutual destruction prevented escalation to actual warfare.`,
       },
     ],
 
@@ -370,109 +346,80 @@ export const POLITICAL_SCIENCE_BOARD_CRASHER = {
       {
         q: "Describe the causes and consequences of USSR disintegration and its impact on world politics. (8 marks)",
         year: 2024,
-        modelAnswer: `### Disintegration of USSR: Causes and Consequences
+        modelAnswer: `**Disintegration of USSR: Causes, Consequences and Impact on World Politics**
 
-#### Introduction
-The USSR (Soviet Union) collapsed on December 26, 1991, ending the Cold War era and dramatically reshaping world politics.
+**Introduction**
 
-#### Causes of Disintegration
+The Union of Soviet Socialist Republics (USSR) officially dissolved on December 26, 1991, marking the end of the Cold War era and fundamentally transforming the international political order. This historic event was the result of multiple interconnected factors and produced far-reaching consequences for global politics.
 
-**1. Economic Crisis**
-- Centrally planned economy failed to compete with West
-- 25% of GDP spent on military spending
-- Severe shortage of consumer goods
-- Inefficient industries and agriculture
+**Causes of Disintegration**
 
-**2. Failed Reforms**
-- Glasnost (openness) exposed system failures
-- Perestroika (restructuring) created economic chaos
-- People demanded more freedom and change
+The Soviet economic system was the primary cause of the collapse. The centrally planned economy proved unable to compete with Western market economies in efficiency and innovation. An excessive military burden, consuming nearly 25 percent of GDP for the arms race with America, left insufficient resources for consumer goods production. Soviet citizens faced chronic shortages of basic necessities while witnessing Western prosperity, creating widespread disillusionment with the communist system.
 
-**3. Rise of Nationalism**
-- Baltic States (Estonia, Latvia, Lithuania) demanded independence
-- Ukraine, Central Asian republics followed
-- Ethnic tensions suppressed for decades erupted
+The reforms introduced by Mikhail Gorbachev, intended to save the system, instead accelerated its demise. Glasnost (openness) allowed public criticism that exposed decades of government failures, corruption, and historical crimes. Perestroika (economic restructuring) disrupted existing economic arrangements without successfully creating market mechanisms, resulting in economic chaos and further declining living standards.
 
-**4. Arms Race Exhaustion**
-- Could not match US technology (SDI/Star Wars program)
-- Afghanistan war (1979-89) drained resources and morale
+Nationalism proved to be the decisive factor in breaking apart the Soviet federation. The Baltic republics of Estonia, Latvia, and Lithuania, forcibly incorporated in 1940, led demands for independence. Ukraine, the second-largest republic, followed suit. Ethnic tensions suppressed for decades erupted throughout the union as central authority weakened.
 
-**5. Leadership Crisis**
-- Gorbachev's reforms weakened Communist Party control
-- August 1991 coup attempt failed but exposed weakness
-- Boris Yeltsin emerged as alternative leader
+The exhausting confrontation with America drained Soviet resources and morale. The ten-year war in Afghanistan (1979-1989) cost thousands of lives and billions of rubles while demonstrating military limitations. The inability to match American technological advances, particularly the Strategic Defense Initiative (Star Wars program), convinced Soviet leaders they could not sustain competition.
 
-#### Consequences
+**Consequences**
 
-**1. End of Cold War**
-- Bipolar world ended
-- USA emerged as sole superpower (Unipolarity)
+The most immediate consequence was the end of the Cold War that had dominated international relations for over four decades. The ideological confrontation between capitalism and communism concluded with the apparent victory of Western liberal democracy. The United States emerged as the sole superpower in a unipolar world, able to shape international norms and intervene globally without effective opposition.
 
-**2. Birth of New States**
-- 15 independent republics formed
-- Russia became successor state with UN seat
-- CIS (Commonwealth of Independent States) formed
+Fifteen independent republics emerged from the Soviet federation, dramatically redrawing the map of Eurasia. Russia, as the largest successor state, inherited the Soviet Union's permanent seat on the UN Security Council and most of its nuclear arsenal. The Commonwealth of Independent States (CIS) was formed as a loose association of former Soviet republics, though it proved largely ineffective.
 
-**3. Economic Transition**
-- "Shock therapy" to market economy
-- Privatization led to rise of oligarchs
-- Economic hardship for common people
+The economic transition from planned to market economy caused tremendous hardship. "Shock therapy" policies led to hyperinflation, unemployment, and the emergence of oligarchs who acquired state assets at minimal prices. Living standards for ordinary citizens declined sharply during the 1990s.
 
-**4. Geopolitical Changes**
-- NATO expanded eastward
-- European Union enlarged
-- Balance of power shifted completely
+**Impact on World Politics**
 
-#### Impact on World Politics
+The Soviet collapse transformed the international system from bipolarity to American unipolarity. The United States became the dominant force in shaping international institutions, norms, and responses to global challenges. NATO expanded eastward to include former Warsaw Pact members and even former Soviet republics.
 
-| Aspect | Impact |
-|--------|--------|
-| Power Structure | Bipolar → Unipolar → Multipolar |
-| Ideology | Capitalism/Democracy seen as victorious |
-| Globalization | Accelerated without Soviet alternative |
-| International Orgs | UN, WTO gained importance |
+Globalization accelerated dramatically without the Soviet alternative model. Market economics and liberal democracy spread as the presumed end-point of historical development. International organizations like the United Nations, World Trade Organization, and International Monetary Fund gained enhanced importance in managing global affairs.
 
-#### Conclusion
-The USSR collapse was a watershed moment in world history, ending the Cold War and creating the foundation for today's multipolar world order.`,
+**Conclusion**
+
+The disintegration of the USSR stands as one of the most significant events in modern history, peacefully ending the Cold War while creating both opportunities and challenges that continue to shape international relations. The transition from bipolarity through unipolarity toward today's emerging multipolarity traces directly to this watershed moment.`,
       },
       {
         q: "Explain the transition from Unipolarity to Multipolarity and its implications for India. (8 marks)",
         year: 2023,
-        modelAnswer: `### Transition from Unipolarity to Multipolarity
+        modelAnswer: `**Transition from Unipolarity to Multipolarity and Implications for India**
 
-#### Introduction
-Since 1991, the world has transitioned from bipolar (USA vs USSR) to unipolar (USA alone) to an emerging multipolar order.
+**Introduction**
 
-#### Phase 1: Unipolarity (1991-2008)
+The international political system has undergone significant transformation since the end of the Cold War. From the bipolar order dominated by the United States and Soviet Union, the world transitioned to American unipolarity after 1991, and is now evolving toward a multipolar configuration with several major powers sharing global influence. This transition carries profound implications for India's foreign policy and strategic position.
 
-**Definition**: Single superpower dominance
+**The Unipolar Phase (1991-2008)**
 
-**Features of US Unipolarity**:
-- Largest military and economy
-- Shaped international norms
-- NATO expansion
-- Interventions: Gulf War (1991), Kosovo (1999), Afghanistan (2001), Iraq (2003)
+Following the Soviet collapse, the United States stood as the sole superpower with unmatched military capability, economic strength, and cultural influence. American unipolarity was characterized by the ability to shape international norms, lead coalition interventions, and expand Western institutions eastward. The United States intervened in the Gulf War, Kosovo, Afghanistan, and Iraq, demonstrating its willingness and capacity to project power globally.
 
-**Criticisms**:
-- Unilateralism (acting alone)
-- "World policeman" image
-- Sometimes bypassed UN
+However, unipolarity generated resentment and resistance. American unilateralism, particularly the Iraq War of 2003 conducted without UN authorization, damaged international legitimacy. The 2008 global financial crisis, originating in American markets, undermined confidence in US economic leadership and demonstrated the vulnerabilities of the dominant power.
 
-#### Phase 2: Transition to Multipolarity (2008-Present)
+**Transition to Multipolarity**
 
-**Factors Causing Shift**:
+Multiple factors have driven the shift toward multipolarity. China's remarkable economic rise has created the world's second-largest economy with growing military capabilities and global ambitions expressed through the Belt and Road Initiative. Russia under Vladimir Putin has reasserted great power status through energy leverage and military interventions in Georgia, Crimea, and Syria.
 
-1. **Rise of China**
-   - World's second-largest economy
-   - Belt and Road Initiative (BRI)
-   - Military modernization
+India has emerged as a major power through sustained economic growth, technological advancement in information technology and space programs, and expanding diplomatic influence. The European Union, despite internal challenges, remains a significant economic bloc exercising soft power globally. Emerging economies in the BRICS grouping and G20 have demanded greater voice in international institutions.
 
-2. **India's Emergence**
-   - Fast-growing major economy
-   - Nuclear power, IT sector leader
-   - Growing diplomatic influence
+American relative decline, though not absolute weakness, has contributed to this diffusion of power. Military overstretch in prolonged Middle Eastern conflicts, domestic political polarization, and reduced appetite for global leadership have created space for other powers to assert influence.
 
-3. **Russia's Resurgence**
+**Characteristics of the Emerging Multipolar Order**
+
+The multipolar system features multiple power centers without a single dominant state. Complex diplomacy becomes necessary as countries balance relationships with various major powers. Regional powers gain importance in their respective spheres. New institutions like BRICS, the Shanghai Cooperation Organisation, and the Asian Infrastructure Investment Bank provide alternatives to Western-dominated organizations.
+
+**Implications for India**
+
+The transition to multipolarity creates both opportunities and challenges for Indian foreign policy. Strategic autonomy becomes more achievable when multiple powers compete for partnerships rather than demanding exclusive alignment. India can engage with all major powers simultaneously, extracting benefits from each relationship without becoming dependent on any single partner.
+
+Economic opportunities expand as multiple sources of investment, technology, and markets become available. India can participate in alternative institutions while maintaining engagement with traditional Western partners. The rise of Asian powers validates India's own aspirations for great power status.
+
+However, multipolarity also creates challenges. Managing relations with both the United States and Russia while navigating the complex China relationship requires sophisticated diplomacy. Regional instability may increase as major powers compete for influence in South Asia. The rules-based international order may weaken as competing powers promote different norms and institutions.
+
+**Conclusion**
+
+India is well-positioned to benefit from the multipolar transition through its multi-alignment approach that maintains strategic autonomy while building partnerships with all major powers. Success requires balancing competing relationships, strengthening domestic capabilities, and actively shaping international institutions to reflect emerging realities.`,
+      },
+    ],3. **Russia's Resurgence**
    - Under Putin, asserting power
    - Energy resources leverage
    - Military interventions (Syria, Ukraine)
@@ -651,18 +598,11 @@ Multipolar world offers India unprecedented opportunities for strategic autonomy
           answer: true,
           reason: `**TRUE**
 
-**Reasons:**
-1. **Regional Trade**: SAARC promotes intra-regional trade among South Asian nations (India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, Maldives, Afghanistan)
+SAARC (South Asian Association for Regional Cooperation) plays a vital role in promoting trade within the South Asian region. Established in 1985, SAARC comprises eight member nations: India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, Maldives, and Afghanistan.
 
-2. **SAFTA Agreement**: South Asian Free Trade Area (SAFTA) under SAARC aims to reduce tariffs and boost trade
+The organization has made significant contributions to regional trade through the South Asian Free Trade Area (SAFTA) agreement, which aims to reduce tariffs and eliminate trade barriers among member nations. SAARC promotes economic cooperation through joint initiatives for infrastructure development, poverty reduction, and improved connectivity. Simplified customs procedures and standardized trade documentation have facilitated smoother movement of goods across borders.
 
-3. **Economic Cooperation**: Joint efforts for economic development, poverty reduction, and improving living standards
-
-4. **Trade Facilitation**: Simplified customs procedures, trade documentation, and reduced barriers
-
-5. **Connectivity**: Infrastructure projects to improve physical connectivity for trade
-
-**However**: SAARC's effectiveness limited due to India-Pakistan tensions, but trade remains a core objective.`,
+While India-Pakistan tensions have limited SAARC's overall effectiveness, the promotion of regional trade remains a core objective that continues to benefit member nations through expanded market access and economic integration opportunities.`,
         },
         {
           statement:
@@ -670,20 +610,11 @@ Multipolar world offers India unprecedented opportunities for strategic autonomy
           answer: false,
           reason: `**FALSE**
 
-**Reasons:**
-1. **Actual Purpose**: The Maastricht Treaty (1992) was signed to create the EUROPEAN UNION - a political and economic union, NOT for defence
+The Maastricht Treaty, signed in 1992, was not established for the defence of Europe. Its primary purpose was the creation of the European Union as a political and economic union among European nations.
 
-2. **Key Provisions**:
-   - Established European Union (EU)
-   - Created common citizenship
-   - Laid foundation for common currency (Euro)
-   - Established three pillars: Economic, Foreign Policy, Justice
+The treaty established the framework for European integration through three pillars: the European Community (economic integration), Common Foreign and Security Policy, and Justice and Home Affairs. Its most significant achievement was laying the foundation for the common currency (Euro) and establishing common European citizenship. The treaty transformed the European Economic Community into the broader European Union.
 
-3. **Defence Organization**: NATO (North Atlantic Treaty Organization, 1949) is the defence alliance for Europe and North America, NOT Maastricht Treaty
-
-4. **Economic Focus**: Maastricht focused on economic integration, single market, and monetary union
-
-**Note**: Defence coordination exists under EU's Common Foreign and Security Policy, but this was NOT the main purpose of Maastricht Treaty.`,
+European defence cooperation primarily operates through NATO (North Atlantic Treaty Organization), which was established in 1949 as a military alliance among North American and European nations. While the Maastricht Treaty did include provisions for coordinating foreign and security policies, defence was never its central focus. The treaty's fundamental purpose was economic and political integration, not military defence.`,
         },
         {
           statement:
@@ -691,24 +622,11 @@ Multipolar world offers India unprecedented opportunities for strategic autonomy
           answer: false,
           reason: `**FALSE**
 
-**Reasons:**
-1. **Correct Period**: The 1990s (not 1980s) is considered the golden age of humanitarian intervention
+The 1990s, not the 1980s, is considered the golden age of humanitarian intervention. This distinction reflects the fundamental change in international relations that occurred with the end of the Cold War in 1991.
 
-2. **Why 1990s**:
-   - Cold War ended (1991) - no superpower rivalry to block interventions
-   - UN Security Council could act more freely
-   - Rise of "Responsibility to Protect" concept
+During the 1980s, the Cold War rivalry between the United States and Soviet Union effectively blocked most humanitarian interventions. Both superpowers frequently used their veto power in the UN Security Council to prevent interventions that might disadvantage their strategic interests, leaving many humanitarian crises unaddressed.
 
-3. **Major Interventions in 1990s**:
-   - Somalia (1992-93)
-   - Bosnia (1992-95)
-   - Rwanda response (1994)
-   - Kosovo (1999)
-   - East Timor (1999)
-
-4. **1980s Context**: During Cold War, USA-USSR rivalry often blocked UN humanitarian interventions due to veto power
-
-**Note**: Post-2000, humanitarian intervention became controversial after Iraq (2003) and Libya (2011).`,
+The 1990s witnessed a dramatic transformation following the Cold War's end. Without superpower rivalry paralyzing the Security Council, the United Nations could authorize humanitarian interventions in Somalia (1992-93), Bosnia (1992-95), and East Timor (1999). NATO conducted significant interventions in Bosnia and Kosovo. The concept of "Responsibility to Protect" (R2P) emerged during this period, arguing that sovereignty entails responsibility to protect citizens from mass atrocities. However, failures like Rwanda (1994) and later controversies over Iraq (2003) have complicated the humanitarian intervention debate.`,
         },
       ],
 
@@ -716,41 +634,29 @@ Multipolar world offers India unprecedented opportunities for strategic autonomy
       opinionQuestions: [
         {
           topic: "Humanitarian intervention",
-          modelAnswer: `**Opinion on Humanitarian Intervention:**
+          modelAnswer: `**Opinion on Humanitarian Intervention**
 
-**Definition**: Humanitarian intervention refers to the use of military force by external powers to protect civilians from mass atrocities like genocide, war crimes, and ethnic cleansing within a sovereign state.
+Humanitarian intervention refers to the use of military force by external powers to protect civilians from mass atrocities such as genocide, war crimes, and ethnic cleansing within a sovereign state. This concept remains one of the most debated issues in international relations, balancing human rights protection against state sovereignty.
 
-**Arguments FOR:**
-1. **Moral Responsibility**: International community has duty to protect innocent lives (R2P doctrine)
-2. **Human Rights**: Sovereignty cannot be a shield for human rights violations
-3. **Success Cases**: Kosovo (1999) prevented further ethnic cleansing
-4. **International Norms**: Strengthens global human rights standards
+Those who support humanitarian intervention argue that the international community bears a moral responsibility to protect innocent lives when governments fail to do so or actively perpetrate atrocities against their own people. The Responsibility to Protect (R2P) doctrine, adopted by the United Nations in 2005, affirms this principle. Successful interventions, such as in Kosovo (1999), demonstrate that international action can prevent further ethnic cleansing and save lives. Furthermore, establishing the precedent that sovereignty cannot shield human rights violations strengthens global human rights standards.
 
-**Arguments AGAINST:**
-1. **Sovereignty Violation**: Interferes with internal affairs of states
-2. **Selective Application**: Powerful nations intervene only where it suits their interests
-3. **Misuse**: Can be used to justify regime change (Libya 2011)
-4. **Unintended Consequences**: May worsen situation or lead to prolonged conflicts
+However, critics raise serious concerns about humanitarian intervention. Such actions inherently violate the principle of state sovereignty and non-interference in internal affairs, cornerstones of the international legal order. There is also legitimate concern about selective application, as powerful nations tend to intervene only where it suits their strategic interests while ignoring equally severe crises elsewhere. The intervention in Libya (2011), initially justified on humanitarian grounds, was subsequently criticized for being used to achieve regime change. Unintended consequences may also worsen situations or lead to prolonged conflicts.
 
-**My Opinion**: Humanitarian intervention is justified ONLY when:
-- Clear evidence of mass atrocities
-- UN Security Council authorization
-- Peaceful means exhausted
-- Clear exit strategy exists
-
-**Conclusion**: While protecting human lives is paramount, interventions must be genuinely humanitarian and not disguised imperialism.`,
+In my considered opinion, humanitarian intervention is justified only under specific conditions: clear evidence of mass atrocities, authorization by the UN Security Council, exhaustion of peaceful alternatives, and a clear exit strategy. While protecting human lives must remain paramount, interventions must be genuinely humanitarian rather than disguised imperialism serving great power interests.`,
         },
         {
           topic: "Regionalism in international politics",
-          modelAnswer: `**Opinion on Regionalism in International Politics:**
+          modelAnswer: `**Opinion on Regionalism in International Politics**
 
-**Definition**: Regionalism refers to the process of countries in a geographic region coming together for economic, political, or security cooperation.
+Regionalism refers to the process by which countries within a geographic area come together for economic, political, or security cooperation. Examples include the European Union in Europe, SAARC in South Asia, ASEAN in Southeast Asia, and the African Union in Africa. This phenomenon has become increasingly significant in contemporary international politics.
 
-**Examples of Regional Organizations:**
-| Region | Organization |
-|--------|--------------|
-| Europe | European Union (EU) |
-| South Asia | SAARC |
+Regionalism offers substantial benefits to participating nations. Economic integration through free trade areas and common markets generates prosperity by eliminating trade barriers and enabling specialization based on comparative advantages. The European Union's single market demonstrates the economic potential of deep regional integration. Regional cooperation also promotes peace and stability by creating interdependence that makes conflict costly and by providing diplomatic forums for resolving disputes. For smaller nations, regional organizations provide collective bargaining power that amplifies their voice in international forums. Regional approaches to transnational challenges like terrorism, environmental degradation, and refugee flows often prove more effective than purely national responses.
+
+However, regionalism faces significant challenges. Sovereignty concerns make states hesitant to cede decision-making powers to regional bodies. Bilateral conflicts between member states, such as India-Pakistan tensions that have hampered SAARC's effectiveness, can paralyze regional cooperation. Unequal power distribution often leads to domination by larger members, creating resentment among smaller partners. Rising nationalism in many countries currently threatens the foundations of regional cooperation.
+
+In my view, regionalism is essential in today's interconnected world because no single nation can effectively address transnational challenges alone. Climate change, terrorism, pandemic diseases, and economic instability all require coordinated regional responses. India should actively engage in SAARC, BIMSTEC, and SCO while strengthening bilateral relationships. Regionalism complements rather than replaces global multilateralism, providing an intermediate level of cooperation between national and global governance.`,
+        },
+      ],
 | Southeast Asia | ASEAN |
 | Africa | African Union (AU) |
 | Eurasia | SCO |
@@ -781,49 +687,13 @@ Multipolar world offers India unprecedented opportunities for strategic autonomy
         {
           question: "Explain the term soft power with examples.",
           marks: 5,
-          modelAnswer: `**Soft Power:**
+          modelAnswer: `**Soft Power**
 
-**Definition**: Soft power is the ability of a country to influence other countries and shape their preferences through attraction, persuasion, and appeal rather than coercion or military force.
+Soft power is the ability of a country to influence other nations and shape their preferences through attraction, persuasion, and appeal rather than coercion or military force. The term was coined by American political scientist Joseph Nye, who argued that getting others to want what you want is more effective than forcing them to comply.
 
-**Coined by**: Joseph Nye (American political scientist)
+Unlike hard power, which relies on military strength and economic sanctions to achieve immediate results through force, soft power operates through culture, values, and foreign policies to build long-term influence and genuine goodwill. Sources of soft power include a nation's cultural products like films, music, and cuisine; its political values such as democracy and human rights; and its foreign policies including aid programmes and diplomatic engagement.
 
-**Contrast with Hard Power:**
-| Soft Power | Hard Power |
-|------------|------------|
-| Attraction & persuasion | Coercion & force |
-| Culture, values, policies | Military, economic sanctions |
-| Long-term influence | Immediate results |
-
-**Sources of Soft Power:**
-1. **Culture**: Movies, music, art, cuisine
-2. **Political Values**: Democracy, human rights, rule of law
-3. **Foreign Policies**: Aid, diplomacy, multilateral engagement
-4. **Education**: Universities, exchange programs
-5. **Technology & Innovation**: Brands, products, innovation
-
-**Examples of Soft Power:**
-
-**USA:**
-- Hollywood movies and TV shows
-- American universities (Harvard, MIT)
-- Tech giants (Google, Apple, Microsoft)
-- English language dominance
-- Pop culture (McDonald's, Coca-Cola)
-
-**India:**
-- Bollywood films
-- Yoga and spirituality
-- Indian cuisine globally
-- IT industry reputation
-- Indian diaspora influence
-- Buddhism and Gandhian philosophy
-
-**China:**
-- Confucius Institutes (language & culture centers)
-- Belt and Road Initiative (economic diplomacy)
-- Manufacturing hub image
-
-**Importance**: In modern world, soft power often more effective than military force for long-term influence and building relationships.`,
+The United States exercises soft power through Hollywood, American universities, technology companies, and the widespread use of English. India's soft power derives from Bollywood films, yoga and spirituality, Indian cuisine's global popularity, the IT industry's reputation, and the influence of the Indian diaspora. Soft power proves particularly effective in the modern interconnected world where lasting influence requires winning hearts and minds rather than merely demonstrating military superiority.`,
         },
       ],
 
@@ -833,120 +703,45 @@ Multipolar world offers India unprecedented opportunities for strategic autonomy
           question:
             "Discuss the European Union with help of given points: (a) History (b) European Commission (c) European Parliament (d) European Council (e) European Court of Justice",
           marks: 10,
-          modelAnswer: `### The European Union (EU)
+          modelAnswer: `**The European Union**
 
-#### Introduction
-The European Union is a unique political and economic union of 27 European countries, representing one of the most successful examples of regional integration in the world.
+**Introduction**
 
-#### (a) History of EU
+The European Union represents one of the most ambitious and successful experiments in regional integration in human history. Currently comprising 27 member states following the United Kingdom's departure in 2020, the EU has transformed post-war Europe from a continent ravaged by conflict into a zone of unprecedented peace and prosperity.
 
-**Post-WWII Context:**
-- Europe devastated by two World Wars
-- Need for peace and economic recovery
-- Desire to prevent future conflicts
+**(a) History**
 
-**Timeline of Integration:**
+The European integration project emerged from the devastation of two World Wars that left the continent in ruins. European leaders sought to prevent future conflicts by binding nations together economically and politically. The journey began in 1951 with the European Coal and Steel Community, which placed the war-making resources of France and Germany under supranational authority. The Treaty of Rome in 1957 established the European Economic Community among six founding members: France, Germany, Italy, Belgium, Netherlands, and Luxembourg.
 
-| Year | Event |
-|------|-------|
-| 1951 | European Coal and Steel Community (ECSC) - 6 countries |
-| 1957 | Treaty of Rome - European Economic Community (EEC) |
-| 1967 | Merger Treaty - Combined all communities |
-| 1992 | **Maastricht Treaty** - Created European Union |
-| 1999 | Euro currency introduced |
-| 2007 | Lisbon Treaty - Reformed EU institutions |
-| 2020 | Brexit - UK left EU |
+The Maastricht Treaty of 1992 marked a transformative moment by creating the European Union as a political union beyond mere economic cooperation. This treaty established common European citizenship and laid the foundation for the common currency. The euro was introduced in 1999 and is now used by twenty member states. The Lisbon Treaty of 2007 reformed EU institutions and strengthened the Union's legal framework. Despite Brexit in 2020, the EU continues to attract new members and deepen integration.
 
-**Founding Members (6)**: France, Germany, Italy, Belgium, Netherlands, Luxembourg
+**(b) European Commission**
 
-**Current Members**: 27 countries (after UK's exit)
+The European Commission serves as the executive body of the European Union, often described as the "Government of the EU." The Commission holds the exclusive right to propose legislation, ensuring that all EU laws originate from a body representing the common European interest rather than individual member states. Beyond legislative initiative, the Commission implements decisions taken by the Parliament and Council, manages the EU budget, and enforces compliance with EU rules by member states.
 
-#### (b) European Commission
+The Commission comprises 27 Commissioners, one from each member state, headed by a President (currently Ursula von der Leyen). Commissioners are expected to act in the Union's interest rather than representing their home countries. The Commission headquarters is located in Brussels, Belgium.
 
-**Role**: Executive body of EU - "Government of EU"
+**(c) European Parliament**
 
-**Functions:**
-1. **Proposes Legislation**: Only body that can initiate EU laws
-2. **Implements Decisions**: Enforces EU policies and budget
-3. **Guardian of Treaties**: Ensures member states follow EU rules
-4. **External Representation**: Negotiates trade deals for EU
+The European Parliament is the directly elected legislative body of the European Union, representing the democratic voice of EU citizens. Its 705 Members of Parliament (MEPs) are elected every five years by citizens across all member states, making it the only directly elected institution in the EU framework. The Parliament shares legislative power with the Council of the European Union, meaning both bodies must approve most EU laws.
 
-**Structure:**
-- 27 Commissioners (one from each member state)
-- President of Commission (currently Ursula von der Leyen)
-- Headquarters: Brussels, Belgium
+The Parliament exercises significant budgetary authority, approving and monitoring EU spending. It provides democratic oversight of other EU institutions and must approve the appointment of the Commission President and Commissioners. Plenary sessions occur in Strasbourg, France, while committee work is conducted in Brussels.
 
-#### (c) European Parliament
+**(d) European Council**
 
-**Role**: Legislative body - Represents EU citizens directly
+The European Council sets the overall political direction and priorities of the European Union. Composed of the heads of state or government of all 27 member states, along with its President and the Commission President, the European Council addresses the most sensitive political issues and resolves disputes that cannot be settled at lower levels. The Council meets at least four times annually in summit format.
 
-**Functions:**
-1. **Passes Laws**: Together with Council of EU
-2. **Approves Budget**: Controls EU spending
-3. **Democratic Oversight**: Supervises other EU institutions
-4. **Elects Commission President**: Approves Commission members
+It is important to distinguish the European Council from the Council of the European Union (Council of Ministers), which is a separate body that actually passes legislation. The European Council provides strategic guidance and political leadership but does not itself enact laws.
 
-**Structure:**
-- 705 Members of European Parliament (MEPs)
-- Directly elected by EU citizens every 5 years
-- Headquarters: Strasbourg (plenary), Brussels (committees)
+**(e) European Court of Justice**
 
-**Significance**: Only directly elected EU institution - represents democratic voice
+The European Court of Justice, located in Luxembourg, serves as the supreme judicial authority of the European Union. Its primary function is ensuring uniform interpretation and application of EU law across all member states. The Court comprises one judge from each member state, supported by eleven Advocates General who provide independent legal opinions.
 
-#### (d) European Council
+The ECJ settles disputes between member states, between EU institutions, and between individuals or businesses and EU authorities. Its rulings are binding and take precedence over national law in matters of EU competence. Through its judgments, the Court has significantly shaped European integration and strengthened the rule of law across the Union.
 
-**Role**: Sets political direction and priorities of EU
+**Conclusion**
 
-**Functions:**
-1. **Strategic Direction**: Defines EU's overall political agenda
-2. **Major Decisions**: Handles sensitive political issues
-3. **Conflict Resolution**: Resolves disputes between member states
-4. **Treaty Amendments**: Discusses changes to EU treaties
-
-**Composition:**
-- Heads of State/Government of all 27 members
-- President of European Council (currently Charles Michel)
-- President of European Commission
-- Meets at least 4 times per year (Summits)
-
-**Note**: Does NOT pass laws - that's done by Council of EU (different body)
-
-#### (e) European Court of Justice (ECJ)
-
-**Role**: Judicial body - Supreme court of EU
-
-**Functions:**
-1. **Interprets EU Law**: Ensures uniform application across all members
-2. **Settles Disputes**: Between member states, EU institutions, businesses, individuals
-3. **Reviews Legislation**: Checks if EU laws are valid
-4. **Preliminary Rulings**: Advises national courts on EU law
-
-**Structure:**
-- One judge from each member state (27 judges)
-- 11 Advocates General (provide legal opinions)
-- Location: Luxembourg
-
-**Importance**: ECJ rulings are binding and supreme over national courts in EU matters
-
-#### Significance of EU
-
-| Achievement | Details |
-|-------------|---------|
-| Peace | No war between members since formation |
-| Single Market | Free movement of goods, services, capital, people |
-| Common Currency | Euro used by 20 countries |
-| Global Influence | World's largest single market and trade bloc |
-| Human Rights | Strong protection through EU Charter |
-
-#### Challenges
-
-1. **Brexit**: UK's departure weakened EU
-2. **Migration Crisis**: Strains on unity
-3. **Economic Disparities**: Rich vs. poorer members
-4. **Rise of Nationalism**: Eurosceptic movements
-
-#### Conclusion
-The European Union remains the world's most ambitious and successful regional integration project. Despite challenges like Brexit, it continues to serve as a model of peaceful cooperation, economic integration, and shared governance among nations.`,
+The European Union stands as a remarkable achievement in international cooperation, demonstrating that former enemies can build institutions for peaceful governance and mutual prosperity. Despite challenges including Brexit, migration pressures, and rising nationalist movements, the EU remains the world's most successful model of regional integration. Its institutions provide frameworks for collective decision-making that balance supranational efficiency with democratic accountability and respect for national sovereignty.`,
         },
       ],
     },
@@ -4948,148 +4743,83 @@ India maintains strong Russia ties while developing US partnership - exemplifyin
     q80_100Words: [
       {
         q: "Discuss the Role of the state towards achieving objectives of Economic Development and Social Change. (Chapter 2)",
-        answer: `**Role of State in Economic Development & Social Change:**
+        answer: `**Role of State in Economic Development and Social Change**
 
-**Economic Development:**
-1. **Planning**: NITI Aayog (replaced Planning Commission), Five Year Plans
-2. **Investment**: Public sector in infrastructure, strategic industries
-3. **Regulation**: Controlling monopolies, consumer protection
-4. **Redistribution**: Progressive taxation, subsidies
-5. **Liberalization**: LPG reforms (1991), ease of doing business
+The state plays a crucial role in achieving both economic development and social change in contemporary society. In the economic sphere, the state functions as a planner through institutions like NITI Aayog (which replaced the Planning Commission), formulating policies for balanced development. The state invests in infrastructure and strategic industries through the public sector, while regulating market activities to prevent monopolies and protect consumer interests. Progressive taxation and subsidy programmes enable redistribution of wealth, reducing inequality. The 1991 LPG reforms demonstrate how state policy can liberalise the economy while maintaining regulatory oversight.
 
-**Social Change:**
-1. **Education**: RTE Act, scholarships, skill development
-2. **Healthcare**: Ayushman Bharat, public health programs
-3. **Social Justice**: Reservations, anti-discrimination laws
-4. **Women Empowerment**: Legal reforms, schemes like BBBP
-5. **Poverty Alleviation**: MGNREGA, food security
+For social change, the state acts as both catalyst and guarantor. The Right to Education Act ensures universal access to schooling, while scholarship programmes enable disadvantaged students to pursue higher education. Healthcare initiatives like Ayushman Bharat provide insurance coverage to millions. Constitutional provisions for reservations promote social justice for historically marginalised communities. Women's empowerment receives attention through legislation and schemes like Beti Bachao Beti Padhao. Poverty alleviation programmes such as MGNREGA provide employment security to rural households.
 
-**Conclusion**: State plays dual role as enabler and provider for inclusive development.`,
+The state thus serves as both enabler and provider in pursuing inclusive development that combines economic growth with social transformation.`,
         marks: 5,
         chapter: 2,
       },
       {
         q: "Explain various measures for Empowerment of Women in India. (Chapter 3)",
-        answer: `**Measures for Women Empowerment in India:**
+        answer: `**Measures for Empowerment of Women in India**
 
-**Constitutional Provisions:**
-- Article 14: Equality before law
-- Article 15(3): Special provisions for women
-- Article 39: Equal pay for equal work
-- 73rd/74th Amendments: 33% reservation in local bodies
+India has adopted a comprehensive approach to women's empowerment through constitutional provisions, legislative measures, government schemes, and economic initiatives that together address multiple dimensions of gender inequality.
 
-**Legislative Measures:**
-- Dowry Prohibition Act, PCPNDT Act
-- Protection of Women from Domestic Violence Act
-- Sexual Harassment at Workplace Act (POSH)
-- Maternity Benefit Amendment Act
+Constitutional provisions form the foundation of women's empowerment in India. Article 14 guarantees equality before law, while Article 15(3) permits special provisions for women's advancement. Article 39 mandates equal pay for equal work. The 73rd and 74th Constitutional Amendments reserve one-third of seats in Panchayati Raj institutions and urban local bodies for women, bringing millions of women into grassroots governance.
 
-**Government Schemes:**
-- Beti Bachao Beti Padhao
-- Sukanya Samriddhi Yojana
-- MUDRA loans for women entrepreneurs
-- One Stop Centre (Sakhi centres)
+Legislative measures provide legal protection against various forms of discrimination and violence. The Dowry Prohibition Act combats the dowry menace, while the Pre-Conception and Pre-Natal Diagnostic Techniques (PCPNDT) Act addresses female foeticide. The Protection of Women from Domestic Violence Act provides civil remedies for women facing abuse at home. The Sexual Harassment of Women at Workplace (POSH) Act ensures safe working environments. The Maternity Benefit Amendment Act extends maternity leave to promote work-life balance.
 
-**Economic Measures:**
-- Self-Help Groups (SHGs)
-- Skill development programs
-- Microfinance initiatives
+Government schemes directly support women's development. Beti Bachao Beti Padhao addresses declining child sex ratios and promotes girls' education. Sukanya Samriddhi Yojana encourages savings for daughters' futures. MUDRA loans provide credit access for women entrepreneurs. One Stop Centres (Sakhi Centres) offer integrated support services for women in distress.
 
-**Conclusion**: Multi-pronged approach needed for true empowerment.`,
+Economic measures including Self-Help Groups, skill development programmes, and microfinance initiatives enable women's financial independence. This multi-pronged approach is essential for achieving true gender equality and women's empowerment in India.`,
         marks: 5,
         chapter: 3,
       },
       {
         q: "Explain Green Revolution in detail. (Chapter 3)",
-        answer: `**Green Revolution in India:**
+        answer: `**The Green Revolution in India**
 
-**Definition**: Agricultural transformation (1960s-70s) using modern technology to increase food production.
+The Green Revolution refers to the agricultural transformation that occurred in India during the 1960s and 1970s, using modern technology to dramatically increase food production and achieve self-sufficiency in food grains.
 
-**Background**: Food crisis, dependence on imports (PL-480), famine threats
+India faced a severe food crisis in the early 1960s, depending heavily on food imports under the PL-480 agreement with the United States. Recurring famines and food shortages threatened the nation's stability and sovereignty. In response, the government launched a comprehensive programme to modernise agriculture and boost productivity.
 
-**Key Features:**
-1. High Yielding Variety (HYV) seeds - IR-8 rice, Mexican wheat
-2. Chemical fertilizers and pesticides
-3. Modern irrigation - tube wells, canals
-4. Mechanization - tractors, harvesters
-5. Institutional credit and support
+The Green Revolution introduced several key features that transformed Indian farming. High Yielding Variety (HYV) seeds, including IR-8 rice and Mexican dwarf wheat varieties developed by Norman Borlaug, produced significantly higher yields than traditional seeds. Chemical fertilisers and pesticides increased crop productivity and protected harvests from pests and diseases. Modern irrigation through tube wells, canals, and dam projects freed farmers from dependence on monsoons. Mechanisation using tractors and harvesters improved efficiency. Institutional credit from banks and cooperatives enabled farmers to afford these new inputs.
 
-**Architects**: M.S. Swaminathan (India), Norman Borlaug (Global)
+M.S. Swaminathan, known as the father of India's Green Revolution, led the scientific efforts that adapted global agricultural advances to Indian conditions. The results were remarkable. India achieved food self-sufficiency by the 1970s, with Punjab and Haryana becoming India's breadbasket.
 
-**Impact:**
-- Positive: Self-sufficiency, Green Revolution states (Punjab, Haryana)
-- Negative: Regional disparity, environmental damage, small farmer exclusion
+However, the Green Revolution also produced negative consequences. Regional disparities emerged as benefits concentrated in irrigated areas, leaving rain-fed regions behind. Small farmers often could not afford the new inputs. Environmental damage from excessive use of chemicals degraded soil and water quality.
 
-**Current**: Second Green Revolution, sustainable agriculture focus
-
-**Conclusion**: Revolutionary for food security but needs sustainable approach.`,
+Currently, India pursues a Second Green Revolution focusing on sustainable agriculture, organic farming, and extending productivity gains to eastern India and rain-fed areas.`,
         marks: 5,
         chapter: 3,
       },
       {
         q: "Explain cross-border terrorism in Jammu & Kashmir. (Chapter 4)",
-        answer: `**Cross-Border Terrorism in J&K:**
+        answer: `**Cross-Border Terrorism in Jammu and Kashmir**
 
-**Definition**: Terrorism planned, financed, trained, and executed with support from across international border (Pakistan).
+Cross-border terrorism refers to terrorist activities that are planned, financed, trained, and orchestrated from across an international border. In India's context, this specifically refers to Pakistan-sponsored terrorism primarily targeting Jammu and Kashmir.
 
-**Historical Background:**
-- Post-1989 insurgency began
-- Afghan Mujahideen diverted to Kashmir
-- ISI (Pakistan intelligence) involvement
+The phenomenon of cross-border terrorism in Kashmir emerged after 1989 when an insurgency began in the Kashmir Valley. Following the Soviet withdrawal from Afghanistan, battle-hardened mujahideen fighters were redirected towards Kashmir. Pakistan's Inter-Services Intelligence (ISI) has been consistently implicated in supporting, funding, and directing terrorist activities in the region.
 
-**Major Terror Groups:**
-- Lashkar-e-Taiba, Jaish-e-Mohammed
-- Hizbul Mujahideen
+Several major terrorist groups operate with cross-border support, including Lashkar-e-Taiba (responsible for the 2008 Mumbai attacks), Jaish-e-Mohammed (responsible for the 2019 Pulwama attack), and Hizbul Mujahideen. These organisations maintain training camps in Pakistan-occupied Kashmir (PoK) where recruits receive weapons training and ideological indoctrination.
 
-**Methods:**
-- Infiltration across LoC
-- Terror financing (hawala, fake currency)
-- Training camps in Pakistan-occupied Kashmir
-- Radicalization and recruitment
+The methods employed include infiltration of armed terrorists across the Line of Control, financing through hawala networks and fake Indian currency notes, recruitment and radicalisation of local youth, and sophisticated propaganda through social media. Major terrorist attacks attributed to cross-border terrorism include the Indian Parliament attack (2001), Mumbai attacks (2008), Uri attack (2016), and Pulwama attack (2019).
 
-**Major Attacks**: Parliament (2001), Mumbai (2008), Uri (2016), Pulwama (2019)
+India has responded through multiple measures: surgical strikes against terrorist launch pads (2016), the Balakot airstrike deep inside Pakistan (2019), extensive border fencing and enhanced surveillance, diplomatic efforts to isolate Pakistan internationally, and the abrogation of Article 370 (2019) to integrate Kashmir more fully with India.
 
-**India's Response:**
-- Surgical strikes (2016), Balakot airstrike (2019)
-- Border fencing, enhanced surveillance
-- Diplomatic isolation of Pakistan
-- Article 370 abrogation (2019)
-
-**Conclusion**: Continues to be major security challenge requiring multi-pronged response.`,
+Cross-border terrorism remains a significant security challenge requiring sustained counter-terrorism operations, diplomatic pressure, and developmental initiatives to address underlying grievances.`,
         marks: 5,
         chapter: 4,
       },
       {
         q: "What is left-wing extremism in India? (Chapter 4)",
-        answer: `**Left-Wing Extremism (LWE) / Naxalism:**
+        answer: `**Left-Wing Extremism in India**
 
-**Definition**: Armed movement inspired by Maoist ideology aiming to overthrow state through revolution.
+Left-wing extremism, commonly known as Naxalism, refers to an armed movement inspired by Maoist ideology that aims to overthrow the Indian state through violent revolution. The movement takes its name from Naxalbari, a village in West Bengal where a peasant uprising began in 1967.
 
-**Origin**: 1967, Naxalbari village, West Bengal
-**Founders**: Charu Majumdar, Kanu Sanyal
+The origins of Naxalism lie in the radical communist movement of the 1960s. Charu Majumdar and Kanu Sanyal led a peasant rebellion in Naxalbari in 1967, breaking away from mainstream communist parties they considered too moderate. The movement's ideology draws from Mao Zedong's theory of protracted people's war, advocating armed struggle by peasants to capture state power. Core demands include land redistribution ("land to the tiller"), forest rights for tribal communities, and revolutionary transformation of the "feudal" socioeconomic order.
 
-**Ideology:**
-- Maoist/Communist revolution
-- Land to the tiller
-- Overthrow of 'feudal' state
+The underlying causes of Naxalism include persistent landlessness and poverty in rural India, displacement and exploitation of tribal communities, governance vacuum in remote areas, denial of forest rights to communities dependent on forest resources, and failure of mainstream democratic processes to address grievances.
 
-**Causes:**
-- Landlessness and poverty
-- Tribal displacement and exploitation
-- Governance vacuum
-- Forest rights denial
+Naxal violence primarily affects the "Red Corridor" stretching across Chhattisgarh, Jharkhand, Odisha, Bihar, Andhra Pradesh, and parts of Maharashtra. The movement has caused thousands of deaths among security forces, civilians, and Naxals themselves over five decades.
 
-**Affected Areas**: Red Corridor - Chhattisgarh, Jharkhand, Odisha, Bihar, Andhra Pradesh, Maharashtra
+The government has adopted a dual strategy combining security operations with developmental initiatives. The SAMADHAN doctrine provides a comprehensive framework addressing various aspects of the challenge. Security forces conduct operations against armed cadres, while development schemes bring roads, schools, healthcare, and employment to affected areas. Surrender and rehabilitation policies encourage Naxals to rejoin mainstream society.
 
-**Government Response:**
-- Security operations
-- Development schemes (roads, schools, healthcare)
-- Surrender and rehabilitation policy
-- SAMADHAN doctrine
-
-**Current Status**: Declining but still active in certain pockets
-
-**Conclusion**: Requires balanced approach of security + development.`,
+While Naxal violence has declined significantly in recent years, the movement persists in certain pockets, requiring a balanced approach combining firmness against violence with genuine redressal of socioeconomic grievances.`,
         marks: 5,
         chapter: 4,
       },
