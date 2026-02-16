@@ -14,11 +14,515 @@ import {
   Play,
   Pause,
   Flag,
+  Calendar,
 } from "lucide-react";
 
 interface PolSciMockTestProps {
   onClose: () => void;
 }
+
+// February 2024 Board Paper Data
+const MOCK_PAPER_2024 = {
+  title: "Political Science - February 2024",
+  totalMarks: 80,
+  duration: 180,
+
+  sections: [
+    {
+      id: "q1a_2024",
+      type: "mcq",
+      title: "Q.1(A) Choose the correct alternative",
+      marks: 5,
+      instructions:
+        "Choose the correct alternative and complete the following statements",
+      questions: [
+        {
+          id: "q1a1_2024",
+          question:
+            "Today ___ countries of the European Union are part of the Schengen Area.",
+          options: ["20", "22", "30", "32"],
+          correct: 1,
+          marks: 1,
+        },
+        {
+          id: "q1a2_2024",
+          question:
+            "In ___ Economic System the public and private sector play an important role.",
+          options: ["Mixed", "Communist", "Socialist", "Capitalist"],
+          correct: 0,
+          marks: 1,
+        },
+        {
+          id: "q1a3_2024",
+          question:
+            "The United Nations set up the World Commission on Environment and Development in the year ___.",
+          options: ["1967", "1983", "1990", "2001"],
+          correct: 1,
+          marks: 1,
+        },
+        {
+          id: "q1a4_2024",
+          question: "The Planning Commission was replaced by the ___ Aayog.",
+          options: ["Election", "Economic", "Social", "NITI"],
+          correct: 3,
+          marks: 1,
+        },
+        {
+          id: "q1a5_2024",
+          question: "___ joined BRICS in 2010.",
+          options: ["Japan", "Bhutan", "South Africa", "Nepal"],
+          correct: 2,
+          marks: 1,
+        },
+      ],
+    },
+    {
+      id: "q1b_2024",
+      type: "incorrect_pair",
+      title: "Q.1(B) Identify the incorrect pair",
+      marks: 3,
+      instructions:
+        "Identify the incorrect pair in every set, correct it and rewrite",
+      questions: [
+        {
+          id: "q1b1_2024",
+          question: "Identify the incorrect pair:",
+          pairs: [
+            "(a) Rise of China and India – Emergence of multipolarity",
+            "(b) Ethnic Nationalism – Principle of self determination",
+            "(c) Currency of European Union – Dollar",
+          ],
+          incorrectIndex: 2,
+          correction: "Currency of European Union – Euro",
+          marks: 1,
+        },
+        {
+          id: "q1b2_2024",
+          question: "Identify the incorrect pair:",
+          pairs: [
+            "(a) Adult Franchise in India – 20 years completed",
+            "(b) National Policy for the Empowerment of Women – 2001",
+            "(c) Planning Commission of India – 1950",
+          ],
+          incorrectIndex: 0,
+          correction: "Adult Franchise in India – 18 years completed",
+          marks: 1,
+        },
+        {
+          id: "q1b3_2024",
+          question: "Identify the incorrect pair:",
+          pairs: [
+            "(a) Trade unions – Political institutions",
+            "(b) Birth and death certificate – Administrative machinery",
+            "(c) International Organisation – Asian Development Bank",
+          ],
+          incorrectIndex: 0,
+          correction:
+            "Trade unions – Economic/Social institutions (not Political)",
+          marks: 1,
+        },
+      ],
+    },
+    {
+      id: "q1c_2024",
+      type: "complete_sentence",
+      title: "Q.1(C) Complete the statements",
+      marks: 4,
+      instructions:
+        "Complete the following statements by using the appropriate options",
+      questions: [
+        {
+          id: "q1c1_2024",
+          question:
+            "There was growth in international economic relations, because ___.",
+          options: [
+            "(a) spread of globalisation",
+            "(b) availability of foreign capital",
+            "(c) of increased connectivity through mobile phones",
+          ],
+          correct: 0,
+          marks: 1,
+        },
+        {
+          id: "q1c2_2024",
+          question: "Planning Commission was setup in India, ___.",
+          options: [
+            "(a) to increase agricultural productivity",
+            "(b) to develop industries",
+            "(c) to improve the standard of living of the people and overall development",
+          ],
+          correct: 2,
+          marks: 1,
+        },
+        {
+          id: "q1c3_2024",
+          question: "Unilever is a transnational company because ___.",
+          options: [
+            "(a) it does not consider any particular country as its base",
+            "(b) it functions in all sectors",
+            "(c) it operates in all countries",
+          ],
+          correct: 0,
+          marks: 1,
+        },
+        {
+          id: "q1c4_2024",
+          question: "There was growth of regionalism, because ___.",
+          options: [
+            "(a) of disintegration of Russia",
+            "(b) of multipolarity in the world order",
+            "(c) of end of American supremacy",
+          ],
+          correct: 1,
+          marks: 1,
+        },
+      ],
+    },
+    {
+      id: "q1d_2024",
+      type: "concept",
+      title: "Q.1(D) State the appropriate concept",
+      marks: 4,
+      instructions: "State the appropriate concept for the given statements",
+      questions: [
+        {
+          id: "q1d1_2024",
+          statement:
+            "When a state influences other states without the use of military force.",
+          answer: "Soft Power",
+          marks: 1,
+        },
+        {
+          id: "q1d2_2024",
+          statement:
+            "The introduction of high yielding variety of seeds and increased use of irrigation methods.",
+          answer: "Green Revolution",
+          marks: 1,
+        },
+        {
+          id: "q1d3_2024",
+          statement:
+            "The person that investigates allegations or grievances arising out of the conduct of public servants in India.",
+          answer: "Lokpal / Lokayukta / Ombudsman",
+          marks: 1,
+        },
+        {
+          id: "q1d4_2024",
+          statement:
+            "The instrument of a country to establish, maintain and develop relations with the rest of the world.",
+          answer: "Foreign Policy",
+          marks: 1,
+        },
+      ],
+    },
+    {
+      id: "q1e_2024",
+      type: "odd_one",
+      title: "Q.1(E) Find the odd word",
+      marks: 4,
+      instructions: "Find the odd word in the given set and rewrite",
+      questions: [
+        {
+          id: "q1e1_2024",
+          question: "Prime Ministers of India:",
+          set: [
+            "Lal Bahadur Shastri",
+            "Narendra Modi",
+            "Dr. Babasaheb Ambedkar",
+            "Atal Bihari Vajpayee",
+          ],
+          answer: "Dr. Babasaheb Ambedkar",
+          reason:
+            "Dr. Ambedkar was never PM. He was Chairman of Drafting Committee of Constitution. Others were PMs.",
+          marks: 1,
+        },
+        {
+          id: "q1e2_2024",
+          question: "International Financial Institutions:",
+          set: [
+            "International Monetary Fund",
+            "Asian Development Bank",
+            "World Bank",
+            "Maharashtra Bank",
+          ],
+          answer: "Maharashtra Bank",
+          reason:
+            "Maharashtra Bank is a private/state bank, not an international financial institution like IMF, ADB, World Bank.",
+          marks: 1,
+        },
+        {
+          id: "q1e3_2024",
+          question: "Environmental Issues:",
+          set: [
+            "Climate change",
+            "Deforestation",
+            "Pollution",
+            "Political parties",
+          ],
+          answer: "Political parties",
+          reason:
+            "Political parties are not an environmental issue. Climate change, deforestation, and pollution are environmental concerns.",
+          marks: 1,
+        },
+        {
+          id: "q1e4_2024",
+          question: "Members of SAARC:",
+          set: ["India", "Nepal", "Sri Lanka", "China"],
+          answer: "China",
+          reason:
+            "China is NOT a SAARC member. SAARC members: India, Pakistan, Bangladesh, Nepal, Sri Lanka, Bhutan, Maldives, Afghanistan.",
+          marks: 1,
+        },
+      ],
+    },
+    {
+      id: "q3_2024",
+      type: "true_false",
+      title: "Q.3 True or False with Reasons",
+      marks: 10,
+      instructions:
+        "State whether the following statements are True or False with reasons (Any FIVE out of 7)",
+      required: 5,
+      questions: [
+        {
+          id: "q3_1_2024",
+          statement:
+            "The decade of 1980s is seen as the golden age of humanitarian intervention.",
+          answer: false,
+          modelAnswer:
+            "**FALSE**\n\nThe 1990s (not 1980s) is considered the golden age of humanitarian intervention because:\n- Cold War ended in 1991\n- UN Security Council could act without superpower rivalry\n- Major interventions: Somalia (1992), Bosnia (1995), Kosovo (1999)\n- The 1980s was still marked by Cold War rivalry blocking interventions.",
+          marks: 2,
+        },
+        {
+          id: "q3_2_2024",
+          statement: "Globalisation introduced the concept of Market Economy.",
+          answer: true,
+          modelAnswer:
+            "**TRUE**\n\nGlobalisation promoted market economy worldwide:\n- LPG reforms (Liberalization, Privatization, Globalization) in 1991 in India\n- Shift from socialist/mixed economy to market economy\n- Private sector expansion\n- Reduced government control on prices\n- Free trade and competition\n- Consumer choice increased\n\nGlobalisation made market economy the dominant economic model globally.",
+          marks: 2,
+        },
+        {
+          id: "q3_3_2024",
+          statement:
+            "Planning Commission was established to promote development in agricultural sector.",
+          answer: false,
+          modelAnswer:
+            "**FALSE**\n\nPlanning Commission was established for OVERALL DEVELOPMENT, not just agriculture.\n\n- Set up in 1950\n- Purpose: Comprehensive economic planning\n- Covered: Industry, agriculture, infrastructure, social sectors\n- Formulated Five Year Plans for all sectors\n- Agriculture was one of many focus areas\n- Replaced by NITI Aayog in 2015",
+          marks: 2,
+        },
+        {
+          id: "q3_4_2024",
+          statement:
+            "Good governance aims at efficient use of natural resources.",
+          answer: true,
+          modelAnswer:
+            "**TRUE**\n\nGood governance includes efficient resource management:\n- Sustainable development goals\n- Environmental protection policies\n- Preventing over-exploitation of resources\n- Transparency in resource allocation\n- Intergenerational equity\n- Conservation for future generations\n\nEfficient use of natural resources is a key principle of good governance.",
+          marks: 2,
+        },
+        {
+          id: "q3_5_2024",
+          statement:
+            "National freedom movement in India played an important role in national integration.",
+          answer: true,
+          modelAnswer:
+            "**TRUE**\n\nFreedom movement united India:\n- Brought together people of all religions, castes, regions\n- Common goal of independence from British\n- Leaders like Gandhi, Nehru united masses\n- Congress party became national platform\n- Developed sense of Indian nationalism\n- Regional movements merged into national movement\n- Created shared national identity",
+          marks: 2,
+        },
+        {
+          id: "q3_6_2024",
+          statement:
+            "Lokayukta can investigate complaints against political executives.",
+          answer: true,
+          modelAnswer:
+            "**TRUE**\n\nLokayukta has jurisdiction over political executives:\n- Can investigate Chief Minister (in most states)\n- Ministers and MLAs/MLCs\n- State government officials\n- Karnataka Lokayukta investigated CM Yeddyurappa\n- Anti-corruption ombudsman at state level\n- Established under state Lokayukta Acts",
+          marks: 2,
+        },
+        {
+          id: "q3_7_2024",
+          statement: "Democracy is required to establish national integration.",
+          answer: true,
+          modelAnswer:
+            "**TRUE**\n\nDemocracy promotes national integration:\n- Equal political rights for all citizens\n- Representation for all sections including minorities\n- Constitutional provisions for equality\n- Peaceful resolution of conflicts through dialogue\n- Federal structure accommodates regional diversity\n- Reservation policies address historical inequities\n- Democratic participation creates sense of belonging",
+          marks: 2,
+        },
+      ],
+    },
+    {
+      id: "q4_2024",
+      type: "correlation",
+      title: "Q.4 Explain the Correlation",
+      marks: 9,
+      instructions:
+        "Explain the correlation between the following (Any THREE out of 5)",
+      required: 3,
+      questions: [
+        {
+          id: "q4_1_2024",
+          concepts: "Economic Interest and Trade Blocs",
+          modelAnswer:
+            "**Correlation: Economic Interest and Trade Blocs**\n\n**What are Trade Blocs:**\nRegional groups of countries with preferential trade agreements.\n\n**Connection:**\n- Countries form trade blocs to promote their economic interests\n- Reduce tariffs and barriers within the bloc\n- Protect bloc members from external competition\n\n**Examples:**\n- EU (European Union) - single market, common currency\n- ASEAN - Southeast Asian economic cooperation\n- NAFTA/USMCA - North American free trade\n\n**Benefits:**\n- Larger markets for exports\n- Cheaper imports within bloc\n- Collective bargaining power\n- Economic growth through trade\n\n**Conclusion:** Trade blocs are formed primarily to serve economic interests of member countries.",
+          marks: 3,
+        },
+        {
+          id: "q4_2_2024",
+          concepts: "India and Africa",
+          modelAnswer:
+            "**Correlation: India and Africa**\n\n**Historical Ties:**\n- Anti-colonial solidarity during freedom struggles\n- NAM founders together\n- Indian diaspora in Africa (especially East Africa)\n\n**Economic Cooperation:**\n- India-Africa Summit since 2008\n- Trade: $90+ billion\n- Indian investment in Africa\n- Duty-free access for African goods\n\n**Development Partnership:**\n- Indian Technical and Economic Cooperation (ITEC)\n- Pan-African e-Network Project\n- Soft loans for infrastructure\n- Capacity building programs\n\n**Strategic Interests:**\n- UN Security Council reform support\n- Indian Ocean security cooperation\n- Counter-terrorism cooperation\n\n**Conclusion:** India-Africa relations are based on historical solidarity and mutual development interests.",
+          marks: 3,
+        },
+        {
+          id: "q4_3_2024",
+          concepts: "Good Governance and E-Governance",
+          modelAnswer:
+            "**Correlation: Good Governance and E-Governance**\n\n**How E-Governance Promotes Good Governance:**\n\n**1. Transparency:**\n- Online RTI applications\n- Public information on websites\n- Open data portals\n\n**2. Accountability:**\n- Online tracking of applications\n- Automated service delivery\n- Digital audit trails\n\n**3. Efficiency:**\n- Reduced paperwork and delays\n- 24/7 service availability\n- Faster processing\n\n**4. Citizen Participation:**\n- Online feedback mechanisms\n- E-voting in some countries\n- Digital public consultations\n\n**Examples:**\n- DigiLocker, UMANG app\n- e-Courts, e-Hospitals\n- Direct Benefit Transfer (DBT)\n\n**Conclusion:** E-governance is a powerful tool to achieve good governance objectives.",
+          marks: 3,
+        },
+        {
+          id: "q4_4_2024",
+          concepts: "GATT and World Trade Organisation",
+          modelAnswer:
+            "**Correlation: GATT and WTO**\n\n**GATT (General Agreement on Tariffs and Trade):**\n- Established: 1948\n- Purpose: Reduce tariffs and trade barriers\n- Informal arrangement, not an organization\n- Limited to goods trade\n\n**WTO (World Trade Organization):**\n- Established: 1995, replacing GATT\n- Formal international organization\n- Headquarters: Geneva\n- Covers goods, services, intellectual property\n\n**Connection:**\n- WTO incorporated GATT rules\n- Built on GATT's foundation\n- More comprehensive and binding\n- Dispute settlement mechanism\n- 164 member countries\n\n**Conclusion:** WTO is the evolution of GATT into a formal organization with expanded scope.",
+          marks: 3,
+        },
+        {
+          id: "q4_5_2024",
+          concepts: "Globalisation and Culture",
+          modelAnswer:
+            "**Correlation: Globalisation and Culture**\n\n**Impact of Globalisation on Culture:**\n\n**Positive Effects:**\n- Cultural exchange and understanding\n- Spread of Indian culture globally (Yoga, Bollywood, cuisine)\n- Access to world literature, music, art\n- Multiculturalism\n\n**Negative Effects:**\n- Cultural homogenization (Westernization)\n- Threat to local cultures and languages\n- Consumerism and materialism\n- Loss of traditional values\n\n**Examples in India:**\n- Western fast food chains\n- English language dominance\n- Hollywood and Netflix influence\n- But also global interest in Indian culture\n\n**Conclusion:** Globalisation is a double-edged sword for culture - it spreads cultures but can also threaten local traditions.",
+          marks: 3,
+        },
+      ],
+    },
+    {
+      id: "q5_2024",
+      type: "opinion",
+      title: "Q.5 Express Your Opinion",
+      marks: 12,
+      instructions:
+        "Express your opinion in 25 to 30 words on the following (Any THREE out of 5)",
+      required: 3,
+      questions: [
+        {
+          id: "q5_1_2024",
+          topic: "There is a need to protect the environment.",
+          modelAnswer:
+            "**Opinion:**\nYes, protecting the environment is essential. Climate change, pollution, and deforestation threaten human survival, biodiversity, and future generations. Sustainable development requires balancing economic growth with environmental conservation for a livable planet.",
+          marks: 4,
+        },
+        {
+          id: "q5_2_2024",
+          topic: "E-governance speeds up governmental processes.",
+          modelAnswer:
+            "**Opinion:**\nYes, e-governance significantly accelerates governmental processes through online applications, digital approvals, and automated workflows. Services like passport, driving license, and tax filing now take days instead of weeks, benefiting citizens greatly.",
+          marks: 4,
+        },
+        {
+          id: "q5_3_2024",
+          topic: "India's role in the Indian Ocean.",
+          modelAnswer:
+            "**Opinion:**\nIndia plays a crucial role in Indian Ocean security as a regional power. With 7,516 km coastline, India ensures maritime security, combats piracy, provides humanitarian assistance, and balances Chinese influence through SAGAR (Security and Growth for All in the Region) policy.",
+          marks: 4,
+        },
+        {
+          id: "q5_4_2024",
+          topic: "Regionalism in international politics.",
+          modelAnswer:
+            "**Opinion:**\nRegionalism strengthens international politics by promoting regional cooperation, economic integration, and collective problem-solving. Organizations like EU, ASEAN, and SAARC address regional issues effectively. However, excessive regionalism can create trade barriers and rivalries.",
+          marks: 4,
+        },
+        {
+          id: "q5_5_2024",
+          topic: "Positive and negative aspects of globalisation.",
+          modelAnswer:
+            "**Opinion:**\nGlobalisation has positive aspects like economic growth, technology transfer, and cultural exchange. However, negative aspects include widening inequality, cultural homogenization, and environmental degradation. A balanced approach ensuring benefits reach all sections is needed.",
+          marks: 4,
+        },
+      ],
+    },
+    {
+      id: "q6_2024",
+      type: "short_answer",
+      title: "Q.6 Answer (80-100 words)",
+      marks: 10,
+      instructions:
+        "Answer the following questions in 80 to 100 words (Any TWO out of 4)",
+      required: 2,
+      questions: [
+        {
+          id: "q6_1_2024",
+          question:
+            "Discuss the political issues in the context of globalization.",
+          modelAnswer:
+            "**Political Issues in Globalisation:**\n\n**1. Reduced State Sovereignty:**\n- International organizations (IMF, WTO) influence domestic policies\n- Countries must comply with global trade rules\n\n**2. Democratic Deficit:**\n- Decision-making shifted to non-elected bodies\n- Citizens have less control over economic policies\n\n**3. Rise of Nationalism:**\n- Backlash against globalisation (Brexit, Trump)\n- Protectionism increasing\n\n**4. Human Rights vs. Trade:**\n- Trade deals with human rights violators\n- Labor rights concerns in global supply chains\n\n**5. Digital Sovereignty:**\n- Data governance issues\n- Control over internet\n\n**Conclusion:** Globalisation creates political tensions between national sovereignty and international integration.",
+          marks: 5,
+        },
+        {
+          id: "q6_2_2024",
+          question:
+            "What is women empowerment? Explain the measures undertaken for it.",
+          modelAnswer:
+            "**Women Empowerment:**\n\n**Definition:** Process of enabling women to have control over their lives, participate in decision-making, and achieve equality with men.\n\n**Measures Undertaken:**\n\n**1. Constitutional:**\n- Article 14, 15, 16 (Equality)\n- 73rd/74th Amendment (33% reservation in local bodies)\n\n**2. Legislative:**\n- Domestic Violence Act, 2005\n- Sexual Harassment at Workplace Act, 2013\n- Maternity Benefit Act (26 weeks leave)\n\n**3. Schemes:**\n- Beti Bachao Beti Padhao\n- Sukanya Samriddhi Yojana\n- MUDRA loans for women\n- One Stop Centre (Sakhi)\n\n**4. Economic:**\n- Self-Help Groups\n- Skill development programs",
+          marks: 5,
+        },
+        {
+          id: "q6_3_2024",
+          question:
+            "Explain the features of structural dimension to create national unity.",
+          modelAnswer:
+            "**Structural Dimension of National Unity:**\n\n**1. Federal Structure:**\n- Division of powers (Union, State, Concurrent Lists)\n- Autonomy for states with strong Centre\n- Accommodates regional diversity\n\n**2. Constitutional Framework:**\n- Single citizenship\n- Uniform civil code (directive principle)\n- Fundamental Rights for all\n\n**3. National Institutions:**\n- Election Commission\n- Supreme Court\n- UPSC for unified civil services\n\n**4. National Symbols:**\n- Flag, Anthem, Emblem\n- National language (Hindi in Devanagari)\n\n**5. Economic Integration:**\n- Single market\n- GST (one nation, one tax)\n- Inter-state connectivity\n\n**Conclusion:** Structural dimensions provide institutional framework for national unity.",
+          marks: 5,
+        },
+        {
+          id: "q6_4_2024",
+          question:
+            "Explain various institutions protecting rights of different sections in India.",
+          modelAnswer:
+            "**Institutions Protecting Rights in India:**\n\n**1. National Human Rights Commission (NHRC):**\n- Investigates human rights violations\n- Recommends action and compensation\n\n**2. National Commission for Women (NCW):**\n- Protects women's rights\n- Reviews laws affecting women\n\n**3. National Commission for SCs/STs:**\n- Safeguards rights of Scheduled Castes and Tribes\n- Monitors implementation of reservations\n\n**4. National Commission for Minorities:**\n- Protects minority rights\n- Investigates complaints\n\n**5. National Commission for Protection of Child Rights:**\n- Ensures child rights implementation\n\n**6. Central Information Commission:**\n- Ensures Right to Information\n\n**Conclusion:** Multiple commissions protect diverse sections of society.",
+          marks: 5,
+        },
+      ],
+    },
+    {
+      id: "q7_2024",
+      type: "long_answer",
+      title: "Q.7 Answer (150-200 words)",
+      marks: 10,
+      instructions:
+        "Answer the following questions in 150 to 200 words with reference to the given points (Any ONE out of 2)",
+      required: 1,
+      questions: [
+        {
+          id: "q7_1_2024",
+          question: "Explain the principles of Indian foreign policy:",
+          points: [
+            "(1) Non-Alignment",
+            "(2) Sovereignty and territorial integrity",
+            "(3) Non-intervention in the internal affairs",
+            "(4) Belief in peaceful co-existence",
+            "(5) Active participation in international organisations",
+          ],
+          modelAnswer:
+            "### Principles of Indian Foreign Policy\n\n**(1) Non-Alignment:**\n- India was a founder of Non-Aligned Movement (1961)\n- Independent foreign policy not aligned to any superpower bloc\n- Strategic autonomy in current multipolar world\n- Decisions based on national interest, not bloc loyalty\n\n**(2) Sovereignty and Territorial Integrity:**\n- Respect for all nations' sovereignty\n- Protection of India's territorial integrity\n- Opposition to aggression and occupation\n- Kashmir is integral part of India\n\n**(3) Non-intervention in Internal Affairs:**\n- Based on Panchsheel principles (1954)\n- No interference in other countries' internal matters\n- Expects similar respect from others\n- However, supports human rights universally\n\n**(4) Belief in Peaceful Co-existence:**\n- Settle disputes through dialogue, not war\n- Promotes world peace and disarmament\n- Opposed to nuclear weapons proliferation\n- Regional stability through cooperation\n\n**(5) Active Participation in International Organisations:**\n- Founding member of UN\n- Largest contributor to UN peacekeeping\n- Active in WTO, IMF, World Bank\n- Seeks permanent UNSC seat\n- Leads developing nations' voice\n\n**Conclusion:** Indian foreign policy is guided by principles ensuring national interest while contributing to global peace and development.",
+          marks: 10,
+        },
+        {
+          id: "q7_2_2024",
+          question: "Discuss the role of the state in contemporary period:",
+          points: [
+            "(1) Governance",
+            "(2) Economic development",
+            "(3) Welfare",
+            "(4) Nation building",
+            "(5) Peace and Order",
+          ],
+          modelAnswer:
+            "### Role of State in Contemporary Period\n\n**(1) Governance:**\n- Formulating and implementing public policies\n- Ensuring rule of law and justice\n- Providing administrative machinery\n- E-governance for efficient delivery\n- Maintaining transparency and accountability\n\n**(2) Economic Development:**\n- Creating conducive environment for growth\n- Infrastructure development\n- Attracting investment (FDI, domestic)\n- Regulating markets and preventing monopolies\n- Supporting MSMEs and startups\n- Managing monetary and fiscal policy\n\n**(3) Welfare:**\n- Social security schemes (pension, insurance)\n- Healthcare (Ayushman Bharat)\n- Education (Right to Education)\n- Food security (PDS, Mid-day Meals)\n- Housing for poor (PMAY)\n- Employment generation (MGNREGA)\n\n**(4) Nation Building:**\n- Promoting national identity\n- Ensuring national integration\n- Managing diversity (linguistic, religious)\n- Constitutional values promotion\n- Addressing regional imbalances\n\n**(5) Peace and Order:**\n- Internal security maintenance\n- Law enforcement\n- Defense against external threats\n- Counter-terrorism\n- Disaster management\n\n**Conclusion:** The contemporary state plays multifaceted roles balancing development, welfare, and security while adapting to globalisation challenges.",
+          marks: 10,
+        },
+      ],
+    },
+  ],
+};
 
 // March 2023 Board Paper Data
 const MOCK_PAPER_2023 = {
@@ -508,11 +1012,24 @@ const MOCK_PAPER_2023 = {
   ],
 };
 
+// Available papers
+const AVAILABLE_PAPERS = [
+  { id: "2024", data: MOCK_PAPER_2024, year: "2024", month: "February" },
+  { id: "2023", data: MOCK_PAPER_2023, year: "2023", month: "March" },
+];
+
 const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
-  const [testState, setTestState] = useState<"intro" | "running" | "submitted">(
-    "intro",
-  );
-  const [timeLeft, setTimeLeft] = useState(MOCK_PAPER_2023.duration * 60); // in seconds
+  const [selectedPaperId, setSelectedPaperId] = useState<string | null>(null);
+  const [testState, setTestState] = useState<
+    "select" | "intro" | "running" | "submitted"
+  >("select");
+
+  // Get selected paper
+  const selectedPaper =
+    AVAILABLE_PAPERS.find((p) => p.id === selectedPaperId)?.data ||
+    MOCK_PAPER_2023;
+
+  const [timeLeft, setTimeLeft] = useState(selectedPaper.duration * 60);
   const [isPaused, setIsPaused] = useState(false);
   const [currentSection, setCurrentSection] = useState(0);
   const [answers, setAnswers] = useState<Record<string, any>>({});
@@ -564,7 +1081,7 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
 
   const calculateAutoScore = () => {
     let score = 0;
-    MOCK_PAPER_2023.sections.forEach((section) => {
+    selectedPaper.sections.forEach((section) => {
       if (section.type === "mcq" || section.type === "complete_sentence") {
         section.questions.forEach((q: any) => {
           if (answers[q.id] === q.correct) {
@@ -589,8 +1106,9 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
   };
 
   const restartTest = () => {
-    setTestState("intro");
-    setTimeLeft(MOCK_PAPER_2023.duration * 60);
+    setTestState("select");
+    setSelectedPaperId(null);
+    setTimeLeft(selectedPaper.duration * 60);
     setAnswers({});
     setFlaggedQuestions(new Set());
     setShowResults(false);
@@ -598,13 +1116,74 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
     setCurrentSection(0);
   };
 
+  const selectPaper = (paperId: string) => {
+    setSelectedPaperId(paperId);
+    const paper = AVAILABLE_PAPERS.find((p) => p.id === paperId)?.data;
+    if (paper) {
+      setTimeLeft(paper.duration * 60);
+    }
+    setTestState("intro");
+  };
+
+  const renderPaperSelection = () => (
+    <div className="flex flex-col items-center p-4 sm:p-6 text-center pb-8">
+      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+        <FileText size={32} className="text-white" />
+      </div>
+      <h2 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mb-2">
+        Political Science Mock Tests
+      </h2>
+      <p className="text-slate-600 dark:text-slate-400 mb-6">
+        Select a board exam paper to practice
+      </p>
+
+      <div className="w-full max-w-md space-y-3">
+        {AVAILABLE_PAPERS.map((paper) => (
+          <button
+            key={paper.id}
+            onClick={() => selectPaper(paper.id)}
+            className="w-full bg-white dark:bg-slate-800 p-4 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all flex items-center gap-4 text-left"
+          >
+            <div className="w-14 h-14 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shrink-0">
+              <Calendar className="text-white" size={24} />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-bold text-slate-800 dark:text-white">
+                {paper.month} {paper.year}
+              </h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                Board Examination Paper
+              </p>
+              <div className="flex gap-2 mt-1">
+                <span className="text-xs bg-indigo-100 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-300 px-2 py-0.5 rounded">
+                  80 Marks
+                </span>
+                <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-300 px-2 py-0.5 rounded">
+                  3 Hours
+                </span>
+              </div>
+            </div>
+            <ChevronRight className="text-slate-400" size={20} />
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-6 bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl w-full max-w-md">
+        <p className="text-sm text-amber-700 dark:text-amber-300">
+          <strong>💡 Tip:</strong> Practice with real board exam papers to
+          understand the pattern and scoring.
+        </p>
+      </div>
+    </div>
+  );
+
   const renderIntro = () => (
     <div className="flex flex-col items-center p-4 sm:p-6 text-center pb-8">
       <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
         <FileText size={32} className="text-white" />
       </div>
       <h2 className="text-xl sm:text-2xl font-bold text-slate-800 dark:text-white mb-2">
-        {MOCK_PAPER_2023.title}
+        {selectedPaper.title}
       </h2>
       <p className="text-slate-600 dark:text-slate-400 mb-4 sm:mb-6">
         Board Examination Mock Test
@@ -653,7 +1232,7 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
   );
 
   const renderQuestion = () => {
-    const section = MOCK_PAPER_2023.sections[currentSection];
+    const section = selectedPaper.sections[currentSection];
 
     return (
       <div className="p-3 sm:p-4 space-y-3 sm:space-y-4 pb-4">
@@ -937,7 +1516,7 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
         </div>
 
         {/* Detailed Results */}
-        {MOCK_PAPER_2023.sections.map((section) => (
+        {selectedPaper.sections.map((section) => (
           <div
             key={section.id}
             className="bg-white dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm"
@@ -1115,12 +1694,14 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
             <FileText className="text-white" size={20} />
             <div>
               <h2 className="font-bold text-white text-sm sm:text-base">
-                {MOCK_PAPER_2023.title}
+                {testState === "select"
+                  ? "Political Science Mock Tests"
+                  : selectedPaper.title}
               </h2>
               {testState === "running" && (
                 <p className="text-white/80 text-xs">
                   Section {currentSection + 1} of{" "}
-                  {MOCK_PAPER_2023.sections.length}
+                  {selectedPaper.sections.length}
                 </p>
               )}
             </div>
@@ -1157,6 +1738,7 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
 
         {/* Content - Scrollable */}
         <div className="flex-1 overflow-y-auto">
+          {testState === "select" && renderPaperSelection()}
           {testState === "intro" && renderIntro()}
           {testState === "running" && !showResults && renderQuestion()}
           {(testState === "submitted" || showResults) && renderResults()}
@@ -1179,7 +1761,7 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
 
               {/* Section dots - scrollable on mobile */}
               <div className="flex gap-1 sm:gap-2 overflow-x-auto no-scrollbar flex-1 justify-center px-2">
-                {MOCK_PAPER_2023.sections.map((_, idx) => (
+                {selectedPaper.sections.map((_, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCurrentSection(idx)}
@@ -1194,7 +1776,7 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
                 ))}
               </div>
 
-              {currentSection === MOCK_PAPER_2023.sections.length - 1 ? (
+              {currentSection === selectedPaper.sections.length - 1 ? (
                 <button
                   onClick={submitTest}
                   className="px-3 sm:px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg flex items-center gap-1 sm:gap-2 font-bold text-sm"
@@ -1207,7 +1789,7 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
                   onClick={() =>
                     setCurrentSection(
                       Math.min(
-                        MOCK_PAPER_2023.sections.length - 1,
+                        selectedPaper.sections.length - 1,
                         currentSection + 1,
                       ),
                     )
