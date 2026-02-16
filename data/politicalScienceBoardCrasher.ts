@@ -3170,6 +3170,124 @@ India-China relations are characterized by both cooperation and conflict, often 
 India-China relations remain complex, requiring careful management of differences while exploring cooperation opportunities. Resolving the border issue is key to stable long-term relations.`,
       },
     ],
+
+    // ==================== TEXTBOOK EXERCISES - CHAPTER 6 ====================
+    textbookExercises: {
+      title: "Chapter 6 - Textbook Exercises with Answers",
+
+      // Q.1 (A) MCQs
+      mcqs: [
+        {
+          q: "The core of non-alignment was",
+          options: [
+            "Independent understanding of world affairs",
+            "Participation in cold war",
+            "Democratic socialism as policy",
+            "Policy of regionalism",
+          ],
+          correct: 0,
+          answer: "Independent understanding of world affairs",
+          explanation:
+            "The core of Non-Alignment was maintaining an independent foreign policy, not aligning with either USA or USSR during Cold War, and judging each international issue on its merits rather than following any bloc. India under Nehru pioneered this approach along with Yugoslavia, Egypt, Ghana, and Indonesia.",
+        },
+        {
+          q: "Farakka Agreement about sharing of river waters is between India and",
+          options: ["Bangladesh", "Pakistan", "China", "Nepal"],
+          correct: 0,
+          answer: "Bangladesh",
+          explanation:
+            "The Farakka Agreement (1996) is a treaty between India and Bangladesh for sharing the waters of River Ganga at Farakka Barrage near the India-Bangladesh border. The 30-year treaty ensures equitable distribution of water, especially during lean season (January-May).",
+        },
+      ],
+
+      // Q.1 (B) Identify incorrect pair
+      incorrectPairs: [
+        {
+          pairs: [
+            { item1: "NATO", item2: "Europe", correct: true },
+            { item1: "ANZUS", item2: "Africa", correct: false },
+            { item1: "SEATO", item2: "South East Asia", correct: true },
+            { item1: "CENTO", item2: "West Asia", correct: true },
+          ],
+          incorrectPair: "ANZUS - Africa",
+          correction:
+            "ANZUS - Pacific / Oceania (Australia, New Zealand, United States)",
+          explanation:
+            "ANZUS is a security treaty between Australia, New Zealand, and the United States (1951) for the Pacific region, NOT Africa. The name comes from Australia-New Zealand-United States. It is a collective security agreement for the Pacific/Oceania region.",
+        },
+      ],
+
+      // Q.2 / Q.3 True/False with Reasons
+      trueFalse: [
+        {
+          statement: "Myanmar has been a traditional friend of India.",
+          answer: true,
+          reason:
+            "**TRUE**\n\n**Reasons:**\n\n1. **Historical Ties**:\n   - Shared Buddhist heritage\n   - Part of British India until 1937\n   - Cultural and civilizational links\n   - Common border (1,643 km)\n\n2. **Diplomatic Relations**:\n   - India recognized Myanmar's independence (1948)\n   - Maintained relations even during military rule\n   - 'Act East Policy' prioritizes Myanmar\n\n3. **Cooperation Areas**:\n\n| Area | Examples |\n|------|----------|\n| Connectivity | India-Myanmar-Thailand Highway, Kaladan Project |\n| Security | Counter-insurgency cooperation (NE India) |\n| Economic | Bilateral trade, investment |\n| Energy | Oil and gas cooperation |\n| Development | India's development assistance |\n\n4. **Strategic Importance**:\n   - Gateway to Southeast Asia\n   - Counters China's influence\n   - BIMSTEC partner\n\n5. **Recent Developments**:\n   - India balanced approach after 2021 military coup\n   - Continued humanitarian assistance\n   - Maintaining people-to-people ties\n\n**Conclusion**: Myanmar remains strategically important for India's Act East Policy and neighborhood diplomacy.",
+        },
+        {
+          statement:
+            "In changing world order of 1990s, the issue of terrorism has been dominant.",
+          answer: true,
+          reason:
+            "**TRUE**\n\n**Reasons:**\n\n1. **Post-Cold War Context**:\n   - End of bipolar world (1991)\n   - New security challenges emerged\n   - Non-state actors became major threat\n\n2. **Rise of Terrorism in 1990s**:\n   - Afghanistan became terror hub after Soviet withdrawal\n   - Al-Qaeda formed (1988), grew in 1990s\n   - Taliban took over Afghanistan (1996)\n   - Kashmir militancy intensified\n\n3. **Major Terror Incidents (1990s)**:\n\n| Year | Incident |\n|------|----------|\n| 1993 | World Trade Center bombing (first) |\n| 1993 | Mumbai serial blasts |\n| 1998 | US Embassy bombings (Kenya, Tanzania) |\n| 1999 | IC-814 hijacking (Kandahar) |\n\n4. **Global Response**:\n   - UN resolutions against terrorism\n   - Counter-terrorism cooperation increased\n   - Intelligence sharing mechanisms\n\n5. **Culmination - 9/11 (2001)**:\n   - Changed global security paradigm\n   - 'War on Terror' declared\n   - Terrorism became THE dominant issue\n\n**Conclusion**: Terrorism emerged as dominant security challenge in 1990s, fundamentally reshaping international relations.",
+        },
+        {
+          statement:
+            "The Sagarmala project is a comprehensive road connectivity plan.",
+          answer: false,
+          reason:
+            "**FALSE**\n\n**Reasons:**\n\n1. **Actual Purpose**: Sagarmala is a PORT-LED development project, NOT a road connectivity plan.\n\n2. **What is Sagarmala?**:\n   - Launched: 2015 by Ministry of Shipping\n   - Objective: Port modernization and port-led industrialization\n   - Name: 'Sagarmala' means 'String of the Sea'\n\n3. **Components of Sagarmala**:\n   - Port Modernization (upgrading existing ports)\n   - Port Connectivity (roads, rail to ports)\n   - Port-led Industrialization (SEZs near ports)\n   - Coastal Community Development\n\n4. **Key Features**:\n   - Covers 12 major ports\n   - 200+ minor ports included\n   - Investment of ₹8 lakh crore planned\n   - 415 projects identified\n\n5. **Road Connectivity Project is Different**:\n   - Bharatmala: Comprehensive road connectivity plan\n   - Sagarmala: Port and coastal development\n\n6. **Goals of Sagarmala**:\n   - Reduce logistics cost\n   - Boost coastal shipping\n   - Create employment in coastal areas\n   - Increase port capacity\n\n**Conclusion**: Sagarmala is about PORT development and coastal connectivity, while Bharatmala is the road connectivity project.",
+        },
+      ],
+
+      // Extra Question by Vrunda Mam
+      extraQuestions: [
+        {
+          source: "Vrunda Mam - Extra Question",
+          question: "Explain the principles of Indian Foreign Policy",
+          marks: 5,
+          modelAnswer:
+            "**Principles of Indian Foreign Policy:**\n\n**Introduction**: India's foreign policy has been guided by certain core principles since independence, largely shaped by Jawaharlal Nehru.\n\n**(i) Non-Alignment (NAM)**:\n- Not aligning with any military bloc (USA or USSR during Cold War)\n- Independent foreign policy decisions\n- Judging each issue on merit\n- India was founding member of NAM (1961, Belgrade)\n- Still relevant: 'Strategic Autonomy' today\n\n**(ii) Non-Intervention**:\n- Not interfering in internal affairs of other countries\n- Respecting sovereignty of all nations\n- Opposing external interference in any country\n- Based on Westphalian principle of sovereignty\n- India opposed interventions in Iraq, Libya\n\n**(iii) Territorial Integrity**:\n- Respecting boundaries of all nations\n- Not supporting separatist movements\n- Defending own territorial integrity firmly\n- No compromise on sovereignty issues\n- Example: Firm stand on Kashmir, Arunachal\n\n**(iv) Belief in Peaceful Coexistence**:\n- Panchsheel (Five Principles) - 1954\n  1. Mutual respect for territorial integrity\n  2. Mutual non-aggression\n  3. Mutual non-interference\n  4. Equality and mutual benefit\n  5. Peaceful coexistence\n- Preference for dialogue over war\n- Diplomatic resolution of disputes\n\n**(v) Active Participation in International Forums**:\n- Strong support for United Nations\n- Largest contributor to UN peacekeeping\n- Active in multilateral forums (BRICS, SCO, G20)\n- Voice for Global South\n- Seeking permanent UNSC seat\n- Climate change leadership (ISA - International Solar Alliance)\n\n**Conclusion**: These principles have provided continuity to India's foreign policy while adapting to changing global circumstances.",
+        },
+      ],
+
+      // Q.3 Express Opinion
+      opinionQuestions: [
+        {
+          topic: "India's role in the Indian Ocean",
+          modelAnswer:
+            "**Opinion: India's Role in the Indian Ocean**\n\n**Statement**: India has a vital and growing role in the Indian Ocean region as a net security provider and regional leader.\n\n**India's Significance**:\n- 7,500+ km coastline\n- Located at center of Indian Ocean\n- 90% of trade by sea\n- Strategic location controlling sea lanes\n\n**India's Role:**\n\n**1. Security Provider**:\n- Indian Navy patrols IOR (Indian Ocean Region)\n- Anti-piracy operations (Gulf of Aden)\n- Humanitarian assistance (2004 Tsunami, COVID)\n- SAGAR vision: Security and Growth for All in the Region\n\n**2. Economic Hub**:\n- Sagarmala port development\n- Blue Economy initiatives\n- Fishing and marine resources\n- Seabed mining potential\n\n**3. Connectivity Projects**:\n| Project | Purpose |\n|---------|----------|\n| Chabahar Port (Iran) | Access to Afghanistan, Central Asia |\n| Sittwe Port (Myanmar) | Northeast connectivity |\n| Colombo Port | Transshipment hub |\n\n**4. Multilateral Engagement**:\n- Indian Ocean Rim Association (IORA) - active member\n- Indian Ocean Naval Symposium (IONS) - founder\n- QUAD - Indo-Pacific security\n- Bilateral naval exercises (Malabar, MILAN)\n\n**5. Countering China**:\n- China's 'String of Pearls' strategy\n- India's 'Necklace of Diamonds' response\n- Monitoring Chinese submarines\n- Andaman & Nicobar Command\n\n**Challenges**:\n- Limited naval capacity\n- China's growing presence\n- Piracy and non-traditional threats\n- Island nations' diverse interests\n\n**Conclusion**: India must enhance its naval capabilities and diplomatic engagement to fulfill its potential as the leading power in the Indian Ocean - its 'natural area of interest'.",
+        },
+      ],
+
+      // Q.4 Short Answers (80-100 words) - 5 marks each
+      shortAnswers: [
+        {
+          question: "Write a note on India's relations with Africa.",
+          marks: 5,
+          modelAnswer:
+            "**India's Relations with Africa:**\n\n**Historical Ties**:\n- Ancient trade links (East African coast)\n- Shared colonial experience\n- Gandhi's formative years in South Africa\n- NAM partnership during Cold War\n- India supported anti-apartheid movement\n\n**Current Relations**:\n\n**1. India-Africa Forum Summit (IAFS)**:\n- Platform for India-Africa cooperation\n- Three summits held (2008, 2011, 2015)\n- Comprehensive partnership\n\n**2. Economic Engagement**:\n\n| Aspect | Details |\n|--------|----------|\n| Trade | $98 billion (2023) |\n| Investment | $75+ billion Indian investment |\n| LOCs | $12 billion Lines of Credit |\n| Sectors | Pharma, IT, agriculture, mining |\n\n**3. Development Partnership**:\n- Pan-Africa e-Network (telemedicine, education)\n- Capacity building (ITEC scholarships)\n- 189 projects in 42 African countries\n- COVID vaccine supply (Vaccine Maitri)\n\n**4. Strategic Interests**:\n- 54 African votes in UN\n- Natural resources (oil, minerals)\n- Counter China's influence\n- Indian diaspora (2.5+ million)\n\n**5. Key Partners**:\n- South Africa (BRICS, IBSA)\n- Ethiopia, Kenya, Tanzania, Mauritius, Nigeria\n\n**Conclusion**: Africa is crucial for India's global aspirations, and India offers a development partnership model different from China's debt-trap approach.",
+        },
+        {
+          question: "Discuss briefly India-China relations.",
+          marks: 5,
+          modelAnswer:
+            "**India-China Relations:**\n\n**Historical Background**:\n- 'Hindi-Chini Bhai Bhai' (1950s)\n- Panchsheel Agreement (1954)\n- 1962 War - major setback\n- Relations normalized gradually (1988 Rajiv Gandhi visit)\n\n**Areas of Conflict**:\n\n| Issue | Details |\n|-------|----------|\n| Border Dispute | 3,488 km LAC, Aksai Chin, Arunachal Pradesh |\n| Recent Clashes | Doklam (2017), Galwan (2020) |\n| Tibet | Dalai Lama in India irritates China |\n| Pakistan | China-Pakistan axis, CPEC through PoK |\n| Strategic | BRI, NSG membership block, UNSC seat |\n\n**Areas of Cooperation**:\n- Trade: $135+ billion (but huge deficit for India)\n- BRICS, SCO membership\n- Climate change negotiations\n- WTO - developing country interests\n\n**Recent Developments**:\n- Galwan clash (2020) - 20 Indian soldiers martyred\n- Disengagement ongoing\n- India banned Chinese apps\n- FDI restrictions on China\n\n**India's Approach**:\n1. Firm on sovereignty - no compromise on borders\n2. Diplomatic dialogue continues\n3. Strategic autonomy maintained\n4. Quad engagement for Indo-Pacific balance\n5. Economic diversification from China\n\n**Conclusion**: India-China relations are complex - 'cooperation and competition' coexist. Border resolution is key to normalizing ties.",
+        },
+      ],
+
+      // Q.5 Long Answer (150-200 words) - 10 marks
+      longAnswers: [
+        {
+          question:
+            "Explain the factors influencing Indian Foreign Policy: (a) Geography (b) History (c) International System/Economy (d) Polity",
+          marks: 10,
+          modelAnswer:
+            "### Factors Influencing Indian Foreign Policy\n\n#### Introduction\nForeign policy is the strategy a country uses to deal with other nations. India's foreign policy is shaped by multiple factors including geography, history, international system, economy, and domestic politics.\n\n#### (a) Geography\n\n**Location and Significance**:\n- South Asian subcontinent - dominant position\n- 7,516 km coastline along Indian Ocean\n- Shares borders with 7 countries\n- Strategic location between East and West\n\n**Geographic Influences**:\n\n| Geographic Factor | Policy Impact |\n|------------------|----------------|\n| Himalayas | Border security with China, Nepal |\n| Indian Ocean | Naval power, SAGAR vision, maritime security |\n| Land borders | Neighborhood First policy |\n| Central location | Bridge between regions |\n\n**Specific Examples**:\n- **Pakistan border**: Kashmir dispute, security focus\n- **China border**: LAC management, buffer states (Nepal, Bhutan)\n- **Bangladesh**: River water sharing, migration issues\n- **Indian Ocean**: Sea lane protection, anti-piracy\n- **Strategic passages**: Malacca Strait dependency for trade\n\n**Geostrategic Priorities**:\n1. Securing borders (continental)\n2. Controlling Indian Ocean (maritime)\n3. Ensuring energy security (Gulf region)\n4. Connectivity to Central Asia (landlocked challenge)\n\n#### (b) History\n\n**Colonial Legacy**:\n- British rule shaped modern borders\n- Partition trauma - Pakistan relations\n- Commonwealth membership\n- English language advantage\n\n**Historical Influences**:\n\n| Historical Event | Policy Impact |\n|-----------------|----------------|\n| Partition (1947) | Pakistan hostility, Kashmir issue |\n| 1962 War | China distrust, military modernization |\n| 1971 War | Regional dominance, Bangladesh creation |\n| Cold War | Non-alignment policy |\n| 1991 Soviet collapse | Economic reforms, Look East |\n\n**Freedom Movement Legacy**:\n- Gandhian principles of peace and non-violence\n- Anti-colonial solidarity with Global South\n- Support for independence movements\n- NAM leadership with newly independent nations\n\n**Cultural Diplomacy**:\n- Buddhist heritage links (East Asia, Southeast Asia)\n- Hindu cultural ties (Nepal, Bali, Mauritius)\n- Indian diaspora as soft power\n\n#### (c) International System and Economy\n\n**Global Order Impact**:\n\n| Era | International System | India's Response |\n|-----|---------------------|------------------|\n| Cold War (1947-1991) | Bipolar (USA vs USSR) | Non-Alignment |\n| Post-Cold War (1991-2008) | Unipolar (USA) | Economic reforms, US engagement |\n| Current | Multipolar emerging | Multi-alignment, strategic autonomy |\n\n**Economic Factors**:\n\n**1. Trade Dependencies**:\n- Energy imports (80% crude oil from abroad)\n- Gulf region crucial (oil + 9 million diaspora)\n- Trade partners determine relations (USA, EU, China)\n\n**2. Economic Diplomacy**:\n- FDI attraction shapes policy\n- WTO membership and negotiations\n- Regional trade agreements (SAFTA, bilateral FTAs)\n\n**3. Development Needs**:\n- Technology access (nuclear deal with USA)\n- Infrastructure investment needs\n- Skill and investment partnerships\n\n**4. Economic Instruments**:\n- Lines of Credit to Africa, neighbors\n- Development assistance as soft power\n- Economic sanctions as foreign policy tool\n\n**International Organizations**:\n- UN: Peacekeeping, UNSC seat aspiration\n- BRICS, SCO, G20: Multipolar platforms\n- IMF, World Bank: Quota and voice reforms\n\n#### (d) Polity (Domestic Politics)\n\n**Constitutional Framework**:\n- Executive (PM, Cabinet) drives foreign policy\n- Parliament's role limited but influential\n- President's ceremonial role in treaties\n- MEA (Ministry of External Affairs) implements\n\n**Domestic Political Factors**:\n\n| Factor | Influence on Foreign Policy |\n|--------|-----------------------------|\n| Public opinion | Pakistan policy, nationalism |\n| Elections | Hard stance before elections |\n| Coalition politics | Regional parties' influence |\n| Diaspora | Relations with USA, Gulf |\n| Media | Public pressure on government |\n\n**Interest Groups**:\n- Business lobbies (trade policy)\n- Ethnic groups (Tamil Nadu on Sri Lanka)\n- Strategic community (think tanks)\n- Civil society (human rights, environment)\n\n**Political Leadership**:\n- PM's vision shapes policy (Nehru's NAM, Modi's Act East)\n- MEA execution and expertise\n- NSA's role in security matters\n\n**Federal Concerns**:\n- Border states' interests (West Bengal-Bangladesh, Tamil Nadu-Sri Lanka)\n- Water disputes (Punjab-Pakistan, West Bengal-Bangladesh)\n- Migration issues (Northeast-Bangladesh/Myanmar)\n\n**Continuity and Change**:\n- Core principles remain (sovereignty, territorial integrity)\n- Tactics change with governments\n- Bipartisan consensus on major issues (China, Pakistan)\n\n#### Interplay of Factors\n\nThese factors don't work in isolation:\n\n- **Geography + History** → Pakistan policy (Partition + shared border)\n- **Economy + International System** → US nuclear deal (energy needs + unipolar moment)\n- **Polity + Geography** → Tamil Nadu influence on Sri Lanka policy\n- **History + Economy** → Relations with UK, Commonwealth\n\n#### Conclusion\n\nIndian foreign policy is a product of multiple interacting factors. Geography provides the constant backdrop, history shapes perceptions and relationships, the international system sets the context, the economy creates dependencies and opportunities, and domestic politics influences priorities and approach. A successful foreign policy must balance all these factors while advancing national interests.\n\nIndia's transition from 'non-alignment' to 'multi-alignment' reflects adaptation to changing international system while maintaining core principles established at independence.",
+        },
+      ],
+    },
   },
 
   // ==================== MIND FACES EXAM STRATEGY (2026) ====================

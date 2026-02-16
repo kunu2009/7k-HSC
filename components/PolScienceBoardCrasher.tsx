@@ -1236,6 +1236,83 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
               </div>
             )}
 
+            {/* Extra Questions - Teacher's Important Questions */}
+            {chapter.textbookExercises.extraQuestions && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-extra" ? null : "tb-extra",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20"
+                >
+                  <h4 className="font-bold text-yellow-800 dark:text-yellow-200 flex items-center gap-2">
+                    <Star size={20} className="text-yellow-500" /> ⭐ Extra
+                    Important Questions (
+                    {chapter.textbookExercises.extraQuestions.length})
+                  </h4>
+                  {expandedSection === "tb-extra" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-extra" && (
+                  <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
+                    {chapter.textbookExercises.extraQuestions.map(
+                      (eq: any, idx: number) => {
+                        const eqId = `tb-extra-${idx}`;
+                        const isRevealed = showAnswers[eqId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 p-4 rounded-xl border-2 border-yellow-300 dark:border-yellow-700"
+                          >
+                            <div className="flex items-center gap-2 mb-2">
+                              <span className="text-xs bg-yellow-500 text-white px-2 py-1 rounded font-bold">
+                                {eq.source}
+                              </span>
+                              {eq.marks && (
+                                <span className="text-xs bg-orange-500 text-white px-2 py-1 rounded font-bold">
+                                  {eq.marks} marks
+                                </span>
+                              )}
+                            </div>
+                            <p className="font-bold text-slate-800 dark:text-white mb-3">
+                              📌 {eq.question}
+                            </p>
+                            <button
+                              onClick={() => toggleAnswer(eqId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-gradient-to-r from-yellow-500 to-orange-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed
+                                ? "Hide Model Answer"
+                                : "Show Model Answer ⭐"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-3 p-4 bg-white dark:bg-slate-800 rounded-lg text-sm max-h-[50vh] overflow-y-auto border border-yellow-200 dark:border-yellow-800">
+                                <MarkdownRenderer content={eq.modelAnswer} />
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Co-relation Questions - Q.4 */}
             {chapter.textbookExercises.coRelation && (
               <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
