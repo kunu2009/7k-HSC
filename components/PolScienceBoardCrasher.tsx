@@ -42,6 +42,7 @@ type TabType =
   | "ch4"
   | "ch5"
   | "ch6"
+  | "correlations"
   | "analysis"
   | "mindfaces"
   | "lastmin";
@@ -93,6 +94,12 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
       label: "India-World",
       shortLabel: "6",
       color: "bg-indigo-500",
+    },
+    {
+      id: "correlations",
+      label: "Co-relations Q4",
+      shortLabel: "🔗",
+      color: "bg-emerald-500",
     },
     {
       id: "mindfaces",
@@ -2480,6 +2487,145 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
     );
   };
 
+  // Render Co-relations Section (Q.4 - 9 Marks)
+  const renderCorrelations = () => {
+    const correlationsData = data.coRelations;
+    if (!correlationsData)
+      return <p className="p-4">Co-relations data not found</p>;
+
+    return (
+      <div className="space-y-4 p-4">
+        {/* Header Info */}
+        <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl p-4 text-white">
+          <h3 className="font-bold text-xl mb-2 flex items-center gap-2">
+            🔗 Q.4 - Explain the Co-relation (9 Marks)
+          </h3>
+          <p className="text-white/90 text-sm">
+            Any 3 out of 5 questions • 3 marks each • Focus on Ch 1, 2, 4, 6
+          </p>
+          <div className="mt-2 bg-white/20 rounded-lg p-2 text-xs">
+            <strong>Mind Faces Tip:</strong> Skip Chapter 3 & 5 for this
+            question. Refer to Textual Exercises only!
+          </div>
+        </div>
+
+        {/* How to Write Co-relation Answer */}
+        <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-4">
+          <h4 className="font-bold text-amber-800 dark:text-amber-200 mb-2 flex items-center gap-2">
+            <Lightbulb size={18} /> How to Write Co-relation (3 Marks)
+          </h4>
+          <ul className="text-sm text-amber-700 dark:text-amber-300 space-y-1">
+            <li>✅ Define both concepts briefly (0.5 marks each)</li>
+            <li>✅ Explain how they are connected (1 mark)</li>
+            <li>✅ Give 2-3 key points of relationship (1 mark)</li>
+            <li>✅ Keep answer to 50-60 words</li>
+          </ul>
+        </div>
+
+        {/* All 18 Co-relations */}
+        <div className="space-y-3">
+          {correlationsData.questions.map((item: any, idx: number) => (
+            <div
+              key={item.id}
+              className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm"
+            >
+              {/* Question Header */}
+              <button
+                onClick={() => toggleAnswer(`corr_${item.id}`)}
+                className="w-full p-4 flex items-start justify-between text-left"
+              >
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-0.5 rounded text-xs font-medium">
+                      Ch {item.chapter}
+                    </span>
+                    <span className="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded text-xs">
+                      3 Marks
+                    </span>
+                  </div>
+                  <h4 className="font-bold text-slate-800 dark:text-white">
+                    {idx + 1}. {item.q}
+                  </h4>
+                </div>
+                <div className="flex items-center gap-2 ml-2">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      openFullscreen(
+                        `Co-relation: ${item.q}`,
+                        item.answer,
+                        item.q,
+                        "both",
+                      );
+                    }}
+                    className="p-2 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-500 hover:bg-emerald-100 hover:text-emerald-600"
+                  >
+                    <Maximize2 size={16} />
+                  </button>
+                  {showAnswers[`corr_${item.id}`] ? (
+                    <EyeOff size={20} className="text-emerald-500" />
+                  ) : (
+                    <Eye size={20} className="text-slate-400" />
+                  )}
+                </div>
+              </button>
+
+              {/* Answer */}
+              {showAnswers[`corr_${item.id}`] && (
+                <div className="px-4 pb-4">
+                  <div className="bg-emerald-50 dark:bg-emerald-900/20 rounded-xl p-4">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">
+                        Model Answer
+                      </span>
+                    </div>
+                    <div className="prose prose-sm dark:prose-invert max-w-none text-slate-700 dark:text-slate-300">
+                      <MarkdownRenderer content={item.answer} />
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Chapter-wise Summary */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+          <h4 className="font-bold text-slate-800 dark:text-white mb-3">
+            📊 Chapter-wise Co-relations
+          </h4>
+          <div className="grid grid-cols-2 gap-2">
+            {[
+              { ch: "Ch 1", count: 4, topics: "Power, Cold War, Intervention" },
+              { ch: "Ch 2", count: 4, topics: "Globalisation, Trade, GATT" },
+              { ch: "Ch 3", count: 3, topics: "SDGs, Poverty, Gender" },
+              { ch: "Ch 4", count: 2, topics: "Unity, J&K" },
+              { ch: "Ch 5", count: 3, topics: "Governance, Lokpal" },
+              { ch: "Ch 6", count: 4, topics: "Bangladesh, Africa, Russia" },
+            ].map((item, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-50 dark:bg-slate-700 rounded-xl p-3"
+              >
+                <div className="flex items-center justify-between mb-1">
+                  <span className="font-bold text-slate-700 dark:text-slate-300">
+                    {item.ch}
+                  </span>
+                  <span className="bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 px-2 py-0.5 rounded-full text-xs">
+                    {item.count}
+                  </span>
+                </div>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  {item.topics}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderLastMinute = () => {
     const lastMin = data.lastMinutePoints;
 
@@ -2652,6 +2798,7 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
         {activeTab === "ch4" && renderChapter("chapter4")}
         {activeTab === "ch5" && renderChapter("chapter5")}
         {activeTab === "ch6" && renderChapter("chapter6")}
+        {activeTab === "correlations" && renderCorrelations()}
         {activeTab === "mindfaces" && renderMindFaces()}
         {activeTab === "lastmin" && renderLastMinute()}
       </div>

@@ -4447,678 +4447,496 @@ India-China relations remain complex, requiring careful management of difference
       {
         id: 1,
         q: "Hard Power and Soft Power",
-        answer: `**Co-relation between Hard Power and Soft Power:**
+        answer: `### Co-relation between Hard Power and Soft Power
 
-Both are tools of foreign policy to achieve national interests:
+**Hard Power** refers to the use of military force and economic coercion to influence other states. It includes military strength, sanctions, and threats. Hard power creates immediate results but often generates fear and resentment.
 
-**Hard Power**: Use of military force and economic coercion
-- Military strength, sanctions, threats
-- Immediate but temporary results
-- Creates fear and resentment
+**Soft Power**, a term coined by Joseph Nye, refers to the ability to influence others through attraction rather than coercion. It includes culture, values, and diplomacy. Soft power builds long-term, sustainable relationships.
 
-**Soft Power**: Influence through attraction without coercion
-- Culture, values, diplomacy
-- Long-term sustainable influence
-- Wins hearts and minds
+**Co-relation:**
+Both hard power and soft power are essential tools of foreign policy used to achieve national interests. They are complementary - together they form "Smart Power." While hard power may be necessary in crisis situations, soft power is more cost-effective for building lasting influence. A nation's foreign policy effectiveness depends on balancing both forms of power.
 
-**Co-relation**:
-1. Both aim to influence other states
-2. Complement each other (Smart Power = Hard + Soft)
-3. Soft power is more cost-effective
-4. Hard power may be needed when soft power fails
-5. Balance of both creates effective foreign policy
-
-**Example**: USA uses both - military (hard) and Hollywood/universities (soft)`,
+**Example:** The USA uses military strength (hard power) alongside Hollywood films and universities (soft power) to maintain global influence.`,
         chapter: 1,
         marks: 3,
       },
       {
         id: 2,
         q: "Globalisation and Culture",
-        answer: `**Co-relation between Globalisation and Culture:**
+        answer: `### Co-relation between Globalisation and Culture
 
-Globalisation has significant impact on culture worldwide:
+**Globalisation** refers to the increasing interconnectedness of countries through trade, technology, and communication. It has broken down barriers between nations, leading to greater exchange of ideas, goods, and people.
 
-**Positive Effects**:
-1. Cultural exchange and diversity awareness
-2. Spread of ideas, art, music globally
-3. Access to world literature, films, food
-4. Cross-cultural understanding increases
+**Culture** encompasses the beliefs, values, customs, arts, and social practices that characterize a society. Culture shapes identity and provides a sense of belonging to communities.
 
-**Negative Effects**:
-1. Cultural homogenization (Westernization)
-2. Local cultures under threat
-3. Loss of traditional practices
-4. Dominance of English language
+**Co-relation:**
+Globalisation has a profound impact on culture worldwide. On the positive side, it promotes cultural exchange, diversity awareness, and access to global arts, music, and literature. However, it also poses challenges such as cultural homogenization (Westernization), threat to local cultures, loss of traditional practices, and dominance of English language.
 
-**Co-relation**:
-- Globalisation accelerates cultural interaction
-- Technology enables instant cultural transmission
-- Creates hybrid cultures (Glocalization)
-- Both enriches and threatens local identities
-- Need for cultural preservation alongside openness
+The relationship creates "Glocalization" - where global and local cultures blend. Technology enables instant cultural transmission across borders. While globalisation enriches cultural diversity, it also necessitates conscious efforts to preserve local identities and traditions.
 
-**Example**: Spread of yoga globally (Indian soft power) vs McDonald's culture`,
+**Example:** The worldwide spread of yoga (Indian culture) and McDonald's (American culture) demonstrate this dual impact.`,
         chapter: 2,
         marks: 3,
       },
       {
         id: 3,
         q: "Women Empowerment and Sustainable Development Goals (SDGs)",
-        answer: `**Co-relation between Women Empowerment and SDGs:**
+        answer: `### Co-relation between Women Empowerment and SDGs
 
-Women empowerment is central to achieving SDGs:
+**Women Empowerment** refers to the process of enabling women to gain power and control over their lives, decisions, and resources. It includes economic independence, education, political participation, and legal rights.
 
-**SDG 5 - Gender Equality**:
-- End discrimination against women
-- Eliminate violence, trafficking
-- Equal opportunities in leadership
+**Sustainable Development Goals (SDGs)** are 17 global goals adopted by the United Nations in 2015 to achieve a better and sustainable future for all by 2030.
 
-**Impact on Other SDGs**:
-1. **SDG 1 (No Poverty)**: Economically empowered women reduce family poverty
-2. **SDG 2 (Zero Hunger)**: Women farmers increase food security
-3. **SDG 3 (Good Health)**: Educated mothers have healthier children
-4. **SDG 4 (Quality Education)**: Educated women educate next generation
-5. **SDG 8 (Decent Work)**: Women's participation boosts economy
+**Co-relation:**
+Women empowerment is central to achieving the SDGs. SDG 5 specifically focuses on Gender Equality - ending discrimination, eliminating violence, and ensuring equal opportunities for women. However, women empowerment is not just one goal; it is interconnected with ALL SDGs.
 
-**Co-relation**:
-- Gender equality is both a goal AND means to other goals
-- Women empowerment multiplies development impact
-- Cannot achieve sustainable development without women
-- Intersectionality: Women face multiple disadvantages
+When women are empowered:
+- **SDG 1 (No Poverty):** Economically empowered women reduce family poverty
+- **SDG 2 (Zero Hunger):** Women farmers increase food security
+- **SDG 3 (Good Health):** Educated mothers have healthier children
+- **SDG 4 (Quality Education):** Educated women educate the next generation
+- **SDG 8 (Decent Work):** Women's workforce participation boosts the economy
 
-**Conclusion**: Empowering women accelerates all 17 SDGs`,
+**Conclusion:** Gender equality is both a goal in itself AND a means to achieve all other SDGs. Sustainable development is impossible without women's full participation.`,
         chapter: 3,
         marks: 3,
       },
       {
         id: 4,
         q: "National Unity and Regional Aspirations",
-        answer: `**Co-relation between National Unity and Regional Aspirations:**
+        answer: `### Co-relation between National Unity and Regional Aspirations
 
-Both can coexist in a healthy democracy:
+**National Unity** refers to a sense of common identity, shared values, and solidarity among citizens of a nation. It is essential for political stability, economic development, and social harmony.
 
-**National Unity**:
-- Common identity, shared values
-- Constitutional framework
-- Defense, foreign policy unity
+**Regional Aspirations** refer to the demands and desires of people in specific regions for protection of their language, culture, economic development, and political autonomy.
 
-**Regional Aspirations**:
-- Language, culture preservation
-- Economic development demands
-- Political autonomy desires
+**Co-relation:**
+In a diverse country like India, national unity and regional aspirations can coexist harmoniously through the federal system. The Constitution provides for division of powers between Centre and States, allowing regional diversity within national unity.
 
-**Co-relation**:
-1. Federal system accommodates both
-2. Healthy regionalism strengthens unity through diversity
-3. States reorganization (1956) balanced both
-4. Problems arise only when regionalism becomes separatism
-5. Dialogue and accommodation key to harmony
+Healthy regionalism actually strengthens national unity by ensuring that diverse communities feel represented and respected. The States Reorganisation Act of 1956 successfully addressed linguistic aspirations while maintaining national integrity. Problems arise only when regionalism transforms into separatism.
 
-**Constitutional Provisions**:
-- Article 1: Union of States
-- Seventh Schedule: Division of powers
-- Special provisions for some states
+Constitutional provisions like Article 1 (Union of States), the Seventh Schedule (division of powers), and special provisions for certain states demonstrate how India accommodates regional aspirations within the national framework.
 
-**Example**: Linguistic states movement resolved through accommodation, not suppression
-
-**Conclusion**: Regional aspirations within constitutional framework strengthen national unity`,
+**Conclusion:** Regional aspirations expressed through constitutional means strengthen rather than weaken national unity. The key lies in dialogue, accommodation, and inclusive governance.`,
         chapter: 4,
         marks: 3,
       },
       {
         id: 5,
         q: "Good Governance and E-Governance",
-        answer: `**Co-relation between Good Governance and E-Governance:**
+        answer: `### Co-relation between Good Governance and E-Governance
 
-E-Governance is a tool to achieve Good Governance:
+**Good Governance** refers to the exercise of political, economic, and administrative authority to manage public affairs effectively. Its core values include participation, transparency, accountability, responsiveness, and rule of law.
 
-**Good Governance Values**:
-- Participation, Transparency, Accountability
-- Responsiveness, Rule of Law
-- Effectiveness, Equity
+**E-Governance** refers to the use of Information and Communication Technology (ICT) to deliver government services, exchange information, and communicate with citizens electronically.
 
-**E-Governance Enables**:
-1. **Transparency**: Online information, RTI portals
-2. **Accessibility**: 24/7 services, anywhere access
-3. **Accountability**: Digital trail, tracking systems
-4. **Efficiency**: Faster processing, less paperwork
-5. **Reduced Corruption**: Minimal human contact
+**Co-relation:**
+E-Governance is a powerful tool to achieve the goals of good governance. It operationalizes the core values:
 
-**Examples**:
-- Digital India, e-District, UMANG app
-- GST portal, Income tax e-filing
-- Passport Seva, online grievance redressal
+1. **Transparency:** Online portals make information accessible to all (RTI portals)
+2. **Accessibility:** Services available 24/7 from anywhere (e-District services)
+3. **Accountability:** Digital trails create records of all transactions
+4. **Efficiency:** Faster processing, reduced paperwork (Passport Seva)
+5. **Reduced Corruption:** Minimal human contact reduces bribery opportunities
 
-**Co-relation**:
-- E-Governance operationalizes good governance principles
-- Technology bridges gap between government and citizens
-- Makes government responsive and citizen-centric
-- Reduces bureaucratic delays and red tape
+Examples include Digital India, UMANG app, GST portal, and online grievance redressal systems.
 
-**Challenges**: Digital divide, cybersecurity, digital literacy`,
+**Conclusion:** E-Governance bridges the gap between government and citizens, making governance more responsive and citizen-centric. However, challenges like digital divide and cybersecurity need to be addressed for inclusive e-governance.`,
         chapter: 5,
         marks: 3,
       },
       {
         id: 6,
         q: "India and Bangladesh",
-        answer: `**Co-relation between India and Bangladesh:**
+        answer: `### Co-relation between India and Bangladesh
 
-Close bilateral relationship based on shared history and geography:
+**Historical Background:**
+India played a crucial role in the liberation of Bangladesh in 1971. The two nations share cultural, linguistic (Bengali), and historical ties. This foundation has shaped a close bilateral relationship.
 
-**Historical Ties**:
-- India supported Bangladesh liberation (1971)
-- Shared cultural, linguistic heritage (Bengal)
-- Common colonial past
+**Areas of Cooperation:**
+1. **Trade and Commerce:** Bilateral trade exceeds $12 billion, with growing connectivity
+2. **Security:** Counter-terrorism cooperation, border management
+3. **Connectivity:** Waterways, railways, roads connecting both nations
+4. **Water Sharing:** Ganga waters (Farakka Agreement 1996), ongoing Teesta negotiations
+5. **Energy:** India exports power to Bangladesh
+6. **Development:** Indian credit lines and development projects
 
-**Areas of Cooperation**:
-1. **Trade**: Growing bilateral trade, connectivity
-2. **Security**: Counter-terrorism, border management
-3. **Connectivity**: Waterways, railways, roads
-4. **Water Sharing**: Ganga (Farakka), Teesta negotiations
-5. **Energy**: Power exports from India
-6. **Development**: Indian credit lines, projects
+**Challenges:**
+Despite strong ties, some issues remain - Teesta water sharing is pending, illegal migration concerns, and occasional border incidents. The Rohingya refugee situation has also required coordination.
 
-**Issues**:
-- Teesta water sharing pending
-- Illegal migration concerns
-- Border incidents
-- Rohingya refugee situation
+**Recent Progress:**
+The Land Boundary Agreement (2015) resolved a long-standing border dispute. Bus and train services have resumed, and BBIN (Bangladesh-Bhutan-India-Nepal) corridor initiative promotes regional connectivity.
 
-**Recent Progress**:
-- Land Boundary Agreement (2015)
-- Bus, train services resumed
-- BBIN corridor initiative
-
-**Conclusion**: Strategic partnership based on mutual benefit and shared destiny`,
+**Conclusion:** India-Bangladesh relations exemplify strategic partnership based on mutual benefit, geographical proximity, and shared destiny. Both nations recognize that cooperation serves their national interests.`,
         chapter: 6,
         marks: 3,
       },
       {
         id: 7,
         q: "Lokpal and Eradication of Corruption",
-        answer: `**Co-relation between Lokpal and Eradication of Corruption:**
+        answer: `### Co-relation between Lokpal and Eradication of Corruption
 
-Lokpal is institutional mechanism to fight corruption:
+**Lokpal** is an anti-corruption ombudsman at the central level in India. The Lokpal and Lokayuktas Act was passed in 2013. The concept originates from Sweden's Ombudsman system (1809).
 
-**What is Lokpal?**
-- Anti-corruption ombudsman at central level
-- Lokpal and Lokayuktas Act, 2013
-- Concept from Sweden (Ombudsman, 1809)
+**Corruption** refers to the abuse of public office for private gain. It undermines governance, erodes public trust, hampers development, and affects the poor disproportionately.
 
-**Powers of Lokpal**:
-1. Investigate corruption complaints against public servants
-2. Jurisdiction over PM (with safeguards), Ministers, MPs
-3. Can direct CBI investigation
-4. Prosecution powers
+**Co-relation:**
+Lokpal is an institutional mechanism designed to fight corruption in public life. Its role in eradicating corruption includes:
 
-**How it Helps Eradicate Corruption**:
-1. Independent body outside executive control
-2. Fast-track investigation and prosecution
-3. Deterrent effect on potential corrupt officials
-4. Protects whistleblowers
-5. Covers wide range of public servants
+1. **Independent Investigation:** Lokpal investigates corruption complaints against public servants, including PM (with safeguards), Ministers, and MPs
+2. **CBI Direction:** Can direct CBI to investigate cases
+3. **Prosecution Powers:** Can initiate prosecution of corrupt officials
+4. **Deterrent Effect:** Creates fear of accountability among officials
+5. **Whistleblower Protection:** Protects those who report corruption
 
-**Limitations**:
-- Cannot eliminate corruption alone
-- Needs strong political will
-- Depends on effective implementation
-- Judicial delays in prosecution
+**Limitations:**
+However, Lokpal alone cannot eliminate corruption. It needs complementary measures such as Right to Information, digitization of services, electoral reforms, and citizen awareness.
 
-**Co-relation**: Lokpal is necessary but not sufficient condition for ending corruption. Needs complementary measures: RTI, digitization, electoral reforms, citizen awareness.`,
+**Conclusion:** Lokpal is a necessary but not sufficient condition for ending corruption. It must be part of a comprehensive anti-corruption framework including systemic reforms and cultural change.`,
         chapter: 5,
         marks: 3,
       },
       {
         id: 8,
         q: "Indian Society and Gender Inequality",
-        answer: `**Co-relation between Indian Society and Gender Inequality:**
+        answer: `### Co-relation between Indian Society and Gender Inequality
 
-Gender inequality is deeply rooted in Indian society:
+**Indian Society** is characterized by diversity in religion, language, caste, and region. However, it also has deep-rooted patriarchal structures that have historically disadvantaged women.
 
-**Manifestations of Inequality**:
-1. **Economic**: Wage gap (20-30% less), low workforce participation
-2. **Social**: Patriarchy, son preference, dowry
-3. **Political**: Low representation in Parliament (~14%)
-4. **Educational**: Lower female literacy (65% vs 82% male)
-5. **Health**: Maternal mortality, malnutrition
+**Gender Inequality** refers to the unequal treatment and opportunities available to individuals based on their gender. Women face discrimination in economic, social, political, and educational spheres.
 
-**Root Causes in Society**:
-- Patriarchal mindset and traditions
-- Religious and cultural practices
-- Economic dependence on men
-- Lack of education and awareness
-- Weak law enforcement
+**Co-relation:**
+Gender inequality is deeply rooted in Indian society's patriarchal traditions and manifests in multiple ways:
 
-**Government Measures**:
-- Constitutional guarantees (Art 14, 15, 16)
-- Laws: Dowry Prohibition, PCPNDT, POSH Act
-- Schemes: Beti Bachao Beti Padhao, Sukanya Samriddhi
+1. **Economic Inequality:** Women earn 20-30% less than men for similar work; workforce participation is only 22% compared to 75% for men
+2. **Social Discrimination:** Son preference, dowry system, restrictions on mobility
+3. **Political Under-representation:** Only ~14% women MPs in Parliament
+4. **Educational Gap:** Female literacy (65%) lower than male (82%)
+5. **Violence:** Domestic violence, trafficking, harassment
 
-**Co-relation**:
-- Social attitudes perpetuate inequality
-- Legal measures alone insufficient
-- Need social transformation alongside laws
-- Education and economic independence key
+**Root Causes in Society:**
+Patriarchal mindset, religious and cultural practices, economic dependence, and weak law enforcement perpetuate inequality.
 
-**Conclusion**: Changing societal mindset essential for true gender equality`,
+**Government Response:**
+Constitutional guarantees (Articles 14, 15, 16), laws (Dowry Prohibition, POSH Act), and schemes (Beti Bachao Beti Padhao) aim to address inequality.
+
+**Conclusion:** While legal measures exist, true gender equality requires transformation of social attitudes. Education and economic independence are key to empowering women.`,
         chapter: 3,
         marks: 3,
       },
       {
         id: 9,
         q: "Human Rights and Humanitarian Intervention",
-        answer: `**Co-relation between Human Rights and Humanitarian Intervention:**
+        answer: `### Co-relation between Human Rights and Humanitarian Intervention
 
-Humanitarian intervention aims to protect human rights:
+**Human Rights** are universal rights inherent to all human beings regardless of nationality, gender, religion, or any other status. They include rights to life, liberty, dignity, and freedom from torture. The Universal Declaration of Human Rights (UDHR, 1948) codified these rights internationally.
 
-**Human Rights**:
-- Universal rights inherent to all humans
-- UDHR (1948), international covenants
-- Right to life, liberty, dignity
+**Humanitarian Intervention** refers to military action by states or international organizations in another sovereign state to protect people from mass atrocities. The concept is linked to the "Responsibility to Protect" (R2P) doctrine.
 
-**Humanitarian Intervention**:
-- Military action to protect human rights in another state
-- Responsibility to Protect (R2P) doctrine
-- UN-authorized or unilateral
+**Co-relation:**
+Humanitarian intervention is justified primarily on the grounds of protecting human rights. The relationship involves:
 
-**Co-relation**:
-1. Human rights violations trigger intervention
-2. Intervention justified to prevent genocide, ethnic cleansing
-3. Tension between sovereignty and human rights
-4. R2P: Sovereignty not absolute if state fails to protect
+1. **Trigger:** Large-scale human rights violations (genocide, ethnic cleansing) may trigger intervention
+2. **Justification:** R2P holds that sovereignty is not absolute if a state fails to protect its people
+3. **Tension:** Creates tension between state sovereignty and human rights protection
+4. **UN Role:** Ideally requires UN authorization for legitimacy
 
-**Examples**:
-- Kosovo (1999), Libya (2011), East Timor
-- Rwanda: Failure to intervene led to genocide
+**Examples:** Interventions in Kosovo (1999), Libya (2011), and East Timor; failure to intervene in Rwanda (1994) led to genocide.
 
-**Debates**:
-- Sovereignty vs human rights
-- Selective application (why some countries, not others?)
-- Misuse for regime change
-- UN authorization essential
+**Debates:**
+Critics point to selective application, potential misuse for regime change, and violation of sovereignty principle.
 
-**Conclusion**: Human rights protection may justify intervention, but needs international legitimacy and last resort`,
+**Conclusion:** Human rights protection may justify intervention, but it must have international legitimacy, be a last resort, and aim genuinely at humanitarian objectives.`,
         chapter: 1,
         marks: 3,
       },
       {
         id: 10,
         q: "Economic Interest and Formation of Trade Blocs",
-        answer: `**Co-relation between Economic Interest and Trade Blocs:**
+        answer: `### Co-relation between Economic Interest and Trade Blocs
 
-Trade blocs formed primarily due to economic interests:
+**Economic Interest** refers to the pursuit of economic gains by nations, including access to markets, investment, resources, and technology. Economic interests are primary drivers of foreign policy.
 
-**What are Trade Blocs?**
-- Regional groupings for preferential trade
-- Examples: EU, NAFTA/USMCA, ASEAN, MERCOSUR
+**Trade Blocs** are regional groupings of countries that reduce trade barriers among themselves while maintaining barriers against non-members. Examples include the European Union (EU), NAFTA/USMCA, ASEAN, and MERCOSUR.
 
-**Economic Interests Driving Formation**:
-1. **Larger Markets**: Access to bigger consumer base
-2. **Reduced Tariffs**: Lower costs, competitive prices
-3. **Economies of Scale**: Mass production benefits
-4. **Investment Flows**: Attract FDI within bloc
-5. **Bargaining Power**: Collective negotiation strength
+**Co-relation:**
+Economic interests are the PRIMARY driver behind the formation of trade blocs:
 
-**Benefits**:
-- Increased intra-bloc trade
-- Economic growth and employment
-- Specialization based on comparative advantage
-- Technology and knowledge transfer
+1. **Larger Markets:** Access to bigger consumer base for goods and services
+2. **Reduced Tariffs:** Lower costs make products more competitive
+3. **Economies of Scale:** Mass production becomes viable
+4. **Investment Flows:** Trade blocs attract Foreign Direct Investment
+5. **Collective Bargaining:** Greater negotiating power in international forums
 
-**Concerns**:
-- Trade diversion from non-members
-- Dominance of larger economies
-- Loss of some policy autonomy
+**Benefits:** Increased intra-bloc trade, economic growth, employment generation, specialization based on comparative advantage, and technology transfer.
 
-**Co-relation**:
-- Economic interests are PRIMARY driver
-- Political cooperation follows economic
-- Mutual economic benefit sustains blocs
-- Economic crises test bloc solidarity
+**Concerns:** Trade diversion from non-members, dominance by larger economies within the bloc, and loss of some policy autonomy.
 
-**Example**: EU started as coal/steel community (economic), evolved to political union`,
+**Evolution:** Many trade blocs expand beyond economics to political cooperation (e.g., EU started as coal/steel community, evolved to political union).
+
+**Conclusion:** Economic self-interest drives nations to form trade blocs, but political and strategic considerations also play a role in sustaining them.`,
         chapter: 2,
         marks: 3,
       },
       {
         id: 11,
         q: "India and Africa",
-        answer: `**Co-relation between India and Africa:**
+        answer: `### Co-relation between India and Africa
 
-Growing strategic partnership based on shared interests:
+**Historical Foundation:**
+India and African nations share a history of anti-colonial struggle and Non-Aligned Movement (NAM) solidarity. The Indian diaspora in East and South Africa, and Mahatma Gandhi's time in South Africa, strengthened these bonds.
 
-**Historical Ties**:
-- NAM solidarity, anti-colonialism
-- Indian diaspora in East/South Africa
-- Mahatma Gandhi's South Africa connection
+**Areas of Cooperation:**
 
-**Areas of Cooperation**:
-1. **Trade**: $70+ billion, growing rapidly
-2. **Investment**: Indian companies in telecom, pharma, IT
-3. **Development**: ITEC program, capacity building
-4. **Healthcare**: Generic medicines, "Pharmacy of Global South"
-5. **Education**: Scholarships, training programs
-6. **Security**: Joint exercises, training
+1. **Trade:** Bilateral trade exceeds $70 billion and is growing rapidly
+2. **Investment:** Indian companies operate in telecom, pharmaceuticals, IT, and banking
+3. **Development Cooperation:** India's ITEC program provides training and capacity building
+4. **Healthcare:** India is the "Pharmacy of the Global South" - providing affordable generic medicines and COVID-19 vaccines
+5. **Education:** Scholarships for African students in Indian universities
+6. **Security:** Joint military exercises, training programs
 
-**India-Africa Forum Summit**:
-- Platform for India-Africa engagement
-- Development assistance commitments
-- South-South cooperation model
+**Strategic Platforms:**
+The India-Africa Forum Summit serves as the primary platform for engagement. India follows a South-South cooperation model based on equality and mutual respect.
 
-**Strategic Significance**:
-- Africa's UN votes important for India
-- Natural resources for Indian industry
-- Maritime security in Indian Ocean
-- Counter to China's growing influence
+**Strategic Significance:**
+Africa's UN votes are important for India's global aspirations. African natural resources support Indian industry. Maritime security in the Indian Ocean requires cooperation.
 
-**Co-relation**:
-- Mutual benefit drives partnership
-- Development cooperation, not exploitation
-- Win-win approach differs from colonial patterns
+**Challenges:** China's growing presence in Africa through Belt and Road Initiative creates competition.
 
-**Conclusion**: India-Africa partnership based on equality and shared development`,
+**Conclusion:** India-Africa partnership is based on shared development goals, historical solidarity, and mutual benefit - distinct from exploitative colonial patterns.`,
         chapter: 6,
         marks: 3,
       },
       {
         id: 12,
         q: "GATT and WTO",
-        answer: `**Co-relation between GATT and WTO:**
+        answer: `### Co-relation between GATT and WTO
 
-WTO evolved from and replaced GATT:
+**GATT (General Agreement on Tariffs and Trade):**
+Established in 1947, GATT was a multilateral agreement (not an organization) governing international trade. It focused mainly on trade in goods and conducted 8 rounds of negotiations, with the Uruguay Round (1986-1994) being the last.
 
-**GATT (1947-1995)**:
-- General Agreement on Tariffs and Trade
-- Provisional arrangement, not organization
-- Focused mainly on goods trade
-- 8 rounds of negotiations (last: Uruguay Round)
+**WTO (World Trade Organization):**
+Established on January 1, 1995, the WTO is a formal international organization with legal personality. It has expanded scope covering goods, services (GATS), and intellectual property (TRIPS).
 
-**WTO (1995-present)**:
-- World Trade Organization
-- Formal international organization
-- Covers goods, services, intellectual property
-- Dispute settlement mechanism
+**Co-relation:**
+The WTO evolved from and incorporated GATT. The relationship can be understood as:
 
-**Co-relation/Evolution**:
-1. WTO incorporated and expanded GATT
-2. GATT rules still apply for goods trade
-3. WTO added GATS (services), TRIPS (IP)
-4. Stronger dispute settlement in WTO
-5. WTO has legal personality, GATT didn't
+1. **Continuity:** GATT rules still apply for trade in goods under WTO
+2. **Expansion:** WTO added agreements on services (GATS) and intellectual property (TRIPS)
+3. **Institutionalization:** WTO is a formal organization; GATT was only an agreement
+4. **Enforcement:** WTO has binding dispute settlement mechanism; GATT enforcement was weak
+5. **Membership:** WTO has "member states"; GATT had "contracting parties"
 
-**Key Differences**:
 | Aspect | GATT | WTO |
 |--------|------|-----|
 | Status | Agreement | Organization |
 | Scope | Goods only | Goods + Services + IP |
-| Enforcement | Weak | Binding dispute settlement |
-| Membership | Contracting parties | Member states |
+| Enforcement | Weak | Binding disputes |
 
-**Conclusion**: WTO is institutionalized, expanded version of GATT framework`,
+**Conclusion:** WTO represents the institutionalization and expansion of the GATT framework, creating a more comprehensive and enforceable global trade system.`,
         chapter: 2,
         marks: 3,
       },
       {
         id: 13,
         q: "End of Cold War and Rise of New States",
-        answer: `**Co-relation between End of Cold War and Rise of New States:**
+        answer: `### Co-relation between End of Cold War and Rise of New States
 
-Cold War's end led to emergence of new nation-states:
+**End of Cold War:**
+The Cold War, an ideological rivalry between the USA and USSR (1947-1991), ended with the disintegration of the Soviet Union on December 26, 1991. This marked the collapse of the bipolar world order.
 
-**End of Cold War (1991)**:
-- USSR disintegration
-- End of bipolar world
-- Ideological victory of liberal democracy
+**Rise of New States:**
+Following the Cold War's end, numerous new nation-states emerged on the world map, primarily through the disintegration of multi-ethnic communist federations.
 
-**New States Emerged**:
-1. **From USSR**: 15 republics (Russia, Ukraine, Baltic states, Central Asian states)
-2. **From Yugoslavia**: Slovenia, Croatia, Bosnia, Serbia, Montenegro, Kosovo, North Macedonia
-3. **Other**: Eritrea (from Ethiopia), East Timor, South Sudan
+**Co-relation:**
+The end of the Cold War directly led to the emergence of new states:
 
-**Co-relation Explained**:
-1. Cold War suppressed nationalist movements
-2. Superpower control prevented fragmentation
-3. End of Cold War removed external constraints
-4. Ethnic nationalism resurged
-5. Self-determination demands fulfilled
+1. **Suppressed Nationalism:** During the Cold War, superpower control suppressed nationalist movements within their blocs
+2. **External Constraints Removed:** End of Cold War removed the external controls maintaining multi-ethnic federations
+3. **Ethnic Resurgence:** Long-suppressed ethnic nationalism erupted once control weakened
 
-**Factors Leading to New States**:
-- Ethnic/linguistic nationalism
-- Economic disparities within federations
-- Democratic aspirations
-- International support (recognition)
+**New States Emerged:**
+- **From USSR:** 15 independent republics (Russia, Ukraine, Baltic states, Central Asian states)
+- **From Yugoslavia:** Slovenia, Croatia, Bosnia, Serbia, Montenegro, Kosovo, North Macedonia
+- **Others:** Eritrea (from Ethiopia), East Timor, South Sudan
 
-**Consequences**:
-- Redrawing of world map
-- Ethnic conflicts (Yugoslavia, Caucasus)
-- Transition challenges
-- New foreign policy alignments
+**Consequences:**
+This reshaped the global political map, led to ethnic conflicts (Yugoslavia, Caucasus), created transition challenges, and formed new foreign policy alignments.
 
-**Conclusion**: Cold War's end unleashed suppressed nationalisms, reshaping global political map`,
+**Conclusion:** The Cold War's end unleashed suppressed nationalisms, demonstrating how superpower rivalry had artificially maintained multi-ethnic states. Self-determination movements transformed the world order.`,
         chapter: 1,
         marks: 3,
       },
       {
         id: 14,
         q: "Poverty and Development",
-        answer: `**Co-relation between Poverty and Development:**
+        answer: `### Co-relation between Poverty and Development
 
-Poverty and development are inversely related:
+**Poverty** refers to a condition where individuals or groups lack the resources to meet basic needs like food, shelter, healthcare, and education. It can be absolute (below survival threshold) or relative (below societal standards).
 
-**Relationship**:
-- Development reduces poverty
-- Poverty hinders development
-- Vicious cycle: poverty → low development → more poverty
+**Development** refers to the process of improving the quality of human life through economic growth, social progress, and enhanced capabilities. It includes GDP growth, education, health, and human development indices.
 
-**How Development Reduces Poverty**:
-1. Economic growth creates jobs
+**Co-relation:**
+Poverty and development have an inverse relationship - they are two sides of the same coin:
+
+**How Development Reduces Poverty:**
+1. Economic growth creates employment opportunities
 2. Better education increases earning capacity
-3. Healthcare improves productivity
-4. Infrastructure connects to markets
-5. Social protection provides safety net
+3. Healthcare improvements enhance productivity
+4. Infrastructure connects people to markets and services
+5. Social protection provides safety nets for vulnerable groups
 
-**How Poverty Hinders Development**:
-1. Low human capital (education, health)
-2. Limited savings and investment
-3. Low productivity
-4. Social instability
-5. Demand constraint
+**How Poverty Hinders Development:**
+1. Low human capital (poor education, health) limits productivity
+2. Limited savings means less investment
+3. Low productivity perpetuates economic stagnation
+4. Social instability disrupts development efforts
+5. Demand constraints limit economic growth
 
-**Approach to Break Cycle**:
-- Inclusive growth (not just GDP)
-- Direct poverty alleviation programs
-- Investment in human development
-- Social security measures
-- Empowerment of marginalized
+**Breaking the Cycle:**
+Requires inclusive growth (not just GDP), direct poverty alleviation programs (MGNREGA, food security), investment in human development, social security measures, and empowerment of marginalized groups.
 
-**Indian Context**:
-- MGNREGA, Food Security Act
-- Skill development programs
-- Financial inclusion (Jan Dhan)
-- SDG 1: No Poverty target
-
-**Conclusion**: Poverty reduction and development must go hand-in-hand for sustainable progress`,
+**Conclusion:** Poverty reduction and development must proceed hand-in-hand. Development that excludes the poor is neither sustainable nor just. The SDGs recognize this through Goal 1 (No Poverty).`,
         chapter: 3,
         marks: 3,
       },
       {
         id: 15,
         q: "Jammu & Kashmir and Cross-Border Terrorism",
-        answer: `**Co-relation between J&K and Cross-Border Terrorism:**
+        answer: `### Co-relation between J&K and Cross-Border Terrorism
 
-J&K has been primary target of cross-border terrorism:
+**Jammu & Kashmir:**
+A region in northern India that has been a subject of dispute since Partition (1947). The region faced insurgency beginning in 1989, with external support transforming it into a major security challenge.
 
-**What is Cross-Border Terrorism?**
-- Terrorism planned, financed, trained from across international border
-- State-sponsored terrorism from Pakistan
+**Cross-Border Terrorism:**
+Terrorism that is planned, financed, trained, and orchestrated from across international borders. In India's context, it refers to Pakistan-sponsored terrorism primarily targeting J&K.
 
-**Why J&K is Target**:
-1. Disputed territory (Pakistan's claim)
-2. Muslim-majority region
-3. Proximity to Pakistan/PoK
-4. Strategic location
-5. History of insurgency (post-1989)
+**Co-relation:**
+J&K has been the primary target of cross-border terrorism due to:
 
-**Terror Infrastructure**:
-- Training camps in PoK
-- ISI coordination
-- Terror groups: LeT, JeM, HM
-- Financing through hawala, fake currency
+1. **Disputed Territory:** Pakistan's claim to J&K provides ideological justification
+2. **Muslim-Majority Population:** Exploited for recruitment and radicalization
+3. **Geographical Proximity:** Porous border with Pakistan and PoK
+4. **History of Insurgency:** Post-1989 insurgency provided fertile ground
+5. **Strategic Location:** Gateway to India
 
-**Major Attacks**:
-- Parliament (2001), Mumbai (2008)
-- Uri (2016), Pulwama (2019)
+**Terror Infrastructure:**
+Training camps operate in Pakistan-Occupied Kashmir (PoK). Groups like Lashkar-e-Taiba and Jaish-e-Mohammed receive ISI support. Financing flows through hawala and fake currency.
 
-**India's Response**:
-1. Enhanced border security, fencing
-2. Surgical strikes (2016, Balakot 2019)
-3. Diplomatic isolation of Pakistan
-4. Article 370 abrogation (2019)
-5. Development initiatives
+**Major Attacks:** Parliament attack (2001), Mumbai (2008), Uri (2016), Pulwama (2019)
 
-**Co-relation**:
-- J&K's unresolved status exploited by Pakistan
-- Cross-border terrorism aims to destabilize J&K
-- Both are interlinked security challenges
+**India's Response:**
+Enhanced border security, surgical strikes (2016, Balakot 2019), diplomatic isolation of Pakistan, Article 370 abrogation (2019), and development initiatives.
 
-**Conclusion**: Addressing cross-border terrorism essential for peace in J&K`,
+**Conclusion:** Cross-border terrorism in J&K is both a cause and consequence of the unresolved Kashmir issue. Addressing it requires multi-pronged security, diplomatic, and developmental approaches.`,
         chapter: 4,
         marks: 3,
       },
       {
         id: 16,
         q: "India and Non-Alignment Movement (NAM)",
-        answer: `**Co-relation between India and NAM:**
+        answer: `### Co-relation between India and NAM
 
-India was founding member and leader of NAM:
+**Non-Aligned Movement (NAM):**
+A forum of states not formally aligned with any major power bloc during the Cold War. It was founded in 1961 at the Belgrade Summit. Key founders included Jawaharlal Nehru (India), Gamal Abdel Nasser (Egypt), and Josip Broz Tito (Yugoslavia).
 
-**What is NAM?**
-- Non-Aligned Movement (1961, Belgrade)
-- Countries not aligned with either Cold War bloc
-- Founders: Nehru (India), Nasser (Egypt), Tito (Yugoslavia)
+**India's Role:**
+India was a founding member and ideological leader of NAM. Nehru's vision shaped the movement's core principles.
 
-**India's Role in NAM**:
-1. **Ideological Leadership**: Panchsheel principles
-2. **First Conference**: Bandung (1955) precursor
-3. **Consistent Membership**: Active throughout Cold War
-4. **Voice of Third World**: Advocated NIEO
-5. **Peace Advocacy**: Opposed bloc politics
+**Co-relation:**
+India and NAM share a mutually defining relationship:
 
-**Principles India Championed**:
+**India's Contributions to NAM:**
+1. **Ideological Leadership:** Panchsheel (Five Principles of Peaceful Coexistence, 1954)
+2. **Bandung Conference (1955):** Precursor to NAM formation
+3. **Consistent Membership:** Active participation throughout Cold War
+4. **Voice of Third World:** Advocated for New International Economic Order (NIEO)
+5. **Peace Advocacy:** Opposed bloc politics and military alliances
+
+**Core Principles India Championed:**
 - Peaceful coexistence
-- Non-interference
-- Anti-colonialism, anti-racism
+- Non-interference in internal affairs
+- Anti-colonialism and anti-racism
 - Disarmament
-- Economic justice
+- Economic justice for developing nations
 
-**NAM's Relevance Today**:
-- 120 member countries
-- Multipolar world makes autonomy relevant
-- South-South cooperation platform
-- Reform of global institutions
+**NAM's Current Relevance:**
+With 120 member countries, NAM remains relevant for South-South cooperation, UN reform advocacy, and maintaining strategic autonomy in a multipolar world.
 
-**India's Current Approach**:
-- "Multi-alignment" or "Strategic autonomy"
-- Engages all major powers
-- Issue-based partnerships
-- NAM principles still guide policy
+**India Today:**
+India practices "multi-alignment" or "strategic autonomy" - engaging with all major powers while maintaining independent decision-making, true to NAM's original spirit.
 
-**Conclusion**: NAM shaped India's independent foreign policy tradition`,
+**Conclusion:** NAM shaped India's independent foreign policy tradition, and its principles continue to guide India's approach to international relations.`,
         chapter: 6,
         marks: 3,
       },
       {
         id: 17,
         q: "Good Governance and Transparency",
-        answer: `**Co-relation between Good Governance and Transparency:**
+        answer: `### Co-relation between Good Governance and Transparency
 
-Transparency is fundamental pillar of good governance:
+**Good Governance:**
+The exercise of political, economic, and administrative authority to manage public affairs effectively and in the best interest of citizens. Key values include participation, rule of law, transparency, responsiveness, accountability, equity, and efficiency.
 
-**What is Transparency?**
-- Openness in government functioning
-- Access to information for citizens
-- Clear rules, procedures, decisions
+**Transparency:**
+Openness in government functioning where citizens have access to information about government decisions, processes, and expenditures. It means clear rules, procedures, and public access to official records.
 
-**How Transparency Enables Good Governance**:
-1. **Reduces Corruption**: Secrecy breeds corruption
-2. **Accountability**: Officials answerable when visible
-3. **Informed Participation**: Citizens engage meaningfully
-4. **Trust Building**: Open government gains legitimacy
-5. **Better Decisions**: Public scrutiny improves quality
+**Co-relation:**
+Transparency is a FUNDAMENTAL pillar of good governance. Without transparency, other governance values cannot function effectively:
 
-**Transparency Mechanisms in India**:
-- Right to Information Act (2005)
-- Proactive disclosure requirements
-- E-governance portals
-- Open budgets, audits
-- Media freedom
+**How Transparency Enables Good Governance:**
+1. **Reduces Corruption:** Secrecy breeds corruption; openness deters it
+2. **Ensures Accountability:** Officials are answerable when their actions are visible
+3. **Enables Participation:** Citizens need information to participate meaningfully
+4. **Builds Trust:** Open government gains public legitimacy
+5. **Improves Quality:** Public scrutiny leads to better decisions
 
-**RTI Act Features**:
-- Citizens can seek government information
-- 30-day response timeline
-- Information Commissions for appeals
-- Penalties for non-compliance
+**Transparency Mechanisms in India:**
+- Right to Information Act (RTI, 2005)
+- Proactive disclosure requirements under Section 4 of RTI Act
+- E-governance portals making information accessible
+- Open budgets and audit reports
+- Media freedom and investigative journalism
 
-**Challenges**:
-- Exemptions misused
-- Delays in response
-- RTI activists face threats
-- Digital divide limits access
+**Challenges:**
+Exemptions under RTI sometimes misused, delays in responses, threats to RTI activists, and digital divide limiting access.
 
-**Co-relation**:
-- Without transparency, other governance values fail
-- Transparency is prerequisite for accountability
-- Foundation of citizen-government relationship
-
-**Conclusion**: Transparent governance is accountable governance`,
+**Conclusion:** Transparency is the foundation upon which all other good governance values rest. A transparent government is an accountable government.`,
         chapter: 5,
         marks: 3,
       },
       {
         id: 18,
         q: "India and Russia",
-        answer: `**Co-relation between India and Russia:**
+        answer: `### Co-relation between India and Russia
 
-Time-tested strategic partnership spanning decades:
+**Historical Foundation:**
+India and Russia (formerly USSR) have enjoyed a time-tested strategic partnership spanning over six decades. The Indo-Soviet Treaty of Peace, Friendship, and Cooperation (1971) laid the foundation, with Soviet support during the 1971 Bangladesh Liberation War cementing the relationship.
 
-**Historical Foundation**:
-- Indo-Soviet Treaty of Peace (1971)
-- Soviet support during 1971 war
-- Defense cooperation since 1960s
-- Consistent UN support
+**Co-relation - Areas of Cooperation:**
 
-**Areas of Cooperation**:
-1. **Defense**: Major arms supplier (S-400, Brahmos, Sukhoi)
-2. **Nuclear Energy**: Kudankulam power plant
-3. **Space**: Joint programs, GLONASS
-4. **Energy**: Oil, gas investments (Sakhalin)
-5. **Economic**: Trade, investment (though limited)
+1. **Defence:** Russia is India's largest arms supplier (S-400 missile systems, BrahMos missiles, Sukhoi aircraft, submarines)
+2. **Nuclear Energy:** Kudankulam Nuclear Power Plant built with Russian assistance
+3. **Space:** Joint programs, access to GLONASS navigation system
+4. **Energy:** Indian investments in Russian oil and gas projects (Sakhalin)
+5. **Political:** Consistent UN Security Council support for India's positions
 
-**Strategic Significance**:
-- Reliable partner unlike Western conditionality
-- UN Security Council support
-- Balances relations with China
-- Technology transfer
+**Strategic Significance:**
+- Most reliable defence partner without political conditionality
+- Balances India's relationships with other major powers
+- Technology transfer arrangements
+- UN Security Council cooperation
 
-**Annual Summits**:
-- Regular high-level exchanges
-- 2+2 Dialogue mechanism
-- Special & Privileged Strategic Partnership
+**Institutional Framework:**
+Annual summits, 2+2 dialogue mechanism, "Special and Privileged Strategic Partnership" designation demonstrate the depth of engagement.
 
-**Challenges**:
-- Russia-China closeness
-- Russia-Pakistan growing ties
-- US pressure on defense deals (CAATSA)
-- Limited economic engagement
+**Challenges:**
+Russia's growing closeness with China, improving Russia-Pakistan ties, US pressure on defence deals (CAATSA sanctions), and limited economic engagement beyond defence.
 
-**India's Balancing Act**:
-- Maintain Russia ties
-- Develop US partnership
-- Strategic autonomy approach
+**India's Balancing Act:**
+India maintains strong Russia ties while developing US partnership - exemplifying strategic autonomy.
 
-**Conclusion**: Russia remains India's most trusted strategic partner despite changing geopolitics`,
+**Conclusion:** Russia remains India's most trusted strategic partner despite evolving geopolitics. The relationship is built on decades of mutual trust and strategic convergence.`,
         chapter: 6,
         marks: 3,
       },
