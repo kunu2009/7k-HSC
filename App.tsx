@@ -1252,16 +1252,8 @@ const App: React.FC = () => {
             <CountdownTimer stream={selectedStream} />
           </div>
 
-          {/* Quick Stats Widget */}
-          <QuickStatsWidget
-            subjects={getFilteredSubjects(true)}
-            onOpenWeakness={() => setShowSmartWeakness(true)}
-            onOpenHeatmap={() => setShowStudyHeatmap(true)}
-            onOpenWeeklyReport={() => setShowWeeklyReport(true)}
-          />
-
           {/* Your Subjects - Main Focus */}
-          <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-3 mt-4 flex items-center gap-2">
+          <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
             <BookOpen
               size={20}
               className="text-indigo-600 dark:text-indigo-400"
@@ -1514,6 +1506,20 @@ const App: React.FC = () => {
                 Ask AI
               </button>
             </div>
+          </div>
+
+          {/* Previous Marks & Analysis Section */}
+          <div className="mt-6">
+            <h2 className="text-base font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+              <BarChart3 size={18} className="text-violet-500" />
+              Previous Marks & Analysis
+            </h2>
+
+            {/* Previous Marks Input */}
+            {selectedStream && <PreviousMarksInput stream={selectedStream} />}
+
+            {/* Weakness Analysis */}
+            <WeaknessAnalysis />
           </div>
         </div>
       </div>
