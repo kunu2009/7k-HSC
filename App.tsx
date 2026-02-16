@@ -180,6 +180,7 @@ import DailyMotivation from "./components/DailyMotivation";
 import TodaysFocus from "./components/TodaysFocus";
 import PolScienceBoardCrasher from "./components/PolScienceBoardCrasher";
 import EcoBoardCrasher from "./components/EcoBoardCrasher";
+import SettingsPanel from "./components/SettingsPanel";
 import { useProgress } from "./hooks/useProgress";
 import { useChapterCompletion } from "./hooks/useChapterCompletion";
 import { explainConcept } from "./services/geminiService";
@@ -323,24 +324,64 @@ const App: React.FC = () => {
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
 
+  // Settings State
+  const [showSettings, setShowSettings] = useState(false);
+  const [showCompletedSubjects, setShowCompletedSubjects] = useState(() => {
+    const settings = db.getSettings();
+    return settings.showCompletedSubjects ?? false;
+  });
+
+  // Helper to check if a subject's exam is already done
+  const isSubjectExamDone = (subjectId: string): boolean => {
+    const examDate = getSubjectBoardExamDate(selectedStream, subjectId);
+    if (!examDate) return false;
+    const now = new Date();
+    // Exam is done if exam date is before today (not including today)
+    return examDate.getTime() < now.setHours(0, 0, 0, 0);
+  };
+
   // Get filtered subjects based on user's selection (only shows selected + compulsory subjects)
-  const getFilteredSubjects = (): Subject[] => {
+  // Also filters out subjects whose exams are already done (unless showCompletedSubjects is true)
+  const getFilteredSubjects = (
+    includeCompleted: boolean = showCompletedSubjects,
+  ): Subject[] => {
     if (!selectedStream || !MOCK_DATA[selectedStream]) return [];
     const allSubjects = MOCK_DATA[selectedStream].subjects;
 
-    // If no user profile, return all subjects
+    let subjects = allSubjects;
+
+    // If user profile exists, filter to only show selected subjects
     if (
-      !userProfile ||
-      !userProfile.selectedSubjects ||
-      userProfile.selectedSubjects.length === 0
+      userProfile &&
+      userProfile.selectedSubjects &&
+      userProfile.selectedSubjects.length > 0
     ) {
-      return allSubjects;
+      subjects = subjects.filter((sub) =>
+        userProfile.selectedSubjects.includes(sub.id),
+      );
     }
 
-    // Filter to only show subjects the user selected (includes compulsory subjects added during onboarding)
-    return allSubjects.filter((sub) =>
-      userProfile.selectedSubjects.includes(sub.id),
-    );
+    // Filter out completed exams unless showCompletedSubjects is enabled
+    if (!includeCompleted) {
+      subjects = subjects.filter((sub) => !isSubjectExamDone(sub.id));
+    }
+
+    return subjects;
+  };
+
+  // Get subjects that are done (for settings display)
+  const getCompletedSubjects = (): Subject[] => {
+    if (!selectedStream || !MOCK_DATA[selectedStream]) return [];
+    const allSubjects = MOCK_DATA[selectedStream].subjects;
+
+    let subjects = allSubjects;
+    if (userProfile?.selectedSubjects?.length) {
+      subjects = subjects.filter((sub) =>
+        userProfile.selectedSubjects.includes(sub.id),
+      );
+    }
+
+    return subjects.filter((sub) => isSubjectExamDone(sub.id));
   };
 
   // Progress Tracking
@@ -421,6 +462,7 @@ const App: React.FC = () => {
     const closeAnyOpenModal = (): boolean => {
       // Check all modal states and close the first open one
       const modalSetters = [
+        { state: showSettings, setter: setShowSettings },
         { state: showEcoBoardCrasher, setter: setShowEcoBoardCrasher },
         {
           state: showPolScienceBoardCrasher,
@@ -1111,28 +1153,34 @@ const App: React.FC = () => {
 
     return (
       <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-24 font-sans transition-colors">
-        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700 dark:from-indigo-900 dark:via-purple-900 dark:to-indigo-950 px-6 pt-8 pb-12 rounded-b-[2.5rem] shadow-xl shadow-indigo-200/50 dark:shadow-indigo-900/50">
-          <div className="flex justify-between items-start mb-6">
+        <div className="bg-gradient-to-br from-indigo-600 via-purple-600 to-indigo-700 dark:from-indigo-900 dark:via-purple-900 dark:to-indigo-950 px-6 pt-6 pb-10 rounded-b-[2.5rem] shadow-xl shadow-indigo-200/50 dark:shadow-indigo-900/50">
+          <div className="flex justify-between items-start mb-4">
             <div>
-              <p className="text-indigo-200 text-sm font-medium mb-1">
+              <p className="text-indigo-200 text-xs font-medium mb-1">
                 {greeting()}
               </p>
-              <h1 className="text-3xl font-black text-white">
+              <h1 className="text-2xl font-black text-white">
                 {userProfile?.name || "Student"} 👋
               </h1>
             </div>
             <div className="flex items-center gap-2">
+              <button
+                onClick={() => setShowSettings(true)}
+                className="p-2 rounded-xl bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-colors"
+              >
+                <Settings size={18} />
+              </button>
               <div className="px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold">
                 {selectedStream}
               </div>
             </div>
           </div>
-          <p className="text-indigo-100 font-medium">
+          <p className="text-indigo-100 text-sm font-medium">
             Let's crush those exams! 🚀
           </p>
         </div>
 
-        <div className="p-6 -mt-6">
+        <div className="p-4 -mt-6">
           {/* 🚀 MEGA BOARD CRASHER BANNER - Top Priority */}
           {selectedStream === Stream.ARTS && (
             <button
@@ -1192,63 +1240,42 @@ const App: React.FC = () => {
           <ExamDayBanner
             stream={selectedStream}
             onOpenSubject={(subjectId) => {
-              const subject = filteredSubjects.find((s) => s.id === subjectId);
+              const subject = getFilteredSubjects(true).find(
+                (s) => s.id === subjectId,
+              );
               if (subject) selectSubject(subject);
             }}
           />
 
-          {/* 🔥 Daily Motivation - Study streak encouragement */}
-          <DailyMotivation
-            streak={getStudyStats().currentStreak || 0}
-            todayMinutes={getStudyStats().totalFlashcardsReviewed * 2} // Estimate: 2 min per flashcard
-            onStartStudy={() => setShowPomodoro(true)}
-          />
-
-          {/* Countdown Timer */}
-          <div className="mb-6">
+          {/* Countdown Timer - Compact */}
+          <div className="mb-4">
             <CountdownTimer stream={selectedStream} />
           </div>
 
-          {/* Quick Stats Widget - NEW */}
+          {/* Quick Stats Widget */}
           <QuickStatsWidget
-            subjects={filteredSubjects}
+            subjects={getFilteredSubjects(true)}
             onOpenWeakness={() => setShowSmartWeakness(true)}
             onOpenHeatmap={() => setShowStudyHeatmap(true)}
             onOpenWeeklyReport={() => setShowWeeklyReport(true)}
           />
 
-          {/* Chapter Progress Widget - Syllabus Completion Tracker */}
-          <ChapterProgressWidget
-            overallProgress={getOverallProgress()}
-            subjectProgressList={filteredSubjects.map((sub) =>
-              getChapterSubjectProgress(sub),
-            )}
-          />
-
-          {/* Previous Marks Input Section - Now with stream-specific subjects */}
-          {selectedStream && <PreviousMarksInput stream={selectedStream} />}
-
-          {/* Weakness Analysis Section */}
-          <WeaknessAnalysis />
-
-          {/* 🎯 Today's Focus - Smart study recommendations */}
-          <TodaysFocus
-            stream={selectedStream}
-            subjects={filteredSubjects}
-            completedChapters={completedChaptersMap}
-            onSelectSubject={selectSubject}
-          />
-
-          <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">
+          {/* Your Subjects - Main Focus */}
+          <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-3 mt-4 flex items-center gap-2">
             <BookOpen
               size={20}
               className="text-indigo-600 dark:text-indigo-400"
             />
             Your Subjects
+            {getCompletedSubjects().length > 0 && !showCompletedSubjects && (
+              <span className="text-xs font-normal text-slate-400 ml-auto">
+                {getCompletedSubjects().length} hidden
+              </span>
+            )}
           </h2>
 
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {filteredSubjects.map((sub) => {
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+            {getFilteredSubjects().map((sub) => {
               // Dynamic Icon Mapping
               const Icon =
                 sub.id === "eco"
@@ -1281,19 +1308,19 @@ const App: React.FC = () => {
                 <button
                   key={sub.id}
                   onClick={() => selectSubject(sub)}
-                  className="bg-white dark:bg-slate-900 p-5 rounded-3xl shadow-sm border border-slate-100 dark:border-slate-800 active:scale-95 transition-all flex flex-col items-start gap-4 h-full hover:border-indigo-100 dark:hover:border-indigo-900"
+                  className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 active:scale-95 transition-all flex flex-col items-start gap-3 h-full hover:border-indigo-100 dark:hover:border-indigo-900"
                 >
                   <div
-                    className={`p-4 rounded-2xl ${sub.color} text-white shadow-md relative`}
+                    className={`p-3 rounded-xl ${sub.color} text-white shadow-md relative`}
                   >
-                    <Icon size={28} />
+                    <Icon size={24} />
                     {/* Completion badge */}
                     {(() => {
                       const prog = getChapterSubjectProgress(sub);
                       if (prog.percentComplete === 100) {
                         return (
-                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center">
-                            <CheckCircle2 size={12} className="text-white" />
+                          <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full flex items-center justify-center">
+                            <CheckCircle2 size={10} className="text-white" />
                           </div>
                         );
                       }
@@ -1301,7 +1328,7 @@ const App: React.FC = () => {
                     })()}
                   </div>
                   <div className="text-left w-full">
-                    <span className="font-bold text-slate-800 dark:text-slate-200 block text-lg leading-tight mb-1 truncate w-full">
+                    <span className="font-bold text-slate-800 dark:text-slate-200 block text-sm leading-tight mb-1 truncate w-full">
                       {sub.name}
                     </span>
                     {(() => {
@@ -1335,216 +1362,111 @@ const App: React.FC = () => {
             })}
           </div>
 
-          {/* Study Tools Section - Simplified */}
-          <div className="mt-8">
-            <h2 className="text-lg font-bold text-slate-800 dark:text-white mb-4 flex items-center gap-2">
-              <Zap size={20} className="text-amber-500" />
-              Study Tools
-              <span className="text-xs font-normal text-slate-400 ml-auto">
-                Subject tools in each subject →
-              </span>
+          {/* Study Tools Section - Compact */}
+          <div className="mt-6">
+            <h2 className="text-base font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+              <Zap size={18} className="text-amber-500" />
+              Quick Tools
             </h2>
 
-            {/* Row 1 - Core Study Tools */}
-            <div className="grid grid-cols-4 gap-3">
+            {/* Row 1 - Essential Tools */}
+            <div className="grid grid-cols-4 gap-2">
               <button
                 onClick={() => setShowPomodoro(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-800 transition flex flex-col items-center gap-2"
+                className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition flex flex-col items-center gap-1.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 text-red-500 flex items-center justify-center">
-                  <Timer size={22} />
+                <div className="w-9 h-9 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-500 flex items-center justify-center">
+                  <Timer size={18} />
                 </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Pomodoro
+                <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+                  Timer
                 </span>
               </button>
 
               <button
                 onClick={() => setShowQuickTest(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-purple-200 dark:hover:border-purple-800 transition flex flex-col items-center gap-2"
+                className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition flex flex-col items-center gap-1.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 text-purple-500 flex items-center justify-center">
-                  <Zap size={22} />
+                <div className="w-9 h-9 rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-500 flex items-center justify-center">
+                  <Zap size={18} />
                 </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Quick Test
-                </span>
-              </button>
-
-              <button
-                onClick={() => setShowStudyStreak(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-green-200 dark:hover:border-green-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-green-100 dark:bg-green-900/30 text-green-500 flex items-center justify-center">
-                  <Award size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Streaks
+                <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+                  Test
                 </span>
               </button>
 
               <button
                 onClick={() => setShowMockTestBank(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-yellow-200 dark:hover:border-yellow-800 transition flex flex-col items-center gap-2"
+                className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition flex flex-col items-center gap-1.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 flex items-center justify-center">
-                  <Trophy size={22} />
+                <div className="w-9 h-9 rounded-lg bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 flex items-center justify-center">
+                  <Trophy size={18} />
                 </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Mock Tests
-                </span>
-              </button>
-            </div>
-
-            {/* Row 2 - Revision & Analytics */}
-            <div className="grid grid-cols-4 gap-3 mt-3">
-              <button
-                onClick={() => setShowSpeedRevision(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-500 flex items-center justify-center">
-                  <Flame size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Speed Rev
-                </span>
-              </button>
-
-              <button
-                onClick={() => setShowRevisionDashboard(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-indigo-200 dark:hover:border-indigo-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/30 text-indigo-500 flex items-center justify-center">
-                  <Target size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Revision
-                </span>
-              </button>
-
-              <button
-                onClick={() => setShowErrorLog(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 text-red-500 flex items-center justify-center">
-                  <AlertTriangle size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Error Log
-                </span>
-              </button>
-
-              <button
-                onClick={() => setShowProgressCharts(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-violet-200 dark:hover:border-violet-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-violet-100 dark:bg-violet-900/30 text-violet-500 flex items-center justify-center">
-                  <BarChart3 size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Analytics
-                </span>
-              </button>
-            </div>
-
-            {/* Row 3 - Wellness & Planning */}
-            <div className="grid grid-cols-4 gap-3 mt-3">
-              <button
-                onClick={() => setShowBreathing(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-cyan-200 dark:hover:border-cyan-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-900/30 text-cyan-500 flex items-center justify-center">
-                  <Wind size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Breathe
-                </span>
-              </button>
-
-              <button
-                onClick={() => setShowGoalSetting(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-500 flex items-center justify-center">
-                  <ListChecks size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Goals
-                </span>
-              </button>
-
-              <button
-                onClick={() => setShowDailyTracker(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-rose-200 dark:hover:border-rose-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-900/30 text-rose-500 flex items-center justify-center">
-                  <Calendar size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Daily Plan
-                </span>
-              </button>
-
-              <button
-                onClick={() => setShowAchievements(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-amber-200 dark:hover:border-amber-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-900/30 text-amber-500 flex items-center justify-center">
-                  <Trophy size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Badges
-                </span>
-              </button>
-            </div>
-
-            {/* Row 4 - Quick Actions */}
-            <div className="grid grid-cols-4 gap-3 mt-3">
-              <button
-                onClick={() => setShowBookmarks(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-blue-200 dark:hover:border-blue-800 transition flex flex-col items-center gap-2"
-              >
-                <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 text-blue-500 flex items-center justify-center">
-                  <Bookmark size={22} />
-                </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Bookmarks
+                <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+                  Mock
                 </span>
               </button>
 
               <button
                 onClick={() => setShowLastMinute(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-red-200 dark:hover:border-red-800 transition flex flex-col items-center gap-2"
+                className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition flex flex-col items-center gap-1.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 text-red-500 flex items-center justify-center">
-                  <Clock size={22} />
+                <div className="w-9 h-9 rounded-lg bg-red-100 dark:bg-red-900/30 text-red-500 flex items-center justify-center">
+                  <Clock size={18} />
                 </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
+                <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">
                   Last Min
                 </span>
               </button>
+            </div>
 
+            {/* Row 2 - Secondary Tools */}
+            <div className="grid grid-cols-4 gap-2 mt-2">
               <button
-                onClick={() => setShowBoardExamTips(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+                onClick={() => setShowSpeedRevision(true)}
+                className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition flex flex-col items-center gap-1.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 flex items-center justify-center">
-                  <Target size={22} />
+                <div className="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-500 flex items-center justify-center">
+                  <Flame size={18} />
                 </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Exam Tips
+                <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+                  Speed
                 </span>
               </button>
 
               <button
-                onClick={() => setShowStudyHeatmap(true)}
-                className="bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:border-emerald-200 dark:hover:border-emerald-800 transition flex flex-col items-center gap-2"
+                onClick={() => setShowErrorLog(true)}
+                className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition flex flex-col items-center gap-1.5"
               >
-                <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-500 flex items-center justify-center">
-                  <Calendar size={22} />
+                <div className="w-9 h-9 rounded-lg bg-rose-100 dark:bg-rose-900/30 text-rose-500 flex items-center justify-center">
+                  <AlertTriangle size={18} />
                 </div>
-                <span className="text-xs font-semibold text-slate-600 dark:text-slate-300">
-                  Heatmap
+                <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+                  Errors
+                </span>
+              </button>
+
+              <button
+                onClick={() => setShowBookmarks(true)}
+                className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition flex flex-col items-center gap-1.5"
+              >
+                <div className="w-9 h-9 rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-500 flex items-center justify-center">
+                  <Bookmark size={18} />
+                </div>
+                <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+                  Saved
+                </span>
+              </button>
+
+              <button
+                onClick={() => setShowBreathing(true)}
+                className="bg-white dark:bg-slate-900 p-3 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition flex flex-col items-center gap-1.5"
+              >
+                <div className="w-9 h-9 rounded-lg bg-cyan-100 dark:bg-cyan-900/30 text-cyan-500 flex items-center justify-center">
+                  <Wind size={18} />
+                </div>
+                <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">
+                  Relax
                 </span>
               </button>
             </div>
@@ -1552,65 +1474,44 @@ const App: React.FC = () => {
             {/* Featured: Syllabus Crusher 82 */}
             <button
               onClick={() => setShowSyllabusCrusher82(true)}
-              className="mt-4 w-full bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 p-4 rounded-2xl shadow-lg hover:shadow-xl transition flex items-center gap-4"
+              className="mt-3 w-full bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 p-3 rounded-xl shadow-lg hover:shadow-xl transition flex items-center gap-3"
             >
-              <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center text-3xl">
+              <div className="w-10 h-10 rounded-lg bg-white/20 flex items-center justify-center text-xl">
                 🔥
               </div>
               <div className="text-left flex-1">
-                <span className="text-white font-bold block text-lg">
+                <span className="text-white font-bold block text-sm">
                   Syllabus Crusher 82
                 </span>
                 <span className="text-white/80 text-xs">
-                  Complete any chapter - MCQs, Flashcards, Notes, PYQs & more!
+                  Complete chapters - MCQs, Notes, PYQs
                 </span>
               </div>
-              <ChevronRight className="text-white/70" size={24} />
+              <ChevronRight className="text-white/70" size={20} />
             </button>
-
-            {/* Info Card - Subject Tools */}
-            <div className="mt-4 bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 p-4 rounded-2xl border border-indigo-100 dark:border-indigo-800">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-xl bg-indigo-100 dark:bg-indigo-900/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center shrink-0">
-                  <Sparkles size={20} />
-                </div>
-                <div>
-                  <h4 className="font-bold text-indigo-900 dark:text-indigo-200 text-sm">
-                    Subject-Specific Tools
-                  </h4>
-                  <p className="text-xs text-indigo-700 dark:text-indigo-300 mt-1">
-                    Open any subject to find specialized tools like History
-                    Timeline Quiz, Economics Graph Practice, Hindi व्याकरण Hub,
-                    and more!
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <div className="mt-10 bg-indigo-900 dark:bg-indigo-950 rounded-3xl p-6 text-white relative overflow-hidden shadow-xl">
-            <div className="absolute top-0 right-0 p-10 bg-white/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-            <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 bg-indigo-500/50 rounded-lg">
-                  <Sparkles size={20} className="text-indigo-200" />
-                </div>
-                <span className="font-bold text-indigo-100">
-                  AI Tutor Helper
-                </span>
+          {/* AI Tutor - Compact */}
+          <div className="mt-4 bg-indigo-900 dark:bg-indigo-950 rounded-2xl p-4 text-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-6 bg-white/10 rounded-full blur-2xl -mr-6 -mt-6"></div>
+            <div className="relative z-10 flex items-center gap-3">
+              <div className="p-2 bg-indigo-500/50 rounded-lg">
+                <Sparkles size={18} className="text-indigo-200" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Stuck on a concept?</h3>
-              <p className="text-indigo-200 text-sm mb-4">
-                Ask our AI to explain complex definitions in simple words.
-              </p>
+              <div className="flex-1">
+                <span className="font-bold text-sm">AI Tutor</span>
+                <p className="text-indigo-200 text-xs">
+                  Get concepts explained
+                </p>
+              </div>
               <button
                 onClick={() => {
                   setAiQuery("");
                   setAiModalOpen(true);
                 }}
-                className="w-full py-3 bg-white text-indigo-900 font-bold rounded-xl text-sm hover:bg-indigo-50 transition"
+                className="px-4 py-2 bg-white text-indigo-900 font-bold rounded-lg text-xs"
               >
-                Try AI Explanation
+                Ask AI
               </button>
             </div>
           </div>
@@ -2027,8 +1928,6 @@ const App: React.FC = () => {
     );
   };
 
-  // ... (Keeping renderChapterDetail, renderStudyMode, renderAiModal the same as before, just ensuring imports)
-
   const renderChapterDetail = () => {
     if (!selectedChapter) return null;
 
@@ -2210,7 +2109,7 @@ const App: React.FC = () => {
                     <span className="px-3 py-1 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-300 rounded-full text-xs font-bold border border-emerald-100 dark:border-emerald-800">
                       {selectedChapter.mcqs.length} MCQs
                     </span>
-                    <span className="px-3 py-1 bg-pink-50 dark:bg-pink-900/30 text-pink-600 dark:text-pink-300 rounded-full text-xs font-bold border border-pink-100 dark:border-pink-800">
+                    <span className="px-3 py-1 bg-pink-50 dark:bg-pink-900/20 text-pink-600 dark:text-pink-300 rounded-full text-xs font-bold border border-pink-100 dark:border-pink-800">
                       {selectedChapter.reels.length} Reels
                     </span>
                   </div>
@@ -2576,7 +2475,33 @@ const App: React.FC = () => {
                       </div>
                       <div className="w-full h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
                         <div
-                          className={`h-full ${sub.color} transition-all duration-500`}
+                          className={`h-full rounded-full transition-all ${
+                            sub.id === "eco"
+                              ? "bg-green-500"
+                              : sub.id === "ocm"
+                                ? "bg-blue-500"
+                                : sub.id === "sp"
+                                  ? "bg-purple-500"
+                                  : sub.id === "bk" || sub.id === "math"
+                                    ? "bg-yellow-500"
+                                    : sub.id === "his"
+                                      ? "bg-red-500"
+                                      : sub.id === "geo"
+                                        ? "bg-teal-500"
+                                        : sub.id === "phy"
+                                          ? "bg-indigo-500"
+                                          : sub.id === "bio"
+                                            ? "bg-pink-500"
+                                            : sub.id === "chem"
+                                              ? "bg-rose-500"
+                                              : sub.id === "soc"
+                                                ? "bg-lime-500"
+                                                : sub.id === "pol"
+                                                  ? "bg-emerald-500"
+                                                  : sub.id === "eng"
+                                                    ? "bg-cyan-500"
+                                                    : "bg-gray-300"
+                          }`}
                           style={{ width: `${progressPercent}%` }}
                         />
                       </div>
@@ -3214,6 +3139,24 @@ const App: React.FC = () => {
       {showEcoBoardCrasher && (
         <EcoBoardCrasher onClose={() => setShowEcoBoardCrasher(false)} />
       )}
+
+      {/* Settings Panel */}
+      <SettingsPanel
+        isOpen={showSettings}
+        onClose={() => setShowSettings(false)}
+        darkMode={darkMode}
+        setDarkMode={setDarkMode}
+        showCompletedSubjects={showCompletedSubjects}
+        setShowCompletedSubjects={setShowCompletedSubjects}
+        completedSubjects={getCompletedSubjects()}
+        onResetOnboarding={() => {
+          localStorage.clear();
+          setIsOnboarded(false);
+          setUserProfile(null);
+          setSelectedStream(null);
+          setView("STREAM_SELECT");
+        }}
+      />
     </div>
   );
 };
