@@ -2582,6 +2582,134 @@ Good Governance means effective, transparent, and accountable administration tha
 India has made significant progress in governance reforms. However, effective implementation and citizen awareness are key to achieving good governance goals.`,
       },
     ],
+
+    // ==================== TEXTBOOK EXERCISES - CHAPTER 5 ====================
+    textbookExercises: {
+      title: "Chapter 5 - Textbook Exercises with Answers",
+
+      // Q.1 (A) MCQs
+      mcqs: [
+        {
+          q: "The concept of Lokpal is taken from",
+          options: ["United States", "United Kingdom", "Sweden", "Russia"],
+          correct: 2,
+          answer: "Sweden",
+          explanation:
+            "The concept of Lokpal (Ombudsman) is borrowed from Sweden. Sweden was the first country to establish the institution of Ombudsman in 1809. The word 'Ombudsman' itself is Swedish, meaning 'representative' or 'agent'.",
+        },
+        {
+          q: "The concept of 'Citizens Charter' is part of",
+          options: [
+            "POSDCORB",
+            "Development administration",
+            "Good governance",
+            "NGO activity",
+          ],
+          correct: 2,
+          answer: "Good governance",
+          explanation:
+            "Citizens Charter is a key component of Good Governance. It is a document that defines the standards of service delivery by government departments to citizens, including time limits, quality standards, and grievance redressal mechanisms. It was first introduced in UK (1991) and adopted in India (1997).",
+        },
+      ],
+
+      // Q.1 (B) State Concept
+      conceptIdentification: [
+        {
+          statement:
+            "Person investigating complaints against government officials",
+          answer: "Ombudsman / Lokpal / Lokayukta",
+          explanation:
+            "An Ombudsman is an independent official appointed to investigate citizens' complaints against government officials and maladministration. In India, Lokpal (at Central level) and Lokayukta (at State level) serve this function. They are anti-corruption institutions that can investigate complaints of corruption and misconduct against public servants.",
+        },
+      ],
+
+      // Q.2 (A) Concept Map
+      conceptMaps: [
+        {
+          title: "Values of Good Governance",
+          question: "Complete the concept map for Values of Good Governance",
+          answer: {
+            centerNode: "VALUES OF GOOD GOVERNANCE",
+            members: [
+              "Participation",
+              "Rule of Law",
+              "Transparency",
+              "Responsiveness",
+              "Consensus Oriented",
+              "Equity and Inclusiveness",
+              "Effectiveness and Efficiency",
+              "Accountability",
+            ],
+            note: "These 8 values were identified by UNDP (United Nations Development Programme) as pillars of good governance",
+            additionalInfo:
+              "The question shows 'Accountable' as one value - the complete list includes all 8 UNDP values",
+          },
+        },
+      ],
+
+      // Q.2 (B) / Q.3 True/False with Reasons
+      trueFalse: [
+        {
+          statement:
+            "Lokayukta can investigate complaints against political executives.",
+          answer: true,
+          reason:
+            "**TRUE**\n\n**Reasons:**\n\n1. **Jurisdiction of Lokayukta**:\n   - Lokayukta is a state-level anti-corruption ombudsman\n   - Can investigate complaints against political executives including:\n     - Chief Minister (in most states)\n     - Ministers\n     - MLAs/MLCs\n     - State government officials\n\n2. **Powers**:\n   - Receive complaints of corruption and misconduct\n   - Conduct investigations\n   - Recommend action to competent authority\n   - Powers of civil court for investigation\n\n3. **Legal Framework**:\n   - Established under state Lokayukta Acts\n   - Karnataka was first state (1984)\n   - Most states now have Lokayukta\n\n4. **Example**:\n   - Karnataka Lokayukta investigated and recommended action against Chief Minister B.S. Yeddyurappa in 2011\n\n5. **Variations**:\n   - Jurisdiction varies by state\n   - Some states include CM, others don't\n   - Maharashtra Lokayukta can investigate CM\n\n**Note**: At Central level, Lokpal can investigate PM (with some restrictions), Ministers, and MPs.",
+        },
+        {
+          statement:
+            "Good Governance aims at efficient use of natural resources.",
+          answer: true,
+          reason:
+            "**TRUE**\n\n**Reasons:**\n\n1. **Definition of Good Governance**:\n   - Good governance means efficient, effective, transparent, and accountable management of public affairs\n   - Includes sustainable use of resources\n\n2. **UNDP Values Include**:\n   - **Effectiveness and Efficiency**: Making best use of resources\n   - This explicitly includes natural resources\n\n3. **Environmental Governance**:\n   - Good governance encompasses environmental governance\n   - Sustainable development requires efficient resource use\n   - Prevents exploitation and wastage\n\n4. **Resource Management Aspects**:\n   - Water resource management\n   - Forest and land management\n   - Mineral resource allocation\n   - Energy efficiency\n\n5. **Government Initiatives**:\n   - Environmental clearance processes\n   - Forest Conservation Act\n   - Water conservation policies\n   - Renewable energy promotion\n\n6. **Intergenerational Equity**:\n   - Good governance considers future generations\n   - Cannot deplete resources unsustainably\n\n**Conclusion**: Efficient use of natural resources is integral to good governance as it ensures sustainable development and equitable distribution for present and future generations.",
+        },
+      ],
+
+      // Q.3 Co-relation (Note: Skip Ch 3 & 5 for Co-relation as per Mind Faces - but including for completeness)
+      coRelation: [
+        {
+          concepts: "Good Governance and E-Governance",
+          modelAnswer:
+            "**Co-relation: Good Governance and E-Governance**\n\n**Connection**: E-Governance is a TOOL to achieve Good Governance. They are complementary concepts where technology enables better governance.\n\n**What is Good Governance?**\n- Efficient, transparent, accountable administration\n- Citizen-centric approach\n- Rule of law and participation\n- Values: Transparency, Accountability, Responsiveness, etc.\n\n**What is E-Governance?**\n- Use of ICT (Information and Communication Technology) in government\n- Digital delivery of services\n- Electronic interactions between government and citizens\n\n**How E-Governance Promotes Good Governance:**\n\n| Good Governance Value | E-Governance Contribution |\n|----------------------|---------------------------|\n| **Transparency** | RTI portals, online budgets, public data |\n| **Accountability** | Digital trails, audit systems, tracking |\n| **Responsiveness** | Quick service delivery, online grievances |\n| **Efficiency** | Reduced paperwork, faster processing |\n| **Participation** | Online consultations, feedback systems |\n| **Equity** | Services to remote areas via CSCs |\n\n**Examples in India:**\n- **Digital India Programme**: Comprehensive e-governance initiative\n- **Aadhaar**: Digital identity for service delivery\n- **DBT (Direct Benefit Transfer)**: Eliminates middlemen\n- **UMANG App**: Unified access to government services\n- **DigiLocker**: Digital document storage\n- **e-Courts**: Online case status, filing\n\n**Benefits:**\n1. Reduces corruption (less human interface)\n2. Increases speed and efficiency\n3. 24/7 service availability\n4. Better record management\n5. Data-driven decision making\n\n**Challenges:**\n- Digital divide (rural vs urban)\n- Digital literacy gaps\n- Infrastructure limitations\n- Cybersecurity concerns\n\n**Conclusion**: E-Governance is essential for achieving good governance in the 21st century. It transforms governance from 'government-centric' to 'citizen-centric'.",
+        },
+      ],
+
+      // Q.4 Express Opinion
+      opinionQuestions: [
+        {
+          topic: "E-governance speeds up governmental processes",
+          modelAnswer:
+            "**Opinion: E-Governance Speeds Up Governmental Processes**\n\n**Statement**: Yes, E-governance significantly speeds up governmental processes by leveraging technology for efficient service delivery.\n\n**How E-Governance Speeds Up Processes:**\n\n**1. Reduced Processing Time**:\n- Online applications processed faster\n- No physical file movement delays\n- Automated workflows\n- Example: Passport - 3-4 weeks to 1 week with e-application\n\n**2. Elimination of Manual Steps**:\n- Digital signatures instead of physical\n- Auto-verification using databases (Aadhaar)\n- Pre-filled forms from existing data\n\n**3. 24/7 Availability**:\n- Services accessible anytime\n- No waiting for office hours\n- No queue at counters\n\n**4. Parallel Processing**:\n- Multiple approvals can happen simultaneously\n- Real-time status updates\n- Bottlenecks easily identified\n\n**Examples of Speed Improvement**:\n\n| Service | Before | After E-Governance |\n|---------|--------|--------------------|\n| Passport | 30-45 days | 7-10 days |\n| Income Tax Refund | 6-12 months | 1-3 months |\n| Driving License | 15-30 days | Same day (some states) |\n| Land Records | Weeks | Minutes |\n\n**5. Direct Benefit Transfer**:\n- Subsidies reach within hours\n- No intermediaries causing delays\n- Bank account credited directly\n\n**Conclusion**: E-governance has revolutionized service delivery speed. What took weeks now takes days or even hours.",
+        },
+        {
+          topic: "E-governance brought administration closer to people",
+          modelAnswer:
+            "**Opinion: E-Governance Brought Administration Closer to People**\n\n**Statement**: Yes, E-governance has bridged the gap between government and citizens, making administration more accessible and citizen-friendly.\n\n**How E-Governance Brought Administration Closer:**\n\n**1. Anytime, Anywhere Access**:\n- Services from home via internet\n- Mobile apps (UMANG, mAadhaar)\n- No need to visit government offices\n- 24/7 availability\n\n**2. Common Service Centres (CSCs)**:\n- 4+ lakh CSCs across rural India\n- Government services at village level\n- 'Sarkar aapke dwar' (Government at your doorstep)\n\n**3. Single Window Systems**:\n- Multiple services at one portal\n- No running to different offices\n- Example: eSevakendras, MeeSeva\n\n**4. Grievance Redressal**:\n- Online complaint systems (CPGRAMS)\n- Track complaint status\n- Time-bound response\n- Direct communication with officials\n\n**5. Information Access**:\n- RTI online\n- Government data portals (data.gov.in)\n- Scheme information easily available\n- Beneficiary lists online\n\n**6. Reduced Middlemen**:\n- Direct interaction with government\n- DBT eliminates agents\n- Less corruption, more trust\n\n**Examples**:\n- **DigiLocker**: Documents always accessible\n- **e-Hospital**: Appointment from home\n- **PM-KISAN**: Money directly to farmers\n- **SWAYAM**: Education at doorstep\n\n**Impact**:\n- Empowered citizens\n- Reduced distance to administration\n- Greater trust in government\n- Inclusive service delivery\n\n**Conclusion**: E-governance has democratized access to government services, truly bringing administration closer to the common citizen, especially in remote areas.",
+        },
+      ],
+
+      // Q.5 Short Answer (80-100 words) - 5 marks
+      shortAnswers: [
+        {
+          question:
+            "Explain various institutions protecting rights of different sections in India.",
+          marks: 5,
+          modelAnswer:
+            "**Institutions Protecting Rights of Different Sections in India:**\n\n**1. National Human Rights Commission (NHRC)**:\n- Protects human rights of all citizens\n- Established: 1993 under Protection of Human Rights Act\n- Investigates violations by public servants\n- Quasi-judicial powers\n\n**2. National Commission for Women (NCW)**:\n- Protects rights of women\n- Established: 1992\n- Reviews laws, investigates complaints\n- Advises government on women's issues\n\n**3. National Commission for Scheduled Castes (NCSC)**:\n- Constitutional body (Article 338)\n- Protects SC rights against discrimination\n- Monitors implementation of safeguards\n\n**4. National Commission for Scheduled Tribes (NCST)**:\n- Constitutional body (Article 338A)\n- Protects tribal rights\n- Monitors forest rights implementation\n\n**5. National Commission for Minorities (NCM)**:\n- Protects minority community rights\n- Established: 1992 (statutory in 1993)\n- Muslims, Christians, Sikhs, Buddhists, Jains, Parsis\n\n**6. National Commission for Backward Classes (NCBC)**:\n- Constitutional body (102nd Amendment, 2018)\n- Protects OBC rights\n- Advises on inclusion in OBC list\n\n**7. National Commission for Protection of Child Rights (NCPCR)**:\n- Protects child rights\n- Established: 2007 under CPCR Act, 2005\n- Monitors child rights violations\n\n**8. Central Information Commission (CIC)**:\n- Protects right to information\n- Hears RTI appeals\n- Promotes transparency\n\n**State Level**: Each state has State Human Rights Commission, State Women Commission, etc.\n\n**Conclusion**: India has comprehensive institutional framework to protect rights of all sections, ensuring inclusive governance.",
+        },
+      ],
+
+      // Q.6 Long Answer (150-200 words) - 10 marks
+      longAnswers: [
+        {
+          question:
+            "Explain in detail the following values of Good Governance: (a) Participation (b) Transparency (c) Responsiveness (d) Accountability",
+          marks: 10,
+          modelAnswer:
+            "### Values of Good Governance\n\n#### Introduction\nGood governance is the process of decision-making and implementation that is participatory, transparent, accountable, effective, and equitable. The UNDP has identified 8 characteristics of good governance. Here we discuss four key values:\n\n#### (a) Participation\n\n**Definition**: Involvement of citizens in decision-making processes of the state at all levels.\n\n**Importance**:\n- Democracy means 'rule by the people'\n- Ensures policies reflect people's needs\n- Creates ownership and compliance\n- Strengthens legitimacy of government\n\n**Forms of Participation**:\n1. **Electoral**: Voting in elections\n2. **Consultative**: Public hearings, surveys\n3. **Direct**: Gram Sabha, referendums\n4. **Civil Society**: NGOs, pressure groups\n5. **Digital**: Online feedback, e-consultations\n\n**Examples in India**:\n- Gram Sabha meetings in Panchayati Raj\n- Public hearings for environmental clearance\n- MyGov.in portal for citizen engagement\n- Pre-budget consultations\n\n**Challenges**:\n- Low voter turnout\n- Elite capture of participatory forums\n- Lack of awareness\n- Limited access for marginalized groups\n\n#### (b) Transparency\n\n**Definition**: Free flow of information about government operations, decisions, and processes to the public.\n\n**Importance**:\n- Enables informed citizenship\n- Prevents corruption and misuse\n- Builds trust in government\n- Essential for accountability\n\n**Elements of Transparency**:\n1. **Access to Information**: RTI Act, 2005\n2. **Open Data**: data.gov.in portal\n3. **Public Disclosure**: Asset declarations, budgets\n4. **Media Freedom**: Press reporting on government\n\n**Initiatives in India**:\n\n| Initiative | Purpose |\n|------------|----------|\n| RTI Act | Access to government information |\n| e-Procurement | Open tendering process |\n| GFR Rules | Financial transparency |\n| Proactive Disclosure | Suo motu information sharing |\n\n**Benefits**:\n- Reduced corruption\n- Better public scrutiny\n- Improved decision-making\n- Enhanced credibility\n\n#### (c) Responsiveness\n\n**Definition**: Government institutions and processes serving all stakeholders within a reasonable timeframe.\n\n**Importance**:\n- Citizen satisfaction\n- Efficient service delivery\n- Trust in administration\n- Addresses grievances promptly\n\n**Indicators of Responsiveness**:\n1. Time taken to deliver services\n2. Quality of services\n3. Grievance redressal speed\n4. Adaptability to changing needs\n\n**Measures to Ensure Responsiveness**:\n- **Citizens Charter**: Service delivery standards\n- **Right to Service Acts**: Time-bound delivery (state level)\n- **Sevottam Model**: Quality management framework\n- **CPGRAMS**: Online grievance portal\n- **e-Governance**: Quick service delivery\n\n**Examples**:\n- Passport Seva Kendras - service in 7-10 days\n- Income Tax refund within 90 days\n- RTI response within 30 days\n\n**Challenges**:\n- Bureaucratic delays\n- Staff shortages\n- Infrastructure gaps\n- Attitude issues\n\n#### (d) Accountability\n\n**Definition**: Government and its officials being answerable for their decisions and actions to the public.\n\n**Importance**:\n- Prevents abuse of power\n- Ensures responsible behavior\n- Builds public trust\n- Improves performance\n\n**Types of Accountability**:\n\n| Type | Mechanism |\n|------|------------|\n| **Political** | Elections, Parliament |\n| **Administrative** | Departmental hierarchy |\n| **Legal** | Courts, tribunals |\n| **Social** | Media, civil society |\n| **Financial** | CAG audit, PAC |\n\n**Institutions for Accountability**:\n1. **Parliament/Legislature**: Questions, debates, committees\n2. **Comptroller and Auditor General (CAG)**: Financial audit\n3. **Lokpal/Lokayukta**: Anti-corruption\n4. **Central Vigilance Commission (CVC)**: Vigilance\n5. **Judiciary**: Judicial review\n6. **Media**: Public scrutiny\n\n**Mechanisms**:\n- RTI Act for information\n- Social audit of schemes (MGNREGA)\n- Outcome budgeting\n- Performance appraisals\n- Asset declarations\n\n#### Interconnection of Values\n\nThese four values are interconnected:\n- **Transparency** enables **accountability**\n- **Participation** ensures **responsiveness**\n- **Accountability** promotes **transparency**\n- All four together constitute **good governance**\n\n#### Conclusion\n\nParticipation, transparency, responsiveness, and accountability are the four pillars of good governance. India has made significant progress through RTI Act, e-governance, Lokpal, and citizen engagement platforms. However, effective implementation remains the key challenge. Good governance is not just an end but a means to achieve development, justice, and citizen welfare.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 6: INDIA AND THE WORLD ====================
