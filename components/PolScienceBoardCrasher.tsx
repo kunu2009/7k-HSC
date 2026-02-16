@@ -705,6 +705,177 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
               </div>
             )}
 
+            {/* Incorrect Pairs - Q.1(B) */}
+            {chapter.textbookExercises.incorrectPairs && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-pairs" ? null : "tb-pairs",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-orange-50 dark:bg-orange-900/20"
+                >
+                  <h4 className="font-bold text-orange-800 dark:text-orange-200 flex items-center gap-2">
+                    <Target size={20} /> Q.1(B) Identify Incorrect Pair - 3
+                    marks ({chapter.textbookExercises.incorrectPairs.length}{" "}
+                    sets)
+                  </h4>
+                  {expandedSection === "tb-pairs" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-pairs" && (
+                  <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+                    {chapter.textbookExercises.incorrectPairs.map(
+                      (item: any, idx: number) => {
+                        const itemId = `tb-pair-${idx}`;
+                        const isRevealed = showAnswers[itemId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                          >
+                            <p className="font-medium text-slate-800 dark:text-white mb-3">
+                              Identify the incorrect pair:
+                            </p>
+                            <div className="space-y-2 mb-3">
+                              {item.pairs.map((pair: any, pIdx: number) => (
+                                <div
+                                  key={pIdx}
+                                  className={`p-2 rounded-lg text-sm ${
+                                    isRevealed && !pair.correct
+                                      ? "bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300 border-2 border-red-500"
+                                      : "bg-white dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                                  }`}
+                                >
+                                  ({String.fromCharCode(105 + pIdx)}){" "}
+                                  {pair.item1} - {pair.item2}
+                                </div>
+                              ))}
+                            </div>
+                            <button
+                              onClick={() => toggleAnswer(itemId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-orange-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed ? "Hide Answer" : "Show Answer"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-3 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-lg">
+                                <p className="font-bold text-red-600 dark:text-red-400 mb-1">
+                                  ❌ Incorrect: {item.incorrectPair}
+                                </p>
+                                <p className="font-bold text-green-600 dark:text-green-400 mb-2">
+                                  ✅ Correct: {item.correction}
+                                </p>
+                                <p className="text-sm text-slate-600 dark:text-slate-400">
+                                  {item.explanation}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Odd One Out - Q.1(E) */}
+            {chapter.textbookExercises.oddOneOut && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-odd" ? null : "tb-odd",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-rose-50 dark:bg-rose-900/20"
+                >
+                  <h4 className="font-bold text-rose-800 dark:text-rose-200 flex items-center gap-2">
+                    <Star size={20} /> Q.1(E) Odd One Out - 4 marks (
+                    {chapter.textbookExercises.oddOneOut.length} sets)
+                  </h4>
+                  {expandedSection === "tb-odd" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-odd" && (
+                  <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+                    {chapter.textbookExercises.oddOneOut.map(
+                      (item: any, idx: number) => {
+                        const itemId = `tb-odd-${idx}`;
+                        const isRevealed = showAnswers[itemId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                          >
+                            <p className="font-medium text-slate-800 dark:text-white mb-3">
+                              Find the odd one out:
+                            </p>
+                            <div className="flex flex-wrap gap-2 mb-3">
+                              {item.set.map((word: string, wIdx: number) => (
+                                <span
+                                  key={wIdx}
+                                  className={`px-3 py-1 rounded-full text-sm font-medium ${
+                                    isRevealed && word === item.answer
+                                      ? "bg-rose-500 text-white"
+                                      : "bg-white dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                                  }`}
+                                >
+                                  {word}
+                                </span>
+                              ))}
+                            </div>
+                            <button
+                              onClick={() => toggleAnswer(itemId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-rose-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed ? "Hide Answer" : "Show Answer"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-3 p-3 bg-rose-50 dark:bg-rose-900/20 rounded-lg">
+                                <p className="font-bold text-rose-700 dark:text-rose-300 mb-2">
+                                  🎯 Odd One: {item.answer}
+                                </p>
+                                <p className="text-sm text-slate-600 dark:text-slate-400">
+                                  <strong>Reason:</strong> {item.reason}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Concept Identification */}
             {chapter.textbookExercises.conceptIdentification && (
               <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">

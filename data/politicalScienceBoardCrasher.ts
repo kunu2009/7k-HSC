@@ -2148,6 +2148,177 @@ Despite being a successful democracy, India faces multiple challenges to interna
 India's unity depends on addressing these challenges through inclusive development, good governance, and promoting national consciousness while respecting diversity.`,
       },
     ],
+
+    // ==================== TEXTBOOK EXERCISES - CHAPTER 4 ====================
+    textbookExercises: {
+      title: "Chapter 4 - Textbook Exercises with Answers",
+
+      // Q.1 (A) MCQs
+      mcqs: [
+        {
+          q: "'Unity in diversity' is one of the important Indian values associated with",
+          options: [
+            "Panchayati Raj",
+            "National integration",
+            "Concept of a nation",
+            "Concept of 'melting pot'",
+          ],
+          correct: 1,
+          answer: "National integration",
+          explanation:
+            "'Unity in diversity' is the core principle of National Integration in India. It means bringing together different religions, languages, cultures, and communities into one united nation while respecting their diversity.",
+        },
+        {
+          q: "Charu Majumdar is associated with the",
+          options: [
+            "JKLF",
+            "Naxal movement",
+            "Hizb-ul-Mujahideen",
+            "Assam Oil Blockage",
+          ],
+          correct: 1,
+          answer: "Naxal movement",
+          explanation:
+            "Charu Majumdar was one of the founders of the Naxalite movement in India. He led the Naxalbari uprising in 1967 in West Bengal. The movement is named after Naxalbari village. He founded CPI (Marxist-Leninist).",
+        },
+      ],
+
+      // Q.1 (B) Identify incorrect pair
+      incorrectPairs: [
+        {
+          pairs: [
+            {
+              item1: "Jawaharlal Nehru",
+              item2: "Discovery of India",
+              correct: true,
+            },
+            {
+              item1: "Struggle for rights of Tamil",
+              item2: "LTTE",
+              correct: true,
+            },
+            {
+              item1: "National Integration Council",
+              item2: "Article 370",
+              correct: false,
+            },
+          ],
+          incorrectPair: "National Integration Council - Article 370",
+          correction:
+            "National Integration Council - National Unity / Promoting Integration",
+          explanation:
+            "Article 370 was related to the special status of Jammu & Kashmir (now abrogated in 2019), NOT to National Integration Council. The NIC was set up in 1961 to promote national integration and address communal harmony issues.",
+        },
+      ],
+
+      // Q.2 (A) Odd One Out
+      oddOneOut: [
+        {
+          set: ["Naxalism", "Nationalism", "Terrorism", "Extremism"],
+          answer: "Nationalism",
+          reason:
+            "Nationalism is a POSITIVE concept (love for one's nation, patriotism), while Naxalism, Terrorism, and Extremism are all NEGATIVE concepts that pose threats to peace and stability. Nationalism promotes unity; the others cause destruction.",
+        },
+      ],
+
+      // Q.1 (D) / Q.2 (B) State Concept
+      conceptIdentification: [
+        {
+          statement:
+            "Threat to use violence with an intention to create panic in the society",
+          answer: "Terrorism",
+          explanation:
+            "Terrorism is the unlawful use of violence and intimidation, especially against civilians, to create fear and panic in society for political, religious, or ideological purposes. It aims to coerce governments and populations through terror.",
+        },
+        {
+          statement:
+            "Involvement of people in decision making process of state",
+          answer:
+            "Political Participation / Democratic Participation / Participatory Democracy",
+          explanation:
+            "Political participation refers to citizens' involvement in the political process, including voting, contesting elections, joining political parties, participating in protests, engaging with representatives, and contributing to policy discussions.",
+        },
+      ],
+
+      // Q.2 (A) / Q.3 (A) Concept Map
+      conceptMaps: [
+        {
+          title: "Values of National Integration",
+          question:
+            "Complete the concept map for Values of National Integration",
+          answer: {
+            centerNode: "VALUES OF NATIONAL INTEGRATION",
+            members: [
+              "Unity in Diversity",
+              "Secularism",
+              "Tolerance",
+              "Equality",
+              "Brotherhood",
+              "Patriotism",
+              "Respect for all religions",
+              "Linguistic harmony",
+              "Cultural unity",
+              "National consciousness",
+            ],
+            note: "These values help bind the diverse Indian society into one nation",
+            importance:
+              "Essential for maintaining peace, stability, and progress of the nation",
+          },
+        },
+      ],
+
+      // Q.3 (B) True/False with Reasons
+      trueFalse: [
+        {
+          statement:
+            "Democracy is required to establish national integration and social transformation.",
+          answer: true,
+          reason:
+            "**TRUE**\n\n**Reasons:**\n\n1. **Democracy Promotes Inclusion**:\n   - All citizens have equal political rights\n   - Minorities get representation\n   - Decision-making is participatory\n   - Creates sense of belonging\n\n2. **Democracy Enables Social Transformation**:\n   - Constitutional provisions for equality (Articles 14-18)\n   - Reservation policies for disadvantaged groups\n   - Legal framework against discrimination\n   - Freedom to organize and demand rights\n\n3. **Democracy and National Integration**:\n   - Federal structure accommodates regional diversity\n   - Multiple languages recognized (8th Schedule)\n   - Religious freedom guaranteed (Articles 25-28)\n   - Peaceful resolution of conflicts through dialogue\n\n4. **Examples**:\n   - Linguistic reorganization of states (1956) through democratic process\n   - Reservation policies transformed social hierarchy\n   - Panchayati Raj empowered local communities\n\n**Conclusion**: Democracy provides the framework for addressing grievances peacefully, ensuring representation for all, and bringing about social change without violence.",
+        },
+        {
+          statement:
+            "National movement in India played an important role in national integration.",
+          answer: true,
+          reason:
+            "**TRUE**\n\n**Reasons:**\n\n1. **United Diverse Groups**:\n   - People from all religions, castes, regions joined together\n   - Common goal of independence transcended differences\n   - Congress became umbrella organization for all\n\n2. **Created National Consciousness**:\n   - Sense of 'Indian' identity emerged\n   - Shared symbols: flag, anthem, leaders\n   - National heroes from all regions (Bhagat Singh, Netaji, Gandhi)\n\n3. **Values of Integration**:\n   - Gandhi's emphasis on Hindu-Muslim unity\n   - Secularism as foundation principle\n   - 'Unity in diversity' became national motto\n\n4. **Institutional Foundation**:\n   - Indian National Congress (1885) - first all-India organization\n   - Constituent Assembly included all groups\n   - Constitution reflected integration values\n\n5. **Mass Movements**:\n   - Non-Cooperation, Civil Disobedience, Quit India\n   - Participation from all sections of society\n   - Created bonds across regional and religious lines\n\n**Conclusion**: The national movement was the crucible in which Indian national identity was forged, laying the foundation for post-independence national integration.",
+        },
+      ],
+
+      // Q.4 Co-relation (Note: Skip Ch 3 & 5 for Co-relation as per Mind Faces)
+      coRelation: [
+        {
+          concepts: "National Unity and Regional Aspirations",
+          modelAnswer:
+            "**Co-relation: National Unity and Regional Aspirations**\n\n**Connection**: National unity and regional aspirations are not contradictory but need to be balanced. Healthy regional aspirations can coexist with national unity in a federal democracy.\n\n**Understanding the Relationship:**\n\n**1. Regional Aspirations - What are they?**\n- Demands for linguistic states\n- Economic development of backward regions\n- Protection of local culture and identity\n- Greater autonomy in governance\n- Representation in central government\n\n**2. How They Can THREATEN National Unity:**\n- Separatist movements (Kashmir, Northeast insurgencies)\n- Sons-of-soil movements against migrants\n- Inter-state disputes (water, borders)\n- Linguistic chauvinism\n- Regional parties prioritizing region over nation\n\n**3. How They Can STRENGTHEN National Unity:**\n- Linguistic reorganization (1956) accommodated regional aspirations, strengthening unity\n- Federal structure allows regional expression within national framework\n- Regional development reduces grievances\n- Cultural diversity celebrated as national asset\n\n**4. Balancing Act:**\n\n| Accommodating Aspirations | Maintaining Unity |\n|---------------------------|-------------------|\n| State autonomy | Strong Centre |\n| Regional languages | Hindi + English link |\n| Local governance | National integration programs |\n| Cultural expression | Common citizenship |\n\n**5. Constitutional Framework:**\n- Division of powers (Union, State, Concurrent lists)\n- Article 1: India as Union of States\n- Equal representation in Rajya Sabha not based on population\n- Governor as Centre's representative\n\n**6. Success Stories:**\n- Creation of new states (Jharkhand, Uttarakhand, Telangana) resolved regional demands peacefully\n- Regional parties becoming coalition partners at Centre\n- Sixth Schedule for Northeast tribal areas\n\n**Conclusion**: The key is to address legitimate regional aspirations through democratic means while maintaining national unity. Suppression of aspirations leads to alienation; accommodation leads to integration.",
+        },
+      ],
+
+      // Q.5 Express Opinion (Note: Skip Ch 4 for Opinion as per Mind Faces!)
+      opinionQuestions: [
+        {
+          topic: "Peace and stability are needed for the nation's progress",
+          modelAnswer:
+            "**Opinion: Peace and Stability for Nation's Progress**\n\n**Statement**: Yes, peace and stability are ESSENTIAL prerequisites for a nation's progress and development.\n\n**Reasons:**\n\n**1. Economic Development**:\n- Investment (both domestic and foreign) requires stability\n- Businesses cannot operate in conflict zones\n- Tourism depends on peaceful environment\n- Example: J&K's economy suffered due to militancy; improving now\n\n**2. Social Development**:\n- Education systems disrupted by violence\n- Healthcare services cannot reach conflict areas\n- Brain drain from unstable regions\n- Social capital destroyed by communal conflicts\n\n**3. Infrastructure**:\n- Development projects halted in disturbed areas\n- Resources diverted to security instead of development\n- Naxal-affected areas lack basic infrastructure\n\n**4. Human Capital**:\n- Youth radicalized instead of educated\n- Skilled people migrate to peaceful areas\n- Psychological trauma affects productivity\n\n**5. National Image**:\n- Instability damages international reputation\n- Reduces soft power\n- Affects diplomatic relations\n\n**Examples:**\n- Northeast: Development accelerated after peace accords\n- Punjab: Post-militancy economic boom\n- Rwanda: Remarkable progress after genocide ended\n\n**Counter-argument Addressed**:\n- Some argue conflict drives change (revolutions)\n- But sustainable progress requires peace\n- Democratic change is more lasting than violent change\n\n**Conclusion**: As Mahatma Gandhi said, 'There is no way to peace, peace is the way.' Progress and development can only be sustained in an environment of peace and stability.",
+        },
+      ],
+
+      // Q.6 Short Answers (80-100 words) - 5 marks each
+      shortAnswers: [
+        {
+          question: "What is left wing extremism in India?",
+          marks: 5,
+          modelAnswer:
+            "**Left Wing Extremism (LWE) / Naxalism in India:**\n\n**Definition**: Armed revolutionary movement based on Maoist ideology, seeking to overthrow the state through violent armed struggle.\n\n**Origin**:\n- Started in Naxalbari, West Bengal (1967)\n- Named 'Naxalism' after the village\n- Founded by Charu Majumdar, Kanu Sanyal\n- Inspired by Mao Zedong's ideology\n\n**Ideology**:\n- Armed struggle against exploitation\n- Support for peasants and tribals\n- Overthrow of 'bourgeois' state\n- Establish communist rule\n\n**Affected Areas (Red Corridor)**:\n- Chhattisgarh, Jharkhand, Odisha\n- Bihar, Maharashtra, Andhra Pradesh/Telangana\n- Parts of West Bengal, Madhya Pradesh\n\n**Major Groups**:\n- CPI (Maoist) - banned organization\n- People's Liberation Guerrilla Army (PLGA)\n\n**Causes**:\n\n| Social | Economic | Governance |\n|--------|----------|------------|\n| Tribal exploitation | Land alienation | Poor development |\n| Caste discrimination | Forest rights denial | Absence of state services |\n| Social inequality | Unemployment | Police excesses |\n\n**Government Response**:\n- **Security**: CRPF deployment, anti-Naxal operations\n- **Development**: Aspirational Districts Programme\n- **Rights**: Forest Rights Act (2006)\n- **Surrender Policy**: Rehabilitation of surrendered Naxals\n\n**Conclusion**: Addressing root causes (development deficit, tribal rights) is crucial alongside security measures.",
+        },
+        {
+          question: "Explain cross border terrorism in Jammu and Kashmir",
+          marks: 5,
+          modelAnswer:
+            "**Cross-Border Terrorism in Jammu & Kashmir:**\n\n**Definition**: Terrorist activities planned, trained, funded, and supported from across the border (Pakistan) but executed in India, particularly in Jammu & Kashmir.\n\n**Background**:\n- Started after 1989 militancy eruption\n- Pakistan's support to militant groups\n- Kashmir claimed by Pakistan\n- Exploitation of local grievances\n\n**Major Terrorist Groups**:\n- Lashkar-e-Taiba (LeT)\n- Jaish-e-Mohammed (JeM)\n- Hizbul Mujahideen\n- Al-Badr\n- Harkat-ul-Mujahideen\n\n**Major Attacks**:\n\n| Year | Attack |\n|------|--------|\n| 2001 | Parliament attack |\n| 2008 | Mumbai attacks (26/11) |\n| 2016 | Uri attack (19 soldiers killed) |\n| 2016 | Pathankot airbase attack |\n| 2019 | Pulwama attack (40 CRPF killed) |\n\n**Pakistan's Role**:\n- Training camps in PoK\n- ISI coordination\n- Financial support\n- Safe havens for terrorists\n\n**India's Response**:\n- **Military**: Surgical strikes (2016), Balakot airstrike (2019)\n- **Diplomatic**: Isolating Pakistan internationally, FATF pressure\n- **Security**: Border fencing, anti-infiltration grid\n- **Political**: Article 370 abrogation (2019), direct governance\n\n**Impact**:\n- Loss of thousands of lives (civilians, soldiers)\n- Economic damage to Kashmir\n- Hindrance to development\n- Regional instability\n- Human rights concerns\n\n**Conclusion**: Cross-border terrorism remains India's most serious security challenge, requiring comprehensive approach including international pressure on Pakistan to dismantle terror infrastructure.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 5: GOOD GOVERNANCE ====================
