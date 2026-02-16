@@ -118,16 +118,53 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
       {/* Paper Pattern */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
         <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
-          <FileText size={20} className="text-blue-500" /> Paper Pattern
+          <FileText size={20} className="text-blue-500" /> Paper Pattern (80
+          Marks)
         </h3>
         <div className="grid grid-cols-1 gap-2 text-sm">
           {[
-            { q: "Q.1", type: "MCQs & Objectives", marks: 20 },
-            { q: "Q.2", type: "Identify & Explain (2×4)", marks: 8 },
-            { q: "Q.3", type: "Distinguish Between (2×4)", marks: 8 },
-            { q: "Q.4", type: "Brief Answers (4×4)", marks: 16 },
-            { q: "Q.5", type: "Long Answers (2×8)", marks: 16 },
-            { q: "Q.6", type: "Graph/Data Analysis", marks: 12 },
+            {
+              q: "Q.1",
+              type: "Objectives (A+B+C+D+E)",
+              marks: 20,
+              detail: "MCQ, Pairs, Concept, Odd-one",
+            },
+            {
+              q: "Q.2",
+              type: "Concept Map + Map Q",
+              marks: 9,
+              detail: "4m + 5m",
+            },
+            {
+              q: "Q.3",
+              type: "True/False with Reason",
+              marks: 10,
+              detail: "Any 5/7 × 2m",
+            },
+            {
+              q: "Q.4",
+              type: "Explain Co-relation",
+              marks: 9,
+              detail: "Any 3/5 × 3m",
+            },
+            {
+              q: "Q.5",
+              type: "Express Opinion (25-30 words)",
+              marks: 12,
+              detail: "Any 3/5 × 4m",
+            },
+            {
+              q: "Q.6",
+              type: "Answer (80-100 words)",
+              marks: 10,
+              detail: "Any 2/4 × 5m",
+            },
+            {
+              q: "Q.7",
+              type: "Detail Answer (150-200 words)",
+              marks: 10,
+              detail: "Any 1/2 × 10m",
+            },
           ].map((item, idx) => (
             <div
               key={idx}
@@ -137,15 +174,34 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                 <span className="w-10 h-10 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded-lg flex items-center justify-center font-bold text-sm">
                   {item.q}
                 </span>
-                <span className="text-slate-700 dark:text-slate-300">
-                  {item.type}
-                </span>
+                <div>
+                  <span className="text-slate-700 dark:text-slate-300 block">
+                    {item.type}
+                  </span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                    {item.detail}
+                  </span>
+                </div>
               </div>
               <span className="font-bold text-slate-800 dark:text-white">
                 {item.marks}m
               </span>
             </div>
           ))}
+        </div>
+
+        {/* Q.1 Breakdown */}
+        <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+          <p className="text-xs font-bold text-blue-800 dark:text-blue-200 mb-2">
+            Q.1 Breakdown (20 marks):
+          </p>
+          <div className="grid grid-cols-2 gap-1 text-xs text-blue-700 dark:text-blue-300">
+            <span>A) MCQ/Fill blanks: 5m</span>
+            <span>B) Correct pairs: 3m</span>
+            <span>C) Complete sentence: 4m</span>
+            <span>D) State concept: 4m</span>
+            <span>E) Odd man out: 4m</span>
+          </div>
         </div>
       </div>
 
@@ -229,26 +285,34 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>4-mark:</strong> Definition + 3-4 points + 1 example
+              <strong>T/F (2m each):</strong> Write TRUE/FALSE + correct reason
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>8-mark:</strong> Intro (1m) + Body 5-6 points (6m) +
-              Conclusion (1m)
+              <strong>Co-relation (3m):</strong> Show connection between two
+              concepts
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Tables:</strong> Use for "Distinguish Between" questions
+              <strong>Opinion (4m):</strong> State opinion + 2-3 supporting
+              points
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Underline:</strong> Key terms and headings
+              <strong>5m Answer:</strong> Intro + 4-5 points + Example
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+            <span>
+              <strong>10m Answer:</strong> Intro + 6-8 detailed points +
+              Conclusion
             </span>
           </li>
         </ul>
@@ -261,12 +325,13 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
         </h3>
         <div className="grid grid-cols-2 gap-2 text-sm">
           {[
-            { q: "Q.1", time: "25 min" },
-            { q: "Q.2", time: "15 min" },
-            { q: "Q.3", time: "15 min" },
-            { q: "Q.4", time: "35 min" },
-            { q: "Q.5", time: "40 min" },
-            { q: "Q.6", time: "20 min" },
+            { q: "Q.1 (20m)", time: "25 min" },
+            { q: "Q.2 (9m)", time: "12 min" },
+            { q: "Q.3 (10m)", time: "15 min" },
+            { q: "Q.4 (9m)", time: "15 min" },
+            { q: "Q.5 (12m)", time: "18 min" },
+            { q: "Q.6 (10m)", time: "20 min" },
+            { q: "Q.7 (10m)", time: "25 min" },
           ].map((item, idx) => (
             <div
               key={idx}
@@ -282,7 +347,7 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
           ))}
         </div>
         <p className="text-xs text-blue-600 dark:text-blue-400 mt-2 text-center">
-          + 10 min for revision at the end
+          Total: 130 min + 50 min buffer/revision
         </p>
       </div>
     </div>
@@ -566,8 +631,8 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   className="w-full p-4 flex items-center justify-between bg-emerald-50 dark:bg-emerald-900/20"
                 >
                   <h4 className="font-bold text-emerald-800 dark:text-emerald-200 flex items-center gap-2">
-                    <CheckCircle2 size={20} /> Q.1(A) MCQs (
-                    {chapter.textbookExercises.mcqs.length})
+                    <CheckCircle2 size={20} /> Q.1(A) MCQ/Fill Blanks - 5 marks
+                    ({chapter.textbookExercises.mcqs.length} Qs)
                   </h4>
                   {expandedSection === "tb-mcqs" ? (
                     <ChevronDown size={20} />
@@ -652,8 +717,8 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   className="w-full p-4 flex items-center justify-between bg-blue-50 dark:bg-blue-900/20"
                 >
                   <h4 className="font-bold text-blue-800 dark:text-blue-200 flex items-center gap-2">
-                    <Brain size={20} /> Q.1(B) Concept Identification (
-                    {chapter.textbookExercises.conceptIdentification.length})
+                    <Brain size={20} /> Q.1(D) State Concept - 4 marks (
+                    {chapter.textbookExercises.conceptIdentification.length} Qs)
                   </h4>
                   {expandedSection === "tb-concepts" ? (
                     <ChevronDown size={20} />
@@ -724,8 +789,8 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   className="w-full p-4 flex items-center justify-between bg-purple-50 dark:bg-purple-900/20"
                 >
                   <h4 className="font-bold text-purple-800 dark:text-purple-200 flex items-center gap-2">
-                    <Globe size={20} /> Q.2(A) Concept Maps (
-                    {chapter.textbookExercises.conceptMaps.length})
+                    <Globe size={20} /> Q.2(A) Concept Map - 4 marks (
+                    {chapter.textbookExercises.conceptMaps.length} examples)
                   </h4>
                   {expandedSection === "tb-maps" ? (
                     <ChevronDown size={20} />
@@ -853,8 +918,8 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   className="w-full p-4 flex items-center justify-between bg-teal-50 dark:bg-teal-900/20"
                 >
                   <h4 className="font-bold text-teal-800 dark:text-teal-200 flex items-center gap-2">
-                    <Globe size={20} /> Q.2(B) Map Questions (
-                    {chapter.textbookExercises.mapQuestions.length})
+                    <Globe size={20} /> Q.2(B) Map Questions - 5 marks (
+                    {chapter.textbookExercises.mapQuestions.length} Qs)
                   </h4>
                   {expandedSection === "tb-mapq" ? (
                     <ChevronDown size={20} />
@@ -939,8 +1004,8 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   className="w-full p-4 flex items-center justify-between bg-amber-50 dark:bg-amber-900/20"
                 >
                   <h4 className="font-bold text-amber-800 dark:text-amber-200 flex items-center gap-2">
-                    <CheckCircle2 size={20} /> Q.3 True/False with Reasons (
-                    {chapter.textbookExercises.trueFalse.length})
+                    <CheckCircle2 size={20} /> Q.3 True/False - 10 marks (Any
+                    5/7 × 2m) ({chapter.textbookExercises.trueFalse.length} Qs)
                   </h4>
                   {expandedSection === "tb-tf" ? (
                     <ChevronDown size={20} />
@@ -1012,7 +1077,8 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   className="w-full p-4 flex items-center justify-between bg-pink-50 dark:bg-pink-900/20"
                 >
                   <h4 className="font-bold text-pink-800 dark:text-pink-200 flex items-center gap-2">
-                    <FileText size={20} /> Q.4 Express Your Opinion (
+                    <FileText size={20} /> Q.5 Express Opinion - 12 marks (Any
+                    3/5 × 4m) (
                     {chapter.textbookExercises.opinionQuestions.length})
                   </h4>
                   {expandedSection === "tb-opinion" ? (
@@ -1066,7 +1132,7 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
               </div>
             )}
 
-            {/* Short Answers */}
+            {/* Short Answers - 80-100 words */}
             {chapter.textbookExercises.shortAnswers && (
               <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
                 <button
@@ -1078,8 +1144,9 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   className="w-full p-4 flex items-center justify-between bg-cyan-50 dark:bg-cyan-900/20"
                 >
                   <h4 className="font-bold text-cyan-800 dark:text-cyan-200 flex items-center gap-2">
-                    <FileText size={20} /> Q.5 Short Answers (
-                    {chapter.textbookExercises.shortAnswers.length})
+                    <FileText size={20} /> Q.6 Answer (80-100 words) - 10 marks
+                    (Any 2/4 × 5m) (
+                    {chapter.textbookExercises.shortAnswers.length} Qs)
                   </h4>
                   {expandedSection === "tb-short" ? (
                     <ChevronDown size={20} />
@@ -1137,7 +1204,7 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
               </div>
             )}
 
-            {/* Long Answers */}
+            {/* Long Answers - 150-200 words */}
             {chapter.textbookExercises.longAnswers && (
               <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
                 <button
@@ -1149,8 +1216,9 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   className="w-full p-4 flex items-center justify-between bg-violet-50 dark:bg-violet-900/20"
                 >
                   <h4 className="font-bold text-violet-800 dark:text-violet-200 flex items-center gap-2">
-                    <BookOpen size={20} /> Q.6 Long Answers (
-                    {chapter.textbookExercises.longAnswers.length})
+                    <BookOpen size={20} /> Q.7 Detail Answer (150-200 words) -
+                    10 marks (Any 1/2 × 10m) (
+                    {chapter.textbookExercises.longAnswers.length} Qs)
                   </h4>
                   {expandedSection === "tb-long" ? (
                     <ChevronDown size={20} />
@@ -1233,6 +1301,34 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
           </div>
         </div>
 
+        {/* Paper Pattern Summary */}
+        {mf.paperPattern && (
+          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-4 border border-blue-200 dark:border-blue-800">
+            <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3 flex items-center gap-2">
+              📋 Paper Pattern ({mf.paperPattern.totalMarks} Marks •{" "}
+              {mf.paperPattern.duration})
+            </h4>
+            <div className="grid grid-cols-1 gap-2">
+              {mf.paperPattern.questions.map((q: any, idx: number) => (
+                <div
+                  key={idx}
+                  className="flex items-center justify-between bg-white dark:bg-slate-800 p-2 rounded-lg text-sm"
+                >
+                  <span className="font-bold text-blue-600 dark:text-blue-400">
+                    {q.q}
+                  </span>
+                  <span className="text-slate-600 dark:text-slate-300 text-xs">
+                    {q.breakdown}
+                  </span>
+                  <span className="font-bold text-slate-800 dark:text-white">
+                    {q.marks}m
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Question Pattern Guide */}
         <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
           <button
@@ -1267,13 +1363,20 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">{pattern.icon}</span>
                     <div className="flex-1">
-                      <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-bold text-slate-800 dark:text-white">
-                          {pattern.question}
-                        </span>
-                        <span className="text-xs bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded text-slate-600 dark:text-slate-300">
-                          {pattern.type}
-                        </span>
+                      <div className="flex items-center justify-between gap-2 flex-wrap">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="font-bold text-slate-800 dark:text-white">
+                            {pattern.question}
+                          </span>
+                          <span className="text-xs bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded text-slate-600 dark:text-slate-300">
+                            {pattern.type}
+                          </span>
+                        </div>
+                        {pattern.marks && (
+                          <span className="text-xs font-bold bg-indigo-500 text-white px-2 py-1 rounded">
+                            {pattern.marks}
+                          </span>
+                        )}
                       </div>
                       <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">
                         💡 {pattern.tip}
@@ -1459,36 +1562,48 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
             <li className="flex items-start gap-2">
               <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
               <span>
-                <strong>Concept Map:</strong> Only from Ch 1, 4, 5 - Practice
-                drawing!
+                <strong>Q.1 (20m):</strong> MCQ + Pairs + Sentence + Concept +
+                Odd-one - All from Textual!
               </span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
               <span>
-                <strong>True/False:</strong> Do from Textual Exercises (Skip Ch
+                <strong>Concept Map (4m):</strong> Only from Ch 1, 4, 5 -
+                Practice drawing!
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+              <span>
+                <strong>T/F (10m):</strong> 5×2m = Write T/F + Reason (Skip Ch
                 2)
               </span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
               <span>
-                <strong>Co-relation:</strong> Skip Ch 3 & 5, focus on Textual
-                Exercises
+                <strong>Co-relation (9m):</strong> 3×3m - Skip Ch 3 & 5
               </span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
               <span>
-                <strong>80-100 words:</strong> Focus on probable questions
-                above!
+                <strong>Opinion (12m):</strong> 3×4m in 25-30 words (Skip Ch 4)
               </span>
             </li>
             <li className="flex items-start gap-2">
               <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
               <span>
-                <strong>150-200 words:</strong> Only from Ch 1, 2, 3, 5, 6 -
-                Leave 1 chapter
+                <strong>Q.6 (10m):</strong> 2×5m in 80-100 words - Probable
+                questions!
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+              <span>
+                <strong>Q.7 (10m):</strong> 1×10m in 150-200 words - Only Ch
+                1,2,3,5,6
               </span>
             </li>
           </ul>

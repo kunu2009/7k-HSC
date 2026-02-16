@@ -776,11 +776,11 @@ Multipolar world offers India unprecedented opportunities for strategic autonomy
         },
       ],
 
-      // Q.5 Short Answer
+      // Q.6 Short Answer (80-100 words) - 5 marks each
       shortAnswers: [
         {
           question: "Explain the term soft power with examples.",
-          marks: 4,
+          marks: 5,
           modelAnswer: `**Soft Power:**
 
 **Definition**: Soft power is the ability of a country to influence other countries and shape their preferences through attraction, persuasion, and appeal rather than coercion or military force.
@@ -827,12 +827,12 @@ Multipolar world offers India unprecedented opportunities for strategic autonomy
         },
       ],
 
-      // Q.6 Long Answer
+      // Q.7 Long Answer (150-200 words) - 10 marks
       longAnswers: [
         {
           question:
             "Discuss the European Union with help of given points: (a) History (b) European Commission (c) European Parliament (d) European Council (e) European Court of Justice",
-          marks: 8,
+          marks: 10,
           modelAnswer: `### The European Union (EU)
 
 #### Introduction
@@ -1592,31 +1592,31 @@ Globalisation has been a double-edged sword for India. While it brought economic
       shortAnswers: [
         {
           question: "Explain the concept of Globalisation.",
-          marks: 4,
+          marks: 5,
           modelAnswer:
             "**Globalisation:**\n\n**Definition**: Globalisation is the process of increasing integration and interdependence among countries through the free flow of goods, services, capital, technology, ideas, and people across national borders.\n\n**Term Origin**: Coined by Theodore Levitt (1983)\n\n**Key Features:**\n1. **Economic Integration**: Free trade, removal of tariff barriers\n2. **Financial Integration**: Cross-border investment (FDI, FII)\n3. **Technological Integration**: Internet, communication revolution\n4. **Cultural Exchange**: Ideas, values, lifestyle spreading globally\n\n**Drivers of Globalisation:**\n- Technology (internet, transport)\n- Trade liberalisation (WTO)\n- MNCs and TNCs\n- International organizations (IMF, World Bank)\n\n**Dimensions:**\n\n| Dimension | Examples |\n|-----------|----------|\n| Economic | Trade, FDI, MNCs |\n| Political | UN, global governance |\n| Cultural | Hollywood, social media |\n\n**Examples**: McDonald's in India, Indian IT services globally, Chinese products worldwide\n\n**Conclusion**: Globalisation has made the world a 'Global Village' with both opportunities and challenges.",
         },
         {
           question: "What are the effects of LPG reforms on Indian economy?",
-          marks: 4,
+          marks: 5,
           modelAnswer:
             "**Effects of LPG Reforms (1991) on Indian Economy:**\n\n**Background**: LPG reforms were introduced in 1991 under PM Narasimha Rao and FM Manmohan Singh to address balance of payments crisis.\n\n**L - Liberalisation Effects:**\n- Industrial licensing abolished\n- Private sector allowed in more sectors\n- Import restrictions reduced\n- Competition increased\n\n**P - Privatisation Effects:**\n- Disinvestment of PSUs started\n- Efficiency improved in many sectors\n- Stock market grew\n- Some job losses in public sector\n\n**G - Globalisation Effects:**\n- FDI inflows increased\n- IT/BPO sector boomed\n- MNCs entered India\n- Exports grew significantly\n\n**Positive Effects:**\n1. GDP growth accelerated (3.5% to 6-8%)\n2. Foreign exchange reserves increased\n3. Technology and quality improved\n4. Consumer choices expanded\n5. India became IT superpower\n\n**Negative Effects:**\n1. Agriculture neglected\n2. Inequality increased\n3. Small industries suffered\n4. Job losses in traditional sectors\n\n**Conclusion**: LPG reforms transformed India from a closed economy to an emerging market, though challenges of inclusive growth remain.",
         },
       ],
 
-      // Q.6 Long Answer
+      // Q.7 Long Answer (150-200 words) - 10 marks
       longAnswers: [
         {
           question:
             "Discuss the positive and negative impact of Globalisation on India.",
-          marks: 8,
+          marks: 10,
           modelAnswer:
             "### Impact of Globalisation on India\n\n#### Introduction\nGlobalisation refers to the increasing integration of world economies through trade, investment, technology, and cultural exchange. India embraced globalisation through the LPG reforms of 1991.\n\n#### Positive Impact of Globalisation\n\n**1. Economic Growth**\n- GDP growth rate increased from 3.5% to 6-8%\n- India became one of fastest growing economies\n- Foreign exchange reserves improved significantly\n\n**2. IT and Service Sector Revolution**\n- India became the 'Back Office of the World'\n- BPO, IT services industry flourished\n- Companies: TCS, Infosys, Wipro became global\n- Created millions of skilled jobs\n\n**3. Foreign Investment**\n- FDI inflows increased significantly\n- Technology transfer improved\n- Modern management practices adopted\n- Sectors: Auto, Telecom, Retail benefited\n\n**4. Consumer Benefits**\n- More choices of products and services\n- Better quality due to competition\n- Lower prices in many sectors\n- Access to global brands\n\n**5. Infrastructure Development**\n- Roads, ports, airports improved\n- Telecom revolution (mobile phones)\n- Digital infrastructure expanded\n\n**6. Global Recognition**\n- India's soft power increased\n- Bollywood, Yoga, Cuisine spread globally\n- Indian diaspora strengthened\n\n#### Negative Impact of Globalisation\n\n**1. Agricultural Distress**\n- Competition from subsidised imports\n- Farmer suicides increased\n- MSP and procurement issues\n- Rural unemployment grew\n\n**2. Small Industry Struggle**\n- MSMEs faced MNC competition\n- Many traditional industries closed\n- Artisans and craftsmen suffered\n- Local products lost market\n\n**3. Growing Inequality**\n\n| Aspect | Result |\n|--------|--------|\n| Income | Rich-poor gap widened |\n| Regional | Urban-rural divide grew |\n| Sectoral | Services grew, agriculture declined |\n\n**4. Environmental Damage**\n- Industrial pollution increased\n- Natural resources exploited\n- Climate change concerns grew\n- Deforestation accelerated\n\n**5. Cultural Impact**\n- Western influence on youth\n- Consumerism and materialism increased\n- Traditional values eroded\n- Family structures changed\n\n**6. Job Insecurity**\n- Contract and gig jobs increased\n- Traditional sector job losses\n- Brain drain of skilled workers\n\n#### Way Forward\n\n1. **Inclusive Policies**: Ensure benefits reach all sections\n2. **Agricultural Support**: MSP, insurance, irrigation\n3. **MSME Protection**: Credit, technology, marketing support\n4. **Skill Development**: Train workers for global economy\n5. **Environmental Regulations**: Sustainable development\n\n#### Conclusion\nGlobalisation has been a double-edged sword for India. While it brought economic growth and opportunities, it also created challenges of inequality and sustainability. The need is for 'Globalisation with a human face' - embracing benefits while protecting vulnerable sections.",
         },
         {
           question:
             "Explain the role of state in the era of globalisation with respect to economic development and social change.",
-          marks: 8,
+          marks: 10,
           modelAnswer:
             "### Role of State in the Era of Globalisation\n\n#### Introduction\nGlobalisation has transformed the role of state from a direct provider to a facilitator and regulator. However, the state remains crucial for ensuring economic development and social change benefit all citizens.\n\n#### Changed Role of State\n\n**Before Globalisation:**\n- State as primary producer (PSUs)\n- Controlled economy (License Raj)\n- Limited foreign trade\n- Protective policies\n\n**After Globalisation:**\n- State as facilitator and regulator\n- Market-friendly policies\n- Open economy\n- Competition promoted\n\n#### Role in Economic Development\n\n**1. Policy Framework**\n- Creating conducive environment for investment\n- Trade policies and agreements\n- Industrial policies\n- Financial sector regulations\n\n**2. Infrastructure Development**\n- Roads, railways, ports, airports\n- Digital infrastructure\n- Power and energy\n- Public-Private Partnerships (PPP)\n\n**3. Investment Promotion**\n- FDI policy liberalisation\n- Special Economic Zones (SEZs)\n- Make in India initiative\n- Ease of Doing Business reforms\n\n**4. Regulation and Supervision**\n- Competition Commission (CCI)\n- Consumer protection\n- Environmental regulations\n- Labour laws\n\n**5. Human Capital Development**\n- Education system improvement\n- Skill development programs\n- Research and innovation support\n\n#### Role in Social Change\n\n**1. Inclusive Growth**\n\n| Program | Purpose |\n|---------|----------|\n| MGNREGA | Rural employment guarantee |\n| Jan Dhan | Financial inclusion |\n| Ayushman Bharat | Health insurance |\n| PM Kisan | Farmer income support |\n\n**2. Education**\n- Right to Education Act\n- Skill India Mission\n- Higher education expansion\n- Digital education (SWAYAM)\n\n**3. Healthcare**\n- Public hospitals and PHCs\n- Health insurance schemes\n- Disease control programs\n- Vaccination drives\n\n**4. Social Security**\n- Pension schemes\n- Insurance programs\n- Food security (PDS)\n- Housing (PMAY)\n\n**5. Empowerment**\n- Women empowerment programs\n- SC/ST welfare\n- Minority welfare\n- Disability support\n\n**6. Legal Reforms**\n- Labour law amendments\n- Land acquisition reforms\n- Bankruptcy code\n- Digital governance\n\n#### Balancing Act\n\nThe state must balance:\n- **Growth vs. Equity**: Economic growth with social justice\n- **Market vs. Regulation**: Free markets with necessary controls\n- **Global vs. Local**: International integration with domestic protection\n- **Present vs. Future**: Current needs with sustainable development\n\n#### Challenges\n\n1. Limited resources for social spending\n2. Pressure from international institutions\n3. Competition among states for investment\n4. Balancing business interests with public welfare\n\n#### Conclusion\nIn the era of globalisation, the state's role has evolved but not diminished. The state remains essential as:\n- **Enabler**: Creating conditions for development\n- **Regulator**: Ensuring fair play and protecting citizens\n- **Provider**: Delivering essential services to all\n- **Protector**: Safeguarding vulnerable sections\n\nThe goal should be 'Inclusive Globalisation' where economic growth benefits all sections of society.",
         },
@@ -2761,64 +2761,122 @@ India-China relations remain complex, requiring careful management of difference
     source: "Mind Faces (MF) © 2026",
     note: "Follow this guide for BEST MARKS in Political Science Board Exam!",
 
+    paperPattern: {
+      totalMarks: 80,
+      duration: "3 hours",
+      questions: [
+        { q: "Q.1", marks: 20, breakdown: "A(5)+B(3)+C(4)+D(4)+E(4)" },
+        { q: "Q.2", marks: 9, breakdown: "A(4) Concept Map + B(5) Map Q" },
+        { q: "Q.3", marks: 10, breakdown: "Any 5/7 × 2m (T/F + Reason)" },
+        { q: "Q.4", marks: 9, breakdown: "Any 3/5 × 3m (Co-relation)" },
+        {
+          q: "Q.5",
+          marks: 12,
+          breakdown: "Any 3/5 × 4m (Opinion 25-30 words)",
+        },
+        { q: "Q.6", marks: 10, breakdown: "Any 2/4 × 5m (80-100 words)" },
+        { q: "Q.7", marks: 10, breakdown: "Any 1/2 × 10m (150-200 words)" },
+      ],
+    },
+
     questionPatterns: [
       {
-        question: "Q.1 A to E",
-        type: "Objectives",
-        tip: "Compulsory from all chapters. Do Textual Exercises properly!",
+        question: "Q.1(A)",
+        type: "MCQ / Fill in blanks",
+        marks: "5 marks (5×1)",
+        tip: "Choose correct alternative. Read all options carefully before answering.",
         icon: "📝",
         priority: "high",
       },
       {
-        question: "Q.2 A",
-        type: "Concept Map",
-        tip: "Will ONLY be asked from Chapter 1, 4, 5",
+        question: "Q.1(B)",
+        type: "Identify incorrect pair & correct it",
+        marks: "3 marks (3×1)",
+        tip: "Look for wrong matches in given pairs. Write the correct pairing.",
+        icon: "🔄",
+        priority: "high",
+      },
+      {
+        question: "Q.1(C)",
+        type: "Complete sentence (MCQ type)",
+        marks: "4 marks (4×1)",
+        tip: "Choose appropriate option to complete the sentence.",
+        icon: "✏️",
+        priority: "high",
+      },
+      {
+        question: "Q.1(D)",
+        type: "State appropriate concept",
+        marks: "4 marks (4×1)",
+        tip: "Identify the concept from given statement. Learn definitions well!",
+        icon: "💡",
+        priority: "high",
+      },
+      {
+        question: "Q.1(E)",
+        type: "Find odd man out",
+        marks: "4 marks (4×1)",
+        tip: "Find which item doesn't belong to the group. Give reason.",
+        icon: "🎯",
+        priority: "high",
+      },
+      {
+        question: "Q.2(A)",
+        type: "Complete Concept Map",
+        marks: "4 marks",
+        tip: "Will ONLY be asked from Chapter 1, 4, 5. Practice drawing concept maps!",
         chapters: [1, 4, 5],
         icon: "🗺️",
         priority: "high",
       },
       {
-        question: "Q.2 B",
-        type: "Map Observation",
-        tip: "Activity-based question. Observe the given Map and answer.",
+        question: "Q.2(B)",
+        type: "Map Observation Question",
+        marks: "5 marks",
+        tip: "Activity-based question. Observe the given Map and answer questions.",
         icon: "🌍",
-        priority: "medium",
+        priority: "high",
       },
       {
         question: "Q.3",
-        type: "True/False (Attempt any 5/7)",
-        tip: "Skip Chapter 2 for this question. Do True/False from Textual Exercises mostly.",
+        type: "True/False with Reason",
+        marks: "10 marks (Any 5/7 × 2m)",
+        tip: "Skip Chapter 2 for this question. 1 mark for T/F + 1 mark for correct reason. Do from Textual Exercises!",
         skipChapters: [2],
         icon: "✓✗",
         priority: "high",
       },
       {
         question: "Q.4",
-        type: "Co-relation (Attempt any 3/5)",
-        tip: "Leave Chapter 3 & 5 for this question. Refer to Textual Exercises only!",
+        type: "Explain Co-relation",
+        marks: "9 marks (Any 3/5 × 3m)",
+        tip: "Leave Chapter 3 & 5 for this question. Show connection between two concepts. Refer to Textual Exercises only!",
         skipChapters: [3, 5],
         icon: "🔗",
         priority: "high",
       },
       {
         question: "Q.5",
-        type: "Express Opinion (25-30 words, Any 3/5)",
-        tip: "Skip Chapter 4 for this question.",
+        type: "Express Opinion (25-30 words)",
+        marks: "12 marks (Any 3/5 × 4m)",
+        tip: "Skip Chapter 4 for this question. State your opinion clearly with 2-3 supporting points.",
         skipChapters: [4],
         icon: "💬",
-        priority: "medium",
+        priority: "high",
       },
       {
         question: "Q.6",
-        type: "Answer in 80-100 words (Any 2/4)",
-        tip: "Leave any 1 Chapter of your choice. Focus on probable questions below!",
+        type: "Answer in 80-100 words",
+        marks: "10 marks (Any 2/4 × 5m)",
+        tip: "Leave any 1 Chapter of your choice. Focus on probable questions! Write intro + 4-5 points.",
         icon: "📖",
         priority: "high",
       },
       {
         question: "Q.7",
-        type: "Explain in 150-200 words",
-        tip: "Will ONLY be from Chapters 1, 2, 3, 5, 6. Leave any 1 Chapter of your choice. Refer to Textual Exercises as well as the chapter!",
+        type: "Detailed Answer (150-200 words)",
+        marks: "10 marks (Any 1/2 × 10m)",
+        tip: "Will ONLY be from Chapters 1, 2, 3, 5, 6. Write intro + 6-8 detailed points + conclusion. Use headings!",
         chapters: [1, 2, 3, 5, 6],
         icon: "📚",
         priority: "high",
@@ -2831,7 +2889,7 @@ India-China relations remain complex, requiring careful management of difference
         chapterName: "Globalisation",
         question:
           "Discuss the Role of the state towards achieving objectives of Economic Development and Social Change.",
-        marks: "80-100 words",
+        marks: "5 marks (80-100 words)",
         modelAnswer: `**Role of State in Economic Development & Social Change:**
 
 **1. Economic Development:**
@@ -2859,7 +2917,7 @@ India-China relations remain complex, requiring careful management of difference
         chapter: 3,
         chapterName: "Humanitarian Issues",
         question: "Explain various measures for Empowerment of Women in India.",
-        marks: "80-100 words",
+        marks: "5 marks (80-100 words)",
         modelAnswer: `**Measures for Women Empowerment in India:**
 
 **1. Constitutional Provisions:**
