@@ -1065,6 +1065,72 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
               </div>
             )}
 
+            {/* Co-relation Questions - Q.4 */}
+            {chapter.textbookExercises.coRelation && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-corel" ? null : "tb-corel",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-indigo-50 dark:bg-indigo-900/20"
+                >
+                  <h4 className="font-bold text-indigo-800 dark:text-indigo-200 flex items-center gap-2">
+                    <Target size={20} /> Q.4 Explain Co-relation - 9 marks (Any
+                    3/5 × 3m) ({chapter.textbookExercises.coRelation.length} Qs)
+                  </h4>
+                  {expandedSection === "tb-corel" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-corel" && (
+                  <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
+                    {chapter.textbookExercises.coRelation.map(
+                      (cr: any, idx: number) => {
+                        const crId = `tb-corel-${idx}`;
+                        const isRevealed = showAnswers[crId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 p-4 rounded-xl border border-indigo-200 dark:border-indigo-800"
+                          >
+                            <p className="font-bold text-indigo-800 dark:text-indigo-200 mb-3">
+                              🔗 Explain co-relation: {cr.concepts}
+                            </p>
+                            <button
+                              onClick={() => toggleAnswer(crId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-indigo-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed
+                                ? "Hide Model Answer"
+                                : "Show Model Answer"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-3 p-4 bg-white dark:bg-slate-800 rounded-lg text-sm max-h-[50vh] overflow-y-auto">
+                                <MarkdownRenderer content={cr.modelAnswer} />
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Opinion Questions */}
             {chapter.textbookExercises.opinionQuestions && (
               <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
@@ -1079,7 +1145,7 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                   <h4 className="font-bold text-pink-800 dark:text-pink-200 flex items-center gap-2">
                     <FileText size={20} /> Q.5 Express Opinion - 12 marks (Any
                     3/5 × 4m) (
-                    {chapter.textbookExercises.opinionQuestions.length})
+                    {chapter.textbookExercises.opinionQuestions.length} Qs)
                   </h4>
                   {expandedSection === "tb-opinion" ? (
                     <ChevronDown size={20} />

@@ -1747,6 +1747,123 @@ Globalisation has been a double-edged sword for India. While it brought economic
 5. **Solutions**: UNHCR assistance, resettlement, addressing root causes`,
       },
     ],
+
+    // ==================== TEXTBOOK EXERCISES - CHAPTER 3 ====================
+    textbookExercises: {
+      title: "Chapter 3 - Textbook Exercises with Answers",
+
+      // Q.1 (A) MCQs
+      mcqs: [
+        {
+          q: "The Rio de Janeiro Earth Summit (1992) focused on -",
+          options: [
+            "Environment and development",
+            "Nuclear non-proliferation",
+            "International trade",
+            "Gender issues",
+          ],
+          correct: 0,
+          answer: "Environment and development",
+          explanation:
+            "The Rio Earth Summit (1992), also known as UNCED, focused on sustainable development - balancing economic growth with environmental protection. It produced Agenda 21 and the Rio Declaration on Environment and Development.",
+        },
+        {
+          q: "Today the Indian approach to gender issues focuses on -",
+          options: ["Education", "Welfare", "Development", "Empowerment"],
+          correct: 3,
+          answer: "Empowerment",
+          explanation:
+            "India's approach to gender issues has evolved from Welfare (1950s-70s) → Development (1980s) → Empowerment (1990s onwards). Current focus is on empowering women to make their own choices through education, economic independence, and political participation.",
+        },
+      ],
+
+      // Q.1 (D) State Concept
+      conceptIdentification: [
+        {
+          statement:
+            "Introduction of high yielding variety of seeds and irrigation methods",
+          answer: "Green Revolution",
+          explanation:
+            "The Green Revolution (1960s-70s) was an agricultural transformation that introduced High Yielding Variety (HYV) seeds, chemical fertilizers, pesticides, and modern irrigation techniques. Led by M.S. Swaminathan in India, it made India self-sufficient in food production.",
+        },
+        {
+          statement:
+            "Think tank of the Government of India, providing both directional and policy inputs",
+          answer: "NITI Aayog",
+          explanation:
+            "NITI Aayog (National Institution for Transforming India) was established in 2015, replacing the Planning Commission. It serves as a think tank providing strategic policy vision and fostering cooperative federalism. CEO is appointed by PM.",
+        },
+      ],
+
+      // Q.3 True/False with Reasons
+      trueFalse: [
+        {
+          statement:
+            "Planning Commission was created to promote agriculture in India.",
+          answer: false,
+          reason:
+            "**FALSE**\n\n**Reasons:**\n\n1. **Actual Purpose**: The Planning Commission was created in 1950 to formulate Five Year Plans for the overall ECONOMIC DEVELOPMENT of India, not specifically for agriculture.\n\n2. **Functions of Planning Commission:**\n   - Prepare Five Year Plans\n   - Allocate resources among sectors\n   - Set development priorities\n   - Monitor plan implementation\n   - Assess resources\n\n3. **Scope**: It covered ALL sectors including:\n   - Industry\n   - Infrastructure\n   - Agriculture\n   - Social sectors (education, health)\n   - Defense\n\n4. **Replaced**: Planning Commission was replaced by NITI Aayog in 2015\n\n5. **Agricultural Focus**: While agriculture was ONE sector, the main purpose was comprehensive economic planning for the entire nation.\n\n**Note**: Bodies specifically for agriculture include Ministry of Agriculture, ICAR (Indian Council of Agricultural Research), etc.",
+        },
+        {
+          statement:
+            "National Commission for Women was set up to protect rights for women in India.",
+          answer: true,
+          reason:
+            "**TRUE**\n\n**Reasons:**\n\n1. **Purpose**: The National Commission for Women (NCW) was established specifically to protect and promote the rights and interests of women in India.\n\n2. **Establishment**: Set up in 1992 under the National Commission for Women Act, 1990.\n\n3. **Functions of NCW:**\n   - Review Constitutional and legal safeguards for women\n   - Recommend amendments to laws\n   - Investigate complaints regarding violation of women's rights\n   - Advise government on policy matters\n   - Inspect jails, remand homes for women\n   - Fund litigation for women\n\n4. **Composition:**\n   - Chairperson (nominated by Central Govt)\n   - 5 Members\n   - Member Secretary\n\n5. **Powers**: Quasi-judicial body with powers of civil court\n\n6. **Achievements**:\n   - Domestic Violence Act advocacy\n   - Sexual Harassment guidelines\n   - Dowry case investigations\n   - Awareness programs\n\n**Headquarters**: New Delhi",
+        },
+      ],
+
+      // Q.4 Co-relation (Note: Skip Chapter 3 for Co-relation in exam as per Mind Faces!)
+      coRelation: [
+        {
+          concepts: "Women Empowerment and Sustainable Development",
+          modelAnswer:
+            "**Co-relation: Women Empowerment and Sustainable Development**\n\n**Connection**: Women empowerment is ESSENTIAL for achieving sustainable development. The two are mutually reinforcing.\n\n**How Women Empowerment leads to Sustainable Development:**\n\n1. **Economic Growth**:\n   - Women's workforce participation increases GDP\n   - Women reinvest 90% of earnings in family (men only 35%)\n   - Economic independence reduces poverty\n\n2. **Environmental Sustainability**:\n   - Women are primary users of natural resources\n   - Educated women make sustainable choices\n   - Women's participation in environmental governance improves outcomes\n\n3. **Social Development**:\n   - Educated mothers = healthier, educated children\n   - Lower fertility rates = sustainable population\n   - Women's participation reduces gender inequality\n\n4. **SDG Connection**:\n   - SDG 5 (Gender Equality) is linked to all other SDGs\n   - Cannot achieve sustainable development without women's participation\n\n**Examples**:\n- Self-Help Groups (SHGs) promoting sustainable livelihoods\n- Women-led forest conservation (Chipko Movement)\n- Grameen Bank microfinance model\n\n**Conclusion**: Empowering women is not just a goal but a means to achieve comprehensive sustainable development.",
+        },
+        {
+          concepts: "Poverty and Development",
+          modelAnswer:
+            "**Co-relation: Poverty and Development**\n\n**Connection**: Poverty and development are INVERSELY related - as development increases, poverty decreases. However, the relationship is complex.\n\n**How Development Reduces Poverty:**\n\n1. **Economic Development**:\n   - Creates employment opportunities\n   - Raises income levels\n   - Improves living standards\n   - Increases tax revenue for social programs\n\n2. **Social Development**:\n   - Education improves employability\n   - Healthcare increases productivity\n   - Social security provides safety net\n\n3. **Infrastructure Development**:\n   - Roads connect markets\n   - Electricity enables enterprise\n   - Digital access opens opportunities\n\n**How Poverty Hinders Development:**\n\n1. **Low Human Capital**: Malnutrition, poor health, lack of education\n2. **Low Savings**: No capital for investment\n3. **Debt Trap**: Borrowing at high interest\n4. **Social Exclusion**: Marginalized from opportunities\n\n**Vicious Cycle of Poverty**:\nPoverty → Low income → Low savings → Low investment → Low productivity → Poverty\n\n**Breaking the Cycle**:\n- Government programs (MGNREGA, PDS, scholarships)\n- Inclusive growth policies\n- Focus on human development (education, health)\n- Financial inclusion\n\n**Conclusion**: Development must be INCLUSIVE to effectively reduce poverty - growth alone is not enough.",
+        },
+      ],
+
+      // Q.5 Express Opinion (Note: Skip Chapter 4 for Opinion, but Ch 3 is included)
+      opinionQuestions: [
+        {
+          topic: "There is a need to protect the environment",
+          modelAnswer:
+            "**Opinion: Need to Protect the Environment**\n\n**Statement**: Yes, there is an URGENT need to protect the environment for the survival of present and future generations.\n\n**Reasons for Environmental Protection:**\n\n1. **Climate Change Crisis**:\n   - Global temperatures rising\n   - Extreme weather events increasing\n   - Sea levels rising, threatening coastal areas\n   - Paris Agreement goal: Limit warming to 1.5°C\n\n2. **Biodiversity Loss**:\n   - Species extinction at alarming rate\n   - Ecosystem services threatened\n   - Food security at risk\n\n3. **Resource Depletion**:\n   - Fossil fuels running out\n   - Groundwater depletion\n   - Deforestation reducing carbon sinks\n\n4. **Health Impact**:\n   - Air pollution causing diseases\n   - Water contamination\n   - Pandemics linked to environmental destruction\n\n5. **Future Generations**:\n   - Sustainable development = meeting present needs without compromising future\n   - Intergenerational equity principle\n\n**Measures Needed**:\n- Renewable energy transition\n- Sustainable consumption patterns\n- Conservation of forests and wildlife\n- International cooperation (UNFCCC, CBD)\n- Individual responsibility\n\n**Conclusion**: Environment protection is not a choice but a necessity. The cost of inaction is far greater than the cost of action.",
+        },
+      ],
+
+      // Q.6 Short Answers (80-100 words) - 5 marks each
+      shortAnswers: [
+        {
+          question: "What is the Green Revolution?",
+          marks: 5,
+          modelAnswer:
+            "**Green Revolution:**\n\n**Definition**: The Green Revolution was an agricultural transformation (1960s-70s) that dramatically increased food production through modern farming techniques.\n\n**Key Features**:\n- **HYV Seeds**: High Yielding Variety seeds (wheat by Norman Borlaug, rice)\n- **Irrigation**: Expansion of canals, tubewells\n- **Chemical Inputs**: Fertilizers, pesticides, herbicides\n- **Mechanization**: Tractors, harvesters, modern equipment\n\n**Father of Green Revolution**:\n- Global: Norman Borlaug (Nobel Prize 1970)\n- India: M.S. Swaminathan\n\n**Impact on India**:\n\n| Positive | Negative |\n|----------|----------|\n| Food self-sufficiency | Regional disparity (Punjab vs East) |\n| Reduced imports | Environmental damage |\n| Farmer income increased | Groundwater depletion |\n| Industrial growth | Small farmer marginalization |\n\n**Phases**:\n- First: 1960s-70s (wheat, rice in Punjab, Haryana)\n- Second: Focus on Eastern India, pulses, oilseeds\n\n**Conclusion**: While Green Revolution achieved food security, sustainable agriculture practices are now needed.",
+        },
+        {
+          question:
+            "What is empowerment and suggest measures for empowerment of women?",
+          marks: 5,
+          modelAnswer:
+            "**Women Empowerment:**\n\n**Definition**: Empowerment means giving women the power, authority, and resources to make their own decisions and control their lives.\n\n**Dimensions of Empowerment**:\n1. **Economic**: Financial independence, property rights\n2. **Social**: Education, health, freedom from discrimination\n3. **Political**: Voting, contesting elections, decision-making\n4. **Legal**: Equal rights, protection from violence\n\n**Measures for Women Empowerment:**\n\n**1. Constitutional & Legal**:\n- Article 14, 15, 16 (Equality)\n- 73rd & 74th Amendments (33% reservation in local bodies)\n- Domestic Violence Act, Sexual Harassment Act\n\n**2. Government Schemes**:\n- Beti Bachao Beti Padhao\n- Sukanya Samriddhi Yojana\n- Mahila Shakti Kendra\n- MUDRA loans for women entrepreneurs\n- One Stop Centre (Sakhi)\n\n**3. Education**:\n- Free education for girls\n- Scholarships (CBSE Udaan, etc.)\n- Skill development programs\n\n**4. Economic**:\n- Self-Help Groups (SHGs)\n- Microfinance\n- Women entrepreneurship support\n\n**5. Health**:\n- Janani Suraksha Yojana\n- Free healthcare programs\n\n**Conclusion**: True empowerment requires multi-dimensional approach - legal, economic, social, and political.",
+        },
+      ],
+
+      // Q.7 Long Answer (150-200 words) - 10 marks
+      longAnswers: [
+        {
+          question:
+            "Explain conditions of women in India with help of given points: (a) Economic inequality (b) Trafficking & exploitation (c) Literacy rate (d) Political representation",
+          marks: 10,
+          modelAnswer:
+            "### Conditions of Women in India\n\n#### Introduction\nDespite constitutional guarantees of equality, women in India continue to face multiple challenges across economic, social, and political spheres.\n\n#### (a) Economic Inequality\n\n**Current Situation**:\n- Female Labour Force Participation Rate: Only 25% (one of lowest globally)\n- Wage Gap: Women earn 19% less than men for same work\n- Property Ownership: Only 12.9% women own land\n- Unpaid Work: Women spend 5x more time on unpaid domestic work\n\n**Causes**:\n- Patriarchal attitudes about women's roles\n- Lack of safe workplaces\n- Care responsibilities limiting work options\n- Limited access to credit and resources\n\n**Measures**:\n- Equal Remuneration Act\n- Maternity Benefit Act (26 weeks paid leave)\n- MUDRA loans for women entrepreneurs\n- Property rights under Hindu Succession Act\n\n#### (b) Trafficking and Exploitation\n\n**Scale of Problem**:\n- India is source, transit, and destination for trafficking\n- Women trafficked for: domestic work, sex work, forced marriage, bonded labor\n- Child marriage persists (23% girls married before 18)\n\n**Forms of Exploitation**:\n\n| Type | Prevalence |\n|------|------------|\n| Domestic violence | 30% women face it |\n| Sexual harassment | Widespread in workplaces, public spaces |\n| Dowry deaths | ~7,000 annually |\n| Acid attacks | Hundreds of cases |\n\n**Legal Protection**:\n- Immoral Traffic (Prevention) Act\n- Protection of Children from Sexual Offences (POCSO) Act\n- Dowry Prohibition Act\n- Sexual Harassment at Workplace Act\n\n#### (c) Literacy Rate\n\n**Statistics**:\n- Female literacy: 70.3% (Male: 84.7%)\n- Gender gap: 14.4 percentage points\n- Rural-urban divide significant\n\n**Challenges**:\n- Dropout rates higher for girls (household work, early marriage)\n- Safety concerns about schools\n- Preference for educating boys\n- Lack of female teachers in rural areas\n\n**Government Initiatives**:\n- Right to Education Act (free education 6-14 years)\n- Beti Bachao Beti Padhao\n- Mid-day meal scheme\n- Kasturba Gandhi Balika Vidyalaya (residential schools)\n- Scholarships for girls\n\n#### (d) Political Representation\n\n**Current Status**:\n- Lok Sabha: Only 14.4% women MPs (78 out of 543)\n- State Assemblies: Average 9% women\n- Panchayats: 46% women (due to 33% reservation + state extensions)\n\n**Progress Made**:\n- 73rd & 74th Constitutional Amendments: 33% reservation in local bodies\n- Several states increased to 50% (Bihar, Uttarakhand, etc.)\n- Women's Reservation Bill (33% in Parliament) passed in 2023\n\n**Barriers**:\n- Patriarchal political culture\n- Lack of funding for women candidates\n- Violence against women in politics\n- Proxy representation (husbands controlling women members)\n\n#### Way Forward\n\n1. **Education**: Universal female education with focus on quality\n2. **Economic Independence**: Skill development, entrepreneurship support\n3. **Legal Enforcement**: Strict implementation of protective laws\n4. **Political Empowerment**: Implement 33% reservation in Parliament\n5. **Attitude Change**: Challenge patriarchal mindsets through awareness\n\n#### Conclusion\n\nWhile significant progress has been made in women's conditions since independence, much remains to be done. A multi-pronged approach addressing economic, social, educational, and political dimensions is essential for true gender equality. The goal should be not just equality but equity - providing women with opportunities to achieve their full potential.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 4: CHALLENGES TO PEACE & STABILITY ====================
