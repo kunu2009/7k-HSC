@@ -78,6 +78,139 @@
             .flipped {
                 transform: rotateY(180deg);
             }
+
+            /* Theme CSS Variables */
+            :root {
+                --theme-bg: #ffffff;
+                --theme-bg-alt: #f8fafc;
+                --theme-primary: #3b82f6;
+                --theme-text: #1e293b;
+                --theme-text-muted: #64748b;
+                --theme-border: #e2e8f0;
+            }
+
+            /* Theme-specific body backgrounds */
+            body.theme-timberwolf {
+                background: linear-gradient(
+                    135deg,
+                    #d6d3cd 0%,
+                    #c9c5be 100%
+                ) !important;
+            }
+            body.theme-ocean {
+                background: linear-gradient(
+                    135deg,
+                    #0c4a6e 0%,
+                    #075985 100%
+                ) !important;
+            }
+            body.theme-sunset {
+                background: linear-gradient(
+                    135deg,
+                    #1f1523 0%,
+                    #3b1d32 100%
+                ) !important;
+            }
+            body.theme-forest {
+                background: linear-gradient(
+                    135deg,
+                    #14291a 0%,
+                    #1a3a24 100%
+                ) !important;
+            }
+            body.theme-lavender {
+                background: linear-gradient(
+                    135deg,
+                    #faf5ff 0%,
+                    #f3e8ff 100%
+                ) !important;
+            }
+            body.theme-midnight {
+                background: linear-gradient(
+                    135deg,
+                    #020617 0%,
+                    #0f172a 100%
+                ) !important;
+            }
+
+            /* Theme overrides for common elements */
+            body.theme-timberwolf .bg-white {
+                background-color: #e8e6e1 !important;
+            }
+            body.theme-timberwolf .bg-slate-50 {
+                background-color: #d6d3cd !important;
+            }
+            body.theme-timberwolf .text-slate-800 {
+                color: #374151 !important;
+            }
+            body.theme-timberwolf .text-slate-600 {
+                color: #4b5563 !important;
+            }
+
+            body.theme-ocean .bg-white {
+                background-color: #075985 !important;
+            }
+            body.theme-ocean .bg-slate-50 {
+                background-color: #0c4a6e !important;
+            }
+            body.theme-ocean .text-slate-800 {
+                color: #f0f9ff !important;
+            }
+            body.theme-ocean .text-slate-600 {
+                color: #bae6fd !important;
+            }
+
+            body.theme-sunset .bg-white {
+                background-color: #3b1d32 !important;
+            }
+            body.theme-sunset .bg-slate-50 {
+                background-color: #1f1523 !important;
+            }
+            body.theme-sunset .text-slate-800 {
+                color: #fef3c7 !important;
+            }
+            body.theme-sunset .text-slate-600 {
+                color: #fdba74 !important;
+            }
+
+            body.theme-forest .bg-white {
+                background-color: #1a3a24 !important;
+            }
+            body.theme-forest .bg-slate-50 {
+                background-color: #14291a !important;
+            }
+            body.theme-forest .text-slate-800 {
+                color: #ecfdf5 !important;
+            }
+            body.theme-forest .text-slate-600 {
+                color: #86efac !important;
+            }
+
+            body.theme-lavender .bg-white {
+                background-color: #f3e8ff !important;
+            }
+            body.theme-lavender .bg-slate-50 {
+                background-color: #faf5ff !important;
+            }
+            body.theme-lavender .text-slate-800 {
+                color: #3b0764 !important;
+            }
+            body.theme-lavender .text-slate-600 {
+                color: #7e22ce !important;
+            }
+
+            body.theme-midnight .bg-white {
+                background-color: #0f172a !important;
+            }
+            body.theme-midnight .bg-slate-50 {
+                background-color: #020617 !important;
+            }
+            body.theme-midnight .text-slate-800 {
+                color: #e0e7ff !important;
+            }
+            body.theme-midnight .text-slate-600 {
+                color: #a5b4fc !important;
+            }
         </style>
         <script type="importmap">
             {

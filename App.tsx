@@ -324,6 +324,9 @@ const App: React.FC = () => {
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
 
+  // Theme State
+  const [theme, setTheme] = useState(() => db.getSettings().theme || "light");
+
   // Settings State
   const [showSettings, setShowSettings] = useState(false);
   const [showCompletedSubjects, setShowCompletedSubjects] = useState(() => {
@@ -432,14 +435,124 @@ const App: React.FC = () => {
     }
   }, []);
 
+  // Theme definitions for CSS variables
+  const themeStyles: Record<
+    string,
+    {
+      bg: string;
+      bgAlt: string;
+      primary: string;
+      text: string;
+      textMuted: string;
+      border: string;
+    }
+  > = {
+    light: {
+      bg: "#ffffff",
+      bgAlt: "#f8fafc",
+      primary: "#3b82f6",
+      text: "#1e293b",
+      textMuted: "#64748b",
+      border: "#e2e8f0",
+    },
+    dark: {
+      bg: "#0f172a",
+      bgAlt: "#1e293b",
+      primary: "#6366f1",
+      text: "#f8fafc",
+      textMuted: "#94a3b8",
+      border: "#334155",
+    },
+    timberwolf: {
+      bg: "#d6d3cd",
+      bgAlt: "#e8e6e1",
+      primary: "#6b7280",
+      text: "#374151",
+      textMuted: "#6b7280",
+      border: "#c4c1bb",
+    },
+    ocean: {
+      bg: "#0c4a6e",
+      bgAlt: "#075985",
+      primary: "#38bdf8",
+      text: "#f0f9ff",
+      textMuted: "#7dd3fc",
+      border: "#0369a1",
+    },
+    sunset: {
+      bg: "#1f1523",
+      bgAlt: "#3b1d32",
+      primary: "#f97316",
+      text: "#fef3c7",
+      textMuted: "#fdba74",
+      border: "#4c1d3d",
+    },
+    forest: {
+      bg: "#14291a",
+      bgAlt: "#1a3a24",
+      primary: "#22c55e",
+      text: "#ecfdf5",
+      textMuted: "#86efac",
+      border: "#166534",
+    },
+    lavender: {
+      bg: "#faf5ff",
+      bgAlt: "#f3e8ff",
+      primary: "#a855f7",
+      text: "#3b0764",
+      textMuted: "#7e22ce",
+      border: "#e9d5ff",
+    },
+    midnight: {
+      bg: "#020617",
+      bgAlt: "#0f172a",
+      primary: "#818cf8",
+      text: "#e0e7ff",
+      textMuted: "#a5b4fc",
+      border: "#1e293b",
+    },
+  };
+
   useEffect(() => {
+    // Apply dark mode class
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-    db.saveSettings({ darkMode });
-  }, [darkMode]);
+
+    // Apply theme CSS variables
+    const currentThemeStyles = themeStyles[theme] || themeStyles.light;
+    document.documentElement.style.setProperty(
+      "--theme-bg",
+      currentThemeStyles.bg,
+    );
+    document.documentElement.style.setProperty(
+      "--theme-bg-alt",
+      currentThemeStyles.bgAlt,
+    );
+    document.documentElement.style.setProperty(
+      "--theme-primary",
+      currentThemeStyles.primary,
+    );
+    document.documentElement.style.setProperty(
+      "--theme-text",
+      currentThemeStyles.text,
+    );
+    document.documentElement.style.setProperty(
+      "--theme-text-muted",
+      currentThemeStyles.textMuted,
+    );
+    document.documentElement.style.setProperty(
+      "--theme-border",
+      currentThemeStyles.border,
+    );
+
+    // Apply theme class to body for special themes
+    document.body.className = `theme-${theme}`;
+
+    db.saveSettings({ darkMode, theme });
+  }, [darkMode, theme]);
 
   // Create a map of completed chapters for TodaysFocus component
   const completedChaptersMap = React.useMemo(() => {
@@ -3152,6 +3265,8 @@ const App: React.FC = () => {
         onClose={() => setShowSettings(false)}
         darkMode={darkMode}
         setDarkMode={setDarkMode}
+        theme={theme}
+        setTheme={setTheme}
         showCompletedSubjects={showCompletedSubjects}
         setShowCompletedSubjects={setShowCompletedSubjects}
         completedSubjects={getCompletedSubjects()}

@@ -94,6 +94,7 @@ export interface ExamMarks {
 // Settings Interface
 export interface AppSettings {
   darkMode: boolean;
+  theme: string; // 'light' | 'dark' | 'timberwolf' | 'ocean' | 'sunset' | 'forest' | 'lavender' | 'midnight'
   notificationsEnabled: boolean;
   dailyGoalMinutes: number;
   soundEnabled: boolean;
@@ -103,6 +104,7 @@ export interface AppSettings {
 // Default settings
 const DEFAULT_SETTINGS: AppSettings = {
   darkMode: false,
+  theme: "light",
   notificationsEnabled: true,
   dailyGoalMinutes: 60,
   soundEnabled: true,

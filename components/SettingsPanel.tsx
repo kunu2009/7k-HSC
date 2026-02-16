@@ -19,15 +19,83 @@ import {
   Trash2,
   Download,
   Upload,
+  Sparkles,
+  Leaf,
+  Waves,
+  Sunset,
+  CloudMoon,
+  Flower2,
 } from "lucide-react";
 import { Subject } from "../types";
 import { db } from "../services/localDb";
+
+// Theme definitions
+export const THEMES = [
+  {
+    id: "light",
+    name: "Light",
+    icon: Sun,
+    colors: { bg: "#ffffff", primary: "#3b82f6", accent: "#f1f5f9" },
+    description: "Clean & bright",
+  },
+  {
+    id: "dark",
+    name: "Dark",
+    icon: Moon,
+    colors: { bg: "#0f172a", primary: "#6366f1", accent: "#1e293b" },
+    description: "Easy on eyes",
+  },
+  {
+    id: "timberwolf",
+    name: "Timberwolf",
+    icon: Sparkles,
+    colors: { bg: "#d6d3cd", primary: "#7c7c7c", accent: "#e8e6e1" },
+    description: "Warm & neutral",
+  },
+  {
+    id: "ocean",
+    name: "Ocean",
+    icon: Waves,
+    colors: { bg: "#0c4a6e", primary: "#38bdf8", accent: "#075985" },
+    description: "Deep sea vibes",
+  },
+  {
+    id: "sunset",
+    name: "Sunset",
+    icon: Sunset,
+    colors: { bg: "#1f1523", primary: "#f97316", accent: "#3b1d32" },
+    description: "Warm & cozy",
+  },
+  {
+    id: "forest",
+    name: "Forest",
+    icon: Leaf,
+    colors: { bg: "#14291a", primary: "#22c55e", accent: "#1a3a24" },
+    description: "Nature inspired",
+  },
+  {
+    id: "lavender",
+    name: "Lavender",
+    icon: Flower2,
+    colors: { bg: "#faf5ff", primary: "#a855f7", accent: "#f3e8ff" },
+    description: "Soft & calming",
+  },
+  {
+    id: "midnight",
+    name: "Midnight",
+    icon: CloudMoon,
+    colors: { bg: "#020617", primary: "#818cf8", accent: "#0f172a" },
+    description: "Deep & focused",
+  },
+];
 
 interface SettingsPanelProps {
   isOpen: boolean;
   onClose: () => void;
   darkMode: boolean;
   setDarkMode: (value: boolean) => void;
+  theme: string;
+  setTheme: (value: string) => void;
   showCompletedSubjects: boolean;
   setShowCompletedSubjects: (value: boolean) => void;
   completedSubjects: Subject[];
@@ -39,6 +107,8 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   onClose,
   darkMode,
   setDarkMode,
+  theme,
+  setTheme,
   showCompletedSubjects,
   setShowCompletedSubjects,
   completedSubjects,
@@ -46,6 +116,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
 }) => {
   const [settings, setSettings] = useState(() => db.getSettings());
   const [showAdvanced, setShowAdvanced] = useState(false);
+  const [showThemePicker, setShowThemePicker] = useState(false);
 
   if (!isOpen) return null;
 
@@ -58,8 +129,21 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   const handleToggleDarkMode = () => {
     const newValue = !darkMode;
     setDarkMode(newValue);
-    db.saveSettings({ darkMode: newValue });
+    // Also update theme based on dark mode toggle
+    const newTheme = newValue ? "dark" : "light";
+    setTheme(newTheme);
+    db.saveSettings({ darkMode: newValue, theme: newTheme });
   };
+
+  const handleThemeChange = (themeId: string) => {
+    setTheme(themeId);
+    const isDark = !["light", "timberwolf", "lavender"].includes(themeId);
+    setDarkMode(isDark);
+    db.saveSettings({ theme: themeId, darkMode: isDark });
+    setShowThemePicker(false);
+  };
+
+  const currentTheme = THEMES.find((t) => t.id === theme) || THEMES[0];
 
   const handleToggleSetting = (key: keyof typeof settings) => {
     const newValue = !settings[key];
@@ -121,6 +205,8 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
             <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wide px-1">
               Appearance
             </h3>
+
+            {/* Quick Dark/Light Toggle */}
             <button
               onClick={handleToggleDarkMode}
               className="w-full bg-slate-50 dark:bg-slate-800 rounded-xl p-4 flex items-center justify-between"
@@ -148,6 +234,92 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
                 />
               </div>
             </button>
+
+            {/* Theme Picker Button */}
+            <button
+              onClick={() => setShowThemePicker(!showThemePicker)}
+              className="w-full bg-slate-50 dark:bg-slate-800 rounded-xl p-4 flex items-center justify-between"
+            >
+              <div className="flex items-center gap-3">
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center"
+                  style={{
+                    backgroundColor: currentTheme.colors.primary + "20",
+                  }}
+                >
+                  <Palette
+                    size={20}
+                    style={{ color: currentTheme.colors.primary }}
+                  />
+                </div>
+                <div className="text-left">
+                  <p className="font-semibold text-slate-800 dark:text-white">
+                    Theme: {currentTheme.name}
+                  </p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    {currentTheme.description}
+                  </p>
+                </div>
+              </div>
+              <ChevronRight
+                size={20}
+                className={`text-slate-400 transition-transform ${showThemePicker ? "rotate-90" : ""}`}
+              />
+            </button>
+
+            {/* Theme Grid */}
+            {showThemePicker && (
+              <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-4">
+                <p className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-3">
+                  Choose your theme
+                </p>
+                <div className="grid grid-cols-4 gap-2">
+                  {THEMES.map((t) => {
+                    const IconComponent = t.icon;
+                    const isActive = theme === t.id;
+                    return (
+                      <button
+                        key={t.id}
+                        onClick={() => handleThemeChange(t.id)}
+                        className={`relative flex flex-col items-center p-3 rounded-xl transition-all ${
+                          isActive
+                            ? "ring-2 ring-offset-2 ring-offset-slate-50 dark:ring-offset-slate-800"
+                            : "hover:bg-slate-100 dark:hover:bg-slate-700"
+                        }`}
+                        style={{
+                          backgroundColor: t.colors.bg,
+                          ringColor: isActive ? t.colors.primary : undefined,
+                        }}
+                      >
+                        <div
+                          className="w-8 h-8 rounded-lg flex items-center justify-center mb-1"
+                          style={{ backgroundColor: t.colors.accent }}
+                        >
+                          <IconComponent
+                            size={16}
+                            style={{ color: t.colors.primary }}
+                          />
+                        </div>
+                        <span
+                          className="text-[10px] font-medium"
+                          style={{ color: t.colors.primary }}
+                        >
+                          {t.name}
+                        </span>
+                        {isActive && (
+                          <div
+                            className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center"
+                            style={{ backgroundColor: t.colors.primary }}
+                          >
+                            <CheckCircle2 size={10} className="text-white" />
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Subjects Section */}
