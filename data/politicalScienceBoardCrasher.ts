@@ -419,50 +419,6 @@ However, multipolarity also creates challenges. Managing relations with both the
 
 India is well-positioned to benefit from the multipolar transition through its multi-alignment approach that maintains strategic autonomy while building partnerships with all major powers. Success requires balancing competing relationships, strengthening domestic capabilities, and actively shaping international institutions to reflect emerging realities.`,
       },
-    ],3. **Russia's Resurgence**
-   - Under Putin, asserting power
-   - Energy resources leverage
-   - Military interventions (Syria, Ukraine)
-
-4. **European Union**
-   - Economic bloc, soft power
-   - Climate leadership
-
-5. **US Relative Decline**
-   - 2008 Financial Crisis
-   - Afghanistan/Iraq overstretch
-   - Domestic political divisions
-
-#### Characteristics of Multipolarity
-- Multiple power centers
-- Complex diplomacy required
-- Regional powers gain importance
-- New institutions: BRICS, SCO, G20
-
-#### Implications for India
-
-**Benefits**:
-| Benefit | Explanation |
-|---------|-------------|
-| Strategic Autonomy | Independent foreign policy choices |
-| Multiple Partners | Can engage USA, Russia, EU, Japan simultaneously |
-| Global South Leadership | Voice for developing nations |
-| Economic Opportunities | Trade and investment from multiple sources |
-
-**India's Strategies**:
-- Multi-alignment (not non-alignment)
-- BRICS, SCO membership
-- Quad (with USA, Japan, Australia)
-- Act East Policy (ASEAN engagement)
-
-**Challenges**:
-- Balancing US-Russia, US-China relations
-- China as competitor (border issues, BRI)
-- Managing multiple strategic partnerships
-
-#### Conclusion
-Multipolar world offers India unprecedented opportunities for strategic autonomy and global influence, but requires skilful diplomacy to navigate complex relationships.`,
-      },
     ],
 
     // ==================== TEXTBOOK EXERCISES - CHAPTER 1 ====================
