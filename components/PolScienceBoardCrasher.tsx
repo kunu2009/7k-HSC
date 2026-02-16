@@ -21,6 +21,9 @@ import {
   EyeOff,
   Maximize2,
   ClipboardList,
+  TrendingUp,
+  BarChart3,
+  Lightbulb,
 } from "lucide-react";
 import { POLITICAL_SCIENCE_BOARD_CRASHER } from "../data/politicalScienceBoardCrasher";
 import MarkdownRenderer from "./MarkdownRenderer";
@@ -39,6 +42,7 @@ type TabType =
   | "ch4"
   | "ch5"
   | "ch6"
+  | "analysis"
   | "mindfaces"
   | "lastmin";
 
@@ -62,6 +66,12 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
       label: "Overview",
       shortLabel: "📋",
       color: "bg-blue-500",
+    },
+    {
+      id: "analysis",
+      label: "2026 Predictions",
+      shortLabel: "🎯",
+      color: "bg-rose-500",
     },
     { id: "ch1", label: "World 1991", shortLabel: "1", color: "bg-red-500" },
     {
@@ -144,9 +154,9 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
             <ClipboardList size={24} />
           </div>
           <div className="text-left">
-            <h3 className="font-bold text-lg">📝 Mock Board Test</h3>
+            <h3 className="font-bold text-lg">📝 Mock Board Tests</h3>
             <p className="text-white/80 text-sm">
-              March 2023 Paper • 80 Marks • 3 Hours
+              2023 & 2024 Papers • 80 Marks • 3 Hours
             </p>
           </div>
         </div>
@@ -402,6 +412,383 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
         <p className="text-xs text-blue-600 dark:text-blue-400 mt-2 text-center">
           Total: 130 min + 50 min buffer/revision
         </p>
+      </div>
+    </div>
+  );
+
+  // AI Analysis and Predictions for 2026
+  const renderAnalysis = () => (
+    <div className="space-y-4 p-4">
+      {/* Header Banner */}
+      <div className="bg-gradient-to-r from-rose-500 via-pink-500 to-purple-600 rounded-2xl p-4 text-white">
+        <div className="flex items-center gap-3">
+          <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
+            <TrendingUp size={28} />
+          </div>
+          <div>
+            <h3 className="font-black text-xl">🎯 2026 Exam Predictions</h3>
+            <p className="text-white/90 text-sm">
+              Based on 2022-2025 Paper Analysis
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Recurring Concepts Table */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+        <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+          <BarChart3 size={20} className="text-blue-500" />
+          Recurring Concepts (2022-2025)
+        </h3>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">
+          These concepts appear REPEATEDLY in board exams - must memorize!
+        </p>
+        <div className="space-y-2">
+          {[
+            {
+              concept: "Lokpal concept from",
+              answer: "Sweden",
+              years: "2022, 2023, 2024, 2025",
+              frequency: "★★★★",
+            },
+            {
+              concept: "WTO came into force",
+              answer: "1995",
+              years: "2022, 2023, 2024, 2025",
+              frequency: "★★★★",
+            },
+            {
+              concept: "NITI Aayog (replaces PC)",
+              answer: "2015",
+              years: "2023, 2024, 2025",
+              frequency: "★★★",
+            },
+            {
+              concept: "Female Literacy Rate (2011)",
+              answer: "65.46%",
+              years: "2023",
+              frequency: "★★",
+            },
+            {
+              concept: "Berlin Wall Demolition",
+              answer: "1989",
+              years: "2022",
+              frequency: "★★",
+            },
+            {
+              concept: "Right to Information Act",
+              answer: "2005",
+              years: "2022, 2025",
+              frequency: "★★",
+            },
+            {
+              concept: "Shimla Agreement",
+              answer: "1972",
+              years: "2025",
+              frequency: "★",
+            },
+            {
+              concept: "Maastricht Treaty (EU)",
+              answer: "1992",
+              years: "Multiple",
+              frequency: "★★★",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl"
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-slate-700 dark:text-slate-300 text-sm">
+                  {item.concept}
+                </span>
+                <span className="text-amber-500 text-xs">{item.frequency}</span>
+              </div>
+              <div className="flex items-center justify-between mt-1">
+                <span className="text-green-600 dark:text-green-400 font-bold">
+                  {item.answer}
+                </span>
+                <span className="text-xs text-slate-500 dark:text-slate-400">
+                  {item.years}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* High Priority for 10 Marks */}
+      <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border border-red-200 dark:border-red-800 rounded-2xl p-4">
+        <h3 className="font-bold text-red-800 dark:text-red-200 mb-3 flex items-center gap-2">
+          <AlertTriangle size={20} className="animate-pulse" />
+          HIGH PRIORITY for Q.7 (10 Marks)
+        </h3>
+        <div className="space-y-3">
+          {[
+            {
+              topic: "Impact of Globalisation",
+              points: "Political, Economic, Cultural, Social, Technological",
+              reason: "Asked in March 2023 • Most Probable in 2026",
+              color: "bg-red-500",
+            },
+            {
+              topic: "Values of Good Governance",
+              points:
+                "Participatory, Rule of Law, Transparency, Accountability, Responsiveness",
+              reason: "Appears in Q.6/Q.7 across all years",
+              color: "bg-orange-500",
+            },
+            {
+              topic: "India's Foreign Policy Principles",
+              points:
+                "Non-Alignment, Sovereignty, Non-Intervention, Peaceful Co-existence, UN Participation",
+              reason: "Asked in March 2024 • Highly Expected",
+              color: "bg-amber-500",
+            },
+            {
+              topic: "European Union Structure",
+              points:
+                "History, Commission, Parliament, Council, Court of Justice",
+              reason: "Detailed structure questions common",
+              color: "bg-yellow-500",
+            },
+            {
+              topic: "Role of State in Contemporary Period",
+              points:
+                "Governance, Economic Development, Welfare, Nation Building, Peace & Order",
+              reason: "Asked in Feb 2024 • Focus on all 5 points",
+              color: "bg-lime-500",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-white dark:bg-slate-800 rounded-xl p-3 shadow-sm"
+            >
+              <div className="flex items-start gap-3">
+                <div
+                  className={`w-2 h-full min-h-[60px] ${item.color} rounded-full`}
+                ></div>
+                <div className="flex-1">
+                  <h4 className="font-bold text-slate-800 dark:text-white">
+                    {item.topic}
+                  </h4>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                    {item.points}
+                  </p>
+                  <p className="text-xs text-green-600 dark:text-green-400 mt-1 font-medium">
+                    📌 {item.reason}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Strategic Focus by Question Type */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+        <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+          <Lightbulb size={20} className="text-amber-500" />
+          Strategic Chapter Focus by Question
+        </h3>
+        <div className="space-y-3">
+          <div className="bg-purple-50 dark:bg-purple-900/20 rounded-xl p-3">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-bold text-purple-800 dark:text-purple-200">
+                Q.2 A - Concept Map (4m)
+              </span>
+              <span className="bg-purple-500 text-white text-xs px-2 py-0.5 rounded-full">
+                ONLY from:
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <span className="px-3 py-1 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-full text-sm font-medium">
+                Ch 1: World 1991
+              </span>
+              <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-sm font-medium">
+                Ch 4: Challenges
+              </span>
+              <span className="px-3 py-1 bg-teal-100 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 rounded-full text-sm font-medium">
+                Ch 5: Governance
+              </span>
+            </div>
+          </div>
+
+          <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-3">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-bold text-green-800 dark:text-green-200">
+                Q.4 - Co-relation (9m)
+              </span>
+              <span className="bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">
+                SKIP:
+              </span>
+            </div>
+            <p className="text-sm text-green-700 dark:text-green-300">
+              Do correlations from <strong>Ch 1, 2, 4, 6</strong> only. Skip
+              Chapter 3 & 5 for this question.
+            </p>
+            <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+              📚 Refer to Textual Exercises ONLY!
+            </p>
+          </div>
+
+          <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-3">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-bold text-blue-800 dark:text-blue-200">
+                Q.3 - True/False (10m)
+              </span>
+              <span className="bg-blue-500 text-white text-xs px-2 py-0.5 rounded-full">
+                SKIP Ch 2
+              </span>
+            </div>
+            <p className="text-sm text-blue-700 dark:text-blue-300">
+              Do T/F from all chapters EXCEPT Chapter 2. Focus on Textual
+              Exercises.
+            </p>
+          </div>
+
+          <div className="bg-amber-50 dark:bg-amber-900/20 rounded-xl p-3">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-bold text-amber-800 dark:text-amber-200">
+                Q.5 - Opinion (12m)
+              </span>
+              <span className="bg-amber-500 text-white text-xs px-2 py-0.5 rounded-full">
+                SKIP Ch 4
+              </span>
+            </div>
+            <p className="text-sm text-amber-700 dark:text-amber-300">
+              Practice opinions from all chapters EXCEPT Chapter 4 (Challenges
+              to Peace).
+            </p>
+          </div>
+
+          <div className="bg-indigo-50 dark:bg-indigo-900/20 rounded-xl p-3">
+            <div className="flex items-center justify-between mb-2">
+              <span className="font-bold text-indigo-800 dark:text-indigo-200">
+                Q.7 - Long Answer (10m)
+              </span>
+              <span className="bg-indigo-500 text-white text-xs px-2 py-0.5 rounded-full">
+                FROM:
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-2 mt-1">
+              <span className="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs">
+                Ch 1
+              </span>
+              <span className="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs">
+                Ch 2
+              </span>
+              <span className="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs">
+                Ch 3
+              </span>
+              <span className="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs">
+                Ch 5
+              </span>
+              <span className="px-2 py-0.5 bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded text-xs">
+                Ch 6
+              </span>
+            </div>
+            <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-2">
+              Leave any 1 chapter of your choice!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Key Concepts for Objectives */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+        <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+          <Target size={20} className="text-green-500" />
+          Key Concepts for Q.1 Objectives
+        </h3>
+        <div className="grid grid-cols-1 gap-2">
+          {[
+            {
+              category: "Governance Bodies",
+              points:
+                "Lokpal (Sweden, 2013), Lokayukta (Maharashtra 1972 first), NITI Aayog (2015)",
+            },
+            {
+              category: "International Bodies",
+              points:
+                "EU (Maastricht 1992), WTO (1995), BRICS (South Africa 2010), Schengen (22 countries)",
+            },
+            {
+              category: "Humanitarian",
+              points:
+                "Green Revolution, Women Empowerment (NCW, NITI policy 2001), Poverty concepts",
+            },
+            {
+              category: "National Issues",
+              points:
+                "Cross-border terrorism (J&K), Left-wing extremism (Naxalbari 1967), National Integration",
+            },
+            {
+              category: "Foreign Policy",
+              points:
+                "NAM, Panchsheel (1954), Look East/Act East, Neighbourhood First policy",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl"
+            >
+              <span className="font-bold text-slate-700 dark:text-slate-300 text-sm block mb-1">
+                {item.category}
+              </span>
+              <span className="text-xs text-slate-600 dark:text-slate-400">
+                {item.points}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Final Tips */}
+      <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl p-4 text-white">
+        <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
+          <CheckCircle2 size={20} /> Last Day Strategy
+        </h3>
+        <ul className="text-sm space-y-2">
+          <li>
+            ✅ <strong>Morning:</strong> Revise Ch 1, 4, 5 Concept Maps
+            thoroughly
+          </li>
+          <li>
+            ✅ <strong>Afternoon:</strong> Practice 5-6 correlations from
+            textual exercises
+          </li>
+          <li>
+            ✅ <strong>Evening:</strong> Write one 10-mark answer on
+            Globalisation Impact
+          </li>
+          <li>
+            ✅ <strong>Night:</strong> Quick revision of MCQ facts (dates,
+            years, names)
+          </li>
+          <li>
+            ⚠️ <strong>Skip</strong> detailed reading - focus on keywords and
+            points only
+          </li>
+        </ul>
+      </div>
+
+      {/* Google Drive Link */}
+      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-4">
+        <h3 className="font-bold text-blue-800 dark:text-blue-200 mb-2 flex items-center gap-2">
+          <FileText size={20} /> Additional Resources
+        </h3>
+        <p className="text-sm text-blue-700 dark:text-blue-300 mb-2">
+          Access past papers, notes, and study materials:
+        </p>
+        <a
+          href="https://drive.google.com/drive/folders/1aJuSrw9lXpDTOX_SbkuRk5KUMHOeIGoD"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors"
+        >
+          <Globe size={16} /> Open Google Drive Folder
+        </a>
       </div>
     </div>
   );
@@ -2258,6 +2645,7 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
       {/* Content - Scrollable */}
       <div className="flex-1 overflow-y-auto pb-safe">
         {activeTab === "overview" && renderOverview()}
+        {activeTab === "analysis" && renderAnalysis()}
         {activeTab === "ch1" && renderChapter("chapter1")}
         {activeTab === "ch2" && renderChapter("chapter2")}
         {activeTab === "ch3" && renderChapter("chapter3")}
@@ -2270,15 +2658,15 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
 
       {/* Bottom Navigation - Quick Chapter Jump */}
       <div className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-2 shrink-0 safe-area-bottom">
-        <div className="flex justify-around">
-          {tabs.slice(1, 8).map((tab) => (
+        <div className="flex justify-around overflow-x-auto gap-1">
+          {tabs.slice(1, 9).map((tab) => (
             <button
               key={tab.id}
               onClick={() => {
                 setActiveTab(tab.id);
                 setExpandedSection(null);
               }}
-              className={`w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold ${
+              className={`w-8 h-8 shrink-0 rounded-lg flex items-center justify-center text-xs font-bold ${
                 activeTab === tab.id
                   ? `${tab.color} text-white`
                   : "bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
