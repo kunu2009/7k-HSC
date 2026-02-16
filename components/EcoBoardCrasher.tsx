@@ -144,40 +144,39 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
           {[
             {
               q: "Q.1",
-              type: "Objective Questions (A-E)",
+              type: "Objectives (A+B+C+D)",
               marks: 20,
-              detail: "MCQ, Fill, Match, Concept",
+              detail: "MCQ + Terms + Odd-one + Correlation",
             },
             {
               q: "Q.2",
-              type: "Identify & Explain",
-              marks: 6,
-              detail: "3×2 marks",
+              type: "(A) Identify + (B) Distinguish",
+              marks: 12,
+              detail: "3×2 + 3×2 marks",
             },
             {
               q: "Q.3",
-              type: "Distinguish Between",
-              marks: 6,
-              detail: "3×2 marks",
+              type: "Answer the following",
+              marks: 12,
+              detail: "Any 3/5 × 4m",
             },
             {
               q: "Q.4",
               type: "Agree/Disagree with reasons",
               marks: 12,
-              detail: "3×4 marks",
+              detail: "Any 3/5 × 4m (1+3)",
             },
             {
               q: "Q.5",
-              type: "Study Table/Graph",
+              type: "Study Table/Figure/Passage",
               marks: 8,
-              detail: "2×4 marks",
+              detail: "Any 2/3 × 4m",
             },
-            { q: "Q.6", type: "Long Answers", marks: 16, detail: "2×8 marks" },
             {
-              q: "Q.7",
-              type: "Numericals (Compulsory)",
-              marks: 12,
-              detail: "3×4 marks",
+              q: "Q.6",
+              type: "Answer in Detail",
+              marks: 16,
+              detail: "Any 2/3 × 8m",
             },
           ].map((item, idx) => (
             <div
@@ -202,6 +201,27 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
               </span>
             </div>
           ))}
+        </div>
+
+        {/* Q.1 Breakdown */}
+        <div className="mt-4 p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl">
+          <p className="text-xs font-bold text-indigo-800 dark:text-indigo-200 mb-2">
+            Q.1 Breakdown (20 marks):
+          </p>
+          <div className="grid grid-cols-2 gap-1 text-xs text-indigo-700 dark:text-indigo-300">
+            <span>A) Choose correct option: 5m</span>
+            <span>B) Give economic term: 5m</span>
+            <span>C) Find odd man out: 5m</span>
+            <span>D) Complete correlation: 5m</span>
+          </div>
+        </div>
+
+        {/* Q.4 Note */}
+        <div className="mt-2 p-2 bg-amber-50 dark:bg-amber-900/20 rounded-lg">
+          <p className="text-xs text-amber-700 dark:text-amber-300">
+            <strong>Q.4 Marking:</strong> 1 mark for Agree/Disagree + 3 marks
+            for reasons
+          </p>
         </div>
       </div>
 
@@ -301,19 +321,22 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Formulas:</strong> Write formula before solving numericals
+              <strong>Q.5 Numericals:</strong> Show formula, steps, and
+              calculation clearly
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Tables:</strong> Use for Distinguish Between questions
+              <strong>Tables:</strong> Use for Distinguish Between (Q.2B)
+              questions
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Numericals:</strong> Q.7 is COMPULSORY - practice daily!
+              <strong>Q.4:</strong> 1 mark for Agree/Disagree + 3 marks for
+              reasons
             </span>
           </li>
         </ul>
@@ -327,12 +350,11 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         <div className="grid grid-cols-2 gap-2 text-sm">
           {[
             { q: "Q.1 (20m)", time: "25 min" },
-            { q: "Q.2 (6m)", time: "10 min" },
-            { q: "Q.3 (6m)", time: "10 min" },
+            { q: "Q.2 (12m)", time: "18 min" },
+            { q: "Q.3 (12m)", time: "20 min" },
             { q: "Q.4 (12m)", time: "20 min" },
-            { q: "Q.5 (8m)", time: "15 min" },
-            { q: "Q.6 (16m)", time: "30 min" },
-            { q: "Q.7 (12m)", time: "25 min" },
+            { q: "Q.5 (8m)", time: "20 min" },
+            { q: "Q.6 (16m)", time: "35 min" },
           ].map((item, idx) => (
             <div
               key={idx}
@@ -348,7 +370,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
           ))}
         </div>
         <p className="text-xs text-blue-600 dark:text-blue-400 mt-2 text-center">
-          Total: 135 min + 45 min buffer/revision
+          Total: 138 min + 42 min buffer/revision
         </p>
       </div>
     </div>
@@ -507,12 +529,15 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         </div>
       </div>
 
-      {/* Numericals Focus (Q.7 Compulsory) */}
+      {/* Q.5 Table/Figure Analysis */}
       <div className="bg-gradient-to-r from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 border border-purple-200 dark:border-purple-800 rounded-2xl p-4">
         <h3 className="font-bold text-purple-800 dark:text-purple-200 mb-3 flex items-center gap-2">
           <Calculator size={20} />
-          Q.7 NUMERICALS (12 Marks - COMPULSORY!)
+          Q.5 TABLE/FIGURE ANALYSIS (8 Marks)
         </h3>
+        <p className="text-xs text-purple-600 dark:text-purple-400 mb-3">
+          Numerical calculations are asked here - practice these types:
+        </p>
         <div className="space-y-2">
           {[
             {
@@ -527,18 +552,13 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
             },
             {
               topic: "Index Number (Laspeyre/Paasche/Fisher)",
-              formula: "Various formulas",
+              formula: "Fisher = √(L × P)",
               probability: "90%",
             },
             {
               topic: "National Income Aggregates",
-              formula: "GDP, GNP, NNP, NI",
+              formula: "GDP → GNP → NNP → NI",
               probability: "85%",
-            },
-            {
-              topic: "Supply Elasticity",
-              formula: "Es = %ΔQs / %ΔP",
-              probability: "70%",
             },
           ].map((item, idx) => (
             <div
