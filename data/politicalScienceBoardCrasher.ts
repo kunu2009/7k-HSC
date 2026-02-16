@@ -517,6 +517,439 @@ Since 1991, the world has transitioned from bipolar (USA vs USSR) to unipolar (U
 Multipolar world offers India unprecedented opportunities for strategic autonomy and global influence, but requires skilful diplomacy to navigate complex relationships.`,
       },
     ],
+
+    // ==================== TEXTBOOK EXERCISES - CHAPTER 1 ====================
+    textbookExercises: {
+      title: "Chapter 1 - Textbook Exercises with Answers",
+
+      // Q.1 (A) MCQs
+      mcqs: [
+        {
+          q: "One of the important trends in the post 1989 international relations was",
+          options: [
+            "End of bipolarity",
+            "Rise of regionalism in Asia",
+            "End of non-alignment",
+            "Demand for a new international economic order",
+          ],
+          correct: 0,
+          answer: "End of bipolarity",
+          explanation:
+            "Post 1989, the Cold War ended with USSR's collapse (1991), ending the bipolar world order dominated by USA and USSR.",
+        },
+        {
+          q: "The 'Maastricht' Treaty is with reference to",
+          options: [
+            "United Nations Peace Keeping Force",
+            "European Union",
+            "American interventions in Kuwait",
+            "Creation of BRICS",
+          ],
+          correct: 1,
+          answer: "European Union",
+          explanation:
+            "The Maastricht Treaty (1992) formally established the European Union, creating a political and economic union among European nations.",
+        },
+      ],
+
+      // Q.1 (B) Concept Identification
+      conceptIdentification: [
+        {
+          statement:
+            "When a state influences other states without the use of military force.",
+          answer: "Soft Power",
+          explanation:
+            "Soft Power refers to the ability to influence others through attraction, persuasion, culture, values, and diplomacy rather than coercion or military force. Examples: Hollywood, American universities, cultural exchange programs.",
+        },
+        {
+          statement:
+            "A state with a leading position in international politics with abilities to influence global politics and fulfill its own interest.",
+          answer: "Superpower",
+          explanation:
+            "A Superpower is a dominant state with supreme military, economic, political, and cultural influence globally. Post-1991, USA became the sole superpower (Unipolarity). Currently, we are moving towards multipolarity with China, India, EU emerging as power centers.",
+        },
+      ],
+
+      // Q.2 (A) Concept Maps
+      conceptMaps: [
+        {
+          title: "BIMSTEC Countries",
+          question: "Complete the concept map for BIMSTEC countries",
+          answer: {
+            centerNode: "BIMSTEC COUNTRIES",
+            members: [
+              "India",
+              "Myanmar",
+              "Bangladesh",
+              "Sri Lanka",
+              "Thailand",
+              "Nepal",
+              "Bhutan",
+            ],
+            fullForm:
+              "Bay of Bengal Initiative for Multi-Sectoral Technical and Economic Cooperation",
+            established: "1997",
+            headquarters: "Dhaka, Bangladesh",
+            note: "BIMSTEC = 7 countries around Bay of Bengal",
+          },
+        },
+        {
+          title: "Shanghai Cooperation Organisation (SCO) Founders",
+          question: "Complete the concept map for SCO Founders",
+          answer: {
+            centerNode: "SCO Founders (2001)",
+            founders: [
+              "China",
+              "Russia",
+              "Kazakhstan",
+              "Kyrgyzstan",
+              "Tajikistan",
+              "Uzbekistan",
+            ],
+            laterMembers: ["India (2017)", "Pakistan (2017)"],
+            headquarters: "Beijing, China",
+            focus: "Security, economic, political cooperation in Eurasia",
+            note: "Originally called 'Shanghai Five' (1996), became SCO in 2001",
+          },
+        },
+      ],
+
+      // Q.2 (B) Map-based Questions
+      mapQuestions: [
+        {
+          question: "Name any four countries in the Schengen area.",
+          answer: [
+            "France",
+            "Germany",
+            "Italy",
+            "Spain",
+            "Netherlands",
+            "Belgium",
+            "Austria",
+            "Greece",
+            "Portugal",
+            "Poland",
+          ],
+          note: "Any 4 from: France, Germany, Italy, Spain, Netherlands, Belgium, Austria, Greece, Portugal, Poland, Czech Republic, Hungary, Sweden, Finland, Denmark, etc. (27 countries total)",
+          explanation:
+            "The Schengen Area is a zone of 27 European countries that have abolished passport and border controls at their mutual borders, allowing free movement of people.",
+        },
+        {
+          question:
+            "Name any two non-European Union countries within Schengen area.",
+          answer: ["Switzerland", "Norway", "Iceland", "Liechtenstein"],
+          note: "Any 2 from: Switzerland, Norway, Iceland, Liechtenstein",
+          explanation:
+            "These 4 countries are part of Schengen area but NOT members of European Union. They participate in free movement but not in EU's political/economic integration.",
+        },
+      ],
+
+      // Q.3 True/False with Reasons
+      trueFalse: [
+        {
+          statement: "SAARC is important for trade in South Asia.",
+          answer: true,
+          reason: `**TRUE**
+
+**Reasons:**
+1. **Regional Trade**: SAARC promotes intra-regional trade among South Asian nations (India, Pakistan, Bangladesh, Sri Lanka, Nepal, Bhutan, Maldives, Afghanistan)
+
+2. **SAFTA Agreement**: South Asian Free Trade Area (SAFTA) under SAARC aims to reduce tariffs and boost trade
+
+3. **Economic Cooperation**: Joint efforts for economic development, poverty reduction, and improving living standards
+
+4. **Trade Facilitation**: Simplified customs procedures, trade documentation, and reduced barriers
+
+5. **Connectivity**: Infrastructure projects to improve physical connectivity for trade
+
+**However**: SAARC's effectiveness limited due to India-Pakistan tensions, but trade remains a core objective.`,
+        },
+        {
+          statement:
+            "'Maastricht' Treaty was signed for the defence of Europe.",
+          answer: false,
+          reason: `**FALSE**
+
+**Reasons:**
+1. **Actual Purpose**: The Maastricht Treaty (1992) was signed to create the EUROPEAN UNION - a political and economic union, NOT for defence
+
+2. **Key Provisions**:
+   - Established European Union (EU)
+   - Created common citizenship
+   - Laid foundation for common currency (Euro)
+   - Established three pillars: Economic, Foreign Policy, Justice
+
+3. **Defence Organization**: NATO (North Atlantic Treaty Organization, 1949) is the defence alliance for Europe and North America, NOT Maastricht Treaty
+
+4. **Economic Focus**: Maastricht focused on economic integration, single market, and monetary union
+
+**Note**: Defence coordination exists under EU's Common Foreign and Security Policy, but this was NOT the main purpose of Maastricht Treaty.`,
+        },
+        {
+          statement:
+            "The decade of 1980s is seen as the golden age of humanitarian intervention.",
+          answer: false,
+          reason: `**FALSE**
+
+**Reasons:**
+1. **Correct Period**: The 1990s (not 1980s) is considered the golden age of humanitarian intervention
+
+2. **Why 1990s**:
+   - Cold War ended (1991) - no superpower rivalry to block interventions
+   - UN Security Council could act more freely
+   - Rise of "Responsibility to Protect" concept
+
+3. **Major Interventions in 1990s**:
+   - Somalia (1992-93)
+   - Bosnia (1992-95)
+   - Rwanda response (1994)
+   - Kosovo (1999)
+   - East Timor (1999)
+
+4. **1980s Context**: During Cold War, USA-USSR rivalry often blocked UN humanitarian interventions due to veto power
+
+**Note**: Post-2000, humanitarian intervention became controversial after Iraq (2003) and Libya (2011).`,
+        },
+      ],
+
+      // Q.4 Express Your Opinion
+      opinionQuestions: [
+        {
+          topic: "Humanitarian intervention",
+          modelAnswer: `**Opinion on Humanitarian Intervention:**
+
+**Definition**: Humanitarian intervention refers to the use of military force by external powers to protect civilians from mass atrocities like genocide, war crimes, and ethnic cleansing within a sovereign state.
+
+**Arguments FOR:**
+1. **Moral Responsibility**: International community has duty to protect innocent lives (R2P doctrine)
+2. **Human Rights**: Sovereignty cannot be a shield for human rights violations
+3. **Success Cases**: Kosovo (1999) prevented further ethnic cleansing
+4. **International Norms**: Strengthens global human rights standards
+
+**Arguments AGAINST:**
+1. **Sovereignty Violation**: Interferes with internal affairs of states
+2. **Selective Application**: Powerful nations intervene only where it suits their interests
+3. **Misuse**: Can be used to justify regime change (Libya 2011)
+4. **Unintended Consequences**: May worsen situation or lead to prolonged conflicts
+
+**My Opinion**: Humanitarian intervention is justified ONLY when:
+- Clear evidence of mass atrocities
+- UN Security Council authorization
+- Peaceful means exhausted
+- Clear exit strategy exists
+
+**Conclusion**: While protecting human lives is paramount, interventions must be genuinely humanitarian and not disguised imperialism.`,
+        },
+        {
+          topic: "Regionalism in international politics",
+          modelAnswer: `**Opinion on Regionalism in International Politics:**
+
+**Definition**: Regionalism refers to the process of countries in a geographic region coming together for economic, political, or security cooperation.
+
+**Examples of Regional Organizations:**
+| Region | Organization |
+|--------|--------------|
+| Europe | European Union (EU) |
+| South Asia | SAARC |
+| Southeast Asia | ASEAN |
+| Africa | African Union (AU) |
+| Eurasia | SCO |
+
+**Benefits of Regionalism:**
+1. **Economic Integration**: Free trade, common markets, increased prosperity (EU single market)
+2. **Peace & Stability**: Reduces conflicts between member states
+3. **Collective Bargaining**: Smaller states gain stronger voice internationally
+4. **Shared Solutions**: Regional problems solved regionally (ASEAN on South China Sea)
+
+**Challenges:**
+1. **Sovereignty Concerns**: States hesitant to cede powers
+2. **Bilateral Conflicts**: India-Pakistan tensions hamper SAARC
+3. **Unequal Partners**: Dominance by larger members
+4. **Nationalism**: Rising nationalism threatens regional cooperation
+
+**My Opinion**: Regionalism is ESSENTIAL in today's globalized world because:
+- No country can solve transnational problems alone (climate, terrorism)
+- Economic development requires larger markets
+- Collective security more effective than individual
+
+**Conclusion**: Regionalism complements, not replaces, global multilateralism. India should actively engage in SAARC, BIMSTEC, SCO while strengthening bilateral ties.`,
+        },
+      ],
+
+      // Q.5 Short Answer
+      shortAnswers: [
+        {
+          question: "Explain the term soft power with examples.",
+          marks: 4,
+          modelAnswer: `**Soft Power:**
+
+**Definition**: Soft power is the ability of a country to influence other countries and shape their preferences through attraction, persuasion, and appeal rather than coercion or military force.
+
+**Coined by**: Joseph Nye (American political scientist)
+
+**Contrast with Hard Power:**
+| Soft Power | Hard Power |
+|------------|------------|
+| Attraction & persuasion | Coercion & force |
+| Culture, values, policies | Military, economic sanctions |
+| Long-term influence | Immediate results |
+
+**Sources of Soft Power:**
+1. **Culture**: Movies, music, art, cuisine
+2. **Political Values**: Democracy, human rights, rule of law
+3. **Foreign Policies**: Aid, diplomacy, multilateral engagement
+4. **Education**: Universities, exchange programs
+5. **Technology & Innovation**: Brands, products, innovation
+
+**Examples of Soft Power:**
+
+**USA:**
+- Hollywood movies and TV shows
+- American universities (Harvard, MIT)
+- Tech giants (Google, Apple, Microsoft)
+- English language dominance
+- Pop culture (McDonald's, Coca-Cola)
+
+**India:**
+- Bollywood films
+- Yoga and spirituality
+- Indian cuisine globally
+- IT industry reputation
+- Indian diaspora influence
+- Buddhism and Gandhian philosophy
+
+**China:**
+- Confucius Institutes (language & culture centers)
+- Belt and Road Initiative (economic diplomacy)
+- Manufacturing hub image
+
+**Importance**: In modern world, soft power often more effective than military force for long-term influence and building relationships.`,
+        },
+      ],
+
+      // Q.6 Long Answer
+      longAnswers: [
+        {
+          question:
+            "Discuss the European Union with help of given points: (a) History (b) European Commission (c) European Parliament (d) European Council (e) European Court of Justice",
+          marks: 8,
+          modelAnswer: `### The European Union (EU)
+
+#### Introduction
+The European Union is a unique political and economic union of 27 European countries, representing one of the most successful examples of regional integration in the world.
+
+#### (a) History of EU
+
+**Post-WWII Context:**
+- Europe devastated by two World Wars
+- Need for peace and economic recovery
+- Desire to prevent future conflicts
+
+**Timeline of Integration:**
+
+| Year | Event |
+|------|-------|
+| 1951 | European Coal and Steel Community (ECSC) - 6 countries |
+| 1957 | Treaty of Rome - European Economic Community (EEC) |
+| 1967 | Merger Treaty - Combined all communities |
+| 1992 | **Maastricht Treaty** - Created European Union |
+| 1999 | Euro currency introduced |
+| 2007 | Lisbon Treaty - Reformed EU institutions |
+| 2020 | Brexit - UK left EU |
+
+**Founding Members (6)**: France, Germany, Italy, Belgium, Netherlands, Luxembourg
+
+**Current Members**: 27 countries (after UK's exit)
+
+#### (b) European Commission
+
+**Role**: Executive body of EU - "Government of EU"
+
+**Functions:**
+1. **Proposes Legislation**: Only body that can initiate EU laws
+2. **Implements Decisions**: Enforces EU policies and budget
+3. **Guardian of Treaties**: Ensures member states follow EU rules
+4. **External Representation**: Negotiates trade deals for EU
+
+**Structure:**
+- 27 Commissioners (one from each member state)
+- President of Commission (currently Ursula von der Leyen)
+- Headquarters: Brussels, Belgium
+
+#### (c) European Parliament
+
+**Role**: Legislative body - Represents EU citizens directly
+
+**Functions:**
+1. **Passes Laws**: Together with Council of EU
+2. **Approves Budget**: Controls EU spending
+3. **Democratic Oversight**: Supervises other EU institutions
+4. **Elects Commission President**: Approves Commission members
+
+**Structure:**
+- 705 Members of European Parliament (MEPs)
+- Directly elected by EU citizens every 5 years
+- Headquarters: Strasbourg (plenary), Brussels (committees)
+
+**Significance**: Only directly elected EU institution - represents democratic voice
+
+#### (d) European Council
+
+**Role**: Sets political direction and priorities of EU
+
+**Functions:**
+1. **Strategic Direction**: Defines EU's overall political agenda
+2. **Major Decisions**: Handles sensitive political issues
+3. **Conflict Resolution**: Resolves disputes between member states
+4. **Treaty Amendments**: Discusses changes to EU treaties
+
+**Composition:**
+- Heads of State/Government of all 27 members
+- President of European Council (currently Charles Michel)
+- President of European Commission
+- Meets at least 4 times per year (Summits)
+
+**Note**: Does NOT pass laws - that's done by Council of EU (different body)
+
+#### (e) European Court of Justice (ECJ)
+
+**Role**: Judicial body - Supreme court of EU
+
+**Functions:**
+1. **Interprets EU Law**: Ensures uniform application across all members
+2. **Settles Disputes**: Between member states, EU institutions, businesses, individuals
+3. **Reviews Legislation**: Checks if EU laws are valid
+4. **Preliminary Rulings**: Advises national courts on EU law
+
+**Structure:**
+- One judge from each member state (27 judges)
+- 11 Advocates General (provide legal opinions)
+- Location: Luxembourg
+
+**Importance**: ECJ rulings are binding and supreme over national courts in EU matters
+
+#### Significance of EU
+
+| Achievement | Details |
+|-------------|---------|
+| Peace | No war between members since formation |
+| Single Market | Free movement of goods, services, capital, people |
+| Common Currency | Euro used by 20 countries |
+| Global Influence | World's largest single market and trade bloc |
+| Human Rights | Strong protection through EU Charter |
+
+#### Challenges
+
+1. **Brexit**: UK's departure weakened EU
+2. **Migration Crisis**: Strains on unity
+3. **Economic Disparities**: Rich vs. poorer members
+4. **Rise of Nationalism**: Eurosceptic movements
+
+#### Conclusion
+The European Union remains the world's most ambitious and successful regional integration project. Despite challenges like Brexit, it continues to serve as a model of peaceful cooperation, economic integration, and shared governance among nations.`,
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 2: GLOBALISATION ====================
@@ -973,6 +1406,222 @@ Globalisation is the integration of national economies into the global economy. 
 Globalisation has been a double-edged sword for India. While it brought economic growth and opportunities, it also created challenges of inequality and sustainability that need addressing through inclusive policies.`,
       },
     ],
+
+    // ==================== TEXTBOOK EXERCISES - CHAPTER 2 ====================
+    textbookExercises: {
+      title: "Chapter 2 - Textbook Exercises with Answers",
+
+      // Q.1 (A) MCQs
+      mcqs: [
+        {
+          q: "The term 'Globalisation' was first coined by",
+          options: [
+            "Theodore Levitt",
+            "Marshall McLuhan",
+            "Milton Friedman",
+            "Adam Smith",
+          ],
+          correct: 0,
+          answer: "Theodore Levitt",
+          explanation:
+            "Theodore Levitt, an American economist, coined the term 'Globalisation' in 1983 in his article 'Globalization of Markets' published in Harvard Business Review.",
+        },
+        {
+          q: "The 'Global Village' concept was given by",
+          options: [
+            "Theodore Levitt",
+            "Marshall McLuhan",
+            "Karl Marx",
+            "Joseph Nye",
+          ],
+          correct: 1,
+          answer: "Marshall McLuhan",
+          explanation:
+            "Marshall McLuhan, a Canadian philosopher, introduced the concept of 'Global Village' in 1962, suggesting that electronic media would shrink the world into a village.",
+        },
+        {
+          q: "LPG reforms in India started in",
+          options: ["1989", "1990", "1991", "1992"],
+          correct: 2,
+          answer: "1991",
+          explanation:
+            "The LPG (Liberalisation, Privatisation, Globalisation) reforms were introduced in India in 1991 under PM Narasimha Rao and Finance Minister Manmohan Singh to address the balance of payments crisis.",
+        },
+        {
+          q: "WTO was established in",
+          options: ["1992", "1993", "1994", "1995"],
+          correct: 3,
+          answer: "1995",
+          explanation:
+            "The World Trade Organization (WTO) was established on 1st January 1995, replacing GATT (General Agreement on Tariffs and Trade). Its headquarters is in Geneva, Switzerland.",
+        },
+        {
+          q: "Which is NOT a dimension of Globalisation?",
+          options: ["Economic", "Political", "Cultural", "Military"],
+          correct: 3,
+          answer: "Military",
+          explanation:
+            "The three main dimensions of Globalisation are Economic (trade, investment), Political (governance, international relations), and Cultural (ideas, values, media). Military is not considered a dimension of globalisation.",
+        },
+      ],
+
+      // Q.1 (B) Concept Identification
+      conceptIdentification: [
+        {
+          statement:
+            "The process of integrating various economies of the world without creating any hindrances in the free flow of goods, services, technology and labour.",
+          answer: "Globalisation",
+          explanation:
+            "Globalisation refers to the increasing interconnectedness and interdependence of world economies, cultures, and populations through cross-border trade, investment, technology transfer, and migration.",
+        },
+        {
+          statement:
+            "The policy under which government allows free flow of trade, investment and technology between countries.",
+          answer: "Liberalisation",
+          explanation:
+            "Liberalisation means removing restrictions and barriers to allow free movement of goods, services, and capital. In India, 1991 reforms liberalised trade, reduced licensing, and opened economy to foreign investment.",
+        },
+        {
+          statement:
+            "The transfer of ownership from public sector to private sector.",
+          answer: "Privatisation",
+          explanation:
+            "Privatisation involves transferring government-owned enterprises to private ownership. In India, it included disinvestment of PSUs (Public Sector Undertakings) and allowing private sector in previously reserved areas.",
+        },
+        {
+          statement:
+            "Companies that operate in multiple countries with production facilities and assets in more than one country.",
+          answer:
+            "Multinational Corporations (MNCs) / Transnational Corporations (TNCs)",
+          explanation:
+            "MNCs/TNCs are large companies that operate across national borders. Examples: Apple, Microsoft, Toyota, Samsung. They bring FDI, technology, and employment but also raise concerns about profit repatriation and local industry competition.",
+        },
+      ],
+
+      // Q.2 (A) Concept Maps
+      conceptMaps: [
+        {
+          title: "Dimensions of Globalisation",
+          question: "Complete the concept map for Dimensions of Globalisation",
+          answer: {
+            centerNode: "DIMENSIONS OF GLOBALISATION",
+            members: [
+              "Economic Dimension",
+              "Political Dimension",
+              "Cultural Dimension",
+            ],
+            details: {
+              Economic:
+                "Trade, FDI, MNCs, Financial flows, WTO, IMF, World Bank",
+              Political:
+                "International cooperation, Global governance, UN, Regional organizations",
+              Cultural:
+                "Ideas, values, media, technology, language, lifestyle, food",
+            },
+            note: "All three dimensions are interconnected and influence each other",
+          },
+        },
+        {
+          title: "Effects of Globalisation on India",
+          question:
+            "Complete the concept map for Effects of Globalisation on India",
+          answer: {
+            centerNode: "EFFECTS OF GLOBALISATION ON INDIA",
+            members: ["Positive Effects", "Negative Effects"],
+            positive: [
+              "Economic growth",
+              "IT/BPO boom",
+              "FDI inflow",
+              "Technology transfer",
+              "Consumer choices",
+              "Employment in services",
+            ],
+            negative: [
+              "Agricultural distress",
+              "MSME closures",
+              "Inequality",
+              "Environmental damage",
+              "Cultural erosion",
+              "Job losses in traditional sectors",
+            ],
+            note: "Globalisation is a double-edged sword with both benefits and challenges",
+          },
+        },
+      ],
+
+      // Q.3 True/False with Reasons (Remember: Skip Chapter 2 for True/False in exam as per Mind Faces!)
+      trueFalse: [
+        {
+          statement:
+            "Globalisation only has positive effects on developing countries.",
+          answer: false,
+          reason:
+            "**FALSE**\n\n**Reasons:**\n1. **Negative Effects Exist**: Globalisation has both positive AND negative effects\n\n2. **For Developing Countries - Negatives:**\n   - Increased inequality between rich and poor\n   - Local industries face MNC competition\n   - Agricultural sector suffers due to imports\n   - Cultural erosion and westernisation\n   - Brain drain of skilled workers\n   - Environmental degradation\n\n3. **Unequal Benefits**: Developed countries often benefit more from globalisation than developing countries\n\n4. **India's Experience**: While IT sector boomed, farmers' suicides increased; urban areas gained while rural areas lagged\n\n**Conclusion**: Globalisation is a double-edged sword, not purely positive.",
+        },
+        {
+          statement:
+            "The World Trade Organization (WTO) was established to promote free trade.",
+          answer: true,
+          reason:
+            "**TRUE**\n\n**Reasons:**\n1. **Purpose**: WTO was established on 1st January 1995 specifically to promote and regulate international trade\n\n2. **Functions of WTO:**\n   - Administering trade agreements\n   - Forum for trade negotiations\n   - Handling trade disputes\n   - Monitoring national trade policies\n   - Technical assistance to developing countries\n\n3. **Principles:**\n   - Most Favoured Nation (MFN) - treat all trading partners equally\n   - National Treatment - treat foreign goods same as domestic\n   - Reduction of tariffs and trade barriers\n\n4. **Replaced GATT**: WTO replaced the General Agreement on Tariffs and Trade (GATT, 1947)\n\n5. **Members**: 164 countries (India joined in 1995)\n\n**Headquarters**: Geneva, Switzerland",
+        },
+        {
+          statement:
+            "Liberalisation means increasing government control over the economy.",
+          answer: false,
+          reason:
+            "**FALSE**\n\n**Reasons:**\n1. **Opposite Meaning**: Liberalisation means REDUCING (not increasing) government control and restrictions\n\n2. **Definition**: Liberalisation refers to removal of government restrictions on:\n   - Trade (reducing tariffs, quotas)\n   - Investment (allowing FDI)\n   - Industry (abolishing licensing)\n   - Finance (deregulating banks)\n\n3. **India's Liberalisation (1991):**\n   - Abolished industrial licensing (License Raj)\n   - Reduced import duties\n   - Allowed foreign investment\n   - Opened up reserved sectors\n\n4. **Aim**: To promote free market economy, competition, and efficiency\n\n**Contrast**: Government control over economy is characteristic of socialist/command economy, not liberalisation.",
+        },
+      ],
+
+      // Q.4 Express Your Opinion
+      opinionQuestions: [
+        {
+          topic: "Globalisation and its impact on Indian economy",
+          modelAnswer:
+            "**Opinion on Globalisation's Impact on Indian Economy:**\n\n**Definition**: Globalisation is the process of increasing interconnectedness among countries through trade, investment, technology, and cultural exchange.\n\n**Positive Impact:**\n1. **Economic Growth**: India's GDP growth accelerated after 1991 reforms\n2. **IT Revolution**: India became a global IT hub (TCS, Infosys, Wipro)\n3. **Foreign Investment**: FDI inflows increased significantly\n4. **Consumer Benefits**: More choices, better quality, competitive prices\n5. **Employment**: Service sector jobs increased\n6. **Technology**: Access to global technologies improved\n\n**Negative Impact:**\n1. **Inequality**: Gap between rich and poor widened\n2. **Agriculture Crisis**: Farmer distress, suicides increased\n3. **Local Industry**: Small industries faced MNC competition\n4. **Employment**: Traditional sector job losses\n5. **Environment**: Pollution and resource exploitation increased\n\n**My Opinion**: Globalisation has been beneficial for India's economic development, but its benefits have not been evenly distributed. The government must ensure:\n- Inclusive growth policies\n- Support for agriculture and MSMEs\n- Skill development for workers\n- Environmental protection\n\n**Conclusion**: Globalisation should be managed, not rejected - we need 'Globalisation with a human face'.",
+        },
+        {
+          topic: "Role of MNCs in developing countries",
+          modelAnswer:
+            "**Opinion on Role of MNCs in Developing Countries:**\n\n**Definition**: MNCs (Multinational Corporations) are companies that operate in multiple countries with production facilities and assets across borders.\n\n**Positive Role:**\n\n| Benefit | Explanation |\n|---------|-------------|\n| Investment | Bring FDI, capital formation |\n| Employment | Create jobs (direct and indirect) |\n| Technology | Transfer advanced technologies |\n| Skills | Training and skill development |\n| Competition | Improve efficiency and quality |\n| Tax Revenue | Contribute to government revenue |\n| Infrastructure | Develop local infrastructure |\n\n**Negative Role:**\n\n| Concern | Explanation |\n|---------|-------------|\n| Profit Repatriation | Profits sent to home country |\n| Local Competition | Small businesses suffer |\n| Exploitation | Sometimes exploit labour, resources |\n| Cultural Impact | Promote consumerism, westernisation |\n| Tax Avoidance | Use legal loopholes to avoid taxes |\n| Influence | Can influence government policies |\n\n**My Opinion**: MNCs play an important role in developing countries but need regulation:\n- Ensure fair wages and working conditions\n- Promote technology transfer\n- Require local sourcing and partnerships\n- Prevent tax avoidance\n- Protect environment\n\n**Conclusion**: MNCs should be partners in development, not exploiters. Balanced policies can maximize benefits while minimizing negative impacts.",
+        },
+      ],
+
+      // Q.5 Short Answer
+      shortAnswers: [
+        {
+          question: "Explain the concept of Globalisation.",
+          marks: 4,
+          modelAnswer:
+            "**Globalisation:**\n\n**Definition**: Globalisation is the process of increasing integration and interdependence among countries through the free flow of goods, services, capital, technology, ideas, and people across national borders.\n\n**Term Origin**: Coined by Theodore Levitt (1983)\n\n**Key Features:**\n1. **Economic Integration**: Free trade, removal of tariff barriers\n2. **Financial Integration**: Cross-border investment (FDI, FII)\n3. **Technological Integration**: Internet, communication revolution\n4. **Cultural Exchange**: Ideas, values, lifestyle spreading globally\n\n**Drivers of Globalisation:**\n- Technology (internet, transport)\n- Trade liberalisation (WTO)\n- MNCs and TNCs\n- International organizations (IMF, World Bank)\n\n**Dimensions:**\n\n| Dimension | Examples |\n|-----------|----------|\n| Economic | Trade, FDI, MNCs |\n| Political | UN, global governance |\n| Cultural | Hollywood, social media |\n\n**Examples**: McDonald's in India, Indian IT services globally, Chinese products worldwide\n\n**Conclusion**: Globalisation has made the world a 'Global Village' with both opportunities and challenges.",
+        },
+        {
+          question: "What are the effects of LPG reforms on Indian economy?",
+          marks: 4,
+          modelAnswer:
+            "**Effects of LPG Reforms (1991) on Indian Economy:**\n\n**Background**: LPG reforms were introduced in 1991 under PM Narasimha Rao and FM Manmohan Singh to address balance of payments crisis.\n\n**L - Liberalisation Effects:**\n- Industrial licensing abolished\n- Private sector allowed in more sectors\n- Import restrictions reduced\n- Competition increased\n\n**P - Privatisation Effects:**\n- Disinvestment of PSUs started\n- Efficiency improved in many sectors\n- Stock market grew\n- Some job losses in public sector\n\n**G - Globalisation Effects:**\n- FDI inflows increased\n- IT/BPO sector boomed\n- MNCs entered India\n- Exports grew significantly\n\n**Positive Effects:**\n1. GDP growth accelerated (3.5% to 6-8%)\n2. Foreign exchange reserves increased\n3. Technology and quality improved\n4. Consumer choices expanded\n5. India became IT superpower\n\n**Negative Effects:**\n1. Agriculture neglected\n2. Inequality increased\n3. Small industries suffered\n4. Job losses in traditional sectors\n\n**Conclusion**: LPG reforms transformed India from a closed economy to an emerging market, though challenges of inclusive growth remain.",
+        },
+      ],
+
+      // Q.6 Long Answer
+      longAnswers: [
+        {
+          question:
+            "Discuss the positive and negative impact of Globalisation on India.",
+          marks: 8,
+          modelAnswer:
+            "### Impact of Globalisation on India\n\n#### Introduction\nGlobalisation refers to the increasing integration of world economies through trade, investment, technology, and cultural exchange. India embraced globalisation through the LPG reforms of 1991.\n\n#### Positive Impact of Globalisation\n\n**1. Economic Growth**\n- GDP growth rate increased from 3.5% to 6-8%\n- India became one of fastest growing economies\n- Foreign exchange reserves improved significantly\n\n**2. IT and Service Sector Revolution**\n- India became the 'Back Office of the World'\n- BPO, IT services industry flourished\n- Companies: TCS, Infosys, Wipro became global\n- Created millions of skilled jobs\n\n**3. Foreign Investment**\n- FDI inflows increased significantly\n- Technology transfer improved\n- Modern management practices adopted\n- Sectors: Auto, Telecom, Retail benefited\n\n**4. Consumer Benefits**\n- More choices of products and services\n- Better quality due to competition\n- Lower prices in many sectors\n- Access to global brands\n\n**5. Infrastructure Development**\n- Roads, ports, airports improved\n- Telecom revolution (mobile phones)\n- Digital infrastructure expanded\n\n**6. Global Recognition**\n- India's soft power increased\n- Bollywood, Yoga, Cuisine spread globally\n- Indian diaspora strengthened\n\n#### Negative Impact of Globalisation\n\n**1. Agricultural Distress**\n- Competition from subsidised imports\n- Farmer suicides increased\n- MSP and procurement issues\n- Rural unemployment grew\n\n**2. Small Industry Struggle**\n- MSMEs faced MNC competition\n- Many traditional industries closed\n- Artisans and craftsmen suffered\n- Local products lost market\n\n**3. Growing Inequality**\n\n| Aspect | Result |\n|--------|--------|\n| Income | Rich-poor gap widened |\n| Regional | Urban-rural divide grew |\n| Sectoral | Services grew, agriculture declined |\n\n**4. Environmental Damage**\n- Industrial pollution increased\n- Natural resources exploited\n- Climate change concerns grew\n- Deforestation accelerated\n\n**5. Cultural Impact**\n- Western influence on youth\n- Consumerism and materialism increased\n- Traditional values eroded\n- Family structures changed\n\n**6. Job Insecurity**\n- Contract and gig jobs increased\n- Traditional sector job losses\n- Brain drain of skilled workers\n\n#### Way Forward\n\n1. **Inclusive Policies**: Ensure benefits reach all sections\n2. **Agricultural Support**: MSP, insurance, irrigation\n3. **MSME Protection**: Credit, technology, marketing support\n4. **Skill Development**: Train workers for global economy\n5. **Environmental Regulations**: Sustainable development\n\n#### Conclusion\nGlobalisation has been a double-edged sword for India. While it brought economic growth and opportunities, it also created challenges of inequality and sustainability. The need is for 'Globalisation with a human face' - embracing benefits while protecting vulnerable sections.",
+        },
+        {
+          question:
+            "Explain the role of state in the era of globalisation with respect to economic development and social change.",
+          marks: 8,
+          modelAnswer:
+            "### Role of State in the Era of Globalisation\n\n#### Introduction\nGlobalisation has transformed the role of state from a direct provider to a facilitator and regulator. However, the state remains crucial for ensuring economic development and social change benefit all citizens.\n\n#### Changed Role of State\n\n**Before Globalisation:**\n- State as primary producer (PSUs)\n- Controlled economy (License Raj)\n- Limited foreign trade\n- Protective policies\n\n**After Globalisation:**\n- State as facilitator and regulator\n- Market-friendly policies\n- Open economy\n- Competition promoted\n\n#### Role in Economic Development\n\n**1. Policy Framework**\n- Creating conducive environment for investment\n- Trade policies and agreements\n- Industrial policies\n- Financial sector regulations\n\n**2. Infrastructure Development**\n- Roads, railways, ports, airports\n- Digital infrastructure\n- Power and energy\n- Public-Private Partnerships (PPP)\n\n**3. Investment Promotion**\n- FDI policy liberalisation\n- Special Economic Zones (SEZs)\n- Make in India initiative\n- Ease of Doing Business reforms\n\n**4. Regulation and Supervision**\n- Competition Commission (CCI)\n- Consumer protection\n- Environmental regulations\n- Labour laws\n\n**5. Human Capital Development**\n- Education system improvement\n- Skill development programs\n- Research and innovation support\n\n#### Role in Social Change\n\n**1. Inclusive Growth**\n\n| Program | Purpose |\n|---------|----------|\n| MGNREGA | Rural employment guarantee |\n| Jan Dhan | Financial inclusion |\n| Ayushman Bharat | Health insurance |\n| PM Kisan | Farmer income support |\n\n**2. Education**\n- Right to Education Act\n- Skill India Mission\n- Higher education expansion\n- Digital education (SWAYAM)\n\n**3. Healthcare**\n- Public hospitals and PHCs\n- Health insurance schemes\n- Disease control programs\n- Vaccination drives\n\n**4. Social Security**\n- Pension schemes\n- Insurance programs\n- Food security (PDS)\n- Housing (PMAY)\n\n**5. Empowerment**\n- Women empowerment programs\n- SC/ST welfare\n- Minority welfare\n- Disability support\n\n**6. Legal Reforms**\n- Labour law amendments\n- Land acquisition reforms\n- Bankruptcy code\n- Digital governance\n\n#### Balancing Act\n\nThe state must balance:\n- **Growth vs. Equity**: Economic growth with social justice\n- **Market vs. Regulation**: Free markets with necessary controls\n- **Global vs. Local**: International integration with domestic protection\n- **Present vs. Future**: Current needs with sustainable development\n\n#### Challenges\n\n1. Limited resources for social spending\n2. Pressure from international institutions\n3. Competition among states for investment\n4. Balancing business interests with public welfare\n\n#### Conclusion\nIn the era of globalisation, the state's role has evolved but not diminished. The state remains essential as:\n- **Enabler**: Creating conditions for development\n- **Regulator**: Ensuring fair play and protecting citizens\n- **Provider**: Delivering essential services to all\n- **Protector**: Safeguarding vulnerable sections\n\nThe goal should be 'Inclusive Globalisation' where economic growth benefits all sections of society.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 3: HUMANITARIAN ISSUES ====================
@@ -2103,6 +2752,328 @@ India-China relations are characterized by both cooperation and conflict, often 
 
 #### Conclusion
 India-China relations remain complex, requiring careful management of differences while exploring cooperation opportunities. Resolving the border issue is key to stable long-term relations.`,
+      },
+    ],
+  },
+
+  // ==================== MIND FACES EXAM STRATEGY (2026) ====================
+  mindFacesTips: {
+    source: "Mind Faces (MF) © 2026",
+    note: "Follow this guide for BEST MARKS in Political Science Board Exam!",
+
+    questionPatterns: [
+      {
+        question: "Q.1 A to E",
+        type: "Objectives",
+        tip: "Compulsory from all chapters. Do Textual Exercises properly!",
+        icon: "📝",
+        priority: "high",
+      },
+      {
+        question: "Q.2 A",
+        type: "Concept Map",
+        tip: "Will ONLY be asked from Chapter 1, 4, 5",
+        chapters: [1, 4, 5],
+        icon: "🗺️",
+        priority: "high",
+      },
+      {
+        question: "Q.2 B",
+        type: "Map Observation",
+        tip: "Activity-based question. Observe the given Map and answer.",
+        icon: "🌍",
+        priority: "medium",
+      },
+      {
+        question: "Q.3",
+        type: "True/False (Attempt any 5/7)",
+        tip: "Skip Chapter 2 for this question. Do True/False from Textual Exercises mostly.",
+        skipChapters: [2],
+        icon: "✓✗",
+        priority: "high",
+      },
+      {
+        question: "Q.4",
+        type: "Co-relation (Attempt any 3/5)",
+        tip: "Leave Chapter 3 & 5 for this question. Refer to Textual Exercises only!",
+        skipChapters: [3, 5],
+        icon: "🔗",
+        priority: "high",
+      },
+      {
+        question: "Q.5",
+        type: "Express Opinion (25-30 words, Any 3/5)",
+        tip: "Skip Chapter 4 for this question.",
+        skipChapters: [4],
+        icon: "💬",
+        priority: "medium",
+      },
+      {
+        question: "Q.6",
+        type: "Answer in 80-100 words (Any 2/4)",
+        tip: "Leave any 1 Chapter of your choice. Focus on probable questions below!",
+        icon: "📖",
+        priority: "high",
+      },
+      {
+        question: "Q.7",
+        type: "Explain in 150-200 words",
+        tip: "Will ONLY be from Chapters 1, 2, 3, 5, 6. Leave any 1 Chapter of your choice. Refer to Textual Exercises as well as the chapter!",
+        chapters: [1, 2, 3, 5, 6],
+        icon: "📚",
+        priority: "high",
+      },
+    ],
+
+    probableQuestions80to100: [
+      {
+        chapter: 2,
+        chapterName: "Globalisation",
+        question:
+          "Discuss the Role of the state towards achieving objectives of Economic Development and Social Change.",
+        marks: "80-100 words",
+        modelAnswer: `**Role of State in Economic Development & Social Change:**
+
+**1. Economic Development:**
+- **Planning & Policy**: Creating 5-year plans, economic policies (LPG reforms)
+- **Infrastructure**: Building roads, railways, ports, digital infrastructure
+- **Investment**: Public sector enterprises, attracting FDI
+- **Regulation**: Controlling monopolies, ensuring fair competition
+- **Financial Inclusion**: Banking services, Jan Dhan Yojana
+
+**2. Social Change:**
+- **Education**: Establishing schools, universities, skill programs
+- **Healthcare**: Public hospitals, insurance schemes (Ayushman Bharat)
+- **Social Welfare**: Reservations, subsidies, MGNREGA
+- **Legal Reforms**: Women's rights, child protection laws
+- **Awareness**: Campaigns against social evils
+
+**3. Balancing Growth & Equity:**
+- Inclusive growth policies
+- Poverty alleviation programs
+- Rural development initiatives
+
+**Conclusion:** The state acts as facilitator, regulator, and protector to ensure both economic progress and social justice.`,
+      },
+      {
+        chapter: 3,
+        chapterName: "Humanitarian Issues",
+        question: "Explain various measures for Empowerment of Women in India.",
+        marks: "80-100 words",
+        modelAnswer: `**Measures for Women Empowerment in India:**
+
+**1. Constitutional Provisions:**
+- Article 14: Equality before law
+- Article 15(3): Special provisions for women
+- Article 39: Equal pay for equal work
+- 73rd & 74th Amendments: 33% reservation in local bodies
+
+**2. Legal Measures:**
+- Dowry Prohibition Act (1961)
+- Protection of Women from Domestic Violence Act (2005)
+- Sexual Harassment at Workplace Act (2013)
+- Maternity Benefit Act (2017)
+
+**3. Government Schemes:**
+- Beti Bachao Beti Padhao
+- Sukanya Samriddhi Yojana
+- Mahila Shakti Kendra
+- One Stop Centre (Sakhi)
+- MUDRA loans for women entrepreneurs
+
+**4. Educational Initiatives:**
+- Free education up to certain levels
+- Scholarship programs for girls
+- Women's universities and colleges
+
+**5. Economic Empowerment:**
+- Self-Help Groups (SHGs)
+- Women's entrepreneurship programs
+- Skill development initiatives
+
+**Conclusion:** Multi-pronged approach combining legal, social, and economic measures is essential for true women empowerment.`,
+      },
+      {
+        chapter: 3,
+        chapterName: "Humanitarian Issues",
+        question: "Explain Green Revolution in detail.",
+        marks: "80-100 words",
+        modelAnswer: `**Green Revolution in India:**
+
+**Introduction:** The Green Revolution (1960s-70s) was an agricultural transformation that made India self-sufficient in food production.
+
+**Key Features:**
+- **High Yielding Variety (HYV) Seeds**: Wheat (Norman Borlaug), Rice
+- **Irrigation**: Expansion of canals, tubewells
+- **Chemical Inputs**: Fertilizers, pesticides
+- **Mechanization**: Tractors, harvesters
+
+**Father:** M.S. Swaminathan (India), Norman Borlaug (Global)
+
+**Impact:**
+| Positive | Negative |
+|----------|----------|
+| Food self-sufficiency | Regional disparities (Punjab vs. Eastern states) |
+| Reduced imports | Environmental damage |
+| Farmer income rise | Groundwater depletion |
+| Industrial growth | Loss of soil fertility |
+| Economic growth | Small farmer marginalization |
+
+**Second Green Revolution:**
+- Focus on Eastern India
+- Pulses and oilseeds
+- Sustainable practices
+
+**Conclusion:** While Green Revolution achieved food security, sustainable agriculture is now the focus.`,
+      },
+      {
+        chapter: 4,
+        chapterName: "Challenges in Indian Politics",
+        question: "Explain cross-border terrorism in Jammu & Kashmir.",
+        marks: "80-100 words",
+        modelAnswer: `**Cross-Border Terrorism in Jammu & Kashmir:**
+
+**Definition:** Cross-border terrorism refers to terrorist activities planned, trained, and funded from across the border (Pakistan) but executed in India.
+
+**Background:**
+- Started after 1989 militancy
+- Pakistan's support to militant groups
+- Kashmir claimed by Pakistan
+
+**Major Terrorist Groups:**
+- Lashkar-e-Taiba (LeT)
+- Jaish-e-Mohammed (JeM)
+- Hizbul Mujahideen
+- Al-Badr
+
+**Major Attacks:**
+| Year | Attack |
+|------|--------|
+| 2001 | Parliament attack |
+| 2008 | Mumbai attacks (26/11) |
+| 2016 | Uri attack |
+| 2019 | Pulwama attack |
+
+**India's Response:**
+- **Military**: Surgical strikes (2016), Balakot airstrike (2019)
+- **Diplomatic**: Isolating Pakistan internationally
+- **Security**: Border fencing, anti-infiltration grid
+- **Political**: Article 370 abrogation (2019)
+
+**Impact:**
+- Loss of lives (civilians, soldiers)
+- Economic damage to Kashmir
+- Hindrance to development
+- Regional instability
+
+**Conclusion:** Cross-border terrorism remains a serious challenge requiring comprehensive approach including international pressure on Pakistan.`,
+      },
+      {
+        chapter: 4,
+        chapterName: "Challenges in Indian Politics",
+        question: "What is left-wing extremism in India?",
+        marks: "80-100 words",
+        modelAnswer: `**Left-Wing Extremism (LWE) / Naxalism in India:**
+
+**Definition:** Armed revolutionary movement based on Maoist ideology, seeking to overthrow the state through violent means.
+
+**Origin:**
+- Started in Naxalbari, West Bengal (1967)
+- Named "Naxalism" after the village
+- Inspired by Mao Zedong's ideology
+
+**Ideology:**
+- Armed struggle against exploitation
+- Support for peasants and tribals
+- Overthrow of "bourgeois" state
+- Establish communist rule
+
+**Affected Areas (Red Corridor):**
+- Chhattisgarh, Jharkhand, Odisha
+- Bihar, Maharashtra, Andhra Pradesh
+- Parts of West Bengal, Madhya Pradesh
+
+**Major Groups:**
+- CPI (Maoist) - banned
+- People's Liberation Guerrilla Army (PLGA)
+
+**Causes:**
+| Social | Economic | Governance |
+|--------|----------|------------|
+| Tribal exploitation | Land alienation | Poor development |
+| Caste discrimination | Forest rights denial | Absence of state services |
+| Social inequality | Unemployment | Police excesses |
+
+**Government Response:**
+- **Security**: CRPF deployment, anti-Naxal operations
+- **Development**: Integrated Action Plan (IAP)
+- **Rights**: Forest Rights Act (2006)
+- **Surrender Policy**: Rehabilitation of surrendered Naxals
+
+**Conclusion:** Addressing root causes like development deficit and tribal rights is crucial alongside security measures.`,
+      },
+    ],
+
+    chapterStrategy: [
+      {
+        chapter: 1,
+        name: "World since 1991",
+        conceptMap: true,
+        trueFalse: true,
+        coRelation: true,
+        opinion: true,
+        longAnswer: true,
+        tip: "Focus on Cold War, USSR collapse, Unipolarity vs Multipolarity",
+      },
+      {
+        chapter: 2,
+        name: "Globalisation",
+        conceptMap: false,
+        trueFalse: false,
+        coRelation: true,
+        opinion: true,
+        longAnswer: true,
+        tip: "SKIP for True/False. Important for long answers on state's role.",
+      },
+      {
+        chapter: 3,
+        name: "Humanitarian Issues",
+        conceptMap: false,
+        trueFalse: true,
+        coRelation: false,
+        opinion: true,
+        longAnswer: true,
+        tip: "SKIP for Co-relation. Focus on Women Empowerment, Green Revolution.",
+      },
+      {
+        chapter: 4,
+        name: "Challenges in Indian Politics",
+        conceptMap: true,
+        trueFalse: true,
+        coRelation: true,
+        opinion: false,
+        longAnswer: false,
+        tip: "SKIP for Opinion & Long Answer. Focus on Terrorism, Naxalism for 80-100 words.",
+      },
+      {
+        chapter: 5,
+        name: "Good Governance",
+        conceptMap: true,
+        trueFalse: true,
+        coRelation: false,
+        opinion: true,
+        longAnswer: true,
+        tip: "SKIP for Co-relation. Important for Concept Map.",
+      },
+      {
+        chapter: 6,
+        name: "India and World",
+        conceptMap: false,
+        trueFalse: true,
+        coRelation: true,
+        opinion: true,
+        longAnswer: true,
+        tip: "All sections applicable. Focus on India's foreign policy, relations with neighbors.",
       },
     ],
   },

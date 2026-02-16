@@ -21,6 +21,7 @@ import {
   EyeOff,
 } from "lucide-react";
 import { POLITICAL_SCIENCE_BOARD_CRASHER } from "../data/politicalScienceBoardCrasher";
+import MarkdownRenderer from "./MarkdownRenderer";
 
 interface PolScienceBoardCrasherProps {
   onClose: () => void;
@@ -34,6 +35,7 @@ type TabType =
   | "ch4"
   | "ch5"
   | "ch6"
+  | "mindfaces"
   | "lastmin";
 
 const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
@@ -77,6 +79,12 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
       label: "India-World",
       shortLabel: "6",
       color: "bg-indigo-500",
+    },
+    {
+      id: "mindfaces",
+      label: "MindFaces Tips",
+      shortLabel: "🧠",
+      color: "bg-pink-500",
     },
     {
       id: "lastmin",
@@ -460,8 +468,8 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                         {isRevealed ? "Hide Model Answer" : "Show Model Answer"}
                       </button>
                       {isRevealed && (
-                        <div className="text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap bg-white dark:bg-slate-800 p-4 rounded-xl border border-orange-200 dark:border-orange-800">
-                          {qa.modelAnswer}
+                        <div className="text-sm bg-white dark:bg-slate-800 p-4 rounded-xl border border-orange-200 dark:border-orange-800">
+                          <MarkdownRenderer content={qa.modelAnswer} />
                         </div>
                       )}
                     </div>
@@ -521,8 +529,8 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                         {isRevealed ? "Hide Model Answer" : "Show Model Answer"}
                       </button>
                       {isRevealed && (
-                        <div className="text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap bg-white dark:bg-slate-800 p-4 rounded-xl border border-red-200 dark:border-red-800 max-h-[50vh] overflow-y-auto">
-                          {qa.modelAnswer}
+                        <div className="text-sm bg-white dark:bg-slate-800 p-4 rounded-xl border border-red-200 dark:border-red-800 max-h-[50vh] overflow-y-auto">
+                          <MarkdownRenderer content={qa.modelAnswer} />
                         </div>
                       )}
                     </div>
@@ -532,6 +540,959 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
             )}
           </div>
         )}
+
+        {/* Textbook Exercises Section */}
+        {chapter.textbookExercises && (
+          <div className="space-y-4">
+            {/* Section Header */}
+            <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl p-4 text-white">
+              <h3 className="font-bold text-lg flex items-center gap-2">
+                📚 {chapter.textbookExercises.title}
+              </h3>
+              <p className="text-white/80 text-sm mt-1">
+                Complete textbook exercises with model answers
+              </p>
+            </div>
+
+            {/* Textbook MCQs */}
+            {chapter.textbookExercises.mcqs && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-mcqs" ? null : "tb-mcqs",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-emerald-50 dark:bg-emerald-900/20"
+                >
+                  <h4 className="font-bold text-emerald-800 dark:text-emerald-200 flex items-center gap-2">
+                    <CheckCircle2 size={20} /> Q.1(A) MCQs (
+                    {chapter.textbookExercises.mcqs.length})
+                  </h4>
+                  {expandedSection === "tb-mcqs" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-mcqs" && (
+                  <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+                    {chapter.textbookExercises.mcqs.map(
+                      (mcq: any, idx: number) => {
+                        const mcqId = `tb-mcq-${chapterKey}-${idx}`;
+                        const isRevealed = showAnswers[mcqId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                          >
+                            <p className="font-medium text-slate-800 dark:text-white mb-3">
+                              <span className="text-emerald-600 dark:text-emerald-400 font-bold mr-2">
+                                Q{idx + 1}.
+                              </span>
+                              {mcq.q}
+                            </p>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+                              {mcq.options.map(
+                                (opt: string, optIdx: number) => (
+                                  <div
+                                    key={optIdx}
+                                    className={`p-2 rounded-lg text-sm ${
+                                      isRevealed && optIdx === mcq.correct
+                                        ? "bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300 font-bold border-2 border-green-500"
+                                        : "bg-white dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                                    }`}
+                                  >
+                                    <span className="font-bold mr-2">
+                                      {String.fromCharCode(97 + optIdx)})
+                                    </span>
+                                    {opt}
+                                  </div>
+                                ),
+                              )}
+                            </div>
+                            <button
+                              onClick={() => toggleAnswer(mcqId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-emerald-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed ? "Hide Answer" : "Show Answer"}
+                            </button>
+                            {isRevealed && mcq.explanation && (
+                              <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded">
+                                💡 {mcq.explanation}
+                              </p>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Concept Identification */}
+            {chapter.textbookExercises.conceptIdentification && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-concepts" ? null : "tb-concepts",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-blue-50 dark:bg-blue-900/20"
+                >
+                  <h4 className="font-bold text-blue-800 dark:text-blue-200 flex items-center gap-2">
+                    <Brain size={20} /> Q.1(B) Concept Identification (
+                    {chapter.textbookExercises.conceptIdentification.length})
+                  </h4>
+                  {expandedSection === "tb-concepts" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-concepts" && (
+                  <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+                    {chapter.textbookExercises.conceptIdentification.map(
+                      (item: any, idx: number) => {
+                        const itemId = `tb-concept-${chapterKey}-${idx}`;
+                        const isRevealed = showAnswers[itemId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                          >
+                            <p className="font-medium text-slate-800 dark:text-white mb-3">
+                              <span className="text-blue-600 dark:text-blue-400 font-bold mr-2">
+                                {idx + 1}.
+                              </span>
+                              {item.statement}
+                            </p>
+                            <button
+                              onClick={() => toggleAnswer(itemId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-blue-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed ? "Hide Answer" : "Show Answer"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                                <p className="font-bold text-blue-700 dark:text-blue-300 text-lg mb-2">
+                                  ✅ {item.answer}
+                                </p>
+                                <p className="text-sm text-slate-600 dark:text-slate-400">
+                                  {item.explanation}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Concept Maps */}
+            {chapter.textbookExercises.conceptMaps && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-maps" ? null : "tb-maps",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-purple-50 dark:bg-purple-900/20"
+                >
+                  <h4 className="font-bold text-purple-800 dark:text-purple-200 flex items-center gap-2">
+                    <Globe size={20} /> Q.2(A) Concept Maps (
+                    {chapter.textbookExercises.conceptMaps.length})
+                  </h4>
+                  {expandedSection === "tb-maps" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-maps" && (
+                  <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
+                    {chapter.textbookExercises.conceptMaps.map(
+                      (map: any, idx: number) => {
+                        const mapId = `tb-map-${chapterKey}-${idx}`;
+                        const isRevealed = showAnswers[mapId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-purple-900/20 dark:to-indigo-900/20 p-4 rounded-xl border border-purple-200 dark:border-purple-800"
+                          >
+                            <p className="font-bold text-purple-800 dark:text-purple-200 mb-3">
+                              🗺️ {map.title}
+                            </p>
+                            <p className="text-sm text-slate-600 dark:text-slate-400 mb-3">
+                              {map.question}
+                            </p>
+                            <button
+                              onClick={() => toggleAnswer(mapId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-purple-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed
+                                ? "Hide Answer"
+                                : "Show Complete Concept Map"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-4 p-4 bg-white dark:bg-slate-800 rounded-xl">
+                                <div className="text-center mb-4">
+                                  <span className="inline-block px-4 py-2 bg-purple-600 text-white rounded-full font-bold">
+                                    {map.answer.centerNode}
+                                  </span>
+                                </div>
+                                <div className="flex flex-wrap justify-center gap-2 mb-4">
+                                  {(
+                                    map.answer.members || map.answer.founders
+                                  )?.map((member: string, mIdx: number) => (
+                                    <span
+                                      key={mIdx}
+                                      className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium"
+                                    >
+                                      {member}
+                                    </span>
+                                  ))}
+                                </div>
+                                {map.answer.laterMembers && (
+                                  <div className="flex flex-wrap justify-center gap-2 mb-4">
+                                    {map.answer.laterMembers.map(
+                                      (member: string, mIdx: number) => (
+                                        <span
+                                          key={mIdx}
+                                          className="px-3 py-1 bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 rounded-full text-sm font-medium"
+                                        >
+                                          + {member}
+                                        </span>
+                                      ),
+                                    )}
+                                  </div>
+                                )}
+                                <div className="text-xs text-slate-600 dark:text-slate-400 space-y-1 mt-3 bg-slate-50 dark:bg-slate-700 p-3 rounded">
+                                  {map.answer.fullForm && (
+                                    <p>
+                                      <strong>Full Form:</strong>{" "}
+                                      {map.answer.fullForm}
+                                    </p>
+                                  )}
+                                  {map.answer.established && (
+                                    <p>
+                                      <strong>Established:</strong>{" "}
+                                      {map.answer.established}
+                                    </p>
+                                  )}
+                                  {map.answer.headquarters && (
+                                    <p>
+                                      <strong>HQ:</strong>{" "}
+                                      {map.answer.headquarters}
+                                    </p>
+                                  )}
+                                  {map.answer.focus && (
+                                    <p>
+                                      <strong>Focus:</strong> {map.answer.focus}
+                                    </p>
+                                  )}
+                                  {map.answer.note && (
+                                    <p className="text-purple-600 dark:text-purple-400 font-medium mt-2">
+                                      📌 {map.answer.note}
+                                    </p>
+                                  )}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Map Questions */}
+            {chapter.textbookExercises.mapQuestions && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-mapq" ? null : "tb-mapq",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-teal-50 dark:bg-teal-900/20"
+                >
+                  <h4 className="font-bold text-teal-800 dark:text-teal-200 flex items-center gap-2">
+                    <Globe size={20} /> Q.2(B) Map Questions (
+                    {chapter.textbookExercises.mapQuestions.length})
+                  </h4>
+                  {expandedSection === "tb-mapq" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-mapq" && (
+                  <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+                    {chapter.textbookExercises.mapQuestions.map(
+                      (q: any, idx: number) => {
+                        const qId = `tb-mapq-${chapterKey}-${idx}`;
+                        const isRevealed = showAnswers[qId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                          >
+                            <p className="font-medium text-slate-800 dark:text-white mb-3">
+                              <span className="text-teal-600 dark:text-teal-400 font-bold mr-2">
+                                ({idx + 1})
+                              </span>
+                              {q.question}
+                            </p>
+                            <button
+                              onClick={() => toggleAnswer(qId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-teal-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed ? "Hide Answer" : "Show Answer"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-3 p-3 bg-teal-50 dark:bg-teal-900/20 rounded-lg">
+                                <p className="font-bold text-teal-700 dark:text-teal-300 mb-2">
+                                  Answer (Any {q.answer.length >= 4 ? "4" : "2"}
+                                  ):
+                                </p>
+                                <div className="flex flex-wrap gap-2 mb-2">
+                                  {q.answer.map((a: string, aIdx: number) => (
+                                    <span
+                                      key={aIdx}
+                                      className="px-2 py-1 bg-teal-100 dark:bg-teal-900 text-teal-700 dark:text-teal-300 rounded text-sm"
+                                    >
+                                      {a}
+                                    </span>
+                                  ))}
+                                </div>
+                                <p className="text-xs text-slate-600 dark:text-slate-400 mt-2">
+                                  {q.note}
+                                </p>
+                                <p className="text-xs text-slate-500 dark:text-slate-500 mt-1 italic">
+                                  {q.explanation}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* True/False */}
+            {chapter.textbookExercises.trueFalse && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-tf" ? null : "tb-tf",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-amber-50 dark:bg-amber-900/20"
+                >
+                  <h4 className="font-bold text-amber-800 dark:text-amber-200 flex items-center gap-2">
+                    <CheckCircle2 size={20} /> Q.3 True/False with Reasons (
+                    {chapter.textbookExercises.trueFalse.length})
+                  </h4>
+                  {expandedSection === "tb-tf" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-tf" && (
+                  <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
+                    {chapter.textbookExercises.trueFalse.map(
+                      (tf: any, idx: number) => {
+                        const tfId = `tb-tf-${chapterKey}-${idx}`;
+                        const isRevealed = showAnswers[tfId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                          >
+                            <p className="font-medium text-slate-800 dark:text-white mb-3">
+                              <span className="text-amber-600 dark:text-amber-400 font-bold mr-2">
+                                ({idx + 1})
+                              </span>
+                              {tf.statement}
+                            </p>
+                            <button
+                              onClick={() => toggleAnswer(tfId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-amber-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed
+                                ? "Hide Answer"
+                                : "Show Answer with Reason"}
+                            </button>
+                            {isRevealed && (
+                              <div
+                                className={`mt-3 p-3 rounded-lg ${tf.answer ? "bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800" : "bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800"}`}
+                              >
+                                <div className="text-sm">
+                                  <MarkdownRenderer content={tf.reason} />
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Opinion Questions */}
+            {chapter.textbookExercises.opinionQuestions && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-opinion" ? null : "tb-opinion",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-pink-50 dark:bg-pink-900/20"
+                >
+                  <h4 className="font-bold text-pink-800 dark:text-pink-200 flex items-center gap-2">
+                    <FileText size={20} /> Q.4 Express Your Opinion (
+                    {chapter.textbookExercises.opinionQuestions.length})
+                  </h4>
+                  {expandedSection === "tb-opinion" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-opinion" && (
+                  <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
+                    {chapter.textbookExercises.opinionQuestions.map(
+                      (oq: any, idx: number) => {
+                        const oqId = `tb-opinion-${chapterKey}-${idx}`;
+                        const isRevealed = showAnswers[oqId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-gradient-to-br from-pink-50 to-rose-50 dark:from-pink-900/20 dark:to-rose-900/20 p-4 rounded-xl border border-pink-200 dark:border-pink-800"
+                          >
+                            <p className="font-bold text-pink-800 dark:text-pink-200 mb-3">
+                              💬 Express your opinion on: {oq.topic}
+                            </p>
+                            <button
+                              onClick={() => toggleAnswer(oqId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-pink-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed
+                                ? "Hide Model Answer"
+                                : "Show Model Answer"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-3 p-4 bg-white dark:bg-slate-800 rounded-lg text-sm max-h-[50vh] overflow-y-auto">
+                                <MarkdownRenderer content={oq.modelAnswer} />
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Short Answers */}
+            {chapter.textbookExercises.shortAnswers && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-short" ? null : "tb-short",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-cyan-50 dark:bg-cyan-900/20"
+                >
+                  <h4 className="font-bold text-cyan-800 dark:text-cyan-200 flex items-center gap-2">
+                    <FileText size={20} /> Q.5 Short Answers (
+                    {chapter.textbookExercises.shortAnswers.length})
+                  </h4>
+                  {expandedSection === "tb-short" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-short" && (
+                  <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
+                    {chapter.textbookExercises.shortAnswers.map(
+                      (sa: any, idx: number) => {
+                        const saId = `tb-short-${chapterKey}-${idx}`;
+                        const isRevealed = showAnswers[saId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                          >
+                            <div className="flex items-start justify-between gap-2 mb-3">
+                              <p className="font-bold text-slate-800 dark:text-white flex-1">
+                                {sa.question}
+                              </p>
+                              <span className="text-xs bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 px-2 py-1 rounded shrink-0">
+                                {sa.marks} marks
+                              </span>
+                            </div>
+                            <button
+                              onClick={() => toggleAnswer(saId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-cyan-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed
+                                ? "Hide Model Answer"
+                                : "Show Model Answer"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-3 p-4 bg-white dark:bg-slate-800 rounded-lg text-sm border border-cyan-200 dark:border-cyan-800 max-h-[50vh] overflow-y-auto">
+                                <MarkdownRenderer content={sa.modelAnswer} />
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Long Answers */}
+            {chapter.textbookExercises.longAnswers && (
+              <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <button
+                  onClick={() =>
+                    setExpandedSection(
+                      expandedSection === "tb-long" ? null : "tb-long",
+                    )
+                  }
+                  className="w-full p-4 flex items-center justify-between bg-violet-50 dark:bg-violet-900/20"
+                >
+                  <h4 className="font-bold text-violet-800 dark:text-violet-200 flex items-center gap-2">
+                    <BookOpen size={20} /> Q.6 Long Answers (
+                    {chapter.textbookExercises.longAnswers.length})
+                  </h4>
+                  {expandedSection === "tb-long" ? (
+                    <ChevronDown size={20} />
+                  ) : (
+                    <ChevronRight size={20} />
+                  )}
+                </button>
+                {expandedSection === "tb-long" && (
+                  <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
+                    {chapter.textbookExercises.longAnswers.map(
+                      (la: any, idx: number) => {
+                        const laId = `tb-long-${chapterKey}-${idx}`;
+                        const isRevealed = showAnswers[laId];
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-900/20 dark:to-purple-900/20 p-4 rounded-xl border border-violet-200 dark:border-violet-800"
+                          >
+                            <div className="flex items-start justify-between gap-2 mb-3">
+                              <p className="font-bold text-violet-800 dark:text-violet-200 flex-1">
+                                {la.question}
+                              </p>
+                              <span className="text-xs bg-violet-100 dark:bg-violet-900 text-violet-700 dark:text-violet-300 px-2 py-1 rounded shrink-0">
+                                {la.marks} marks
+                              </span>
+                            </div>
+                            <button
+                              onClick={() => toggleAnswer(laId)}
+                              className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-violet-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? (
+                                <EyeOff size={16} />
+                              ) : (
+                                <Eye size={16} />
+                              )}
+                              {isRevealed
+                                ? "Hide Model Answer"
+                                : "Show Model Answer 📝"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-3 p-4 bg-white dark:bg-slate-800 rounded-lg text-sm border border-violet-200 dark:border-violet-800 max-h-[60vh] overflow-y-auto">
+                                <MarkdownRenderer content={la.modelAnswer} />
+                              </div>
+                            )}
+                          </div>
+                        );
+                      },
+                    )}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const renderMindFaces = () => {
+    const mf = data.mindFacesTips;
+    if (!mf) return <p className="p-4">Mind Faces tips not found</p>;
+
+    return (
+      <div className="space-y-4 p-4">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 rounded-2xl p-4 text-white">
+          <div className="flex items-center gap-3">
+            <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-2xl">
+              🧠
+            </div>
+            <div>
+              <h3 className="font-black text-xl">Mind Faces Tips</h3>
+              <p className="text-white/90 text-sm">{mf.source}</p>
+              <p className="text-white/80 text-xs mt-1">{mf.note}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Question Pattern Guide */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+          <button
+            onClick={() =>
+              setExpandedSection(
+                expandedSection === "patterns" ? null : "patterns",
+              )
+            }
+            className="w-full p-4 flex items-center justify-between bg-pink-50 dark:bg-pink-900/20"
+          >
+            <h4 className="font-bold text-pink-800 dark:text-pink-200 flex items-center gap-2">
+              <FileText size={20} /> Question-wise Strategy (
+              {mf.questionPatterns.length})
+            </h4>
+            {expandedSection === "patterns" ? (
+              <ChevronDown size={20} />
+            ) : (
+              <ChevronRight size={20} />
+            )}
+          </button>
+          {expandedSection === "patterns" && (
+            <div className="p-4 space-y-3 max-h-[60vh] overflow-y-auto">
+              {mf.questionPatterns.map((pattern: any, idx: number) => (
+                <div
+                  key={idx}
+                  className={`p-4 rounded-xl border-l-4 ${
+                    pattern.priority === "high"
+                      ? "bg-red-50 dark:bg-red-900/20 border-red-500"
+                      : "bg-yellow-50 dark:bg-yellow-900/20 border-yellow-500"
+                  }`}
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">{pattern.icon}</span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-bold text-slate-800 dark:text-white">
+                          {pattern.question}
+                        </span>
+                        <span className="text-xs bg-slate-200 dark:bg-slate-700 px-2 py-1 rounded text-slate-600 dark:text-slate-300">
+                          {pattern.type}
+                        </span>
+                      </div>
+                      <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">
+                        💡 {pattern.tip}
+                      </p>
+                      {pattern.chapters && (
+                        <p className="text-xs text-green-600 dark:text-green-400 mt-1">
+                          ✅ Chapters: {pattern.chapters.join(", ")}
+                        </p>
+                      )}
+                      {pattern.skipChapters && (
+                        <p className="text-xs text-red-600 dark:text-red-400 mt-1">
+                          ❌ Skip Chapters: {pattern.skipChapters.join(", ")}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Chapter Strategy Matrix */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+          <button
+            onClick={() =>
+              setExpandedSection(expandedSection === "matrix" ? null : "matrix")
+            }
+            className="w-full p-4 flex items-center justify-between bg-blue-50 dark:bg-blue-900/20"
+          >
+            <h4 className="font-bold text-blue-800 dark:text-blue-200 flex items-center gap-2">
+              <Target size={20} /> Chapter Strategy Matrix
+            </h4>
+            {expandedSection === "matrix" ? (
+              <ChevronDown size={20} />
+            ) : (
+              <ChevronRight size={20} />
+            )}
+          </button>
+          {expandedSection === "matrix" && (
+            <div className="p-4 overflow-x-auto">
+              <table className="w-full text-xs">
+                <thead>
+                  <tr className="bg-slate-100 dark:bg-slate-700">
+                    <th className="p-2 text-left text-slate-700 dark:text-slate-300">
+                      Ch
+                    </th>
+                    <th className="p-2 text-center text-slate-700 dark:text-slate-300">
+                      🗺️Map
+                    </th>
+                    <th className="p-2 text-center text-slate-700 dark:text-slate-300">
+                      ✓✗T/F
+                    </th>
+                    <th className="p-2 text-center text-slate-700 dark:text-slate-300">
+                      🔗CoRel
+                    </th>
+                    <th className="p-2 text-center text-slate-700 dark:text-slate-300">
+                      💬Opin
+                    </th>
+                    <th className="p-2 text-center text-slate-700 dark:text-slate-300">
+                      📚Long
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {mf.chapterStrategy.map((ch: any, idx: number) => (
+                    <tr
+                      key={idx}
+                      className="border-t border-slate-200 dark:border-slate-700"
+                    >
+                      <td className="p-2 font-bold text-slate-800 dark:text-white">
+                        {ch.chapter}. {ch.name.slice(0, 10)}...
+                      </td>
+                      <td className="p-2 text-center">
+                        {ch.conceptMap ? "✅" : "❌"}
+                      </td>
+                      <td className="p-2 text-center">
+                        {ch.trueFalse ? "✅" : "❌"}
+                      </td>
+                      <td className="p-2 text-center">
+                        {ch.coRelation ? "✅" : "❌"}
+                      </td>
+                      <td className="p-2 text-center">
+                        {ch.opinion ? "✅" : "❌"}
+                      </td>
+                      <td className="p-2 text-center">
+                        {ch.longAnswer ? "✅" : "❌"}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <div className="mt-4 space-y-2">
+                {mf.chapterStrategy.map((ch: any, idx: number) => (
+                  <div
+                    key={idx}
+                    className="bg-slate-50 dark:bg-slate-700 p-2 rounded-lg text-xs"
+                  >
+                    <span className="font-bold text-slate-800 dark:text-white">
+                      Ch {ch.chapter}:
+                    </span>{" "}
+                    <span className="text-slate-600 dark:text-slate-300">
+                      {ch.tip}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Probable Questions 80-100 Words */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+          <button
+            onClick={() =>
+              setExpandedSection(
+                expandedSection === "probable" ? null : "probable",
+              )
+            }
+            className="w-full p-4 flex items-center justify-between bg-gradient-to-r from-orange-100 to-red-100 dark:from-orange-900/30 dark:to-red-900/30"
+          >
+            <h4 className="font-bold text-orange-800 dark:text-orange-200 flex items-center gap-2">
+              <Star size={20} className="text-yellow-500" /> Probable Questions
+              (80-100 words) 🔥
+            </h4>
+            {expandedSection === "probable" ? (
+              <ChevronDown size={20} />
+            ) : (
+              <ChevronRight size={20} />
+            )}
+          </button>
+          {expandedSection === "probable" && (
+            <div className="p-4 space-y-4 max-h-[70vh] overflow-y-auto">
+              {mf.probableQuestions80to100.map((qa: any, idx: number) => {
+                const qaId = `probable-${idx}`;
+                const isRevealed = showAnswers[qaId];
+                return (
+                  <div
+                    key={idx}
+                    className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 p-4 rounded-xl border border-orange-200 dark:border-orange-800"
+                  >
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <div className="flex-1">
+                        <span className="text-xs bg-orange-500 text-white px-2 py-1 rounded font-bold">
+                          Chapter {qa.chapter} - {qa.chapterName}
+                        </span>
+                        <p className="font-bold text-slate-800 dark:text-white mt-2">
+                          {qa.question}
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => toggleAnswer(qaId)}
+                      className={`w-full py-2 rounded-lg text-sm font-bold flex items-center justify-center gap-2 mb-3 ${
+                        isRevealed
+                          ? "bg-gradient-to-r from-orange-500 to-red-500 text-white"
+                          : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                      }`}
+                    >
+                      {isRevealed ? <EyeOff size={16} /> : <Eye size={16} />}
+                      {isRevealed
+                        ? "Hide Model Answer"
+                        : "Show Model Answer 📝"}
+                    </button>
+                    {isRevealed && (
+                      <div className="text-sm bg-white dark:bg-slate-800 p-4 rounded-xl border border-orange-200 dark:border-orange-800">
+                        <MarkdownRenderer content={qa.modelAnswer} />
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          )}
+        </div>
+
+        {/* Quick Tips Box */}
+        <div className="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-4 text-white">
+          <h4 className="font-bold text-lg mb-3 flex items-center gap-2">
+            <Zap size={20} /> Mind Faces Quick Tips
+          </h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex items-start gap-2">
+              <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+              <span>
+                <strong>Concept Map:</strong> Only from Ch 1, 4, 5 - Practice
+                drawing!
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+              <span>
+                <strong>True/False:</strong> Do from Textual Exercises (Skip Ch
+                2)
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+              <span>
+                <strong>Co-relation:</strong> Skip Ch 3 & 5, focus on Textual
+                Exercises
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+              <span>
+                <strong>80-100 words:</strong> Focus on probable questions
+                above!
+              </span>
+            </li>
+            <li className="flex items-start gap-2">
+              <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+              <span>
+                <strong>150-200 words:</strong> Only from Ch 1, 2, 3, 5, 6 -
+                Leave 1 chapter
+              </span>
+            </li>
+          </ul>
+        </div>
       </div>
     );
   };
@@ -707,20 +1668,21 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
         {activeTab === "ch4" && renderChapter("chapter4")}
         {activeTab === "ch5" && renderChapter("chapter5")}
         {activeTab === "ch6" && renderChapter("chapter6")}
+        {activeTab === "mindfaces" && renderMindFaces()}
         {activeTab === "lastmin" && renderLastMinute()}
       </div>
 
       {/* Bottom Navigation - Quick Chapter Jump */}
       <div className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-2 shrink-0 safe-area-bottom">
         <div className="flex justify-around">
-          {tabs.slice(1, 7).map((tab) => (
+          {tabs.slice(1, 8).map((tab) => (
             <button
               key={tab.id}
               onClick={() => {
                 setActiveTab(tab.id);
                 setExpandedSection(null);
               }}
-              className={`w-10 h-10 rounded-xl flex items-center justify-center text-sm font-bold ${
+              className={`w-9 h-9 rounded-xl flex items-center justify-center text-sm font-bold ${
                 activeTab === tab.id
                   ? `${tab.color} text-white`
                   : "bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
