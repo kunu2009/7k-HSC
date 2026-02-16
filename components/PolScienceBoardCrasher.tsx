@@ -19,9 +19,13 @@ import {
   ArrowLeft,
   Eye,
   EyeOff,
+  Maximize2,
+  ClipboardList,
 } from "lucide-react";
 import { POLITICAL_SCIENCE_BOARD_CRASHER } from "../data/politicalScienceBoardCrasher";
 import MarkdownRenderer from "./MarkdownRenderer";
+import FullscreenModal from "./FullscreenModal";
+import PolSciMockTest from "./PolSciMockTest";
 
 interface PolScienceBoardCrasherProps {
   onClose: () => void;
@@ -94,12 +98,61 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
     },
   ];
 
+  // Fullscreen modal state
+  const [fullscreenContent, setFullscreenContent] = useState<{
+    isOpen: boolean;
+    title: string;
+    content: string;
+    question?: string;
+    type: "question" | "answer" | "both";
+  }>({ isOpen: false, title: "", content: "", type: "answer" });
+
+  // Mock test state
+  const [showMockTest, setShowMockTest] = useState(false);
+
+  const openFullscreen = (
+    title: string,
+    content: string,
+    question?: string,
+    type: "question" | "answer" | "both" = "both",
+  ) => {
+    setFullscreenContent({ isOpen: true, title, content, question, type });
+  };
+
+  const closeFullscreen = () => {
+    setFullscreenContent({
+      isOpen: false,
+      title: "",
+      content: "",
+      type: "answer",
+    });
+  };
+
   const toggleAnswer = (id: string) => {
     setShowAnswers((prev) => ({ ...prev, [id]: !prev[id] }));
   };
 
   const renderOverview = () => (
     <div className="space-y-4 p-4">
+      {/* Mock Test Button */}
+      <button
+        onClick={() => setShowMockTest(true)}
+        className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-4 text-white flex items-center justify-between hover:opacity-90 transition-opacity"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
+            <ClipboardList size={24} />
+          </div>
+          <div className="text-left">
+            <h3 className="font-bold text-lg">📝 Mock Board Test</h3>
+            <p className="text-white/80 text-sm">
+              March 2023 Paper • 80 Marks • 3 Hours
+            </p>
+          </div>
+        </div>
+        <ChevronRight size={24} />
+      </button>
+
       {/* Exam Alert */}
       <div className="bg-gradient-to-r from-red-500 to-orange-500 rounded-2xl p-4 text-white">
         <div className="flex items-center gap-3">
@@ -533,8 +586,27 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                         {isRevealed ? "Hide Model Answer" : "Show Model Answer"}
                       </button>
                       {isRevealed && (
-                        <div className="text-sm bg-white dark:bg-slate-800 p-4 rounded-xl border border-orange-200 dark:border-orange-800">
-                          <MarkdownRenderer content={qa.modelAnswer} />
+                        <div className="relative">
+                          <button
+                            onClick={() =>
+                              openFullscreen(
+                                "4-Mark Answer",
+                                qa.modelAnswer,
+                                qa.q,
+                                "both",
+                              )
+                            }
+                            className="absolute top-2 right-2 p-2 bg-slate-200 dark:bg-slate-600 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-500 transition-colors z-10"
+                            title="View Fullscreen"
+                          >
+                            <Maximize2
+                              size={16}
+                              className="text-slate-600 dark:text-slate-300"
+                            />
+                          </button>
+                          <div className="text-sm bg-white dark:bg-slate-800 p-4 rounded-xl border border-orange-200 dark:border-orange-800">
+                            <MarkdownRenderer content={qa.modelAnswer} />
+                          </div>
                         </div>
                       )}
                     </div>
@@ -594,8 +666,27 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                         {isRevealed ? "Hide Model Answer" : "Show Model Answer"}
                       </button>
                       {isRevealed && (
-                        <div className="text-sm bg-white dark:bg-slate-800 p-4 rounded-xl border border-red-200 dark:border-red-800 max-h-[50vh] overflow-y-auto">
-                          <MarkdownRenderer content={qa.modelAnswer} />
+                        <div className="relative">
+                          <button
+                            onClick={() =>
+                              openFullscreen(
+                                "8-Mark Answer",
+                                qa.modelAnswer,
+                                qa.q,
+                                "both",
+                              )
+                            }
+                            className="absolute top-2 right-2 p-2 bg-slate-200 dark:bg-slate-600 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-500 transition-colors z-10"
+                            title="View Fullscreen"
+                          >
+                            <Maximize2
+                              size={16}
+                              className="text-slate-600 dark:text-slate-300"
+                            />
+                          </button>
+                          <div className="text-sm bg-white dark:bg-slate-800 p-4 rounded-xl border border-red-200 dark:border-red-800 max-h-[50vh] overflow-y-auto">
+                            <MarkdownRenderer content={qa.modelAnswer} />
+                          </div>
                         </div>
                       )}
                     </div>
@@ -1366,8 +1457,27 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                                 : "Show Model Answer"}
                             </button>
                             {isRevealed && (
-                              <div className="mt-3 p-4 bg-white dark:bg-slate-800 rounded-lg text-sm max-h-[50vh] overflow-y-auto">
-                                <MarkdownRenderer content={cr.modelAnswer} />
+                              <div className="relative mt-3">
+                                <button
+                                  onClick={() =>
+                                    openFullscreen(
+                                      "3-Mark Co-relation",
+                                      cr.modelAnswer,
+                                      `Explain co-relation: ${cr.concepts}`,
+                                      "both",
+                                    )
+                                  }
+                                  className="absolute top-2 right-2 p-2 bg-slate-200 dark:bg-slate-600 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-500 transition-colors z-10"
+                                  title="View Fullscreen"
+                                >
+                                  <Maximize2
+                                    size={16}
+                                    className="text-slate-600 dark:text-slate-300"
+                                  />
+                                </button>
+                                <div className="p-4 bg-white dark:bg-slate-800 rounded-lg text-sm max-h-[50vh] overflow-y-auto">
+                                  <MarkdownRenderer content={cr.modelAnswer} />
+                                </div>
                               </div>
                             )}
                           </div>
@@ -1505,8 +1615,27 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                                 : "Show Model Answer"}
                             </button>
                             {isRevealed && (
-                              <div className="mt-3 p-4 bg-white dark:bg-slate-800 rounded-lg text-sm border border-cyan-200 dark:border-cyan-800 max-h-[50vh] overflow-y-auto">
-                                <MarkdownRenderer content={sa.modelAnswer} />
+                              <div className="relative mt-3">
+                                <button
+                                  onClick={() =>
+                                    openFullscreen(
+                                      "5-Mark Answer (80-100 words)",
+                                      sa.modelAnswer,
+                                      sa.question,
+                                      "both",
+                                    )
+                                  }
+                                  className="absolute top-2 right-2 p-2 bg-slate-200 dark:bg-slate-600 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-500 transition-colors z-10"
+                                  title="View Fullscreen"
+                                >
+                                  <Maximize2
+                                    size={16}
+                                    className="text-slate-600 dark:text-slate-300"
+                                  />
+                                </button>
+                                <div className="p-4 bg-white dark:bg-slate-800 rounded-lg text-sm border border-cyan-200 dark:border-cyan-800 max-h-[50vh] overflow-y-auto">
+                                  <MarkdownRenderer content={sa.modelAnswer} />
+                                </div>
                               </div>
                             )}
                           </div>
@@ -1577,8 +1706,27 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                                 : "Show Model Answer 📝"}
                             </button>
                             {isRevealed && (
-                              <div className="mt-3 p-4 bg-white dark:bg-slate-800 rounded-lg text-sm border border-violet-200 dark:border-violet-800 max-h-[60vh] overflow-y-auto">
-                                <MarkdownRenderer content={la.modelAnswer} />
+                              <div className="relative mt-3">
+                                <button
+                                  onClick={() =>
+                                    openFullscreen(
+                                      "10-Mark Answer",
+                                      la.modelAnswer,
+                                      la.question,
+                                      "both",
+                                    )
+                                  }
+                                  className="absolute top-2 right-2 p-2 bg-slate-200 dark:bg-slate-600 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-500 transition-colors z-10"
+                                  title="View Fullscreen"
+                                >
+                                  <Maximize2
+                                    size={16}
+                                    className="text-slate-600 dark:text-slate-300"
+                                  />
+                                </button>
+                                <div className="p-4 bg-white dark:bg-slate-800 rounded-lg text-sm border border-violet-200 dark:border-violet-800 max-h-[60vh] overflow-y-auto">
+                                  <MarkdownRenderer content={la.modelAnswer} />
+                                </div>
                               </div>
                             )}
                           </div>
@@ -1856,8 +2004,27 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
                         : "Show Model Answer 📝"}
                     </button>
                     {isRevealed && (
-                      <div className="text-sm bg-white dark:bg-slate-800 p-4 rounded-xl border border-orange-200 dark:border-orange-800">
-                        <MarkdownRenderer content={qa.modelAnswer} />
+                      <div className="relative">
+                        <button
+                          onClick={() =>
+                            openFullscreen(
+                              `${qa.marks} Answer`,
+                              qa.modelAnswer,
+                              qa.question,
+                              "both",
+                            )
+                          }
+                          className="absolute top-2 right-2 p-2 bg-slate-200 dark:bg-slate-600 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-500 transition-colors z-10"
+                          title="View Fullscreen"
+                        >
+                          <Maximize2
+                            size={16}
+                            className="text-slate-600 dark:text-slate-300"
+                          />
+                        </button>
+                        <div className="text-sm bg-white dark:bg-slate-800 p-4 rounded-xl border border-orange-200 dark:border-orange-800">
+                          <MarkdownRenderer content={qa.modelAnswer} />
+                        </div>
                       </div>
                     )}
                   </div>
@@ -2122,6 +2289,21 @@ const PolScienceBoardCrasher: React.FC<PolScienceBoardCrasherProps> = ({
           ))}
         </div>
       </div>
+
+      {/* Fullscreen Modal */}
+      <FullscreenModal
+        isOpen={fullscreenContent.isOpen}
+        onClose={closeFullscreen}
+        title={fullscreenContent.title}
+        content={fullscreenContent.content}
+        question={fullscreenContent.question}
+        type={fullscreenContent.type}
+      />
+
+      {/* Mock Test Modal */}
+      {showMockTest && (
+        <PolSciMockTest onClose={() => setShowMockTest(false)} />
+      )}
     </div>
   );
 };
