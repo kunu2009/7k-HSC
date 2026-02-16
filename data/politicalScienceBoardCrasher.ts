@@ -613,30 +613,6 @@ However, regionalism faces significant challenges. Sovereignty concerns make sta
 In my view, regionalism is essential in today's interconnected world because no single nation can effectively address transnational challenges alone. Climate change, terrorism, pandemic diseases, and economic instability all require coordinated regional responses. India should actively engage in SAARC, BIMSTEC, and SCO while strengthening bilateral relationships. Regionalism complements rather than replaces global multilateralism, providing an intermediate level of cooperation between national and global governance.`,
         },
       ],
-| Southeast Asia | ASEAN |
-| Africa | African Union (AU) |
-| Eurasia | SCO |
-
-**Benefits of Regionalism:**
-1. **Economic Integration**: Free trade, common markets, increased prosperity (EU single market)
-2. **Peace & Stability**: Reduces conflicts between member states
-3. **Collective Bargaining**: Smaller states gain stronger voice internationally
-4. **Shared Solutions**: Regional problems solved regionally (ASEAN on South China Sea)
-
-**Challenges:**
-1. **Sovereignty Concerns**: States hesitant to cede powers
-2. **Bilateral Conflicts**: India-Pakistan tensions hamper SAARC
-3. **Unequal Partners**: Dominance by larger members
-4. **Nationalism**: Rising nationalism threatens regional cooperation
-
-**My Opinion**: Regionalism is ESSENTIAL in today's globalized world because:
-- No country can solve transnational problems alone (climate, terrorism)
-- Economic development requires larger markets
-- Collective security more effective than individual
-
-**Conclusion**: Regionalism complements, not replaces, global multilateralism. India should actively engage in SAARC, BIMSTEC, SCO while strengthening bilateral ties.`,
-        },
-      ],
 
       // Q.6 Short Answer (80-100 words) - 5 marks each
       shortAnswers: [
