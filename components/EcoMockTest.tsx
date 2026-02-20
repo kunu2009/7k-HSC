@@ -2499,8 +2499,506 @@ const MOCK_PAPER_2023_BOARD = {
   ],
 };
 
+// AI-Predicted 2026 Economics Board Paper
+const MOCK_PAPER_2026_PREDICTED = {
+  title: "Economics - 🎯 AI Predicted 2026",
+  totalMarks: 80,
+  duration: 180,
+
+  sections: [
+    {
+      id: "q1a_2026p",
+      type: "mcq_combo",
+      title: "Q.1(A) Choose the correct option",
+      marks: 5,
+      instructions: "Choose the correct option to complete each statement",
+      questions: [
+        {
+          id: "eco_q1a1_2026p",
+          question: "Method adopted in Macro Economics analysis:",
+          options: [
+            "Slicing method",
+            "Aggregative method / Lumping method",
+            "Individualistic method",
+            "Price theory",
+          ],
+          correct: 1,
+          marks: 1,
+        },
+        {
+          id: "eco_q1a2_2026p",
+          question:
+            "Marginal Utility of a commodity becomes zero when Total Utility is:",
+          options: ["Rising", "Constant and Maximum", "Falling", "Negative"],
+          correct: 1,
+          marks: 1,
+        },
+        {
+          id: "eco_q1a3_2026p",
+          question:
+            "The relationship between income and demand for inferior goods is:",
+          options: [
+            "Direct",
+            "Inverse",
+            "No effect",
+            "Can be direct and inverse",
+          ],
+          correct: 1,
+          marks: 1,
+        },
+        {
+          id: "eco_q1a4_2026p",
+          question: "Index numbers are useful for making:",
+          options: [
+            "Chemical analysis",
+            "Future predictions",
+            "Weather forecasts",
+            "Geological surveys",
+          ],
+          correct: 1,
+          marks: 1,
+        },
+        {
+          id: "eco_q1a5_2026p",
+          question:
+            "Which of the following is NOT a function of the Reserve Bank of India (RBI)?",
+          options: [
+            "Issue of Currency Notes",
+            "Banker to the Government",
+            "Accepting deposits from the general public",
+            "Controller of Credit",
+          ],
+          correct: 2,
+          marks: 1,
+        },
+      ],
+    },
+    {
+      id: "q1b_2026p",
+      type: "odd_one",
+      title: "Q.1(B) Find the Odd Word Out",
+      marks: 5,
+      instructions: "Find the odd word from the given set",
+      questions: [
+        {
+          id: "eco_q1b1_2026p",
+          set: [
+            "Direct demand",
+            "Indirect demand",
+            "Joint demand",
+            "Market demand",
+          ],
+          answer: "Market demand",
+          reason:
+            "Market demand is classified by number of consumers (individual vs market). Others are classified by nature/purpose of demand.",
+          marks: 1,
+        },
+        {
+          id: "eco_q1b2_2026p",
+          set: [
+            "Financial year",
+            "Flow concept",
+            "Money value",
+            "Static concept",
+          ],
+          answer: "Static concept",
+          reason:
+            "Static concept is NOT a feature of National Income. Others (Financial year, Flow concept, Money value) are features of National Income.",
+          marks: 1,
+        },
+        {
+          id: "eco_q1b3_2026p",
+          set: [
+            "Deficit budget",
+            "Balanced budget",
+            "Surplus budget",
+            "Zero budget",
+          ],
+          answer: "Zero budget",
+          reason:
+            "Zero budget is not a standard type of government budget. Others are the three standard types of budget.",
+          marks: 1,
+        },
+        {
+          id: "eco_q1b4_2026p",
+          set: ["Land", "Labour", "Capital", "Profit"],
+          answer: "Profit",
+          reason:
+            "Profit is a factor income (return to entrepreneur), not a factor of production. Land, Labour, Capital are factors of production.",
+          marks: 1,
+        },
+        {
+          id: "eco_q1b5_2026p",
+          set: ["Fees", "Penalty", "Special levy", "Wealth tax"],
+          answer: "Wealth tax",
+          reason:
+            "Wealth tax is a Direct Tax (tax revenue). Others (Fees, Penalty, Special levy) are Non-Tax Revenue sources.",
+          marks: 1,
+        },
+      ],
+    },
+    {
+      id: "q1c_2026p",
+      type: "economic_term",
+      title: "Q.1(C) Give Economic Term",
+      marks: 5,
+      instructions: "Give economic terms for the following",
+      questions: [
+        {
+          id: "eco_q1c1_2026p",
+          statement:
+            "The volume of commodities and services turned out during a given period counted without duplication.",
+          answer: "National Income",
+          marks: 1,
+        },
+        {
+          id: "eco_q1c2_2026p",
+          statement:
+            "Degree of responsiveness of quantity demanded to a change in income only.",
+          answer: "Income Elasticity of Demand",
+          marks: 1,
+        },
+        {
+          id: "eco_q1c3_2026p",
+          statement:
+            "The cost incurred by the firm to promote sales (e.g., on advertisement).",
+          answer: "Selling Cost",
+          marks: 1,
+        },
+        {
+          id: "eco_q1c4_2026p",
+          statement:
+            "The amount that is received by the consumer for the services of his factor of production.",
+          answer: "Factor Income",
+          marks: 1,
+        },
+        {
+          id: "eco_q1c5_2026p",
+          statement:
+            "A competition where price is determined by the forces of demand and supply.",
+          answer: "Perfect Competition",
+          marks: 1,
+        },
+      ],
+    },
+    {
+      id: "q1d_2026p",
+      type: "correlation",
+      title: "Q.1(D) Complete the Correlation",
+      marks: 5,
+      instructions: "Complete the correlation",
+      questions: [
+        {
+          id: "eco_q1d1_2026p",
+          correlation:
+            "Micro Economics : Price Theory :: Macro Economics : ___",
+          answer: "Income and Employment Theory",
+          marks: 1,
+        },
+        {
+          id: "eco_q1d2_2026p",
+          correlation: "Form utility : Furniture :: Service utility : ___",
+          answer: "Doctor / Teacher / Lawyer",
+          marks: 1,
+        },
+        {
+          id: "eco_q1d3_2026p",
+          correlation:
+            "Perfectly elastic demand : Ed = ∞ :: Perfectly inelastic demand : ___",
+          answer: "Ed = 0",
+          marks: 1,
+        },
+        {
+          id: "eco_q1d4_2026p",
+          correlation:
+            "Price remains constant : Change in supply :: Price changes : ___",
+          answer: "Variation in supply",
+          marks: 1,
+        },
+        {
+          id: "eco_q1d5_2026p",
+          correlation:
+            "Consumption expenditure : Revenue expenditure :: Repayment of loans : ___",
+          answer: "Capital expenditure",
+          marks: 1,
+        },
+      ],
+    },
+    {
+      id: "q2a_2026p",
+      type: "identify_explain",
+      title: "Q.2(A) Identify and Explain the Concepts",
+      marks: 6,
+      instructions:
+        "Identify and explain the concept (Any 3 out of 5, 2 marks each)",
+      required: 3,
+      questions: [
+        {
+          id: "eco_q2a1_2026p",
+          statement:
+            "Mala collected information about the income and expenditure of twenty-five families from her locality.",
+          concept: "Micro Economics",
+          modelAnswer:
+            "**Micro Economics**\n\n• Microeconomics is the study of small individual units of the economy.\n• Studying 25 families' income/expenditure is a micro-level study — individual units, not the whole economy.\n• Uses Slicing Method (divides economy into small parts).\n• Also called Price Theory. Father: Alfred Marshall.",
+          marks: 2,
+        },
+        {
+          id: "eco_q2a2_2026p",
+          statement:
+            "Kavita consumed an additional unit of bread to satisfy her hunger.",
+          concept: "Marginal Utility",
+          modelAnswer:
+            "**Marginal Utility (MU)**\n\n• Marginal Utility is the additional utility derived from consuming one more (additional) unit of a commodity.\n• Formula: MU = TUn − TUn-1\n• The bread gives her additional satisfaction beyond what she already had.\n• Law of DMU states that MU decreases with each successive unit consumed.",
+          marks: 2,
+        },
+        {
+          id: "eco_q2a3_2026p",
+          statement: "Ramesh purchased a new laptop for his tailoring shop.",
+          concept: "Investment / Capital Formation",
+          modelAnswer:
+            "**Investment / Capital Formation**\n\n• Investment refers to expenditure on capital goods (machinery, equipment) used for production.\n• The laptop is purchased for business use (tailoring shop), not personal consumption.\n• It adds to the capital stock of the business.\n• This is Gross Fixed Capital Formation — a component of GDP calculation.",
+          marks: 2,
+        },
+        {
+          id: "eco_q2a4_2026p",
+          statement:
+            "India's trade deficit narrowed due to a large volume of gold exports.",
+          concept: "Balance of Trade / Foreign Trade",
+          modelAnswer:
+            "**Balance of Trade (BOT)**\n\n• Balance of Trade is the difference between the value of exports and imports of visible goods.\n• When exports exceed imports → Trade Surplus; when imports exceed exports → Trade Deficit.\n• India's deficit narrowed because exports (gold) increased, reducing the gap.\n• BOT is a part of the broader Balance of Payments (BOP).",
+          marks: 2,
+        },
+        {
+          id: "eco_q2a5_2026p",
+          statement:
+            "The government has provided energy, transport, and banking facilities to increase trade.",
+          concept: "Infrastructure / Public Expenditure",
+          modelAnswer:
+            "**Infrastructure / Public Expenditure**\n\n• Infrastructure refers to the basic physical and organizational structures needed for economic activity — energy, transport, banking.\n• Government spending on infrastructure is Capital Expenditure — it creates assets.\n• This is an example of developmental public expenditure aimed at promoting economic growth.\n• Such expenditure is a reason for the continuous growth of public expenditure in India.",
+          marks: 2,
+        },
+      ],
+    },
+    {
+      id: "q2b_2026p",
+      type: "distinguish",
+      title: "Q.2(B) Distinguish Between",
+      marks: 6,
+      instructions: "Distinguish between (Any 3 out of 5, 2 marks each)",
+      required: 3,
+      questions: [
+        {
+          id: "eco_q2b1_2026p",
+          concepts: "Slicing Method and Lumping Method",
+          modelAnswer:
+            "| Point | Slicing Method | Lumping Method |\n|-------|---------------|----------------|\n| Meaning | Divides economy into small individual units and studies each separately | Studies the whole economy rather than its parts |\n| Used in | Micro Economics | Macro Economics |\n| Equilibrium | Partial Equilibrium | General Equilibrium |\n| Example | Study of individual demand, firm pricing | Study of aggregate demand, National Income |",
+          marks: 2,
+        },
+        {
+          id: "eco_q2b2_2026p",
+          concepts: "Total Utility and Marginal Utility",
+          modelAnswer:
+            "| Point | Total Utility | Marginal Utility |\n|-------|--------------|------------------|\n| Meaning | Sum of utilities from all units consumed | Additional utility from consuming one more unit |\n| Formula | TU = ΣMU | MU = TUn − TUn-1 |\n| Curve | Inverted U-shape | Downward sloping |\n| Relation | TU is maximum when MU = 0 | MU can be positive, zero, or negative |",
+          marks: 2,
+        },
+        {
+          id: "eco_q2b3_2026p",
+          concepts: "Direct Demand and Indirect Demand",
+          modelAnswer:
+            "| Point | Direct Demand | Indirect Demand |\n|-------|--------------|------------------|\n| Meaning | Demand for goods wanted for direct/final consumption | Demand for goods wanted for producing other goods (derived demand) |\n| Also called | Autonomous Demand | Derived Demand |\n| Examples | Food, Clothing, Mobiles, Medicines | Land, Labour, Raw materials, Machinery |\n| Nature | Independent of other goods | Depends on demand for the final product |",
+          marks: 2,
+        },
+        {
+          id: "eco_q2b4_2026p",
+          concepts: "Revenue Expenditure and Capital Expenditure",
+          modelAnswer:
+            "| Point | Revenue Expenditure | Capital Expenditure |\n|-------|---------------------|---------------------|\n| Nature | Recurring/routine expenditure | Non-recurring expenditure |\n| Assets | Does NOT create assets or reduce liabilities | Creates assets or reduces liabilities |\n| Examples | Salaries, pensions, interest payments, subsidies | Construction of roads/bridges, repayment of loans |\n| Purpose | Day-to-day administration | Long-term development |",
+          marks: 2,
+        },
+        {
+          id: "eco_q2b5_2026p",
+          concepts: "Money Market and Capital Market in India",
+          modelAnswer:
+            "| Point | Money Market | Capital Market |\n|-------|-------------|----------------|\n| Duration | Short-term funds (up to 1 year) | Long-term funds (more than 1 year) |\n| Instruments | Treasury Bills, Commercial Paper, Call Money | Shares, Debentures, Bonds |\n| Risk | Low risk | Higher risk |\n| Regulator | RBI | SEBI |\n| Liquidity | Highly liquid | Less liquid |",
+          marks: 2,
+        },
+      ],
+    },
+    {
+      id: "q3_2026p",
+      type: "short_answer",
+      title: "Q.3 Answer the Following",
+      marks: 12,
+      instructions: "Answer the following (Any 3 out of 5, 4 marks each)",
+      required: 3,
+      questions: [
+        {
+          id: "eco_q3_1_2026p",
+          question:
+            "Explain the features of National Income. (Shortcode: V-FMN)",
+          modelAnswer:
+            "**Features of National Income:**\n\n1) **Macro Economic Concept:** National income represents the income of the economy as a whole, not an individual.\n\n2) **Value of only Final Goods & Services:** To avoid double counting, only the value of final goods is considered. Intermediate goods are excluded.\n\n3) **Flow Concept:** NI is a flow concept — it shows the flow of goods and services produced during a year, not a stock at a point.\n\n4) **Money Value:** Always expressed in monetary terms. Only goods/services exchanged for money are included.\n\n5) **Net Aggregate Value:** Includes net value after deducting depreciation (wear & tear of capital assets).\n\n6) **Financial Year:** In India, it is from 1st April to 31st March.\n\n7) **Net Income from Abroad:** Includes NFIA — difference between export-import values (X−M) and receipts-payments abroad (R−P).",
+          marks: 4,
+        },
+        {
+          id: "eco_q3_2_2026p",
+          question: "Explain any four exceptions to the Law of Supply.",
+          modelAnswer:
+            "**Exceptions to the Law of Supply:**\n\n1) **Labour Supply (Backward Bending):** Initially, higher wages increase labour supply. But after a point, workers prefer leisure to work — supply of labour falls despite higher wages. Supply curve bends backward.\n\n2) **Agricultural Goods:** Production depends on seasons/climate, not price alone. Even at higher prices, supply can't increase if monsoon fails.\n\n3) **Rare/Antique Goods:** Supply of rare paintings, antiques, old coins cannot be increased regardless of price.\n\n4) **Urgent Need for Cash:** If a seller urgently needs money, he will sell large quantities even at lower prices.\n\n5) **Expectation of Future Price Rise:** If sellers expect prices to rise further, they hoard goods and reduce current supply, even if current prices are high.",
+          marks: 4,
+        },
+        {
+          id: "eco_q3_3_2026p",
+          question:
+            "Explain any four factors which influence the elasticity of demand.",
+          modelAnswer:
+            "**Factors Influencing Elasticity of Demand:**\n\n1) **Nature of the Commodity:** Necessities (salt, medicines) have inelastic demand (Ed < 1). Luxuries (AC, car) have elastic demand (Ed > 1).\n\n2) **Availability of Substitutes:** Goods with many substitutes (Pepsi vs Coke) have elastic demand. Goods with no substitutes (petrol) have inelastic demand.\n\n3) **Proportion of Income Spent:** If a large proportion of income is spent on a good (house rent), demand is elastic. If small proportion (matchbox), demand is inelastic.\n\n4) **Time Period:** Demand is more elastic in the long run (consumers can find alternatives) and less elastic in the short run.\n\n5) **Multiple Uses:** Goods with multiple uses (electricity) have elastic demand — if price falls, it's used for more purposes.",
+          marks: 4,
+        },
+        {
+          id: "eco_q3_4_2026p",
+          question:
+            "Explain the role of the Money Market in India. (Shortcode: FLIP SE GROWTH)",
+          modelAnswer:
+            "**Role of Money Market in India:**\n\n1) **Financing Trade:** Money market provides short-term funds for financing domestic and international trade through instruments like bills of exchange.\n\n2) **Liquidity Management:** Facilitates better management of liquidity and money in the economy by monetary authorities, leading to economic stability.\n\n3) **Industrial Development:** Provides working capital requirements of industries for day-to-day operations.\n\n4) **Portfolio Management:** Deals with different financial instruments designed to suit risk-return preferences, helping minimize risk and maximize returns.\n\n5) **Short-term Requirements:** Provides reasonable access for meeting short-term financial needs of borrowers at realistic prices.\n\n6) **Equilibrating Mechanism:** Through rational allocation of resources and mobilization of savings into investment channels, it establishes equilibrium between demand and supply of short-term funds.\n\n7) **Government Requirements:** Helps the Government fulfill short-term financial requirements through Treasury Bills.",
+          marks: 4,
+        },
+        {
+          id: "eco_q3_5_2026p",
+          question: "Explain the types of foreign trade.",
+          modelAnswer:
+            "**Types of Foreign Trade:**\n\nForeign trade is trade between different countries of the world. It has three types:\n\n1) **Import Trade:** When goods and services are purchased from a foreign country, it is called import trade. E.g., India imports crude oil from Saudi Arabia.\n\n2) **Export Trade:** When goods and services are sold to a foreign country, it is called export trade. E.g., India exports IT services and textiles.\n\n3) **Entrepot Trade (Re-export):** When goods are imported from one country, processed or stored, and then re-exported to another country. E.g., India imports raw diamonds, cuts & polishes them, and exports finished diamonds.\n\n**Importance of Foreign Trade:** Earns foreign exchange, encourages specialization, optimum allocation of resources, stabilizes prices, promotes economic development.",
+          marks: 4,
+        },
+      ],
+    },
+    {
+      id: "q4_2026p",
+      type: "agree_disagree",
+      title: "Q.4 Agree or Disagree",
+      marks: 12,
+      instructions:
+        "State with reasons whether you agree or disagree (Any 3 out of 5, 4 marks each)",
+      required: 3,
+      questions: [
+        {
+          id: "eco_q4_1_2026p",
+          statement: "The scope of microeconomics is unlimited.",
+          modelAnswer:
+            "**Disagree** ✗\n\n**Reasons:**\na) The scope of microeconomics is LIMITED, not unlimited.\nb) Microeconomics studies only individual/small economic units — individual consumer, individual firm, individual price, individual industry.\nc) It uses the slicing method — it takes only a small slice of the economy.\nd) It analyses partial equilibrium (Ceteris Paribus), isolating one unit at a time.\ne) It is Macroeconomics that has a wider scope — studying the entire economy.\nf) Therefore, the scope of microeconomics is limited (worm's eye view), not unlimited.",
+          marks: 4,
+        },
+        {
+          id: "eco_q4_2_2026p",
+          statement: "The demand curve slopes downward from left to right.",
+          modelAnswer:
+            "**Agree** ✓\n\n**Reasons:**\na) The Law of Demand states: 'Other things being equal, higher the price, lower the quantity demanded and vice versa.'\nb) There is an inverse relationship between price and quantity demanded.\nc) **Income Effect:** When price falls, real income (purchasing power) increases, so demand rises.\nd) **Substitution Effect:** When price falls, the good becomes relatively cheaper than substitutes, increasing demand.\ne) **New Buyers:** At lower prices, new consumers can afford the good.\nf) The demand curve slopes downward from left to right showing this inverse relationship.\n\n*Exceptions: Giffen goods, Veblen goods show upward slope.*",
+          marks: 4,
+        },
+        {
+          id: "eco_q4_3_2026p",
+          statement: "When total utility is maximum, marginal utility is zero.",
+          modelAnswer:
+            "**Agree** ✓\n\n**Reasons:**\na) Total Utility (TU) is the sum of all marginal utilities. TU = ΣMU.\nb) As consumption increases, MU keeps diminishing (Law of DMU).\nc) When MU = 0, TU reaches its maximum (Point of Satiety). Consumer is fully satisfied.\nd) If the consumer consumes beyond this point, MU becomes negative and TU starts falling.\ne) The MU curve intersects the X-axis (MU = 0) exactly when TU is at its peak.\nf) Therefore, when TU is maximum, MU is indeed zero.",
+          marks: 4,
+        },
+        {
+          id: "eco_q4_4_2026p",
+          statement: "Index numbers can be prepared without the base year.",
+          modelAnswer:
+            "**Disagree** ✗\n\n**Reasons:**\na) An index number is a device to measure changes in an economic variable over a period of time by comparing two periods.\nb) The base year is the reference year against which comparisons are made. Its value is always taken as 100.\nc) Without a base year, there is no benchmark for comparison — the index number would be meaningless.\nd) The base year should be a normal year, free from natural calamities, and not too distant in the past.\ne) Therefore, index numbers CANNOT be constructed without a base year.",
+          marks: 4,
+        },
+        {
+          id: "eco_q4_5_2026p",
+          statement:
+            "Goods and Services Tax (GST) replaced all indirect taxes in India.",
+          modelAnswer:
+            "**Agree** ✓ (Partially)\n\n**Reasons:**\na) GST was introduced on July 1, 2017 through the 101st Constitutional Amendment.\nb) GST replaced almost all major indirect taxes — Excise Duty, Service Tax, VAT, CST, Entry Tax, Luxury Tax, Entertainment Tax, and 17 other taxes.\nc) It created 'One Nation One Tax' — a unified indirect tax system.\nd) GST has a dual structure: CGST (Central), SGST (State), IGST (Inter-state).\ne) However, some items like petroleum products, alcohol for human consumption, and electricity duty are still outside GST.\nf) Therefore, GST replaced ALMOST all (but not every single one) indirect taxes in India.",
+          marks: 4,
+        },
+      ],
+    },
+    {
+      id: "q5_2026p",
+      type: "table_analysis",
+      title: "Q.5 Study the Table/Figure/Passage",
+      marks: 8,
+      instructions:
+        "Study the following and answer (Any 2 out of 3, 4 marks each)",
+      required: 2,
+      questions: [
+        {
+          id: "eco_q5_1_2026p",
+          question:
+            "Observe the following table and answer the questions:\n\n| Unit of Commodity | Total Utility (TU) | Marginal Utility (MU) |\n|-------------------|-------------------|----------------------|\n| 1 | 6 | ? |\n| 2 | ? | 5 |\n| 3 | 15 | 4 |\n| 4 | 15 | ? |\n| 5 | 14 | −1 |\n\n(a) Complete the above table. (2 marks)\n(b) When total utility is maximum, the marginal utility is ___. (1 mark)\n(c) When does Marginal Utility become negative? (1 mark)",
+          modelAnswer:
+            "**Solution:**\n\n**(a) Completed Table (MU = TUn − TUn-1):**\n| Unit | TU | MU |\n|------|-----|-----|\n| 1 | 6 | **6** |\n| 2 | **11** | 5 |\n| 3 | 15 | 4 |\n| 4 | 15 | **0** |\n| 5 | 14 | −1 |\n\nExplanation:\n- Unit 1: MU = TU = 6 (first unit)\n- Unit 2: TU = 6 + 5 = 11\n- Unit 4: MU = 15 − 15 = 0\n\n**(b)** When TU is Maximum → MU is **Zero** (at Unit 4, TU = 15 max, MU = 0)\n\n**(c)** MU becomes negative when consumption goes beyond the point of satiety — at **Unit 5** (MU = −1, TU falls from 15 to 14).",
+          marks: 4,
+        },
+        {
+          id: "eco_q5_2_2026p",
+          question:
+            "Observe the given diagram description and answer the questions:\n\nA diagram shows two demand curves: D-D (original) and D1-D1 (shifted rightward to the right of D-D). The price level P remains the same on both curves.\n\n(a) What does the movement from demand curve D-D to D1-D1 indicate? (1 mark)\n(b) Which factor remains constant in this diagram? (1 mark)\n(c) Name the phenomenon under which this type of shift occurs. (1 mark)\n(d) State two reasons for the shift from D-D to D1-D1. (1 mark)",
+          modelAnswer:
+            "**Solution:**\n\n**(a)** The movement from D-D to D1-D1 (rightward shift) indicates an **Increase in Demand** — at the same price, more quantity is demanded.\n\n**(b)** **Price** remains constant in this diagram. The shift occurs due to changes in other factors (non-price determinants).\n\n**(c)** This phenomenon is called **Change in Demand** (as opposed to Variation/Movement along the curve). Specifically, it is an **Increase in Demand**.\n\n**(d)** Two reasons for rightward shift (Increase in Demand):\n1. **Increase in consumer's income** — higher income leads to higher demand at same price.\n2. **Favorable change in taste/preference** — if consumers develop a liking for the product, demand increases.\n\n(Other reasons: increase in population, expectation of future price rise, decrease in price of complementary goods)",
+          marks: 4,
+        },
+        {
+          id: "eco_q5_3_2026p",
+          question:
+            "Read the given passage and answer the questions:\n\nMarkets can be classified based on area, time, competition, and volume of business. On the basis of competition, markets are divided into Perfect Competition and Imperfect Competition. In Perfect Competition, there are large numbers of buyers and sellers dealing in homogeneous products. No single buyer or seller can influence the price. In Imperfect Competition, products may be differentiated, and firms have some control over price. Monopolistic Competition is considered very realistic because it includes elements of both monopoly (product differentiation) and competition (many sellers). Firms in monopolistic competition incur 'selling costs' to promote their products.\n\n(a) Explain the concept of Market from an economic sense. (1 mark)\n(b) Write the classification of Market based on Competition. (1 mark)\n(c) What are Selling Costs? Why are they incurred in Monopolistic Competition? (2 marks)",
+          modelAnswer:
+            "**Solution:**\n\n**(a)** In economics, a market refers to any arrangement or mechanism that brings buyers and sellers together for the exchange of goods and services. It need not be a physical place — it can be based on telephone, internet, or any communication system.\n\n**(b)** Classification of Market based on Competition:\n1. **Perfect Competition** — Large number of buyers/sellers, homogeneous products, price takers.\n2. **Imperfect Competition:**\n   - Monopoly (single seller)\n   - Monopolistic Competition (many sellers, differentiated products)\n   - Oligopoly (few sellers)\n   - Duopoly (two sellers)\n\n**(c)** **Selling Costs** are the costs incurred by a firm to promote the sale of its product — advertising, free samples, displays, sales promotion, etc.\n\nThey are incurred in Monopolistic Competition because:\n- Products are differentiated (not identical)\n- Firms compete on the basis of product differentiation, not just price\n- Advertising is needed to attract customers and build brand loyalty\n- This is called non-price competition",
+          marks: 4,
+        },
+      ],
+    },
+    {
+      id: "q6_2026p",
+      type: "long_answer",
+      title: "Q.6 Answer in Detail",
+      marks: 16,
+      instructions: "Answer in detail (Any 2 out of 3, 8 marks each)",
+      required: 2,
+      questions: [
+        {
+          id: "eco_q6_1_2026p",
+          question:
+            "Explain the concept of Microeconomics and state its features. (Shortcode: LAB USP)",
+          modelAnswer:
+            "### Microeconomics — Concept and Features\n\n**Concept:**\nMicroeconomics is the branch of economics that studies individual economic units — individual consumer, individual firm, individual price, individual industry. The word 'Micro' is derived from the Greek word 'Mikros' meaning small.\n\nAlso called **Price Theory**. Father: **Alfred Marshall**.\n\n**Features (LAB USP):**\n\n**L — Limited Scope:**\nMicroeconomics has a limited scope. It studies only individual units of the economy (worm's eye view), not the whole economy.\n\n**A — Analysis of Market Structure:**\nMicroeconomics analyses the behavior of different market structures — Perfect Competition, Monopoly, Oligopoly, Monopolistic Competition.\n\n**B — Based on Certain Assumptions:**\nMicroeconomics begins with the assumption 'Other things remaining constant' (Ceteris Paribus) — perfect competition, laissez-faire, pure capitalism, full employment, etc.\n\n**U — Use of Marginalism Principle:**\nMicroeconomics uses the marginalism principle — Marginal Utility, Marginal Cost, Marginal Revenue — to explain economic decisions.\n\n**S — Study of Individual Units:**\nMicroeconomics is the study of small individual economic units — individual firm, individual price, individual household, individual industry, etc.\n\n**P — Price Theory:**\nMicroeconomics deals with the determination of prices of goods and services as well as factors of production. Hence it is known as Price Theory.\n\n**Additional Features:**\n- **Slicing Method:** Divides the whole economy into small units and studies each separately.\n- **Partial Equilibrium:** Analyses equilibrium of individual economic units (Ceteris Paribus).\n\n**Conclusion:** Microeconomics, though limited in scope, provides the foundation for understanding individual economic behavior and price determination.",
+          marks: 8,
+        },
+        {
+          id: "eco_q6_2_2026p",
+          question:
+            "Explain the Total Expenditure Method and Geometric Method of measuring Price Elasticity of Demand.",
+          modelAnswer:
+            "### Methods of Measuring Price Elasticity of Demand\n\n## A) Total Expenditure Method (by Prof. Marshall)\n\nThis method measures elasticity by comparing the total expenditure (Price × Quantity) before and after a price change.\n\n**Three Cases:**\n\n**1) Elastic Demand (Ed > 1):**\n- When price falls → Total expenditure INCREASES\n- When price rises → Total expenditure DECREASES\n- Price and expenditure move in OPPOSITE directions\n- Example: Luxury goods\n\n**2) Inelastic Demand (Ed < 1):**\n- When price falls → Total expenditure DECREASES\n- When price rises → Total expenditure INCREASES\n- Price and expenditure move in the SAME direction\n- Example: Necessities\n\n**3) Unitary Elastic Demand (Ed = 1):**\n- When price changes → Total expenditure REMAINS THE SAME\n- Example: Theoretical concept\n\n**Limitation:** This method can only tell whether Ed > 1, Ed < 1, or Ed = 1. It cannot give the exact numerical value.\n\n## B) Geometric Method (Point Method by Prof. Marshall)\n\nThis method measures elasticity at a specific point on the demand curve.\n\n**Formula:**\nEd = Lower segment of demand curve / Upper segment of demand curve\n\nOn a linear demand curve AB:\n- At point A (topmost): Ed = ∞ (Perfectly Elastic)\n- Between A and midpoint: Ed > 1 (Elastic)\n- At midpoint M: Ed = 1 (Unitary Elastic)\n- Between midpoint and B: Ed < 1 (Inelastic)\n- At point B (bottommost): Ed = 0 (Perfectly Inelastic)\n\n**Diagram:** Draw linear demand curve AB.\n- Mark midpoint M.\n- Label each segment with its elasticity value.\n- Ed at any point P = PB / PA (lower/upper segment)\n\n**Advantage:** This method can measure elasticity at any specific point on the demand curve, unlike the total expenditure method.\n\n**Conclusion:** Both methods complement each other. Total expenditure method gives a broad classification, while the geometric method gives precise point elasticity.",
+          marks: 8,
+        },
+        {
+          id: "eco_q6_3_2026p",
+          question:
+            "Explain the practical difficulties in the estimation of National Income. (Shortcode: VIP CID E)",
+          modelAnswer:
+            "### Practical Difficulties in National Income Estimation (VIP CID E)\n\n**Introduction:** National Income is the total monetary value of all final goods and services produced by normal residents during a financial year. However, its estimation faces several practical difficulties.\n\n**V — Valuation of Inventories:**\nValuation of unsold stock (inventories) is problematic. Prices keep changing, and there is no uniform method to value the stock of goods — whether at cost price or market price.\n\n**I — Illiteracy and Ignorance:**\nIn India, a large section of the population is illiterate and ignorant. They do not maintain proper accounts of their production, income, and expenditure. This makes data collection extremely difficult.\n\n**P — Problem of Double Counting:**\nThe greatest difficulty is distinguishing between final and intermediate products. Counting the same product at different stages leads to overestimation. E.g., flour used by a bakery is intermediate; by a household is final.\n\n**C — Capital Gains or Losses:**\nChanges in market value of capital assets (property, shares) due to market fluctuations are NOT included in NI because they don't result from current economic activity. But identifying and separating them is difficult.\n\n**I — Inadequate and Unreliable Data:**\nData on production, costs, crops, fisheries, forestry, small enterprises, unearned incomes, and consumption patterns is often incomplete, outdated, or unreliable in developing countries like India.\n\n**D — Depreciation:**\nDepreciation (wear and tear of capital assets) must be deducted to get net values. But there are no uniform, commonly accepted standard rates of depreciation applicable to all capital assets.\n\n**E — Existence of Non-Monetized Sector:**\nIn rural India, a major part of production (agriculture) is for self-consumption or barter exchange — it never enters the market. This is excluded from NI calculation, leading to underestimation.\n\n**Conclusion:** Despite these difficulties, efforts are continuously being made to improve data collection and estimation methods. The Central Statistical Organisation (CSO) in India is responsible for NI estimation and works to overcome these challenges.",
+          marks: 8,
+        },
+      ],
+    },
+  ],
+};
+
 // Available papers
 const AVAILABLE_PAPERS = [
+  {
+    id: "2026predicted",
+    data: MOCK_PAPER_2026_PREDICTED,
+    year: "2026",
+    month: "🎯 AI Predicted",
+  },
   {
     id: "2022mock",
     data: MOCK_PAPER_2022,

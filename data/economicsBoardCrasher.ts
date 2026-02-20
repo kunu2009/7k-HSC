@@ -16,7 +16,7 @@ export const ECONOMICS_BOARD_CRASHER = {
   examDate: "2026-02-24",
   totalMarks: 80,
   duration: "3 hours",
-  daysLeft: 8,
+  daysLeft: 4,
 
   // ==================== CHAPTER 1: INTRO TO MICRO & MACRO ====================
   chapter1: {
@@ -193,6 +193,203 @@ export const ECONOMICS_BOARD_CRASHER = {
 5. **Importance**: Helps in rational decision-making`,
       },
     ],
+
+    // ==================== TEXTBOOK EXERCISES - CHAPTER 1 ====================
+    textbookExercises: {
+      title: "Chapter 1 - Textbook Exercises with Answers",
+
+      // Q.1 Choose the correct option (Combo MCQs)
+      mcqs: [
+        {
+          q: "The branch of economics that deals with the allocation of resources.",
+          statements: [
+            "a) Micro economics",
+            "b) Macro economics",
+            "c) Econometrics",
+            "d) None of these",
+          ],
+          options: ["a, b and c", "a and b", "only a", "None of these"],
+          correct: 2,
+          answer: "only a",
+          explanation:
+            "Micro economics specifically deals with the allocation of scarce resources among unlimited wants at the individual level. It studies how individual consumers, firms, and industries make decisions regarding the allocation of limited resources. Macro economics studies the economy as a whole, and Econometrics is the application of statistical methods to economic data.",
+        },
+        {
+          q: "Concepts studied under Micro economics.",
+          statements: [
+            "a) National income",
+            "b) General price level",
+            "c) Factor pricing",
+            "d) Product pricing",
+          ],
+          options: ["a and c", "b, c and d", "a, b and c", "c and d"],
+          correct: 3,
+          answer: "c and d",
+          explanation:
+            "Factor pricing (determination of wages, rent, interest, profit) and Product pricing (determination of prices of goods and services) are studied under Micro economics. National income and General price level are Macro economics concepts as they deal with the economy as a whole.",
+        },
+        {
+          q: "Method adopted in micro economic analysis.",
+          statements: [
+            "a) Lumping method",
+            "b) Aggregative method",
+            "c) Slicing method",
+            "d) Inclusive method",
+          ],
+          options: ["a, c and d", "a, b and d", "only c", "only a"],
+          correct: 2,
+          answer: "only c",
+          explanation:
+            "Micro economics uses the Slicing method. It splits or divides the whole economy into small individual units and then studies each unit separately in detail. Lumping/Aggregative method is used by Macro economics. 'Inclusive method' is not a standard economic method.",
+        },
+        {
+          q: "Concepts studied under Macro economics.",
+          statements: [
+            "a) Whole economy",
+            "b) Economic development",
+            "c) Aggregate supply",
+            "d) Product pricing",
+          ],
+          options: ["a, b and c", "b, c and d", "only d", "a, b, c and d"],
+          correct: 0,
+          answer: "a, b and c",
+          explanation:
+            "Whole economy, Economic development, and Aggregate supply are all Macro economics concepts as they deal with the economy at the national/aggregate level. Product pricing is a Micro economics concept — it deals with individual goods/services pricing.",
+        },
+      ],
+
+      // Q.2 Complete the correlation
+      correlations: [
+        {
+          q: "Micro economics : Slicing method :: Macro economics : ___",
+          answer: "Lumping method",
+          explanation:
+            "Micro economics uses the Slicing method (divides economy into small units and studies each separately). Macro economics uses the Lumping method (studies the whole economy as one unit rather than its parts). Slicing = microscopic view, Lumping = telescopic view.",
+        },
+        {
+          q: "Micro economics : Tree :: Macro economics : ___",
+          answer: "Forest",
+          explanation:
+            "Micro economics is like studying a single tree (individual unit) in detail — one firm, one consumer, one price. Macro economics is like studying the entire forest (whole economy) — national income, aggregate demand, general price level. This analogy highlights the scope difference between the two branches.",
+        },
+        {
+          q: "Macro economic theory : Income and employment :: Micro economics : ___",
+          answer: "Price Theory",
+          explanation:
+            "Macro economics is also known as the 'Theory of Income and Employment' because it studies national income, employment levels, and output at the aggregate level. Micro economics is also called 'Price Theory' because it deals with the determination of prices of goods, services, and factors of production.",
+        },
+        {
+          q: "Makros : Macro economics :: Mikros : ___",
+          answer: "Micro economics",
+          explanation:
+            "'Makros' is a Greek word meaning 'large' — hence Macro economics (study of the large/whole economy). 'Mikros' is a Greek word meaning 'small' — hence Micro economics (study of small/individual units of the economy).",
+        },
+        {
+          q: "General equilibrium : Macro economics :: ___ : Micro economics",
+          answer: "Partial equilibrium",
+          explanation:
+            "Macro economics uses General equilibrium analysis — it considers the interdependence of all sectors of the economy simultaneously. Micro economics uses Partial equilibrium analysis — it isolates one unit (Ceteris Paribus) and studies it assuming all other factors remain constant.",
+        },
+      ],
+
+      // Q.3 Identify and explain the concepts
+      conceptIdentification: [
+        {
+          statement:
+            "Gauri collected the information about the income of a particular firm.",
+          concept: "Micro Economics",
+          explanation:
+            "**Micro Economics**\n\nThis is an example of Micro Economics because Gauri is studying the income of a 'particular firm' — which is an individual economic unit.\n\n• Micro economics is the study of individual economic units such as individual consumer, individual firm, individual price, individual industry, etc.\n• The word 'Micro' is derived from the Greek word 'Mikros' meaning small.\n• It uses the Slicing method — divides the economy into small parts and studies each separately.\n• Also called Price Theory. Father: Alfred Marshall.\n• It deals with Partial equilibrium (Ceteris Paribus — other things remaining constant).",
+        },
+        {
+          statement:
+            "Ramesh decided to take all decisions related to production, such as what and how to produce.",
+          concept: "Market Economy / Free Market Economy",
+          explanation:
+            "**Market Economy / Free Market Economy**\n\nThis is an example of a Market Economy (also called Free Market Economy or Capitalist Economy).\n\n• In a market economy, economic decisions regarding production — 'What to produce?', 'How to produce?', 'How much to produce?', 'For whom to produce?' — are taken by individual producers/entrepreneurs.\n• There is no intervention by the government.\n• Prices are determined by the forces of demand and supply in the market.\n• Microeconomics helps in understanding the workings of such a free market economy.\n• Examples: USA, UK (largely market-oriented economies).",
+        },
+        {
+          statement:
+            "Shabana paid wages to workers in her factory and interest on her bank loan.",
+          concept: "Theory of Factor Pricing",
+          explanation:
+            "**Theory of Factor Pricing (Micro Economics)**\n\nThis is an example of the Theory of Factor Pricing, which falls under Micro Economics.\n\n• Factor pricing deals with the determination of the prices (rewards) of factors of production:\n  - **Wages** → reward for Labour (Shabana paid wages to workers)\n  - **Interest** → reward for Capital (Shabana paid interest on bank loan)\n  - **Rent** → reward for Land\n  - **Profit** → reward for Entrepreneurship\n\n• Micro economics studies how the prices of these factors of production are determined in the market.\n• This comes under the scope of Micro economics as it deals with individual factor payments.",
+        },
+      ],
+
+      // Q.4 Short Answers (4 marks each)
+      shortAnswers: [
+        {
+          question: "Explain the features of Micro economics.",
+          marks: 4,
+          modelAnswer:
+            '**Features of Micro Economics (Shortcode: LAB USP)**\n\n"Microeconomics is in fact a microscopic study of the economy." — Maurice Dobb\n\n1) **L — Limited Scope:**\nMicroeconomics has a limited scope. It studies only individual units of the economy (worm\'s eye view), not the whole economy.\n\n2) **A — Analysis of Market Structure:**\nMicroeconomics analyses the behavior of different market structures — Perfect Competition, Monopoly, Oligopoly, Monopolistic Competition.\n\n3) **B — Based on Certain Assumptions:**\nMicroeconomics begins with the fundamental assumption "Other things remaining constant" (Ceteris Paribus) — perfect competition, laissez-faire policy, pure capitalism, full employment, etc. These assumptions make the analysis simple.\n\n4) **U — Use of Marginalism Principle:**\nMicroeconomics uses the marginalism principle — Marginal Utility, Marginal Cost, Marginal Revenue — to explain economic decisions at the individual level.\n\n5) **S — Study of Individual Units:**\nMicroeconomics studies small individual economic units — individual firm, individual price, individual household, etc.\n\n6) **P — Price Theory:**\nMicroeconomics deals with the determination of prices of goods and services as well as factors of production. Hence it is known as Price Theory.',
+        },
+        {
+          question: "Explain the importance of Macro economics.",
+          marks: 4,
+          modelAnswer:
+            "**Importance of Macro Economics:**\n\n1) **Understanding the Working of the Economy:**\nMacroeconomics helps us understand how the economy as a whole works. It explains the determination of national income, output, employment, and the general price level.\n\n2) **Formulation of Economic Policies:**\nMacroeconomics provides the basis for the government to formulate economic policies such as fiscal policy, monetary policy, trade policy, employment policy, etc. These policies aim to achieve economic stability and growth.\n\n3) **Study of National Income:**\nMacroeconomics studies the concept of national income — its components, methods of measurement, and difficulties in estimation. National income data is essential for economic planning and comparison between countries.\n\n4) **Understanding Trade Cycles:**\nMacroeconomics explains the causes of economic fluctuations (boom, recession, depression, recovery). It helps in framing policies to control trade cycles and achieve economic stability.\n\n5) **International Comparisons:**\nMacroeconomic aggregates like GDP, per capita income, and growth rate help in comparing the economic performance of different countries and assessing a country's position in the global economy.\n\n6) **Study of Economic Growth & Development:**\nMacroeconomics explains the causes of underdevelopment and poverty. It suggests strategies for accelerating growth and development in developing countries like India.",
+        },
+        {
+          question: "Explain the scope of Macro economics.",
+          marks: 4,
+          modelAnswer:
+            '**Scope of Macro Economics:**\n\n"Macroeconomics deals with the functioning of the economy as a whole."\n\n1) **Theory of Income and Employment:**\nMacroeconomics explains which factors determine the level of national income and employment and what causes fluctuations. It studies consumption function, investment function, and the theory of business cycles.\n\n2) **Theory of General Price Level and Inflation:**\nMacroeconomics shows how the general price level is determined and what causes fluctuations. It studies inflation (rising prices) and deflation (falling prices) and their effects on the economy.\n\n3) **Theory of Growth and Development:**\nMacroeconomics consists of the theory of economic growth and development. It explains causes of underdevelopment and poverty, and suggests strategies for accelerating growth.\n\n4) **Macro Theory of Distribution:**\nMacro theory of distribution deals with the relative shares of rent, wages, interest, and profit in the total national income — how the national income is distributed among the factors of production.',
+        },
+      ],
+
+      // Q.5 Agree or Disagree with reasons
+      agreeDisagree: [
+        {
+          statement: "The scope of micro economics is unlimited.",
+          agree: false,
+          modelAnswer:
+            "**No, I disagree with this statement.**\n\nReasons:\na) The scope of Micro economics is LIMITED, not unlimited.\n\nb) Micro economics studies only individual/small economic units — an individual consumer, an individual firm, an individual price, an individual industry. It has a narrow/limited scope.\n\nc) Micro economics is like the study of a single tree, NOT the entire forest. It takes the 'worm's eye view' of the economy.\n\nd) It uses the Slicing method — dividing the economy into small parts and studying each separately, under the assumption of 'Ceteris Paribus' (other things remaining constant).\n\ne) It is Macro economics that has a wider scope as it studies the economy as a whole (bird's eye view).\n\nf) Therefore, the scope of Micro economics is limited, not unlimited.",
+        },
+        {
+          statement:
+            "Macro economics deals with the study of individual behaviour.",
+          agree: false,
+          modelAnswer:
+            "**No, I disagree with this statement.**\n\nReasons:\na) Macro economics does NOT deal with the study of individual behaviour. That is the scope of Micro economics.\n\nb) Macro economics deals with the study of the WHOLE economy — aggregate demand, aggregate supply, national income, general price level, total employment, etc.\n\nc) The word 'Macro' is derived from the Greek word 'Makros' meaning large. It studies the economy as a whole using the Lumping method.\n\nd) It was developed by J.M. Keynes and is also called 'Income and Employment Theory'.\n\ne) It uses General equilibrium analysis, which considers the interdependence of all sectors simultaneously.\n\nf) Therefore, Macro economics deals with the study of the entire economy, not individual behaviour.",
+        },
+        {
+          statement: "Macro economics is different from micro economics.",
+          agree: true,
+          modelAnswer:
+            "**Yes, I agree with this statement.**\n\nReasons:\na) **Scope:** Macro economics studies the entire economy. Micro economics studies only a particular segment or individual unit.\n\nb) **Method:** Macro economics uses the Lumping method (study of the whole). Micro economics uses the Slicing method (divides economy into small parts).\n\nc) **Focus:** Macro studies aggregate demand, aggregate supply, national income, employment. Micro studies individual demand, individual supply, and individual price determination.\n\nd) **Equilibrium:** Macro follows General equilibrium analysis. Micro follows Partial equilibrium analysis (Ceteris Paribus).\n\ne) **Also called:** Macro is called Income and Employment Theory (Father: J.M. Keynes). Micro is called Price Theory (Father: Alfred Marshall).\n\nf) Therefore, Macro economics IS fundamentally different from Micro economics.",
+        },
+        {
+          statement: "Micro economics uses slicing method.",
+          agree: true,
+          modelAnswer:
+            "**Yes, I agree with this statement.**\n\nReasons:\na) Micro economics uses the Slicing method. It splits or divides the whole economy into small individual units and then studies each unit separately in detail.\n\nb) For example, it studies individual income out of national income, individual demand out of aggregate demand, individual firm's output out of total output.\n\nc) The Slicing method is like taking a thin slice of bread from a full loaf — studying one small part of the whole.\n\nd) This is in contrast to Macro economics which uses the Lumping method — studying the whole economy as one unit.\n\ne) The slicing method leads to Partial equilibrium analysis where other things are assumed constant (Ceteris Paribus).\n\nf) Therefore, Micro economics does indeed use the slicing method.",
+        },
+        {
+          statement: "Micro economics is known as Income theory.",
+          agree: false,
+          modelAnswer:
+            "**No, I disagree with this statement.**\n\nReasons:\na) Micro economics is NOT known as Income Theory. It is known as 'Price Theory'.\n\nb) Micro economics deals with the determination of prices of goods and services as well as factors of production (wages, rent, interest, profit). Hence it is called Price Theory.\n\nc) It is MACRO economics that is known as 'Income and Employment Theory' because it studies national income, employment levels, and output at the aggregate level.\n\nd) Father of Micro economics (Price Theory) = Alfred Marshall. Father of Macro economics (Income Theory) = J.M. Keynes.\n\ne) Therefore, Micro economics is known as Price Theory, NOT Income Theory.",
+        },
+      ],
+
+      // Q.6 Long Answer (8 marks each)
+      longAnswers: [
+        {
+          question: "Explain the importance of Micro economics.",
+          marks: 8,
+          modelAnswer:
+            "**Importance of Micro Economics**\n\nMaurice Dobb: \"Microeconomics is in fact a microscopic study of the economy.\"\n\nMicro economics, despite its limited scope, has great importance in the study of economics. The following points explain its importance:\n\n1) **Price Determination:**\nMicro economics explains how the prices of different products and various factors of production are determined. It analyses the forces of demand and supply that determine equilibrium price in the market. For example, how the price of wheat is determined in the market.\n\n2) **Free Market Economy:**\nMicro economics helps in understanding the workings of a free market economy. A free-market economy is an economy where economic decisions regarding production — 'What to produce?', 'How much to produce?', 'How to produce?' — are taken at individual levels without government intervention. Micro economics explains how these decisions are made by individual producers and consumers.\n\n3) **Foreign Trade:**\nMicro economics helps in explaining various aspects of foreign trade like:\n- Effects of a tariff on a particular commodity\n- Determination of currency exchange rates of any two countries\n- Gains from international trade to a particular country\n\n4) **Economic Model Building:**\nMicro economics helps in understanding various complex economic situations with the help of economic models. It has made a valuable contribution to economics by developing various terms, concepts, terminologies, and tools of economic analysis. Economic models are built using various economic variables.\n\n5) **Basis of Welfare Economics:**\nMicro economics serves as the basis for welfare economics. It helps in suggesting policies to improve the economic welfare of the people. By studying how resources are allocated, it helps determine the conditions under which social welfare is maximized.\n\n6) **Business Decision Making:**\nMicro economics helps business firms in making important decisions such as:\n- What price to charge\n- How much to produce\n- Which technology to use\n- How to minimize costs and maximize profits\n\n7) **Understanding Tax Policy:**\nMicro economics helps in understanding the impact of taxation on individual commodities and sectors. It explains concepts like tax incidence — who ultimately bears the burden of a tax.\n\n**Conclusion:** Micro economics, though limited in scope, provides the foundation for understanding individual economic behavior, price determination, and resource allocation, which is essential for both economic theory and practical policy-making.",
+        },
+        {
+          question: "Explain the concept of Macro economics and its features.",
+          marks: 8,
+          modelAnswer:
+            "**Concept and Features of Macro Economics**\n\n**Concept:**\nThe word 'Macro' is derived from the Greek word 'Makros' meaning large. Macro economics is the branch of economics that studies the economy as a whole. It deals with aggregate economic variables such as aggregate demand, aggregate supply, national income, general price level, total employment, etc.\n\nMacro economics is also known as 'Income and Employment Theory'. The father of Macro economics is J.M. Keynes, who wrote the famous book \"The General Theory of Employment, Interest and Money\" (1936).\n\n**Features of Macro Economics (Shortcode: 3G SLIP):**\n\n1) **G — General Equilibrium:**\nMacro economics studies general equilibrium analysis. It considers the interdependence of all sectors of the economy simultaneously. Unlike partial equilibrium (Micro), it does not isolate individual units. It studies how all markets in the economy reach equilibrium together.\n\n2) **G — Growth Theory:**\nMacro economics consists of the theory of economic growth and development. It explains the causes of underdevelopment and poverty, and suggests strategies for accelerating growth and development.\n\n3) **G — Government's Role:**\nMacro economics emphasizes the important role of the government in the economy. It provides the basis for the government to formulate economic policies (fiscal policy, monetary policy, trade policy) to achieve economic stability and growth.\n\n4) **S — Study of Aggregates:**\nMacro economics studies aggregate variables — aggregate demand, aggregate supply, national income, general price level, total output, total employment, etc. It takes a bird's eye view of the economy.\n\n5) **L — Lumping Method:**\nMacro economics uses the Lumping method. It studies the whole economy rather than its parts. It lumps together all individual units and studies the economy as one unit. For example, it studies national income (not individual income), aggregate demand (not individual demand).\n\n6) **I — Income and Employment Theory:**\nMacro economics is also called the 'Theory of Income and Employment'. It explains which factors determine the level of national income and employment, and what causes fluctuations in them. It studies the consumption function, investment function, and business cycles.\n\n7) **P — Policy-Oriented:**\nMacro economics is highly policy-oriented. It provides the basis for framing economic policies to solve problems like inflation, unemployment, poverty, trade deficits, and fiscal deficits. Government policies like demonetization, GST implementation, and budget allocation are based on macroeconomic analysis.\n\n**Conclusion:** Macro economics is essential for understanding the functioning of the economy as a whole. It helps in formulating economic policies for achieving economic stability, full employment, price stability, and sustained economic growth.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 2: UTILITY ANALYSIS ====================
