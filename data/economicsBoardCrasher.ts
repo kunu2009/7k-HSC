@@ -40,48 +40,54 @@ export const ECONOMICS_BOARD_CRASHER = {
 
     mustKnowConcepts: [
       {
-        term: "Economics",
-        definition:
-          "Study of how society allocates scarce resources among unlimited wants.",
-      },
-      {
         term: "Micro Economics",
         definition:
-          "Study of individual economic units (consumer, firm, industry). Also called Price Theory. Father: Alfred Marshall.",
+          "Study of individual economic units (consumer, firm, industry). Also called Price Theory. Father: Alfred Marshall (Principles of Economics, 1890). Uses Slicing method.",
       },
       {
         term: "Macro Economics",
         definition:
-          "Study of economy as a whole (national income, employment, inflation). Also called Income Theory. Father: J.M. Keynes.",
+          "Study of economy as a whole (national income, employment, inflation). Also called Income and Employment Theory. Father: J.M. Keynes (General Theory, 1936). Uses Lumping method.",
       },
       {
         term: "Ceteris Paribus",
         definition:
-          "Latin phrase meaning 'other things remaining constant'. Used in Micro Economics.",
+          "Latin phrase meaning 'other things remaining constant'. Fundamental assumption used in Micro Economics for partial equilibrium analysis.",
       },
       {
-        term: "Positive Economics",
+        term: "Slicing Method",
         definition:
-          "Deals with 'what is' - factual statements that can be tested.",
+          "Used by Micro Economics. Splits/divides the whole economy into small individual units and studies each unit separately. E.g., individual income out of national income.",
       },
       {
-        term: "Normative Economics",
+        term: "Lumping Method",
         definition:
-          "Deals with 'what ought to be' - value judgments and opinions.",
+          "Used by Macro Economics. Studies the whole economy as one unit rather than its parts. Bird's eye view of the economy.",
       },
       {
-        term: "Scarcity",
+        term: "Partial Equilibrium",
         definition:
-          "Limited availability of resources relative to unlimited human wants.",
+          "Feature of Micro Economics. Analyses equilibrium of one unit in isolation, assuming others constant (Ceteris Paribus).",
       },
       {
-        term: "Opportunity Cost",
+        term: "General Equilibrium",
         definition:
-          "Value of the next best alternative foregone when making a choice.",
+          "Feature of Macro Economics. Considers interdependence of ALL sectors simultaneously. No isolation of individual units.",
+      },
+      {
+        term: "Ragnar Frisch",
+        definition:
+          "Norwegian economist who coined the terms 'Micro' and 'Macro' economics in 1933 at Oslo University.",
       },
     ],
 
     pyqMCQs: [
+      {
+        q: "The branch of economics that deals with allocation of resources:",
+        options: ["Micro Economics", "Macro Economics", "Econometrics", "None"],
+        correct: 0,
+        year: 2022,
+      },
       {
         q: "Father of Micro Economics:",
         options: ["Adam Smith", "J.M. Keynes", "Alfred Marshall", "Robbins"],
@@ -96,7 +102,12 @@ export const ECONOMICS_BOARD_CRASHER = {
       },
       {
         q: "Micro Economics is also called:",
-        options: ["Income Theory", "Price Theory", "Wealth Theory", "None"],
+        options: [
+          "Income Theory",
+          "Price Theory",
+          "Wealth Theory",
+          "Growth Theory",
+        ],
         correct: 1,
         year: 2023,
       },
@@ -109,7 +120,7 @@ export const ECONOMICS_BOARD_CRASHER = {
       {
         q: "'Ceteris Paribus' means:",
         options: [
-          "Other things equal",
+          "Other things constant",
           "All things change",
           "Nothing constant",
           "None",
@@ -124,24 +135,6 @@ export const ECONOMICS_BOARD_CRASHER = {
         year: 2022,
       },
       {
-        q: "Scarcity definition was given by:",
-        options: ["Marshall", "Robbins", "Keynes", "Smith"],
-        correct: 1,
-        year: 2021,
-      },
-      {
-        q: "Wealth definition of Economics by:",
-        options: ["Marshall", "Robbins", "Adam Smith", "Keynes"],
-        correct: 2,
-        year: 2021,
-      },
-      {
-        q: "'Wealth of Nations' written by:",
-        options: ["Marshall", "Keynes", "Adam Smith", "Ricardo"],
-        correct: 2,
-        year: 2020,
-      },
-      {
         q: "Micro Economics studies:",
         options: [
           "Aggregate demand",
@@ -150,23 +143,40 @@ export const ECONOMICS_BOARD_CRASHER = {
           "Inflation",
         ],
         correct: 1,
-        year: 2020,
+        year: 2022,
       },
       {
-        q: "Positive Economics deals with:",
-        options: ["What is", "What ought to be", "Value judgments", "Opinions"],
-        correct: 0,
+        q: "Whole Economy is studied in:",
+        options: ["Micro Economics", "Macro Economics", "Econometrics", "None"],
+        correct: 1,
+        year: 2022,
+      },
+      {
+        q: "Method adopted in macro economic analysis:",
+        options: [
+          "Slicing method",
+          "Aggregative method",
+          "Individualistic method",
+          "Price theory",
+        ],
+        correct: 1,
         year: "Imp",
       },
       {
-        q: "Opportunity cost is:",
-        options: [
-          "Actual cost",
-          "Value of next best alternative",
-          "Sunk cost",
-          "Fixed cost",
-        ],
+        q: "General equilibrium is feature of:",
+        options: ["Micro Economics", "Macro Economics", "Both", "Neither"],
         correct: 1,
+        year: "Imp",
+      },
+      {
+        q: "Which is NOT in scope of Macro Economics?",
+        options: [
+          "Theory of Income",
+          "Theory of Price Level",
+          "Theory of Product Pricing",
+          "Theory of Growth",
+        ],
+        correct: 2,
         year: "Imp",
       },
     ],
@@ -180,32 +190,25 @@ export const ECONOMICS_BOARD_CRASHER = {
 | Aspect | Micro Economics | Macro Economics |
 |--------|-----------------|-----------------|
 | **Meaning** | Study of individual units | Study of economy as whole |
-| **Also Called** | Price Theory | Income Theory |
+| **Also Called** | Price Theory | Income & Employment Theory |
 | **Father** | Alfred Marshall | J.M. Keynes |
 | **Method** | Slicing method | Lumping method |
 | **Analysis** | Partial equilibrium | General equilibrium |
-| **Examples** | Consumer behavior, firm pricing | GDP, inflation, unemployment |`,
+| **View** | Worm's eye view | Bird's eye view |
+| **Scope** | Limited (individual units) | Wide (entire economy) |`,
       },
       {
-        q: "Explain the concept of Opportunity Cost with example. (4 marks)",
-        year: 2023,
-        modelAnswer: `**Opportunity Cost:**
+        q: "Explain the scope of Macro Economics. (4 marks)",
+        year: 2022,
+        modelAnswer: `**Scope of Macro Economics:**
 
-1. **Definition**: The value of the next best alternative foregone when making a choice.
+1. **Theory of Income and Employment:** Explains what determines the level of national income, employment, and what causes fluctuations. Studies consumption function, investment function, business cycles.
 
-2. **Key Points**:
-   - Every choice has a cost
-   - Resources are scarce
-   - Must choose between alternatives
+2. **Theory of General Price Level and Inflation:** Shows how general price level is determined and what causes inflation (rising prices) and deflation (falling prices).
 
-3. **Example**:
-   - A student has ₹500 and can buy either a book OR a movie ticket
-   - If he buys the book, opportunity cost = movie ticket
-   - If he watches movie, opportunity cost = book
+3. **Theory of Growth and Development:** Explains causes of underdevelopment, poverty. Suggests strategies for accelerating growth.
 
-4. **Formula**: Opportunity Cost = Value of Next Best Alternative
-
-5. **Importance**: Helps in rational decision-making`,
+4. **Macro Theory of Distribution:** Deals with relative shares of rent, wages, interest, and profit in total national income.`,
       },
     ],
 
@@ -666,6 +669,188 @@ The Law of DMU was first stated by German economist H.H. Gossen, hence also call
 The Law of DMU is fundamental to understanding consumer behavior and forms the basis of demand analysis.`,
       },
     ],
+
+    textbookExercises: {
+      title: "Chapter 2 - Textbook Exercises with Answers",
+
+      mcqs: [
+        {
+          q: "In the law of DMU, Alfred Marshall assumes that marginal utility of money _____.",
+          statements: [
+            "a) increases",
+            "b) remains constant",
+            "c) decreases",
+            "d) rises and then falls",
+          ],
+          options: [
+            "increases",
+            "remains constant",
+            "decreases",
+            "rises and then falls",
+          ],
+          correct: 1,
+          answer: "remains constant",
+          explanation:
+            "Marshall assumed MU of money remains constant so that utility can be measured in monetary terms. If MU of money changed, comparison would be impossible.",
+        },
+        {
+          q: "As per the law of DMU, measurement of utility is assumed to be _____.",
+          statements: [
+            "a) ordinal",
+            "b) cardinal",
+            "c) both ordinal and cardinal",
+            "d) None of the above",
+          ],
+          options: ["ordinal", "cardinal", "both", "None"],
+          correct: 1,
+          answer: "cardinal",
+          explanation:
+            "The Law of DMU assumes cardinal (numerical) measurement of utility — utility can be expressed in numbers (Utils). Ordinal utility (ranking) was later proposed by Hicks and Allen.",
+        },
+        {
+          q: "MU of the commodity becomes negative when TU of a commodity is _____.",
+          statements: ["a) rising", "b) constant", "c) falling", "d) zero"],
+          options: ["rising", "constant", "falling", "zero"],
+          correct: 2,
+          answer: "falling",
+          explanation:
+            "When TU starts falling (after the point of satiety), MU becomes negative. This means consuming more actually reduces satisfaction — called disutility.",
+        },
+        {
+          q: "Point of Satiety means _____.",
+          statements: [
+            "a) TU is rising and MU is falling",
+            "b) TU is falling and MU is negative",
+            "c) TU is maximum and MU is zero",
+            "d) MU is falling and TU is rising",
+          ],
+          options: [
+            "TU rising, MU falling",
+            "TU falling, MU negative",
+            "TU maximum, MU zero",
+            "MU falling, TU rising",
+          ],
+          correct: 2,
+          answer: "TU is maximum and MU is zero",
+          explanation:
+            "Point of satiety is where the consumer is fully satisfied. TU reaches its maximum level and MU becomes zero. Beyond this point, TU falls and MU becomes negative.",
+        },
+        {
+          q: "When MU is falling, TU is _____.",
+          statements: [
+            "a) rising",
+            "b) falling",
+            "c) not changing",
+            "d) maximum",
+          ],
+          options: ["rising", "falling", "not changing", "maximum"],
+          correct: 0,
+          answer: "rising",
+          explanation:
+            "When MU is positive but falling, TU is still RISING — but at a diminishing rate. TU increases as long as MU is positive. TU stops rising only when MU = 0.",
+        },
+      ],
+
+      correlations: [
+        {
+          q: "Time Utility : Winter sweater :: Place Utility : ___",
+          answer: "Woollen clothes in cold places / Sand at construction site",
+          explanation:
+            "Time utility arises when utility changes with time (sweater in winter). Place utility arises when utility changes with place (sand is more useful at construction site than seashore).",
+        },
+        {
+          q: "Form Utility : Furniture from wood :: Service Utility : ___",
+          answer: "Doctor's services / Teacher's services",
+          explanation:
+            "Form utility is created by changing the shape/form (wood → furniture). Service utility arises from personal services rendered by professionals (doctors, teachers, lawyers).",
+        },
+        {
+          q: "TU is maximum : MU is zero :: TU is falling : ___",
+          answer: "MU is negative",
+          explanation:
+            "At the point of satiety: TU is maximum and MU = 0. After this point: TU starts falling and MU becomes negative (disutility).",
+        },
+      ],
+
+      conceptIdentification: [
+        {
+          statement:
+            "Salma purchased a sweater for her father in the winter season.",
+          concept: "Time Utility",
+          explanation:
+            "**Time Utility**\n\nWhen the utility of a commodity is derived with a change in its time of utilization, it is called time utility.\n\n• The sweater has greater utility in winter than in summer.\n• Time utility is also seen when goods are stored for scarcity (e.g., Blood Bank).\n• A student finds more utility in textbooks during exams than in vacations.",
+        },
+        {
+          statement: "Nilesh purchased ornaments for his sister.",
+          concept: "Possession Utility",
+          explanation:
+            "**Possession Utility**\n\nPossession utility arises when the ownership of goods is transferred from one person to another.\n\n• When Nilesh buys ornaments, ownership transfers from seller to buyer.\n• The ornaments now have utility for his sister who possesses them.\n• E.g., transfer of goods from sellers to buyers in any market.",
+        },
+        {
+          statement:
+            "Kavita consumed five units of oranges one after the other.",
+          concept: "Continuity in Consumption (Assumption of Law of DMU)",
+          explanation:
+            "**Continuity in Consumption**\n\nThis is one of the important assumptions of the Law of Diminishing Marginal Utility.\n\n• All units of a commodity are consumed in quick succession without any lapse of time.\n• If there is a time gap between consumption of successive units, the law may not hold.\n• Kavita consuming oranges one after another demonstrates continuous consumption.",
+        },
+        {
+          statement:
+            "Bhushan refused to eat the fifth chapati after eating four chapatis.",
+          concept: "Point of Satiety",
+          explanation:
+            "**Point of Satiety**\n\nThe point of satiety is where MU of a commodity becomes zero — the consumer is fully satisfied.\n\n• After 4 chapatis, Bhushan's MU = 0 (fully satisfied).\n• Eating the 5th would give negative utility (disutility).\n• A rational consumer stops consumption at the point of satiety.\n• At this point, TU is maximum and MU = 0.",
+        },
+        {
+          statement:
+            "Lalita satisfied her want to write an essay by using a pen and notebook.",
+          concept: "Utility",
+          explanation:
+            "**Utility**\n\nUtility refers to the capacity of a commodity to satisfy a human want.\n\n• The pen and notebook have utility because they satisfy Lalita's want to write.\n• Utility is subjective — it varies from person to person.\n• Utility is the want-satisfying power of a good.",
+        },
+      ],
+
+      shortAnswers: [
+        {
+          question: "Explain the features/characteristics of utility.",
+          marks: 4,
+          modelAnswer:
+            "**Features of Utility (Shortcode: MRS BHIDE)**\n\n1) **Relative Concept:** Utility varies with time and place. Woollen clothes have greater utility in winter. Sand has more utility at a construction site than at the seashore.\n\n2) **Subjective Concept:** Utility differs from person to person due to differences in taste, preferences, habits, etc. A stethoscope has utility to a doctor but not to a layman.\n\n3) **Ethically Neutral:** Utility has no ethical consideration — it is morally colourless. A knife has utility to cut fruits AND can be used to harm. Both wants are satisfied by the same commodity.\n\n4) **Differs from Usefulness:** Utility = capacity to satisfy wants. Usefulness = value in use. Milk has both utility and usefulness. Liquor has utility to an addict but no usefulness.\n\n5) **Differs from Pleasure:** A commodity may have utility but not give pleasure. An injection has utility (cures disease) but gives no pleasure.\n\n6) **Differs from Satisfaction:** Utility is the CAUSE of consumption. Satisfaction is the END RESULT. A thirsty person drinks water — utility causes consumption, satisfaction is the result.\n\n7) **Measurement is Hypothetical:** Cardinal measurement of utility is not possible. Utility can only be experienced as positive, zero, or negative (disutility).",
+        },
+        {
+          question: "Explain the types of utility.",
+          marks: 4,
+          modelAnswer:
+            "**Types of Utility:**\n\n1) **Form Utility:** Created by changing shape/structure of material. E.g., toys from clay, furniture from wood.\n\n2) **Place Utility:** Utility increases with change in place. E.g., woollen clothes in cold places. Transport creates place utility.\n\n3) **Service Utility:** Arises from personal services of professionals. E.g., services of doctors, teachers, lawyers.\n\n4) **Knowledge Utility:** When consumer acquires knowledge about a product. E.g., knowing functions of a mobile phone increases its utility.\n\n5) **Possession Utility:** Arises when ownership is transferred. E.g., goods transferred from seller to buyer.\n\n6) **Time Utility:** Utility increases with change in time. E.g., textbooks during exams, umbrella during monsoon. Blood bank stores blood for future emergencies.",
+        },
+        {
+          question:
+            "Explain the relationship between Total Utility and Marginal Utility.",
+          marks: 4,
+          modelAnswer:
+            "**Relationship between TU and MU:**\n\n| Unit | TU | MU |\n|------|-----|-----|\n| 1 | 10 | 10 |\n| 2 | 18 | 8 |\n| 3 | 24 | 6 |\n| 4 | 28 | 4 |\n| 5 | 30 | 2 |\n| 6 | 30 | 0 |\n| 7 | 28 | -2 |\n\n**Key Relationships:**\n1) TU and MU of the FIRST unit are always equal.\n2) As consumption increases, TU rises at a diminishing rate while MU goes on diminishing.\n3) When TU is MAXIMUM, MU = 0 (Point of Satiety — 6th unit).\n4) When TU starts FALLING, MU becomes NEGATIVE (disutility — 7th unit).\n5) A rational consumer should stop consumption at the point of satiety (MU = 0).\n\nFormula: MU = TUn − TUn−1",
+        },
+      ],
+
+      agreeDisagree: [
+        {
+          statement:
+            "There are no exceptions to the law of diminishing marginal utility.",
+          agree: false,
+          modelAnswer:
+            "**No, I disagree with this statement.**\n\nReasons:\na) There ARE exceptions to the law of diminishing marginal utility.\n\nb) **Hobbies (H):** In hobbies like stamp/coin collection, rare paintings, music — every additional item gives MORE pleasure. MU increases. However, this violates the assumption of homogeneity.\n\nc) **Miser (M):** For a miser, every additional rupee gives more satisfaction. MU of money increases with stock. This violates the rationality assumption.\n\nd) **Addictions (A):** For a drunkard, each additional drink increases intoxication. MU seems to increase. This is actually an illusion and violates rationality.\n\ne) **Power (P):** When a person acquires power, his lust for more power increases. This violates rationality.\n\nf) **Money:** MU of money never becomes zero. It increases with stock as money satisfies various wants.\n\n(Shortcode: H MAP — Hobbies, Miser, Addictions, Power)",
+        },
+      ],
+
+      longAnswers: [
+        {
+          question:
+            "State and explain the law of diminishing marginal utility with exceptions.",
+          marks: 8,
+          modelAnswer:
+            "**Law of Diminishing Marginal Utility**\n\nFirst proposed by Prof. Gossen, discussed in detail by Prof. Alfred Marshall in 'Principles of Economics' (1890).\n\n**Statement:** 'Other things remaining constant, the additional benefit which a person derives from a given increase in his stock of a thing, diminishes with every increase in the stock that he already has.'\n\nIn short: The more you have, the less you want more.\n\n**Schedule:**\n| Units | MU |\n|-------|-----|\n| 1 | 10 |\n| 2 | 8 |\n| 3 | 6 |\n| 4 | 4 |\n| 5 | 2 |\n| 6 | 0 |\n| 7 | -2 |\n\n**Diagram:** MU curve slopes downward from left to right. When MU = 0, the curve touches X-axis. Beyond this, MU becomes negative (below X-axis = disutility).\n\n**Exceptions (Shortcode: H MAP):**\n\n1) **H — Hobbies:** Collections of stamps, coins, paintings — each addition gives MORE pleasure. Violates homogeneity assumption.\n\n2) **M — Miser:** Every additional rupee gives more satisfaction. MU of money increases. Violates rationality assumption.\n\n3) **A — Addictions:** Drunkards experience increasing intoxication. MU seems to rise. Actually an illusion. Violates rationality.\n\n4) **P — Power:** Lust for power increases with power acquired. Violates rationality.\n\n5) **Money:** MU of money never becomes zero. It is a medium of exchange satisfying various wants. But MU of money is more to a poor person than a rich person.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 3A: DEMAND ANALYSIS ====================
@@ -855,6 +1040,174 @@ The Law of DMU is fundamental to understanding consumer behavior and forms the b
 | **Diagram** | Point A to B on same curve | D1 to D2 (new curve) |`,
       },
     ],
+
+    textbookExercises: {
+      title: "Chapter 3A - Textbook Exercises with Answers",
+
+      mcqs: [
+        {
+          q: "The relationship between demand for a good and price of its substitute is _____.",
+          statements: [
+            "a) direct",
+            "b) inverse",
+            "c) no effect",
+            "d) can be direct and inverse",
+          ],
+          options: [
+            "direct",
+            "inverse",
+            "no effect",
+            "can be direct and inverse",
+          ],
+          correct: 0,
+          answer: "direct",
+          explanation:
+            "When the price of a substitute rises, consumers switch to the original good — its demand increases. So there is a DIRECT relationship. E.g., if price of coffee rises, demand for tea increases.",
+        },
+        {
+          q: "The relationship between income and demand for inferior goods is _____.",
+          statements: [
+            "a) direct",
+            "b) inverse",
+            "c) no effect",
+            "d) can be direct and inverse",
+          ],
+          options: [
+            "direct",
+            "inverse",
+            "no effect",
+            "can be direct and inverse",
+          ],
+          correct: 1,
+          answer: "inverse",
+          explanation:
+            "For inferior goods, as income rises, demand FALLS (consumers switch to superior goods). So the relationship is INVERSE. E.g., as income rises, demand for coarse grain falls and demand for wheat/rice rises.",
+        },
+        {
+          q: "Symbolically, the functional relationship between Demand and Price can be expressed as _____.",
+          statements: [
+            "a) Dx = f(Px)",
+            "b) Dx = f(Pz)",
+            "c) Dx = f(y)",
+            "d) Dx = f(T)",
+          ],
+          options: ["Dx = f(Px)", "Dx = f(Pz)", "Dx = f(y)", "Dx = f(T)"],
+          correct: 0,
+          answer: "Dx = f(Px)",
+          explanation:
+            "The Law of Demand shows relationship between demand for commodity x and its own price. Dx = f(Px) where D = Demand, x = commodity, f = function, Px = price of x.",
+        },
+        {
+          q: "When less units are demanded at high price it shows _____.",
+          statements: [
+            "a) increase in demand",
+            "b) expansion of demand",
+            "c) decrease in demand",
+            "d) contraction in demand",
+          ],
+          options: [
+            "increase in demand",
+            "expansion of demand",
+            "decrease in demand",
+            "contraction in demand",
+          ],
+          correct: 3,
+          answer: "contraction in demand",
+          explanation:
+            "When less is demanded due to rise in price alone (other factors constant), it is Contraction of demand — upward movement on the same demand curve. It's a variation, not a change.",
+        },
+      ],
+
+      correlations: [
+        {
+          q: "A situation where more quantity is demanded at lower price.",
+          answer: "Expansion of Demand",
+          explanation:
+            "When price falls and more is demanded (other factors constant), it is Expansion of Demand — a downward movement along the same demand curve.",
+        },
+        {
+          q: "Graphical representation of demand schedule.",
+          answer: "Demand Curve",
+          explanation:
+            "A demand curve is the graphical representation of a demand schedule. It shows the relationship between price and quantity demanded and slopes downward from left to right.",
+        },
+        {
+          q: "A desire which is backed by willingness to purchase and ability to pay.",
+          answer: "Demand",
+          explanation:
+            "In economics, demand is not just a desire. Demand = Desire + Willingness to pay + Ability to pay. Without all three, it remains a mere desire, not demand.",
+        },
+      ],
+
+      conceptIdentification: [
+        {
+          statement:
+            "Salma purchased a sweater for her father in the winter season.",
+          concept: "Time Utility",
+          explanation:
+            "**Time Utility**\n\nWhen the utility of a commodity is derived with a change in its time of utilization, it is called time utility.\n\n• The sweater gives more utility in winter than in summer.\n• Time utility is also observed when goods are stored for use during scarcity (e.g., blood bank).\n• Example: Textbooks during exams, umbrellas during monsoon.",
+        },
+        {
+          statement:
+            "Sanket's demand for consumer goods increased by 20% due to an increase in his income by 50%.",
+          concept: "Income Elasticity of Demand",
+          explanation:
+            "**Income Elasticity of Demand**\n\nThe income elasticity of demand measures how the change in a consumer's income affects the demand for a specific product.\n\n• Formula: Ey = %ΔQ / %ΔY\n• Here: Ey = 20/50 = 0.4 (positive but less than 1)\n• This indicates the goods are normal goods with income-inelastic demand.",
+        },
+      ],
+
+      shortAnswers: [
+        {
+          question: "Explain the various types of demand.",
+          marks: 4,
+          modelAnswer:
+            "**Types of Demand:**\n\n1) **Direct Demand:** Demand for goods that satisfy wants directly — consumer goods. E.g., demand for cloth, sugar, food.\n\n2) **Indirect Demand (Derived Demand):** Demand for goods needed for further production — producer's goods. E.g., demand for workers in a sugar factory.\n\n3) **Complementary/Joint Demand:** When two or more goods are demanded jointly to satisfy a single want. E.g., car and fuel, pen and refill.\n\n4) **Composite Demand:** Demand for a commodity that can be put to several uses. E.g., electricity for light, fan, AC.\n\n5) **Competitive Demand:** Demand for goods which are substitutes for each other. E.g., tea or coffee, sugar or jaggery.",
+        },
+        {
+          question: "Explain variation in demand (Expansion and Contraction).",
+          marks: 4,
+          modelAnswer:
+            "**Variation in Demand:**\nWhen demand changes due to change in price ALONE (other factors constant), it is variation in demand.\n\n**1) Expansion of Demand:**\n• Rise in quantity demanded due to fall in price alone\n• Other factors remain unchanged\n• Downward movement on the SAME demand curve\n• E.g., Price falls from ₹50 to ₹40, demand rises from 10 to 20 units\n\n**2) Contraction of Demand:**\n• Fall in quantity demanded due to rise in price alone\n• Other factors remain unchanged\n• Upward movement on the SAME demand curve\n• E.g., Price rises from ₹40 to ₹50, demand falls from 20 to 10 units\n\n**Key:** In variation, only PRICE changes. The demand curve does NOT shift — movement is along the same curve.",
+        },
+      ],
+
+      agreeDisagree: [
+        {
+          statement: "Demand curve slopes downward from left to right.",
+          agree: true,
+          modelAnswer:
+            "**Yes, I agree with this statement.**\n\nReasons:\na) According to Prof. Marshall: 'Other things being equal, higher the price, smaller the quantity demanded and lower the price, larger the quantity demanded.'\n\nb) There is an INVERSE relationship between price and quantity demanded.\n\nc) **Law of DMU**: As consumption increases, MU decreases — consumer buys more only at lower price.\n\nd) **Income Effect**: When price falls, real purchasing power increases — consumer can buy more.\n\ne) **Substitution Effect**: When price rises, consumer switches to cheaper substitutes.\n\nf) Therefore, the demand curve slopes downward from left to right.",
+        },
+        {
+          statement: "Every desire of an individual is a demand.",
+          agree: false,
+          modelAnswer:
+            "**No, I disagree with this statement.**\n\nReasons:\na) In ordinary language, demand means a desire. But in Economics, they are different.\n\nb) Desire means an urge to have something. It has no relation with price, place, and time.\n\nc) In Economics, demand means a desire which is backed by WILLINGNESS and ABILITY to pay.\n\nd) E.g., A poor person may desire a luxury car, but without ability to pay, it is merely a desire, not demand.\n\ne) **Demand = Desire + Ability to pay + Willingness to spend**\n\nf) Therefore, every desire of an individual is NOT demand.",
+        },
+        {
+          statement:
+            "When price of Giffen goods fall, the demand for it increases.",
+          agree: false,
+          modelAnswer:
+            "**No, I disagree with this statement.**\n\nReasons:\na) Inferior goods or low quality goods are those whose demand does not rise even if their price falls.\n\nb) At times, demand DECREASES when the price of such commodities fall.\n\nc) Sir Robert Giffen observed this in England regarding bread. When price of bread declined, people didn't buy more. With increased real income, they preferred superior goods like meat.\n\nd) This is known as Giffen's Paradox — an exception to the law of demand.\n\ne) Therefore, when price of Giffen goods falls, demand does NOT increase but DECREASES.",
+        },
+      ],
+
+      longAnswers: [
+        {
+          question: "State and explain the law of demand with exceptions.",
+          marks: 8,
+          modelAnswer:
+            "**Law of Demand (Prof. Alfred Marshall, 1890)**\n\n**Statement:** 'Other things being equal, higher the price of a commodity, smaller is the quantity demanded and lower the price, larger is the quantity demanded.'\n\nThere is an INVERSE relationship between price and quantity demanded.\nSymbolically: Dx = f(Px)\n\n**Demand Schedule:**\n| Price (₹) | Qty (kgs) |\n|-----------|----------|\n| 50 | 1 |\n| 40 | 2 |\n| 30 | 3 |\n| 20 | 4 |\n| 10 | 5 |\n\nThe demand curve DD slopes DOWNWARD from left to right.\n\n**Exceptions to the Law of Demand (Shortcode: HI GPS):**\n\n1) **H — Habitual Goods:** Tea, cigarettes are purchased in required quantities even at higher price due to habit.\n\n2) **I — Ignorance:** Sometimes people buy more at high prices due to ignorance about cheaper alternatives.\n\n3) **G — Giffen's Paradox:** Sir Robert Giffen observed that when price of inferior goods (bread) fell, people bought LESS (switched to superior goods like meat).\n\n4) **P — Prestige Goods:** Expensive goods like diamonds, gold are status symbols. Rich people buy MORE at higher prices.\n\n5) **S — Speculation:** If people expect prices to rise further, they buy MORE even at current high prices (e.g., oil, sugar before Diwali).\n\n6) **Price Illusion:** Consumers believe high-priced goods are better quality. Demand increases with price rise.",
+        },
+        {
+          question: "Explain in detail the determinants of demand.",
+          marks: 8,
+          modelAnswer:
+            "**Determinants of Demand:**\n\n1) **Price:** Most important determinant. Inverse relationship — higher price = lower demand.\n\n2) **Income:** Higher income = higher demand for normal goods. For inferior goods, relationship is inverse.\n\n3) **Prices of Substitute Goods:** Direct relationship. If price of sugar rises, demand for jaggery rises.\n\n4) **Price of Complementary Goods:** If price of fuel rises, demand for cars falls.\n\n5) **Nature of Product:** Necessities (medicine) have constant demand regardless of price. Luxuries are price-sensitive.\n\n6) **Size of Population:** Larger population = greater demand for goods.\n\n7) **Future Price Expectations:** If prices expected to rise, consumers buy more NOW.\n\n8) **Advertisement:** Sales promotion changes consumer preferences, increasing demand for advertised products.\n\n9) **Tastes, Habits & Fashions:** Changes in taste/fashion affect demand. New fashion = increased demand.\n\n10) **Level of Taxation:** Higher taxes increase prices, reducing demand for goods.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 3B: ELASTICITY OF DEMAND ====================
@@ -1108,6 +1461,151 @@ Ed = 50% / 20% = 2.5 (Elastic demand)
 Price elasticity is a crucial concept for understanding consumer behavior and making business and policy decisions.`,
       },
     ],
+
+    textbookExercises: {
+      title: "Chapter 3B - Textbook Exercises with Answers",
+
+      mcqs: [
+        {
+          q: "Price elasticity of demand on a linear demand curve at the X-axis is _____.",
+          statements: ["a) zero", "b) one", "c) infinity", "d) less than one"],
+          options: ["zero", "one", "infinity", "less than one"],
+          correct: 0,
+          answer: "zero",
+          explanation:
+            "At the X-axis on a linear demand curve, the lower segment is zero and upper segment is the whole curve. Ed = Lower segment / Upper segment = 0. Hence, perfectly inelastic demand (Ed = 0).",
+        },
+        {
+          q: "Price elasticity of demand on a linear demand curve at the Y-axis is equal to _____.",
+          statements: [
+            "a) zero",
+            "b) one",
+            "c) infinity",
+            "d) greater than one",
+          ],
+          options: ["zero", "one", "infinity", "greater than one"],
+          correct: 2,
+          answer: "infinity",
+          explanation:
+            "At the Y-axis, the upper segment is zero. Ed = Lower segment / Upper segment = AE/0 = ∞. Hence, perfectly elastic demand (Ed = ∞).",
+        },
+        {
+          q: "Demand curve is parallel to X-axis, in the case of _____.",
+          statements: [
+            "a) perfectly elastic demand",
+            "b) perfectly inelastic demand",
+            "c) relatively elastic demand",
+            "d) relatively inelastic demand",
+          ],
+          options: [
+            "perfectly elastic demand",
+            "perfectly inelastic demand",
+            "relatively elastic demand",
+            "relatively inelastic demand",
+          ],
+          correct: 0,
+          answer: "perfectly elastic demand",
+          explanation:
+            "A horizontal demand curve (parallel to X-axis) indicates perfectly elastic demand (Ed = ∞). Any slight price change leads to infinite change in quantity demanded.",
+        },
+        {
+          q: "When the percentage change in quantity demanded is more than the percentage change in price, the demand curve is _____.",
+          statements: [
+            "a) flatter",
+            "b) steeper",
+            "c) rectangular",
+            "d) horizontal",
+          ],
+          options: ["flatter", "steeper", "rectangular", "horizontal"],
+          correct: 0,
+          answer: "flatter",
+          explanation:
+            "When %ΔQ > %ΔP, demand is relatively elastic (Ed > 1). The demand curve is FLATTER because a small price change causes a large quantity change.",
+        },
+        {
+          q: "Ed = 0 in case of _____.",
+          statements: [
+            "a) luxuries",
+            "b) normal goods",
+            "c) necessities",
+            "d) comforts",
+          ],
+          options: ["luxuries", "normal goods", "necessities", "comforts"],
+          correct: 2,
+          answer: "necessities",
+          explanation:
+            "Perfectly inelastic demand (Ed = 0) applies to extreme necessities like life-saving medicines where demand doesn't change regardless of price.",
+        },
+      ],
+
+      correlations: [
+        {
+          q: "Perfectly elastic demand : Ed = ∞ :: Perfectly inelastic demand : ___",
+          answer: "Ed = 0",
+          explanation:
+            "Perfectly elastic demand has infinite elasticity (horizontal curve). Perfectly inelastic demand has zero elasticity (vertical curve) — no change in quantity regardless of price change.",
+        },
+        {
+          q: "Rectangular hyperbola : Unitary elastic demand :: Steeper demand curve : ___",
+          answer: "Relatively inelastic demand",
+          explanation:
+            "Unitary elastic demand (Ed = 1) has a rectangular hyperbola curve. A steeper demand curve indicates relatively inelastic demand (Ed < 1) — large price change causes small quantity change.",
+        },
+        {
+          q: "Pen and ink : Complementary Goods :: Tea and Coffee : ___",
+          answer: "Substitutes",
+          explanation:
+            "Pen and ink are complementary goods (used together). Tea and coffee are substitutes (one can replace the other). Cross elasticity is positive for substitutes and negative for complements.",
+        },
+        {
+          q: "Ratio method : Ed = %ΔQ / %ΔP :: Geometrical Method : ___",
+          answer: "Ed = Lower segment / Upper segment",
+          explanation:
+            "The Ratio/Percentage method measures Ed by dividing percentage change in quantity by percentage change in price. The Geometrical/Point method measures Ed on a linear demand curve as Lower segment ÷ Upper segment.",
+        },
+      ],
+
+      shortAnswers: [
+        {
+          question: "Explain the factors influencing elasticity of demand.",
+          marks: 4,
+          modelAnswer:
+            "**Factors Influencing Elasticity of Demand:**\n\n1) **Nature of commodity:** Necessities (food, medicine) = inelastic. Luxuries (car, perfume) = elastic.\n\n2) **Availability of substitutes:** More substitutes = more elastic. No substitutes (salt) = inelastic.\n\n3) **Number of uses:** Single-use goods = less elastic. Multi-use (electricity) = more elastic.\n\n4) **Habits:** Addictive goods (drugs, cigarettes) = inelastic demand.\n\n5) **Durability:** Durable goods (furniture) = elastic. Perishable (milk) = inelastic.\n\n6) **Income of consumer:** High income = inelastic (not affected by price). Low income = elastic.\n\n7) **Time period:** Longer time = more elastic (can find substitutes). Short run = inelastic.\n\n8) **Proportion of expenditure:** Small proportion of income (newspaper) = inelastic. Large proportion = elastic.",
+        },
+        {
+          question:
+            "Explain the Total Outlay/Expenditure method of measuring elasticity of demand.",
+          marks: 4,
+          modelAnswer:
+            "**Total Outlay Method (by Prof. Marshall):**\n\nTotal Expenditure = Price × Quantity demanded\n\nCompare total expenditure before and after price change:\n\n**A) Relatively Elastic (Ed > 1):** When price changes, total outlay moves in OPPOSITE direction to price. Price rises → total expenditure falls (and vice versa).\n\n**B) Unitary Elastic (Ed = 1):** When price changes, total outlay remains CONSTANT. Total expenditure does not change regardless of price change.\n\n**C) Relatively Inelastic (Ed < 1):** When price changes, total outlay moves in SAME direction as price. Price rises → total expenditure also rises.\n\nExample:\n| | Price | Qty | Total Expenditure | Ed |\n|---|---|---|---|---|\n| A | ₹10→₹20 | 6→5 | ₹60→₹100 (↑) | Ed > 1 |\n| B | ₹30→₹40 | 4→3 | ₹120→₹120 (=) | Ed = 1 |\n| C | ₹50→₹60 | 2→1 | ₹100→₹60 (↓) | Ed < 1 |",
+        },
+        {
+          question: "Explain the importance of elasticity of demand.",
+          marks: 4,
+          modelAnswer:
+            "**Importance of Elasticity of Demand:**\n\n1) **Importance to Producer:** If demand is inelastic, producer fixes higher price. If elastic, lower price. Also useful for monopolist to practice price discrimination.\n\n2) **Importance to Government:** Taxation policy is based on elasticity. Commodities with inelastic demand are taxed more (won't affect demand much).\n\n3) **Factor Pricing:** Factors with inelastic demand can command higher prices. Workers can ask for higher wages if demand for their product is inelastic.\n\n4) **Foreign Trade:** Countries exporting commodities with inelastic demand can raise prices. E.g., OPEC raised oil prices. Useful for export-import policy.\n\n5) **Public Utilities:** Railways with inelastic demand — govt may subsidize or nationalize to prevent consumer exploitation.\n\n6) **Price Discrimination:** A monopolist can charge different prices in different markets based on elasticity of demand in each market.",
+        },
+      ],
+
+      agreeDisagree: [
+        {
+          statement: "Slope of relatively elastic demand curve is steeper.",
+          agree: false,
+          modelAnswer:
+            "**No, I disagree with this statement.**\n\nReasons:\na) Relatively elastic demand (Ed > 1) has a FLATTER curve, not steeper.\n\nb) In relatively elastic demand, the percentage change in quantity demanded is GREATER than the percentage change in price. So even a small price change causes a large quantity change — making the curve flatter.\n\nc) It is RELATIVELY INELASTIC demand (Ed < 1) that has a steeper curve — large price changes cause only small changes in quantity demanded.\n\nd) Therefore, the slope of relatively elastic demand curve is flatter, NOT steeper.",
+        },
+      ],
+
+      longAnswers: [
+        {
+          question:
+            "Explain the Ratio or Percentage method of measuring price elasticity of demand.",
+          marks: 8,
+          modelAnswer:
+            "**Ratio/Percentage Method (by Prof. Marshall)**\n\nThe elasticity of demand is measured by dividing the percentage change in quantity demanded by the percentage change in price. Also known as the Arithmetic method.\n\n**Formula:**\nEd = %ΔQ / %ΔP\nEd = (ΔQ/Q) × (P/ΔP)\n\nWhere:\n• ΔQ = New quantity − Original quantity\n• ΔP = New price − Original price\n• Q = Original quantity demanded\n• P = Original price\n\n**Numerical Example:**\n| Price (₹) | Qty (kg) |\n|-----------|----------|\n| 20 | 10 |\n| 25 | 9 |\n\nP = 20, ΔP = 5, Q = 10, ΔQ = 1\n\nEd = (1/10) × (20/5) = 0.1 × 4 = 0.4\nEd = 0.4 < 1\n\n**Interpretation:** Since Ed < 1, the demand is relatively inelastic. A 25% change in price caused only a 10% change in quantity demanded.\n\n**Types based on Ed value:**\n• Ed = 0 → Perfectly inelastic\n• Ed < 1 → Relatively inelastic\n• Ed = 1 → Unitary elastic\n• Ed > 1 → Relatively elastic\n• Ed = ∞ → Perfectly elastic",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 4: SUPPLY ANALYSIS ====================
@@ -1254,6 +1752,214 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
 5. **Exceptions**: Agricultural products, Labor supply, Artistic goods`,
       },
     ],
+
+    textbookExercises: {
+      title: "Chapter 4 - Textbook Exercises with Answers",
+
+      mcqs: [
+        {
+          q: "When supply curve is upward sloping, its slope is _____.",
+          statements: [
+            "a) positive",
+            "b) negative",
+            "c) first positive then negative",
+            "d) zero",
+          ],
+          options: [
+            "positive",
+            "negative",
+            "first positive then negative",
+            "zero",
+          ],
+          correct: 0,
+          answer: "positive",
+          explanation:
+            "An upward sloping supply curve shows a direct relationship between price and quantity supplied. As price increases, quantity supplied increases. This gives the curve a positive slope.",
+        },
+        {
+          q: "An upward movement along the same supply curve shows _____.",
+          statements: [
+            "a) contraction of supply",
+            "b) decrease in supply",
+            "c) expansion of supply",
+            "d) increase in supply",
+          ],
+          options: [
+            "contraction of supply",
+            "decrease in supply",
+            "expansion of supply",
+            "increase in supply",
+          ],
+          correct: 2,
+          answer: "expansion of supply",
+          explanation:
+            "An upward movement on the same supply curve means price has risen and more quantity is supplied. This is called Expansion of supply — movement along the same curve due to price change.",
+        },
+        {
+          q: "A rightward shift in supply curve shows _____.",
+          statements: [
+            "a) contraction of supply",
+            "b) decrease in supply",
+            "c) expansion of supply",
+            "d) increase in supply",
+          ],
+          options: [
+            "contraction of supply",
+            "decrease in supply",
+            "expansion of supply",
+            "increase in supply",
+          ],
+          correct: 3,
+          answer: "increase in supply",
+          explanation:
+            "A rightward shift of the entire supply curve indicates Increase in supply — more is supplied at the same price due to favorable changes in other factors (not price). Expansion is movement along the same curve.",
+        },
+        {
+          q: "Other factors remaining constant, when less quantity is supplied only due to a fall in price, it shows _____.",
+          statements: [
+            "a) contraction of supply",
+            "b) decrease in supply",
+            "c) expansion of supply",
+            "d) increase in supply",
+          ],
+          options: [
+            "contraction of supply",
+            "decrease in supply",
+            "expansion of supply",
+            "increase in supply",
+          ],
+          correct: 0,
+          answer: "contraction of supply",
+          explanation:
+            "When less is supplied due to fall in price alone (other factors constant), it is Contraction of supply — a downward movement on the same supply curve.",
+        },
+        {
+          q: "Net addition made to the total revenue by selling an extra unit of a commodity is _____.",
+          statements: [
+            "a) total revenue",
+            "b) marginal revenue",
+            "c) average revenue",
+            "d) marginal cost",
+          ],
+          options: [
+            "total revenue",
+            "marginal revenue",
+            "average revenue",
+            "marginal cost",
+          ],
+          correct: 1,
+          answer: "marginal revenue",
+          explanation:
+            "Marginal Revenue (MR) is the net addition to total revenue from selling one more unit. Formula: MRn = TRn − TRn−1.",
+        },
+      ],
+
+      correlations: [
+        {
+          q: "Expansion of supply : Price rises :: Contraction of supply : ___",
+          answer: "Price falls",
+          explanation:
+            "Expansion of supply occurs when price rises (more supplied). Contraction of supply occurs when price falls (less supplied). Both are movements on the same supply curve.",
+        },
+        {
+          q: "Total revenue : P × Q :: Average revenue : ___",
+          answer: "TR / TQ",
+          explanation:
+            "Total Revenue = Price × Quantity. Average Revenue = Total Revenue / Total Quantity. AR is the revenue per unit of output sold.",
+        },
+        {
+          q: "Total cost : TFC + TVC :: Average cost : ___",
+          answer: "TC / TQ",
+          explanation:
+            "Total Cost = Total Fixed Cost + Total Variable Cost. Average Cost = Total Cost / Total Quantity. AC is the cost of production per unit of output.",
+        },
+        {
+          q: "Demand curve : Downward :: Supply curve : ___",
+          answer: "Upward",
+          explanation:
+            "Demand curve slopes downward (inverse relationship — higher price, lower demand). Supply curve slopes upward (direct relationship — higher price, higher supply).",
+        },
+        {
+          q: "Price constant : Change in supply :: Other factors constant : ___",
+          answer: "Variation of Supply",
+          explanation:
+            "Change in supply = shift of curve when price is constant but other factors change. Variation in supply = movement along the curve when only price changes (other factors constant).",
+        },
+      ],
+
+      conceptIdentification: [
+        {
+          statement: "Cost incurred on fixed factors like land, machinery.",
+          concept: "Fixed Cost",
+          explanation:
+            "**Fixed Cost (TFC)**\n\nFixed costs are those expenses incurred on fixed factors of production such as land, machinery, buildings, etc.\n\n• They remain constant regardless of the level of output.\n• Even if output is zero, fixed costs still exist.\n• Examples: rent, insurance premiums, salary of permanent staff.",
+        },
+        {
+          statement: "Cost incurred per unit of output.",
+          concept: "Average Cost",
+          explanation:
+            "**Average Cost (AC)**\n\nAverage cost is the cost of production per unit of output.\n\n• Formula: AC = TC / TQ (Total Cost ÷ Total Quantity)\n• It helps the firm decide the selling price of its product.\n• AC first falls, reaches a minimum, and then rises — forming a U-shaped curve.",
+        },
+        {
+          statement: "Net addition made to total cost of production.",
+          concept: "Marginal Cost",
+          explanation:
+            "**Marginal Cost (MC)**\n\nMarginal cost is the addition to total cost when one more unit of output is produced.\n\n• Formula: MCn = TCn − TCn−1\n• It helps in decision-making — whether to produce an additional unit.\n• MC curve is U-shaped.",
+        },
+        {
+          statement: "Revenue per unit of output sold.",
+          concept: "Average Revenue",
+          explanation:
+            "**Average Revenue (AR)**\n\nAverage revenue is the revenue earned per unit of output sold.\n\n• Formula: AR = TR / TQ (Total Revenue ÷ Total Quantity)\n• AR is essentially the price of the commodity.\n• In perfect competition, AR = MR = Price.",
+        },
+      ],
+
+      shortAnswers: [
+        {
+          question: "Explain the concept of total cost and total revenue.",
+          marks: 4,
+          modelAnswer:
+            "**Total Cost (TC):**\nTotal cost is the total expenditure incurred by a firm on the factors of production for producing goods and services.\n• TC = TFC + TVC (Total Fixed Cost + Total Variable Cost)\n• TFC = expenses on fixed factors (land, machinery) — remain constant\n• TVC = expenses on variable factors (labour, raw material) — change with output\n\n**Total Revenue (TR):**\nTotal revenue is the total sales proceeds of a firm by selling a commodity at a given price.\n• TR = Price × Quantity\n• Example: If a firm sells 15 units at ₹200 per unit, TR = 200 × 15 = ₹3,000",
+        },
+        {
+          question: "Explain the determinants of supply.",
+          marks: 4,
+          modelAnswer:
+            "**Determinants of Supply:**\n\n1) **Price of commodity:** Direct relationship — higher price, more supply.\n2) **State of technology:** Improved technology → lower cost → more supply.\n3) **Cost of Production:** Higher factor prices → higher cost → less supply.\n4) **Infrastructure:** Transport, communication, power — shortage decreases supply.\n5) **Government policy:** Taxation, subsidies, industrial policies affect supply.\n6) **Natural conditions:** Agriculture depends on monsoon/climate.\n7) **Future price expectations:** Expected price rise → withhold stock → reduce current supply.\n8) **Other factors:** Nature of market, relative prices, exports/imports, availability of factors.",
+        },
+      ],
+
+      agreeDisagree: [
+        {
+          statement:
+            "There is a direct relationship between price and quantity supplied.",
+          agree: true,
+          modelAnswer:
+            "**Yes, I agree with this statement.**\n\nReasons:\na) The law of supply states: 'Other things being constant, higher the price, more is the quantity supplied and lower the price, less is the quantity supplied.'\n\nb) In simple words: higher price = higher supply, lower price = lower supply.\n\nc) The supply curve graphically represents this relationship. It has a positive slope — slopes upward from left to right.\n\nd) This is because at higher prices, producers earn more profit and are motivated to supply more.\n\ne) Therefore, there is a direct relationship between price and quantity supplied.",
+        },
+        {
+          statement: "Supply curve of labour is backward bending.",
+          agree: true,
+          modelAnswer:
+            "**Yes, I agree with this statement.**\n\nReasons:\na) Labour supply is the total number of hours that workers work at a given wage rate.\n\nb) Initially, as wage rate rises, supply of labour increases. So the supply curve slopes upward.\n\nc) But after a certain point, supply of labour FALLS with a further rise in wage rate. The supply curve bends backward.\n\nd) This is because the worker would prefer leisure to work after receiving a sufficiently high wage.\n\ne) Thus, the supply curve of labour is backward bending — it first slopes upward and then bends backward.",
+        },
+        {
+          statement: "There are no exceptions to the law of supply.",
+          agree: false,
+          modelAnswer:
+            "**No, I disagree with this statement.**\n\nReasons:\na) There ARE exceptions to the law of supply:\n\nb) **Labour supply**: After a certain wage level, workers prefer leisure over work. Supply curve bends backward.\n\nc) **Agricultural goods**: Production depends on seasons and climate. Supply cannot increase even at higher prices if monsoon fails.\n\nd) **Urgent need for cash**: Seller may sell at lower price if urgently needing money.\n\ne) **Perishable goods**: Supplier sells more at lower prices to avoid spoilage (vegetables, eggs).\n\nf) **Rare goods**: Supply of rare paintings, antiques, old coins cannot increase regardless of price.\n\nTherefore, there ARE exceptions to the law of supply.",
+        },
+      ],
+
+      longAnswers: [
+        {
+          question: "State and explain the Law of Supply with exceptions.",
+          marks: 8,
+          modelAnswer:
+            "**Law of Supply**\n\nIntroduced by Prof. Alfred Marshall in 'Principles of Economics' (1890).\n\n**Statement:** 'Other things being constant, higher the price of a commodity, more is the quantity supplied and lower the price, less is the quantity supplied.'\n\nThere is a direct relationship between price and quantity supplied.\nSymbolically: Sx = f(Px)\n\n**Supply Schedule:**\n| Price (₹) | Supply (kgs) |\n|-----------|-------------|\n| 10 | 100 |\n| 20 | 200 |\n| 30 | 300 |\n| 40 | 400 |\n| 50 | 500 |\n\nThe supply curve SS slopes upward from left to right with a positive slope.\n\n**Exceptions to the Law of Supply:**\n\n1) **Supply of Labour:** As wage rate rises, supply of labour increases initially. But after a certain point, workers prefer leisure over work. Supply falls with further wage rise — backward bending supply curve.\n\n2) **Agricultural Goods:** Production depends on seasons and climate. Supply cannot increase at higher price if monsoon fails.\n\n3) **Urgent Need for Cash:** Seller may sell at a price below market price if urgently needing money.\n\n4) **Perishable Goods:** Supplier sells more at lower prices to avoid spoilage. E.g., vegetables, eggs.\n\n5) **Rare Goods:** Supply of rare paintings, antiques, old coins cannot increase regardless of price.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 5: FORMS OF MARKET ====================
@@ -2971,11 +3677,11 @@ Fisher's is called 'Ideal Index' because:
       "Explain types of Price Elasticity of Demand with diagrams.",
       "Explain Consumer Equilibrium (Single Commodity).",
     ],
-    numericalTopics: [
-      "Calculate MU from TU or TU from MU",
+    q5TableFigureTopics: [
+      "Complete TU/MU table and identify Point of Satiety",
       "Calculate Price Elasticity of Demand (Percentage method)",
-      "Calculate National Income from given data",
-      "Calculate Fisher's Index from Laspeyre's and Paasche's",
+      "Calculate GDP/NDP/NI from given components",
+      "Calculate Simple/Weighted Price Index Number",
     ],
   },
 };

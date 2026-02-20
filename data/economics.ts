@@ -831,11 +831,12 @@ Both branches are essential - Micro for understanding individual behavior, Macro
     {
       id: "eco2",
       title: "2. Utility Analysis",
-      description: "Cardinal and Ordinal approaches to measuring satisfaction.",
+      description:
+        "Concept, types, features of utility. Law of DMU with exceptions.",
       summary:
-        "**Utility**: Satisfaction derived from consumption.\n**Types**: Total Utility (TU), Marginal Utility (MU).\n**Laws**: Law of DMU, Law of Equi-Marginal Utility.",
+        "**Utility**: Want satisfying power of a commodity.\n**Types of Utility**: Form, Place, Service, Knowledge, Possession, Time.\n**TU & MU**: TU = sum of all utilities. MU = additional utility from one more unit.\n**Law of DMU**: As consumption ↑, MU ↓ (Alfred Marshall, 1890).\n**Point of Satiety**: TU is maximum, MU = 0.\n\n### Shortcodes\n| Code | Topic |\n|------|-------|\n| **MRS BHIDE** | Features of Utility |\n| **H MAP** | Exceptions to Law of DMU |",
       detailedNotes:
-        "### 1. Concept of Utility\n**Utility** = Want satisfying power of a commodity.\nIt is subjective - varies person to person.\n\n### 2. Types of Utility\n* **Total Utility (TU)**: Sum of all utilities from all units consumed.\n* **Marginal Utility (MU)**: Utility from consuming ONE additional unit.\n* **Formula**: MU = TUn - TUn-1 OR MU = ΔTU/ΔQ\n\n### 3. Law of Diminishing Marginal Utility (DMU)\n**Statement**: As consumption increases, MU decreases (other things constant).\n**Assumptions**: Homogeneous units, Continuous consumption, No time gap, Normal consumer.\n**Exceptions**: Hobbies (Stamp collecting), Misers (Money), Drunkards.\n\n### 4. Cardinal Utility\n* Utility can be measured in numbers (Utils).\n* Given by Alfred Marshall.\n* Used in Law of DMU, Equi-Marginal Utility.\n\n### 5. Ordinal Utility\n* Utility can only be ranked (1st, 2nd, 3rd...).\n* Given by Hicks and Allen.\n* Used in Indifference Curve Analysis.\n\n### 6. Law of Equi-Marginal Utility\n**Statement**: Consumer maximizes satisfaction when MU per rupee spent is equal for all goods.\n**Formula**: MUx/Px = MUy/Py = MUm (Marginal Utility of Money)",
+        "### 1. Concept of Utility\n**Utility** = Want satisfying power of a commodity.\nIt is subjective — varies person to person.\n\n### 2. Types of Utility\n* **Form Utility**: Change in shape (wood → furniture)\n* **Place Utility**: Change in place (sand at construction site)\n* **Service Utility**: Personal services (doctor, teacher)\n* **Knowledge Utility**: Knowing product functions (mobile phone)\n* **Possession Utility**: Transfer of ownership (seller to buyer)\n* **Time Utility**: Change in time (umbrella in monsoon, blood bank)\n\n### 3. Features of Utility (MRS BHIDE)\n* **Relative concept** — varies with time & place\n* **Subjective concept** — differs person to person\n* **Ethically neutral** — no moral consideration\n* **Differs from usefulness** — liquor has utility but no usefulness\n* **Differs from pleasure** — injection has utility but no pleasure\n* **Differs from satisfaction** — utility is cause, satisfaction is result\n* **Measurement is hypothetical** — cardinal measurement not possible\n\n### 4. TU and MU Relationship\n* **Formula**: MU = TUn − TUn−1\n* When MU > 0 → TU rises\n* When MU = 0 → TU is MAXIMUM (Point of Satiety)\n* When MU < 0 → TU falls (Disutility)\n\n### 5. Law of Diminishing Marginal Utility\n**By**: Prof. Gossen (proposed), Prof. Alfred Marshall (detailed, 1890)\n**Statement**: 'Other things remaining constant, the additional benefit from a given increase in stock diminishes with every increase already had.'\n**Assumptions**: Rationality, Cardinal measurement, Homogeneity, Continuity, Reasonable size, Constancy, Single want\n\n### 6. Exceptions to Law of DMU (H MAP)\n* **H — Hobbies**: Stamp collection, rare paintings — MU increases\n* **M — Miser**: Every additional rupee gives more satisfaction\n* **A — Addictions**: Drunkards — MU seems to increase (illusion)\n* **P — Power**: Lust for power increases with power acquired\n* **Money**: MU of money never becomes zero",
       flashcards: [
         {
           id: "f1",
@@ -914,48 +915,48 @@ Both branches are essential - Micro for understanding individual behavior, Macro
         },
         {
           id: "f16",
-          front: "What is Ordinal measurement of utility?",
-          back: 'Utility expressed in ranks/order. E.g., Apple is preferred to Orange (1st rank > 2nd rank). Cannot say "how much more".',
+          front: "What is Form Utility?",
+          back: "Utility created by changing shape/structure of material. E.g., Toys from clay, Furniture from wood, Bread from wheat.",
         },
         {
           id: "f17",
-          front: "What is Law of Equi-Marginal Utility?",
-          back: "Consumer gets maximum satisfaction when MU per rupee spent on all goods is equal: MUx/Px = MUy/Py = MUm",
+          front: "What is Place Utility?",
+          back: "Utility increases with change in place. Transport creates place utility. E.g., Sand at construction site > seashore.",
         },
         {
           id: "f18",
-          front: "Who gave the Law of Equi-Marginal Utility?",
-          back: "H.H. Gossen (Second Law of Gossen). Also called Law of Substitution or Law of Maximum Satisfaction.",
+          front: "What is Time Utility?",
+          back: "Utility increases with change in time. E.g., Umbrella in monsoon, Textbooks during exams, Blood bank for emergencies.",
         },
         {
           id: "f19",
-          front: "What is Marginal Utility of Money (MUm)?",
-          back: "The additional satisfaction derived from spending one more rupee. Marshall assumed MUm to be constant.",
+          front: "What is Service Utility?",
+          back: "Utility from personal services of professionals. E.g., Doctor, Teacher, Lawyer, Barber.",
         },
         {
           id: "f20",
-          front: "What is Consumer Equilibrium in Cardinal approach?",
-          back: "Consumer is in equilibrium when MUx/Px = MUy/Py = MUm. No reallocation of spending can increase satisfaction.",
+          front: "What is Possession Utility?",
+          back: "Utility from transfer of ownership. When goods move from seller to buyer, possession utility is created.",
         },
         {
           id: "f21",
-          front: "What is Utils?",
-          back: "Imaginary unit to measure utility in cardinal approach. E.g., 1 apple = 10 utils of satisfaction.",
+          front: "Shortcode: MRS BHIDE?",
+          back: "Features of Utility — Measurable hypothetically, Relative, Subjective, Based on intensity, Human wants, Independent of morals, Differs from usefulness, Ethically neutral.",
         },
         {
           id: "f22",
-          front: "Why is utility subjective?",
-          back: "Because satisfaction varies from person to person. Same good gives different utility to different individuals.",
+          front: "Shortcode: H MAP?",
+          back: "Exceptions to Law of DMU — Hobbies, Miser, Addictions, Power (+ Money).",
         },
         {
           id: "f23",
           front: "Difference between Utility and Usefulness?",
-          back: "Utility = want satisfaction (even harmful goods have utility). Usefulness = beneficial quality only.",
+          back: "Utility = want satisfaction (even harmful goods have utility). Usefulness = beneficial quality only. Liquor has utility but no usefulness.",
         },
         {
           id: "f24",
-          front: "What is Initial Utility?",
-          back: "Utility derived from the first unit of consumption. It is usually highest and called Maximum MU.",
+          front: "What is Knowledge Utility?",
+          back: "When consumer knows about product features, utility increases. E.g., Knowing mobile phone functions increases its utility.",
         },
         {
           id: "f25",
@@ -1101,16 +1102,11 @@ Both branches are essential - Micro for understanding individual behavior, Macro
         },
         {
           id: "q13",
-          question: "Law of Equi-Marginal Utility is also called _______.",
-          options: [
-            "First Law of Gossen",
-            "Second Law of Gossen",
-            "Law of Demand",
-            "Law of Supply",
-          ],
+          question: "Consumer equilibrium is where MU equals _______.",
+          options: ["Total Utility", "Price", "Zero", "Negative"],
           correctIndex: 1,
           explanation:
-            "Gossen's Second Law deals with allocation of expenditure.",
+            "A rational consumer attains equilibrium when MU of a commodity equals its market price (MUx = Px).",
         },
         {
           id: "q14",
@@ -1199,30 +1195,37 @@ Both branches are essential - Micro for understanding individual behavior, Macro
         },
         {
           id: "q24",
-          question: "Which approach uses Indifference Curve?",
-          options: ["Cardinal", "Ordinal", "Classical", "Keynesian"],
-          correctIndex: 1,
+          question: "Point of Satiety means _______.",
+          options: [
+            "TU rising, MU falling",
+            "TU falling, MU negative",
+            "TU maximum, MU zero",
+            "MU falling, TU rising",
+          ],
+          correctIndex: 2,
           explanation:
-            "Ordinal approach uses IC analysis developed by Hicks-Allen.",
+            "Point of Satiety is where TU is maximum and MU = 0. Beyond this, TU falls and MU becomes negative.",
         },
         {
           id: "q25",
-          question: "Law of Substitution is another name for _______.",
-          options: [
-            "Law of DMU",
-            "Law of Equi-Marginal Utility",
-            "Law of Demand",
-            "Law of Supply",
-          ],
+          question: "Utility is a _______ concept.",
+          options: ["Objective", "Subjective", "Mathematical", "Physical"],
           correctIndex: 1,
-          explanation: "Consumer substitutes goods to equalize MU per rupee.",
+          explanation:
+            "Utility is subjective — it differs from person to person based on tastes, preferences, habits.",
         },
         {
           id: "q26",
-          question: "If MUx/Px > MUy/Py, consumer should buy more of _______.",
-          options: ["Good X", "Good Y", "Both equally", "Neither"],
-          correctIndex: 0,
-          explanation: "Higher MU per rupee means better value, buy more of X.",
+          question: "Time utility example is _______.",
+          options: [
+            "Furniture from wood",
+            "Doctor's services",
+            "Umbrella in monsoon",
+            "Transfer of ownership",
+          ],
+          correctIndex: 2,
+          explanation:
+            "Time utility arises when utility increases with change in time. Umbrella has more utility in monsoon than summer.",
         },
         {
           id: "q27",
@@ -1312,7 +1315,8 @@ Both branches are essential - Micro for understanding individual behavior, Macro
         {
           id: "r9",
           title: "Gossen",
-          content: "German economist\n1st Law = DMU\n2nd Law = Equi-Marginal",
+          content:
+            "German economist\n1st Law = DMU\nProf. Marshall expanded it",
           color: getReelColor(8),
         },
         {
@@ -1374,82 +1378,84 @@ Both branches are essential - Micro for understanding individual behavior, Macro
         },
         {
           id: "r19",
-          title: "Equi-Marginal Law",
+          title: "🧠 H MAP",
           content:
-            "MUx/Px = MUy/Py = MUm\nEqual MU per rupee\nMaximum satisfaction",
+            "Shortcode: Exceptions to DMU\nH=Hobbies M=Miser\nA=Addictions P=Power",
           color: getReelColor(8),
         },
         {
           id: "r20",
-          title: "Consumer Equilibrium",
+          title: "🧠 MRS BHIDE",
           content:
-            "Cardinal: MU/P equal\nNo reallocation helps\nOptimal spending",
+            "Features of Utility\nMeasurable•Relative•Subjective\nBased on intensity•Ethically neutral",
           color: getReelColor(9),
         },
         {
           id: "r21",
           title: "Utility vs Usefulness",
           content:
-            "Utility = Want satisfaction\nUsefulness = Beneficial\nCigarette has utility!",
+            "Utility = Want satisfaction\nUsefulness = Beneficial\nLiquor: utility YES, useful NO",
           color: getReelColor(0),
         },
         {
           id: "r22",
-          title: "Subjective Nature",
-          content:
-            "Varies person to person\nSame good, different utility\nDepends on needs",
+          title: "Types of Utility",
+          content: "Form•Place•Service\nKnowledge•Possession\nTime utility",
           color: getReelColor(1),
         },
         {
           id: "r23",
-          title: "Why DMU Works",
+          title: "Form & Place Utility",
           content:
-            "Wants are satiable\nIntensity decreases\nPsychological factor",
+            "Form: wood→furniture\nPlace: sand at construction\nTransport creates place utility",
           color: getReelColor(2),
         },
         {
           id: "r24",
-          title: "Cardinal vs Ordinal",
+          title: "Service & Time Utility",
           content:
-            "Cardinal = Measure (10)\nOrdinal = Rank (1st)\nMarshall vs Hicks",
+            "Service: Doctor, Teacher\nTime: Umbrella in monsoon\nBlood bank = Time utility",
           color: getReelColor(3),
         },
         {
           id: "r25",
-          title: "TU Formula",
-          content: "TU = Σ MU\nSum of all MUs\nTotal = Adding parts",
+          title: "Knowledge & Possession",
+          content:
+            "Knowledge: knowing mobile functions\nPossession: seller→buyer\nOwnership transfer",
           color: getReelColor(4),
         },
         {
           id: "r26",
-          title: "MUm",
+          title: "DMU Assumptions",
           content:
-            "Marginal Utility of Money\nMarshall: Constant\nSpending one more rupee",
+            "Rationality•Cardinal measurement\nHomogeneity•Continuity\nConstancy•Single want",
           color: getReelColor(5),
         },
         {
           id: "r27",
-          title: "Substitution Rule",
-          content: "If MUx/Px > MUy/Py\nBuy more X, less Y\nRebalance spending",
+          title: "MU & Price",
+          content:
+            "MU > Price → Buy more\nMU = Price → Equilibrium\nMU < Price → Stop buying",
           color: getReelColor(6),
         },
         {
           id: "r28",
-          title: "Law Names",
+          title: "Criticisms of DMU",
           content:
-            "DMU = Gossen's 1st\nEqui-Marginal = Gossen's 2nd\nAlso: Law of Substitution",
+            "Unrealistic assumptions\nCardinal measurement impossible\nIndivisible goods excluded",
           color: getReelColor(7),
         },
         {
           id: "r29",
-          title: "Satiety Point",
-          content: "Full satisfaction\nNo more want\nMU crosses zero",
+          title: "Significance of DMU",
+          content:
+            "Basis of Law of Demand\nUseful to consumers & govt\nParadox of values",
           color: getReelColor(8),
         },
         {
           id: "r30",
           title: "Key Formulas",
-          content: "MU = ΔTU/ΔQ\nTU = ΣMU\nEquilibrium: MU/P equal",
+          content: "MU = TUn − TUn−1\nTU = Σ MU\nMU = 0 → TU Maximum",
           color: getReelColor(9),
         },
       ],
@@ -1507,108 +1513,80 @@ The Law of DMU is universal in application with few exceptions and forms the fou
         {
           id: "eco2-la2",
           question:
-            "Distinguish between Cardinal and Ordinal Utility approaches.",
+            "Explain the features/characteristics of Utility. (Shortcode: MRS BHIDE)",
           mnemonic:
-            "MARSHAL vs HICKS - Measurable vs Ranked, Absolute vs Relative, Realistic vs Theoretical",
+            "MRS BHIDE - Measurable hypothetically, Relative concept, Subjective, Based on intensity, Human wants, Independent of morals, Differs from usefulness, Ethically neutral",
           answer: `### Introduction
-There are two approaches to measure consumer satisfaction - Cardinal (Marshall) and Ordinal (Hicks-Allen).
+Utility is the want satisfying power of a commodity. It is the capacity of a good to satisfy human wants.
 
-### Cardinal Utility Approach
+### Features of Utility (Shortcode: MRS BHIDE)
 
-**Given by**: Alfred Marshall
+**1. Relative Concept:**
+Utility is related to time and place. It varies from time to time and place to place.
+Example: Woollen clothes have greater utility in winter. Sand has more utility at construction site than seashore.
 
-**Main Features**:
-- Utility can be measured in numbers (Utils)
-- Absolute measurement possible
-- Example: Apple = 10 utils, Orange = 8 utils
-- Uses Law of DMU and Law of Equi-Marginal Utility
+**2. Subjective Concept:**
+It is a psychological concept. Utility differs from person to person due to differences in taste, preferences, likes, dislikes, habits, profession, etc.
+Example: A stethoscope has utility to a doctor but not to a layman.
 
-### Ordinal Utility Approach
+**3. Ethically Neutral:**
+Utility has no ethical consideration. It is a morally colourless concept. The commodity satisfies any want without consideration of good or bad.
+Example: A knife can cut fruits AND can harm someone. Both wants are satisfied.
 
-**Given by**: J.R. Hicks and R.G.D. Allen
+**4. Differs from Usefulness:**
+Utility = capacity to satisfy wants. Usefulness = value in use.
+Example: Milk has both utility and usefulness. Liquor has utility to an addict but no usefulness.
 
-**Main Features**:
-- Utility can only be ranked (1st, 2nd, 3rd)
-- Relative comparison only
-- Example: Apple > Orange (Apple preferred)
-- Uses Indifference Curve Analysis
+**5. Differs from Pleasure:**
+A commodity may possess utility but may not give pleasure.
+Example: Injection has utility (cures disease) but gives no pleasure to the patient.
 
-### Differences
+**6. Differs from Satisfaction:**
+Utility is the CAUSE of consumption. Satisfaction is the END RESULT.
+Example: Thirsty person drinks water — utility causes consumption, satisfaction is the result.
 
-| Basis | Cardinal | Ordinal |
-|-------|----------|---------|
-| **Measurement** | Quantitative (Utils) | Qualitative (Ranks) |
-| **Proponent** | Alfred Marshall | Hicks & Allen |
-| **Year** | 1890 | 1934 |
-| **Type** | Absolute | Relative |
-| **Analysis Tool** | DMU, Equi-Marginal | Indifference Curves |
-| **Assumption** | MUm constant | MUm varies |
-| **Realism** | Less realistic | More realistic |
-| **Comparison** | Between goods possible | Only preference order |
-| **Introspection** | Required | Not required |
-
-### Similarities
-1. Both explain consumer behavior
-2. Both assume rationality
-3. Both derive demand curve
-4. Both aim to maximize satisfaction
+**7. Measurement is Hypothetical:**
+Cardinal measurement of utility is not possible. It can only be experienced as positive, zero, or negative (disutility).
 
 ### Conclusion
-Cardinal approach is simpler but less realistic; Ordinal approach is more realistic but complex. Both contribute to understanding consumer behavior.`,
+Utility is a fundamental concept in economics that explains why consumers demand goods and services.`,
         },
         {
           id: "eco2-la3",
-          question: "State and explain the Law of Equi-Marginal Utility.",
+          question: "Explain the types of utility with examples.",
           mnemonic:
-            "EQUAL - Every good, Quota balanced, Utility per rupee same, Allocate wisely, Law of Substitution",
+            "FPSKPT - Form, Place, Service, Knowledge, Possession, Time",
           answer: `### Introduction
-The Law of Equi-Marginal Utility, also known as Gossen's Second Law or Law of Maximum Satisfaction, explains how consumers allocate their income.
+Utility is the want satisfying power of a commodity. There are various types of utility based on how satisfaction is derived.
 
-### Statement
-"A consumer gets maximum satisfaction when the marginal utility per rupee spent on each commodity is equal."
+### Types of Utility
 
-### Mathematical Expression
-**MUx/Px = MUy/Py = MUm**
+**1. Form Utility:**
+When utility is created due to a change in the shape or structure of existing material, it is called form utility.
+Example: Toys made of clay, furniture from wood, bread from wheat.
 
-Where:
-- MUx = Marginal Utility of good X
-- Px = Price of good X
-- MUy = Marginal Utility of good Y
-- Py = Price of good Y
-- MUm = Marginal Utility of Money
+**2. Place Utility:**
+When the utility of a commodity increases due to a change in its place, it is called place utility. Transport creates place utility.
+Example: Woollen clothes have more utility in cold places than in warm places. Sand is more useful at a construction site than at the seashore.
 
-### Explanation with Example
+**3. Service Utility:**
+Service utility arises when personal services are rendered by various professionals.
+Example: Services of doctors, teachers, lawyers, barbers, etc.
 
-Given: Income = ₹5, Price of Apple = ₹1, Price of Banana = ₹1
+**4. Knowledge Utility:**
+When a consumer acquires knowledge about a particular product, its utility increases.
+Example: The utility of a mobile phone or computer increases when a person knows about its various functions and features.
 
-| Units | MU Apple | MU Banana |
-|-------|----------|-----------|
-| 1 | 10 | 8 |
-| 2 | 8 | 6 |
-| 3 | 6 | 4 |
-| 4 | 4 | 2 |
+**5. Possession Utility:**
+Possession utility arises when the ownership of goods is transferred from one person to another.
+Example: Transfer of goods from the sellers to the buyers in any market.
 
-**Optimal Allocation**: 3 Apples + 2 Bananas
-- MU of last Apple = 6
-- MU of last Banana = 6
-- MU per rupee is EQUAL (6/1 = 6/1)
-
-### Assumptions
-1. Cardinal measurement of utility
-2. Constant MU of money
-3. Unlimited wants
-4. Limited income
-5. Rational consumer
-6. Independent utilities
-
-### Importance
-1. **Consumer Equilibrium**: Shows optimal spending pattern
-2. **Price-Demand Relation**: Explains inverse relationship
-3. **Tax Policy**: Helps in progressive taxation
-4. **Public Finance**: Allocation of government funds
+**6. Time Utility:**
+When the utility of a commodity increases with a change in its time of utilization, it is called time utility.
+Example: A student has more utility for textbooks during examinations than in vacations. Blood bank stores blood for future emergencies.
 
 ### Conclusion
-The law guides consumers to maximize satisfaction by equalizing marginal utility per rupee across all goods.`,
+Different types of utility explain how goods and services satisfy human wants in various ways — through change in form, place, time, ownership, knowledge, or service.`,
         },
       ],
     },
