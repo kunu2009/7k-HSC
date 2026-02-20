@@ -328,8 +328,8 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Q.5 Numericals:</strong> Show formula, steps, and
-              calculation clearly
+              <strong>Q.5 Table/Figure:</strong> Complete tables accurately,
+              label diagrams, show formula steps
             </span>
           </li>
           <li className="flex items-start gap-2">
@@ -404,15 +404,15 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         </div>
       </div>
 
-      {/* 🧠 SHORTCODES FOR 8-MARK ANSWERS */}
+      {/* 🧠 ALL SHORTCODES — Complete Reference */}
       <div className="bg-gradient-to-r from-violet-50 to-fuchsia-50 dark:from-violet-900/20 dark:to-fuchsia-900/20 border-2 border-violet-300 dark:border-violet-700 rounded-2xl p-4">
         <h3 className="font-bold text-violet-800 dark:text-violet-200 mb-3 flex items-center gap-2">
           <Brain size={20} />
-          🧠 SHORTCODES — Memorize These for Q.6 (8 Marks)
+          🧠 ALL 22 SHORTCODES — Master These!
         </h3>
         <p className="text-xs text-violet-600 dark:text-violet-400 mb-3">
-          Each letter = one point to write. These guarantee you cover ALL
-          points!
+          Each letter = one point to write. Memorize these to guarantee you
+          cover ALL points in long answers!
         </p>
         <div className="space-y-2">
           {[
@@ -433,6 +433,14 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
               color: "bg-blue-100 dark:bg-blue-900/30",
             },
             {
+              code: "MRS BHIDE",
+              topic: "Features of Utility",
+              ch: "Ch 2",
+              breakdown:
+                "Measurable • Relative concept • Subjective • Based on intensity of want • Humans only • Independent of morality • Differs from usefulness • Ethically neutral",
+              color: "bg-violet-100 dark:bg-violet-900/30",
+            },
+            {
               code: "H MAP",
               topic: "Exceptions to Law of DMU",
               ch: "Ch 2",
@@ -448,12 +456,68 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
               color: "bg-green-100 dark:bg-green-900/30",
             },
             {
+              code: "PLANS FREE HO",
+              topic: "Features of Perfect Competition",
+              ch: "Ch 5",
+              breakdown:
+                "Perfect knowledge • Large buyers/sellers • AR=MR=Price • No transport cost • Single price • Free entry/exit • Homogeneous products • Other assumptions",
+              color: "bg-sky-100 dark:bg-sky-900/30",
+            },
+            {
+              code: "BP SCAN",
+              topic: "Features of Monopoly",
+              ch: "Ch 5",
+              breakdown:
+                "Barriers to entry • Price maker • Single seller • Control over supply • AR>MR • No close substitute • No distinction b/w firm & industry",
+              color: "bg-red-100 dark:bg-red-900/30",
+            },
+            {
+              code: "U arE FAIR",
+              topic: "Features of Oligopoly",
+              ch: "Ch 5",
+              breakdown:
+                "Uncertainty • advertising • Entry barriers • Few sellers • Automobile industry (example) • Interdependence • Rivalry",
+              color: "bg-pink-100 dark:bg-pink-900/30",
+            },
+            {
+              code: "FAIRLY FREE PC'S",
+              topic: "Features of Monopolistic Competition",
+              ch: "Ch 5",
+              breakdown:
+                "Free entry/exit • AR>MR • Independent decisions • Realistic competition • Large number • Yes to selling cost • Free but not perfect knowledge • Product differentiation • Close substitutes",
+              color: "bg-rose-100 dark:bg-rose-900/30",
+            },
+            {
+              code: "SUM BC",
+              topic: "Features of Index Numbers",
+              ch: "Ch 6",
+              breakdown:
+                "Specialized averages • Universal utility • Measure relative changes • Based on samples • Comparative study",
+              color: "bg-pink-100 dark:bg-pink-900/30",
+            },
+            {
+              code: "V-FMN",
+              topic: "Features of National Income",
+              ch: "Ch 7",
+              breakdown:
+                "Value of final goods only • Flow concept • Macro concept • Money value • Net aggregate value • Net income from abroad • Financial year",
+              color: "bg-indigo-100 dark:bg-indigo-900/30",
+            },
+            {
               code: "VIP CID E",
               topic: "Practical Difficulties in NI Estimation",
               ch: "Ch 7",
               breakdown:
                 "Valuation of inventories • Illiteracy • Problem of double counting • Capital gains • Inadequate data • Depreciation • Existence of non-monetized sector",
               color: "bg-indigo-100 dark:bg-indigo-900/30",
+            },
+            {
+              code: "TU C VIP",
+              topic: "Theoretical Difficulties in NI Measurement",
+              ch: "Ch 7",
+              breakdown:
+                "Transfer payments • Unpaid services • Change in price level • Value of govt services • Illegal income • Production for self-consumption",
+              color: "bg-blue-100 dark:bg-blue-900/30",
             },
             {
               code: "SIR DG",
@@ -472,12 +536,60 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
               color: "bg-orange-100 dark:bg-orange-900/30",
             },
             {
+              code: "DR. NC",
+              topic: "Classification of Public Expenditure",
+              ch: "Ch 8",
+              breakdown:
+                "Developmental & Non-developmental • Revenue & Capital expenditure • Non-plan & Plan expenditure • Central/State/Local",
+              color: "bg-yellow-100 dark:bg-yellow-900/30",
+            },
+            {
               code: "CBI PRO",
               topic: "Functions of RBI",
               ch: "Ch 9",
               breakdown:
                 "Controller of credit • Banker to govt • Issue of currency • Portfolio management • Reserve of foreign exchange • Other agency functions",
               color: "bg-teal-100 dark:bg-teal-900/30",
+            },
+            {
+              code: "AP-CP",
+              topic: "Functions of Commercial Banks",
+              ch: "Ch 9",
+              breakdown:
+                "Accepting deposits • Providing loans & advances • Credit creation • Portfolio management (+ Agency functions, Discounting bills)",
+              color: "bg-cyan-100 dark:bg-cyan-900/30",
+            },
+            {
+              code: "FLIP SE GROWTH",
+              topic: "Role of Money Market in India",
+              ch: "Ch 9",
+              breakdown:
+                "Financing trade • Liquidity management • Industrial dev • Portfolio mgmt • Short-term requirements • Equilibrating mechanism • Govt requirements",
+              color: "bg-emerald-100 dark:bg-emerald-900/30",
+            },
+            {
+              code: "IQ MOP",
+              topic: "Role of Capital Market in India",
+              ch: "Ch 9",
+              breakdown:
+                "Integration • Quick valuation • Mobilization of savings • Operational efficiency • Provides equity capital",
+              color: "bg-lime-100 dark:bg-lime-900/30",
+            },
+            {
+              code: "DSL",
+              topic: "Problems of Money Market in India",
+              ch: "Ch 9",
+              breakdown:
+                "Dual structure (organised + unorganised) • Shortage of funds • Lack of uniformity in interest rates (+ Seasonal fluctuations, Lack of financial inclusion)",
+              color: "bg-red-100 dark:bg-red-900/30",
+            },
+            {
+              code: "FDI - L",
+              topic: "Problems of Capital Market in India",
+              ch: "Ch 9",
+              breakdown:
+                "Financial scams • Dominance of financial institutions • Inadequate debt market • Lack of financial literacy (+ Regulatory complexity)",
+              color: "bg-orange-100 dark:bg-orange-900/30",
             },
           ].map((item, idx) => (
             <div key={idx} className={`${item.color} rounded-xl p-3`}>
@@ -943,7 +1055,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
               tasks: [
                 "📖 Ch 3B: Elasticity — Types + Total Expenditure + Geometric method",
                 "📖 Ch 7: National Income — Features + Methods + Difficulties (VIP CID E)",
-                "📝 Practice TU-MU tables & Ed numericals",
+                "📝 Practice TU-MU tables & Ed calculations",
               ],
             },
             {
@@ -957,7 +1069,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
             {
               day: "Day 4 (Feb 23 — Last Day)",
               tasks: [
-                "🌅 Morning: Practice 5 numericals (MU, Ed, Index, GDP)",
+                "🌅 Morning: Practice Q.5 tables (MU, Ed, Index, GDP)",
                 "🌞 Afternoon: Draw ALL diagrams at least once",
                 "🌆 Evening: Revise shortcodes: LAB USP, H MAP, HI GPS, VIP CID E, SIR DG",
                 "🌙 Night: Quick MCQ facts revision + sleep by 10 PM ⚡",
@@ -2058,6 +2170,38 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
             Expected: {chapter.weightage}
           </p>
         </div>
+
+        {/* Chapter Shortcodes */}
+        {chapter.shortcodes && chapter.shortcodes.length > 0 && (
+          <div className="bg-violet-50 dark:bg-violet-900/20 border-2 border-violet-300 dark:border-violet-700 rounded-2xl p-4">
+            <h4 className="font-bold text-violet-800 dark:text-violet-200 mb-2 flex items-center gap-2">
+              <Brain size={18} /> 🧠 Shortcodes for this Chapter
+            </h4>
+            <div className="space-y-2">
+              {chapter.shortcodes.map((sc: any, idx: number) => (
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-slate-800 rounded-xl p-3"
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="font-black text-lg text-violet-700 dark:text-violet-300 tracking-wider">
+                      {sc.code}
+                    </span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400">
+                      →
+                    </span>
+                    <span className="font-bold text-sm text-slate-700 dark:text-slate-200">
+                      {sc.topic}
+                    </span>
+                  </div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400">
+                    {sc.breakdown}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Formulas (if any) */}
         {chapter.formulas && (

@@ -1294,54 +1294,25 @@ const App: React.FC = () => {
         </div>
 
         <div className="p-4 -mt-6">
-          {/* 🚀 MEGA BOARD CRASHER BANNER - Top Priority */}
+          {/* 📈 ECONOMICS URGENT - Exam in 4 Days */}
           {selectedStream === Stream.ARTS && (
             <button
-              onClick={() => setShowMegaBoardCrasher(true)}
-              className="w-full mb-4 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all group"
-            >
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl">
-                    🚀
-                  </div>
-                  <div className="text-left">
-                    <h3 className="text-xl font-black text-white">
-                      MEGA 90+ BOARD CRASHER
-                    </h3>
-                    <p className="text-white/80 text-sm">
-                      29-Day Plan: Zero to Hero • Start Now!
-                    </p>
-                  </div>
-                </div>
-                <div className="bg-white/20 rounded-full p-2 group-hover:bg-white/30 transition-colors">
-                  <ChevronRight className="w-6 h-6 text-white" />
-                </div>
-              </div>
-            </button>
-          )}
-
-          {/* 🏛️ POLITICAL SCIENCE URGENT - Exam in 3 Days */}
-          {selectedStream === Stream.ARTS && (
-            <button
-              onClick={() => setShowPolScienceBoardCrasher(true)}
-              className="w-full mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all animate-pulse-slow"
+              onClick={() => setShowEcoBoardCrasher(true)}
+              className="w-full mb-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-500 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all animate-pulse-slow"
             >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl">
-                  🏛️
+                  📈
                 </div>
                 <div className="text-left flex-1">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-black text-white">
-                      Political Science
-                    </h3>
+                    <h3 className="text-lg font-black text-white">Economics</h3>
                     <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-bold animate-bounce">
-                      3 DAYS!
+                      4 DAYS!
                     </span>
                   </div>
                   <p className="text-white/80 text-sm">
-                    All PYQs + Model Answers + Last Min Points
+                    All PYQs + Model Answers + Shortcodes + Mock Tests
                   </p>
                 </div>
                 <ChevronRight className="text-white/70" size={24} />
@@ -1620,6 +1591,33 @@ const App: React.FC = () => {
               </button>
             </div>
           </div>
+
+          {/* 🚀 MEGA BOARD CRASHER BANNER */}
+          {selectedStream === Stream.ARTS && (
+            <button
+              onClick={() => setShowMegaBoardCrasher(true)}
+              className="w-full mt-4 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-5 rounded-2xl shadow-lg hover:shadow-xl transition-all group"
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl">
+                    🚀
+                  </div>
+                  <div className="text-left">
+                    <h3 className="text-xl font-black text-white">
+                      MEGA 90+ BOARD CRASHER
+                    </h3>
+                    <p className="text-white/80 text-sm">
+                      All Subjects • PYQs • Model Answers • Tips
+                    </p>
+                  </div>
+                </div>
+                <div className="bg-white/20 rounded-full p-2 group-hover:bg-white/30 transition-colors">
+                  <ChevronRight className="w-6 h-6 text-white" />
+                </div>
+              </div>
+            </button>
+          )}
 
           {/* Previous Marks & Analysis Section */}
           <div className="mt-6">

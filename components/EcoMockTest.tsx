@@ -955,7 +955,7 @@ const MOCK_PAPER_2023 = {
 
 // Mock Test based on 2022 Pattern - Fresh questions covering all chapters
 const MOCK_PAPER_2022 = {
-  title: "Economics - Mock Test (2022 Pattern)",
+  title: "Economics - March 2022",
   totalMarks: 80,
   duration: 180,
 
@@ -1975,7 +1975,7 @@ const MOCK_PAPER_2022_JULY = {
 
 // 2023 HSC Economics Board Paper
 const MOCK_PAPER_2023_BOARD = {
-  title: "Economics - HSC 2023",
+  title: "Economics - July 2023",
   totalMarks: 80,
   duration: 180,
 
@@ -3000,24 +3000,34 @@ const AVAILABLE_PAPERS = [
     month: "🎯 AI Predicted",
   },
   {
-    id: "2022mock",
-    data: MOCK_PAPER_2022,
-    year: "2022",
-    month: "Mock Test (2022 Pattern)",
+    id: "2024feb",
+    data: MOCK_PAPER_2024,
+    year: "2024",
+    month: "February",
   },
   {
-    id: "2022july",
+    id: "2023mar",
+    data: MOCK_PAPER_2023,
+    year: "2023",
+    month: "March",
+  },
+  {
+    id: "2023jul",
+    data: MOCK_PAPER_2023_BOARD,
+    year: "2023",
+    month: "July",
+  },
+  {
+    id: "2022mar",
+    data: MOCK_PAPER_2022,
+    year: "2022",
+    month: "March",
+  },
+  {
+    id: "2022jul",
     data: MOCK_PAPER_2022_JULY,
     year: "2022",
     month: "July",
-  },
-  { id: "2024", data: MOCK_PAPER_2024, year: "2024", month: "February" },
-  { id: "2023", data: MOCK_PAPER_2023, year: "2023", month: "March" },
-  {
-    id: "2023board",
-    data: MOCK_PAPER_2023_BOARD,
-    year: "2023",
-    month: "HSC Board 2023",
   },
 ];
 
@@ -3178,8 +3188,8 @@ const EcoMockTest: React.FC<EcoMockTestProps> = ({ onClose }) => {
 
       <div className="mt-6 bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl w-full max-w-md">
         <p className="text-sm text-amber-700 dark:text-amber-300">
-          <strong>💡 Tip:</strong> Q.7 Numericals are COMPULSORY - practice them
-          well!
+          <strong>💡 Tip:</strong> Q.5 Table/Figure/Passage questions — complete
+          tables & label diagrams carefully!
         </p>
       </div>
     </div>
@@ -3221,11 +3231,11 @@ const EcoMockTest: React.FC<EcoMockTestProps> = ({ onClose }) => {
           Instructions:
         </h3>
         <ul className="text-sm text-amber-700 dark:text-amber-300 text-left space-y-1">
-          <li>• Q.7 Numericals are COMPULSORY</li>
+          <li>• All questions Q.1 to Q.6 are compulsory</li>
           <li>• MCQs will be auto-graded</li>
           <li>• For subjective questions, model answers shown</li>
           <li>• Draw diagrams wherever required</li>
-          <li>• Show all steps in numericals</li>
+          <li>• Show all steps in Q.5 table/figure questions</li>
         </ul>
       </div>
 
@@ -3513,7 +3523,7 @@ const EcoMockTest: React.FC<EcoMockTestProps> = ({ onClose }) => {
               </div>
             ))}
 
-          {/* Numericals (Q.7 - if exists) */}
+          {/* Table/Figure Questions (Q.5 type - if exists) */}
           {section.type === "numerical" &&
             section.questions.map((q: any, idx: number) => (
               <div

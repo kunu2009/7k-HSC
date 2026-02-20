@@ -23,6 +23,21 @@ export const ECONOMICS_BOARD_CRASHER = {
     title: "Introduction to Micro and Macro Economics",
     weightage: "6-8 marks",
 
+    shortcodes: [
+      {
+        code: "LAB USP",
+        topic: "Features of Micro Economics",
+        breakdown:
+          "Limited scope • Analysis of market • Based on assumptions • Use of marginalism • Study of individual units • Price theory",
+      },
+      {
+        code: "3G SLIP",
+        topic: "Features of Macro Economics",
+        breakdown:
+          "General equilibrium • Growth theory • Government role • Study of aggregates • Lumping method • Income theory • Policy-oriented",
+      },
+    ],
+
     mustKnowConcepts: [
       {
         term: "Economics",
@@ -397,6 +412,20 @@ export const ECONOMICS_BOARD_CRASHER = {
     title: "Utility Analysis",
     weightage: "8-10 marks",
 
+    shortcodes: [
+      {
+        code: "MRS BHIDE",
+        topic: "Features of Utility",
+        breakdown:
+          "Measurable • Relative concept • Subjective • Based on intensity of want • Humans only • Independent of morality • Differs from usefulness • Ethically neutral",
+      },
+      {
+        code: "H MAP",
+        topic: "Exceptions to Law of DMU",
+        breakdown: "Hobbies • Miser • Addictions • Power (+ Money)",
+      },
+    ],
+
     mustKnowConcepts: [
       {
         term: "Utility",
@@ -644,6 +673,15 @@ The Law of DMU is fundamental to understanding consumer behavior and forms the b
     title: "Demand Analysis",
     weightage: "10-12 marks",
 
+    shortcodes: [
+      {
+        code: "HI GPS",
+        topic: "Exceptions to Law of Demand",
+        breakdown:
+          "Habitual goods • Ignorance • Giffen's paradox • Prestige goods • Speculation (+ Price illusion)",
+      },
+    ],
+
     mustKnowConcepts: [
       {
         term: "Demand",
@@ -823,6 +861,8 @@ The Law of DMU is fundamental to understanding consumer behavior and forms the b
   chapter3b: {
     title: "Elasticity of Demand",
     weightage: "10-12 marks",
+
+    shortcodes: [],
 
     mustKnowConcepts: [
       {
@@ -1221,6 +1261,33 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
     title: "Forms of Market",
     weightage: "8-10 marks",
 
+    shortcodes: [
+      {
+        code: "PLANS FREE HO",
+        topic: "Features of Perfect Competition",
+        breakdown:
+          "Perfect knowledge • Large buyers/sellers • AR=MR=Price • No transport cost • Single price • Free entry/exit • Homogeneous products • Other assumptions",
+      },
+      {
+        code: "BP SCAN",
+        topic: "Features of Monopoly",
+        breakdown:
+          "Barriers to entry • Price maker • Single seller • Control over supply • AR>MR • No close substitute • No firm-industry distinction",
+      },
+      {
+        code: "U arE FAIR",
+        topic: "Features of Oligopoly",
+        breakdown:
+          "Uncertainty • advertising • Entry barriers • Few sellers • Automobile industry • Interdependence • Rivalry",
+      },
+      {
+        code: "FAIRLY FREE PC'S",
+        topic: "Features of Monopolistic Competition",
+        breakdown:
+          "Free entry/exit • AR>MR • Independent decisions • Realistic • Large number • Yes to selling cost • Product differentiation • Close substitutes",
+      },
+    ],
+
     mustKnowConcepts: [
       {
         term: "Market",
@@ -1385,6 +1452,15 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
     title: "Index Numbers",
     weightage: "6-8 marks",
 
+    shortcodes: [
+      {
+        code: "SUM BC",
+        topic: "Features of Index Numbers",
+        breakdown:
+          "Specialized averages • Universal utility • Measure relative changes • Based on samples • Comparative study",
+      },
+    ],
+
     mustKnowConcepts: [
       {
         term: "Index Number",
@@ -1516,6 +1592,27 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
   chapter7: {
     title: "National Income",
     weightage: "10-12 marks",
+
+    shortcodes: [
+      {
+        code: "V-FMN",
+        topic: "Features of National Income",
+        breakdown:
+          "Value of final goods only • Flow concept • Macro concept • Money value • Net aggregate value • Net income from abroad • Financial year",
+      },
+      {
+        code: "VIP CID E",
+        topic: "Practical Difficulties in NI Estimation",
+        breakdown:
+          "Valuation of inventories • Illiteracy • Problem of double counting • Capital gains • Inadequate data • Depreciation • Existence of non-monetized sector",
+      },
+      {
+        code: "TU C VIP",
+        topic: "Theoretical Difficulties in NI Measurement",
+        breakdown:
+          "Transfer payments • Unpaid services • Change in price level • Value of govt services • Illegal income • Production for self-consumption",
+      },
+    ],
 
     mustKnowConcepts: [
       {
@@ -1695,6 +1792,27 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
   chapter8: {
     title: "Public Finance in India",
     weightage: "8-10 marks",
+
+    shortcodes: [
+      {
+        code: "SIR DG",
+        topic: "Reasons for Growth of Public Expenditure",
+        breakdown:
+          "Spread of democracy • Inflation • Rapid population growth • Defence expenditure • Growing urbanization (+ Industrial dev, Disaster mgmt)",
+      },
+      {
+        code: "BF GF PS",
+        topic: "Sources of Public Revenue (Non-Tax)",
+        breakdown:
+          "Borrowings • Fees • Gifts/Grants • Fines/Penalties • Prices of public goods • Special assessment/levy",
+      },
+      {
+        code: "DR. NC",
+        topic: "Classification of Public Expenditure",
+        breakdown:
+          "Developmental & Non-developmental • Revenue & Capital expenditure • Non-plan & Plan expenditure • Central/State/Local",
+      },
+    ],
 
     mustKnowConcepts: [
       {
@@ -1935,7 +2053,7 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
     examTips: [
       "Draw graphs wherever possible - earns extra marks",
       "Use tables for distinguish between questions",
-      "For numericals, show all steps clearly",
+      "For Q.5 tables/figures, show formula and all steps clearly",
       "Define terms before explaining concepts",
       "Include formulas with explanations",
       "Use examples (Indian context preferred)",
