@@ -3639,13 +3639,54 @@ const EcoMockTest: React.FC<EcoMockTestProps> = ({ onClose }) => {
                   {q.question || q.statement || q.concepts}
                 </p>
 
-                {section.type === "mcq" && (
-                  <div
-                    className={`text-sm p-2 rounded ${answers[q.id] === q.correct ? "bg-green-100 text-green-700" : "bg-red-100 text-red-700"}`}
-                  >
-                    Your answer: {q.options[answers[q.id]] || "Not answered"}
-                    <br />
-                    Correct: {q.options[q.correct]}
+                {(section.type === "mcq" || section.type === "mcq_combo") && (
+                  <div>
+                    {/* Show each option with visual indicators */}
+                    <div className="space-y-1 mb-2">
+                      {q.options.map((opt: string, optIdx: number) => {
+                        const isUserChoice = answers[q.id] === optIdx;
+                        const isCorrectOption = q.correct === optIdx;
+                        return (
+                          <div
+                            key={optIdx}
+                            className={`text-xs px-2 py-1.5 rounded flex items-center gap-2 ${
+                              isCorrectOption && isUserChoice
+                                ? "bg-green-100 dark:bg-green-500/20 text-green-700 dark:text-green-300 font-medium"
+                                : isCorrectOption
+                                  ? "bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-300"
+                                  : isUserChoice
+                                    ? "bg-red-100 dark:bg-red-500/20 text-red-700 dark:text-red-300 font-medium"
+                                    : "text-slate-500 dark:text-slate-400"
+                            }`}
+                          >
+                            <span className="w-5 h-5 rounded-full border flex items-center justify-center text-xs shrink-0">
+                              {String.fromCharCode(65 + optIdx)}
+                            </span>
+                            <span>{opt}</span>
+                            {isUserChoice && isCorrectOption && (
+                              <span className="ml-auto text-green-600 dark:text-green-400 shrink-0">
+                                ✓ Correct!
+                              </span>
+                            )}
+                            {isUserChoice && !isCorrectOption && (
+                              <span className="ml-auto text-red-600 dark:text-red-400 shrink-0">
+                                ✗ Your answer
+                              </span>
+                            )}
+                            {isCorrectOption && !isUserChoice && (
+                              <span className="ml-auto text-green-600 dark:text-green-400 shrink-0">
+                                ✓ Correct
+                              </span>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                    {answers[q.id] === undefined && (
+                      <p className="text-xs text-slate-400 italic">
+                        Not attempted
+                      </p>
+                    )}
                   </div>
                 )}
 
@@ -3664,12 +3705,48 @@ const EcoMockTest: React.FC<EcoMockTestProps> = ({ onClose }) => {
                   </div>
                 )}
 
+                {/* Show user's written answer for text-based sections */}
+                {section.type !== "mcq" &&
+                  section.type !== "mcq_combo" &&
+                  section.type !== "true_false" && (
+                    <div>
+                      {/* Show concept identification answer if exists */}
+                      {answers[q.id + "_concept"] && (
+                        <div className="bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 p-2 rounded-lg mb-2">
+                          <p className="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">
+                            📝 Your Concept:
+                          </p>
+                          <p className="text-xs text-blue-700 dark:text-blue-300">
+                            {answers[q.id + "_concept"]}
+                          </p>
+                        </div>
+                      )}
+                      {/* Show text answer if exists */}
+                      {answers[q.id] && typeof answers[q.id] === "string" && (
+                        <div className="bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/30 p-2 rounded-lg mb-2">
+                          <p className="text-xs font-bold text-blue-600 dark:text-blue-400 mb-1">
+                            📝 Your Answer:
+                          </p>
+                          <p className="text-xs text-blue-700 dark:text-blue-300 whitespace-pre-wrap">
+                            {answers[q.id]}
+                          </p>
+                        </div>
+                      )}
+                      {!answers[q.id] && !answers[q.id + "_concept"] && (
+                        <p className="text-xs text-slate-400 italic mb-2">
+                          Not attempted
+                        </p>
+                      )}
+                    </div>
+                  )}
+
                 {(q.modelAnswer || q.answer) &&
                   section.type !== "mcq" &&
+                  section.type !== "mcq_combo" &&
                   section.type !== "true_false" && (
                     <div className="bg-slate-50 dark:bg-slate-700 p-3 rounded-lg mt-2">
                       <p className="text-xs font-bold text-green-600 dark:text-green-400 mb-1">
-                        Model Answer:
+                        ✅ Model Answer:
                       </p>
                       <p className="text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap">
                         {q.modelAnswer || q.answer}

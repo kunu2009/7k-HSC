@@ -1595,6 +1595,18 @@ const PolSciMockTest: React.FC<PolSciMockTestProps> = ({ onClose }) => {
 
                     {section.type === "incorrect_pair" && (
                       <div className="text-sm">
+                        {answers[q.id] !== undefined && (
+                          <p
+                            className={`${answers[q.id] === q.incorrectIndex ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}`}
+                          >
+                            Your answer:{" "}
+                            {q.pairs[answers[q.id]] || "Not answered"}
+                            {answers[q.id] === q.incorrectIndex ? " ✓" : " ✗"}
+                          </p>
+                        )}
+                        {answers[q.id] === undefined && (
+                          <p className="text-slate-400 italic">Not answered</p>
+                        )}
                         <p className="text-green-600 dark:text-green-400">
                           Incorrect pair: {q.pairs[q.incorrectIndex]}
                         </p>

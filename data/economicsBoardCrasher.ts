@@ -2151,6 +2151,149 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
 7. **Examples**: Toothpaste (Colgate, Pepsodent), Soap (Lux, Dove), Restaurants`,
       },
     ],
+
+    textbookExercises: {
+      title: "Chapter 5 - Textbook Exercises with Answers",
+      mcqs: [
+        {
+          q: "In an economic sense, market includes following activities:\na) The place where goods are sold and purchased\nb) An arrangement through which buyers and sellers come in close contact with each other directly or indirectly\nc) A shop where goods are sold\nd) All of the above",
+          options: ["a and b", "b and c", "a, b and c", "only d"],
+          correct: 0,
+          answer: "a and b",
+          explanation:
+            "In economics, a market is not just a physical place — it is an arrangement where buyers and sellers interact directly or indirectly for exchange of goods and services.",
+        },
+        {
+          q: "Classification of markets on the basis of place:\na) Local market, National market, International market\nb) Very short period market, Local market, National market\nc) Short period market, National market, International market\nd) Local market, National market, Short period market",
+          options: ["a, b and c", "b, c and d", "only a", "a and d"],
+          correct: 2,
+          answer: "only a",
+          explanation:
+            "Markets classified on the basis of PLACE are: Local (village/town), National (within country), and International (between countries). The others mix up time-period classification.",
+        },
+        {
+          q: "Homogeneous product is a feature of this market:\na) Monopoly\nb) Monopolistic competition\nc) Perfect competition\nd) Oligopoly",
+          options: ["c and d", "a, b and c", "a, c and d", "only c"],
+          correct: 3,
+          answer: "only c",
+          explanation:
+            "Homogeneous (identical) products are a key feature of Perfect Competition only. In monopolistic competition, products are differentiated; in monopoly, there's only one product.",
+        },
+        {
+          q: "Under Perfect competition, sellers are:\na) Price makers\nb) Price takers\nc) Price discriminators\nd) None of these",
+          options: ["a, b and c", "only b", "only c", "a and c"],
+          correct: 1,
+          answer: "only b",
+          explanation:
+            "In perfect competition, price is determined by market forces of demand and supply. Individual sellers have no power to influence the price — they must accept (take) the market price.",
+        },
+      ],
+      correlations: [
+        {
+          q: "Perfect competition : Free entry and exit :: Monopoly : ___",
+          answer: "Barriers to entry",
+        },
+        {
+          q: "Price taker : Perfect competition :: Price maker : ___",
+          answer: "Monopoly",
+        },
+        {
+          q: "Single price : Perfect competition :: Discriminated prices : ___",
+          answer: "Monopoly",
+        },
+      ],
+      conceptIdentification: [
+        {
+          scenario: "The market where there are few sellers.",
+          concept: "Oligopoly",
+          explanation:
+            "Oligopoly is derived from Greek 'Oligo' (few) + 'poly' (sellers). It is a market with a few dominant firms. Examples: Mobile service providers, cement companies.",
+        },
+        {
+          scenario: "The point where demand and supply curve intersect.",
+          concept: "Equilibrium Point",
+          explanation:
+            "The equilibrium point is where quantity demanded equals quantity supplied. The price at this point is the equilibrium price, determined by the interaction of market forces.",
+        },
+        {
+          scenario: "The cost incurred by the firm to promote sales.",
+          concept: "Selling Cost",
+          explanation:
+            "Selling cost includes expenditure on advertisements, TV broadcasts, hoardings, free gifts, window display etc. It is a special feature of Monopolistic Competition.",
+        },
+        {
+          scenario: "Number of firms producing identical products.",
+          concept: "Industry",
+          explanation:
+            "An industry is a group of firms producing identical (homogeneous) products. Chamberlin distinguished this from 'Group' which produces differentiated but related products.",
+        },
+        {
+          scenario:
+            "Charging different prices to different consumers for the same product.",
+          concept: "Price Discrimination",
+          explanation:
+            "Price discrimination is a feature of Monopoly. The monopolist charges different prices based on time, place, or consumer type. Example: Railway tickets at concessional rates for students and senior citizens.",
+        },
+      ],
+      shortAnswers: [
+        {
+          q: "Explain the features of Oligopoly.",
+          answer:
+            "Oligopoly (Greek: Oligo = few, poly = sellers) is a market with few dominant firms.\n\nFeatures:\n1) Few firms/sellers: A few firms dominate and have considerable control over price.\n2) Interdependence: Each firm watches rivals' actions. Price changes by one are followed by others.\n3) Advertising: Aggressive advertising to capture larger market share.\n4) Entry barriers: Government licence, patents etc. restrict entry.\n5) Lack of uniformity: Firms differ in size — some small, others large.\n6) Uncertainty: Rivals may cooperate or compete — behaviour is unpredictable.",
+        },
+        {
+          q: "Explain the types of Monopoly.",
+          answer:
+            "Types of Monopoly:\n1) Private Monopoly: Controlled by individual/private body. E.g., Tata Group.\n2) Public Monopoly: Owned by Government, welfare-oriented. E.g., Indian Railways.\n3) Legal Monopoly: Created by patents, trademarks, copyrights. E.g., Amul.\n4) Natural Monopoly: Based on natural conditions — climate, location. E.g., Wheat from Punjab.\n5) Simple Monopoly: Uniform price charged to all buyers.\n6) Discriminating Monopoly: Different prices to different buyers. E.g., Doctor fees.\n7) Voluntary Monopoly: Firms voluntarily form a group. E.g., OPEC.",
+        },
+      ],
+      oddOneOut: [
+        {
+          q: "Selling cost: Free gifts, Advertisement hoardings, Window display, Patents",
+          answer: "Patents",
+          explanation:
+            "Patents are a legal barrier to entry (feature of monopoly), not a selling cost. Free gifts, advertisement hoardings, and window display are all methods of promoting sales.",
+        },
+        {
+          q: "Market structure on the basis of competition: Monopoly, Oligopoly, Very Short Period market, Perfect competition",
+          answer: "Very Short Period market",
+          explanation:
+            "Very Short Period market is classification based on TIME, not competition. Monopoly, Oligopoly, and Perfect Competition are classified based on competition.",
+        },
+        {
+          q: "Features of monopoly: Price maker, Entry barriers, Many sellers, Lack of substitutes",
+          answer: "Many sellers",
+          explanation:
+            "Monopoly has only ONE seller (single seller). Many sellers is a feature of Perfect Competition, not Monopoly.",
+        },
+        {
+          q: "Legal monopoly: Patent, OPEC, Copyright, Trademark",
+          answer: "OPEC",
+          explanation:
+            "OPEC is a Voluntary Monopoly (group of petroleum exporting countries). Patent, Copyright, and Trademark are all forms of legal monopoly.",
+        },
+      ],
+      longAnswers: [
+        {
+          q: "Explain the meaning of Perfect Competition with its features. (Shortcode: PLANS FREE HO)",
+          shortcode: "PLANS FREE HO",
+          answer:
+            "Perfect competition is an ideal and imaginary market concept. According to Mrs. Joan Robinson, 'Perfect competition prevails when the demand for the output of each producer is perfectly elastic.'\n\nFeatures (PLANS FREE HO):\n1) Perfect knowledge: Buyers and sellers have complete market knowledge about price, quality, source of supply.\n2) Large number of sellers and buyers: Each forms a negligible part. Sellers are price takers.\n3) AR=MR=Price: Average revenue equals marginal revenue equals market price.\n4) No transport cost: Ensures uniform pricing.\n5) Single price: One uniform price determined by demand and supply.\n6) Free entry and exit: No barriers — firms enter for profit, exit to avoid loss.\n7) Homogeneous product: Products are identical in size, design, colour, taste.\n8) Other assumptions: Perfect mobility of factors, no government intervention (laissez-faire).",
+        },
+        {
+          q: "Explain the meaning of Monopolistic Competition with its features. (Shortcode: FAIRLY FREE PC'S)",
+          shortcode: "FAIRLY FREE PC'S",
+          answer:
+            "Monopolistic competition is very realistic in nature. Prof. E.H. Chamberlin coined this concept in his book 'Theory of Monopolistic Competition' (1933).\n\nFeatures (FAIRLY FREE PC'S):\n1) Fairly large number of sellers: Many firms but less than perfect competition.\n2) Fairly large number of buyers: No single buyer can influence price.\n3) Product differentiation: Main feature — each firm's product differs slightly (brand, quality, packaging). E.g., mobile handsets, cold drinks.\n4) Free entry and exit: New firms can enter if profit exists, exit if loss.\n5) Selling Cost: Expenditure on advertisements, hoardings, free gifts, exhibitions, window display to increase sales. Peculiar to this market.\n6) Close substitutes: Goods are close substitutes. E.g., different brands of soap.\n7) Concept of Group: Chamberlin replaced 'Industry' with 'Group' — firms producing differentiated but related products.",
+        },
+        {
+          q: "Explain the meaning of Monopoly with its features. (Shortcode: BP SCAN)",
+          shortcode: "BP SCAN",
+          answer:
+            "The term monopoly is derived from Greek 'Mono' (single) + 'poly' (seller). It is a market with only one seller who controls the entire supply for a product with no close substitute.\n\nFeatures (BP SCAN):\n1) Barriers to entry: Legal, natural, technological barriers restrict rivals.\n2) Price maker: Monopolist fixes price as he controls whole market supply.\n3) Single seller: Only one producer/seller, but many buyers.\n4) Complete control over supply: Sole producer has complete hold over market.\n5) AR>MR: Average revenue is always greater than marginal revenue.\n6) No close substitute: Buyers have no choice — buy from monopolist or go without. Cross elasticity is zero or negative.\n7) No distinction between firm and industry: The monopoly firm itself is the industry.\n8) Price discrimination: Different prices to different consumers for same product. E.g., concessional railway tickets for students and senior citizens.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 6: INDEX NUMBERS ====================
@@ -2292,6 +2435,119 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
 6. **Uses**: Measuring inflation, cost of living, economic planning, wage revision.`,
       },
     ],
+
+    textbookExercises: {
+      title: "Chapter 6 - Textbook Exercises with Answers",
+      mcqs: [
+        {
+          q: "Statements that are INCORRECT in relation to index numbers:\na) Index number is a geographical tool\nb) Index numbers measure changes in the air pressure\nc) Index numbers measure relative changes in an economic variable\nd) Index numbers are specialized averages",
+          options: ["c and d", "a and b", "b and c", "a and d"],
+          correct: 1,
+          answer: "a and b",
+          explanation:
+            "Index numbers are NOT geographical tools and do NOT measure air pressure. They ARE specialized averages that measure relative changes in economic variables.",
+        },
+        {
+          q: "Statements that highlight the significance of index numbers:\na) Useful for making future predictions\nb) Help in measurement of inflation\nc) Help to frame suitable policies\nd) Can be misused",
+          options: ["b, c and d", "a, c and d", "a, b and d", "a, b and c"],
+          correct: 3,
+          answer: "a, b and c",
+          explanation:
+            "'Can be misused' is a limitation, not significance. Making predictions, measuring inflation, and framing policies are all valid significances.",
+        },
+        {
+          q: "Statements that apply to weighted index numbers:\na) Every commodity is given equal importance\nb) It assigns suitable 'weights' to various commodities\nc) In most cases, quantities are used as weights\nd) Laspeyre's and Paasche's method is used",
+          options: ["b, c and d", "a, c and d", "a, b and d", "a, b, c and d"],
+          correct: 0,
+          answer: "b, c and d",
+          explanation:
+            "In WEIGHTED index numbers, commodities are NOT given equal importance (that's SIMPLE index). Weights are assigned, quantities used as weights, and Laspeyre's/Paasche's methods are weighted methods.",
+        },
+        {
+          q: "Statements related to limitations of index numbers:\na) Not completely reliable\nb) There may be bias in data collected\nc) Every formula has some kind of defect\nd) Index numbers ignore changes in qualities of products",
+          options: ["a, c and d", "a, b, c and d", "a, b and d", "b, c and d"],
+          correct: 1,
+          answer: "a, b, c and d",
+          explanation:
+            "All four statements are valid limitations of index numbers — they have reliability issues, potential data bias, formula defects, and ignore quality changes.",
+        },
+      ],
+      correlations: [
+        {
+          q: "Price Index : Inflation :: Agricultural productivity index : ___",
+          answer: "Agricultural production",
+        },
+        {
+          q: "p0 : Base year prices :: p1 : ___",
+          answer: "Current year prices",
+        },
+        {
+          q: "Laspeyre's index : Base year quantities :: Paasche's index : ___",
+          answer: "Current year quantities",
+        },
+        {
+          q: "Univariate index : Single variable :: Composite index : ___",
+          answer: "Group of variables",
+        },
+      ],
+      shortAnswers: [
+        {
+          q: "Explain the features of Index Numbers. (Shortcode: SUM BC)",
+          answer:
+            "Features of Index Numbers (SUM BC):\n\n1) Specialized averages: Capable of being expressed in percentages.\n2) Universal utility: Used across economics, education, sociology, geography etc.\n3) Measure relative changes: In one or more variables over time or between periods/locations.\n4) Based on samples: Cannot include all items; represent selected commodities.\n5) Comparative study: Current year compared to base year (base year = 100).\n\nAdditional: Univariate index = single variable; Composite index = group of variables. Also called 'barometers of economic activity'.",
+        },
+        {
+          q: "Explain the significance of Index Numbers.",
+          answer:
+            "Significance of Index Numbers:\n\n1) Framing suitable policies: Guidelines for agricultural policy, industrial policy, wage fixation, dearness allowances.\n2) Studies trends and tendencies: Measure changes in production, prices, exports, imports over time.\n3) Forecasting future economic activity: Predictions based on past and present trends.\n4) Measurement of inflation: Measure price level changes, enabling anti-inflationary measures.\n5) Useful to present financial data in real terms: Deflating adjusts for price/wage changes, presenting data at constant prices.",
+        },
+      ],
+      agreeDisagree: [
+        {
+          statement: "Index numbers measure changes in the price level only.",
+          agree: false,
+          answer:
+            "No, I disagree.\na) An index number is a device to measure changes in an economic variable over a period of time.\nb) Originally developed to measure price level changes.\nc) Now also used for: stock market prices, cost of living, industrial/agricultural production, exports, imports etc.\nd) Therefore, index numbers do NOT measure changes in price level only.",
+        },
+        {
+          statement: "Index numbers are free from limitations.",
+          agree: false,
+          answer:
+            "No, I disagree.\na) Index numbers are based on samples — not all items can be included, so they have sampling errors.\nb) Constructed from data which may be incomplete.\nc) A person may choose a base year that suits his purpose — potential bias.\nd) Every formula has some defect.\ne) Therefore, index numbers are NOT free from limitations.",
+        },
+        {
+          statement: "Index numbers can be constructed without the base year.",
+          agree: false,
+          answer:
+            "No, I disagree.\na) An index number measures changes in an economic variable over a period of time.\nb) Base year is the year against which comparisons are made.\nc) Base year (reference year) should be normal, free from natural calamities, not too distant in the past.\nd) The base year index is assumed as 100 and current year value is calculated accordingly.\ne) Therefore, index numbers CANNOT be constructed without the base year.",
+        },
+      ],
+      longAnswers: [
+        {
+          q: "Explain the steps involved in the construction of index numbers.",
+          shortcode: "",
+          answer:
+            "Steps in Construction of Index Numbers:\n\n1) Purpose of index number: Clearly decide what variable is to be measured, its scope, and intended use.\n\n2) Selection of base year: Also called reference year. Should be normal (free from calamities), not too distant in the past. Base year index = 100.\n\n3) Selection of items: Select a sample of items to include. Commodities should represent tastes, habits, customs of people. Only standardized/graded items for better results.\n\n4) Selection of price quotations: Prices vary by place and shop. Obtain from unbiased price reporting agency. Proper selection of representative places and persons required.\n\n5) Choice of suitable average: Generally Arithmetic Mean is used — simple to compute compared to other averages.\n\n6) Assigning proper weights: Weight = relative importance of items. Two types: quantity weights (q) and value weights (p × q). Assigning specific weights gives better results.\n\n7) Selection of appropriate formula: Choice depends on purpose and data availability. Various formulae exist (Simple, Laspeyre's, Paasche's, Fisher's).",
+        },
+      ],
+      distinguishBetween: [
+        {
+          q: "Simple Index Numbers and Weighted Index Numbers",
+          answer:
+            "Simple Index Numbers:\n- Every commodity given equal importance.\n- Easiest method of construction.\n- Applied for: Price Index, Quantity Index, Value Index.\n\nWeighted Index Numbers:\n- Suitable weights assigned to various commodities based on relative importance.\n- Comparatively complex method.\n- Methods: Laspeyre's Price Index, Paasche's Price Index, Fisher's Ideal Index.",
+        },
+        {
+          q: "Price Index and Quantity Index",
+          answer:
+            "Price Index:\n- Measures general changes in prices of goods.\n- Compares price levels between two time periods.\n- Formula: P01 = ΣP1/ΣP0 × 100\n\nQuantity Index:\n- Also called Volume Index Number.\n- Measures changes in level of output or physical volume of production.\n- Formula: Q01 = ΣQ1/ΣQ0 × 100",
+        },
+        {
+          q: "Laspeyre's Index and Paasche's Index",
+          answer:
+            "Laspeyre's Index:\n- Base year quantities used as weights.\n- Formula: P01 = ΣP1Q0/ΣP0Q0 × 100\n- Tends to overstate price changes.\n\nPaasche's Index:\n- Current year quantities used as weights.\n- Formula: P01 = ΣP1Q1/ΣP0Q1 × 100\n- Tends to understate price changes.\n\nFisher's Ideal Index = √(Laspeyre's × Paasche's) — called 'ideal' because it's the geometric mean of both.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 7: NATIONAL INCOME ====================
@@ -2492,6 +2748,154 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
 **Note**: All three methods give same result.`,
       },
     ],
+
+    textbookExercises: {
+      title: "Chapter 7 - Textbook Exercises with Answers",
+      mcqs: [
+        {
+          q: "While estimating national income, we include only value of final goods and services in order to ___.",
+          options: [
+            "make computation easier",
+            "avoid double counting",
+            "maximize national welfare",
+            "evaluate total economic performance",
+          ],
+          correct: 1,
+          answer: "avoid double counting",
+          explanation:
+            "Intermediate goods' value is already included in final goods. Counting them separately would cause double counting, inflating the national income figure.",
+        },
+        {
+          q: "NDP is obtained by ___.",
+          options: [
+            "deducting depreciation from GNP",
+            "deducting depreciation from GDP",
+            "including depreciation in GDP",
+            "including depreciation in GNP",
+          ],
+          correct: 1,
+          answer: "deducting depreciation from GDP",
+          explanation:
+            "NDP (Net Domestic Product) = GDP - Depreciation. Depreciation is the wear and tear of capital assets during production.",
+        },
+        {
+          q: "In India, national income is estimated using ___.",
+          options: [
+            "output method",
+            "income method",
+            "expenditure method",
+            "combination of output and income method",
+          ],
+          correct: 3,
+          answer: "combination of output and income method",
+          explanation:
+            "India uses a combination of output method (for agriculture, manufacturing) and income method (for services, trade, transport) due to the diverse nature of the economy.",
+        },
+      ],
+      correlations: [
+        {
+          q: "GDP : C + I + G + (X-M) :: GNP : ___",
+          answer: "C + I + G + (X-M) + (R-P) [i.e., GDP + NFIA]",
+        },
+        {
+          q: "Output method : Inventory Method :: Income method : ___",
+          answer: "Factor cost method",
+        },
+        {
+          q: "Theoretical difficulty : Transfer payments :: Practical difficulty : ___",
+          answer: "Valuation of Inventories",
+        },
+      ],
+      conceptIdentification: [
+        {
+          scenario:
+            "Vrinda receives a monthly pension of Rs.5,000 from the State Government.",
+          concept: "Transfer Income",
+          explanation:
+            "Transfer income is income received without rendering any productive service in return. Pensions, unemployment allowances, gifts are transfer incomes — not included in national income.",
+        },
+        {
+          scenario:
+            "Viru kept aside 100 kgs out of 500 kgs of wheat produced for his family.",
+          concept: "Production for Self-Consumption",
+          explanation:
+            "Products kept for self-consumption do not enter the market. They are not accounted for in national income, creating a practical difficulty in NI estimation.",
+        },
+        {
+          scenario:
+            "Sheetal purchased wheat flour for her bakery from the flour mill.",
+          concept: "Intermediate Goods",
+          explanation:
+            "Intermediate goods are used for further production, not for final consumption. Wheat flour used by a bakery is intermediate — its value is excluded from NI to avoid double counting.",
+        },
+        {
+          scenario:
+            "Shobha collected data regarding the money value of all final goods and services produced in the country for the financial year.",
+          concept: "National Income",
+          explanation:
+            "National income is the total monetary value of all final goods and services produced in an economy during a financial year (1st April to 31st March in India).",
+        },
+        {
+          scenario:
+            "Rajendra has a total stock of 500 gel pens including 200 produced in the previous year.",
+          concept: "Inventory",
+          explanation:
+            "Inventory is the stock of finished goods, raw materials, or semi-finished goods lying with producers. Valuation of inventories is a practical difficulty in NI measurement.",
+        },
+      ],
+      shortAnswers: [
+        {
+          q: "Explain the features of National Income. (Shortcode: V-FMN)",
+          answer:
+            "Features of National Income (V-FMN):\n\n1) Value of only final goods: Only final goods/services counted — intermediate goods excluded to avoid double counting.\n2) Flow concept: Shows flow of goods/services during a year, not a stock concept.\n3) Macro Economic concept: Represents income of the entire economy, not individuals.\n4) Money value: Always expressed in monetary terms — only goods/services exchanged for money.\n5) Net aggregate value: Includes net value, excluding depreciation (wear and tear).\n6) Net income from abroad: Includes (X-M) exports minus imports and (R-P) receipts minus payments abroad.\n7) Financial year: In India, 1st April to 31st March.",
+        },
+        {
+          q: "Explain the importance of National Income.",
+          answer:
+            "Importance of National Income:\n\n1) Useful for the Economy: NI data = 'Social Accounts' — tells how nation's income, output, product result from individuals/industries/trade.\n2) National policies: Forms basis for employment, industrial, agricultural policy.\n3) Economic planning: Essential data on gross income, output, savings, investment, consumption.\n4) Economic Research: Researchers use input, output, income, savings data for studies.\n5) Comparison of Standard of Living: Compare living standards between countries and across time periods.\n6) Distribution of Income: Understand disparities in wages, rent, interest, profit across sections.",
+        },
+        {
+          q: "Explain the concept of Green GNP.",
+          answer:
+            "Green GNP:\na) Indicator of sustainable use of natural environment and equitable distribution of development benefits.\nb) Regular GNP does not account for: (i) environmental pollution, (ii) depletion of natural resources.\nc) Mere increase in GNP does not reflect improved quality of life if it increases pollution or reduces future resources.\n\nFormula: Green GNP = GNP − (Net fall in stock of natural capital + pollution load)\n\nCharacteristics:\n1) Sustainable economic development without environmental degradation.\n2) Equitable distribution of benefits.\n3) Promotes economic welfare for the long term.",
+        },
+        {
+          q: "Explain the two sector model of circular flow of national income.",
+          answer:
+            "Two-Sector Circular Flow Model:\n1) Two sectors: Households and Business Firms. Y = C + I\n2) Upper half = Factor Market; Lower half = Commodity Market.\n3) Factors of production flow from households → firms.\n4) Firms use factors to produce goods → flow back to households (Product flows).\n5) Money flows: Firms → households (rent, wages, interest, profit) → households spend on goods → money flows back to firms (Money flows).\n6) Production generates factor income → converted to expenditure → continuous due to never-ending human wants → makes the flow CIRCULAR.",
+        },
+      ],
+      agreeDisagree: [
+        {
+          statement:
+            "There are many theoretical difficulties in the measurement of national income.",
+          agree: true,
+          answer:
+            "Yes, I agree. (TU C VIP)\na) Transfer payments: Whether pension, unemployment allowance should be included — a major problem.\nb) Illegal income: Income from gambling, black marketing, smuggling etc. not included.\nc) Production for self-consumption: Products kept for self-consumption don't enter market — not accounted for.\nd) Income of foreign firms: IMF says include in NI of the country where production actually happens.\nHence, there are many theoretical difficulties (Transfer payments, Unpaid services, Change in price level, Value of govt services, Illegal income, Production for self-consumption).",
+        },
+        {
+          statement:
+            "Under the output method, the value-added approach is used to avoid double counting.",
+          agree: true,
+          answer:
+            "Yes, I agree.\na) According to this approach, value added at each stage of production is included.\nb) Value added = Difference between value of final outputs and inputs at each stage.\nc) GNP is obtained as total of values added by all production stages, till final output reaches consumers.\nd) Therefore, to avoid double counting, the value-added approach is used.",
+        },
+      ],
+      longAnswers: [
+        {
+          q: "Explain the practical difficulties involved in the measurement of National Income. (Shortcode: VIP CID E)",
+          shortcode: "VIP CID E",
+          answer:
+            "Practical Difficulties in NI Estimation (VIP CID E):\n\n1) Valuation of inventories: Raw materials, semi-finished, finished goods in stock. Any mistake in measuring inventory value distorts final production value.\n\n2) Illiteracy and ignorance: Small producers don't keep accounts of production due to ignorance/illiteracy. Can't give information about quantity or value of output.\n\n3) Problem of double counting: Greatest difficulty. Failure to distinguish between final and intermediate products. E.g., flour used by bakery (intermediate) vs household (final).\n\n4) Capital gains or losses: Not included in NI because they don't result from current economic activities — only from changes in market value of assets.\n\n5) Inadequate and unreliable data: Data on crops, fisheries, animal husbandry, construction, small enterprises not available in developing countries.\n\n6) Depreciation: No uniform/accepted standard rates of depreciation for various capital assets. Difficult to make correct deductions.\n\n7) Existence of non-monetized sector: In rural India, subsistence farming — production partly exchanged for goods/services, not entering market. Excluded from NI.\n\n8) Difficulties in classification of working population: In India, farmers not engaged year-round — do alternative work in off-season. Difficult to identify income from specific occupation.",
+        },
+        {
+          q: "Explain the Income Method and Expenditure Method of measuring National Income.",
+          shortcode: "",
+          answer:
+            "INCOME METHOD (Factor Cost Method):\na) Estimates NI from the distribution side — adds all income payments to citizens.\nb) Incomes from rent, wages, interest, profit are added. Transfer payments are excluded.\nc) Data from income tax returns, reports, books of accounts.\nd) Formula: NI = R + W + I + P + MI + (X−M)\n   (Rent + Wages + Interest + Profit + Mixed Income + Net Income from Abroad)\ne) Used in India for trade, transport, professional services, public administration.\n\nEXPENDITURE METHOD (Outlay Method):\na) Adds total expenditure by society in a year on consumer goods and capital goods.\nb) Formula: NI = C + I + G + (X−M) + (R−P)\n   C = Private Final Consumption Expenditure (food, durables, services)\n   I = Gross Domestic Private Investment Expenditure (replacement + new investment)\n   G = Government Final Consumption + Investment Expenditure (defence, education, infrastructure)\n   (X-M) = Net Foreign Investment (exports minus imports)\n   (R-P) = Net Receipts from abroad\n\nNote: All three methods (Output, Income, Expenditure) give the same result — National Income Identity.",
+        },
+      ],
+    },
   },
 
   // ==================== CHAPTER 8: PUBLIC FINANCE ====================
@@ -2692,6 +3096,636 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
 4. **Benefits**: Reduced cascading, simpler compliance, unified market`,
       },
     ],
+
+    textbookExercises: {
+      title: "Chapter 8 - Textbook Exercises with Answers",
+      mcqs: [
+        {
+          q: "Optional functions of Government:\na) Protection from external attack\nb) Provision of education and health services\nc) Provision of social security measures\nd) Collection of tax",
+          options: ["b and c", "a, b and c", "b, c and d", "All of the above"],
+          correct: 0,
+          answer: "b and c",
+          explanation:
+            "Protection from external attack and collection of tax are OBLIGATORY functions. Education/health and social security are OPTIONAL functions that governments choose to provide.",
+        },
+        {
+          q: "Obligatory functions of the Government:\na) Provision of employment\nb) Maintaining internal law and order\nc) Welfare measures\nd) Exporting goods",
+          options: ["c and d", "a and b", "only b", "a, c and d"],
+          correct: 2,
+          answer: "only b",
+          explanation:
+            "Maintaining internal law and order is an obligatory (compulsory) function. Employment provision, welfare measures, and exporting are optional functions.",
+        },
+        {
+          q: "Non-tax sources of revenue:\na) Direct and Indirect Tax\nb) Direct Tax and Fees\nc) Fees\nd) Special Levy",
+          options: ["b and c", "a and c", "a, b, c and d", "c and d"],
+          correct: 3,
+          answer: "c and d",
+          explanation:
+            "Fees and Special Levy are non-tax sources. Direct tax and indirect tax are TAX sources of revenue, not non-tax.",
+        },
+        {
+          q: "Trends shown by Public expenditure of any Government:",
+          options: ["Constant", "Increasing", "Decreasing", "Fluctuating"],
+          correct: 1,
+          answer: "Increasing",
+          explanation:
+            "Public expenditure shows a continuously INCREASING trend due to population growth, urbanization, defence needs, welfare schemes, inflation, and expanding government activities.",
+        },
+      ],
+      correlations: [],
+      conceptIdentification: [],
+      distinguishBetween: [
+        {
+          q: "Public Finance and Private Finance",
+          answer:
+            "Public Finance:\n- Studies income and expenditure activities of the STATE/Government.\n- Government first determines expenditure, then raises revenue.\n- High degree of credit in the market.\n\nPrivate Finance:\n- Studies income and expenditure of private individuals/entities.\n- Individual considers income first, then determines expenditure.\n- Credit of private individual is limited.",
+        },
+        {
+          q: "Internal Debt and External Debt",
+          answer:
+            "Internal Debt:\n- Government borrows from citizens, banks, central bank, financial institutions within the country.\n- Use of domestic currency.\n- Less complex for management.\n\nExternal Debt:\n- Government borrows from foreign governments, foreign banks, IMF, World Bank etc.\n- Use of foreign currency.\n- More complex for management.",
+        },
+        {
+          q: "Developmental Expenditure and Non-Developmental Expenditure",
+          answer:
+            "Developmental Expenditure:\n- Results in generation of employment, increase in production, price stability.\n- Examples: Health, education, industrial development, R&D, social welfare.\n- Productive in nature.\n\nNon-Developmental Expenditure:\n- Does not yield direct productive impact.\n- Examples: Administration costs, war expenditure.\n- Unproductive in nature.",
+        },
+        {
+          q: "Direct Tax and Indirect Tax",
+          answer:
+            "Direct Tax:\n- Paid by individual directly to government. Burden cannot be shifted.\n- Impact and incidence on same person.\n- Progressive — rate increases with income.\n- Examples: Personal income tax, wealth tax.\n\nIndirect Tax:\n- Paid through an intermediary who passes it to government.\n- Impact and incidence on different persons.\n- Regressive — rate decreases with increase in income.\n- Example: GST.",
+        },
+      ],
+      agreeDisagree: [
+        {
+          statement:
+            "Obligatory function is the only function of the Government.",
+          agree: false,
+          answer:
+            "No, I disagree.\na) Government performs various functions — classified as Obligatory and Optional.\nb) Obligatory: Protection from external attacks, maintaining law and order.\nc) Optional: Education, health services, social security (pensions, welfare measures).\nd) Hence, obligatory function is NOT the only function.",
+        },
+        {
+          statement:
+            "Fines and penalties are a major source of revenue for the Government.",
+          agree: false,
+          answer:
+            "No, I disagree.\na) Government imposes fines and penalties on those who violate laws.\nb) Objective is NOT to earn income but to discourage law-breaking.\nc) Example: Traffic fines. However, income from this source is small.\nd) Therefore, fines and penalties are NOT a major source of revenue.",
+        },
+        {
+          statement: "The GST has replaced almost all indirect taxes in India.",
+          agree: true,
+          answer:
+            "Yes, I agree.\na) GST came into effect on July 1, 2017 (101st Constitutional Amendment).\nb) It is different from excise or sales tax — not a single-stage levy.\nc) It is a comprehensive tax base with nationwide coverage of goods and services.\nd) Hence, GST has replaced almost all indirect taxes in India.",
+        },
+        {
+          statement:
+            "Democratic Governments do not lead to an increase in public expenditure.",
+          agree: false,
+          answer:
+            "No, I disagree.\na) Public expenditure is incurred for protection, satisfying collective needs, promoting welfare.\nb) Majority of countries are democratic.\nc) Democratic form is expensive due to regular elections and related activities.\nd) This results in increase in total government expenditure.\ne) Hence, democratic governments DO lead to increased public expenditure.",
+        },
+        {
+          statement: "Public finance is more elastic than private finance.",
+          agree: true,
+          answer:
+            "Yes, I agree.\na) Public finance = income/expenditure of public authorities.\nb) Private finance = income/expenditure of individuals/private sector.\nc) Public finance objective: maximum social advantage. Private: fulfill private interests.\nd) Public finance is more elastic because credit provision is much more available in the market.\ne) Private finance credit availability is limited.",
+        },
+      ],
+      shortAnswers: [
+        {
+          q: "Explain the types and importance of Government Budget.",
+          answer:
+            "Types of Government Budget:\n\n1) Balanced Budget: Estimated revenue = Estimated expenditure.\n2) Surplus Budget: Receipts > Expenditure.\n3) Deficit Budget: Receipts < Expenditure.\n\nImportance:\na) Taxes determine fate of businesses and individuals — affects disposable income.\nb) Government expenditure on defence, infrastructure, education, healthcare affects lives.\nc) Used as a medium for implementing economic policies.\nd) Affects production, distribution of income, and utilization of resources.",
+        },
+        {
+          q: "Explain the principles of taxation (Adam Smith's Canons).",
+          answer:
+            "Adam Smith's Four Canons of Taxation:\n\n1) Canon of Equity/Equality: Pay tax in proportion to 'ability to pay'. Rich should pay more.\n2) Canon of Certainty: Taxpayer should know in advance — how much, when, and in what form to pay.\n3) Canon of Convenience: Tax should be levied at a convenient time and manner for the taxpayer.\n4) Canon of Economy: Cost of tax collection should be minimum. If major portion spent on collection itself, it's not a good tax.",
+        },
+        {
+          q: "Explain non-tax sources of revenue. (Shortcode: BF GF PS)",
+          answer:
+            "Non-Tax Sources of Revenue (BF GF PS):\n\n1) Borrowings: From people (bonds, deposits), foreign govts, IMF, World Bank.\n2) Fees: Payment for specific government services. E.g., education fees, registration fees.\n3) Gifts, Grants, Donations: From citizens, foreign governments, international institutions.\n4) Fines and Penalties: For violating laws. Objective: discourage law-breaking. E.g., traffic fines.\n5) Prices of public goods/services: Railway fares, postal charges.\n6) Special Assessment: Special facilities in particular locality — roads, energy, water supply.\n7) Special Levies: On harmful commodities — wine, opium, intoxicants. Objective: discourage consumption.",
+        },
+      ],
+      longAnswers: [
+        {
+          q: "Explain various reasons for the growth of public expenditure. (Shortcode: SIR DG)",
+          shortcode: "SIR DG",
+          answer:
+            "Reasons for Growth of Public Expenditure (SIR DG + more):\n\n1) Spread of Democracy: Expensive due to regular elections and democratic activities.\n2) Increase in Activities of Government: Education, health, public works, welfare schemes — new functions undertaken, old ones performed efficiently on larger scale.\n3) Rapid increase in population: India 121.02 crores (2011). Greater expenditure to fulfill needs.\n4) Defence expenditure: Increasing even in peacetime due to hostile international relationships.\n5) Growing urbanization: Global phenomenon — more spending on water supply, roads, energy, transport, sanitation.\n\nAdditional reasons:\n6) Inflation: Government buys goods/services at rising prices — increasing costs.\n7) Industrial development: Government implements schemes for industrial growth — increases expenditure.\n8) Disaster management: Earthquakes, floods, cyclones, social unrest — huge spending on disaster management.\n\nConclusion: Modern governments work for 'welfare state' — continuous increase in public expenditure.",
+        },
+        {
+          q: "Explain the concept of public revenue and its sources. (Shortcode: BF GF PS)",
+          shortcode: "BF GF PS",
+          answer:
+            "Public Revenue:\nPublic revenue = aggregate collection of income by government through various sources. It is essential to finance public expenditure.\n\nA) TAX REVENUE:\n1) Direct Tax: Paid directly by taxpayer on income/property. Burden cannot be shifted. Progressive. E.g., Income tax, Wealth tax.\n2) Indirect Tax: Levied on goods/services. Burden CAN be shifted. Regressive. E.g., GST (July 1, 2017 — 101st Amendment).\n\nB) NON-TAX REVENUE (BF GF PS):\n1) Borrowings: From people, foreign govts, IMF, World Bank.\n2) Fees: For specific services — education fees, registration fees.\n3) Gifts, Grants, Donations: From citizens, foreign govts, international institutions.\n4) Fines and Penalties: For violating laws — traffic fines.\n5) Prices of public goods: Railway fares, postal charges.\n6) Special Assessment: Special facilities in a locality.\n7) Special Levies: On harmful commodities — wine, opium.",
+        },
+      ],
+    },
+  },
+
+  // ==================== CHAPTER 9: MONEY MARKET & CAPITAL MARKET ====================
+  chapter9: {
+    title: "Money Market and Capital Market in India",
+    weightage: "8-10 marks",
+
+    shortcodes: [
+      {
+        code: "FLIP SE GROWTH",
+        topic: "Role of Money Market in India",
+        breakdown:
+          "Financial requirements of govt • Liquidity management • Implementation of monetary policy • Portfolio management • Short-term requirements • Economizes use of cash • Growth of commerce/industry/trade • Equilibrating mechanism",
+      },
+      {
+        code: "IQ MOP",
+        topic: "Role of Capital Market in India",
+        breakdown:
+          "Integration • Quick valuation • Mobilizes long-term savings • Operational efficiency • Provides equity capital",
+      },
+      {
+        code: "DSL",
+        topic: "Problems of Money Market in India",
+        breakdown:
+          "Dual structure • Shortage of funds • Lack of uniformity in rates • Seasonal fluctuations • Lack of financial inclusion • Delays in technology",
+      },
+      {
+        code: "FDI-L",
+        topic: "Problems of Capital Market in India",
+        breakdown:
+          "Financial scams • Decline in volume of trade • Insider trading • Lack of informational efficiency • Inadequate debt instruments",
+      },
+      {
+        code: "AP-CP",
+        topic: "Functions of Commercial Banks",
+        breakdown:
+          "Acceptance of deposits • Providing loans/advances • Credit creation • Ancillary functions (D-mat, lockers, internet banking)",
+      },
+      {
+        code: "CBI PRO",
+        topic: "Functions of RBI",
+        breakdown:
+          "Controller of credit • Banker to government • Issue of currency notes • Promotional functions • Custodian of forex reserves • Other functions (clearinghouse, lender of last resort)",
+      },
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Money Market",
+        definition:
+          "Market for lending and borrowing SHORT-TERM funds. Near money instruments — trade bills, government securities, promissory notes. Maturity ≤ 1 year.",
+      },
+      {
+        term: "Capital Market",
+        definition:
+          "Market for LONG-TERM funds — both equity and debt, raised within and outside the country. Instruments: shares, debentures, bonds. Maturity > 1 year.",
+      },
+      {
+        term: "Commercial Bank",
+        definition:
+          "Financial intermediary that accepts deposits, provides loans, and creates credit. E.g., SBI, PNB.",
+      },
+      {
+        term: "RBI",
+        definition:
+          "Reserve Bank of India — central bank at apex of banking system. Established 1935. Regulates money market, issues currency, controls credit.",
+      },
+      {
+        term: "Credit Creation",
+        definition:
+          "Process by which commercial banks create credit through demand deposits. Primary deposits → loans → derivative/secondary deposits.",
+      },
+    ],
+
+    formulas: [],
+
+    pyqMCQs: [
+      {
+        q: "Money market deals with:",
+        options: ["Long term funds", "Short term funds", "Both", "None"],
+        correct: 1,
+        year: 2024,
+      },
+      {
+        q: "Capital market deals with:",
+        options: ["Short term", "Long term", "Both", "None"],
+        correct: 1,
+        year: 2024,
+      },
+      {
+        q: "RBI was established in:",
+        options: ["1935", "1949", "1969", "1991"],
+        correct: 0,
+        year: 2023,
+      },
+      {
+        q: "Stock exchange is part of:",
+        options: ["Money market", "Capital market", "Both", "None"],
+        correct: 1,
+        year: 2023,
+      },
+      {
+        q: "Quantitative credit control includes:",
+        options: [
+          "Bank rate",
+          "Moral suasion",
+          "Credit rationing",
+          "Margin requirements",
+        ],
+        correct: 0,
+        year: 2022,
+      },
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "Distinguish between Money Market and Capital Market. (4 marks)",
+        year: 2024,
+        modelAnswer:
+          "**Money Market vs Capital Market:**\n\n| Aspect | Money Market | Capital Market |\n|--------|-------------|----------------|\n| **Duration** | Short-term (≤1 year) | Long-term (>1 year) |\n| **Instruments** | Trade bills, T-bills, promissory notes | Shares, debentures, bonds |\n| **Risk** | Low risk, highly liquid | Higher risk, less liquid |\n| **Purpose** | Working capital needs | Fixed capital/expansion |\n| **Returns** | Lower returns | Higher returns |",
+      },
+    ],
+
+    textbookExercises: {
+      title: "Chapter 9 - Textbook Exercises with Answers",
+      mcqs: [
+        {
+          q: "Development financial institutions were established to ___.",
+          options: [
+            "provide short term funds",
+            "develop industry, agriculture and other key sectors",
+            "regulate the money market",
+            "regulate the capital market",
+          ],
+          correct: 1,
+          answer: "develop industry, agriculture and other key sectors",
+          explanation:
+            "Development financial institutions (DFIs) like NABARD, SIDBI were established specifically to provide long-term finance for developing industry, agriculture, and key sectors.",
+        },
+        {
+          q: "Money market faces shortage of funds due to ___.",
+          options: [
+            "inadequate savings",
+            "growing demand for cash",
+            "presence of unorganised sector",
+            "financial mismanagement",
+          ],
+          correct: 0,
+          answer: "inadequate savings",
+          explanation:
+            "Low per capita income, poor banking habits, wasteful consumption, and inadequate banking facilities in rural areas lead to inadequate savings and shortage of funds.",
+        },
+        {
+          q: "Individual investors have lost confidence in the capital market due to ___.",
+          options: [
+            "lack of financial instruments",
+            "high transaction costs",
+            "low returns",
+            "financial scams",
+          ],
+          correct: 3,
+          answer: "financial scams",
+          explanation:
+            "Financial scams (like the Harshad Mehta scam) caused irreparable loss and public distrust, making individual investors lose confidence.",
+        },
+        {
+          q: "Commercial banks act as intermediaries to ___.",
+          options: [
+            "make profits",
+            "accelerate economic growth",
+            "mobilize savings and allocate to various sectors",
+            "control credit",
+          ],
+          correct: 2,
+          answer: "mobilize savings and allocate to various sectors",
+          explanation:
+            "Commercial banks are financial intermediaries — they mobilize savings (deposits) from the public and allocate them to productive sectors through loans.",
+        },
+      ],
+      correlations: [
+        {
+          q: "Money market : Short term funds :: Capital Market : ___",
+          answer: "Long term funds",
+        },
+        { q: "RBI : Central Bank :: SBI : ___", answer: "Commercial Bank" },
+        {
+          q: "Co-operative banks : Organized sector :: Indigenous bankers : ___",
+          answer: "Unorganised sector",
+        },
+        {
+          q: "Primary market : New issues :: Secondary market : ___",
+          answer: "Old issues",
+        },
+      ],
+      oddOneOut: [
+        {
+          q: "Types of Bank Accounts: Saving a/c, D-mat a/c, Recurring a/c, Current a/c",
+          answer: "D-mat a/c",
+          explanation:
+            "D-mat (Dematerialization) account is for holding shares/securities electronically — it's NOT a bank deposit account. Saving, Recurring, and Current are types of bank accounts.",
+        },
+        {
+          q: "Unregulated Financial intermediaries: Mutual fund, Nidhi, Chit fund, Loan Companies",
+          answer: "Mutual fund",
+          explanation:
+            "Mutual funds are regulated by SEBI. Nidhi, Chit funds, and Loan Companies are unregulated financial intermediaries in the unorganised sector.",
+        },
+        {
+          q: "Financial Assets: Bonds, Land, Govt. Securities, Derivatives",
+          answer: "Land",
+          explanation:
+            "Land is a PHYSICAL/REAL asset, not a financial asset. Bonds, Government Securities, and Derivatives are all financial assets.",
+        },
+        {
+          q: "Quantitative Tools: Bank rate, Open market operations, Foreign Exchange rate, Variable reserve ratios",
+          answer: "Foreign Exchange rate",
+          explanation:
+            "Foreign exchange rate management is a separate function of RBI, not a quantitative credit control tool. Bank rate, OMO, and VRR (CRR/SLR) are quantitative tools.",
+        },
+      ],
+      conceptIdentification: [
+        {
+          scenario: "Raghu's father regularly invests in stocks and bonds.",
+          concept: "Investment in Capital Market",
+          explanation:
+            "Stock exchange is an important constituent of the capital market where stocks, bonds, and commodities are traded for long-term investment.",
+        },
+        {
+          scenario:
+            "Sara makes monthly contributions to a fund. The collected fund is given to a chosen member through a lucky draw.",
+          concept: "Chit Funds",
+          explanation:
+            "Under Chit funds, members make regular contributions. Collected fund is given to a chosen member through bids or draws based on mutually agreed criteria.",
+        },
+        {
+          scenario: "Tina deposited Rs 50,000 in the bank for one year.",
+          concept: "Fixed Deposit (Time Deposit)",
+          explanation:
+            "Fixed deposits are lump sum amounts deposited for a specified period. They carry higher interest rates compared to other deposits and cannot be withdrawn before maturity.",
+        },
+        {
+          scenario:
+            "ABC bank provides D-mat facility, safe deposit lockers, internet banking.",
+          concept: "Ancillary Functions of Commercial Banks",
+          explanation:
+            "Commercial banks provide ancillary services: transfer of funds, merchant banking, forex, safe deposit lockers, D-mat facility, internet/mobile banking.",
+        },
+      ],
+      distinguishBetween: [
+        {
+          q: "Money Market and Capital Market",
+          answer:
+            "Money Market:\n- Market for lending/borrowing SHORT-TERM funds.\n- Instruments: Trade bills, govt securities, promissory notes.\n- Highly liquid, less risky. Maturity ≤ 1 year.\n\nCapital Market:\n- Market for LONG-TERM funds (equity and debt).\n- Instruments: Shares, Debentures, Bonds, Retained Earnings.\n- Less liquid, more risky. Maturity > 1 year.",
+        },
+        {
+          q: "Demand Deposit and Time Deposit",
+          answer:
+            "Demand Deposit:\n- Withdrawable on demand.\n- Types: Savings account, Current account.\n- Lower interest rate.\n\nTime Deposit:\n- Repayable after a certain period.\n- Types: Recurring deposit, Fixed deposit.\n- Higher interest rate. Cannot withdraw before maturity.",
+        },
+        {
+          q: "Organized Sector and Unorganized Sector of Money Market",
+          answer:
+            "Organized Sector:\n- Under direct control/supervision of RBI.\n- Financing available at relatively low interest rate.\n- Components: Commercial banks, Co-operative banks, RBI.\n\nUnorganized Sector:\n- NOT under direct control of RBI.\n- Financing at relatively high interest rate.\n- Components: Money lenders, Indigenous bankers, Chit funds, Nidhis.",
+        },
+      ],
+      shortAnswers: [
+        {
+          q: "Explain the problems faced by the money market in India. (Shortcode: DSL)",
+          answer:
+            "Problems of Indian Money Market (DSL + more):\n\n1) Dual Structure: Both organized and unorganized sectors — leads to disintegration, lack of transparency, increased volatility. Unorganized sector not under RBI control.\n2) Shortage of funds: Inadequate savings due to low per capita income, poor banking habits, wasteful consumption, inadequate rural banking.\n3) Lack of uniformity in interest rates: Various entities (commercial banks, co-op banks, NBFCs, DFIs) — different borrower categories, different rates.\n4) Seasonal fluctuations: Peak season (Oct-June) — large finance demand for agricultural trade, business investment — wide fluctuations.\n5) Lack of financial inclusion: Banking facilities inadequate and inaccessible to weaker sections and low-income groups.\n6) Delays in technological upgradation: Advanced technology is prerequisite for development — delays hamper working.",
+        },
+        {
+          q: "Explain the functions of Commercial Banks. (Shortcode: AP-CP)",
+          answer:
+            "Functions of Commercial Banks (AP-CP):\n\n1) Acceptance of Deposits:\n   - Demand Deposits: Savings a/c (salaried class), Current a/c (businessmen)\n   - Time Deposits: Recurring deposits (fixed amount at regular intervals), Fixed deposits (lump sum for specified period)\n\n2) Providing Loans and Advances: Call loans, short/medium/long term loans, cash credit, overdraft, discounting bills of exchange.\n\n3) Credit Creation: Important function — demand/time deposits = primary deposits. After meeting reserve requirements, balance used for loans → creates secondary/derivative deposits.\n\n4) Ancillary Functions: Transfer of funds, collection of money, merchant banking, forex, safe deposit lockers, D-mat, internet/mobile banking.",
+        },
+        {
+          q: "Explain the role of Capital Market in India. (Shortcode: IQ MOP)",
+          answer:
+            "Role of Capital Market (IQ MOP):\n\n1) Integration: Leads to integration among real and financial sectors, equity and debt instruments, government and private sector, domestic and external funds.\n2) Quick valuation: Helps determine fair and quick value of both equity (shares) and debt (bonds, debentures) instruments.\n3) Mobilizes long-term savings: From various sections through sale of securities — meets growing demand of industrial organizations and government.\n4) Operational efficiency: Lowers transaction costs, simplifies procedures, reduces settlement timings in stock trading.\n5) Provides equity capital: Share capital to entrepreneurs for purchasing assets and funding business operations.",
+        },
+        {
+          q: "Explain the problems of Capital Market in India. (Shortcode: FDI-L)",
+          answer:
+            "Problems of Capital Market (FDI-L):\n\n1) Financial Scams: Irreparable loss — public distrust, loss of confidence among individual investors.\n2) Decline in volume of trade: Regional stock exchanges declining — investors prefer BSE, NSE.\n3) Insider trading and price manipulation: Buying/selling with non-public information for personal benefit. Price rigging through self-trading.\n4) Lack of informational efficiency: Stock prices don't fully incorporate all available information — less efficient than advanced countries.\n5) Inadequate debt instruments: Not much trading in bonds/debentures due to narrow investor base, high issuance costs.",
+        },
+      ],
+      longAnswers: [
+        {
+          q: "Explain the role of Money Market in India. (Shortcode: FLIP SE GROWTH)",
+          shortcode: "FLIP SE GROWTH",
+          answer:
+            "Role of Money Market (FLIP SE GROWTH):\n\n1) Financial requirements of Government: Helps fulfill short-term requirements through Treasury Bills.\n2) Liquidity Management: Facilitates better management of liquidity and money by monetary authorities — leads to economic stability.\n3) Implementation of monetary policy: Well-developed money market ensures successful monetary policy implementation. Guides RBI in developing appropriate interest policy.\n4) Portfolio Management: Different financial instruments suit risk/return preferences — investors hold portfolio minimizing risk, maximizing returns.\n5) Short-term requirements of borrowers: Provides reasonable access for meeting short-term financial needs at realistic prices.\n6) Economizes use of cash: Deals with financial instruments that are close substitutes of money (not actual money).\n7) Growth of commerce, industry, trade: Facilitates discounting bills for traders needing urgent funds. Provides working capital for agriculture and small-scale industries.\n8) Equilibrating mechanism: Rational allocation of resources and mobilization of savings into investment channels — equilibrium between demand and supply of short-term funds.",
+        },
+        {
+          q: "Explain the functions of RBI. (Shortcode: CBI PRO)",
+          shortcode: "CBI PRO",
+          answer:
+            "Functions of RBI (CBI PRO):\n\n1) Controller of Credit: Power to influence volume and purpose of credit. Quantitative methods: Bank rate, Open Market Operations, CRR, SLR. Qualitative methods: Margin requirements, credit rationing, moral suasion.\n\n2) Banker to Government: Acts as banker, agent, advisor to Central and State Governments. Accepts money, makes payments, manages public debt, advises on economic issues.\n\n3) Issue of Currency Notes: Sole right to issue all denomination notes (except ₹1 note and coins). Minimum Reserve System (1957): Rs 200 crores minimum reserves (Rs 115 cr in gold + Rs 85 cr in foreign currency/govt securities).\n\n4) Promotional/Developmental Functions: Extending banking to semi-urban/rural areas, depositor security, specialized institutions for agricultural/industrial credit.\n\n5) Custodian of Foreign Exchange Reserves: Maintains official exchange rate of rupee and stability. Buys/sells currencies of IMF member countries.\n\n6) Other Functions: Clearinghouse for settling member bank accounts. Lender of last resort — provides liquidity to banks in difficulty. Collection and publication of banking/financial data.",
+        },
+      ],
+    },
+  },
+
+  // ==================== CHAPTER 10: FOREIGN TRADE ====================
+  chapter10: {
+    title: "Foreign Trade of India",
+    weightage: "4-6 marks",
+
+    shortcodes: [],
+
+    mustKnowConcepts: [
+      {
+        term: "Foreign Trade",
+        definition:
+          "Trade between different countries of the world. Also called International Trade or External Trade.",
+      },
+      {
+        term: "Import Trade",
+        definition:
+          "Purchase of goods/services from another country — inflow of goods from foreign country to home country.",
+      },
+      {
+        term: "Export Trade",
+        definition:
+          "Sale of goods by one country to another — outflow of goods from home country to foreign country.",
+      },
+      {
+        term: "Entrepot Trade",
+        definition:
+          "Purchasing goods from one country and selling them to another country after some processing. E.g., Japan imports raw materials, processes, exports electronics.",
+      },
+      {
+        term: "Balance of Trade",
+        definition:
+          "Difference between value of a country's exports and imports. Surplus = Exports > Imports. Deficit = Imports > Exports.",
+      },
+      {
+        term: "Balance of Payments",
+        definition:
+          "Systematic record of ALL international economic transactions during a year. Broader than Balance of Trade.",
+      },
+    ],
+
+    formulas: [],
+
+    pyqMCQs: [
+      {
+        q: "Types of foreign trade:",
+        options: [
+          "Import and Export only",
+          "Import, Export, Entrepot",
+          "Internal trade only",
+          "None",
+        ],
+        correct: 1,
+        year: 2024,
+      },
+      {
+        q: "Entrepot trade means:",
+        options: [
+          "Domestic trade",
+          "Import for re-export",
+          "Export only",
+          "None",
+        ],
+        correct: 1,
+        year: 2023,
+      },
+      {
+        q: "BoP includes:",
+        options: [
+          "Only goods",
+          "Only services",
+          "All economic transactions",
+          "None",
+        ],
+        correct: 2,
+        year: 2022,
+      },
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "Distinguish between Balance of Trade and Balance of Payments.",
+        year: 2024,
+        modelAnswer:
+          "**BoT vs BoP:**\n\n| Aspect | Balance of Trade | Balance of Payments |\n|--------|------------------|---------------------|\n| **Meaning** | Difference between exports and imports value | Systematic record of ALL international transactions |\n| **Scope** | Narrower concept | Broader concept (includes BoT) |\n| **Includes** | Visible + invisible goods | Goods, services, capital transfers, all transactions |\n| **Coverage** | Only trade in goods/services | Trade + capital movements + unilateral transfers |",
+      },
+    ],
+
+    textbookExercises: {
+      title: "Chapter 10 - Textbook Exercises with Answers",
+      mcqs: [
+        {
+          q: "Types of foreign trade:\na) Import trade\nb) Export trade\nc) Entrepot trade\nd) Internal trade",
+          options: ["a and b", "a, b and c", "a, b, c and d", "None of these"],
+          correct: 1,
+          answer: "a, b and c",
+          explanation:
+            "Foreign trade has three types: Import (buying from abroad), Export (selling abroad), Entrepot (import and re-export after processing). Internal trade is DOMESTIC, not foreign.",
+        },
+        {
+          q: "Export trends of India's foreign trade include:\na) Engineering goods\nb) Gems and Jewellery\nc) Textiles and readymade garments\nd) Gold",
+          options: ["a and c", "a, b and c", "b, c and d", "None"],
+          correct: 1,
+          answer: "a, b and c",
+          explanation:
+            "Engineering goods (25%), Gems & Jewellery (13.3%), and Textiles (11.3%) are major EXPORT items. Gold is a major IMPORT item, not export.",
+        },
+        {
+          q: "Role of foreign trade includes:\na) Earn foreign exchange\nb) Encourage investment\nc) Division of labour\nd) Change in composition of exports",
+          options: ["a and b", "a, b and c", "b and d", "None"],
+          correct: 1,
+          answer: "a, b and c",
+          explanation:
+            "Earning forex, encouraging investment, and division of labour are roles of foreign trade. Change in composition is a feature/trend, not a role.",
+        },
+      ],
+      correlations: [],
+      conceptIdentification: [
+        {
+          scenario: "India purchased petroleum from Iran.",
+          concept: "Import Trade",
+          explanation:
+            "Import trade refers to purchase of goods/services from another country — inflow of goods from foreign country to home country.",
+        },
+        {
+          scenario: "Maharashtra purchased wheat from Punjab.",
+          concept: "Internal/Home Trade",
+          explanation:
+            "Buying and selling within the boundaries of a nation is Internal Trade or Domestic Trade or Home Trade — NOT foreign trade.",
+        },
+        {
+          scenario:
+            "England imported cotton from India, made readymade garments, and sold them to Malaysia.",
+          concept: "Entrepot Trade",
+          explanation:
+            "Entrepot trade = purchasing goods from one country, processing them, and selling to another country.",
+        },
+        {
+          scenario: "Japan sells smartphones to Myanmar.",
+          concept: "Export Trade",
+          explanation:
+            "Export trade = sale of goods by one country to another — outflow of goods from home country.",
+        },
+      ],
+      distinguishBetween: [
+        {
+          q: "Internal Trade and International Trade",
+          answer:
+            "Internal Trade:\n- Buying/selling within boundaries of a nation. Also called Domestic/Home Trade.\n- Uses domestic currency.\n- No customs duty or trade barriers.\n\nInternational Trade:\n- Trade between different countries. Also called External/Foreign Trade.\n- Uses foreign currency.\n- Subject to customs duty, trade barriers, exchange rate.",
+        },
+        {
+          q: "Balance of Trade and Balance of Payments",
+          answer:
+            "Balance of Trade:\n- Difference between value of exports and imports for a given period.\n- Narrower concept — part of Balance of Payments.\n- Includes visible and invisible goods trade.\n\nBalance of Payments:\n- Systematic record of ALL international economic transactions during a year.\n- Broader concept — includes Balance of Trade.\n- Includes goods, services, capital movements, unilateral transfers.",
+        },
+      ],
+      agreeDisagree: [
+        {
+          statement:
+            "During British rule, indigenous handicrafts suffered a severe blow.",
+          agree: true,
+          answer:
+            "Yes, I agree.\na) Before 1947, India's foreign trade pattern was typically colonial.\nb) India was a supplier of raw materials to industrialized nations, especially England.\nc) India was an importer of manufactured goods.\nd) This dependence did not permit industrialization at home.\ne) As a result, indigenous handicrafts suffered a severe blow.",
+        },
+        {
+          statement: "Trade is an engine of growth for an economy.",
+          agree: true,
+          answer:
+            "Yes, I agree.\na) Trade plays an important role in economic development.\nb) Foreign trade provides foreign exchange for productive purposes.\nc) Creates opportunity for producers to reach beyond domestic markets.\nd) Leads to division of labour and specialization at world level.\ne) Thus, trade is an engine of growth.",
+        },
+        {
+          statement:
+            "Foreign trade leads to division of labour and specialization at world level.",
+          agree: true,
+          answer:
+            "Yes, I agree.\na) Foreign Trade is trade between different countries.\nb) Some countries have abundant natural resources.\nc) They should export raw materials and import finished goods from countries advanced in skilled manpower.\nd) Thus, foreign trade gives benefits to all countries, leading to division of labour and specialization.",
+        },
+      ],
+      shortAnswers: [
+        {
+          q: "Explain the concept of foreign trade and its types.",
+          answer:
+            "Foreign Trade = trade between different countries. Also called International/External Trade.\n\n1) Import Trade: Purchase of goods/services from another country. E.g., India imports petroleum from Iraq, Kuwait, Saudi Arabia.\n\n2) Export Trade: Sale of goods to another country. E.g., India exports tea, rice, jute to China, Hong Kong, Singapore.\n\n3) Entrepot Trade: Purchase from one country, process, sell to another. E.g., Japan imports raw materials from Europe, makes electronic goods, sells worldwide.",
+        },
+        {
+          q: "Explain any four features of the composition of India's foreign trade.",
+          answer:
+            "Features of Composition of India's Foreign Trade:\n\n1) Increasing share of GNI: From 17.55% (1990-91) to 48.8% (2016-17).\n2) Increase in volume and value: Since 1990-91, both have gone up significantly.\n3) Change in composition of exports: From primary products (jute, cotton, tea) to manufactured items (readymade garments, gems, software).\n4) Change in composition of imports: From consumer goods (medicines, cloth) to capital goods (high-tech machinery, chemicals, fertilizers).\n5) Oceanic trade: Most trade by sea — share around 68%.\n6) Development of new ports: Kandla, Cochin, Vishakhapatnam, Nhava Sheva — to reduce burden on Mumbai, Kolkata, Chennai.",
+        },
+      ],
+      longAnswers: [
+        {
+          q: "Explain the meaning and role of foreign trade.",
+          shortcode: "",
+          answer:
+            "Foreign Trade = trade between different countries. Called International/External Trade.\n\nRole of Foreign Trade:\n\n1) To earn foreign exchange: Provides forex for productive purposes. Remarkable factor in expanding market and encouraging production.\n\n2) Encourages Investment: Opportunity to reach beyond domestic markets → produce more for export → increases total investment.\n\n3) Division of labour and specialization: Countries with abundant resources export raw materials, import finished goods from skilled nations → benefits all countries.\n\n4) Optimum allocation of resources: Due to specialization, resources channelized for goods giving highest returns → rational allocation at international level.\n\n5) Stability in price level: Keeps demand-supply position stable → stabilizes price level.\n\n6) Availability of multiple choices: Imported commodities provide choices. Competition ensures quality products → raises standard of living.\n\n7) Reputation and goodwill: Exporting countries earn international reputation. E.g., Japan, Germany, Switzerland for electronic goods quality.",
+        },
+      ],
+    },
   },
 
   // ==================== LAST MINUTE KEY POINTS ====================

@@ -380,6 +380,29 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
           Total: 138 min + 42 min buffer/revision
         </p>
       </div>
+
+      {/* 📁 Google Drive Resources */}
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-4">
+        <h3 className="font-bold text-green-800 dark:text-green-200 mb-2 flex items-center gap-2">
+          <FileText size={20} /> 📁 Study Materials (Google Drive)
+        </h3>
+        <p className="text-sm text-green-700 dark:text-green-300 mb-3">
+          18+ PDFs — Past papers, Sky Education notes, question banks,
+          objectives & more
+        </p>
+        <a
+          href="https://drive.google.com/drive/folders/1LhjJMEG0sLABu9Skt9OFWNHGSsApXNat?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-4 py-2.5 bg-green-500 text-white rounded-xl text-sm font-bold hover:bg-green-600 transition-colors shadow-sm"
+        >
+          <Globe size={16} /> Open Economics Drive Folder
+        </a>
+        <p className="text-xs text-green-600 dark:text-green-400 mt-2">
+          Includes: HSC Past Papers (2021-2024) • Super 100 Questions • Q5
+          Table/Figure Practice • Chapter-wise Notes
+        </p>
+      </div>
     </div>
   );
 
@@ -1137,6 +1160,26 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
             </span>
           </li>
         </ul>
+      </div>
+
+      {/* Resources Footer */}
+      <div className="space-y-2">
+        <a
+          href="https://drive.google.com/drive/folders/1LhjJMEG0sLABu9Skt9OFWNHGSsApXNat?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 py-2.5 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl text-green-700 dark:text-green-300 text-sm font-medium hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors"
+        >
+          <FileText size={16} /> 📁 Open Economics Google Drive (18+ PDFs)
+        </a>
+        <a
+          href="https://eco.7kc.me"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-1.5 py-1.5 text-xs text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+        >
+          <Globe size={12} /> Eco Lite Version — eco.7kc.me
+        </a>
       </div>
     </div>
   );

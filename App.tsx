@@ -1717,32 +1717,18 @@ const App: React.FC = () => {
 
           {/* Dedicated Economics Promo Card */}
           {selectedSubject.id === "eco" && (
-            <a
-              href="https://eco.7kc.me"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-8 block bg-gradient-to-r from-blue-600 to-indigo-600 p-5 rounded-2xl shadow-xl shadow-blue-500/20 transform transition-transform hover:scale-[1.02]"
-            >
-              <div className="flex items-start justify-between">
-                <div>
-                  <div className="inline-block px-2 py-1 bg-white/20 backdrop-blur-md rounded text-[10px] font-bold text-white uppercase mb-2">
-                    Recommended
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-1">
-                    Deep Dive into Economics
-                  </h3>
-                  <p className="text-blue-100 text-sm mb-4">
-                    Get the specialized dedicated app for 12th Economics.
-                  </p>
-                  <div className="inline-flex items-center gap-2 bg-white text-blue-600 px-4 py-2 rounded-xl text-sm font-bold">
-                    Open eco.7kc.me <ArrowRight size={16} />
-                  </div>
-                </div>
-                <div className="bg-white/10 p-3 rounded-full text-white">
-                  <Globe size={32} />
-                </div>
-              </div>
-            </a>
+            <div className="mb-4 flex items-center justify-center">
+              <a
+                href="https://eco.7kc.me"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors"
+              >
+                <Globe size={12} />
+                <span>Eco Lite Version — eco.7kc.me</span>
+                <ArrowRight size={12} />
+              </a>
+            </div>
           )}
 
           {/* Navigation Cards for Syllabus & Pattern */}
