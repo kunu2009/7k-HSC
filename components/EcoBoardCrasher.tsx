@@ -126,6 +126,33 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         <ChevronRight size={24} />
       </button>
 
+      {/* 📁 Google Drive Resources — TOP PROMINENT */}
+      <a
+        href="https://drive.google.com/drive/folders/1LhjJMEG0sLABu9Skt9OFWNHGSsApXNat?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-4 text-white hover:opacity-95 transition-opacity shadow-lg ring-2 ring-green-400/50 ring-offset-2 ring-offset-slate-100 dark:ring-offset-slate-950"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl">
+            📁
+          </div>
+          <div className="flex-1">
+            <h3 className="font-bold text-lg flex items-center gap-2">
+              Google Drive — Study Materials
+              <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">
+                18+ PDFs
+              </span>
+            </h3>
+            <p className="text-white/90 text-xs mt-0.5">
+              Past Papers (2021-2025) • Sky Education Notes • Super 100 Q • Q5
+              Practice • Chapter Notes
+            </p>
+          </div>
+          <Globe size={24} className="shrink-0" />
+        </div>
+      </a>
+
       {/* Exam Alert */}
       <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-4 text-white">
         <div className="flex items-center gap-3">
@@ -133,7 +160,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
             <TrendingUp size={28} />
           </div>
           <div>
-            <h3 className="font-black text-xl">Exam in 4 Days!</h3>
+            <h3 className="font-black text-xl">Exam in 3 Days!</h3>
             <p className="text-white/90 text-sm">
               24th February 2026 • 80 Marks • 3 Hours
             </p>
@@ -235,73 +262,117 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
       {/* Chapter Weightage */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
         <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
-          <Target size={20} className="text-green-500" /> Chapter Weightage
+          <Target size={20} className="text-green-500" /> Chapter Weightage (80
+          Marks / 116 with Options)
         </h3>
         <div className="space-y-2 text-xs">
           {[
             {
               ch: "1. Intro (Micro/Macro)",
-              marks: "4-6",
-              pct: 35,
+              marks: "07",
+              opt: "10",
+              pct: 54,
               color: "bg-slate-500",
+              important: false,
             },
             {
               ch: "2. Utility Analysis",
-              marks: "8-10",
-              pct: 60,
+              marks: "07",
+              opt: "10",
+              pct: 54,
               color: "bg-purple-500",
+              important: false,
             },
             {
               ch: "3A. Demand Analysis",
-              marks: "10-12",
-              pct: 75,
+              marks: "08",
+              opt: "12",
+              pct: 62,
               color: "bg-green-500",
+              important: true,
             },
             {
-              ch: "3B. Elasticity",
-              marks: "12-14",
-              pct: 85,
+              ch: "3B. Elasticity of Demand",
+              marks: "08",
+              opt: "12",
+              pct: 62,
               color: "bg-teal-500",
+              important: true,
             },
             {
               ch: "4. Supply Analysis",
-              marks: "6-8",
-              pct: 45,
+              marks: "07",
+              opt: "10",
+              pct: 54,
               color: "bg-orange-500",
+              important: false,
             },
             {
               ch: "5. Forms of Market",
-              marks: "8-10",
-              pct: 60,
+              marks: "07",
+              opt: "10",
+              pct: 54,
               color: "bg-red-500",
+              important: false,
             },
             {
               ch: "6. Index Numbers",
-              marks: "8-10",
-              pct: 60,
+              marks: "08",
+              opt: "12",
+              pct: 62,
               color: "bg-pink-500",
+              important: true,
             },
             {
               ch: "7. National Income",
-              marks: "12-14",
-              pct: 85,
+              marks: "08",
+              opt: "12",
+              pct: 62,
               color: "bg-indigo-500",
+              important: true,
             },
             {
               ch: "8. Public Finance",
-              marks: "8-10",
-              pct: 60,
+              marks: "07",
+              opt: "10",
+              pct: 54,
               color: "bg-amber-500",
+              important: false,
+            },
+            {
+              ch: "9. Money Mkt & Capital Mkt",
+              marks: "04",
+              opt: "06",
+              pct: 31,
+              color: "bg-cyan-500",
+              important: false,
+            },
+            {
+              ch: "10. Foreign Trade 🚨",
+              marks: "09",
+              opt: "12",
+              pct: 69,
+              color: "bg-rose-500",
+              important: true,
             },
           ].map((item, idx) => (
-            <div key={idx} className="flex items-center gap-2">
-              <span className="text-slate-700 dark:text-slate-300 flex-1">
+            <div
+              key={idx}
+              className={`flex items-center gap-2 ${item.important ? "bg-yellow-50 dark:bg-yellow-900/10 px-2 py-1 rounded-lg -mx-1" : ""}`}
+            >
+              <span
+                className={`text-slate-700 dark:text-slate-300 flex-1 ${item.important ? "font-semibold" : ""}`}
+              >
+                {item.important && "🔥 "}
                 {item.ch}
               </span>
-              <span className="font-bold text-slate-800 dark:text-white w-14 text-right">
+              <span className="font-bold text-slate-800 dark:text-white w-8 text-right">
                 {item.marks}
               </span>
-              <div className="w-20 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+              <span className="text-slate-400 dark:text-slate-500 w-8 text-right text-[10px]">
+                ({item.opt})
+              </span>
+              <div className="w-16 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div
                   className={`h-full ${item.color} rounded-full`}
                   style={{ width: `${item.pct}%` }}
@@ -309,6 +380,17 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="mt-3 p-2 bg-rose-50 dark:bg-rose-900/20 rounded-lg">
+          <p className="text-xs text-rose-700 dark:text-rose-300">
+            <strong>🔥 High-Weightage (08m):</strong> Ch 3A, 3B, 6, 7 — focus
+            for Q.5 & Q.6
+            <br />
+            <strong>🚨 Don't ignore:</strong> Ch 10 (Foreign Trade) = 09 marks!
+            <br />
+            <strong>⚡ Low-Weightage:</strong> Ch 9 (Money Market) = only 04
+            marks
+          </p>
         </div>
       </div>
 
@@ -378,29 +460,6 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         </div>
         <p className="text-xs text-blue-600 dark:text-blue-400 mt-2 text-center">
           Total: 138 min + 42 min buffer/revision
-        </p>
-      </div>
-
-      {/* 📁 Google Drive Resources */}
-      <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-4">
-        <h3 className="font-bold text-green-800 dark:text-green-200 mb-2 flex items-center gap-2">
-          <FileText size={20} /> 📁 Study Materials (Google Drive)
-        </h3>
-        <p className="text-sm text-green-700 dark:text-green-300 mb-3">
-          18+ PDFs — Past papers, Sky Education notes, question banks,
-          objectives & more
-        </p>
-        <a
-          href="https://drive.google.com/drive/folders/1LhjJMEG0sLABu9Skt9OFWNHGSsApXNat?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-green-500 text-white rounded-xl text-sm font-bold hover:bg-green-600 transition-colors shadow-sm"
-        >
-          <Globe size={16} /> Open Economics Drive Folder
-        </a>
-        <p className="text-xs text-green-600 dark:text-green-400 mt-2">
-          Includes: HSC Past Papers (2021-2024) • Super 100 Questions • Q5
-          Table/Figure Practice • Chapter-wise Notes
         </p>
       </div>
     </div>
@@ -1186,6 +1245,362 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
 
   // Q.1 Objectives Mastery (20 Marks)
   const objectivesBank = {
+    // === MCQ COMBO (Choose correct combination) — from Papers 2024, 2023, 2022 ===
+    mcqCombo: [
+      {
+        q: "Which of the following is studied in Micro Economics?\n(a) Individual demand\n(b) National Income\n(c) General price level\n(d) Aggregate supply",
+        options: ["Only (a)", "Only (b)", "(a) and (b)", "(c) and (d)"],
+        a: 0,
+        ch: "Ch 1",
+      },
+      {
+        q: "When TU is maximum:\n(a) MU is zero\n(b) MU is negative\n(c) MU is maximum\n(d) Consumer reaches satiety point",
+        options: ["(a) and (d)", "(b) and (c)", "Only (a)", "Only (c)"],
+        a: 0,
+        ch: "Ch 2",
+      },
+      {
+        q: "Features of Perfect Competition:\n(a) Homogeneous products\n(b) Free entry and exit\n(c) Price maker\n(d) Large number of buyers and sellers",
+        options: [
+          "(a), (b), (c)",
+          "(a), (b), (d)",
+          "(b), (c), (d)",
+          "All of these",
+        ],
+        a: 1,
+        ch: "Ch 5",
+      },
+      {
+        q: "GST includes:\n(a) CGST\n(b) SGST\n(c) IGST\n(d) Income Tax",
+        options: [
+          "(a), (b), (c)",
+          "(a), (b), (d)",
+          "(b), (c), (d)",
+          "All of these",
+        ],
+        a: 0,
+        ch: "Ch 8",
+      },
+      {
+        q: "National Income includes:\n(a) Wages\n(b) Rent\n(c) Interest\n(d) Transfer payments",
+        options: [
+          "(a), (b), (c)",
+          "(a), (b), (d)",
+          "(b), (c), (d)",
+          "All of these",
+        ],
+        a: 0,
+        ch: "Ch 7",
+      },
+      {
+        q: "Micro Economics includes study of:\n(a) Individual consumer\n(b) Individual firm\n(c) National income\n(d) General price level",
+        options: ["(a) and (b)", "(c) and (d)", "(a) and (c)", "(b) and (d)"],
+        a: 0,
+        ch: "Ch 1",
+      },
+      {
+        q: "Law of DMU was given by:\n(a) Marshall\n(b) Gossen\n(c) Keynes\n(d) Also called Gossen's First Law",
+        options: ["(a) and (c)", "(b) and (d)", "Only (a)", "Only (b)"],
+        a: 1,
+        ch: "Ch 2",
+      },
+      {
+        q: "In Monopoly:\n(a) Single seller\n(b) No substitutes\n(c) Free entry\n(d) Price maker",
+        options: [
+          "(a), (b), (c)",
+          "(a), (b), (d)",
+          "(b), (c), (d)",
+          "All of these",
+        ],
+        a: 1,
+        ch: "Ch 5",
+      },
+      {
+        q: "National Income includes:\n(a) Wages\n(b) Rent\n(c) Interest\n(d) Profit",
+        options: [
+          "(a), (b), (c)",
+          "(b), (c), (d)",
+          "(a), (c), (d)",
+          "All of these",
+        ],
+        a: 3,
+        ch: "Ch 7",
+      },
+      {
+        q: "Index Numbers are used for:\n(a) Measuring price changes\n(b) Forecasting\n(c) Policy making\n(d) Measuring weight",
+        options: [
+          "(a), (b), (c)",
+          "(a), (b), (d)",
+          "(b), (c), (d)",
+          "All of these",
+        ],
+        a: 0,
+        ch: "Ch 6",
+      },
+      {
+        q: "The scope of Macro Economics includes:\n(a) National Income\n(b) General price level\n(c) Individual firm's output\n(d) Aggregate demand",
+        options: [
+          "(a), (b), (d)",
+          "(a), (c), (d)",
+          "(b), (c), (d)",
+          "All of these",
+        ],
+        a: 0,
+        ch: "Ch 1",
+      },
+      {
+        q: "Exceptions to the Law of Demand:\n(a) Giffen goods\n(b) Veblen goods (prestige goods)\n(c) Necessary goods\n(d) Expectation of future price rise",
+        options: [
+          "(a), (b), (d)",
+          "(a), (c), (d)",
+          "(b), (c), (d)",
+          "(a), (b), (c)",
+        ],
+        a: 0,
+        ch: "Ch 3A",
+      },
+      {
+        q: "Correct statements about Index Numbers:\n(a) Specialized averages\n(b) Measure relative changes\n(c) Base year value is always 100\n(d) Measure absolute changes only",
+        options: [
+          "(a), (b), (c)",
+          "(a), (b), (d)",
+          "(b), (c), (d)",
+          "All of these",
+        ],
+        a: 0,
+        ch: "Ch 6",
+      },
+      {
+        q: "Components of GST:\n(a) CGST\n(b) SGST\n(c) IGST\n(d) Wealth Tax",
+        options: [
+          "(a), (b), (c)",
+          "(a), (b), (d)",
+          "(b), (c), (d)",
+          "All of these",
+        ],
+        a: 0,
+        ch: "Ch 8",
+      },
+      {
+        q: "Methods of measuring National Income:\n(a) Output Method\n(b) Income Method\n(c) Expenditure Method\n(d) Population Method",
+        options: [
+          "(a), (b), (d)",
+          "(a), (b), (c)",
+          "(b), (c), (d)",
+          "All of these",
+        ],
+        a: 1,
+        ch: "Ch 7",
+      },
+    ],
+    // === COMPLETE THE STATEMENT (MCQ fill-in-blank) — from Papers 2022, 2022J, 2023B ===
+    completeStatement: [
+      {
+        q: "When Marginal Utility becomes zero, Total Utility is _____.",
+        options: ["Maximum", "Minimum", "Negative", "Increasing"],
+        a: 0,
+        ch: "Ch 2",
+      },
+      {
+        q: "Supply curve slopes _____.",
+        options: [
+          "Downward from left to right",
+          "Upward from left to right",
+          "Parallel to X-axis",
+          "Parallel to Y-axis",
+        ],
+        a: 1,
+        ch: "Ch 4",
+      },
+      {
+        q: "A market with few sellers and many buyers is called _____.",
+        options: [
+          "Monopoly",
+          "Monopolistic Competition",
+          "Oligopoly",
+          "Perfect Competition",
+        ],
+        a: 2,
+        ch: "Ch 5",
+      },
+      {
+        q: "In India, the financial year is from _____.",
+        options: [
+          "1st January to 31st December",
+          "1st April to 31st March",
+          "1st July to 30th June",
+          "1st March to 28th February",
+        ],
+        a: 1,
+        ch: "Ch 7",
+      },
+      {
+        q: "The Central Bank of India is _____.",
+        options: [
+          "State Bank of India",
+          "Bank of India",
+          "Reserve Bank of India",
+          "Central Bank of India",
+        ],
+        a: 2,
+        ch: "Ch 9",
+      },
+      {
+        q: "Micro Economics is also called as ______.",
+        options: [
+          "Income theory",
+          "Price theory",
+          "Growth theory",
+          "Employment theory",
+        ],
+        a: 1,
+        ch: "Ch 1",
+      },
+      {
+        q: "Money market faces shortage of funds due to ________.",
+        options: [
+          "Inadequate savings",
+          "Growing demand for cash",
+          "Unorganised sector",
+          "Financial mismanagement",
+        ],
+        a: 0,
+        ch: "Ch 9",
+      },
+      {
+        q: "MU of a commodity becomes negative when TU is ________.",
+        options: ["Rising", "Constant", "Falling", "Zero"],
+        a: 2,
+        ch: "Ch 2",
+      },
+      {
+        q: "Public expenditure of any government shows _______.",
+        options: [
+          "Constant trend",
+          "Increasing trend",
+          "Decreasing trend",
+          "Fluctuating demand",
+        ],
+        a: 1,
+        ch: "Ch 8",
+      },
+      {
+        q: "The relationship between income and demand for inferior goods is ________.",
+        options: [
+          "Direct",
+          "Inverse",
+          "No effect",
+          "Can be direct and inverse",
+        ],
+        a: 1,
+        ch: "Ch 3A",
+      },
+      {
+        q: "Whole Economy is studied in ______.",
+        options: [
+          "Micro Economics",
+          "Macro Economics",
+          "Econometrics",
+          "Natural Sciences",
+        ],
+        a: 1,
+        ch: "Ch 1",
+      },
+      {
+        q: "When %ΔQd < %ΔP, the demand curve is _______.",
+        options: ["Flatter", "Steeper", "Rectangular hyperbola", "Horizontal"],
+        a: 1,
+        ch: "Ch 3B",
+      },
+      {
+        q: "The cost incurred by the firm to promote sales _____.",
+        options: [
+          "Total cost",
+          "Average cost",
+          "Marginal cost",
+          "Selling cost",
+        ],
+        a: 3,
+        ch: "Ch 5",
+      },
+      {
+        q: "Budget that consists of revenue receipts and revenue expenditure ______.",
+        options: [
+          "Capital budget",
+          "Government budget",
+          "Revenue budget",
+          "Family budget",
+        ],
+        a: 2,
+        ch: "Ch 8",
+      },
+      {
+        q: "Purchase of goods from one country and selling to another country is _______.",
+        options: [
+          "Entrepot trade",
+          "Import trade",
+          "Export trade",
+          "National trade",
+        ],
+        a: 0,
+        ch: "Ch 10",
+      },
+      {
+        q: "Index numbers are useful for making _____.",
+        options: [
+          "Chemical analysis",
+          "Future predictions",
+          "Weather forecasts",
+          "Geological surveys",
+        ],
+        a: 1,
+        ch: "Ch 6",
+      },
+      {
+        q: "Which is NOT a function of RBI?",
+        options: [
+          "Issue of Currency Notes",
+          "Banker to the Government",
+          "Accepting deposits from general public",
+          "Controller of Credit",
+        ],
+        a: 2,
+        ch: "Ch 9",
+      },
+      {
+        q: "Demand curve parallel to X-axis represents _____.",
+        options: [
+          "Perfectly elastic demand",
+          "Perfectly inelastic demand",
+          "Relatively elastic demand",
+          "Unitary elastic demand",
+        ],
+        a: 0,
+        ch: "Ch 3B",
+      },
+      {
+        q: "Rightward shift in supply curve shows _____.",
+        options: [
+          "Contraction of supply",
+          "Decrease in supply",
+          "Expansion of supply",
+          "Increase in supply",
+        ],
+        a: 3,
+        ch: "Ch 4",
+      },
+      {
+        q: "Stock exchange is a constituent of _____.",
+        options: [
+          "Capital market",
+          "Money market",
+          "Local market",
+          "International market",
+        ],
+        a: 0,
+        ch: "Ch 9",
+      },
+    ],
     correlations: [
       {
         q: "Micro Economics : Tree :: Macro Economics : ___",
@@ -1213,6 +1628,16 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 1",
       },
       {
+        q: "Alfred Marshall : Micro Economics :: J.M. Keynes : ___",
+        a: "Macro Economics",
+        ch: "Ch 1",
+      },
+      {
+        q: "Macro Economics : Income and Employment :: Micro Economics : ___",
+        a: "Price Theory",
+        ch: "Ch 1",
+      },
+      {
         q: "Form utility : Furniture :: Service utility : ___",
         a: "Doctor / Teacher / Lawyer",
         ch: "Ch 2",
@@ -1223,9 +1648,19 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 2",
       },
       {
+        q: "TU Maximum : MU Zero :: MU Negative : ___",
+        a: "TU Falling / TU Decreasing",
+        ch: "Ch 2",
+      },
+      {
         q: "Price & demand (normal goods) : Inverse :: Giffen goods : ___",
         a: "Direct relationship",
         ch: "Ch 3A",
+      },
+      {
+        q: "Law of Demand : Inverse relation :: Law of Supply : ___",
+        a: "Direct relation",
+        ch: "Ch 3A/4",
       },
       {
         q: "Perfectly elastic demand : Ed = ∞ :: Perfectly inelastic demand : ___",
@@ -1235,6 +1670,11 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
       {
         q: "Perfectly elastic demand : Ed = ∞ :: Unitary elastic demand : ___",
         a: "Ed = 1",
+        ch: "Ch 3B",
+      },
+      {
+        q: "Ed > 1 : Elastic demand :: Ed < 1 : ___",
+        a: "Inelastic demand",
         ch: "Ch 3B",
       },
       {
@@ -1248,6 +1688,11 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 4",
       },
       {
+        q: "Direct demand : Food and Mobiles :: Indirect Demand : ___",
+        a: "Land and Labour",
+        ch: "Ch 3A",
+      },
+      {
         q: "Perfect competition : Many sellers :: Monopoly : ___",
         a: "Single seller",
         ch: "Ch 5",
@@ -1255,6 +1700,11 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
       {
         q: "Perfect competition : Homogeneous products :: Monopolistic : ___",
         a: "Differentiated products",
+        ch: "Ch 5",
+      },
+      {
+        q: "Perfect competition : Price Taker :: Monopoly : ___",
+        a: "Price Maker",
         ch: "Ch 5",
       },
       {
@@ -1268,6 +1718,11 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 7",
       },
       {
+        q: "GDP : Domestic Territory :: GNP : ___",
+        a: "Normal Residents / National Territory",
+        ch: "Ch 7",
+      },
+      {
         q: "Direct Tax : Progressive :: Indirect Tax : ___",
         a: "Regressive",
         ch: "Ch 8",
@@ -1278,8 +1733,24 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 8",
       },
       {
+        q: "Direct Tax : Income Tax :: Indirect Tax : ___",
+        a: "GST / Excise Duty / Customs",
+        ch: "Ch 8",
+      },
+      { q: "CGST : Centre :: SGST : ___", a: "State", ch: "Ch 8" },
+      {
+        q: "Revenue Receipt : No liability :: Capital Receipt : ___",
+        a: "Creates liability",
+        ch: "Ch 8",
+      },
+      {
         q: "Consumption expenditure : Revenue expenditure :: Repayment of loans : ___",
         a: "Capital expenditure",
+        ch: "Ch 8",
+      },
+      {
+        q: "Period of Inflation : Surplus Budget :: Period of Depression : ___",
+        a: "Deficit Budget",
         ch: "Ch 8",
       },
       {
@@ -1287,26 +1758,57 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         a: "Long-term funds",
         ch: "Ch 9",
       },
+      {
+        q: "Internal Trade : Home Trade :: International Trade : ___",
+        a: "Foreign Trade",
+        ch: "Ch 10",
+      },
+      {
+        q: "Demand curve : Downward sloping :: Supply curve : ___",
+        a: "Upward sloping",
+        ch: "Ch 3A/4",
+      },
     ],
     economicTerms: [
       {
-        q: "Additional utility derived by a consumer from an additional unit consumed.",
-        a: "Marginal Utility",
-        ch: "Ch 2",
+        q: "Study of individual economic units.",
+        a: "Micro Economics",
+        ch: "Ch 1",
       },
-      {
-        q: "Sum total of utilities derived from all units of a commodity consumed.",
-        a: "Total Utility",
-        ch: "Ch 2",
-      },
+      { q: "Study of economy as a whole.", a: "Macro Economics", ch: "Ch 1" },
       {
         q: "The capacity of a commodity to satisfy human wants.",
         a: "Utility",
         ch: "Ch 2",
       },
       {
+        q: "Additional utility derived by a consumer from an additional unit consumed.",
+        a: "Marginal Utility (MU)",
+        ch: "Ch 2",
+      },
+      {
+        q: "Sum total of utilities derived from all units of a commodity consumed.",
+        a: "Total Utility (TU)",
+        ch: "Ch 2",
+      },
+      {
+        q: "The point at which MU becomes zero and TU is maximum.",
+        a: "Point of Satiety",
+        ch: "Ch 2",
+      },
+      {
+        q: "Swati purchased a raincoat for her father in rainy season.",
+        a: "Time Utility",
+        ch: "Ch 2",
+      },
+      {
         q: "A desire backed by willingness to purchase and ability to pay.",
         a: "Demand",
+        ch: "Ch 3A",
+      },
+      {
+        q: "A poor person wants to buy a car.",
+        a: "Desire (not Demand — lacks ability to pay)",
         ch: "Ch 3A",
       },
       {
@@ -1325,12 +1827,17 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 3A",
       },
       {
+        q: "Fall in demand due to rise in price (movement along curve).",
+        a: "Contraction of Demand",
+        ch: "Ch 3A",
+      },
+      {
         q: "Degree of responsiveness of quantity demanded to a change in price.",
         a: "Price Elasticity of Demand",
         ch: "Ch 3B",
       },
       {
-        q: "Degree of responsiveness of quantity demanded to a change in income.",
+        q: "Degree of responsiveness of quantity demanded to a change in income only.",
         a: "Income Elasticity of Demand",
         ch: "Ch 3B",
       },
@@ -1338,6 +1845,16 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         q: "Change in quantity demanded of one good due to change in price of another.",
         a: "Cross Elasticity of Demand",
         ch: "Ch 3B",
+      },
+      {
+        q: "Period in which all factors of production are variable.",
+        a: "Long Run Period",
+        ch: "Ch 4",
+      },
+      {
+        q: "Period in which at least one factor is fixed.",
+        a: "Short Run Period",
+        ch: "Ch 4",
       },
       {
         q: "Revenue per unit of output sold.",
@@ -1355,14 +1872,29 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 5",
       },
       {
-        q: "Period in which all factors of production are variable.",
-        a: "Long Run Period",
-        ch: "Ch 4",
+        q: "A market with single seller and no close substitutes.",
+        a: "Monopoly",
+        ch: "Ch 5",
+      },
+      {
+        q: "Market with many sellers selling differentiated products.",
+        a: "Monopolistic Competition",
+        ch: "Ch 5",
       },
       {
         q: "Very realistic competition in nature.",
         a: "Monopolistic Competition",
         ch: "Ch 5",
+      },
+      {
+        q: "A competition where price is determined by forces of demand and supply.",
+        a: "Perfect Competition",
+        ch: "Ch 5",
+      },
+      {
+        q: "Wear and tear of capital assets due to use in production.",
+        a: "Depreciation",
+        ch: "Ch 7",
       },
       {
         q: "Volume of commodities & services produced during a period without duplication.",
@@ -1372,6 +1904,16 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
       {
         q: "Gross market value of all final goods & services produced within domestic territory.",
         a: "GDP at Market Price",
+        ch: "Ch 7",
+      },
+      {
+        q: "Total value of goods produced within domestic territory.",
+        a: "Gross Domestic Product (GDP)",
+        ch: "Ch 7",
+      },
+      {
+        q: "National income divided by population.",
+        a: "Per Capita Income",
         ch: "Ch 7",
       },
       {
@@ -1385,9 +1927,44 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 7",
       },
       {
-        q: "A competition where price is determined by forces of demand and supply.",
-        a: "Perfect Competition",
+        q: "Tax burden that cannot be shifted to others.",
+        a: "Direct Tax",
+        ch: "Ch 8",
+      },
+      {
+        q: "Tax burden that can be shifted to others.",
+        a: "Indirect Tax",
+        ch: "Ch 8",
+      },
+      {
+        q: "Single comprehensive indirect tax replacing multiple taxes.",
+        a: "GST (Goods and Services Tax)",
+        ch: "Ch 8",
+      },
+      {
+        q: "Deposits that are withdrawable on demand at any time.",
+        a: "Demand Deposits",
+        ch: "Ch 9",
+      },
+      {
+        q: "Deposits repayable only after a fixed/certain period.",
+        a: "Time Deposits / Fixed Deposits",
+        ch: "Ch 9",
+      },
+      {
+        q: "Net addition made to total cost by producing one more unit.",
+        a: "Marginal Cost",
         ch: "Ch 5",
+      },
+      {
+        q: "Market for long-term funds — both equity and debt.",
+        a: "Capital Market",
+        ch: "Ch 9",
+      },
+      {
+        q: "Purchase of goods from one country and selling to another.",
+        a: "Entrepot Trade (Re-export Trade)",
+        ch: "Ch 10",
       },
     ],
     oddWordOut: [
@@ -1427,7 +2004,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
       {
         q: ["Fees", "Penalty", "Wealth", "Special levy"],
         a: "Wealth",
-        reason: "Not a non-tax revenue source",
+        reason: "Not a non-tax revenue source; others are non-tax revenue",
         ch: "Ch 8",
       },
       {
@@ -1516,6 +2093,115 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         reason: "Domestic institution; others are external debt sources",
         ch: "Ch 8",
       },
+      // From 2024 paper
+      {
+        q: ["Wages", "Rent", "Interest", "Transfer payments"],
+        a: "Transfer payments",
+        reason: "Not factor income; others are factor incomes",
+        ch: "Ch 7",
+      },
+      {
+        q: ["Perfect competition", "Monopoly", "Oligopoly", "Demand"],
+        a: "Demand",
+        reason: "Not a market structure; others are types of market",
+        ch: "Ch 5",
+      },
+      {
+        q: ["CGST", "SGST", "IGST", "Income Tax"],
+        a: "Income Tax",
+        reason: "Direct tax; others are components of GST (indirect tax)",
+        ch: "Ch 8",
+      },
+      {
+        q: ["Laspeyre's", "Paasche's", "Fisher's", "Marshall's"],
+        a: "Marshall's",
+        reason: "Gave utility theory; others are index number methods",
+        ch: "Ch 6",
+      },
+      {
+        q: [
+          "Revenue receipt",
+          "Capital receipt",
+          "Revenue expenditure",
+          "Elastic demand",
+        ],
+        a: "Elastic demand",
+        reason: "Demand concept; others are budget concepts",
+        ch: "Ch 8",
+      },
+      // From 2023 paper
+      {
+        q: ["Price Theory", "Income Theory", "Welfare Theory", "Demand Theory"],
+        a: "Income Theory",
+        reason: "Macro Economics; others are Micro Economics",
+        ch: "Ch 1",
+      },
+      {
+        q: ["TU", "MU", "AR", "Consumer surplus"],
+        a: "AR",
+        reason: "Revenue concept; others are utility concepts",
+        ch: "Ch 2/5",
+      },
+      {
+        q: ["Monopoly", "Duopoly", "Oligopoly", "Utility"],
+        a: "Utility",
+        reason: "Consumption concept; others are market structures",
+        ch: "Ch 5",
+      },
+      {
+        q: ["GDP", "GNP", "NNP", "MU"],
+        a: "MU",
+        reason: "Utility concept; others are national income aggregates",
+        ch: "Ch 7",
+      },
+      {
+        q: ["Income tax", "Wealth tax", "GST", "Corporate tax"],
+        a: "GST",
+        reason: "Indirect tax; others are direct taxes",
+        ch: "Ch 8",
+      },
+      // From 2026 predicted
+      {
+        q: [
+          "Direct demand",
+          "Indirect demand",
+          "Joint demand",
+          "Market demand",
+        ],
+        a: "Market demand",
+        reason: "Classified by number of consumers; others by nature/purpose",
+        ch: "Ch 3A",
+      },
+      {
+        q: [
+          "Deficit budget",
+          "Balanced budget",
+          "Surplus budget",
+          "Zero budget",
+        ],
+        a: "Zero budget",
+        reason: "Not a standard type of govt budget; others are standard types",
+        ch: "Ch 8",
+      },
+      {
+        q: ["Land", "Labour", "Capital", "Profit"],
+        a: "Profit",
+        reason:
+          "Factor income (return to entrepreneur); others are factors of production",
+        ch: "Ch 7",
+      },
+      {
+        q: ["Fees", "Penalty", "Special levy", "Wealth tax"],
+        a: "Wealth tax",
+        reason: "Direct Tax; others are Non-Tax Revenue sources",
+        ch: "Ch 8",
+      },
+      {
+        q: ["Patent", "Copyright", "Trademark", "OPEC"],
+        a: "OPEC",
+        reason: "Organization/cartel; others are legal forms of monopoly",
+        ch: "Ch 5",
+      },
     ],
     mcqs: [
       {
@@ -1552,6 +2238,28 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 1",
       },
       {
+        q: "Father of Micro Economics:",
+        options: [
+          "Adam Smith",
+          "Alfred Marshall",
+          "J.M. Keynes",
+          "Ragnar Frisch",
+        ],
+        a: 1,
+        ch: "Ch 1",
+      },
+      {
+        q: "Father of Macro Economics:",
+        options: [
+          "Adam Smith",
+          "Alfred Marshall",
+          "J.M. Keynes",
+          "Ragnar Frisch",
+        ],
+        a: 2,
+        ch: "Ch 1",
+      },
+      {
         q: "MU becomes negative when TU is:",
         options: ["Rising", "Constant", "Falling", "Zero"],
         a: 2,
@@ -1561,6 +2269,12 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         q: "When TU is Maximum, MU is:",
         options: ["Maximum", "Minimum", "Negative", "Zero"],
         a: 3,
+        ch: "Ch 2",
+      },
+      {
+        q: "Law of DMU was propounded by:",
+        options: ["Marshall", "Keynes", "H.H. Gossen", "Adam Smith"],
+        a: 2,
         ch: "Ch 2",
       },
       {
@@ -1586,6 +2300,17 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 3A",
       },
       {
+        q: "Giffen goods violate:",
+        options: [
+          "Law of Supply",
+          "Law of Demand",
+          "Law of DMU",
+          "Law of Returns",
+        ],
+        a: 1,
+        ch: "Ch 3A",
+      },
+      {
         q: "Demand curve parallel to X-axis:",
         options: [
           "Perfectly elastic",
@@ -1597,9 +2322,31 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 3B",
       },
       {
+        q: "Demand curve parallel to Y-axis:",
+        options: [
+          "Perfectly elastic",
+          "Perfectly inelastic",
+          "Relatively elastic",
+          "Unitary elastic",
+        ],
+        a: 1,
+        ch: "Ch 3B",
+      },
+      {
         q: "When %ΔQd < %ΔP, demand curve is:",
         options: ["Flatter", "Steeper", "Rectangular hyperbola", "Horizontal"],
         a: 1,
+        ch: "Ch 3B",
+      },
+      {
+        q: "Ed = 1 means demand is:",
+        options: [
+          "Perfectly elastic",
+          "Perfectly inelastic",
+          "Unitary elastic",
+          "Relatively elastic",
+        ],
+        a: 2,
         ch: "Ch 3B",
       },
       {
@@ -1640,6 +2387,52 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ],
         a: 3,
         ch: "Ch 5",
+      },
+      {
+        q: "In perfect competition, seller is:",
+        options: [
+          "Price maker",
+          "Price taker",
+          "Price leader",
+          "Price discriminator",
+        ],
+        a: 1,
+        ch: "Ch 5",
+      },
+      {
+        q: "Base year value of index number is always:",
+        options: ["0", "50", "100", "1000"],
+        a: 2,
+        ch: "Ch 6",
+      },
+      {
+        q: "Fisher's Index is called:",
+        options: [
+          "Simple Index",
+          "Weighted Index",
+          "Ideal Index",
+          "Base Index",
+        ],
+        a: 2,
+        ch: "Ch 6",
+      },
+      {
+        q: "National Income Committee was established in:",
+        options: ["1947", "1949", "1950", "1952"],
+        a: 1,
+        ch: "Ch 7",
+      },
+      {
+        q: "National Income is a ___ concept:",
+        options: ["Stock", "Flow", "Static", "Dynamic"],
+        a: 1,
+        ch: "Ch 7",
+      },
+      {
+        q: "In India, the financial year is:",
+        options: ["Jan-Dec", "Apr-Mar", "Jul-Jun", "Mar-Feb"],
+        a: 1,
+        ch: "Ch 7",
       },
       {
         q: "Stock exchange is a constituent of:",
@@ -1692,6 +2485,17 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 8",
       },
       {
+        q: "An obligatory function of government:",
+        options: [
+          "Education",
+          "Pensions",
+          "Maintaining law and order",
+          "Welfare measures",
+        ],
+        a: 2,
+        ch: "Ch 8",
+      },
+      {
         q: "Purchase from one country, sell to another:",
         options: [
           "Entrepot trade",
@@ -1703,10 +2507,15 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         ch: "Ch 10",
       },
       {
-        q: "In India, the financial year is:",
-        options: ["Jan-Dec", "Apr-Mar", "Jul-Jun", "Mar-Feb"],
-        a: 1,
-        ch: "Ch 7",
+        q: "Balance of Trade records:",
+        options: [
+          "Only visible trade",
+          "Only invisible trade",
+          "Visible & invisible trade",
+          "Capital transfers",
+        ],
+        a: 2,
+        ch: "Ch 10",
       },
     ],
     assertionReasoning: [
@@ -1774,6 +2583,36 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         answer: "Both true; R is correct explanation of A",
         ch: "Ch 4",
       },
+      {
+        assertion: "Micro Economics studies only individual units.",
+        reasoning: "Micro Economics uses slicing method.",
+        answer: "Both true; R is correct explanation of A",
+        ch: "Ch 1",
+      },
+      {
+        assertion: "National Income includes transfer payments.",
+        reasoning: "Transfer payments are one-sided unilateral payments.",
+        answer: "A is false but R is true",
+        ch: "Ch 7",
+      },
+      {
+        assertion: "Monopolist is a price taker.",
+        reasoning: "There is only one seller in monopoly.",
+        answer: "A is false but R is true",
+        ch: "Ch 5",
+      },
+      {
+        assertion: "Indirect tax is progressive in nature.",
+        reasoning: "It is paid by the final consumer irrespective of income.",
+        answer: "A is false but R is true (indirect tax is regressive)",
+        ch: "Ch 8",
+      },
+      {
+        assertion: "Demand for Giffen goods rises when price rises.",
+        reasoning: "Giffen goods are an exception to the Law of Demand.",
+        answer: "Both true; R is correct explanation of A",
+        ch: "Ch 3A",
+      },
     ],
   };
 
@@ -1795,8 +2634,10 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
                 objectivesBank.economicTerms.length +
                 objectivesBank.oddWordOut.length +
                 objectivesBank.mcqs.length +
+                objectivesBank.mcqCombo.length +
+                objectivesBank.completeStatement.length +
                 objectivesBank.assertionReasoning.length}{" "}
-              questions from past papers & predictions
+              questions from all 6 mock papers & predictions
             </p>
           </div>
         </div>
@@ -1804,48 +2645,184 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
 
       {/* Q.1 Breakdown */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
-        <h3 className="font-bold text-slate-800 dark:text-white mb-3 text-sm">
+        <h3 className="font-bold text-slate-800 dark:text-white mb-2 text-sm">
           📋 Q.1 Breakdown (20 marks — Do in 25 min)
         </h3>
+        <p className="text-xs text-amber-600 dark:text-amber-400 mb-3 bg-amber-50 dark:bg-amber-900/20 p-2 rounded-lg font-medium">
+          ⚠️ 8 types exist — only 4 will appear in your paper (A, B, C, D × 5m
+          each)
+        </p>
         <div className="grid grid-cols-2 gap-2 text-xs">
           {[
+            { sub: "① MCQ Combo", tip: "Pick correct combination", icon: "🔢" },
             {
-              sub: "A) Choose correct / Complete",
-              marks: "5m",
-              tip: "Read all options first",
+              sub: "② Complete Statement",
+              tip: "Fill-in-blank MCQ",
+              icon: "📝",
             },
             {
-              sub: "B) Odd word / Economic term",
-              marks: "5m",
+              sub: "③ Give Economic Term",
+              tip: "Know definitions",
+              icon: "💡",
+            },
+            {
+              sub: "④ Find Odd Word Out",
               tip: "Know classifications",
+              icon: "🔍",
             },
             {
-              sub: "C) Complete statement / Term",
-              marks: "5m",
-              tip: "Definitions matter",
-            },
-            {
-              sub: "D) Correlation / Assertion",
-              marks: "5m",
+              sub: "⑤ Complete Correlation",
               tip: "Practice pairs",
+              icon: "🔗",
             },
+            { sub: "⑥ Assertion & Reasoning", tip: "A+R logic", icon: "🧠" },
+            { sub: "⑦ Choose Correct Option", tip: "Standard MCQ", icon: "☑️" },
+            { sub: "⑧ True / False", tip: "Verify statements", icon: "✅" },
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-emerald-50 dark:bg-emerald-900/20 p-2.5 rounded-xl"
+              className="bg-emerald-50 dark:bg-emerald-900/20 p-2 rounded-xl"
             >
-              <p className="font-bold text-emerald-800 dark:text-emerald-200">
-                {item.sub} — {item.marks}
+              <p className="font-bold text-emerald-800 dark:text-emerald-200 text-[11px]">
+                {item.icon} {item.sub}
               </p>
-              <p className="text-emerald-600 dark:text-emerald-400 mt-0.5">
-                💡 {item.tip}
+              <p className="text-emerald-600 dark:text-emerald-400 mt-0.5 text-[10px]">
+                {item.tip}
               </p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* 1. CORRELATIONS */}
+      {/* 1. MCQ COMBO */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+        <button
+          onClick={() =>
+            setExpandedSection(
+              expandedSection === "obj-combo" ? null : "obj-combo",
+            )
+          }
+          className="w-full p-4 flex items-center justify-between bg-indigo-50 dark:bg-indigo-900/20"
+        >
+          <h4 className="font-bold text-indigo-800 dark:text-indigo-200 flex items-center gap-2">
+            🔢 MCQ Combo — Pick Correct Combination (
+            {objectivesBank.mcqCombo.length})
+          </h4>
+          {expandedSection === "obj-combo" ? (
+            <ChevronDown size={20} />
+          ) : (
+            <ChevronRight size={20} />
+          )}
+        </button>
+        {expandedSection === "obj-combo" && (
+          <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+            {objectivesBank.mcqCombo.map((mcq, idx) => {
+              const id = `combo-${idx}`;
+              return (
+                <div
+                  key={idx}
+                  className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl"
+                >
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <p className="font-medium text-slate-800 dark:text-white text-sm flex-1 whitespace-pre-line">
+                      <span className="text-indigo-500 font-bold mr-1">
+                        {idx + 1}.
+                      </span>{" "}
+                      {mcq.q}
+                    </p>
+                    <span className="text-xs bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300 px-2 py-0.5 rounded shrink-0">
+                      {mcq.ch}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-2">
+                    {mcq.options.map((opt, optIdx) => (
+                      <div
+                        key={optIdx}
+                        className={`p-2 rounded-lg text-xs ${showAnswers[id] && optIdx === mcq.a ? "bg-indigo-500 text-white font-bold" : "bg-white dark:bg-slate-600 text-slate-700 dark:text-slate-300"}`}
+                      >
+                        {String.fromCharCode(97 + optIdx)}) {opt}
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => toggleAnswer(id)}
+                    className={`w-full py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1 ${showAnswers[id] ? "bg-indigo-500 text-white" : "bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300"}`}
+                  >
+                    {showAnswers[id] ? <EyeOff size={14} /> : <Eye size={14} />}
+                    {showAnswers[id] ? "Hide" : "Show Answer"}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* 2. COMPLETE THE STATEMENT */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+        <button
+          onClick={() =>
+            setExpandedSection(
+              expandedSection === "obj-complete" ? null : "obj-complete",
+            )
+          }
+          className="w-full p-4 flex items-center justify-between bg-cyan-50 dark:bg-cyan-900/20"
+        >
+          <h4 className="font-bold text-cyan-800 dark:text-cyan-200 flex items-center gap-2">
+            📝 Complete the Statement ({objectivesBank.completeStatement.length}
+            )
+          </h4>
+          {expandedSection === "obj-complete" ? (
+            <ChevronDown size={20} />
+          ) : (
+            <ChevronRight size={20} />
+          )}
+        </button>
+        {expandedSection === "obj-complete" && (
+          <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+            {objectivesBank.completeStatement.map((mcq, idx) => {
+              const id = `complete-${idx}`;
+              return (
+                <div
+                  key={idx}
+                  className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl"
+                >
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <p className="font-medium text-slate-800 dark:text-white text-sm flex-1">
+                      <span className="text-cyan-500 font-bold mr-1">
+                        {idx + 1}.
+                      </span>{" "}
+                      {mcq.q}
+                    </p>
+                    <span className="text-xs bg-cyan-100 dark:bg-cyan-900 text-cyan-700 dark:text-cyan-300 px-2 py-0.5 rounded shrink-0">
+                      {mcq.ch}
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5 mb-2">
+                    {mcq.options.map((opt, optIdx) => (
+                      <div
+                        key={optIdx}
+                        className={`p-2 rounded-lg text-xs ${showAnswers[id] && optIdx === mcq.a ? "bg-cyan-500 text-white font-bold" : "bg-white dark:bg-slate-600 text-slate-700 dark:text-slate-300"}`}
+                      >
+                        {String.fromCharCode(97 + optIdx)}) {opt}
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => toggleAnswer(id)}
+                    className={`w-full py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-1 ${showAnswers[id] ? "bg-cyan-500 text-white" : "bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300"}`}
+                  >
+                    {showAnswers[id] ? <EyeOff size={14} /> : <Eye size={14} />}
+                    {showAnswers[id] ? "Hide" : "Show Answer"}
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* 3. CORRELATIONS */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
         <button
           onClick={() =>
@@ -1903,7 +2880,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         )}
       </div>
 
-      {/* 2. ECONOMIC TERMS */}
+      {/* 4. ECONOMIC TERMS */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
         <button
           onClick={() =>
@@ -1961,7 +2938,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         )}
       </div>
 
-      {/* 3. ODD WORD OUT */}
+      {/* 5. ODD WORD OUT */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
         <button
           onClick={() =>
@@ -2027,7 +3004,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         )}
       </div>
 
-      {/* 4. MCQs */}
+      {/* 6. MCQs */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
         <button
           onClick={() =>
@@ -2088,7 +3065,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
         )}
       </div>
 
-      {/* 5. ASSERTION & REASONING */}
+      {/* 7. ASSERTION & REASONING */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
         <button
           onClick={() =>
@@ -2166,27 +3143,43 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
           {[
             {
               ch: "Ch 1 — Micro/Macro",
-              tip: "Correlations: Tree/Forest, Slicing/Lumping, Price/Income theory",
+              tip: "Correlations: Tree/Forest, Slicing/Lumping, Price/Income theory • MCQ Combo: Scope",
             },
             {
               ch: "Ch 2 — Utility",
-              tip: "Terms: MU, TU definitions • MCQ: TU max when MU=0",
+              tip: "Terms: MU, TU, Satiety • MCQ: TU max when MU=0 • A&R: DMU law",
             },
             {
               ch: "Ch 3 — Demand & Elasticity",
-              tip: "Terms: Types of demand & elasticity • Correlations: Ed values",
+              tip: "Terms: Types of demand & elasticity • Correlations: Ed values • Odd one: Ed types",
+            },
+            {
+              ch: "Ch 4 — Supply",
+              tip: "Correlations: Direct relation • A&R: Supply is relative • Complete: Supply curve direction",
             },
             {
               ch: "Ch 5 — Market Forms",
-              tip: "MCQ: Market types & features • Terms: AR, MR, Selling Cost",
+              tip: "MCQ: Monopoly, Oligopoly features • Terms: AR, MR, Selling Cost • Odd one: Market types",
+            },
+            {
+              ch: "Ch 6 — Index Numbers",
+              tip: "Odd one: Laspeyre's vs Simple types • MCQ Combo: Uses of index numbers • A&R: Sampling",
             },
             {
               ch: "Ch 7 — National Income",
-              tip: "Odd one: NI features • Terms: GDP, NI, Transfer Income",
+              tip: "Odd one: NI features, Factor/Transfer income • Terms: GDP, NI • Correlations: Output/Income method",
             },
             {
-              ch: "Ch 8/9 — Public Finance & Markets",
-              tip: "Odd one: Tax types, Revenue sources • MCQ: RBI functions",
+              ch: "Ch 8 — Public Finance",
+              tip: "Odd one: Tax types, Budget types • Correlations: Direct/Indirect tax • MCQ: Revenue budget",
+            },
+            {
+              ch: "Ch 9 — Money Market",
+              tip: "Odd one: Money vs Capital market instruments • MCQ: RBI functions • Complete: Central Bank",
+            },
+            {
+              ch: "Ch 10 — Foreign Trade",
+              tip: "Terms: Entrepot trade • Odd one: Trade types • A&R: Division of labour",
             },
           ].map((item, idx) => (
             <div key={idx} className="bg-white/15 rounded-xl p-2.5">
@@ -2213,6 +3206,25 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
             Expected: {chapter.weightage}
           </p>
         </div>
+
+        {/* Google Drive Quick Access */}
+        <a
+          href="https://drive.google.com/drive/folders/1LhjJMEG0sLABu9Skt9OFWNHGSsApXNat?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-3 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors"
+        >
+          <span className="text-xl">📁</span>
+          <div className="flex-1">
+            <span className="text-sm font-bold text-green-800 dark:text-green-200">
+              Open Google Drive — Notes & Past Papers
+            </span>
+            <span className="text-xs text-green-600 dark:text-green-400 block">
+              18+ PDFs • Chapter-wise notes • Question banks
+            </span>
+          </div>
+          <Globe size={16} className="text-green-500 shrink-0" />
+        </a>
 
         {/* Chapter Shortcodes */}
         {chapter.shortcodes && chapter.shortcodes.length > 0 && (
@@ -3168,8 +4180,17 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
               Board Exam Crasher • 24 Feb 2026
             </p>
           </div>
+          <a
+            href="https://drive.google.com/drive/folders/1LhjJMEG0sLABu9Skt9OFWNHGSsApXNat?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center hover:bg-green-400 transition text-lg"
+            title="📁 Open Economics Google Drive"
+          >
+            📁
+          </a>
           <div className="bg-indigo-700 px-3 py-1 rounded-full text-xs font-bold">
-            4 DAYS
+            3 DAYS
           </div>
         </div>
       </div>
