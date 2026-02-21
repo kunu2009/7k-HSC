@@ -180,6 +180,7 @@ import DailyMotivation from "./components/DailyMotivation";
 import TodaysFocus from "./components/TodaysFocus";
 import PolScienceBoardCrasher from "./components/PolScienceBoardCrasher";
 import EcoBoardCrasher from "./components/EcoBoardCrasher";
+import EcoMockTest from "./components/EcoMockTest";
 import SettingsPanel from "./components/SettingsPanel";
 import { useProgress } from "./hooks/useProgress";
 import { useChapterCompletion } from "./hooks/useChapterCompletion";
@@ -320,6 +321,7 @@ const App: React.FC = () => {
   const [showPolScienceBoardCrasher, setShowPolScienceBoardCrasher] =
     useState(false);
   const [showEcoBoardCrasher, setShowEcoBoardCrasher] = useState(false);
+  const [showEcoMockTest, setShowEcoMockTest] = useState(false);
 
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -576,6 +578,7 @@ const App: React.FC = () => {
       // Check all modal states and close the first open one
       const modalSetters = [
         { state: showSettings, setter: setShowSettings },
+        { state: showEcoMockTest, setter: setShowEcoMockTest },
         { state: showEcoBoardCrasher, setter: setShowEcoBoardCrasher },
         {
           state: showPolScienceBoardCrasher,
@@ -866,6 +869,7 @@ const App: React.FC = () => {
     showLast24Hours,
     showPolScienceBoardCrasher,
     showEcoBoardCrasher,
+    showEcoMockTest,
     aiModalOpen,
   ]);
   // ==================== END BACK BUTTON HANDLING ====================
@@ -978,7 +982,7 @@ const App: React.FC = () => {
         {!isSidebarOpen && (
           <button
             onClick={() => setIsSidebarOpen(true)}
-            className="fixed top-4 right-4 z-[60] bg-white dark:bg-slate-800 p-2 rounded-full shadow-lg text-slate-600 dark:text-slate-300 hover:text-indigo-600 border border-slate-100 dark:border-slate-700 transition-transform hover:scale-110"
+            className="fixed top-4 right-4 z-[49] bg-white dark:bg-slate-800 p-2 rounded-full shadow-lg text-slate-600 dark:text-slate-300 hover:text-indigo-600 border border-slate-100 dark:border-slate-700 transition-transform hover:scale-110"
             title="Open Sidebar"
           >
             <PanelRightOpen size={24} />
@@ -3240,7 +3244,14 @@ const App: React.FC = () => {
       )}
 
       {showEcoBoardCrasher && (
-        <EcoBoardCrasher onClose={() => setShowEcoBoardCrasher(false)} />
+        <EcoBoardCrasher
+          onClose={() => setShowEcoBoardCrasher(false)}
+          onOpenMockTest={() => setShowEcoMockTest(true)}
+        />
+      )}
+
+      {showEcoMockTest && (
+        <EcoMockTest onClose={() => setShowEcoMockTest(false)} />
       )}
 
       {/* Settings Panel */}

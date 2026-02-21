@@ -24,10 +24,10 @@ import {
   Maximize2,
 } from "lucide-react";
 import { ECONOMICS_BOARD_CRASHER } from "../data/economicsBoardCrasher";
-import EcoMockTest from "./EcoMockTest";
 
 interface EcoBoardCrasherProps {
   onClose: () => void;
+  onOpenMockTest: () => void;
 }
 
 type TabType =
@@ -46,11 +46,13 @@ type TabType =
   | "formulas"
   | "lastmin";
 
-const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
+const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
+  onClose,
+  onOpenMockTest,
+}) => {
   const [activeTab, setActiveTab] = useState<TabType>("overview");
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [showAnswers, setShowAnswers] = useState<Record<string, boolean>>({});
-  const [showMockTest, setShowMockTest] = useState(false);
 
   const data = ECONOMICS_BOARD_CRASHER;
 
@@ -109,7 +111,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
     <div className="space-y-4 p-4">
       {/* Mock Test Button */}
       <button
-        onClick={() => setShowMockTest(true)}
+        onClick={onOpenMockTest}
         className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-4 text-white flex items-center justify-between hover:opacity-90 transition-opacity"
       >
         <div className="flex items-center gap-3">
@@ -4263,9 +4265,6 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({ onClose }) => {
           ))}
         </div>
       </div>
-
-      {/* Mock Test Modal */}
-      {showMockTest && <EcoMockTest onClose={() => setShowMockTest(false)} />}
     </div>
   );
 };
