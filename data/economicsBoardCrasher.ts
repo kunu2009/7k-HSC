@@ -21,7 +21,7 @@ export const ECONOMICS_BOARD_CRASHER = {
   // ==================== CHAPTER 1: INTRO TO MICRO & MACRO ====================
   chapter1: {
     title: "Introduction to Micro and Macro Economics",
-    weightage: "6-8 marks",
+    weightage: "07 marks (10 with options)",
 
     shortcodes: [
       {
@@ -413,7 +413,7 @@ export const ECONOMICS_BOARD_CRASHER = {
   // ==================== CHAPTER 2: UTILITY ANALYSIS ====================
   chapter2: {
     title: "Utility Analysis",
-    weightage: "8-10 marks",
+    weightage: "07 marks (10 with options)",
 
     shortcodes: [
       {
@@ -856,7 +856,7 @@ The Law of DMU is fundamental to understanding consumer behavior and forms the b
   // ==================== CHAPTER 3A: DEMAND ANALYSIS ====================
   chapter3a: {
     title: "Demand Analysis",
-    weightage: "10-12 marks",
+    weightage: "08 marks (12 with options)",
 
     shortcodes: [
       {
@@ -1213,7 +1213,7 @@ The Law of DMU is fundamental to understanding consumer behavior and forms the b
   // ==================== CHAPTER 3B: ELASTICITY OF DEMAND ====================
   chapter3b: {
     title: "Elasticity of Demand",
-    weightage: "10-12 marks",
+    weightage: "08 marks (12 with options)",
 
     shortcodes: [],
 
@@ -1611,7 +1611,7 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
   // ==================== CHAPTER 4: SUPPLY ANALYSIS ====================
   chapter4: {
     title: "Supply Analysis",
-    weightage: "6-8 marks",
+    weightage: "07 marks (10 with options)",
 
     mustKnowConcepts: [
       {
@@ -1965,7 +1965,7 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
   // ==================== CHAPTER 5: FORMS OF MARKET ====================
   chapter5: {
     title: "Forms of Market",
-    weightage: "8-10 marks",
+    weightage: "07 marks (10 with options)",
 
     shortcodes: [
       {
@@ -2299,7 +2299,7 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
   // ==================== CHAPTER 6: INDEX NUMBERS ====================
   chapter6: {
     title: "Index Numbers",
-    weightage: "6-8 marks",
+    weightage: "08 marks (12 with options)",
 
     shortcodes: [
       {
@@ -2553,7 +2553,7 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
   // ==================== CHAPTER 7: NATIONAL INCOME ====================
   chapter7: {
     title: "National Income",
-    weightage: "10-12 marks",
+    weightage: "08 marks (12 with options)",
 
     shortcodes: [
       {
@@ -2901,7 +2901,7 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
   // ==================== CHAPTER 8: PUBLIC FINANCE ====================
   chapter8: {
     title: "Public Finance in India",
-    weightage: "8-10 marks",
+    weightage: "07 marks (10 with options)",
 
     shortcodes: [
       {
@@ -3229,7 +3229,7 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
   // ==================== CHAPTER 9: MONEY MARKET & CAPITAL MARKET ====================
   chapter9: {
     title: "Money Market and Capital Market in India",
-    weightage: "8-10 marks",
+    weightage: "04 marks (06 with options)",
 
     shortcodes: [
       {
@@ -3531,7 +3531,7 @@ Price elasticity is a crucial concept for understanding consumer behavior and ma
   // ==================== CHAPTER 10: FOREIGN TRADE ====================
   chapter10: {
     title: "Foreign Trade of India",
-    weightage: "4-6 marks",
+    weightage: "09 marks (12 with options)",
 
     shortcodes: [],
 

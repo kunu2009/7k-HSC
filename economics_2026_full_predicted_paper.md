@@ -21,6 +21,30 @@
 
 ---
 
+## 📊 Unit-wise Mark Distribution (Correct Weightage)
+
+| Ch | Chapter Name | Marks | Marks with Options |
+|:--:|:-------------|:-----:|:------------------:|
+| 1 | Introduction to Micro & Macro Economics | 07 | 10 |
+| 2 | Utility Analysis | 07 | 10 |
+| 3A | Demand Analysis | 08 | 12 |
+| 3B | Elasticity of Demand | 08 | 12 |
+| 4 | Supply Analysis | 07 | 10 |
+| 5 | Forms of Market | 07 | 10 |
+| 6 | Index Numbers | 08 | 12 |
+| 7 | National Income | 08 | 12 |
+| 8 | Public Finance in India | 07 | 10 |
+| 9 | Money Market & Capital Market | 04 | 06 |
+| 10 | Foreign Trade of India | 09 | 12 |
+| | **TOTAL** | **80** | **116** |
+
+> 🔥 **High-Weightage Chapters (08 marks each):** Ch 3A, 3B, 6, 7 — Focus on these for Q.5 & Q.6
+> 📌 **Important for Long Answers (Q.6):** Ch 1, 2, 3, 7, 8
+> ⚡ **Low-Weightage (skip-risk):** Ch 9 (Money Market) — only 04 marks
+> 🚨 **Don't ignore:** Ch 10 (Foreign Trade) — carries 09 marks despite seeming small!
+
+---
+
 ## Q.1: Objective Questions (20 Marks) — Already Predicted Above
 
 *(Refer to the earlier prediction for Q.1 A/B/C/D — MCQ, Correlation, Odd One Out, Economic Terms)*
