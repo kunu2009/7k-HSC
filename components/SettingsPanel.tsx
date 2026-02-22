@@ -118,7 +118,37 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [showThemePicker, setShowThemePicker] = useState(false);
 
+  // Drag to close logic
+  const [dragY, setDragY] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startY, setStartY] = useState(0);
+
   if (!isOpen) return null;
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setIsDragging(true);
+    setStartY(e.touches[0].clientY);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging) return;
+    const currentY = e.touches[0].clientY;
+    const diff = currentY - startY;
+    if (diff > 0) {
+      setDragY(diff);
+    }
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+    if (dragY > 150) {
+      // Threshold to close
+      onClose();
+    } else {
+      // Snap back
+      setDragY(0);
+    }
+  };
 
   const handleToggleCompletedSubjects = () => {
     const newValue = !showCompletedSubjects;
@@ -182,8 +212,25 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center">
-      <div className="bg-white dark:bg-slate-900 w-full sm:max-w-md sm:rounded-2xl rounded-t-3xl max-h-[85vh] overflow-hidden flex flex-col animate-slide-up">
+    <div
+      className="fixed inset-0 bg-black/50 z-50 flex items-end sm:items-center justify-center backdrop-blur-sm transition-all"
+      onClick={(e) => e.target === e.currentTarget && onClose()}
+    >
+      <div
+        className="bg-white dark:bg-slate-900 w-full sm:max-w-md sm:rounded-2xl rounded-t-3xl max-h-[85vh] overflow-hidden flex flex-col animate-slide-up shadow-2xl"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        style={{
+          transform: `translateY(${dragY}px)`,
+          transition: isDragging ? "none" : "transform 0.3s ease-out",
+        }}
+      >
+        {/* Drag Handle (Mobile only) */}
+        <div className="w-full flex justify-center pt-3 pb-1 sm:hidden bg-gradient-to-r from-slate-700 to-slate-800 dark:from-slate-800 dark:to-slate-900">
+          <div className="w-12 h-1.5 bg-white/20 rounded-full"></div>
+        </div>
+
         {/* Header */}
         <div className="bg-gradient-to-r from-slate-700 to-slate-800 dark:from-slate-800 dark:to-slate-900 p-4 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
