@@ -100,6 +100,7 @@ interface SettingsPanelProps {
   setShowCompletedSubjects: (value: boolean) => void;
   completedSubjects: Subject[];
   onResetOnboarding?: () => void;
+  installPrompt?: any;
 }
 
 const SettingsPanel: React.FC<SettingsPanelProps> = ({
@@ -113,6 +114,7 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
   setShowCompletedSubjects,
   completedSubjects,
   onResetOnboarding,
+  installPrompt,
 }) => {
   const [settings, setSettings] = useState(() => db.getSettings());
   const [showAdvanced, setShowAdvanced] = useState(false);
@@ -247,6 +249,39 @@ const SettingsPanel: React.FC<SettingsPanelProps> = ({
 
         {/* Content */}
         <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          {/* Install App Banner */}
+          {installPrompt && (
+            <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl p-4 text-white shadow-lg">
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
+                    <Download size={20} />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Install App</h3>
+                    <p className="text-purple-100 text-xs">
+                      Add to home screen for offline access
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  installPrompt.prompt();
+                  installPrompt.userChoice.then((choiceResult: any) => {
+                    if (choiceResult.outcome === "accepted") {
+                      console.log("User accepted the install prompt");
+                    }
+                    onClose();
+                  });
+                }}
+                className="w-full bg-white text-purple-600 font-bold py-2 rounded-lg text-sm hover:bg-purple-50 transition-colors"
+              >
+                Install Now
+              </button>
+            </div>
+          )}
+
           {/* Appearance Section */}
           <div className="space-y-2">
             <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wide px-1">

@@ -326,6 +326,7 @@ const App: React.FC = () => {
   const [showHistoryBoardCrasher, setShowHistoryBoardCrasher] = useState(false);
   const [showEcoBoardCrasher, setShowEcoBoardCrasher] = useState(false);
   const [showEcoMockTest, setShowEcoMockTest] = useState(false);
+  const [installPrompt, setInstallPrompt] = useState<any>(null);
 
   // Dark Mode State
   const [darkMode, setDarkMode] = useState(() => db.getSettings().darkMode);
@@ -579,6 +580,23 @@ const App: React.FC = () => {
     };
 
     initNotifications();
+  }, []);
+
+  // PWA Install Prompt
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: any) => {
+      e.preventDefault();
+      setInstallPrompt(e);
+    };
+
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+    return () => {
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt,
+      );
+    };
   }, []);
 
   // Create a map of completed chapters for TodaysFocus component
@@ -3305,6 +3323,7 @@ const App: React.FC = () => {
         showCompletedSubjects={showCompletedSubjects}
         setShowCompletedSubjects={setShowCompletedSubjects}
         completedSubjects={getCompletedSubjects()}
+        installPrompt={installPrompt}
         onResetOnboarding={() => {
           localStorage.clear();
           setIsOnboarded(false);
