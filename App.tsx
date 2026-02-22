@@ -180,6 +180,7 @@ import DailyMotivation from "./components/DailyMotivation";
 import TodaysFocus from "./components/TodaysFocus";
 import PolScienceBoardCrasher from "./components/PolScienceBoardCrasher";
 import EcoBoardCrasher from "./components/EcoBoardCrasher";
+import HistoryBoardCrasher from "./components/HistoryBoardCrasher";
 import EcoMockTest from "./components/EcoMockTest";
 import SettingsPanel from "./components/SettingsPanel";
 import { useProgress } from "./hooks/useProgress";
@@ -320,6 +321,7 @@ const App: React.FC = () => {
   const [showLast24Hours, setShowLast24Hours] = useState(false);
   const [showPolScienceBoardCrasher, setShowPolScienceBoardCrasher] =
     useState(false);
+  const [showHistoryBoardCrasher, setShowHistoryBoardCrasher] = useState(false);
   const [showEcoBoardCrasher, setShowEcoBoardCrasher] = useState(false);
   const [showEcoMockTest, setShowEcoMockTest] = useState(false);
 
@@ -1840,6 +1842,7 @@ const App: React.FC = () => {
                 ecoElasticityCalc: () => setShowEcoElasticityCalc(true),
                 economicsCaseStudies: () => setShowEconomicsCaseStudies(true),
                 // History
+                historyBoardCrasher: () => setShowHistoryBoardCrasher(true),
                 historyStudyHub: () => setShowHistoryStudyHub(true),
                 historyTimelineQuiz: () => setShowHistoryTimelineQuiz(true),
                 historyChapterSummary: () => setShowHistoryChapterSummary(true),
@@ -3247,6 +3250,12 @@ const App: React.FC = () => {
         <EcoBoardCrasher
           onClose={() => setShowEcoBoardCrasher(false)}
           onOpenMockTest={() => setShowEcoMockTest(true)}
+        />
+      )}
+
+      {showHistoryBoardCrasher && (
+        <HistoryBoardCrasher
+          onClose={() => setShowHistoryBoardCrasher(false)}
         />
       )}
 

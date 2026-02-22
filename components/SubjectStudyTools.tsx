@@ -95,12 +95,19 @@ const SUBJECT_TOOLS: Record<
   // History tools
   his: [
     {
+      id: "historyBoardCrasher",
+      name: "📜 BOARD CRASHER",
+      description: "IMP Questions + PYQs + Dates",
+      icon: <Zap size={20} />,
+      color: "bg-orange-600",
+      featured: true,
+    },
+    {
       id: "historyStudyHub",
       name: "History Hub",
       description: "Complete history resources",
       icon: <BookOpen size={20} />,
       color: "bg-orange-500",
-      featured: true,
     },
     {
       id: "historyTimelineQuiz",
