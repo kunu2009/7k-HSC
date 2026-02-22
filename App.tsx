@@ -183,6 +183,7 @@ import EcoBoardCrasher from "./components/EcoBoardCrasher";
 import HistoryBoardCrasher from "./components/HistoryBoardCrasher";
 import EcoMockTest from "./components/EcoMockTest";
 import SettingsPanel from "./components/SettingsPanel";
+import OfflineIndicator from "./components/OfflineIndicator";
 import { useProgress } from "./hooks/useProgress";
 import { useChapterCompletion } from "./hooks/useChapterCompletion";
 import { explainConcept } from "./services/geminiService";
@@ -3289,6 +3290,9 @@ const App: React.FC = () => {
       {showEcoMockTest && (
         <EcoMockTest onClose={() => setShowEcoMockTest(false)} />
       )}
+
+      {/* Offline Indicator */}
+      <OfflineIndicator />
 
       {/* Settings Panel */}
       <SettingsPanel
