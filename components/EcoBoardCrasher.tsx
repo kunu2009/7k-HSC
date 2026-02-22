@@ -54,6 +54,10 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
   const [activeTab, setActiveTab] = useState<TabType>("overview");
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [showAnswers, setShowAnswers] = useState<Record<string, boolean>>({});
+  const [fullscreenContent, setFullscreenContent] = useState<{
+    title: string;
+    content: React.ReactNode;
+  } | null>(null);
 
   const data = ECONOMICS_BOARD_CRASHER;
 
@@ -112,6 +116,66 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
 
   const toggleAnswer = (id: string) => {
     setShowAnswers((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  const renderTable = (markdownTable: string) => {
+    const rows = markdownTable
+      .trim()
+      .split("\n")
+      .filter((row) => row.trim() !== "");
+    if (rows.length < 3)
+      return (
+        <div className="whitespace-pre-wrap font-mono text-xs">
+          {markdownTable}
+        </div>
+      );
+
+    const headers = rows[0]
+      .split("|")
+      .filter((cell) => cell.trim() !== "")
+      .map((cell) => cell.trim());
+    const dataRows = rows.slice(2).map((row) =>
+      row
+        .split("|")
+        .filter((cell) => cell.trim() !== "")
+        .map((cell) => cell.trim()),
+    );
+
+    return (
+      <div className="overflow-x-auto">
+        <table className="w-full text-left border-collapse text-xs">
+          <thead>
+            <tr>
+              {headers.map((header, idx) => (
+                <th
+                  key={idx}
+                  className="p-2 border-b border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-700/50 font-bold text-slate-700 dark:text-slate-300"
+                >
+                  {header}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {dataRows.map((row, rIdx) => (
+              <tr
+                key={rIdx}
+                className="border-b border-slate-100 dark:border-slate-800 last:border-0"
+              >
+                {row.map((cell, cIdx) => (
+                  <td
+                    key={cIdx}
+                    className="p-2 text-slate-600 dark:text-slate-400 align-top"
+                  >
+                    {cell}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
   };
 
   const renderOverview = () => (
@@ -4176,6 +4240,10 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
     const impData = (data as any).mostImportant2026;
     if (!impData) return <div className="p-4">Data not found</div>;
 
+    const openFullscreen = (title: string, content: React.ReactNode) => {
+      setFullscreenContent({ title, content });
+    };
+
     return (
       <div className="space-y-4 p-4">
         {/* Header */}
@@ -4212,9 +4280,32 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
               {impData.identifyConcepts.map((item: any, idx: number) => (
                 <div
                   key={idx}
-                  className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                  className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl relative group"
                 >
-                  <p className="text-sm font-medium text-slate-800 dark:text-white mb-2 italic">
+                  <button
+                    onClick={() =>
+                      openFullscreen(
+                        "Identify & Explain",
+                        <div className="space-y-4">
+                          <p className="text-lg font-medium text-slate-800 dark:text-white italic">
+                            "{item.q}"
+                          </p>
+                          <div className="bg-purple-100 dark:bg-purple-900/30 p-6 rounded-xl border border-purple-200 dark:border-purple-800">
+                            <p className="text-purple-800 dark:text-purple-200 font-bold text-xl mb-2">
+                              Concept: {item.concept}
+                            </p>
+                            <p className="text-base text-slate-700 dark:text-slate-300 leading-relaxed">
+                              {item.explanation}
+                            </p>
+                          </div>
+                        </div>,
+                      )
+                    }
+                    className="absolute top-2 right-2 p-2 bg-white/50 dark:bg-black/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <Maximize2 size={16} />
+                  </button>
+                  <p className="text-sm font-medium text-slate-800 dark:text-white mb-2 italic pr-8">
                     "{item.q}"
                   </p>
                   <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg border border-purple-200 dark:border-purple-800">
@@ -4255,9 +4346,34 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
               {impData.agreeDisagree.map((item: any, idx: number) => (
                 <div
                   key={idx}
-                  className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                  className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl relative group"
                 >
-                  <p className="text-sm font-bold text-slate-800 dark:text-white mb-2">
+                  <button
+                    onClick={() =>
+                      openFullscreen(
+                        "Agree or Disagree",
+                        <div className="space-y-4">
+                          <p className="text-xl font-bold text-slate-800 dark:text-white">
+                            "{item.q}"
+                          </p>
+                          <div
+                            className={`text-sm font-bold px-3 py-1.5 rounded-lg inline-block ${item.agree ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+                          >
+                            {item.agree
+                              ? "✅ Yes, I Agree"
+                              : "❌ No, I Disagree"}
+                          </div>
+                          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl text-base text-slate-700 dark:text-slate-300 whitespace-pre-wrap border border-slate-200 dark:border-slate-700 leading-relaxed">
+                            {item.reason}
+                          </div>
+                        </div>,
+                      )
+                    }
+                    className="absolute top-2 right-2 p-2 bg-white/50 dark:bg-black/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <Maximize2 size={16} />
+                  </button>
+                  <p className="text-sm font-bold text-slate-800 dark:text-white mb-2 pr-8">
                     "{item.q}"
                   </p>
                   <div
@@ -4301,13 +4417,31 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
               {impData.distinguishBetween.map((item: any, idx: number) => (
                 <div
                   key={idx}
-                  className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                  className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl relative group"
                 >
-                  <p className="text-sm font-bold text-slate-800 dark:text-white mb-2">
+                  <button
+                    onClick={() =>
+                      openFullscreen(
+                        "Distinguish Between",
+                        <div className="space-y-4">
+                          <p className="text-xl font-bold text-slate-800 dark:text-white mb-4">
+                            {item.q}
+                          </p>
+                          <div className="bg-white dark:bg-slate-800 p-4 rounded-xl border border-blue-200 dark:border-blue-800 overflow-x-auto text-base">
+                            {renderTable(item.answer)}
+                          </div>
+                        </div>,
+                      )
+                    }
+                    className="absolute top-2 right-2 p-2 bg-white/50 dark:bg-black/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <Maximize2 size={16} />
+                  </button>
+                  <p className="text-sm font-bold text-slate-800 dark:text-white mb-2 pr-8">
                     {item.q}
                   </p>
-                  <div className="bg-white dark:bg-slate-800 p-3 rounded-lg text-xs font-mono whitespace-pre-wrap overflow-x-auto border border-blue-200 dark:border-blue-800">
-                    {item.answer}
+                  <div className="bg-white dark:bg-slate-800 p-3 rounded-lg border border-blue-200 dark:border-blue-800 overflow-x-auto">
+                    {renderTable(item.answer)}
                   </div>
                 </div>
               ))}
@@ -4320,6 +4454,28 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
 
   return (
     <div className="fixed inset-0 bg-slate-100 dark:bg-slate-950 z-50 flex flex-col">
+      {/* Fullscreen Modal */}
+      {fullscreenContent && (
+        <div className="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
+          <div className="bg-white dark:bg-slate-900 w-full max-w-2xl max-h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200">
+            <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">
+              <h3 className="font-bold text-lg text-slate-800 dark:text-white">
+                {fullscreenContent.title}
+              </h3>
+              <button
+                onClick={() => setFullscreenContent(null)}
+                className="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors"
+              >
+                <X size={20} />
+              </button>
+            </div>
+            <div className="p-6 overflow-y-auto">
+              {fullscreenContent.content}
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Header */}
       <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-500 p-4 text-white shrink-0 safe-area-top">
         <div className="flex items-center gap-3">
