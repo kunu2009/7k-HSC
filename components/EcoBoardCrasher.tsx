@@ -34,6 +34,7 @@ type TabType =
   | "overview"
   | "analysis"
   | "objectives"
+  | "imp2026"
   | "ch1"
   | "ch2"
   | "ch3a"
@@ -79,6 +80,12 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
       label: "Q.1 Obj",
       shortLabel: "✅",
       color: "bg-emerald-500",
+    },
+    {
+      id: "imp2026",
+      label: "🔥 Most IMP",
+      shortLabel: "🔥",
+      color: "bg-orange-600",
     },
     { id: "ch1", label: "Intro", shortLabel: "1", color: "bg-slate-500" },
     { id: "ch2", label: "Utility", shortLabel: "2", color: "bg-purple-500" },
@@ -4165,6 +4172,152 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
     );
   };
 
+  const renderImpQuestions = () => {
+    const impData = (data as any).mostImportant2026;
+    if (!impData) return <div className="p-4">Data not found</div>;
+
+    return (
+      <div className="space-y-4 p-4">
+        {/* Header */}
+        <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl p-4 text-white">
+          <h3 className="font-black text-xl flex items-center gap-2">
+            🔥 {impData.title}
+          </h3>
+          <p className="text-white/90 text-sm mt-1">
+            Highly probable questions for 2026 Board Exam
+          </p>
+        </div>
+
+        {/* Q.2 (A) Identify Concepts */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+          <button
+            onClick={() =>
+              setExpandedSection(
+                expandedSection === "imp-identify" ? null : "imp-identify",
+              )
+            }
+            className="w-full p-4 flex items-center justify-between bg-purple-50 dark:bg-purple-900/20"
+          >
+            <h4 className="font-bold text-purple-800 dark:text-purple-200 flex items-center gap-2">
+              💡 Q.2(A) Identify & Explain ({impData.identifyConcepts.length})
+            </h4>
+            {expandedSection === "imp-identify" ? (
+              <ChevronDown size={20} />
+            ) : (
+              <ChevronRight size={20} />
+            )}
+          </button>
+          {expandedSection === "imp-identify" && (
+            <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+              {impData.identifyConcepts.map((item: any, idx: number) => (
+                <div
+                  key={idx}
+                  className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                >
+                  <p className="text-sm font-medium text-slate-800 dark:text-white mb-2 italic">
+                    "{item.q}"
+                  </p>
+                  <div className="bg-purple-100 dark:bg-purple-900/30 p-3 rounded-lg border border-purple-200 dark:border-purple-800">
+                    <p className="text-purple-800 dark:text-purple-200 font-bold text-sm mb-1">
+                      Concept: {item.concept}
+                    </p>
+                    <p className="text-xs text-slate-700 dark:text-slate-300">
+                      {item.explanation}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Q.4 Agree/Disagree */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+          <button
+            onClick={() =>
+              setExpandedSection(
+                expandedSection === "imp-agree" ? null : "imp-agree",
+              )
+            }
+            className="w-full p-4 flex items-center justify-between bg-amber-50 dark:bg-amber-900/20"
+          >
+            <h4 className="font-bold text-amber-800 dark:text-amber-200 flex items-center gap-2">
+              ✅❌ Q.4 Agree/Disagree ({impData.agreeDisagree.length})
+            </h4>
+            {expandedSection === "imp-agree" ? (
+              <ChevronDown size={20} />
+            ) : (
+              <ChevronRight size={20} />
+            )}
+          </button>
+          {expandedSection === "imp-agree" && (
+            <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+              {impData.agreeDisagree.map((item: any, idx: number) => (
+                <div
+                  key={idx}
+                  className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                >
+                  <p className="text-sm font-bold text-slate-800 dark:text-white mb-2">
+                    "{item.q}"
+                  </p>
+                  <div
+                    className={`text-xs font-bold px-2 py-1 rounded inline-block mb-2 ${item.agree ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
+                  >
+                    {item.agree ? "✅ Yes, I Agree" : "❌ No, I Disagree"}
+                  </div>
+                  <div className="bg-white dark:bg-slate-800 p-3 rounded-lg text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap border border-slate-200 dark:border-slate-700">
+                    {item.reason}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Q.2 (B) Distinguish Between */}
+        <div className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+          <button
+            onClick={() =>
+              setExpandedSection(
+                expandedSection === "imp-distinguish"
+                  ? null
+                  : "imp-distinguish",
+              )
+            }
+            className="w-full p-4 flex items-center justify-between bg-blue-50 dark:bg-blue-900/20"
+          >
+            <h4 className="font-bold text-blue-800 dark:text-blue-200 flex items-center gap-2">
+              📊 Q.2(B) Distinguish Between ({impData.distinguishBetween.length}
+              )
+            </h4>
+            {expandedSection === "imp-distinguish" ? (
+              <ChevronDown size={20} />
+            ) : (
+              <ChevronRight size={20} />
+            )}
+          </button>
+          {expandedSection === "imp-distinguish" && (
+            <div className="p-4 space-y-4 max-h-[60vh] overflow-y-auto">
+              {impData.distinguishBetween.map((item: any, idx: number) => (
+                <div
+                  key={idx}
+                  className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                >
+                  <p className="text-sm font-bold text-slate-800 dark:text-white mb-2">
+                    {item.q}
+                  </p>
+                  <div className="bg-white dark:bg-slate-800 p-3 rounded-lg text-xs font-mono whitespace-pre-wrap overflow-x-auto border border-blue-200 dark:border-blue-800">
+                    {item.answer}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="fixed inset-0 bg-slate-100 dark:bg-slate-950 z-50 flex flex-col">
       {/* Header */}
@@ -4224,6 +4377,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
         {activeTab === "overview" && renderOverview()}
         {activeTab === "analysis" && renderAnalysis()}
         {activeTab === "objectives" && renderObjectives()}
+        {activeTab === "imp2026" && renderImpQuestions()}
         {activeTab === "ch1" && renderChapter("chapter1")}
         {activeTab === "ch2" && renderChapter("chapter2")}
         {activeTab === "ch3a" && renderChapter("chapter3a")}

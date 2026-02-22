@@ -4718,6 +4718,345 @@ Fisher's is called 'Ideal Index' because:
       "Calculate Simple/Weighted Price Index Number",
     ],
   },
+
+  // ==================== MOST IMPORTANT Q2 A, AGREE/DISAGREE, DISTINGUISH (2026) ====================
+  mostImportant2026: {
+    title: "🔥 Most IMP Questions (2026 Board)",
+
+    // Q.2 (A) Identify and Explain the Concepts (2 Marks each)
+    identifyConcepts: [
+      {
+        q: "Mala collected information about the income and expenditure of twenty five families from her locality.",
+        concept: "Micro Economics (Study of Individual Units)",
+        explanation:
+          "Micro economics is the study of particular firms, particular households, individual prices, wages, incomes, individual industries, and particular commodities. Here, Mala is studying only 25 families (a small part), not the whole economy.",
+      },
+      {
+        q: "Ramesh analysed the total investments, total employment, total consumption and total savings of the economy for the financial year 2019–20.",
+        concept: "Macro Economics (Study of Aggregates)",
+        explanation:
+          "Macro economics deals with the functioning of the economy as a whole. It studies aggregate economic variables like total employment, total savings, and total investment.",
+      },
+      {
+        q: "Rohan created a jewellery box out of pieces of wood.",
+        concept: "Form Utility",
+        explanation:
+          "Form utility is created when the utility of a commodity increases due to a change in its shape or structure. Here, wood is converted into a useful box.",
+      },
+      {
+        q: "Kavita consumed an additional unit of bread to satisfy her hunger.",
+        concept: "Marginal Utility",
+        explanation:
+          "Marginal utility is the additional utility derived by a consumer from an additional unit of a commodity consumed. It goes on diminishing with every successive unit.",
+      },
+      {
+        q: "Kaushik purchased 10 kgs of wheat for his monthly consumption at Rs 40 per kg.",
+        concept: "Individual Demand",
+        explanation:
+          "Individual demand is the quantity of a commodity demanded by a single consumer at a given price during a given period of time.",
+      },
+      {
+        q: "Aman purchased sewing machines and furniture for his tailoring shop.",
+        concept: "Fixed Capital / Investment",
+        explanation:
+          "Expenditure on fixed assets like machinery and furniture which are used for further production is called fixed capital investment.",
+      },
+      {
+        q: "Kiran’s demand for milk remained unchanged even when its price increased by 10%.",
+        concept: "Perfectly Inelastic Demand (Ed = 0)",
+        explanation:
+          "When a percentage change in price leads to no change in quantity demanded, it is called perfectly inelastic demand. The demand curve is a vertical straight line.",
+      },
+      {
+        q: "At Amulya Café, the demand for tea increased by 5% due to a 10% rise in the price of coffee.",
+        concept: "Cross Elasticity (Substitute Goods)",
+        explanation:
+          "It refers to a change in quantity demanded of one commodity due to a change in the price of another commodity. Here, tea and coffee are substitutes, showing positive cross elasticity.",
+      },
+      {
+        q: "Amar sells 50 dozens of mangoes daily at Rs 300 per dozen.",
+        concept: "Individual Supply",
+        explanation:
+          "Individual supply is the quantity of a commodity that a seller is willing and able to offer for sale at a given price during a given period of time.",
+      },
+      {
+        q: "Ajay’s papad and pickle producing unit incurred expenditure of Rs 50,000 on machinery, Rs 1,00,000 towards rent and Rs 2,00,000 on wages for the workers during 2018–19.",
+        concept: "Total Cost of Production",
+        explanation:
+          "Total Cost = Total Fixed Cost + Total Variable Cost. Here, machinery and rent are fixed costs, while wages are variable costs.",
+      },
+      {
+        q: "Anoop Ayurveda produces unique herbal hair oil which has no close substitutes.",
+        concept: "Monopoly",
+        explanation:
+          "Monopoly is a market structure with a single seller who has complete control over the supply of the product which has no close substitutes.",
+      },
+      {
+        q: "Sunrise Cosmetic Company spends on advertisements, broadcasts on radio and television as well as distributes free samples of its shampoo product in order to increase its demand.",
+        concept: "Selling Cost (Monopolistic Competition)",
+        explanation:
+          "Selling cost is the expenditure incurred by a firm to create demand for its product and increase sales volume. It is a key feature of monopolistic competition.",
+      },
+      {
+        q: "Bombay Stock Exchange has developed “Sensex” as a stock market index for reflecting the share prices of listed companies.",
+        concept: "Price Index Number",
+        explanation:
+          "A price index number measures the general changes in the prices of goods (or shares) over a period of time.",
+      },
+      {
+        q: "Agricultural Research Institute constructed an index number to measure changes in the production of raw cotton in Maharashtra during the period 2015–2020.",
+        concept: "Quantity Index Number",
+        explanation:
+          "Quantity index number measures changes in the level of output or physical volume of production in the economy.",
+      },
+      {
+        q: "Manish purchased 100 metres of cotton textile to produce readymade shirts at his garment factory.",
+        concept: "Intermediate Consumption / Intermediate Goods",
+        explanation:
+          "Goods purchased by a firm for use in the production of other goods are called intermediate goods. Their value is excluded from National Income to avoid double counting.",
+      },
+      {
+        q: "Sarla, a retired school teacher receives a monthly pension of Rs 20,000 from the Government.",
+        concept: "Transfer Payment / Transfer Income",
+        explanation:
+          "Income received without rendering any productive service in return is called transfer income. It is excluded from National Income.",
+      },
+      {
+        q: "Prakash paid an income tax of Rs 62,000 during the accounting year 2018–2019.",
+        concept: "Direct Tax",
+        explanation:
+          "A direct tax is paid by the person on whom it is levied. The burden of tax cannot be shifted to others. Income tax is a direct tax.",
+      },
+      {
+        q: "Reserve Bank of India helps to raise loans for both the Central and State Governments by selling government bonds and securities.",
+        concept: "Banker to the Government",
+        explanation:
+          "The RBI acts as a banker, agent, and advisor to the government. It manages public debt by issuing bonds and securities.",
+      },
+      {
+        q: "AVM bank provides d-mat facility, internet banking and mobile banking facilities to its customers.",
+        concept: "Utility Functions of Commercial Banks",
+        explanation:
+          "Apart from primary functions, banks provide utility services like locker facilities, D-mat accounts, internet banking, etc., for the convenience of customers.",
+      },
+      {
+        q: "Kerala-based company K Jewellers intends to raise Rs 1000 crore by fresh issuance of shares.",
+        concept: "Primary Market (New Issue Market)",
+        explanation:
+          "The primary market is the market for new securities. Here, the company is issuing fresh shares to raise capital.",
+      },
+      {
+        q: "Tamil Nadu purchases wheat from Punjab and Uttar Pradesh.",
+        concept: "Internal Trade (Domestic Trade)",
+        explanation:
+          "Trade carried out within the political boundaries of a country is called internal or domestic trade.",
+      },
+      {
+        q: "Alfonso mangoes from Maharashtra are sold in the international market.",
+        concept: "Export Trade (Foreign Trade)",
+        explanation:
+          "Export trade refers to the sale of goods and services by one country to another country.",
+      },
+    ],
+
+    // Q.4 Agree or Disagree with Reasons (4 Marks each)
+    agreeDisagree: [
+      {
+        q: "The scope of microeconomics is unlimited.",
+        agree: false,
+        reason:
+          "1. Microeconomics studies individual units like a consumer, firm, or price.\n2. It uses the slicing method to study small parts of the economy.\n3. It ignores economy-wide aggregates like National Income or Inflation.\n4. Therefore, its scope is limited, not unlimited.",
+      },
+      {
+        q: "Macroeconomics is different from Microeconomics.",
+        agree: true,
+        reason:
+          "1. Micro studies individual units; Macro studies the economy as a whole.\n2. Micro uses the slicing method; Macro uses the lumping method.\n3. Micro deals with price determination; Macro deals with income determination.\n4. Hence, they are fundamentally different.",
+      },
+      {
+        q: "When total utility is maximum, marginal utility is zero.",
+        agree: true,
+        reason:
+          "1. Total Utility (TU) increases at a diminishing rate as consumption increases.\n2. Marginal Utility (MU) goes on diminishing.\n3. At the point of satiety, the consumer is fully satisfied, and MU becomes zero.\n4. This is the point where TU reaches its maximum.",
+      },
+      {
+        q: "There are no exceptions to the law of diminishing marginal utility.",
+        agree: false,
+        reason:
+          "1. The law has exceptions like Hobbies (collection of stamps, coins).\n2. Misers (greed for money increases with more money).\n3. Drunkards (more liquor increases desire).\n4. Power and Money are also considered exceptions.",
+      },
+      {
+        q: "All desires are demand.",
+        agree: false,
+        reason:
+          "1. Desire is a mere wish to have something.\n2. Demand is desire backed by willingness and ability to pay.\n3. A beggar's desire for a car is not demand.\n4. Only when ability and willingness are present does desire become demand.",
+      },
+      {
+        q: "Marginal utility curve slopes downwards.",
+        agree: true,
+        reason:
+          "1. According to the Law of DMU, as consumption increases, MU diminishes.\n2. For the first unit, MU is high; for subsequent units, it falls.\n3. It eventually becomes zero and then negative.\n4. Graphically, this is shown by a curve sloping downwards from left to right.",
+      },
+      {
+        q: "When the prices of Giffen goods falls, demand for such goods rises.",
+        agree: false,
+        reason:
+          "1. Giffen goods are inferior goods.\n2. When their price falls, consumers' real income increases.\n3. They prefer to buy superior goods instead of more Giffen goods.\n4. Thus, demand for Giffen goods falls when their price falls (Giffen Paradox).",
+      },
+      {
+        q: "There are no exceptions to the law of demand.",
+        agree: false,
+        reason:
+          "1. The law of demand has several exceptions.\n2. Giffen goods (demand falls when price falls).\n3. Prestige goods (rich buy more at higher prices).\n4. Speculation (buying more at high prices if expecting further rise).",
+      },
+      {
+        q: "There is an inverse relationship between price and demand.",
+        agree: true,
+        reason:
+          "1. Law of demand states that other things being equal, higher price leads to lower demand.\n2. This is due to the Law of DMU.\n3. Income effect: Price fall increases purchasing power.\n4. Substitution effect: Consumers switch to cheaper goods.",
+      },
+      {
+        q: "The supply curve of labour is backward bending.",
+        agree: true,
+        reason:
+          "1. Initially, higher wages lead to more work (supply of labour rises).\n2. After a certain level, workers prefer leisure over work.\n3. Further wage rise leads to reduced working hours.\n4. Thus, the supply curve bends backwards.",
+      },
+      {
+        q: "There is a direct relationship between price and quantity supplied.",
+        agree: true,
+        reason:
+          "1. Law of supply states that higher price leads to higher supply.\n2. Producers are motivated by profit.\n3. Higher prices mean higher profit margins, encouraging more production.\n4. Thus, the supply curve slopes upwards.",
+      },
+      {
+        q: "There are many exceptions to the law of supply.",
+        agree: true,
+        reason:
+          "1. Supply of labour (backward bending).\n2. Agricultural goods (depend on weather, not just price).\n3. Perishable goods (sold even at low prices).\n4. Rare articles (supply cannot be increased).",
+      },
+      {
+        q: "Seller is the price maker under perfect competition.",
+        agree: false,
+        reason:
+          "1. In perfect competition, there are a large number of sellers.\n2. No single seller can influence the market price.\n3. Price is determined by market demand and supply forces.\n4. The seller is a 'Price Taker', not a 'Price Maker'.",
+      },
+      {
+        q: "There is product differentiation under monopolistic competition.",
+        agree: true,
+        reason:
+          "1. Product differentiation is the main feature of monopolistic competition.\n2. Products are close substitutes but not identical.\n3. They differ in brand, quality, packaging, color, etc.\n4. This allows firms to have some control over price.",
+      },
+      {
+        q: "Selling cost is the only feature of monopolistic competition.",
+        agree: false,
+        reason:
+          "1. Selling cost is an important feature, but not the only one.\n2. Other features include a fairly large number of sellers.\n3. Free entry and exit.\n4. Product differentiation and close substitutes.",
+      },
+      {
+        q: "Index numbers measure changes in the price level only.",
+        agree: false,
+        reason:
+          "1. Index numbers measure changes in various variables, not just price.\n2. Quantity Index Numbers measure changes in output/volume.\n3. Value Index Numbers measure changes in total value (Price × Qty).\n4. Special Purpose Index Numbers are used for import-export, labour, etc.",
+      },
+      {
+        q: "Any year can be selected as the base year.",
+        agree: false,
+        reason:
+          "1. The base year must be a 'normal' year.\n2. It should be free from natural calamities, wars, or economic instability.\n3. It should not be too distant from the current year.\n4. Improper base year leads to misleading comparisons.",
+      },
+      {
+        q: "There are many theoretical difficulties in the estimation of national income.",
+        agree: true,
+        reason:
+          "1. Transfer payments (pension, unemployment allowance) – whether to include or not.\n2. Unpaid services (housewife's work) – difficult to value.\n3. Income from illegal activities (black money) – ignored.\n4. Valuation of government services – no market price.",
+      },
+      {
+        q: "Transfer payments are included in national income.",
+        agree: false,
+        reason:
+          "1. Transfer payments include pension, scholarship, unemployment allowance, etc.\n2. They are incomes received without contributing any productive service.\n3. National Income measures value of goods and services PRODUCED.\n4. Hence, transfer payments are excluded to avoid overestimation.",
+      },
+      {
+        q: "Obligatory functions is the only function of the government.",
+        agree: false,
+        reason:
+          "1. Government has Obligatory (Compulsory) functions like defense, law & order.\n2. But it also has Optional (Developmental) functions.\n3. E.g., education, health, social security, infrastructure.\n4. Modern welfare states focus heavily on optional functions.",
+      },
+      {
+        q: "Public finance is more elastic compared to private finance.",
+        agree: true,
+        reason:
+          "1. The government has huge sources of revenue (taxes, loans, printing money).\n2. It can easily increase revenue to meet increased expenditure.\n3. Private individuals have limited sources.\n4. Thus, public finance is more elastic.",
+      },
+      {
+        q: "Issue of currency notes is the only function of Reserve Bank of India.",
+        agree: false,
+        reason:
+          "1. Issuing currency is a primary function, but not the only one.\n2. RBI acts as Banker to the Government.\n3. It is the Banker's Bank and Lender of Last Resort.\n4. It controls credit and manages foreign exchange reserves.",
+      },
+      {
+        q: "Commercial banks create credit.",
+        agree: true,
+        reason:
+          "1. Commercial banks accept primary deposits from the public.\n2. They keep a fraction (CRR) and lend the rest.\n3. The loan amount is credited to the borrower's account, creating 'secondary deposits'.\n4. This process multiplies money supply, known as credit creation.",
+      },
+      {
+        q: "Foreign trade leads to division of labour and specialization.",
+        agree: true,
+        reason:
+          "1. Countries specialize in producing goods where they have a cost advantage (comparative advantage).\n2. They export these goods and import others.\n3. This leads to international division of labour.\n4. Global resources are used more efficiently.",
+      },
+      {
+        q: "There is no difference between Balance of payment and Balance of trade.",
+        agree: false,
+        reason:
+          "1. Balance of Trade (BoT) includes only visible trade (goods).\n2. Balance of Payments (BoP) includes visible (goods) + invisible (services) + capital transfers.\n3. BoT is a narrow concept; BoP is a wider concept.\n4. BoP gives a complete picture of a country's international economic position.",
+      },
+    ],
+
+    // Q.2 (B) Distinguish Between (2 Marks each)
+    distinguishBetween: [
+      {
+        q: "Micro Economics & Macro Economics",
+        answer:
+          "| Micro Economics | Macro Economics |\n|---|---|\n| Study of individual units (firm, consumer). | Study of economy as a whole (aggregates). |\n| Uses Slicing Method. | Uses Lumping Method. |\n| Also called Price Theory. | Also called Income & Employment Theory. |\n| Scope is limited. | Scope is wide. |",
+      },
+      {
+        q: "Lumping Method & Slicing Method",
+        answer:
+          "| Slicing Method | Lumping Method |\n|---|---|\n| Used in Micro Economics. | Used in Macro Economics. |\n| Divides economy into small slices/parts. | Lumps/Groups units to study the whole. |\n| Detailed study of each part. | Study of aggregates (totals). |",
+      },
+      {
+        q: "Desire & Demand",
+        answer:
+          "| Desire | Demand |\n|---|---|\n| Mere wish to have something. | Desire + Willingness + Ability to pay. |\n| Not related to price, place, time. | Always related to price, place, and time. |\n| Example: Beggar desiring a car. | Example: Rich man buying a car. |",
+      },
+      {
+        q: "Oligopoly & Monopoly",
+        answer:
+          "| Oligopoly | Monopoly |\n|---|---|\n| Few sellers. | Single seller. |\n| Interdependence of firms. | Complete control by one firm. |\n| Product differentiation (usually). | No close substitutes. |\n| Example: Mobile network providers. | Example: Indian Railways. |",
+      },
+      {
+        q: "Money Market & Capital Market",
+        answer:
+          "| Money Market | Capital Market |\n|---|---|\n| Market for short-term funds (< 1 year). | Market for long-term funds (> 1 year). |\n| Instruments: Treasury Bills, Commercial Paper. | Instruments: Shares, Debentures, Bonds. |\n| Provides working capital. | Provides fixed capital. |",
+      },
+      {
+        q: "Total Utility & Marginal Utility",
+        answer:
+          "| Total Utility (TU) | Marginal Utility (MU) |\n|---|---|\n| Sum of utilities from all units. | Addition to TU from one extra unit. |\n| Increases at diminishing rate. | Diminishes with each unit. |\n| Maximum at point of satiety. | Zero at point of satiety. |",
+      },
+      {
+        q: "Joint Demand & Competitive Demand",
+        answer:
+          "| Joint Demand | Competitive Demand |\n|---|---|\n| Two goods demanded together for one want. | Goods which are substitutes for each other. |\n| Example: Car and Petrol. | Example: Tea and Coffee. |\n| Relationship: Complementary. | Relationship: Substitutes. |",
+      },
+      {
+        q: "Stock & Supply",
+        answer:
+          "| Stock | Supply |\n|---|---|\n| Total quantity available with seller. | Quantity offered for sale at a given price. |\n| Potential supply. | Actual supply. |\n| Stock ≥ Supply. | Supply ≤ Stock. |\n| Depends on production. | Depends on price. |",
+      },
+    ],
+  },
 };
 
 export default ECONOMICS_BOARD_CRASHER;
