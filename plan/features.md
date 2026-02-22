@@ -169,6 +169,22 @@ Collapsible navigation sidebar with quick access to subjects.
 
 ---
 
+### 24. Board Exam Crashers (Subject-Specific)
+**Status:** ✅ Complete  
+**Priority:** Critical
+
+**Description:**  
+High-yield, exam-focused revision tools for major subjects (Economics, History, Political Science).
+
+**Specifications:**
+- **Most IMP Questions:** Curated lists of "Identify & Explain", "Distinguish Between", "Agree/Disagree"
+- **Fullscreen Reading Mode:** Distraction-free view for long answers
+- **Mnemonics & Shortcodes:** Memory aids for fast recall
+- **Interactive Tables:** Comparison tables for "Distinguish Between" questions
+- **Last Minute Revision:** Key dates, full forms, and scientists/economists
+
+---
+
 ## 🔜 PLANNED FEATURES
 
 ### 11. Exam Countdown Timer ⭐ HIGH PRIORITY

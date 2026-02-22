@@ -21,20 +21,23 @@ This file tracks what's **left to do** or improve in the 7k HSC app. Each sectio
 - **Animation**: Added pulse-slow animation for exam alerts
 
 ### ✅ Completed (Session 3 - Feb 16, 2026) - Political Science Board Crasher
-- **politicalScienceBoardCrasher.ts**: Comprehensive exam data file with:
-  - Chapter-wise must-know concepts and definitions
-  - All PYQ MCQs (2019-2025) with answers
-  - 4-mark short answer questions with model answers
-  - 8-mark long answer questions with detailed model answers
-  - Important dates, persons, organizations
-  - Full forms and exam tips
-- **PolScienceBoardCrasher.tsx**: Interactive component with:
-  - Chapter-wise tabs
-  - Expandable sections for MCQs, short answers, long answers
-  - Last-minute revision points
-  - Paper pattern and weightage info
+- **politicalScienceBoardCrasher.ts**: Comprehensive exam data file
+- **PolScienceBoardCrasher.tsx**: Interactive component
 - **Dashboard Banner**: Urgent "3 DAYS!" banner for Political Science on Arts dashboard
 - **SubjectStudyTools**: Added Board Crasher as featured tool for pol subject
+
+### ✅ Completed (Session 4 - Feb 22, 2026) - Economics & History Board Crashers
+- **Economics Board Crasher**:
+  - `ecoBoardCrasher.ts`: Added "Most IMP" questions (Identify, Agree/Disagree, Distinguish)
+  - `EcoBoardCrasher.tsx`: Added "🔥 Most IMP" tab, Fullscreen mode for distraction-free reading, Improved Table rendering
+- **History Board Crasher**:
+  - Created `historyBoardCrasher.ts` with Mnemonics (CHART, CLIMB), PYQs, and "Most IMP" questions
+  - Created `HistoryBoardCrasher.tsx` with all advanced features (Tabs, Fullscreen, Tables)
+  - Integrated into `App.tsx` and `SubjectStudyTools`
+- **Settings Panel**:
+  - Added Mobile gestures (Drag-to-close)
+  - Added Backdrop tap-to-close
+  - Improved responsive design
 
 ### 🔲 Remaining UI Tasks
 1. Add DailyMotivation to dashboard (component created but not yet integrated)

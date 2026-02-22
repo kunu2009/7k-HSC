@@ -146,7 +146,7 @@ import QuickRevisionQuiz from "./components/QuickRevisionQuiz";
 import ImportantDates from "./components/ImportantDates";
 import ImportantPersons from "./components/ImportantPersons";
 import OneMinuteChallenge from "./components/OneMinuteChallenge";
-import PYQBank from "./components/PYQBank";
+import PreviousYearQuestions from "./components/PreviousYearQuestions";
 import WritingTemplates from "./components/WritingTemplates";
 import HistoryMapWork from "./components/HistoryMapWork";
 import SanskritShlokBank from "./components/SanskritShlokBank";
@@ -187,6 +187,7 @@ import { useProgress } from "./hooks/useProgress";
 import { useChapterCompletion } from "./hooks/useChapterCompletion";
 import { explainConcept } from "./services/geminiService";
 import { db, UserProfile } from "./services/localDb";
+import { notificationService } from "./services/notificationService";
 
 // --- Types ---
 type ViewState =
@@ -557,6 +558,27 @@ const App: React.FC = () => {
 
     db.saveSettings({ darkMode, theme });
   }, [darkMode, theme]);
+
+  // Initialize Notification Service
+  useEffect(() => {
+    const initNotifications = async () => {
+      // Only request if not denied/granted yet
+      if (Notification.permission === "default") {
+        // Wait a bit before asking so it's not annoying immediately
+        setTimeout(() => {
+          notificationService.requestPermission();
+        }, 5000);
+      }
+
+      // Check reminders
+      if (Notification.permission === "granted") {
+        notificationService.checkDailyReminders();
+        notificationService.scheduleSRSReminder(5); // Demo reminder
+      }
+    };
+
+    initNotifications();
+  }, []);
 
   // Create a map of completed chapters for TodaysFocus component
   const completedChaptersMap = React.useMemo(() => {
@@ -3108,7 +3130,12 @@ const App: React.FC = () => {
         <OneMinuteChallenge onClose={() => setShowOneMinuteChallenge(false)} />
       )}
 
-      {showPYQBank && <PYQBank onClose={() => setShowPYQBank(false)} />}
+      {showPYQBank && (
+        <PreviousYearQuestions
+          subjects={Object.values(MOCK_DATA).flatMap((s) => s.subjects)}
+          onClose={() => setShowPYQBank(false)}
+        />
+      )}
 
       {showWritingTemplates && (
         <WritingTemplates onClose={() => setShowWritingTemplates(false)} />
