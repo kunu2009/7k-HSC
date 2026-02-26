@@ -464,6 +464,82 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
           </div>
         )}
 
+        {/* Timeline Drills */}
+        {chapter.timelineDrills && chapter.timelineDrills.length > 0 && (
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+            <h4 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+              <Calendar size={18} className="text-blue-500" /> Timeline Drill
+            </h4>
+            <div className="space-y-3">
+              {chapter.timelineDrills.map((item: any, idx: number) => {
+                const revealId = `timeline-${chapterKey}-${idx}`;
+                const shown = !!showAnswers[revealId];
+                return (
+                  <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl">
+                    <p className="text-sm text-slate-800 dark:text-white font-medium mb-2">
+                      {item.prompt}
+                    </p>
+                    <button
+                      onClick={() => toggleAnswer(revealId)}
+                      className={`w-full py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
+                        shown
+                          ? "bg-blue-500 text-white"
+                          : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                      }`}
+                    >
+                      {shown ? <EyeOff size={14} /> : <Eye size={14} />}
+                      {shown ? "Hide Order" : "Show Order"}
+                    </button>
+                    {shown && (
+                      <p className="text-xs text-slate-700 dark:text-slate-300 mt-2 whitespace-pre-wrap">
+                        {item.answer}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* Map Practice */}
+        {chapter.mapPractice && chapter.mapPractice.length > 0 && (
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+            <h4 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+              <Globe size={18} className="text-emerald-500" /> Map Practice
+            </h4>
+            <div className="space-y-3">
+              {chapter.mapPractice.map((item: any, idx: number) => {
+                const revealId = `map-${chapterKey}-${idx}`;
+                const shown = !!showAnswers[revealId];
+                return (
+                  <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl">
+                    <p className="text-sm text-slate-800 dark:text-white font-medium mb-2">
+                      {item.prompt}
+                    </p>
+                    <button
+                      onClick={() => toggleAnswer(revealId)}
+                      className={`w-full py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
+                        shown
+                          ? "bg-emerald-500 text-white"
+                          : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                      }`}
+                    >
+                      {shown ? <EyeOff size={14} /> : <Eye size={14} />}
+                      {shown ? "Hide Map Answer" : "Show Map Answer"}
+                    </button>
+                    {shown && (
+                      <p className="text-xs text-slate-700 dark:text-slate-300 mt-2 whitespace-pre-wrap">
+                        {item.answer}
+                      </p>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* Questions */}
         {['pyqMCQs', 'pyqShortAnswers', 'pyqLongAnswers'].map((section) => {
           const questions = chapter[section];

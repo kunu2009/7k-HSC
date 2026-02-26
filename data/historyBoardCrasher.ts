@@ -688,6 +688,20 @@ export const HISTORY_BOARD_CRASHER = {
       }
     ],
 
+    timelineDrills: [
+      {
+        prompt: "Arrange in chronological order: Treaty of Versailles, WWI begins, WWII ends, WWII begins.",
+        answer: "WWI begins (1914) → Treaty of Versailles (1919) → WWII begins (1939) → WWII ends (1945)."
+      }
+    ],
+
+    mapPractice: [
+      {
+        prompt: "Mark one Allied and one Axis country on Europe map.",
+        answer: "Allied: United Kingdom / France. Axis: Germany / Italy."
+      }
+    ],
+
     pyqMCQs: [
       {
         q: "World War I began in:",
@@ -716,6 +730,11 @@ export const HISTORY_BOARD_CRASHER = {
         q: "Distinguish between First and Second World War with outcomes.",
         year: 2024,
         modelAnswer: "WWI (1914-18) ended with Treaty of Versailles and League of Nations. WWII (1939-45) ended with UN formation, decline of European empires, and bipolar world order."
+      },
+      {
+        q: "Explain major consequences of World War II.",
+        year: 2023,
+        modelAnswer: "1. Formation of United Nations to maintain peace.\n2. Emergence of USA and USSR as superpowers.\n3. Beginning of Cold War rivalry.\n4. Acceleration of decolonisation in Asia and Africa.\n5. Political and economic restructuring of Europe and Japan."
       }
     ],
 
@@ -746,6 +765,10 @@ export const HISTORY_BOARD_CRASHER = {
         {
           q: "Explain major causes of World War II.",
           answer: "Harsh Versailles terms, rise of Fascism and Nazism, failure of League of Nations, policy of appeasement, and aggressive expansion by Axis powers caused WWII."
+        },
+        {
+          q: "How did World Wars change global politics?",
+          answer: "The two wars weakened old empires, created new institutions like the UN, encouraged anti-colonial nationalism, and shifted global power to superpowers."
         }
       ]
     }
@@ -775,6 +798,20 @@ export const HISTORY_BOARD_CRASHER = {
       }
     ],
 
+    timelineDrills: [
+      {
+        prompt: "Arrange: UN founded, India independent, NAM formed.",
+        answer: "UN founded (1945) → India independent (1947) → NAM formed (1961)."
+      }
+    ],
+
+    mapPractice: [
+      {
+        prompt: "Locate any two newly independent Asian/African countries (post-WWII) on map.",
+        answer: "Examples: India, Indonesia, Ghana, Kenya, Algeria, Vietnam."
+      }
+    ],
+
     pyqMCQs: [
       {
         q: "A major reason for decolonisation after 1945 was:",
@@ -789,6 +826,14 @@ export const HISTORY_BOARD_CRASHER = {
         q: "Why did decolonisation accelerate after WWII?",
         year: 2024,
         modelAnswer: "1. European powers were economically weakened after war.\n2. Colonial nationalism became stronger.\n3. UN and global opinion supported self-determination."
+      }
+    ],
+
+    pyqLongAnswers: [
+      {
+        q: "Explain causes and impact of decolonisation.",
+        year: 2023,
+        modelAnswer: "**Causes:** War-time weakening of Europe, rise of nationalism, pressure from UN and global opinion.\n\n**Impact:** Emergence of new states, end of direct colonial empires, rise of development politics, and restructuring of world diplomacy."
       }
     ],
 
@@ -819,6 +864,10 @@ export const HISTORY_BOARD_CRASHER = {
         {
           q: "Explain significance of decolonisation in world history.",
           answer: "Decolonisation ended formal empires, expanded UN membership, transformed global politics, and gave momentum to ideas of equality and self-determination."
+        },
+        {
+          q: "Why did many newly independent states choose non-alignment?",
+          answer: "They wanted strategic autonomy, protection of sovereignty, and freedom from bloc politics while focusing on development and anti-colonial solidarity."
         }
       ]
     }
@@ -852,6 +901,20 @@ export const HISTORY_BOARD_CRASHER = {
       }
     ],
 
+    timelineDrills: [
+      {
+        prompt: "Arrange: NATO formed, Warsaw Pact formed, Cuban Missile Crisis.",
+        answer: "NATO (1949) → Warsaw Pact (1955) → Cuban Missile Crisis (1962)."
+      }
+    ],
+
+    mapPractice: [
+      {
+        prompt: "Mark one NATO and one Warsaw Pact country on Europe map.",
+        answer: "NATO example: UK/France/USA (not in Europe map for USA). Warsaw Pact example: USSR/Poland/East Germany."
+      }
+    ],
+
     pyqMCQs: [
       {
         q: "Cold War was primarily a conflict of:",
@@ -872,6 +935,14 @@ export const HISTORY_BOARD_CRASHER = {
         q: "Explain why Cold War is called a 'cold' war.",
         year: 2023,
         modelAnswer: "It is called cold because USA and USSR did not fight each other directly; instead they used proxy wars, arms race, and diplomatic confrontation."
+      }
+    ],
+
+    pyqLongAnswers: [
+      {
+        q: "Discuss major features of Cold War politics.",
+        year: 2024,
+        modelAnswer: "Cold War featured ideological rivalry, military alliances, proxy wars, nuclear arms race, space competition, and persistent diplomatic confrontation without direct superpower war."
       }
     ],
 
@@ -902,6 +973,10 @@ export const HISTORY_BOARD_CRASHER = {
         {
           q: "Explain impact of Cold War on world politics.",
           answer: "Cold War divided the world into blocs, militarized international relations, encouraged proxy conflicts, and influenced the foreign policies of new nations."
+        },
+        {
+          q: "What was the significance of Cuban Missile Crisis?",
+          answer: "It was the closest nuclear confrontation of the Cold War and led both superpowers to improve crisis-management and direct communication mechanisms."
         }
       ]
     }
@@ -931,6 +1006,20 @@ export const HISTORY_BOARD_CRASHER = {
       }
     ],
 
+    timelineDrills: [
+      {
+        prompt: "Arrange: Independence, Constitution adopted, Republic Day.",
+        answer: "Independence (1947) → Constitution adopted (26 Nov 1949) → Republic Day (26 Jan 1950)."
+      }
+    ],
+
+    mapPractice: [
+      {
+        prompt: "Locate New Delhi and one major steel-plant region developed in planning era.",
+        answer: "New Delhi (national capital), Bhilai / Durgapur / Rourkela (major planned industrial centres)."
+      }
+    ],
+
     pyqMCQs: [
       {
         q: "Universal Adult Franchise in India means:",
@@ -945,6 +1034,14 @@ export const HISTORY_BOARD_CRASHER = {
         q: "State two features of Indian democracy after independence.",
         year: 2024,
         modelAnswer: "1. Universal adult franchise.\n2. Parliamentary federal system with regular elections."
+      }
+    ],
+
+    pyqLongAnswers: [
+      {
+        q: "Explain pillars of nation-building in early independent India.",
+        year: 2023,
+        modelAnswer: "The pillars included constitutional democracy, federal structure, independent judiciary, planned development, expansion of public institutions, and social justice through legal safeguards."
       }
     ],
 
@@ -968,6 +1065,10 @@ export const HISTORY_BOARD_CRASHER = {
         {
           q: "Explain key nation-building efforts in early independent India.",
           answer: "India built democratic institutions, expanded public sector and planning, promoted social justice through constitutional safeguards, and invested in education and industry."
+        },
+        {
+          q: "How did universal adult franchise transform Indian politics?",
+          answer: "It democratized power by giving equal voting rights to all adults, expanded political participation, and strengthened representative accountability across social groups."
         }
       ]
     }
@@ -997,6 +1098,20 @@ export const HISTORY_BOARD_CRASHER = {
       }
     ],
 
+    timelineDrills: [
+      {
+        prompt: "Arrange: Economic reforms, RTI Act, Digital India.",
+        answer: "Economic reforms (1991) → RTI Act (2005) → Digital India (2014)."
+      }
+    ],
+
+    mapPractice: [
+      {
+        prompt: "Mark one IT hub and one financial capital in India.",
+        answer: "IT hub: Bengaluru / Hyderabad. Financial capital: Mumbai."
+      }
+    ],
+
     pyqMCQs: [
       {
         q: "Major economic reforms in India started in:",
@@ -1011,6 +1126,14 @@ export const HISTORY_BOARD_CRASHER = {
         q: "Write two effects of economic reforms in India.",
         year: 2024,
         modelAnswer: "1. Higher growth and global integration.\n2. Expansion of private sector and services."
+      }
+    ],
+
+    pyqLongAnswers: [
+      {
+        q: "Assess major changes in India after 1991 reforms.",
+        year: 2023,
+        modelAnswer: "Reforms increased growth, foreign investment, and competition; strengthened services and technology sectors; but also widened inequality and required social protection measures."
       }
     ],
 
@@ -1041,6 +1164,10 @@ export const HISTORY_BOARD_CRASHER = {
         {
           q: "Evaluate impact of 1991 reforms on India.",
           answer: "The reforms accelerated growth and modernization, but also created inequality concerns, requiring inclusive development policies."
+        },
+        {
+          q: "State achievements and challenges of globalisation in India.",
+          answer: "Achievements include technology transfer, export growth and global opportunities; challenges include inequality, pressure on small producers, and employment insecurity in informal sectors."
         }
       ]
     }
