@@ -224,7 +224,7 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
             🔥 {impData.title}
           </h3>
           <p className="text-white/90 text-sm mt-1">
-            Highly probable questions for 2026 Board Exam
+            Chapter-hotspot questions synthesized from PYQ-style board patterns
           </p>
         </div>
 

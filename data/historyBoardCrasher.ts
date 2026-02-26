@@ -1218,6 +1218,26 @@ export const HISTORY_BOARD_CRASHER = {
         q: "Portuguese rule in Goa ended in 1961.",
         concept: "Liberation of Goa / Operation Vijay",
         explanation: "The armed action by the Indian Armed Forces in December 1961 that led to the capture of Goa, Daman, and Diu from the Portuguese."
+      },
+      {
+        q: "The assassination of Archduke Franz Ferdinand became the immediate spark for a global conflict.",
+        concept: "Immediate cause of World War I",
+        explanation: "The Sarajevo incident in 1914 triggered military alliance commitments and escalated into World War I."
+      },
+      {
+        q: "A forum was created by newly independent nations to avoid joining either Cold War bloc.",
+        concept: "Non-Aligned Movement (NAM)",
+        explanation: "NAM emerged to preserve strategic autonomy for post-colonial states amid USA-USSR rivalry."
+      },
+      {
+        q: "A confrontation in 1962 brought the USA and USSR closest to nuclear war.",
+        concept: "Cuban Missile Crisis",
+        explanation: "This crisis highlighted the danger of nuclear brinkmanship and led to new communication channels between superpowers."
+      },
+      {
+        q: "India introduced LPG reforms in 1991 to change its economic policy framework.",
+        concept: "Economic Reforms (Liberalisation, Privatisation, Globalisation)",
+        explanation: "The 1991 reforms opened the economy, reduced controls, expanded private participation, and increased global integration."
       }
     ],
 
@@ -1252,6 +1272,21 @@ export const HISTORY_BOARD_CRASHER = {
         q: "The Cold War was a direct military conflict between USA and USSR.",
         agree: false,
         reason: "1. It was an ideological war (Capitalism vs Communism).\n2. There was no direct fighting between the two superpowers.\n3. It involved proxy wars (Korea, Vietnam), arms race, and space race.\n4. It was a state of political and military tension."
+      },
+      {
+        q: "Treaty of Versailles created long-term instability in Europe.",
+        agree: true,
+        reason: "1. It imposed harsh penalties on Germany.\n2. Economic burden and humiliation fueled resentment.\n3. Political extremism gained support.\n4. This instability contributed to conditions leading to World War II."
+      },
+      {
+        q: "Decolonisation after WWII happened mainly due to military conquest by European powers.",
+        agree: false,
+        reason: "1. Decolonisation was driven by anti-colonial nationalism, not renewed conquest.\n2. European powers were weakened after WWII.\n3. Global support for self-determination increased.\n4. UN pressure and local movements accelerated independence."
+      },
+      {
+        q: "1991 economic reforms transformed India's development path.",
+        agree: true,
+        reason: "1. Reforms reduced state controls and opened markets.\n2. Foreign investment and trade expanded.\n3. Services and technology sectors grew faster.\n4. New opportunities emerged along with inequality challenges."
       }
     ],
 
@@ -1272,6 +1307,18 @@ export const HISTORY_BOARD_CRASHER = {
       {
         q: "Satyashodhak Samaj & Prarthana Samaj",
         answer: "| Satyashodhak Samaj | Prarthana Samaj |\n|---|---|\n| **Founder** | Mahatma Jyotirao Phule (1873). | Dr. Atmaram Pandurang (1867). |\n| **Focus** | Upliftment of Dalits and women, anti-caste. | Religious and social reform through prayer. |\n| **Region** | Maharashtra (Pune). | Maharashtra (Mumbai). |"
+      },
+      {
+        q: "League of Nations & United Nations",
+        answer: "| League of Nations | United Nations |\n|---|---|\n| **Formation** | After WWI (1919). | After WWII (1945). |\n| **Membership Power** | Limited enforcement ability. | Wider membership and structured organs. |\n| **Outcome** | Failed to stop WWII. | Still active global body for peace and cooperation. |"
+      },
+      {
+        q: "NATO & Warsaw Pact",
+        answer: "| NATO | Warsaw Pact |\n|---|---|\n| **Bloc** | US-led Western alliance (1949). | USSR-led Eastern alliance (1955). |\n| **Ideology** | Capitalist-democratic bloc. | Socialist-communist bloc. |\n| **Role** | Military deterrence in Cold War. | Counter-alliance to NATO in Cold War. |"
+      },
+      {
+        q: "Pre-1991 Indian Economy & Post-1991 Indian Economy",
+        answer: "| Pre-1991 | Post-1991 |\n|---|---|\n| **Policy** | Strong state control, license-permit system. | Liberalisation and market-oriented reforms. |\n| **External Sector** | Limited global integration. | Higher trade and FDI participation. |\n| **Growth Drivers** | Public sector-led planning. | Mixed economy with stronger private sector role. |"
       }
     ]
   },
