@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   X,
   BookOpen,
@@ -50,9 +50,11 @@ type TabType =
 const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
   onClose,
 }) => {
+  const EXAM_DAY_CHECKLIST_STORAGE_KEY = "history-examday-top20-checklist-v1";
   const [activeTab, setActiveTab] = useState<TabType>("overview");
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [showAnswers, setShowAnswers] = useState<Record<string, boolean>>({});
+  const [examDayChecklist, setExamDayChecklist] = useState<Record<string, boolean>>({});
   const [fullscreenContent, setFullscreenContent] = useState<{
     title: string;
     content: React.ReactNode;
@@ -107,6 +109,34 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
   const toggleAnswer = (id: string) => {
     setShowAnswers((prev) => ({ ...prev, [id]: !prev[id] }));
   };
+
+  const toggleExamDayChecklist = (id: string) => {
+    setExamDayChecklist((prev) => ({ ...prev, [id]: !prev[id] }));
+  };
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem(EXAM_DAY_CHECKLIST_STORAGE_KEY);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (parsed && typeof parsed === "object") {
+          setExamDayChecklist(parsed);
+        }
+      }
+    } catch {
+      setExamDayChecklist({});
+    }
+  }, []);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        EXAM_DAY_CHECKLIST_STORAGE_KEY,
+        JSON.stringify(examDayChecklist),
+      );
+    } catch {
+    }
+  }, [examDayChecklist]);
 
   const renderTable = (markdownTable: string) => {
     const rows = markdownTable
@@ -727,6 +757,10 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
   const renderExamDayMode = () => {
     const examMode = (data as any).examDayMode;
     if (!examMode) return <div className="p-4">Exam day mode not available.</div>;
+    const totalTop20 = examMode.top20Questions.length;
+    const completedTop20 = examMode.top20Questions.filter(
+      (_: any, idx: number) => !!examDayChecklist[`examday-top20-done-${idx}`],
+    ).length;
 
     return (
       <div className="space-y-4 p-4">
@@ -739,12 +773,35 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
           <h4 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
             <Zap size={18} className="text-rose-500" /> Top 20 Must-Do Questions
           </h4>
+          <div className="mb-3">
+            <div className="flex items-center justify-between text-xs mb-2">
+              <span className="font-semibold text-slate-700 dark:text-slate-300">Progress</span>
+              <span className="font-bold text-rose-700 dark:text-rose-300">
+                {completedTop20}/{totalTop20} done
+              </span>
+            </div>
+            <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-rose-500 rounded-full"
+                style={{ width: `${totalTop20 ? (completedTop20 / totalTop20) * 100 : 0}%` }}
+              />
+            </div>
+          </div>
           <div className="space-y-3 max-h-[60vh] overflow-y-auto">
             {examMode.top20Questions.map((item: any, idx: number) => {
               const revealId = `examday-top20-${idx}`;
+              const doneId = `examday-top20-done-${idx}`;
               const shown = !!showAnswers[revealId];
+              const isDone = !!examDayChecklist[doneId];
               return (
-                <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl">
+                <div
+                  key={idx}
+                  className={`p-3 rounded-xl border ${
+                    isDone
+                      ? "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-300 dark:border-emerald-800"
+                      : "bg-slate-50 dark:bg-slate-700 border-transparent"
+                  }`}
+                >
                   <div className="flex items-start justify-between gap-2 mb-2">
                     <p className="text-sm font-medium text-slate-800 dark:text-white flex-1">
                       {idx + 1}. {item.q}
@@ -753,6 +810,17 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
                       {item.chapter}
                     </span>
                   </div>
+                  <button
+                    onClick={() => toggleExamDayChecklist(doneId)}
+                    className={`w-full py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 mb-2 ${
+                      isDone
+                        ? "bg-emerald-600 text-white"
+                        : "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300"
+                    }`}
+                  >
+                    <CheckCircle2 size={14} />
+                    {isDone ? "Marked Done" : "Mark as Done"}
+                  </button>
                   <button
                     onClick={() => toggleAnswer(revealId)}
                     className={`w-full py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
