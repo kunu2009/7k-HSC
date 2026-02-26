@@ -44,6 +44,8 @@ type TabType =
   | "ch6"
   | "ch7"
   | "ch8"
+  | "ch9"
+  | "ch10"
   | "formulas"
   | "lastmin";
 
@@ -100,6 +102,13 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
     { id: "ch6", label: "Index", shortLabel: "6", color: "bg-pink-500" },
     { id: "ch7", label: "NI", shortLabel: "7", color: "bg-indigo-500" },
     { id: "ch8", label: "Public", shortLabel: "8", color: "bg-amber-500" },
+    { id: "ch9", label: "Money", shortLabel: "9", color: "bg-lime-500" },
+    {
+      id: "ch10",
+      label: "Trade",
+      shortLabel: "10",
+      color: "bg-fuchsia-500",
+    },
     {
       id: "formulas",
       label: "Formulas",
@@ -233,9 +242,9 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
             <TrendingUp size={28} />
           </div>
           <div>
-            <h3 className="font-black text-xl">Exam in 3 Days!</h3>
+            <h3 className="font-black text-xl">Economics Exam Completed ✅</h3>
             <p className="text-white/90 text-sm">
-              24th February 2026 • 80 Marks • 3 Hours
+              Now focus on History revision and board crasher practice
             </p>
           </div>
         </div>
@@ -3795,7 +3804,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
                             className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
                           >
                             <p className="text-slate-800 dark:text-white text-sm mb-3 italic">
-                              "{item.statement}"
+                              "{item.statement || item.scenario || item.q}"
                             </p>
                             <button
                               onClick={() => toggleAnswer(id)}
@@ -3814,7 +3823,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
                                   ✅ Concept: {item.concept}
                                 </p>
                                 <p className="text-xs text-slate-600 dark:text-slate-400 whitespace-pre-wrap">
-                                  {item.explanation}
+                                  {item.explanation || item.answer}
                                 </p>
                               </div>
                             )}
@@ -3860,7 +3869,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
                           >
                             <div className="flex items-start justify-between gap-2 mb-3">
                               <p className="font-bold text-slate-800 dark:text-white text-sm flex-1">
-                                {qa.question}
+                                {qa.question || qa.q}
                               </p>
                               <span className="text-xs bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300 px-2 py-1 rounded shrink-0">
                                 {qa.marks}m
@@ -3881,7 +3890,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
                             </button>
                             {showAnswers[qaId] && (
                               <div className="text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap bg-white dark:bg-slate-800 p-4 rounded-xl border border-orange-200 dark:border-orange-800">
-                                {qa.modelAnswer}
+                                {qa.modelAnswer || qa.answer}
                               </div>
                             )}
                           </div>
@@ -3925,7 +3934,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
                             className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
                           >
                             <p className="font-bold text-slate-800 dark:text-white text-sm mb-3">
-                              "{item.statement}"
+                              "{item.statement || item.q}"
                             </p>
                             <button
                               onClick={() => toggleAnswer(id)}
@@ -3942,7 +3951,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
                             </button>
                             {showAnswers[id] && (
                               <div className="text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap bg-white dark:bg-slate-800 p-4 rounded-xl border border-amber-200 dark:border-amber-800">
-                                {item.modelAnswer}
+                                {item.modelAnswer || item.answer}
                               </div>
                             )}
                           </div>
@@ -3987,7 +3996,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
                           >
                             <div className="flex items-start justify-between gap-2 mb-3">
                               <p className="font-bold text-slate-800 dark:text-white text-sm flex-1">
-                                {qa.question}
+                                {qa.question || qa.q}
                               </p>
                               <span className="text-xs bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 px-2 py-1 rounded shrink-0">
                                 {qa.marks}m
@@ -4008,7 +4017,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
                             </button>
                             {showAnswers[qaId] && (
                               <div className="text-sm text-slate-700 dark:text-slate-300 whitespace-pre-wrap bg-white dark:bg-slate-800 p-4 rounded-xl border border-red-200 dark:border-red-800 max-h-[50vh] overflow-y-auto">
-                                {qa.modelAnswer}
+                                {qa.modelAnswer || qa.answer}
                               </div>
                             )}
                           </div>
@@ -4488,7 +4497,7 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
           <div className="flex-1">
             <h1 className="text-lg font-black">📈 Economics</h1>
             <p className="text-white/80 text-xs">
-              Board Exam Crasher • 24 Feb 2026
+              Board Exam Done • Focus shifted to History
             </p>
           </div>
           <a
@@ -4500,8 +4509,8 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
           >
             📁
           </a>
-          <div className="bg-indigo-700 px-3 py-1 rounded-full text-xs font-bold">
-            3 DAYS
+          <div className="bg-emerald-700 px-3 py-1 rounded-full text-xs font-bold">
+            DONE
           </div>
         </div>
       </div>
@@ -4543,6 +4552,8 @@ const EcoBoardCrasher: React.FC<EcoBoardCrasherProps> = ({
         {activeTab === "ch6" && renderChapter("chapter6")}
         {activeTab === "ch7" && renderChapter("chapter7")}
         {activeTab === "ch8" && renderChapter("chapter8")}
+        {activeTab === "ch9" && renderChapter("chapter9")}
+        {activeTab === "ch10" && renderChapter("chapter10")}
         {activeTab === "formulas" && renderFormulas()}
         {activeTab === "lastmin" && renderLastMinute()}
       </div>

@@ -28,7 +28,7 @@ interface ImportantDate {
   chapter?: string;
 }
 
-const ARTS_SUBJECT_IDS = ['eng', 'hin', 'his', 'pol', 'eco', 'geo', 'soc', 'psy', 'san'];
+const ARTS_SUBJECT_IDS = ['his', 'eng', 'hin', 'pol', 'eco', 'geo', 'soc', 'psy', 'san'];
 
 const SUBJECT_ICONS: Record<string, any> = {
   eng: BookOpen,
@@ -339,10 +339,12 @@ const ArtsStudyHub: React.FC<ArtsStudyHubProps> = ({ onClose, onOpenTool, subjec
   const [activeTab, setActiveTab] = useState<'overview' | 'tips' | 'timeline' | 'formats'>('overview');
   const [selectedSubject, setSelectedSubject] = useState<string>('all');
 
-  const artsSubjects = useMemo(() => 
-    subjects.filter(s => ARTS_SUBJECT_IDS.includes(s.id)),
-    [subjects]
-  );
+  const artsSubjects = useMemo(() => {
+    const orderMap = new Map(ARTS_SUBJECT_IDS.map((id, index) => [id, index]));
+    return subjects
+      .filter(s => ARTS_SUBJECT_IDS.includes(s.id))
+      .sort((a, b) => (orderMap.get(a.id) ?? 999) - (orderMap.get(b.id) ?? 999));
+  }, [subjects]);
 
   const stats = useMemo(() => {
     let totalChapters = 0;

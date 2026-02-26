@@ -376,6 +376,14 @@ const App: React.FC = () => {
       subjects = subjects.filter((sub) => !isSubjectExamDone(sub.id));
     }
 
+    if (selectedStream === Stream.ARTS) {
+      const historySubject = subjects.find((sub) => sub.id === "his");
+      const remainingSubjects = subjects.filter((sub) => sub.id !== "his");
+      subjects = historySubject
+        ? [historySubject, ...remainingSubjects]
+        : remainingSubjects;
+    }
+
     return subjects;
   };
 

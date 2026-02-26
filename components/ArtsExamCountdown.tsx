@@ -10,15 +10,18 @@ const ArtsExamCountdown: React.FC<ArtsExamCountdownProps> = ({ onClose }) => {
 
   // HSC Arts 2026 exam dates (Feb-March)
   const examSchedule = [
-    { subject: 'English', date: '2026-02-21', day: 'Saturday', color: 'bg-blue-500', icon: '📖' },
-    { subject: 'Hindi', date: '2026-02-24', day: 'Monday', color: 'bg-amber-500', icon: '🕉️' },
-    { subject: 'Marathi', date: '2026-02-26', day: 'Wednesday', color: 'bg-orange-500', icon: '🚩' },
-    { subject: 'History', date: '2026-03-03', day: 'Tuesday', color: 'bg-rose-500', icon: '📜' },
-    { subject: 'Geography', date: '2026-03-05', day: 'Thursday', color: 'bg-emerald-500', icon: '🌍' },
-    { subject: 'Economics', date: '2026-03-07', day: 'Saturday', color: 'bg-indigo-500', icon: '📊' },
-    { subject: 'Political Science', date: '2026-03-10', day: 'Tuesday', color: 'bg-red-500', icon: '⚖️' },
-    { subject: 'Sociology', date: '2026-03-12', day: 'Thursday', color: 'bg-purple-500', icon: '👥' },
-    { subject: 'Psychology', date: '2026-03-14', day: 'Saturday', color: 'bg-pink-500', icon: '🧠' },
+    { subject: 'English', date: '2026-02-10', day: 'Tuesday', color: 'bg-blue-500', icon: '📖' },
+    { subject: 'Hindi', date: '2026-02-11', day: 'Wednesday', color: 'bg-amber-500', icon: '🕉️' },
+    { subject: 'Marathi', date: '2026-02-12', day: 'Thursday', color: 'bg-orange-500', icon: '🚩' },
+    { subject: 'Sanskrit', date: '2026-02-13', day: 'Friday', color: 'bg-violet-500', icon: '🪔' },
+    { subject: 'Logic', date: '2026-02-16', day: 'Monday', color: 'bg-sky-500', icon: '🧩' },
+    { subject: 'Political Science', date: '2026-02-18', day: 'Wednesday', color: 'bg-red-500', icon: '⚖️' },
+    { subject: 'Economics', date: '2026-02-24', day: 'Tuesday', color: 'bg-indigo-500', icon: '📊' },
+    { subject: 'Philosophy', date: '2026-02-28', day: 'Saturday', color: 'bg-cyan-500', icon: '🧠' },
+    { subject: 'Psychology', date: '2026-03-04', day: 'Wednesday', color: 'bg-pink-500', icon: '🧠' },
+    { subject: 'Geography', date: '2026-03-07', day: 'Saturday', color: 'bg-emerald-500', icon: '🌍' },
+    { subject: 'History', date: '2026-03-09', day: 'Monday', color: 'bg-rose-500', icon: '📜' },
+    { subject: 'Sociology', date: '2026-03-11', day: 'Wednesday', color: 'bg-purple-500', icon: '👥' },
   ];
 
   const calculateDaysLeft = (dateStr: string) => {
