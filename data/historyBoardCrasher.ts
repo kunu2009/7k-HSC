@@ -1323,6 +1323,132 @@ export const HISTORY_BOARD_CRASHER = {
     ]
   },
 
+  examDayMode: {
+    title: "Exam Day Mode",
+    subtitle: "Final 45-minute high-yield crash pack",
+    top20Questions: [
+      {
+        chapter: "Ch 1",
+        q: "Explain causes and consequences of Renaissance.",
+        quickPoints: "Causes: Constantinople fall, trade, patrons, printing. Consequences: humanism, science, reformation, exploration."
+      },
+      {
+        chapter: "Ch 2",
+        q: "State causes of European colonialism.",
+        quickPoints: "Industrial raw materials, markets, strategic routes, population pressure, imperial ideology."
+      },
+      {
+        chapter: "Ch 3",
+        q: "Significance of Plassey and Buxar.",
+        quickPoints: "Plassey opened political control; Buxar consolidated military dominance and led to Diwani rights."
+      },
+      {
+        chapter: "Ch 4",
+        q: "Why was Treaty of Bassein a turning point?",
+        quickPoints: "Peshwa dependence, Maratha disunity, British strategic edge, faster Maratha decline."
+      },
+      {
+        chapter: "Ch 5",
+        q: "Contribution of social reformers in modern India.",
+        quickPoints: "Anti-caste, women education, anti-Sati, social equality, modern rational thought."
+      },
+      {
+        chapter: "Ch 6",
+        q: "Major phases of Gandhi-led freedom struggle.",
+        quickPoints: "NCM 1920, CDM 1930, Quit India 1942, mass mobilisation and British legitimacy collapse."
+      },
+      {
+        chapter: "Ch 7",
+        q: "Role of Sardar Patel in nation building.",
+        quickPoints: "Integration of princely states, diplomatic pressure, territorial unity, administrative consolidation."
+      },
+      {
+        chapter: "Ch 8",
+        q: "Major consequences of World War II.",
+        quickPoints: "UN formation, superpower rivalry, decolonisation acceleration, political restructuring."
+      },
+      {
+        chapter: "Ch 8",
+        q: "How Versailles contributed to WWII.",
+        quickPoints: "Harsh reparations, humiliation, economic instability, extremist politics rise."
+      },
+      {
+        chapter: "Ch 9",
+        q: "Why decolonisation accelerated after WWII.",
+        quickPoints: "Weak European empires, nationalism, UN self-determination pressure, anti-colonial movements."
+      },
+      {
+        chapter: "Ch 10",
+        q: "Why Cold War is called cold war.",
+        quickPoints: "No direct superpower war; proxy wars, arms race, diplomacy, ideological confrontation."
+      },
+      {
+        chapter: "Ch 10",
+        q: "Significance of Cuban Missile Crisis.",
+        quickPoints: "Closest nuclear brink, forced crisis communication mechanisms, highlighted deterrence limits."
+      },
+      {
+        chapter: "Ch 11",
+        q: "Pillars of early nation-building in India.",
+        quickPoints: "Constitutional democracy, federalism, planning, institutions, social justice safeguards."
+      },
+      {
+        chapter: "Ch 12",
+        q: "Evaluate impact of 1991 reforms.",
+        quickPoints: "Higher growth and global integration; but inequality and livelihood pressure challenges."
+      },
+      {
+        chapter: "Mixed",
+        q: "Distinguish League of Nations and United Nations.",
+        quickPoints: "League weak enforcement and failed to stop WWII; UN broader structure and continued relevance."
+      },
+      {
+        chapter: "Mixed",
+        q: "Distinguish NATO and Warsaw Pact.",
+        quickPoints: "Western vs Soviet blocs, opposing ideologies, military deterrence structure during Cold War."
+      },
+      {
+        chapter: "Ch 5",
+        q: "Brahmo Samaj vs Arya Samaj.",
+        quickPoints: "Founder, ideology basis, reform focus, institutional priorities."
+      },
+      {
+        chapter: "Ch 6",
+        q: "Importance of Quit India Movement.",
+        quickPoints: "Do-or-die call, nationwide mobilisation, colonial governance crisis, decisive push to independence."
+      },
+      {
+        chapter: "Ch 1/2",
+        q: "Industrial Revolution and colonial expansion link.",
+        quickPoints: "Machine production required inputs/markets; colonies provided both under imperial control."
+      },
+      {
+        chapter: "Ch 3/7",
+        q: "From Crown Rule (1858) to nation building (post-1947).",
+        quickPoints: "Company to Crown shift, nationalist growth, independence, integration and constitutional state formation."
+      }
+    ],
+    timelineRapid: [
+      "1453: Fall of Constantinople",
+      "1498: Vasco da Gama reaches India",
+      "1757: Plassey | 1764: Buxar",
+      "1857: Revolt | 1858: Crown Rule",
+      "1885: INC founded | 1905: Partition of Bengal",
+      "1914-18: WWI | 1919: Versailles + Jallianwala",
+      "1939-45: WWII | 1945: UN",
+      "1947: Independence | 1950: Republic",
+      "1949 NATO | 1955 Warsaw Pact | 1962 Cuban Crisis",
+      "1991: LPG reforms"
+    ],
+    mapRapid: [
+      "Europe: UK/France (Allied), Germany/Italy (Axis)",
+      "India map: Calicut (Vasco da Gama), Plassey, Buxar, Dandi",
+      "Post-independence: New Delhi + one major steel region (Bhilai/Durgapur/Rourkela)",
+      "Cold War: Cuba location + one NATO country and one Warsaw Pact country",
+      "Modern India: Bengaluru/Hyderabad (IT) + Mumbai (financial capital)"
+    ]
+  },
+
   lastMinutePoints: {
     fullForms: [
       "INC - Indian National Congress",

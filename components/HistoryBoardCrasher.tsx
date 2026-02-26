@@ -32,6 +32,7 @@ interface HistoryBoardCrasherProps {
 type TabType =
   | "overview"
   | "imp2026"
+  | "examday"
   | "ch1"
   | "ch2"
   | "ch3"
@@ -76,6 +77,12 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
       label: "🔥 Most IMP",
       shortLabel: "🔥",
       color: "bg-orange-600",
+    },
+    {
+      id: "examday",
+      label: "Exam Day",
+      shortLabel: "🚀",
+      color: "bg-rose-600",
     },
     { id: "ch1", label: "Renaissance", shortLabel: "1", color: "bg-slate-500" },
     { id: "ch2", label: "Colonialism", shortLabel: "2", color: "bg-purple-500" },
@@ -717,6 +724,86 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
     );
   };
 
+  const renderExamDayMode = () => {
+    const examMode = (data as any).examDayMode;
+    if (!examMode) return <div className="p-4">Exam day mode not available.</div>;
+
+    return (
+      <div className="space-y-4 p-4">
+        <div className="bg-gradient-to-r from-rose-600 to-red-600 rounded-2xl p-4 text-white">
+          <h3 className="font-black text-xl flex items-center gap-2">🚀 {examMode.title}</h3>
+          <p className="text-white/90 text-sm mt-1">{examMode.subtitle}</p>
+        </div>
+
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+          <h4 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+            <Zap size={18} className="text-rose-500" /> Top 20 Must-Do Questions
+          </h4>
+          <div className="space-y-3 max-h-[60vh] overflow-y-auto">
+            {examMode.top20Questions.map((item: any, idx: number) => {
+              const revealId = `examday-top20-${idx}`;
+              const shown = !!showAnswers[revealId];
+              return (
+                <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl">
+                  <div className="flex items-start justify-between gap-2 mb-2">
+                    <p className="text-sm font-medium text-slate-800 dark:text-white flex-1">
+                      {idx + 1}. {item.q}
+                    </p>
+                    <span className="text-[10px] px-2 py-1 rounded bg-rose-100 text-rose-700 shrink-0">
+                      {item.chapter}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => toggleAnswer(revealId)}
+                    className={`w-full py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
+                      shown
+                        ? "bg-rose-500 text-white"
+                        : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                    }`}
+                  >
+                    {shown ? <EyeOff size={14} /> : <Eye size={14} />}
+                    {shown ? "Hide Quick Points" : "Show Quick Points"}
+                  </button>
+                  {shown && (
+                    <p className="text-xs text-slate-700 dark:text-slate-300 mt-2 whitespace-pre-wrap">
+                      {item.quickPoints}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+          <h4 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+            <Calendar size={18} className="text-blue-500" /> 15-Min Timeline Sprint
+          </h4>
+          <div className="space-y-2">
+            {examMode.timelineRapid.map((line: string, i: number) => (
+              <div key={i} className="text-xs bg-blue-50 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 p-2 rounded">
+                {line}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+          <h4 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+            <Globe size={18} className="text-emerald-500" /> 10-Min Map Sprint
+          </h4>
+          <div className="space-y-2">
+            {examMode.mapRapid.map((line: string, i: number) => (
+              <div key={i} className="text-xs bg-emerald-50 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-200 p-2 rounded">
+                {line}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
+
   const renderLastMin = () => {
     const lastMin = data.lastMinutePoints;
     return (
@@ -857,6 +944,7 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
       <div className="flex-1 overflow-y-auto pb-safe">
         {activeTab === "overview" && renderOverview()}
         {activeTab === "imp2026" && renderImpQuestions()}
+        {activeTab === "examday" && renderExamDayMode()}
         {activeTab === "ch1" && renderChapter("chapter1")}
         {activeTab === "ch2" && renderChapter("chapter2")}
         {activeTab === "ch3" && renderChapter("chapter3")}
