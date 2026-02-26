@@ -1,9 +1,9 @@
 export const HISTORY_BOARD_CRASHER = {
   subject: "History",
-  examDate: "2026-02-27", // Estimated date
+  examDate: "2026-03-09",
   totalMarks: 80,
   duration: "3 hours",
-  daysLeft: 7,
+  daysLeft: 12,
 
   // ==================== CHAPTER 1: RENAISSANCE & SCIENCE ====================
   chapter1: {
@@ -92,7 +92,44 @@ export const HISTORY_BOARD_CRASHER = {
         year: 2024,
         modelAnswer: "**Causes of Renaissance:**\n\n1.  **Fall of Constantinople (1453)**: Scholars fled to Italy with ancient texts.\n2.  **Crusades**: Contact with the East brought new knowledge and trade.\n3.  **Rise of Wealthy Patrons**: Families like the Medici sponsored arts.\n4.  **Printing Press**: Spread ideas rapidly.\n\n**Consequences:**\n\n1.  **Humanism**: Focus on individual potential.\n2.  **Scientific Method**: Observation and experimentation (Empiricism).\n3.  **Reformation**: Challenging religious authority.\n4.  **Geographical Discoveries**: Age of Exploration began."
       }
-    ]
+    ],
+
+    textbookExercises: {
+      title: "Chapter 1 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "Renaissance is best described as:",
+          options: ["Religious war", "Rebirth of learning", "Colonial policy", "Trade treaty"],
+          correct: 1,
+          answer: "Rebirth of learning"
+        },
+        {
+          q: "Printing Press was invented by:",
+          options: ["Gutenberg", "James Watt", "Martin Luther", "Copernicus"],
+          correct: 0,
+          answer: "Gutenberg"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "An intellectual movement focused on man and his achievements.",
+          concept: "Humanism",
+          answer: "Humanism shifted focus from purely religious thought to rational inquiry, arts and human potential during Renaissance."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "State two causes of Renaissance.",
+          answer: "1. Fall of Constantinople brought classical knowledge to Europe.\n2. Patronage by wealthy families like Medici encouraged arts and learning."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain impact of Renaissance on Europe.",
+          answer: "Renaissance promoted scientific thinking, growth of literature and arts, weakening of blind religious authority, and eventually led to reformation and discoveries."
+        }
+      ]
+    }
   },
 
   // ==================== CHAPTER 2: EUROPEAN COLONIALISM ====================
@@ -150,7 +187,863 @@ export const HISTORY_BOARD_CRASHER = {
         year: 2023,
         modelAnswer: "**Causes of Colonialism:**\n\n1.  **Industrial Revolution**: Need for cheap raw materials and new markets for finished goods.\n2.  **Surplus Population**: Need for land to settle growing European population.\n3.  **Strategic Reasons**: Naval bases to protect trade routes.\n4.  **'White Man's Burden'**: Ideological belief in the duty to 'civilize' other nations."
       }
-    ]
+    ],
+
+    textbookExercises: {
+      title: "Chapter 2 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "Berlin Conference (1884-85) is related to:",
+          options: ["Partition of Africa", "Indian Constitution", "French Revolution", "Cold War"],
+          correct: 0,
+          answer: "Partition of Africa"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "A policy of extending control over foreign lands for economic and political gain.",
+          concept: "Imperialism",
+          answer: "Imperialism expanded European political power globally and was driven by industrial and strategic needs."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "State any two effects of colonialism.",
+          answer: "1. Economic exploitation of colonies.\n2. Imposition of foreign political control and cultural influence."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain major causes of European colonial expansion.",
+          answer: "Industrial demand for raw materials, need for markets, naval strategy, population pressure and belief in European superiority all encouraged colonial expansion."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 3: INDIA & EUROPEAN COLONIALISM ====================
+  chapter3: {
+    title: "India and European Colonialism",
+    weightage: "06 marks (09 with options)",
+
+    shortcodes: [
+      {
+        code: "PORT",
+        topic: "European Powers in India",
+        breakdown: "Portuguese • Dutch • French • British"
+      },
+      {
+        code: "PBCD",
+        topic: "British Expansion Milestones",
+        breakdown: "Plassey • Buxar • Carnatic wars • Diwani rights"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Battle of Plassey (1757)",
+        definition: "Battle that established British political dominance in Bengal."
+      },
+      {
+        term: "Battle of Buxar (1764)",
+        definition: "Battle that consolidated British control in eastern India."
+      },
+      {
+        term: "Diwani Rights",
+        definition: "Right to collect revenue in Bengal, Bihar and Orissa granted to East India Company in 1765."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "Battle of Plassey was fought in:",
+        options: ["1757", "1764", "1773", "1857"],
+        correct: 0,
+        year: 2022
+      },
+      {
+        q: "Diwani rights were granted in:",
+        options: ["1765", "1757", "1773", "1784"],
+        correct: 0,
+        year: 2023
+      },
+      {
+        q: "The battle that ended the first phase of British expansion in Bengal:",
+        options: ["Plassey", "Panipat", "Buxar", "Wandiwash"],
+        correct: 2,
+        year: 2024
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "State the significance of the Battle of Buxar.",
+        year: 2024,
+        modelAnswer: "**Significance of Battle of Buxar (1764):**\n\n1. It confirmed British military superiority in eastern India.\n2. Defeat of Mir Qasim, Shuja-ud-Daula and Shah Alam II weakened Indian resistance.\n3. It led to the Treaty of Allahabad (1765).\n4. The East India Company received Diwani rights, ensuring financial control."
+      }
+    ],
+
+    pyqLongAnswers: [
+      {
+        q: "Explain the stages of British expansion in India.",
+        year: 2023,
+        modelAnswer: "**Stages of British Expansion in India:**\n\n1. **Commercial Entry**: British came as traders through East India Company in 1600.\n2. **Military Rivalry**: Carnatic wars against French strengthened British position.\n3. **Bengal Control**: Plassey (1757) and Buxar (1764) gave political and revenue control.\n4. **Administrative Expansion**: Subsidiary Alliance and Doctrine of Lapse brought princely states under British influence.\n5. **Direct Crown Rule**: After 1857 revolt, administration shifted from Company to British Crown in 1858."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 3 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "Battle of Buxar was fought in:",
+          options: ["1757", "1764", "1773", "1858"],
+          correct: 1,
+          answer: "1764"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "Right to collect revenue in Bengal, Bihar and Orissa.",
+          concept: "Diwani Rights",
+          answer: "The East India Company got Diwani rights in 1765, giving it strong financial control."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "Why was Plassey important?",
+          answer: "Plassey (1757) opened the way for British political control in Bengal and later expansion across India."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain the role of Plassey and Buxar in British expansion.",
+          answer: "Plassey gave initial political entry, while Buxar confirmed military supremacy and led to Diwani rights, securing both political and economic control."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 4: MARATHAS & COLONIALISM ====================
+  chapter4: {
+    title: "Marathas and Colonialism",
+    weightage: "07 marks (10 with options)",
+
+    shortcodes: [
+      {
+        code: "PESH",
+        topic: "Decline of Maratha Power",
+        breakdown: "Peshwa conflicts • External pressure • Succession issues • British diplomacy"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Treaty of Bassein (1802)",
+        definition: "Treaty between Peshwa Baji Rao II and British that weakened Maratha confederacy."
+      },
+      {
+        term: "Anglo-Maratha Wars",
+        definition: "Series of wars (1775-1818) that ended Maratha political supremacy."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "Treaty of Bassein was signed in:",
+        options: ["1761", "1802", "1818", "1857"],
+        correct: 1,
+        year: 2022
+      },
+      {
+        q: "The final Anglo-Maratha war ended in:",
+        options: ["1805", "1818", "1820", "1835"],
+        correct: 1,
+        year: 2023
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "Why is the Treaty of Bassein considered a turning point?",
+        year: 2024,
+        modelAnswer: "1. It made the Peshwa dependent on British military support.\n2. It split Maratha unity and created distrust among Maratha chiefs.\n3. It gave British a strategic base in western India.\n4. It accelerated British victory in Anglo-Maratha wars."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 4 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "Treaty signed between Baji Rao II and British:",
+          options: ["Treaty of Allahabad", "Treaty of Bassein", "Treaty of Surat", "Treaty of Paris"],
+          correct: 1,
+          answer: "Treaty of Bassein"
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "Give two causes of decline of Maratha power.",
+          answer: "1. Internal rivalry among Maratha chiefs.\n2. British diplomatic and military strategy."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain impact of Anglo-Maratha wars.",
+          answer: "These wars ended Maratha supremacy and established British dominance in western and central India."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 5: SOCIAL & RELIGIOUS REFORMS ====================
+  chapter5: {
+    title: "Social and Religious Reforms",
+    weightage: "07 marks (10 with options)",
+
+    shortcodes: [
+      {
+        code: "BRAS",
+        topic: "Major Reform Movements",
+        breakdown: "Brahmo Samaj • Ramakrishna Mission • Arya Samaj • Satyashodhak Samaj"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Brahmo Samaj",
+        definition: "Founded by Raja Ram Mohan Roy in 1828 for social and religious reforms."
+      },
+      {
+        term: "Satyashodhak Samaj",
+        definition: "Founded by Jyotirao Phule in 1873 to fight caste discrimination and promote equality."
+      },
+      {
+        term: "Prarthana Samaj",
+        definition: "Reform movement in Maharashtra advocating social uplift and monotheism."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "Founder of Satyashodhak Samaj:",
+        options: ["Raja Ram Mohan Roy", "Mahatma Phule", "Swami Vivekananda", "M.G. Ranade"],
+        correct: 1,
+        year: 2022
+      },
+      {
+        q: "Brahmo Samaj was established in:",
+        options: ["1828", "1875", "1867", "1857"],
+        correct: 0,
+        year: 2024
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "Explain contribution of Raja Ram Mohan Roy to social reform.",
+        year: 2023,
+        modelAnswer: "1. Opposed social evils such as Sati and child marriage.\n2. Promoted widow remarriage and women education.\n3. Founded Brahmo Samaj for religious reform.\n4. Encouraged modern education and rational thinking."
+      }
+    ],
+
+    pyqLongAnswers: [
+      {
+        q: "Evaluate the role of social reform movements in modern India.",
+        year: 2024,
+        modelAnswer: "**Role of Social Reform Movements:**\n\n1. Challenged caste discrimination and orthodox traditions.\n2. Promoted women education, widow remarriage and social justice.\n3. Encouraged scientific temper and rational thought.\n4. Prepared society for national awakening and freedom movement.\n5. Built foundations of equality and constitutional values in modern India."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 5 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "Founder of Brahmo Samaj:",
+          options: ["Raja Ram Mohan Roy", "M.G. Ranade", "Mahatma Phule", "Vivekananda"],
+          correct: 0,
+          answer: "Raja Ram Mohan Roy"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "A movement founded in 1873 to fight caste inequality.",
+          concept: "Satyashodhak Samaj",
+          answer: "Founded by Jyotirao Phule, it worked for social equality, women education and upliftment of lower castes."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "State two contributions of Mahatma Phule.",
+          answer: "1. Promoted education for girls and lower castes.\n2. Founded Satyashodhak Samaj to challenge caste oppression."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain significance of social reform movement in India.",
+          answer: "Social reform movements created awareness against orthodoxy, advanced women and marginalized communities, and helped create modern democratic values."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 6: INDIAN FREEDOM STRUGGLE ====================
+  chapter6: {
+    title: "Indian Freedom Struggle",
+    weightage: "07 marks (10 with options)",
+
+    shortcodes: [
+      {
+        code: "NCQC",
+        topic: "Major Mass Movements",
+        breakdown: "Non-Cooperation • Civil Disobedience • Quit India • Constitutional struggles"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Non-Cooperation Movement (1920)",
+        definition: "Mass movement led by Gandhi promoting boycott of British institutions."
+      },
+      {
+        term: "Civil Disobedience Movement (1930)",
+        definition: "Movement marked by Salt Satyagraha challenging unjust British laws."
+      },
+      {
+        term: "Quit India Movement (1942)",
+        definition: "Final mass struggle demanding immediate British withdrawal from India."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "Quit India Movement was launched in:",
+        options: ["1930", "1942", "1919", "1947"],
+        correct: 1,
+        year: 2022
+      },
+      {
+        q: "Dandi March is associated with:",
+        options: ["Non-Cooperation", "Quit India", "Civil Disobedience", "Swadeshi"],
+        correct: 2,
+        year: 2023
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "State the importance of Quit India Movement.",
+        year: 2024,
+        modelAnswer: "1. It transformed freedom struggle into a decisive mass movement.\n2. It demonstrated complete rejection of British rule.\n3. It inspired youth, workers and peasants across India.\n4. It made British realise that continuation of colonial rule was impossible."
+      }
+    ],
+
+    pyqLongAnswers: [
+      {
+        q: "Trace major phases of Gandhi-led national movement.",
+        year: 2023,
+        modelAnswer: "**Phases of Gandhi-led National Movement:**\n\n1. **Non-Cooperation (1920-22):** Boycott and peaceful protest.\n2. **Civil Disobedience (1930-34):** Breaking salt law and non-payment of taxes.\n3. **Constructive Programmes:** Khadi, Hindu-Muslim unity, removal of untouchability.\n4. **Quit India (1942):** 'Do or Die' call for immediate independence.\n5. These phases united masses and weakened the foundations of colonial rule."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 6 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "Quit India Movement was launched in:",
+          options: ["1919", "1920", "1930", "1942"],
+          correct: 3,
+          answer: "1942"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "The slogan 'Do or Die' was given during this movement.",
+          concept: "Quit India Movement",
+          answer: "In 1942, Gandhi gave the call of 'Do or Die', making the movement a final mass challenge to British rule."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "Mention two outcomes of Civil Disobedience Movement.",
+          answer: "1. It mobilized masses across regions.\n2. It forced British to negotiate with Indian leadership."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain the significance of Gandhi-led mass movements.",
+          answer: "These movements transformed freedom struggle into a mass movement, unified people across regions and classes, and weakened British legitimacy."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 7: DECOLONISATION ====================
+  chapter7: {
+    title: "Decolonisation and Nation Building",
+    weightage: "07 marks (10 with options)",
+
+    shortcodes: [
+      {
+        code: "PIG",
+        topic: "Post-Independence Challenges",
+        breakdown: "Partition • Integration of princely states • Governance"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Partition of India",
+        definition: "Division of British India into India and Pakistan in 1947."
+      },
+      {
+        term: "Integration of Princely States",
+        definition: "Political unification led by Sardar Patel through accession and diplomacy."
+      },
+      {
+        term: "Constituent Assembly",
+        definition: "Body that drafted the Constitution of India, adopted in 1949."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "The integration of princely states is mainly associated with:",
+        options: ["Mahatma Gandhi", "Sardar Patel", "Jawaharlal Nehru", "Rajendra Prasad"],
+        correct: 1,
+        year: 2023
+      },
+      {
+        q: "Indian Constitution was adopted on:",
+        options: ["15 Aug 1947", "26 Jan 1950", "26 Nov 1949", "30 Jan 1948"],
+        correct: 2,
+        year: 2024
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "Explain role of Sardar Patel in nation building.",
+        year: 2022,
+        modelAnswer: "1. Led political integration of 562 princely states.\n2. Used negotiation, persuasion and firm action where required.\n3. Prevented fragmentation of newly independent India.\n4. Strengthened national unity and administrative stability."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 7 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "Integration of princely states is associated with:",
+          options: ["B.R. Ambedkar", "Sardar Patel", "Rajendra Prasad", "Subhas Bose"],
+          correct: 1,
+          answer: "Sardar Patel"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "Body that drafted the Constitution of India.",
+          concept: "Constituent Assembly",
+          answer: "The Constituent Assembly prepared the Constitution, adopted on 26 Nov 1949 and implemented on 26 Jan 1950."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "What were two major post-independence challenges?",
+          answer: "1. Partition and refugee crisis.\n2. Integration of princely states into one union."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain process of nation building after 1947.",
+          answer: "India addressed partition challenges, integrated princely states, built democratic institutions, and adopted a constitution ensuring rights and federal governance."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 8: WORLD WARS ====================
+  chapter8: {
+    title: "World Wars",
+    weightage: "07 marks (10 with options)",
+
+    shortcodes: [
+      {
+        code: "MALT",
+        topic: "Causes of First World War",
+        breakdown: "Militarism • Alliances • Imperialism • Trigger (Sarajevo)"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "World War I",
+        definition: "Global war from 1914 to 1918 involving Allied and Central Powers."
+      },
+      {
+        term: "World War II",
+        definition: "Global war from 1939 to 1945 fought between Allied and Axis powers."
+      },
+      {
+        term: "Treaty of Versailles",
+        definition: "Peace treaty after WWI imposing severe terms on Germany."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "World War I began in:",
+        options: ["1914", "1918", "1939", "1945"],
+        correct: 0,
+        year: 2022
+      },
+      {
+        q: "United Nations was formed after:",
+        options: ["WWI", "WWII", "Cold War", "Russian Revolution"],
+        correct: 1,
+        year: 2024
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "State two consequences of World War II.",
+        year: 2023,
+        modelAnswer: "1. Formation of the United Nations.\n2. Rise of USA and USSR as superpowers.\n3. Beginning of decolonisation in Asia and Africa."
+      }
+    ],
+
+    pyqLongAnswers: [
+      {
+        q: "Distinguish between First and Second World War with outcomes.",
+        year: 2024,
+        modelAnswer: "WWI (1914-18) ended with Treaty of Versailles and League of Nations. WWII (1939-45) ended with UN formation, decline of European empires, and bipolar world order."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 8 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "Immediate trigger of World War I:",
+          options: ["Pearl Harbor", "Assassination at Sarajevo", "Treaty of Paris", "Russian Revolution"],
+          correct: 1,
+          answer: "Assassination at Sarajevo"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "Peace body formed after World War I.",
+          concept: "League of Nations",
+          answer: "League of Nations was created after WWI to prevent future wars but failed to stop aggression in the 1930s."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "What was the impact of Treaty of Versailles?",
+          answer: "It humiliated Germany, caused resentment, and contributed to the rise of extreme nationalism leading to WWII."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain major causes of World War II.",
+          answer: "Harsh Versailles terms, rise of Fascism and Nazism, failure of League of Nations, policy of appeasement, and aggressive expansion by Axis powers caused WWII."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 9: WORLD DECOLONISATION ====================
+  chapter9: {
+    title: "World Decolonisation",
+    weightage: "07 marks (10 with options)",
+
+    shortcodes: [
+      {
+        code: "NAN",
+        topic: "Post-war World Changes",
+        breakdown: "Nationalism • Anti-colonial struggle • New nations"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Decolonisation",
+        definition: "Process by which colonies achieved independence after WWII."
+      },
+      {
+        term: "Non-Aligned Movement",
+        definition: "Movement of states not formally aligned with either Cold War bloc."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "A major reason for decolonisation after 1945 was:",
+        options: ["Industrial growth", "Rise of nationalism in colonies", "Decline of trade", "Religious reforms"],
+        correct: 1,
+        year: 2023
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "Why did decolonisation accelerate after WWII?",
+        year: 2024,
+        modelAnswer: "1. European powers were economically weakened after war.\n2. Colonial nationalism became stronger.\n3. UN and global opinion supported self-determination."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 9 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "Decolonisation means:",
+          options: ["Industrialization", "End of colonial rule", "Religious reform", "Globalization"],
+          correct: 1,
+          answer: "End of colonial rule"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "Policy where countries stayed independent of both Cold War military blocs.",
+          concept: "Non-Alignment",
+          answer: "Non-Alignment allowed newly independent countries to protect sovereignty and pursue independent foreign policy."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "State two outcomes of decolonisation.",
+          answer: "1. Emergence of many sovereign states in Asia and Africa.\n2. New international issues of development and nation-building."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain significance of decolonisation in world history.",
+          answer: "Decolonisation ended formal empires, expanded UN membership, transformed global politics, and gave momentum to ideas of equality and self-determination."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 10: COLD WAR ====================
+  chapter10: {
+    title: "Cold War",
+    weightage: "07 marks (10 with options)",
+
+    shortcodes: [
+      {
+        code: "PASP",
+        topic: "Nature of Cold War",
+        breakdown: "Proxy wars • Arms race • Space race • Propaganda"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Cold War",
+        definition: "Political and ideological rivalry between USA and USSR without direct full-scale war."
+      },
+      {
+        term: "NATO",
+        definition: "Military alliance formed in 1949 under US leadership."
+      },
+      {
+        term: "Warsaw Pact",
+        definition: "Military alliance formed in 1955 under Soviet leadership."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "Cold War was primarily a conflict of:",
+        options: ["Religion", "Ideologies", "Languages", "Trade routes"],
+        correct: 1,
+        year: 2022
+      },
+      {
+        q: "Cuban Missile Crisis occurred in:",
+        options: ["1945", "1955", "1962", "1971"],
+        correct: 2,
+        year: 2024
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "Explain why Cold War is called a 'cold' war.",
+        year: 2023,
+        modelAnswer: "It is called cold because USA and USSR did not fight each other directly; instead they used proxy wars, arms race, and diplomatic confrontation."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 10 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "NATO was formed in:",
+          options: ["1945", "1949", "1955", "1961"],
+          correct: 1,
+          answer: "1949"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "The confrontation in 1962 that brought the world close to nuclear war.",
+          concept: "Cuban Missile Crisis",
+          answer: "It was the peak of Cold War tension when USSR deployed missiles in Cuba and USA responded with naval blockade."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "Name two features of the Cold War.",
+          answer: "1. Arms and nuclear race.\n2. Proxy wars in third-world regions."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain impact of Cold War on world politics.",
+          answer: "Cold War divided the world into blocs, militarized international relations, encouraged proxy conflicts, and influenced the foreign policies of new nations."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 11: INDIA TRANSFORMED - I ====================
+  chapter11: {
+    title: "India Transformed - I",
+    weightage: "06 marks (09 with options)",
+
+    shortcodes: [
+      {
+        code: "3P",
+        topic: "Early Nation Building",
+        breakdown: "Planning • Public institutions • Parliamentary democracy"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Planned Development",
+        definition: "Post-independence strategy using Five-Year Plans for economic growth."
+      },
+      {
+        term: "Democratic Republic",
+        definition: "India adopted universal adult franchise and parliamentary democracy."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "Universal Adult Franchise in India means:",
+        options: ["Vote by property owners", "Vote by all adults", "Vote by taxpayers", "Vote by graduates only"],
+        correct: 1,
+        year: 2023
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "State two features of Indian democracy after independence.",
+        year: 2024,
+        modelAnswer: "1. Universal adult franchise.\n2. Parliamentary federal system with regular elections."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 11 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "India became a Republic on:",
+          options: ["15 Aug 1947", "26 Jan 1950", "26 Nov 1949", "2 Oct 1948"],
+          correct: 1,
+          answer: "26 Jan 1950"
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "Why was planning important in early India?",
+          answer: "Planning helped allocate scarce resources, build infrastructure, and reduce poverty in a newly independent economy."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Explain key nation-building efforts in early independent India.",
+          answer: "India built democratic institutions, expanded public sector and planning, promoted social justice through constitutional safeguards, and invested in education and industry."
+        }
+      ]
+    }
+  },
+
+  // ==================== CHAPTER 12: INDIA TRANSFORMED - II ====================
+  chapter12: {
+    title: "India Transformed - II",
+    weightage: "07 marks (10 with options)",
+
+    shortcodes: [
+      {
+        code: "RDT",
+        topic: "Contemporary Change",
+        breakdown: "Reforms • Development • Technology"
+      }
+    ],
+
+    mustKnowConcepts: [
+      {
+        term: "Economic Reforms (1991)",
+        definition: "Policy shift towards liberalisation, privatisation and globalisation."
+      },
+      {
+        term: "Globalisation",
+        definition: "Increasing integration of Indian economy with world markets."
+      }
+    ],
+
+    pyqMCQs: [
+      {
+        q: "Major economic reforms in India started in:",
+        options: ["1969", "1984", "1991", "2001"],
+        correct: 2,
+        year: 2022
+      }
+    ],
+
+    pyqShortAnswers: [
+      {
+        q: "Write two effects of economic reforms in India.",
+        year: 2024,
+        modelAnswer: "1. Higher growth and global integration.\n2. Expansion of private sector and services."
+      }
+    ],
+
+    textbookExercises: {
+      title: "Chapter 12 - Textbook Exercises",
+      mcqs: [
+        {
+          q: "LPG reforms stand for:",
+          options: ["Labour, Planning, Growth", "Liberalisation, Privatisation, Globalisation", "Law, Policy, Governance", "Land, Power, Government"],
+          correct: 1,
+          answer: "Liberalisation, Privatisation, Globalisation"
+        }
+      ],
+      identifyExplain: [
+        {
+          statement: "Integration of domestic economy with global economy.",
+          concept: "Globalisation",
+          answer: "Globalisation increased trade, investment, technology transfer and competition in India."
+        }
+      ],
+      shortAnswers: [
+        {
+          q: "State two challenges after economic reforms.",
+          answer: "1. Regional and income inequalities.\n2. Pressure on small producers and employment security."
+        }
+      ],
+      longAnswers: [
+        {
+          q: "Evaluate impact of 1991 reforms on India.",
+          answer: "The reforms accelerated growth and modernization, but also created inequality concerns, requiring inclusive development policies."
+        }
+      ]
+    }
   },
 
   // ==================== MOST IMPORTANT QUESTIONS 2026 ====================
@@ -160,9 +1053,9 @@ export const HISTORY_BOARD_CRASHER = {
     // Q.2 (A) Identify and Explain (2 Marks)
     identifyConcepts: [
       {
-        q: "Mala collected information about the income and expenditure of twenty five families from her locality.",
-        concept: "Micro Economics (Study of Individual Units)",
-        explanation: "Micro economics is the study of particular firms, particular households, individual prices, wages, incomes, individual industries, and particular commodities."
+        q: "Mahatma Jyotirao Phule founded an organization in 1873 for social equality.",
+        concept: "Satyashodhak Samaj",
+        explanation: "Satyashodhak Samaj was founded in 1873 by Mahatma Phule to fight caste oppression and promote education and social justice."
       },
       {
         q: "European nations divided the African continent among themselves at the Berlin Conference.",

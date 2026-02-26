@@ -39,6 +39,11 @@ type TabType =
   | "ch5"
   | "ch6"
   | "ch7"
+  | "ch8"
+  | "ch9"
+  | "ch10"
+  | "ch11"
+  | "ch12"
   | "lastmin";
 
 const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
@@ -74,6 +79,16 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
     },
     { id: "ch1", label: "Renaissance", shortLabel: "1", color: "bg-slate-500" },
     { id: "ch2", label: "Colonialism", shortLabel: "2", color: "bg-purple-500" },
+    { id: "ch3", label: "India & Colonial", shortLabel: "3", color: "bg-green-500" },
+    { id: "ch4", label: "Marathas", shortLabel: "4", color: "bg-amber-500" },
+    { id: "ch5", label: "Reforms", shortLabel: "5", color: "bg-pink-500" },
+    { id: "ch6", label: "Freedom", shortLabel: "6", color: "bg-red-500" },
+    { id: "ch7", label: "Decolonisation", shortLabel: "7", color: "bg-indigo-500" },
+    { id: "ch8", label: "World Wars", shortLabel: "8", color: "bg-cyan-500" },
+    { id: "ch9", label: "World Decol", shortLabel: "9", color: "bg-emerald-500" },
+    { id: "ch10", label: "Cold War", shortLabel: "10", color: "bg-violet-500" },
+    { id: "ch11", label: "India I", shortLabel: "11", color: "bg-lime-500" },
+    { id: "ch12", label: "India II", shortLabel: "12", color: "bg-fuchsia-500" },
     {
       id: "lastmin",
       label: "Last Min",
@@ -480,11 +495,30 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
                           ))}
                         </div>
                       )}
-                      {q.modelAnswer && (
-                        <div className="mt-2 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-600">
-                          <p className="text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap">{q.modelAnswer}</p>
-                        </div>
-                      )}
+                      {q.modelAnswer && section !== "pyqMCQs" && (() => {
+                        const answerId = `${chapterKey}-${section}-${idx}`;
+                        const isRevealed = !!showAnswers[answerId];
+                        return (
+                          <div className="mt-2">
+                            <button
+                              onClick={() => toggleAnswer(answerId)}
+                              className={`w-full py-2 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
+                                isRevealed
+                                  ? "bg-indigo-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {isRevealed ? <EyeOff size={14} /> : <Eye size={14} />}
+                              {isRevealed ? "Hide Model Answer" : "Show Model Answer"}
+                            </button>
+                            {isRevealed && (
+                              <div className="mt-2 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-600">
+                                <p className="text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap">{q.modelAnswer}</p>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })()}
                     </div>
                   ))}
                 </div>
@@ -492,6 +526,117 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
             </div>
           );
         })}
+
+        {/* Textbook Exercises */}
+        {chapter.textbookExercises && (
+          <div className="space-y-4">
+            <div className="bg-gradient-to-r from-emerald-500 to-teal-500 rounded-2xl p-4 text-white">
+              <h3 className="font-bold text-lg flex items-center gap-2">
+                📚 {chapter.textbookExercises.title}
+              </h3>
+              <p className="text-white/80 text-sm mt-1">Textbook-style practice with model answers</p>
+            </div>
+
+            {[
+              {
+                key: "mcqs",
+                title: "Q.1 Choose Correct Option",
+                color: "bg-green-50 dark:bg-green-900/20",
+              },
+              {
+                key: "identifyExplain",
+                title: "Q.2 Identify & Explain",
+                color: "bg-purple-50 dark:bg-purple-900/20",
+              },
+              {
+                key: "shortAnswers",
+                title: "Q.3 Short Answers",
+                color: "bg-orange-50 dark:bg-orange-900/20",
+              },
+              {
+                key: "longAnswers",
+                title: "Q.4 Long Answers",
+                color: "bg-red-50 dark:bg-red-900/20",
+              },
+            ].map((sec) => {
+              const items = chapter.textbookExercises[sec.key];
+              if (!items || items.length === 0) return null;
+              const expandKey = `tb-${chapterKey}-${sec.key}`;
+              return (
+                <div key={sec.key} className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                  <button
+                    onClick={() =>
+                      setExpandedSection(expandedSection === expandKey ? null : expandKey)
+                    }
+                    className={`w-full p-4 flex items-center justify-between ${sec.color}`}
+                  >
+                    <h4 className="font-bold text-slate-800 dark:text-white flex items-center gap-2">
+                      <FileText size={18} /> {sec.title} ({items.length})
+                    </h4>
+                    {expandedSection === expandKey ? (
+                      <ChevronDown size={18} />
+                    ) : (
+                      <ChevronRight size={18} />
+                    )}
+                  </button>
+                  {expandedSection === expandKey && (
+                    <div className="p-4 space-y-4 max-h-[65vh] overflow-y-auto">
+                      {items.map((item: any, idx: number) => {
+                        const revealId = `tb-${chapterKey}-${sec.key}-${idx}`;
+                        const shown = !!showAnswers[revealId];
+                        return (
+                          <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl">
+                            <p className="font-medium text-slate-800 dark:text-white text-sm mb-3">
+                              {item.q || item.question || item.statement}
+                            </p>
+
+                            {sec.key === "mcqs" && item.options && (
+                              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3">
+                                {item.options.map((opt: string, i: number) => (
+                                  <div
+                                    key={i}
+                                    className={`p-2 rounded text-xs ${shown && i === item.correct ? "bg-green-100 text-green-800 font-bold border border-green-400" : "bg-white dark:bg-slate-600 text-slate-700 dark:text-slate-300"}`}
+                                  >
+                                    {opt}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+
+                            <button
+                              onClick={() => toggleAnswer(revealId)}
+                              className={`w-full py-2 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
+                                shown
+                                  ? "bg-indigo-500 text-white"
+                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                              }`}
+                            >
+                              {shown ? <EyeOff size={14} /> : <Eye size={14} />}
+                              {shown ? "Hide Answer" : "Show Answer"}
+                            </button>
+
+                            {shown && (
+                              <div className="mt-3 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-600">
+                                {item.concept && (
+                                  <p className="text-xs font-bold text-purple-700 dark:text-purple-300 mb-1">
+                                    Concept: {item.concept}
+                                  </p>
+                                )}
+                                <p className="text-xs text-slate-700 dark:text-slate-300 whitespace-pre-wrap">
+                                  {item.modelAnswer || item.answer || item.explanation}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   };
@@ -500,13 +645,56 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
     const lastMin = data.lastMinutePoints;
     return (
       <div className="space-y-4 p-4">
+        <div className="bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl p-4 text-white">
+          <h3 className="font-black text-lg flex items-center gap-2">⚡ Last Minute Smart Revision</h3>
+          <p className="text-white/90 text-sm mt-1">Rapid revision set for the upcoming History board exam</p>
+        </div>
+
         <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
-          <h4 className="font-bold text-slate-800 dark:text-white mb-3">Key Dates</h4>
+          <h4 className="font-bold text-slate-800 dark:text-white mb-3">🗓️ Key Dates</h4>
+          <div className="space-y-2 max-h-[34vh] overflow-y-auto">
+            {lastMin.importantDates.map((d, i) => {
+              const [year, ...eventParts] = d.split("-");
+              const eventText = eventParts.join("-").trim();
+              return (
+                <div key={i} className="text-xs bg-slate-50 dark:bg-slate-700 p-2 rounded flex gap-2">
+                  <span className="font-bold text-blue-600 w-12 shrink-0">{year.trim()}</span>
+                  <span className="text-slate-600 dark:text-slate-300">{eventText}</span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+          <h4 className="font-bold text-slate-800 dark:text-white mb-3">👤 Important Persons</h4>
           <div className="space-y-2">
-            {lastMin.importantDates.map((d, i) => (
-              <div key={i} className="text-xs bg-slate-50 dark:bg-slate-700 p-2 rounded flex gap-2">
-                <span className="font-bold text-blue-600">{d.split('-')[0]}</span>
-                <span className="text-slate-600 dark:text-slate-300">{d.split('-')[1]}</span>
+            {lastMin.importantPersons.map((person, i) => (
+              <div key={i} className="text-xs bg-slate-50 dark:bg-slate-700 p-2 rounded text-slate-700 dark:text-slate-300">
+                {person}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+          <h4 className="font-bold text-slate-800 dark:text-white mb-3">🔠 Full Forms</h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {lastMin.fullForms.map((item, i) => (
+              <div key={i} className="text-xs bg-slate-50 dark:bg-slate-700 p-2 rounded text-slate-700 dark:text-slate-300">
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-4">
+          <h4 className="font-bold text-emerald-800 dark:text-emerald-200 mb-3">✅ Exam Tips</h4>
+          <div className="space-y-2">
+            {lastMin.examTips.map((tip, i) => (
+              <div key={i} className="text-sm text-emerald-700 dark:text-emerald-300 flex items-start gap-2">
+                <CheckCircle2 size={14} className="mt-0.5 shrink-0" />
+                <span>{tip}</span>
               </div>
             ))}
           </div>
@@ -514,6 +702,14 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
       </div>
     );
   };
+
+  const daysLeft = (() => {
+    const exam = new Date(data.examDate);
+    const now = new Date();
+    exam.setHours(0, 0, 0, 0);
+    now.setHours(0, 0, 0, 0);
+    return Math.ceil((exam.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
+  })();
 
   return (
     <div className="fixed inset-0 bg-slate-100 dark:bg-slate-950 z-50 flex flex-col">
@@ -550,11 +746,11 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
           <div className="flex-1">
             <h1 className="text-lg font-black">📜 History</h1>
             <p className="text-white/80 text-xs">
-              Board Exam Crasher • 27 Feb 2026
+              Board Exam Crasher • 9 Mar 2026
             </p>
           </div>
-          <div className="bg-orange-800 px-3 py-1 rounded-full text-xs font-bold">
-            7 DAYS
+          <div className={`px-3 py-1 rounded-full text-xs font-bold ${daysLeft <= 3 ? "bg-red-800" : "bg-orange-800"}`}>
+            {daysLeft <= 0 ? "EXAM DAY" : `${daysLeft} DAYS`}
           </div>
         </div>
       </div>
@@ -587,6 +783,16 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
         {activeTab === "imp2026" && renderImpQuestions()}
         {activeTab === "ch1" && renderChapter("chapter1")}
         {activeTab === "ch2" && renderChapter("chapter2")}
+        {activeTab === "ch3" && renderChapter("chapter3")}
+        {activeTab === "ch4" && renderChapter("chapter4")}
+        {activeTab === "ch5" && renderChapter("chapter5")}
+        {activeTab === "ch6" && renderChapter("chapter6")}
+        {activeTab === "ch7" && renderChapter("chapter7")}
+        {activeTab === "ch8" && renderChapter("chapter8")}
+        {activeTab === "ch9" && renderChapter("chapter9")}
+        {activeTab === "ch10" && renderChapter("chapter10")}
+        {activeTab === "ch11" && renderChapter("chapter11")}
+        {activeTab === "ch12" && renderChapter("chapter12")}
         {activeTab === "lastmin" && renderLastMin()}
       </div>
     </div>
