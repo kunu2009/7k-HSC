@@ -103,49 +103,149 @@ export const HISTORY_BOARD_CRASHER = {
     ],
 
     textbookExercises: {
-      title: "Chapter 1 - Textbook Exercises",
+      title: "Chapter 1 - Maharashtra Board Textbook Exercises",
+
+      // 1A. Choose the correct alternative
       mcqs: [
         {
-          q: "Renaissance is best described as:",
-          options: [
-            "Religious war",
-            "Rebirth of learning",
-            "Colonial policy",
-            "Trade treaty",
-          ],
+          q: "In 1440 ________ started the printing press.",
+          options: ["James Watt", "Gutenberg", "Aristotle", "Homer"],
           correct: 1,
-          answer: "Rebirth of learning",
-        },
-        {
-          q: "Printing Press was invented by:",
-          options: ["Gutenberg", "James Watt", "Martin Luther", "Copernicus"],
-          correct: 0,
           answer: "Gutenberg",
         },
-      ],
-      identifyExplain: [
         {
-          statement:
-            "An intellectual movement focused on man and his achievements.",
-          concept: "Humanism",
-          answer:
-            "Humanism shifted focus from purely religious thought to rational inquiry, arts and human potential during Renaissance.",
+          q: "In 1609 _______ made a modified telescope.",
+          options: ["John Kay", "Copernicus", "Galileo", "Kepler"],
+          correct: 2,
+          answer: "Galileo",
+        },
+        {
+          q: "_________ was the first explorer to circumnavigate the African continent.",
+          options: [
+            "Henry the Navigator",
+            "Marco Polo",
+            "Bartholomew Dias",
+            "Columbus",
+          ],
+          correct: 2,
+          answer: "Bartholomew Dias",
         },
       ],
-      shortAnswers: [
+
+      // 1B. Find incorrect pair
+      incorrectPairs: [
         {
-          q: "State two causes of Renaissance.",
+          q: "Find the incorrect pair from group 'B' and write the corrected one.",
+          pairs: [
+            { groupA: "John Kay", groupB: "Flying shuttle", isCorrect: true },
+            {
+              groupA: "Samuel Crompton",
+              groupB: "Cotton gin",
+              isCorrect: false,
+            },
+            {
+              groupA: "Edmund Cartwright",
+              groupB: "Power loom",
+              isCorrect: true,
+            },
+            { groupA: "James Watt", groupB: "Steam engine", isCorrect: true },
+          ],
           answer:
-            "1. Fall of Constantinople brought classical knowledge to Europe.\n2. Patronage by wealthy families like Medici encouraged arts and learning.",
+            "Incorrect: Samuel Crompton – Cotton gin. Correct: Samuel Crompton – Spinning Mule",
         },
       ],
+
+      // 2. Write names of historical places/persons/events
+      names: [
+        {
+          q: "Father of the empirical science —",
+          answer: "Galileo",
+        },
+        {
+          q: "Scientists who told the world that the centre of our planetary system is the 'Sun' and not the 'Earth' —",
+          answer: "Nicolaus Copernicus",
+        },
+        {
+          q: "The treatise was written by Varahmihir —",
+          answer: "Brihatsamhita",
+        },
+      ],
+
+      // 3. Complete concept maps
+      conceptMaps: [
+        {
+          q: "Complete the concept map for Renaissance",
+          type: "Social Reformers / European Renaissance figures",
+          answer:
+            "Artists: Leonardo da Vinci, Michelangelo, Raphael; Scientists: Galileo, Copernicus, Kepler; Writers: Dante, Petrarch, Boccaccio",
+        },
+      ],
+
+      // 4. Write short notes
+      shortNotes: [
+        {
+          q: "European Crusades",
+          answer:
+            "**European Crusades:**\n\n1. The two cities of Jerusalem and Bethlehem considered holy by Jews, Christians, and Muslims were under Islamic rule in the 11th century.\n2. Christians of Europe wanted to regain hold over these cities and fought several wars known as 'Crusaders'.\n3. When the Pope announced that sins of those who took part would be forgiven, there was spontaneous participation.\n4. The first crusade started in 1096 C.E. Pope Eugenius III sought help from French King Louis VII and German King Conrad III.\n5. The crusaders were ultimately defeated. In 1187 C.E. Saladin, the Sultan of Egypt conquered Jerusalem.\n\n**Effects:** End of feudalism, decline in Pope's faith, increased trade with Central Asia, rise of trader class, European warfare changes, new taxes for royal treasury, introduction to new plants/fruits, contact with Arabic culture.",
+        },
+        {
+          q: "Metallurgy in Europe",
+          answer:
+            "**Metallurgy in Europe:**\n\n1. England had a number of iron mines. It was necessary to advance the technique of smelting iron to acquire purified iron.\n2. The fuel for iron furnaces was replaced from wood to coal.\n3. Special machines were made to keep the furnaces at a set temperature and to maintain their aeration.\n4. In 1865, the process of producing steel from molten iron was invented and the nature of the iron industry underwent a major transformation.\n5. At about the same time, a method was adopted to pour the molten metal into casts for making iron bars (e.g. rails).",
+        },
+      ],
+
+      // 5. Explain with reasons
+      explainReasons: [
+        {
+          q: "The European Renaissance is supposed to have reached its zenith in the 15th-16th centuries.",
+          answer:
+            "**Reasons:**\n\n1. The European Renaissance began in the 14th century C.E. It reached its zenith in the 15th and 16th centuries.\n2. These three centuries laid the foundations of a culture based on rationalism and science.\n3. This age gave a new direction to human intellect, genius and way of life.\n4. People started writing poetry, drama, and fiction. Novel experiments were conducted in the field of science.\n5. In the pre-renaissance period, thought about existence revolved around 'God'. The Renaissance shifted focus to human potential.\n6. In this period new inventions, machinery, art, drama, literature, and geographical discoveries have taken place.",
+        },
+        {
+          q: "The 'Industrial Revolution' first began in England.",
+          answer:
+            "**Reasons:**\n\n1. 'Industrial Revolution' indicates the transition from manual production to mechanized production.\n2. In England, the atmosphere was suitable for the industrial revolution. Large amounts of iron ore and coal were available.\n3. The humid climate of England was suitable for producing yarn. These conditions proved favourable for the textile industry.\n4. England had established a large number of colonies by then so England could obtain raw material at cheap rates from these colonies.\n5. England could also export the processed goods and sell it in their colonies with large profit margins using their navy.\n6. The availability of cheap labour made it possible to maintain an optimum level of costs.\n7. These factors prepared the ground for the industrial revolution in England thus giving a boost to its economy.",
+        },
+      ],
+
+      // 6. State your opinion
+      opinions: [
+        {
+          q: "The European natural scientists of the 17th century laid the foundations of modern science.",
+          answer:
+            "**Opinion: Agree**\n\nThe scientists of the 17th century emphasized:\n1. To prove that scientific principles established by empirical experiments are true despite time and space.\n2. To convert the emergent scientific rules into scientific formulae.\n3. To create new scientific parlance.\n\nThese efforts helped the progress of science. The compass, barometer, telescope, and thermometer were invented during this period. Microscopes were invented to observe micro-organisms. Robert Boyle discovered that absolute pressure and volume of a gas are inversely proportional. Research in physics focused on heat and sound. In zoology, 'Taxonomy' was developed. Benjamin Franklin's research on lightning and electricity coined many technical terms used in science even today.",
+        },
+        {
+          q: "The economy based on surplus production supported economic nationalism and also imperialism.",
+          answer:
+            "**Opinion: Agree**\n\nEconomic nationalism began the vicious circle of continuously capturing new marketplaces, searching for sources of cheap supply of raw material, maintaining an unbroken chain supply, to attract more investors, and to safeguard their investments. This resulted in limitless exploitation of the colonies.\n\nExtreme nationalism, industrialization, concepts of racial superiority, and aggressive colonial policies further supported the growth of imperialism. The result was the immense expanse of the empires like England, France, Belgium, Germany, etc.",
+        },
+      ],
+
+      // 7. Answer in detail
       longAnswers: [
         {
-          q: "Explain impact of Renaissance on Europe.",
+          q: "Explain the causes and effects of European crusades.",
           answer:
-            "Renaissance promoted scientific thinking, growth of literature and arts, weakening of blind religious authority, and eventually led to reformation and discoveries.",
+            "**Causes of European Crusades:**\n\n1. The two cities of Jerusalem and Bethlehem considered holy by Jews, Christians, and Muslims were under Islamic rule in the 11th century.\n2. Christians of Europe wanted to regain hold over these cities and fought several wars known as 'Crusaders'.\n3. The common people in Europe were highly inspired to be part of such religious wars.\n4. When the Pope announced that sins of those who took part would be forgiven and would immediately go to Heaven, there was spontaneous participation.\n5. Besides social and political circumstances, Roman emperors were trying to bring Syria and Asia Minor under their control.\n6. Rich merchants in Genova and Venice in Italy were looking for Central Asian markets to establish their trade.\n7. The first crusade started in 1096 C.E. Pope Eugenius III sought help from French King Louis VII and German King Conrad III.\n8. The crusaders were ultimately defeated by the Turks and in 1187 C.E. Saladin, the Sultan of Egypt defeated the crusaders by conquering Jerusalem.\n\n**Effects of Crusades:**\n\n1. According to some historians, the crusades led to the end of feudalism in Europe.\n2. The faith in the Pope began to decline.\n3. Contact with regions in Central Asia led to increased trade and new venues were opened for cities in Italy and Germany.\n4. It led to the rise of a new class of traders.\n5. European warfare went through many changes (expertise in building forts, managing forts as military outposts, building bridges, etc.).\n6. European kings levied new taxes which were added to the royal treasury.\n7. Europeans were introduced to newer types of plants, fruits, perfumes, etc.\n8. Europeans came in contact with Arabs and adopted many Arabic words in Alchemy, Music, and Commerce.",
+        },
+        {
+          q: "Give detailed information on the development of science and scientific inventions during the renaissance period.",
+          answer:
+            "**Development of Science during Renaissance:**\n\n**Scientific Methodology:**\n1. Scientists of the 17th century emphasized proving that scientific principles established by empirical experiments are true despite time and space.\n2. They converted emergent scientific rules into scientific formulae.\n3. They created new scientific parlance. These efforts helped the progress of science.\n\n**Key Inventions:**\n1. The compass, the barometer, telescope, and the thermometer were invented during this period.\n2. Microscopes were invented to observe various types of micro-organisms.\n3. Robert Boyle, an alchemist discovered that the absolute pressure and the volume of a gas are inversely proportional.\n4. The research in physics was more focused on heat and sound.\n5. In zoology, a methodology known as 'Taxonomy' was developed to classify animals.\n6. Benjamin Franklin's research was on lightning and electricity. He coined many technical terms which are used in science even today.\n\n**Impact:**\nThese developments laid the foundation of modern science based on observation, experimentation, and empirical evidence rather than religious doctrine or ancient authority.",
         },
       ],
+
+      // Additional context from textbook
+      additionalInfo: {
+        tryToDo:
+          "Early European universities were the University of Bologna (1088) and University of Paris (1150-1170). Bologna is considered the 'mother of universities'. European universities concentrated on science and research. Original Medieval universities arose from Roman Catholic Church schools. Purposes included training of professionals, scientific investigation, and teaching critical thinking and research. During Renaissance, humanist ideas were slowly accepted. Universities began preparing the student for a civilized life. The curriculum included liberal arts such as Trivium (grammar, rhetoric, logic) and Quadrivium (arithmetic, geometry, astronomy, music).",
+        findItOut:
+          "The industrial revolution first began in Britain in the late 1770s and first spread to Belgium followed by France, the German states, and North America.",
+        project:
+          "**Bartholomew Dias:** Portuguese explorer, first European to sail around the southern tip of Africa (Cape of Good Hope). Departed from Lisbon in August 1487 with three ships. Entered Bay of Saint Blaise in February 1488. Discovered Cape of Good Hope in May 1488. Returned to Lisbon in December 1488 after 16 months and 17 days.\n\n**Vasco da Gama:** Portuguese explorer, first European to reach India by sea. Discovery of the sea route to India opened the way for an age of imperialism in Asia. Landed in Calicut, India on May 20, 1498. This boosted the economy of the Portuguese Empire. In 1524, appointed as Governor of India with the title of Viceroy, and was ennobled as Count of Vidigueria in 1519.",
+      },
     },
   },
 
@@ -222,43 +322,130 @@ export const HISTORY_BOARD_CRASHER = {
     ],
 
     textbookExercises: {
-      title: "Chapter 2 - Textbook Exercises",
+      title: "Chapter 2 - Maharashtra Board Textbook Exercises",
+
+      // 1A. Choose the correct alternative
       mcqs: [
         {
-          q: "Berlin Conference (1884-85) is related to:",
+          q: "'Declaration of Independence' was drafted by __________",
           options: [
-            "Partition of Africa",
-            "Indian Constitution",
-            "French Revolution",
-            "Cold War",
+            "George Washington",
+            "Thomas Jefferson",
+            "Lord Amherst",
+            "Lord Cornwallis",
           ],
-          correct: 0,
-          answer: "Partition of Africa",
+          correct: 1,
+          answer: "Thomas Jefferson",
         },
-      ],
-      identifyExplain: [
         {
-          statement:
-            "A policy of extending control over foreign lands for economic and political gain.",
-          concept: "Imperialism",
-          answer:
-            "Imperialism expanded European political power globally and was driven by industrial and strategic needs.",
+          q: "The second Anglo-Burmese war was fought during the times of __________",
+          options: [
+            "Lord Amherst",
+            "Lord Dufferin",
+            "Lord Dalhousie",
+            "Ashley Eden",
+          ],
+          correct: 2,
+          answer: "Lord Dalhousie",
         },
       ],
-      shortAnswers: [
+
+      // 1B. Find incorrect pair
+      incorrectPairs: [
         {
-          q: "State any two effects of colonialism.",
+          q: "Find the incorrect pair from group 'B' and write the corrected one.",
+          pairs: [
+            { groupA: "Togoland", groupB: "German colony", isCorrect: true },
+            { groupA: "Egypt", groupB: "British colony", isCorrect: true },
+            {
+              groupA: "Orange Free State",
+              groupB: "Dutch colony",
+              isCorrect: true,
+            },
+            {
+              groupA: "Ivory Coast",
+              groupB: "Portuguese colony",
+              isCorrect: false,
+            },
+          ],
           answer:
-            "1. Economic exploitation of colonies.\n2. Imposition of foreign political control and cultural influence.",
+            "Incorrect: Ivory Coast – Portuguese colony. Correct: Ivory Coast – French colony",
         },
       ],
-      longAnswers: [
+
+      // 2A. Write names of historical places/persons/events
+      names: [
         {
-          q: "Explain major causes of European colonial expansion.",
-          answer:
-            "Industrial demand for raw materials, need for markets, naval strategy, population pressure and belief in European superiority all encouraged colonial expansion.",
+          q: "The region from Florida to California on the southern coast of America was under the control of —",
+          answer: "Spain",
+        },
+        {
+          q: "The sea voyages for exploration were encouraged in the reign of —",
+          answer: "Queen Elizabeth I",
         },
       ],
+
+      // 2B. Choose correct reason
+      reasons: [
+        {
+          q: "The British wanted to gain control over Myanmar because __________",
+          options: [
+            "they wanted to expand their empire",
+            "it was very important to control the natural resources and the market in Myanmar",
+            "they wanted to be at the forefront of the colonial competition amongst the European nations",
+            "they wanted to teach a lesson to King Thibaw of Myanmar",
+          ],
+          correct: 1,
+          answer:
+            "(b) it was very important to control the natural resources and the market in Myanmar",
+        },
+      ],
+
+      // 3. Complete concept maps
+      conceptMaps: [
+        {
+          q: "Complete the concept map for European Colonialism",
+          type: "Colonial powers and their territories",
+          answer:
+            "British: India, Australia, Canada, parts of Africa; French: Algeria, Vietnam, West Africa; Portuguese: Brazil, Angola, Mozambique; Spanish: South America, Philippines; Dutch: Indonesia, South Africa",
+        },
+      ],
+
+      // 4. Write short notes
+      shortNotes: [
+        {
+          q: "Nature of Colonialism",
+          answer:
+            "**Nature of Colonialism:**\n\n1. Colonialism is the act of a developed nation occupying the land of a less developed, distant nation and establishing its rule on the occupied country.\n2. Europeans travelled all over the world with various intentions such as the urge for adventures, to earn a name, to discover unknown lands, to search for gold mines, etc.\n3. The Europeans established colonies wherever they went and in doing so there was a competition to gain economic, social, and political supremacy among the nations.\n4. Extreme nationalism, feeling of racial superiority, industrialization, aggressive approach, etc., are the factors that led to the growth of colonialism.\n5. Europeans went to America, Australia, and New Zealand. The Europeans also colonised Asia. However, the climate of Asia did not favour them. Favourable or unfavourable, Europeans disposed of the indigenous people in their own lands.\n6. The Europeans saw these colonies as potential marketplaces to sell their surplus goods which were accumulated as a result of mass production. The Europeans also needed additional sources that would provide ample raw material.\n7. In the latter half of the 19th century, England built a flourishing trade as a result of the industrial revolution.",
+        },
+        {
+          q: "American War of Independence",
+          answer:
+            "**American War of Independence:**\n\n1. The colonies got into several battles with the British army even after gaining independence.\n2. The colonies finally at Saratoga got a decisive victory over the British army. This victory proved to be a turning point for the colonies as the French agreed to support them in their conflict against the British.\n3. Eventually, Spain also joined the conflicts in their struggle for independence.\n4. On 7th October 1780, George Washington defeated the British army.\n5. On 19th October, British General Lord Cornwallis surrendered and America became independent.\n6. The American revolt for independence is also known as the 'American Revolution'.\n7. America proved to the world that the subjects have a right to fight their rulers who deny them their natural rights.",
+        },
+      ],
+
+      // 5. Explain with reasons
+      explainReasons: [
+        {
+          q: "The industrial revolution gave momentum to colonialism.",
+          answer:
+            "**Reasons:**\n\n1. Colonialism was a result of the industrial revolution.\n2. Production increased enormously because of the new machines. However, the rate of local consumption was much less compared to the surplus rate of production.\n3. Hence, the immediate need of the Europeans was to find new markets for selling their products.\n4. It was also necessary that these markets be dependable and easy to dominate.\n5. Europeans needed raw materials to feed their industries and colonies provided cheap sources of raw materials.\n6. The surplus production from industries needed new markets, and colonies became captive markets for European goods.\n7. Thus, the industrial revolution directly led to the expansion of colonialism as European powers sought to control resources and markets worldwide.",
+        },
+        {
+          q: "European nations established colonies in America.",
+          answer:
+            "**Reasons:**\n\n1. The stronger European nations dominated the weaker countries by establishing colonies there and pushed them to subjection.\n2. The lands of the original inhabitants in America were seized by the Europeans and were also massacred. The original inhabitants were forced into slavery.\n3. The Europeans discovered gold mines and the Spanish colonizers brought African slaves to work in sugarcane and tobacco fields.\n4. Farming and mining earned them enormous wealth.\n5. Essential raw materials were exported to Spain and the finished goods used to be imported for sale in the local markets for the colonies.\n6. The trade of gold and silver also earned huge profits for the king.\n7. Witnessing Spain's prosperity, England, Holland and France also began to establish colonies in America.\n8. The colonies provided strategic military outposts and naval bases for European powers.\n9. Economic exploitation, search for precious metals, and competition among European nations were the main driving forces.",
+        },
+      ],
+
+      // Additional context from textbook
+      additionalInfo: {
+        tryToDo:
+          "Locate the following regions under British domination on the map: Gibraltar, Malta in the Mediterranean Sea; British Guyana, British Honduras, British West Indies, Bermuda and Falkland islands in the Western Hemisphere; Aden, Sri Lanka, Myanmar, Hong Kong, India; also, the countries in Africa. This map exercise helps visualize the vast extent of the British Empire across all continents.",
+        project:
+          "**Biodiversity and Minerals in Africa:**\n\n**Biodiversity:**\n1. Meaning: Biodiversity consists of 'Biological' and 'Diversity'. It refers to all the variety of life that can be found on earth (plants, animals, fungi, and microorganisms) as well as to the communities that they form and the habitats in which they live.\n2. Africa is rich in biodiversity and supports the earth's largest assemblages of large mammals which roam freely in many countries.\n3. Africa is home to a rich and diverse animal, plant, and marine biodiversity that provide critical ecosystem services.\n\n**Minerals in Africa:**\n1. Africa is rich in mineral reserves and ranks first or second in quantity of world reserves of bauxite, cobalt, industrial diamond, phosphorite, platinum, etc.\n2. These mineral resources were a major factor in European colonization of Africa.\n3. The Berlin Conference (1884-85) was held specifically to divide African territory among European powers to exploit these resources.",
+      },
     },
   },
 
@@ -338,37 +525,104 @@ export const HISTORY_BOARD_CRASHER = {
     ],
 
     textbookExercises: {
-      title: "Chapter 3 - Textbook Exercises",
+      title: "Chapter 3 - Maharashtra Board Textbook Exercises",
+
+      // 1A. Choose the correct alternative
       mcqs: [
         {
-          q: "Battle of Buxar was fought in:",
-          options: ["1757", "1764", "1773", "1858"],
-          correct: 1,
-          answer: "1764",
+          q: "Vasco da Gama was a seafarer from ___________",
+          options: ["Poland", "England", "France", "Portugal"],
+          correct: 3,
+          answer: "Portugal",
         },
-      ],
-      identifyExplain: [
         {
-          statement: "Right to collect revenue in Bengal, Bihar and Orissa.",
-          concept: "Diwani Rights",
-          answer:
-            "The East India Company got Diwani rights in 1765, giving it strong financial control.",
+          q: "The license was given by England to the East India Company to trade with eastern countries by ___________",
+          options: [
+            "Sir George Oxenden",
+            "Princess Braganza",
+            "Queen Elizabeth",
+            "Homer",
+          ],
+          correct: 2,
+          answer: "Queen Elizabeth",
         },
       ],
-      shortAnswers: [
+
+      // 1B. Find incorrect pair
+      incorrectPairs: [
         {
-          q: "Why was Plassey important?",
+          q: "Find the incorrect pair from group 'B' and write the corrected one.",
+          pairs: [
+            {
+              groupA: "Arcebispo",
+              groupB: "Chief Executive Officer",
+              isCorrect: false,
+            },
+            { groupA: "Chancellor", groupB: "Judge", isCorrect: true },
+            {
+              groupA: "Vedor da Fazenda",
+              groupB: "In charge of Company's Possessions",
+              isCorrect: true,
+            },
+            { groupA: "Capitaon", groupB: "Captain", isCorrect: true },
+          ],
           answer:
-            "Plassey (1757) opened the way for British political control in Bengal and later expansion across India.",
+            "Incorrect: (a) Arcebispo – Chief Executive Officer. Correct: Arcebispo – Archbishop",
         },
       ],
+
+      // 2. Complete concept maps
+      conceptMaps: [
+        {
+          q: "Complete the concept map for European powers in India",
+          type: "European colonial powers and their establishments",
+          answer:
+            "Portuguese: Goa, Diu, Daman; Dutch: Surat, Masulipatnam; French: Pondicherry, Chandannagar; British: Mumbai, Kolkata, Chennai",
+        },
+      ],
+
+      // 3. Explain with reasons
+      explainReasons: [
+        {
+          q: "The Indian rulers had to obtain Cartaz.",
+          answer:
+            "**Cartaz:**\n\nThe Cartaz was a license issued by the Portuguese to the Indian rulers for sailing on the Indian Ocean when they established firm control of the Indian Ocean.\n\n**Reasons:**\n1. The Portuguese established a strong naval presence in the Indian Ocean.\n2. After establishing firm control, they made it mandatory for all ships to have a Cartaz.\n3. The Cartaz usually carried details like:\n   - Name of the vessel (ship)\n   - Name of the captain of the ship\n   - Port of departure and arrival\n   - List of weaponry on the ship loaded for self-defense\n4. Without a Cartaz, Indian ships could be attacked or seized by the Portuguese.\n5. This was a way for Portuguese to control Indian Ocean trade and assert their dominance.\n6. Indian rulers had no choice but to comply to ensure safe passage for their trading vessels.",
+        },
+        {
+          q: "Indian rulers found it difficult to fight the Portuguese.",
+          answer:
+            "**Reasons:**\n\n1. The Portuguese established a strong navy with superior naval technology.\n2. They used to launch sudden attacks on their enemy's territory from the sea and wreck it completely.\n3. The Indian rulers did not have equally advanced naval forces to match Portuguese naval power.\n4. The Indian rulers could not match the Portuguese in their war tactics and naval warfare strategies.\n5. Portuguese ships had better artillery and weaponry compared to Indian vessels.\n6. The Portuguese had experience in naval warfare from their Atlantic and African campaigns.\n7. Later when they established their firm control on the Indian Ocean, it became necessary for the Indians to get a license (Cartaz) from them for sailing on the Indian Ocean.\n8. The Indian rulers were primarily land-based powers and lacked the naval infrastructure to challenge Portuguese supremacy at sea.",
+        },
+      ],
+
+      // 4. Answer in detail
       longAnswers: [
         {
-          q: "Explain the role of Plassey and Buxar in British expansion.",
+          q: "Which are the places where the Portuguese established their colonies?",
           answer:
-            "Plassey gave initial political entry, while Buxar confirmed military supremacy and led to Diwani rights, securing both political and economic control.",
+            "**Portuguese Colonies in India:**\n\n**Western Coast:**\nBy 1608, the Portuguese had established their colonies on the western coast of India at:\n1. Diu\n2. Daman\n3. Chaul\n4. Goa (including Sashti and Bardish) - Capital\n5. Honnavar\n6. Gangoli\n7. Basrur\n8. Mangalore\n9. Kannur\n10. Kodungallur\n11. Kochi\n12. Kollam\n\n**Eastern Coast:**\nSimilarly, on the eastern coast, they had trading colonies at:\n1. Nagapattinam\n2. Mylapore or Sao Tome/San Thom\n3. Hugli in Bengal\n\nThis stretch of the Portuguese empire had its capital at Goa, which became the center of Portuguese power in India.",
+        },
+        {
+          q: "What were the rights given to United East India Company by the Dutch government?",
+          answer:
+            "**Rights Given to United East India Company:**\n\n1. **Trading License:** The Dutch government issued a license to the company to conduct trading with the eastern countries.\n\n2. **Administrative Rights:** The license permitted them to:\n   - Appoint staff for managing operations\n   - Establish factories (trading posts)\n   - Build forts for protection of their establishments\n\n3. **Military Rights:** The company was allowed to:\n   - Engage in battles against the eastern countries\n   - Maintain military forces for defense\n\n4. **Diplomatic Rights:**\n   - Sign treaties with eastern countries\n   - Conduct independent foreign relations\n\n5. **Governance Structure:**\n   - The company appointed a Governor-General to take care of Indian affairs\n   - The Governor-General had extensive powers to manage all aspects of the company's operations\n\nThese extensive rights essentially made the United East India Company a sovereign entity with its own military, diplomatic, and administrative powers in the East.",
         },
       ],
+
+      // Additional context from textbook
+      additionalInfo: {
+        tryToDo1:
+          "**St. Francis Church (Vasco da Gama Church in Kerala):**\n\n1. Built in 1503 as one of the oldest European churches in India.\n2. Originally known as St. Bartholomew.\n3. Constructed of wood and stone.\n4. First Portuguese church in India.\n5. Founded by Pedro Alvarez De Cabral.\n6. Built in Persian architecture style.\n7. The Portuguese built a fort and within the fort, they built a church.\n8. History has it that Vasco da Gama died during his third visit to India and was buried here in 1524.\n9. After 14 years his body was moved to Lisbon.\n\nThis church stands as a testament to early Portuguese colonial presence in India.",
+
+        tryToDo2:
+          "**Shipbuilding in India:**\n\n**Pre-Independence:**\n1. India's maritime history began during the 3rd millennium B.C.E. when Indus valley had trade contact with Mesopotamia.\n2. Strabo mentions Rome and Greece had maritime trade relations with India.\n3. The Portuguese were the first Europeans to reach India by sea and traded in spices etc. followed by the Dutch.\n4. The shipbuilding activities of Chhatrapati Shivaji Maharaj are particularly noteworthy. Chhatrapati Shivaji Maharaj built a strong naval force.\n5. In the modern period, the British East India Company shipped substantial quantities of spices.\n6. Ship Building was a well-established craft.\n\n**Post-Independence:**\nSome of the well-known shipyards in India today are:\n- Sembmarine Kakinada Ltd (SKL) India\n- Goa Shipyard Limited (GSL) India\n- Western India Shipyard Ltd\n- Cochin Shipyard Limited\n- Garden Reach Shipbuilders & Engineers Ltd",
+
+        tryToDo3:
+          "**Currency of Various Countries:**\n\nAfghanistan - Afghan Afghani (AFN)\nArgentina - Argentine peso (ARS)\nAustralia - Australian dollar (AUD)\nBahrain - Bahraini dinar (BHD)\nChina - Chinese yuan (CNY)\nDenmark - Danish krone (DKK)\nEgypt - Egyptian pound (EGP)\nGermany - Euro (EUR)\nIndia - Indian rupee (INR)\nJapan - Japanese yen (JPY)\nUnited States of America - US dollar (USD)\nUnited Kingdom - Pound sterling (GBP)",
+
+        project:
+          "**Governors-General of British East India Company (1773-1857):**\n\nThe Regulating Act of 1773 created the office with the title of Governor-General of Presidency of Fort William or Governor-General of Bengal. He was appointed by the Court of Directors of the East India Company.\n\n**Key Governors-General:**\n1. Warren Hastings (1772-1785) - First Governor-General\n2. Lord Cornwallis (1786-1793)\n3. Lord Wellesley (1798-1805)\n4. Lord William Bentinck (1828-1835)\n5. Lord Dalhousie (1848-1856) - Doctrine of Lapse\n6. Lord Canning (1856-1862) - Last Governor-General, witnessed 1857 Revolt\n\n**Post-1857 (Under Crown):**\n7. Lord Lawrence (1864-1869)\n8. Lord Ripon (1880-1884)\n9. Lord Curzon (1894-1905) - Partition of Bengal\n10. Lord Hardinge (1910-1916)\n11. Lord Irwin (1926-1931) - Gandhi-Irwin Pact\n12. Lord Linlithgow (1936-1944) - Quit India Movement\n13. Lord Mountbatten (March 1947-August 1947) - Last Viceroy, Partition of India\n\nTotal: 30 Governors-General from 1772 to 1947",
+      },
     },
   },
 
@@ -424,34 +678,157 @@ export const HISTORY_BOARD_CRASHER = {
     ],
 
     textbookExercises: {
-      title: "Chapter 4 - Textbook Exercises",
+      title: "Chapter 4 - Maharashtra Board Textbook Exercises",
+
+      // 1A. Choose the correct alternative
       mcqs: [
         {
-          q: "Treaty signed between Baji Rao II and British:",
+          q: "Marathas defeated the Portuguese during the siege of __________",
+          options: ["Vengurla", "Phonda", "Surat", "Rajapur"],
+          correct: 1,
+          answer: "Phonda",
+        },
+        {
+          q: "The political relations between Chhatrapati Shivaji Maharaj and the British began due to the __________ episode.",
+          options: ["Kudal campaign", "Afzal Khan", "Fazal Khan", "coronation"],
+          correct: 1,
+          answer: "Afzal Khan",
+        },
+        {
+          q: "The younger brother of Bajirao Peshwa I defeated the __________ at Vasai.",
+          options: ["British", "French", "Dutch", "Portuguese"],
+          correct: 3,
+          answer: "Portuguese",
+        },
+        {
+          q: "The 'Third Battle of Panipat' was fought between Marathas and the __________",
+          options: ["British", "Abdali", "Ahmed Khan Bangash", "Najib Khan"],
+          correct: 1,
+          answer: "Abdali",
+        },
+      ],
+
+      // 1B. Find incorrect pair
+      incorrectPairs: [
+        {
+          q: "Find the incorrect pair from group 'B' and write the corrected one.",
+          pairs: [
+            {
+              groupA: "Cosme da Guarda",
+              groupB: "Portuguese historian",
+              isCorrect: true,
+            },
+            {
+              groupA: "Gonsalo Martez",
+              groupB: "Portuguese emissary",
+              isCorrect: true,
+            },
+            {
+              groupA: "Francois Martin",
+              groupB: "Chief of the Dutch factory",
+              isCorrect: false,
+            },
+            {
+              groupA: "Henry Revington",
+              groupB: "British Officer",
+              isCorrect: true,
+            },
+          ],
+          answer:
+            "Incorrect: Francois Martin – Chief of the Dutch factory. Correct: Francois Martin – Governor General of Pondicherry",
+        },
+      ],
+
+      // 2A. Write names
+      names: [
+        {
+          q: "The first Europeans to arrive in India —",
+          answer: "Portuguese",
+        },
+        {
+          q: "The place where the Portuguese stored their ammunition —",
+          answer: "Panvel",
+        },
+        {
+          q: "They honoured Chhatrapati Shivaji Maharaj with tributes for ensuring safety of their factories —",
+          answer: "The Dutch",
+        },
+        {
+          q: "The British agent at Jaitapur —",
+          answer: "Velaji",
+        },
+      ],
+
+      // 2B. Choose correct reason
+      reasons: [
+        {
+          q: "Chhatrapati Shivaji Maharaj levied octroi on the salt trade to __________",
           options: [
-            "Treaty of Allahabad",
-            "Treaty of Bassein",
-            "Treaty of Surat",
-            "Treaty of Paris",
+            "oppose the Portuguese",
+            "stop the British trade of salt",
+            "raise funds for Swarajya",
+            "oppose the colonialists",
           ],
           correct: 1,
-          answer: "Treaty of Bassein",
+          answer: "stop the British trade of salt",
         },
       ],
-      shortAnswers: [
+
+      // 3. State your opinion
+      opinions: [
         {
-          q: "Give two causes of decline of Maratha power.",
+          q: "Chhatrapati Shivaji Maharaj built a naval force.",
           answer:
-            "1. Internal rivalry among Maratha chiefs.\n2. British diplomatic and military strategy.",
+            "**Opinion: Agree**\n\nChhatrapati Shivaji Maharaj had foreseen the ulterior motives of foreigners and their infiltration methods. He built strategies to arrest their advances.\n\n**Reasons:**\n1. Created a strong naval force and sea forts for coastal defense\n2. Levied octroi on British salt trade to protect local trade\n3. Adopted strong policy against European colonizers\n4. Naval force prevented European dominance over Indian waters\n5. Protected Maratha trade interests and sovereignty",
+        },
+        {
+          q: "Maratha's policies were anti-colonial.",
+          answer:
+            "**Opinion: Agree**\n\nChhatrapati Shivaji Maharaj foresaw European ulterior motives and built strategies to arrest their advances.\n\n**Reasons:**\n1. Levied octroi on British salt trade\n2. Refused permanent European establishments near strategic locations\n3. Maintained strict control through Adnyapatra\n4. Only Indian rulers to adopt resistance policy against Europeans\n5. Kept Europeans at bay with only business relations\n6. Prohibited British coinage to maintain economic sovereignty",
         },
       ],
+
+      // 4. Answer in detail
       longAnswers: [
         {
-          q: "Explain impact of Anglo-Maratha wars.",
+          q: "Write about Chhatrapati Shivaji Maharaj's policies regarding European traders as seen in his Adnyapatra.",
           answer:
-            "These wars ended Maratha supremacy and established British dominance in western and central India.",
+            "**Policies in Adnyapatra:**\n\n1. Keep Europeans at bay with only business relations\n2. No space near creek entrances or sea forts\n3. Establishments should not be a nuisance\n4. Not allowed to flaunt military strength\n5. No permanent building construction\n6. Must accept conditions or be expelled\n7. Fine collected if found in enemy land during expeditions\n8. After fine payment, sent back to factory\n9. Not to be treated as enemies\n\nThese policies showed foresight in dealing with colonial ambitions while maintaining trade benefits.",
+        },
+        {
+          q: "Explain Chhatrapati Shivaji Maharaj's resolute policy of safeguarding Maratha sovereignty.",
+          answer:
+            "**Safeguarding Maratha Sovereignty:**\n\n1. **Military:** Created strong naval force, constructed hill forts, sea forts, land forts\n2. **Economic:** Levied 2.5% octroi on British goods, prohibited British coinage\n3. **Treaty 1674:** Permitted factories at Rajapur, Dabhol, Chaul, Kalyan with conditions\n4. **Rejected unfair terms:** Refused return of British shipwreck goods, treaty with Siddis\n5. **Controlled entry:** Henry Oxenden sought permission for Rajapur factory during coronation\n\nThis revealed his resolute policy of safeguarding sovereignty while engaging in beneficial trade.",
+        },
+        {
+          q: "Why did the strongest Maratha rule come to an end?",
+          answer:
+            "**Reasons for Maratha Downfall:**\n\n1. **Internal Weakness:** Confederacy of chiefs in conflict, unity only till Madhav Rao I\n2. **Lack of Foresight:** Failed to achieve political unity, couldn't utilize resources effectively\n3. **Incapable Leadership:** After 18th century, weak leaders like Bajirao II, Daulatrao Scindia, Yashwant Rao Holkar\n4. **Military Weakness:** Abandoned guerrilla warfare, failed to perfect European methods\n5. **British Diplomacy:** English exploited Maratha quarrels, used divide-and-rule, had India-wide vision",
         },
       ],
+
+      // 5. Map questions
+      mapQuestions: [
+        {
+          q: "Where were the Dutch colonies on the west coast of India?",
+          answer:
+            "Dutch warehouses at Vengurla in Konkan and Photo Novo, Tegna Pattam in Karnataka.",
+        },
+        {
+          q: "Where did the French establish their colonies on the east coast of India?",
+          answer: "Pondicherry (Puducherry) on the east coast.",
+        },
+        {
+          q: "Whose warehouses were at Agra and Allahabad?",
+          answer: "This area was ruled by the Mughals.",
+        },
+      ],
+
+      // Additional info
+      additionalInfo: {
+        project:
+          "**European Colonies Worldwide:**\n\n**Africa:** Belgium (Congo), Britain (Sudan, Kenya, South Africa), France (Algeria, Madagascar), Portugal (Angola, Mozambique)\n**Asia:** Britain (India, Burma, Ceylon), France (Vietnam, Laos), Dutch (Indonesia), Portugal (Goa)\n**North America:** Britain (13 colonies), France (Canada, Louisiana), Dutch (New Netherland)\n**South America:** Spain (Argentina, Bolivia, Chile, Colombia)",
+      },
     },
   },
 
@@ -2060,4 +2437,99 @@ export const HISTORY_BOARD_CRASHER = {
       color: "bg-orange-500",
     },
   ],
+
+  // Sample Questions from Actual Papers (for reference)
+  samplePaperQuestions: {
+    q1aMCQs: [
+      "Jerusalem and _____ are the two cities holy to Jews, Christians and Muslims. (Constantinople)",
+      "It was made obligatory for Indian Rulers to get Cartaz for sailing on Indian ocean by _____. (Portuguese)",
+      "The Satyashodhak Samaj was founded by _____. (Mahatma Jotirao Phule)",
+      "Headquarters of SEATO was located at _____. (Thailand)",
+    ],
+    q1bIncorrectPairs: [
+      {
+        question:
+          "Find incorrect pair: (i) Kunwar Singh — Lucknow, (ii) Nanasaheb Peshwa — Kanpur, (iii) Queen Lakshmibai — Jhansi",
+        answer:
+          "Incorrect: (i) Kunwar Singh — Lucknow. Correct: Kunwar Singh — Bihar",
+      },
+      {
+        question: "Find incorrect pair in princely states accession",
+        answer: "Check for wrong leader-state pairing and correct it",
+      },
+    ],
+    q2aNames: [
+      "An engineer who successfully sailed the steamboat named 'Clermont' _____. (Robert Fulton)",
+      "The fort built by the British at the north of Chennai _____. (Fort St. George)",
+      "The one who participated in 'Vykom Satyagraha' _____. (E.V. Ramasamy Periyar / K.P. Kesava Menon)",
+    ],
+    q2bReasons: [
+      "Ravindranath Tagore gave up his title (Sir) because — (a) To criticise Jallianwala Bagh Massacre",
+      "The League of Nations was established after WWI because — (b) To avoid any situation that could lead to another World War",
+      "During WWII the Independence movement in Africa was more intensified because — (d) European countries were involved in the war",
+    ],
+    q3aMapQuestions: [
+      "How many colonies are shown in this map? (Count from given map)",
+      "Name the port city in Massachusetts where tea dumping happened. (Boston)",
+      "Name the Ocean located near eastern coast of America. (Atlantic Ocean)",
+      "The city of Williamsburg is located in which colony? (Virginia)",
+    ],
+    q3bConceptMaps: [
+      "Complete: Social Reformers and their organisations — Raja Ram Mohan Roy (Brahmo Samaj), Swami Vivekananda (Ramakrishna Mission), Sir Sayyad Ahmad Khan (Aligarh Movement)",
+      "Complete: European powers and their important colonies — Portuguese (Goa), Dutch (Surat), French (Pondicherry)",
+      "Complete: The spread of British Empire in these continents — Asia, Africa, America, Australia",
+      "Complete: Four British colonies in South Africa — Cape Colony, Natal, Transvaal, Orange Free State",
+      "Complete: Four Megacities under Golden Quadrilateral — Delhi, Mumbai, Chennai, Kolkata",
+    ],
+    q4aShortNotes: [
+      "Rajarshi Shahu Maharaj (Social reforms, education for lower castes, women empowerment)",
+      "Kamagata Maru (1914 incident, Canadian immigration restrictions, Komagata Maru ship, Sikh passengers)",
+      "Decolonisation (End of colonial rule, post-WWII independence movements, new nations in Asia and Africa)",
+      "AYUSH (Ayurveda, Yoga, Unani, Siddha, Homeopathy — traditional Indian medicine systems)",
+    ],
+    q4bExplainReasons: [
+      "Industrial Revolution first began in England because — Coal availability, Labor supply, Capital investment, Markets, Britain's location",
+      "Chhatrapati Shivaji Maharaj decided to attack Bardesh because — Strategic importance, Portuguese control, Naval power needed",
+      "Dr. Babasaheb Ambedkar worked for Freedom, Equality and Fraternity because — Social justice, Constitutional values, Equality for all",
+      "Princely state of Hyderabad was acceded to India because — Nizam's reluctance, Operation Polo, Sardar Patel's diplomacy",
+    ],
+    q5Opinion: [
+      "'Declaration of Independence of America' was adopted — Justified because it established democratic principles and inspired freedom movements worldwide",
+      "Krantisinha Nana Patil's contribution is significant — Agreed, he led guerrilla warfare in Satara during Quit India Movement",
+      "The cold war began between America and Russia — Yes, due to ideological differences (capitalism vs communism) after WWII",
+      "India is a leading country in space research — Agreed, ISRO achievements like Chandrayaan, Mangalyaan prove this",
+    ],
+    q6DetailAnswers: [
+      "Conflict between Portuguese and Maratha Empires — Portuguese control of western coast, Maratha expansion, Naval battles, Bardesh attack, Trade rivalry",
+      "Movement for liberation of Goa — Portuguese rule since 1510, Indian independence in 1947, Diplomatic efforts, Satyagraha, Operation Vijay 1961",
+      "Causes of Second World War — Treaty of Versailles humiliation, Rise of Fascism and Nazism, Failure of League of Nations, Aggressive expansion by Axis powers",
+    ],
+    q7DetailWithPoints: [
+      {
+        q: "Geographical Discoveries and Explorers",
+        points:
+          "(a) Christopher Columbus — Discovered America (1492), (b) Amerigo Vespucci — America named after him, (c) Vasco da Gama — Sea route to India (1498)",
+      },
+      {
+        q: "British East India Company",
+        points:
+          "(a) Foundation (1600), (b) Powers given to the Company (trade monopoly, military power), (c) Administrative structure of Factory (factors, agents)",
+      },
+      {
+        q: "Quit India Movement 1942",
+        points:
+          "(a) Mumbai Session (8 Aug 1942), (b) Gandhi's 'Do or Die' appeal, (c) Impact (Mass arrests, underground movement, British weakened)",
+      },
+      {
+        q: "Reorganisation of States",
+        points:
+          "(a) Jharkhand (Formed 2000 from Bihar), (b) Telangana (Formed 2014 from Andhra Pradesh), (c) Uttarakhand (Formed 2000 from Uttar Pradesh)",
+      },
+      {
+        q: "SAARC",
+        points:
+          "(a) Establishment 1985 and objectives (regional cooperation), (b) Challenges (Political conflicts, terrorism, trade barriers), (c) Success (Cultural exchange, some economic cooperation)",
+      },
+    ],
+  },
 };
