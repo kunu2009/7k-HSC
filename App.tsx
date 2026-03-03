@@ -1349,25 +1349,25 @@ const App: React.FC = () => {
         </div>
 
         <div className="p-4 -mt-6">
-          {/* 📈 ECONOMICS URGENT - Exam in 4 Days */}
+          {/* 📜 HISTORY URGENT - Exam in 6 Days */}
           {selectedStream === Stream.ARTS && (
             <button
-              onClick={() => setShowEcoBoardCrasher(true)}
-              className="w-full mb-4 bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-500 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all animate-pulse-slow"
+              onClick={() => setShowHistoryBoardCrasher(true)}
+              className="w-full mb-4 bg-gradient-to-r from-orange-600 via-red-600 to-rose-600 p-4 rounded-2xl shadow-lg hover:shadow-xl transition-all animate-pulse-slow"
             >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl">
-                  📈
+                  📜
                 </div>
                 <div className="text-left flex-1">
                   <div className="flex items-center gap-2">
-                    <h3 className="text-lg font-black text-white">Economics</h3>
-                    <span className="bg-red-500 text-white text-xs px-2 py-0.5 rounded-full font-bold animate-bounce">
-                      4 DAYS!
+                    <h3 className="text-lg font-black text-white">History</h3>
+                    <span className="bg-yellow-400 text-red-900 text-xs px-2 py-0.5 rounded-full font-bold animate-bounce">
+                      6 DAYS!
                     </span>
                   </div>
                   <p className="text-white/80 text-sm">
-                    All PYQs + Model Answers + Shortcodes + Mock Tests
+                    Top 20 IMP + Timeline + Map + All Maharashtra Board Content
                   </p>
                 </div>
                 <ChevronRight className="text-white/70" size={24} />
