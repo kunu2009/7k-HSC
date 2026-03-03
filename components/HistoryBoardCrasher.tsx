@@ -246,7 +246,7 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
 
       {/* Google Drive Resources - TOP PROMINENT */}
       <a
-        href="https://drive.google.com/drive/folders/YOUR_HISTORY_FOLDER_ID"
+        href="https://drive.google.com/drive/folders/1FkbX7xVrG7zOpdn5a4FLD_9sbMPRDsLU?usp=drive_link"
         target="_blank"
         rel="noopener noreferrer"
         className="block bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-4 text-white hover:opacity-95 transition-opacity shadow-lg ring-2 ring-green-400/50 ring-offset-2 ring-offset-slate-100 dark:ring-offset-slate-950"
@@ -281,39 +281,45 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
           {[
             {
               q: "Q.1",
-              type: "MCQ (Multiple Choice)",
-              marks: 20,
-              detail: "20 × 1 mark each",
+              type: "(A) MCQ + (B) Incorrect Pairs",
+              marks: 10,
+              detail: "6 MCQs (1m) + 4 pairs (1m)",
             },
             {
               q: "Q.2",
-              type: "Brief Answers",
-              marks: 12,
-              detail: "Any 3/5 × 4 marks",
+              type: "(A) Names + (B) Reasons",
+              marks: 8,
+              detail: "4 names (1m) + 4 reasons (1m)",
             },
             {
               q: "Q.3",
-              type: "Short Notes",
-              marks: 12,
-              detail: "Any 3/5 × 4 marks",
+              type: "(A) Map + (B) Concept Maps",
+              marks: 13,
+              detail: "5 map Qs (1m) + Any 4 maps (2m)",
             },
             {
               q: "Q.4",
-              type: "Long Answers",
-              marks: 16,
-              detail: "Any 2/4 × 8 marks",
+              type: "(A) Short Notes + (B) Reasons",
+              marks: 15,
+              detail: "Any 3 notes (2m) + 3 reasons (3m)",
             },
             {
               q: "Q.5",
-              type: "Map Work",
-              marks: 8,
-              detail: "Locate + significance",
+              type: "State Your Opinion",
+              marks: 9,
+              detail: "Any 3/5 × 3 marks",
             },
             {
               q: "Q.6",
-              type: "Project",
-              marks: 12,
-              detail: "Internal assessment",
+              type: "Answer in Detail",
+              marks: 10,
+              detail: "Any 2/3 × 5 marks",
+            },
+            {
+              q: "Q.7",
+              type: "Detail with Points",
+              marks: 15,
+              detail: "Any 3/5 × 5 marks",
             },
           ].map((item, idx) => (
             <div
@@ -346,10 +352,18 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
             ⚠️ Key Strategy:
           </p>
           <ul className="text-xs text-orange-700 dark:text-orange-300 space-y-1">
-            <li>• MCQs = 20 marks (20 min max)</li>
-            <li>• Focus on Long Answers Q.4 = 16 marks (35-40 min)</li>
-            <li>• Map Work Q.5 = Easy 8 marks if practiced (10 min)</li>
-            <li>• Always write dates, names, places for extra impact</li>
+            <li>
+              • Q.1 = 10 marks: MCQs (6m) + Find incorrect pairs (4m) - 15 min
+            </li>
+            <li>
+              • Q.3 (B) Concept Maps = 8 marks: Do ANY 4 out of 6 - very
+              scoring!
+            </li>
+            <li>
+              • Q.7 = 15 marks highest: Write 3 answers with given points (5m
+              each)
+            </li>
+            <li>• Always mention dates, names, places for extra credibility</li>
           </ul>
         </div>
       </div>
@@ -363,29 +377,30 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Timeline Mastery:</strong> Memorize key dates, events
-              chronologically — crucial for MCQs and map work
+              <strong>Q.1 (B) Incorrect Pairs:</strong> Read carefully - find
+              the INCORRECT pair and write the correct one (4 marks - easy
+              scoring)
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Map Work (8m):</strong> Practice locating countries,
-              cities, battle sites + one-line significance
+              <strong>Q.3 (A) Map Work (5m):</strong> Practice locating
+              countries, cities, battle sites — answer briefly in one line
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Long Answers:</strong> Use structured format: Intro (2
-              lines) + 4-5 points with examples + Conclusion
+              <strong>Q.3 (B) Concept Maps (8m):</strong> Complete ANY 4 out of
+              6 given - social reformers, colonies, continents, cities
             </span>
           </li>
           <li className="flex items-start gap-2">
             <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
             <span>
-              <strong>Causes & Effects:</strong> Always write causes-effects for
-              major events (WWI, WWII, Reforms, Freedom Struggle)
+              <strong>Q.7 (15m highest):</strong> Answer with given sub-points
+              (a), (b), (c) - structured writing = full marks
             </span>
           </li>
         </ul>
@@ -398,12 +413,15 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
         </h3>
         <div className="grid grid-cols-2 gap-2 text-sm">
           {[
-            { q: "Q.1 MCQ (20m)", time: "20 min" },
-            { q: "Q.2 Brief (12m)", time: "20 min" },
-            { q: "Q.3 Short (12m)", time: "20 min" },
-            { q: "Q.4 Long (16m)", time: "35 min" },
-            { q: "Q.5 Map (8m)", time: "10 min" },
-            { q: "Revision", time: "15 min" },
+            { q: "Q.1 (A+B) (10m)", time: "15 min" },
+            { q: "Q.2 (A+B) (8m)", time: "12 min" },
+            { q: "Q.3 (A) Map (5m)", time: "8 min" },
+            { q: "Q.3 (B) Maps (8m)", time: "12 min" },
+            { q: "Q.4 (A+B) (15m)", time: "25 min" },
+            { q: "Q.5 Opinion (9m)", time: "15 min" },
+            { q: "Q.6 Detail (10m)", time: "18 min" },
+            { q: "Q.7 Points (15m)", time: "25 min" },
+            { q: "Revision", time: "10 min" },
           ].map((item, idx) => (
             <div
               key={idx}
@@ -419,7 +437,7 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
           ))}
         </div>
         <p className="text-xs text-blue-600 dark:text-blue-400 mt-2 text-center">
-          Total: 120 min + 60 min writing/thinking buffer
+          Total: 140 min + 40 min buffer = 180 min (3 hours)
         </p>
       </div>
 
@@ -930,29 +948,49 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
                 📚 {chapter.textbookExercises.title}
               </h3>
               <p className="text-white/80 text-sm mt-1">
-                Textbook-style practice with model answers
+                Complete Maharashtra Board textbook questions with answers
               </p>
             </div>
 
             {[
               {
                 key: "mcqs",
-                title: "Q.1 Choose Correct Option",
+                title: "Q.1(A) Choose Correct Alternative",
                 color: "bg-green-50 dark:bg-green-900/20",
               },
               {
-                key: "identifyExplain",
-                title: "Q.2 Identify & Explain",
+                key: "incorrectPairs",
+                title: "Q.1(B) Find Incorrect Pair",
+                color: "bg-red-50 dark:bg-red-900/20",
+              },
+              {
+                key: "names",
+                title: "Q.2 Write Names of Historical Places/Persons/Events",
+                color: "bg-blue-50 dark:bg-blue-900/20",
+              },
+              {
+                key: "conceptMaps",
+                title: "Q.3 Complete Concept Maps",
                 color: "bg-purple-50 dark:bg-purple-900/20",
               },
               {
-                key: "shortAnswers",
-                title: "Q.3 Short Answers",
+                key: "shortNotes",
+                title: "Q.4 Write Short Notes",
                 color: "bg-orange-50 dark:bg-orange-900/20",
               },
               {
+                key: "explainReasons",
+                title: "Q.5 Explain with Reasons",
+                color: "bg-amber-50 dark:bg-amber-900/20",
+              },
+              {
+                key: "opinions",
+                title: "Q.6 State Your Opinion",
+                color: "bg-cyan-50 dark:bg-cyan-900/20",
+              },
+              {
                 key: "longAnswers",
-                title: "Q.4 Long Answers",
+                title: "Q.7 Answer in Detail",
                 color: "bg-red-50 dark:bg-red-900/20",
               },
             ].map((sec) => {
@@ -1008,6 +1046,30 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
                               </div>
                             )}
 
+                            {sec.key === "incorrectPairs" && item.pairs && (
+                              <div className="mb-3 space-y-2">
+                                {item.pairs.map((pair: any, pIdx: number) => (
+                                  <div
+                                    key={pIdx}
+                                    className={`p-2 rounded text-xs flex items-center justify-between ${
+                                      shown && !pair.isCorrect
+                                        ? "bg-red-100 text-red-800 border border-red-400"
+                                        : "bg-white dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                                    }`}
+                                  >
+                                    <span>
+                                      {pair.groupA} — {pair.groupB}
+                                    </span>
+                                    {shown && !pair.isCorrect && (
+                                      <span className="text-xs font-bold">
+                                        ❌
+                                      </span>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+
                             <button
                               onClick={() => toggleAnswer(revealId)}
                               className={`w-full py-2 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
@@ -1037,6 +1099,65 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
                 </div>
               );
             })}
+
+            {/* Additional Info Section */}
+            {chapter.textbookExercises.additionalInfo && (
+              <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800 rounded-2xl p-4">
+                <h4 className="font-bold text-indigo-800 dark:text-indigo-200 mb-3">
+                  📖 Additional Context from Textbook
+                </h4>
+                <div className="space-y-3 text-sm text-indigo-700 dark:text-indigo-300">
+                  {chapter.textbookExercises.additionalInfo.tryToDo && (
+                    <div>
+                      <p className="font-semibold mb-1">Try to do this:</p>
+                      <p className="text-xs whitespace-pre-wrap">
+                        {chapter.textbookExercises.additionalInfo.tryToDo}
+                      </p>
+                    </div>
+                  )}
+                  {chapter.textbookExercises.additionalInfo.tryToDo1 && (
+                    <div>
+                      <p className="font-semibold mb-1">Try to do this (1):</p>
+                      <p className="text-xs whitespace-pre-wrap">
+                        {chapter.textbookExercises.additionalInfo.tryToDo1}
+                      </p>
+                    </div>
+                  )}
+                  {chapter.textbookExercises.additionalInfo.tryToDo2 && (
+                    <div>
+                      <p className="font-semibold mb-1">Try to do this (2):</p>
+                      <p className="text-xs whitespace-pre-wrap">
+                        {chapter.textbookExercises.additionalInfo.tryToDo2}
+                      </p>
+                    </div>
+                  )}
+                  {chapter.textbookExercises.additionalInfo.tryToDo3 && (
+                    <div>
+                      <p className="font-semibold mb-1">Try to do this (3):</p>
+                      <p className="text-xs whitespace-pre-wrap">
+                        {chapter.textbookExercises.additionalInfo.tryToDo3}
+                      </p>
+                    </div>
+                  )}
+                  {chapter.textbookExercises.additionalInfo.findItOut && (
+                    <div>
+                      <p className="font-semibold mb-1">Find it out:</p>
+                      <p className="text-xs whitespace-pre-wrap">
+                        {chapter.textbookExercises.additionalInfo.findItOut}
+                      </p>
+                    </div>
+                  )}
+                  {chapter.textbookExercises.additionalInfo.project && (
+                    <div>
+                      <p className="font-semibold mb-1">Project:</p>
+                      <p className="text-xs whitespace-pre-wrap">
+                        {chapter.textbookExercises.additionalInfo.project}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         )}
       </div>
