@@ -46,11 +46,11 @@ const SUBJECT_TOOLS: Record<
   eco: [
     {
       id: "ecoBoardCrasher",
-      name: "🎯 BOARD CRASHER",
-      description: "PYQs + Formulas + Model Answers",
-      icon: <Zap size={20} />,
-      color: "bg-indigo-600",
-      featured: true,
+      name: "✅ BOARD CRASHER",
+      description: "Exam Completed - Revision Mode",
+      icon: <Award size={20} />,
+      color: "bg-gray-500",
+      featured: false, // Exam is done
     },
     {
       id: "ecoStudyHub",
@@ -537,6 +537,18 @@ const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({
         {subjectName} Study Tools
       </h3>
 
+      {/* Economics Exam Completion Banner */}
+      {subjectId === "eco" && (
+        <div className="mb-4 rounded-xl border bg-green-50 border-green-200 dark:bg-green-900/20 dark:border-green-800 p-3 flex items-center gap-2">
+          <Award size={16} className="text-green-500" />
+          <p className="text-xs font-semibold text-slate-700 dark:text-slate-200">
+            ✅ Economics exam completed (24 Feb 2026). Now focus on History exam
+            (9 Mar 2026).
+          </p>
+        </div>
+      )}
+
+      {/* History Exam Urgency Banner */}
       {subjectId === "his" &&
         daysUntilHistoryExam !== null &&
         daysUntilHistoryExam >= 0 && (
@@ -544,19 +556,25 @@ const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({
             className={`mb-4 rounded-xl border p-3 flex items-center gap-2 ${
               daysUntilHistoryExam <= 3
                 ? "bg-red-50 border-red-200 dark:bg-red-900/20 dark:border-red-800"
-                : "bg-orange-50 border-orange-200 dark:bg-orange-900/20 dark:border-orange-800"
+                : daysUntilHistoryExam <= 7
+                  ? "bg-orange-50 border-orange-200 dark:bg-orange-900/20 dark:border-orange-800"
+                  : "bg-yellow-50 border-yellow-200 dark:bg-yellow-900/20 dark:border-yellow-800"
             }`}
           >
             <AlertTriangle
               size={16}
               className={
-                daysUntilHistoryExam <= 3 ? "text-red-500" : "text-orange-500"
+                daysUntilHistoryExam <= 3
+                  ? "text-red-500"
+                  : daysUntilHistoryExam <= 7
+                    ? "text-orange-500"
+                    : "text-yellow-500"
               }
             />
             <p className="text-xs font-semibold text-slate-700 dark:text-slate-200">
-              History exam in {daysUntilHistoryExam} day
+              ⚠️ History exam in {daysUntilHistoryExam} day
               {daysUntilHistoryExam === 1 ? "" : "s"}. Prioritize Board Crasher
-              + Timeline + Map Work.
+              + Timeline + Map Work!
             </p>
           </div>
         )}
