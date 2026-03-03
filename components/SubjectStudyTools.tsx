@@ -18,7 +18,10 @@ import {
   Flame,
   ChevronRight,
   Sparkles,
+  AlertTriangle,
 } from "lucide-react";
+import { getSubjectBoardExamDate } from "../examTimetable";
+import { Stream } from "../types";
 
 interface SubjectStudyToolsProps {
   subjectId: string;
@@ -465,14 +468,67 @@ const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({
   onOpenTool,
 }) => {
   const subjectTools = SUBJECT_TOOLS[subjectId] || [];
+  const historyExamDate =
+    subjectId === "his" ? getSubjectBoardExamDate(Stream.ARTS, "his") : null;
+  const daysUntilHistoryExam = (() => {
+    if (!historyExamDate) return null;
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const examDay = new Date(historyExamDate);
+    examDay.setHours(0, 0, 0, 0);
+    return Math.round(
+      (examDay.getTime() - today.getTime()) / (1000 * 60 * 60 * 24),
+    );
+  })();
+  const isHistoryExamNear =
+    subjectId === "his" &&
+    daysUntilHistoryExam !== null &&
+    daysUntilHistoryExam >= 0 &&
+    daysUntilHistoryExam <= 7;
+
+  const orderedTools =
+    subjectId === "his" && isHistoryExamNear
+      ? [...subjectTools].sort((a, b) => {
+          const priority = [
+            "historyBoardCrasher",
+            "historyTimelineQuiz",
+            "historyMapWork",
+            "historyChapterSummary",
+            "historyStudyHub",
+          ];
+          const aIdx = priority.indexOf(a.id);
+          const bIdx = priority.indexOf(b.id);
+          const safeA = aIdx === -1 ? 999 : aIdx;
+          const safeB = bIdx === -1 ? 999 : bIdx;
+          return safeA - safeB;
+        })
+      : subjectTools;
+
+  const examAwareTools = orderedTools.map((tool) => {
+    if (
+      subjectId === "his" &&
+      tool.id === "historyBoardCrasher" &&
+      daysUntilHistoryExam !== null &&
+      daysUntilHistoryExam >= 0
+    ) {
+      return {
+        ...tool,
+        description:
+          daysUntilHistoryExam <= 3
+            ? `Exam in ${daysUntilHistoryExam} day${daysUntilHistoryExam === 1 ? "" : "s"} - solve Top 20 now`
+            : `Exam in ${daysUntilHistoryExam} days - PYQs + dates + model answers`,
+      };
+    }
+    return tool;
+  });
 
   // If no specific tools for this subject, don't show the section
-  if (subjectTools.length === 0) {
+  if (examAwareTools.length === 0) {
     return null;
   }
 
-  const featuredTool = subjectTools.find((t) => t.featured);
-  const otherTools = subjectTools.filter((t) => !t.featured);
+  const featuredTool = examAwareTools.find((t) => t.featured);
+  const otherTools = examAwareTools.filter((t) => !t.featured);
 
   return (
     <div className="mb-6">
@@ -480,6 +536,30 @@ const SubjectStudyTools: React.FC<SubjectStudyToolsProps> = ({
         <Sparkles size={20} className="text-amber-500" />
         {subjectName} Study Tools
       </h3>
+
+      {subjectId === "his" &&
+        daysUntilHistoryExam !== null &&
+        daysUntilHistoryExam >= 0 && (
+          <div
+            className={`mb-4 rounded-xl border p-3 flex items-center gap-2 ${
+              daysUntilHistoryExam <= 3
+                ? "bg-red-50 border-red-200 dark:bg-red-900/20 dark:border-red-800"
+                : "bg-orange-50 border-orange-200 dark:bg-orange-900/20 dark:border-orange-800"
+            }`}
+          >
+            <AlertTriangle
+              size={16}
+              className={
+                daysUntilHistoryExam <= 3 ? "text-red-500" : "text-orange-500"
+              }
+            />
+            <p className="text-xs font-semibold text-slate-700 dark:text-slate-200">
+              History exam in {daysUntilHistoryExam} day
+              {daysUntilHistoryExam === 1 ? "" : "s"}. Prioritize Board Crasher
+              + Timeline + Map Work.
+            </p>
+          </div>
+        )}
 
       {/* Featured Tool Card */}
       {featuredTool && (

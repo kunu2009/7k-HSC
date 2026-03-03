@@ -54,7 +54,9 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
   const [activeTab, setActiveTab] = useState<TabType>("overview");
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
   const [showAnswers, setShowAnswers] = useState<Record<string, boolean>>({});
-  const [examDayChecklist, setExamDayChecklist] = useState<Record<string, boolean>>({});
+  const [examDayChecklist, setExamDayChecklist] = useState<
+    Record<string, boolean>
+  >({});
   const [fullscreenContent, setFullscreenContent] = useState<{
     title: string;
     content: React.ReactNode;
@@ -87,17 +89,42 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
       color: "bg-rose-600",
     },
     { id: "ch1", label: "Renaissance", shortLabel: "1", color: "bg-slate-500" },
-    { id: "ch2", label: "Colonialism", shortLabel: "2", color: "bg-purple-500" },
-    { id: "ch3", label: "India & Colonial", shortLabel: "3", color: "bg-green-500" },
+    {
+      id: "ch2",
+      label: "Colonialism",
+      shortLabel: "2",
+      color: "bg-purple-500",
+    },
+    {
+      id: "ch3",
+      label: "India & Colonial",
+      shortLabel: "3",
+      color: "bg-green-500",
+    },
     { id: "ch4", label: "Marathas", shortLabel: "4", color: "bg-amber-500" },
     { id: "ch5", label: "Reforms", shortLabel: "5", color: "bg-pink-500" },
     { id: "ch6", label: "Freedom", shortLabel: "6", color: "bg-red-500" },
-    { id: "ch7", label: "Decolonisation", shortLabel: "7", color: "bg-indigo-500" },
+    {
+      id: "ch7",
+      label: "Decolonisation",
+      shortLabel: "7",
+      color: "bg-indigo-500",
+    },
     { id: "ch8", label: "World Wars", shortLabel: "8", color: "bg-cyan-500" },
-    { id: "ch9", label: "World Decol", shortLabel: "9", color: "bg-emerald-500" },
+    {
+      id: "ch9",
+      label: "World Decol",
+      shortLabel: "9",
+      color: "bg-emerald-500",
+    },
     { id: "ch10", label: "Cold War", shortLabel: "10", color: "bg-violet-500" },
     { id: "ch11", label: "India I", shortLabel: "11", color: "bg-lime-500" },
-    { id: "ch12", label: "India II", shortLabel: "12", color: "bg-fuchsia-500" },
+    {
+      id: "ch12",
+      label: "India II",
+      shortLabel: "12",
+      color: "bg-fuchsia-500",
+    },
     {
       id: "lastmin",
       label: "Last Min",
@@ -134,8 +161,7 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
         EXAM_DAY_CHECKLIST_STORAGE_KEY,
         JSON.stringify(examDayChecklist),
       );
-    } catch {
-    }
+    } catch {}
   }, [examDayChecklist]);
 
   const renderTable = (markdownTable: string) => {
@@ -200,30 +226,219 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
 
   const renderOverview = () => (
     <div className="space-y-4 p-4">
-      <div className="bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl p-4 text-white">
+      {/* Exam Alert Banner - PROMINENT */}
+      <div className="bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 rounded-2xl p-4 text-white shadow-lg ring-2 ring-red-400/50 ring-offset-2 ring-offset-slate-100 dark:ring-offset-slate-950">
         <div className="flex items-center gap-3">
           <div className="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center">
-            <TrendingUp size={28} />
+            <AlertTriangle size={28} className="animate-pulse" />
           </div>
           <div>
-            <h3 className="font-black text-xl">History Board Crasher</h3>
+            <h3 className="font-black text-xl">
+              📜 History Exam — 9th March 2026
+            </h3>
             <p className="text-white/90 text-sm">
-              Complete Prep: Important Questions, PYQs & Key Dates
+              📅 6 Days Left • ⏰ 3:00 PM Shift • 80 Marks • Focus on Top 20 +
+              Map + Timeline
             </p>
           </div>
         </div>
       </div>
 
+      {/* Google Drive Resources - TOP PROMINENT */}
+      <a
+        href="https://drive.google.com/drive/folders/YOUR_HISTORY_FOLDER_ID"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-4 text-white hover:opacity-95 transition-opacity shadow-lg ring-2 ring-green-400/50 ring-offset-2 ring-offset-slate-100 dark:ring-offset-slate-950"
+      >
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl">
+            📁
+          </div>
+          <div className="flex-1">
+            <h3 className="font-bold text-lg flex items-center gap-2">
+              Google Drive — History Study Materials
+              <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">
+                PDFs
+              </span>
+            </h3>
+            <p className="text-white/90 text-xs mt-0.5">
+              Past Papers • Chapter Notes • Timeline PDFs • Map Work Practice •
+              Important Questions
+            </p>
+          </div>
+          <Globe size={24} className="shrink-0" />
+        </div>
+      </a>
+
+      {/* Paper Pattern */}
       <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
         <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
-          <Target size={20} className="text-green-500" /> Chapter Weightage (80 Marks)
+          <FileText size={20} className="text-blue-500" /> Paper Pattern (80
+          Marks)
+        </h3>
+        <div className="space-y-2 text-sm">
+          {[
+            {
+              q: "Q.1",
+              type: "MCQ (Multiple Choice)",
+              marks: 20,
+              detail: "20 × 1 mark each",
+            },
+            {
+              q: "Q.2",
+              type: "Brief Answers",
+              marks: 12,
+              detail: "Any 3/5 × 4 marks",
+            },
+            {
+              q: "Q.3",
+              type: "Short Notes",
+              marks: 12,
+              detail: "Any 3/5 × 4 marks",
+            },
+            {
+              q: "Q.4",
+              type: "Long Answers",
+              marks: 16,
+              detail: "Any 2/4 × 8 marks",
+            },
+            {
+              q: "Q.5",
+              type: "Map Work",
+              marks: 8,
+              detail: "Locate + significance",
+            },
+            {
+              q: "Q.6",
+              type: "Project",
+              marks: 12,
+              detail: "Internal assessment",
+            },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="flex items-center justify-between bg-slate-50 dark:bg-slate-700 p-3 rounded-xl"
+            >
+              <div className="flex items-center gap-3">
+                <span className="w-10 h-10 bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400 rounded-lg flex items-center justify-center font-bold text-sm">
+                  {item.q}
+                </span>
+                <div>
+                  <span className="text-slate-700 dark:text-slate-300 block">
+                    {item.type}
+                  </span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400">
+                    {item.detail}
+                  </span>
+                </div>
+              </div>
+              <span className="font-bold text-slate-800 dark:text-white">
+                {item.marks}m
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {/* Important Note */}
+        <div className="mt-4 p-3 bg-orange-50 dark:bg-orange-900/20 rounded-xl">
+          <p className="text-xs font-bold text-orange-800 dark:text-orange-200 mb-2">
+            ⚠️ Key Strategy:
+          </p>
+          <ul className="text-xs text-orange-700 dark:text-orange-300 space-y-1">
+            <li>• MCQs = 20 marks (20 min max)</li>
+            <li>• Focus on Long Answers Q.4 = 16 marks (35-40 min)</li>
+            <li>• Map Work Q.5 = Easy 8 marks if practiced (10 min)</li>
+            <li>• Always write dates, names, places for extra impact</li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Exam Tips */}
+      <div className="bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-2xl p-4">
+        <h3 className="font-bold text-amber-800 dark:text-amber-200 mb-3 flex items-center gap-2">
+          <Zap size={20} /> Exam Tips
+        </h3>
+        <ul className="text-sm text-amber-700 dark:text-amber-300 space-y-2">
+          <li className="flex items-start gap-2">
+            <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+            <span>
+              <strong>Timeline Mastery:</strong> Memorize key dates, events
+              chronologically — crucial for MCQs and map work
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+            <span>
+              <strong>Map Work (8m):</strong> Practice locating countries,
+              cities, battle sites + one-line significance
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+            <span>
+              <strong>Long Answers:</strong> Use structured format: Intro (2
+              lines) + 4-5 points with examples + Conclusion
+            </span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
+            <span>
+              <strong>Causes & Effects:</strong> Always write causes-effects for
+              major events (WWI, WWII, Reforms, Freedom Struggle)
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Time Management */}
+      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-2xl p-4">
+        <h3 className="font-bold text-blue-800 dark:text-blue-200 mb-3 flex items-center gap-2">
+          <Clock size={20} /> Time Management (3 Hours)
+        </h3>
+        <div className="grid grid-cols-2 gap-2 text-sm">
+          {[
+            { q: "Q.1 MCQ (20m)", time: "20 min" },
+            { q: "Q.2 Brief (12m)", time: "20 min" },
+            { q: "Q.3 Short (12m)", time: "20 min" },
+            { q: "Q.4 Long (16m)", time: "35 min" },
+            { q: "Q.5 Map (8m)", time: "10 min" },
+            { q: "Revision", time: "15 min" },
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              className="flex items-center justify-between bg-white dark:bg-slate-800 p-2 rounded-lg"
+            >
+              <span className="font-bold text-blue-600 dark:text-blue-400">
+                {item.q}
+              </span>
+              <span className="text-slate-600 dark:text-slate-300">
+                {item.time}
+              </span>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs text-blue-600 dark:text-blue-400 mt-2 text-center">
+          Total: 120 min + 60 min writing/thinking buffer
+        </p>
+      </div>
+
+      <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+        <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+          <Target size={20} className="text-green-500" /> Chapter Weightage (80
+          Marks)
         </h3>
         <div className="space-y-2 text-xs">
           {[
             { ch: "1. Renaissance & Science", marks: "06", opt: "09", pct: 50 },
             { ch: "2. European Colonialism", marks: "06", opt: "09", pct: 50 },
             { ch: "3. India & Colonialism", marks: "06", opt: "09", pct: 50 },
-            { ch: "4. Marathas & Colonialism", marks: "07", opt: "10", pct: 60 },
+            {
+              ch: "4. Marathas & Colonialism",
+              marks: "07",
+              opt: "10",
+              pct: 60,
+            },
             { ch: "5. Social Reforms", marks: "07", opt: "10", pct: 60 },
             { ch: "6. Freedom Struggle", marks: "07", opt: "10", pct: 60 },
             { ch: "7. Decolonisation", marks: "07", opt: "10", pct: 60 },
@@ -234,10 +449,17 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
             { ch: "12. India Transformed II", marks: "07", opt: "10", pct: 60 },
           ].map((item, idx) => (
             <div key={idx} className="flex items-center gap-2">
-              <span className="text-slate-700 dark:text-slate-300 flex-1">{item.ch}</span>
-              <span className="font-bold text-slate-800 dark:text-white w-8 text-right">{item.marks}</span>
+              <span className="text-slate-700 dark:text-slate-300 flex-1">
+                {item.ch}
+              </span>
+              <span className="font-bold text-slate-800 dark:text-white w-8 text-right">
+                {item.marks}
+              </span>
               <div className="w-16 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                <div className="h-full bg-orange-500 rounded-full" style={{ width: `${item.pct}%` }} />
+                <div
+                  className="h-full bg-orange-500 rounded-full"
+                  style={{ width: `${item.pct}%` }}
+                />
               </div>
             </div>
           ))}
@@ -368,7 +590,9 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
                           <div
                             className={`text-sm font-bold px-3 py-1.5 rounded-lg inline-block ${item.agree ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"}`}
                           >
-                            {item.agree ? "✅ Yes, I Agree" : "❌ No, I Disagree"}
+                            {item.agree
+                              ? "✅ Yes, I Agree"
+                              : "❌ No, I Disagree"}
                           </div>
                           <div className="bg-white dark:bg-slate-800 p-6 rounded-xl text-base text-slate-700 dark:text-slate-300 whitespace-pre-wrap border border-slate-200 dark:border-slate-700 leading-relaxed">
                             {item.reason}
@@ -410,7 +634,8 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
             className="w-full p-4 flex items-center justify-between bg-blue-50 dark:bg-blue-900/20"
           >
             <h4 className="font-bold text-blue-800 dark:text-blue-200 flex items-center gap-2">
-              📊 Q.2(B) Distinguish Between ({impData.distinguishBetween.length})
+              📊 Q.2(B) Distinguish Between ({impData.distinguishBetween.length}
+              )
             </h4>
             {expandedSection === "imp-distinguish" ? (
               <ChevronDown size={20} />
@@ -466,7 +691,9 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
       <div className="space-y-4 p-4">
         <div className="bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl p-4 text-white">
           <h3 className="font-bold text-xl">{chapter.title}</h3>
-          <p className="text-white/80 text-sm mt-1">Weightage: {chapter.weightage}</p>
+          <p className="text-white/80 text-sm mt-1">
+            Weightage: {chapter.weightage}
+          </p>
         </div>
 
         {/* Shortcodes */}
@@ -477,9 +704,16 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
             </h4>
             <div className="space-y-2">
               {chapter.shortcodes.map((sc: any, idx: number) => (
-                <div key={idx} className="bg-white dark:bg-slate-800 p-3 rounded-xl">
-                  <span className="font-black text-violet-600 dark:text-violet-400 block mb-1">{sc.code}</span>
-                  <span className="text-xs text-slate-600 dark:text-slate-400">{sc.breakdown}</span>
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-slate-800 p-3 rounded-xl"
+                >
+                  <span className="font-black text-violet-600 dark:text-violet-400 block mb-1">
+                    {sc.code}
+                  </span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">
+                    {sc.breakdown}
+                  </span>
                 </div>
               ))}
             </div>
@@ -489,12 +723,21 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
         {/* Concepts */}
         {chapter.mustKnowConcepts && (
           <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
-            <h4 className="font-bold text-slate-800 dark:text-white mb-3">Key Concepts</h4>
+            <h4 className="font-bold text-slate-800 dark:text-white mb-3">
+              Key Concepts
+            </h4>
             <div className="space-y-3">
               {chapter.mustKnowConcepts.map((c: any, idx: number) => (
-                <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl">
-                  <p className="font-bold text-slate-800 dark:text-white text-sm">{c.term}</p>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">{c.definition}</p>
+                <div
+                  key={idx}
+                  className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl"
+                >
+                  <p className="font-bold text-slate-800 dark:text-white text-sm">
+                    {c.term}
+                  </p>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                    {c.definition}
+                  </p>
                 </div>
               ))}
             </div>
@@ -512,7 +755,10 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
                 const revealId = `timeline-${chapterKey}-${idx}`;
                 const shown = !!showAnswers[revealId];
                 return (
-                  <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl">
+                  <div
+                    key={idx}
+                    className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl"
+                  >
                     <p className="text-sm text-slate-800 dark:text-white font-medium mb-2">
                       {item.prompt}
                     </p>
@@ -550,7 +796,10 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
                 const revealId = `map-${chapterKey}-${idx}`;
                 const shown = !!showAnswers[revealId];
                 return (
-                  <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl">
+                  <div
+                    key={idx}
+                    className="bg-slate-50 dark:bg-slate-700 p-3 rounded-xl"
+                  >
                     <p className="text-sm text-slate-800 dark:text-white font-medium mb-2">
                       {item.prompt}
                     </p>
@@ -578,60 +827,93 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
         )}
 
         {/* Questions */}
-        {['pyqMCQs', 'pyqShortAnswers', 'pyqLongAnswers'].map((section) => {
+        {["pyqMCQs", "pyqShortAnswers", "pyqLongAnswers"].map((section) => {
           const questions = chapter[section];
           if (!questions) return null;
 
           return (
-            <div key={section} className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+            <div
+              key={section}
+              className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm"
+            >
               <button
-                onClick={() => setExpandedSection(expandedSection === section ? null : section)}
+                onClick={() =>
+                  setExpandedSection(
+                    expandedSection === section ? null : section,
+                  )
+                }
                 className="w-full p-4 flex items-center justify-between bg-slate-50 dark:bg-slate-700/50"
               >
                 <h4 className="font-bold text-slate-800 dark:text-white flex items-center gap-2">
                   <FileText size={18} />
-                  {section === 'pyqMCQs' ? 'MCQs' : section === 'pyqShortAnswers' ? 'Short Answers' : 'Long Answers'}
+                  {section === "pyqMCQs"
+                    ? "MCQs"
+                    : section === "pyqShortAnswers"
+                      ? "Short Answers"
+                      : "Long Answers"}
                 </h4>
-                {expandedSection === section ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
+                {expandedSection === section ? (
+                  <ChevronDown size={18} />
+                ) : (
+                  <ChevronRight size={18} />
+                )}
               </button>
               {expandedSection === section && (
                 <div className="p-4 space-y-4">
                   {questions.map((q: any, idx: number) => (
-                    <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl">
-                      <p className="font-medium text-slate-800 dark:text-white text-sm mb-2">{q.q}</p>
-                      {section === 'pyqMCQs' && (
+                    <div
+                      key={idx}
+                      className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                    >
+                      <p className="font-medium text-slate-800 dark:text-white text-sm mb-2">
+                        {q.q}
+                      </p>
+                      {section === "pyqMCQs" && (
                         <div className="grid grid-cols-2 gap-2 mb-2">
                           {q.options.map((opt: string, i: number) => (
-                            <div key={i} className={`p-2 rounded text-xs ${i === q.correct ? 'bg-green-100 text-green-800 font-bold' : 'bg-white dark:bg-slate-600'}`}>
+                            <div
+                              key={i}
+                              className={`p-2 rounded text-xs ${i === q.correct ? "bg-green-100 text-green-800 font-bold" : "bg-white dark:bg-slate-600"}`}
+                            >
                               {opt}
                             </div>
                           ))}
                         </div>
                       )}
-                      {q.modelAnswer && section !== "pyqMCQs" && (() => {
-                        const answerId = `${chapterKey}-${section}-${idx}`;
-                        const isRevealed = !!showAnswers[answerId];
-                        return (
-                          <div className="mt-2">
-                            <button
-                              onClick={() => toggleAnswer(answerId)}
-                              className={`w-full py-2 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
-                                isRevealed
-                                  ? "bg-indigo-500 text-white"
-                                  : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
-                              }`}
-                            >
-                              {isRevealed ? <EyeOff size={14} /> : <Eye size={14} />}
-                              {isRevealed ? "Hide Model Answer" : "Show Model Answer"}
-                            </button>
-                            {isRevealed && (
-                              <div className="mt-2 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-600">
-                                <p className="text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap">{q.modelAnswer}</p>
-                              </div>
-                            )}
-                          </div>
-                        );
-                      })()}
+                      {q.modelAnswer &&
+                        section !== "pyqMCQs" &&
+                        (() => {
+                          const answerId = `${chapterKey}-${section}-${idx}`;
+                          const isRevealed = !!showAnswers[answerId];
+                          return (
+                            <div className="mt-2">
+                              <button
+                                onClick={() => toggleAnswer(answerId)}
+                                className={`w-full py-2 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
+                                  isRevealed
+                                    ? "bg-indigo-500 text-white"
+                                    : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
+                                }`}
+                              >
+                                {isRevealed ? (
+                                  <EyeOff size={14} />
+                                ) : (
+                                  <Eye size={14} />
+                                )}
+                                {isRevealed
+                                  ? "Hide Model Answer"
+                                  : "Show Model Answer"}
+                              </button>
+                              {isRevealed && (
+                                <div className="mt-2 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-600">
+                                  <p className="text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap">
+                                    {q.modelAnswer}
+                                  </p>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })()}
                     </div>
                   ))}
                 </div>
@@ -647,7 +929,9 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
               <h3 className="font-bold text-lg flex items-center gap-2">
                 📚 {chapter.textbookExercises.title}
               </h3>
-              <p className="text-white/80 text-sm mt-1">Textbook-style practice with model answers</p>
+              <p className="text-white/80 text-sm mt-1">
+                Textbook-style practice with model answers
+              </p>
             </div>
 
             {[
@@ -676,10 +960,15 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
               if (!items || items.length === 0) return null;
               const expandKey = `tb-${chapterKey}-${sec.key}`;
               return (
-                <div key={sec.key} className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm">
+                <div
+                  key={sec.key}
+                  className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-sm"
+                >
                   <button
                     onClick={() =>
-                      setExpandedSection(expandedSection === expandKey ? null : expandKey)
+                      setExpandedSection(
+                        expandedSection === expandKey ? null : expandKey,
+                      )
                     }
                     className={`w-full p-4 flex items-center justify-between ${sec.color}`}
                   >
@@ -698,7 +987,10 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
                         const revealId = `tb-${chapterKey}-${sec.key}-${idx}`;
                         const shown = !!showAnswers[revealId];
                         return (
-                          <div key={idx} className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl">
+                          <div
+                            key={idx}
+                            className="bg-slate-50 dark:bg-slate-700 p-4 rounded-xl"
+                          >
                             <p className="font-medium text-slate-800 dark:text-white text-sm mb-3">
                               {item.q || item.question || item.statement}
                             </p>
@@ -730,13 +1022,10 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
 
                             {shown && (
                               <div className="mt-3 bg-white dark:bg-slate-800 p-3 rounded-lg border border-slate-200 dark:border-slate-600">
-                                {item.concept && (
-                                  <p className="text-xs font-bold text-purple-700 dark:text-purple-300 mb-1">
-                                    Concept: {item.concept}
-                                  </p>
-                                )}
-                                <p className="text-xs text-slate-700 dark:text-slate-300 whitespace-pre-wrap">
-                                  {item.modelAnswer || item.answer || item.explanation}
+                                <p className="text-xs text-slate-600 dark:text-slate-300 whitespace-pre-wrap">
+                                  {item.answer ||
+                                    item.explanation ||
+                                    "No answer provided"}
                                 </p>
                               </div>
                             )}
@@ -754,117 +1043,90 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
     );
   };
 
-  const renderExamDayMode = () => {
-    const examMode = (data as any).examDayMode;
-    if (!examMode) return <div className="p-4">Exam day mode not available.</div>;
-    const totalTop20 = examMode.top20Questions.length;
-    const completedTop20 = examMode.top20Questions.filter(
-      (_: any, idx: number) => !!examDayChecklist[`examday-top20-done-${idx}`],
-    ).length;
+  const renderExamDay = () => {
+    const examData = (data as any).examDayMode;
+    if (!examData)
+      return <div className="p-4">Exam day mode data not found</div>;
 
     return (
       <div className="space-y-4 p-4">
-        <div className="bg-gradient-to-r from-rose-600 to-red-600 rounded-2xl p-4 text-white">
-          <h3 className="font-black text-xl flex items-center gap-2">🚀 {examMode.title}</h3>
-          <p className="text-white/90 text-sm mt-1">{examMode.subtitle}</p>
+        <div className="bg-gradient-to-r from-red-600 to-orange-600 rounded-2xl p-4 text-white">
+          <h3 className="font-black text-xl">🚀 {examData.title}</h3>
+          <p className="text-white/90 text-sm mt-1">{examData.subtitle}</p>
         </div>
 
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
-          <h4 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
-            <Zap size={18} className="text-rose-500" /> Top 20 Must-Do Questions
+        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4">
+          <h4 className="font-bold text-slate-800 dark:text-white mb-3">
+            🎯 Top 20 Expected Questions
           </h4>
-          <div className="mb-3">
-            <div className="flex items-center justify-between text-xs mb-2">
-              <span className="font-semibold text-slate-700 dark:text-slate-300">Progress</span>
-              <span className="font-bold text-rose-700 dark:text-rose-300">
-                {completedTop20}/{totalTop20} done
-              </span>
-            </div>
-            <div className="h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-              <div
-                className="h-full bg-rose-500 rounded-full"
-                style={{ width: `${totalTop20 ? (completedTop20 / totalTop20) * 100 : 0}%` }}
-              />
-            </div>
-          </div>
-          <div className="space-y-3 max-h-[60vh] overflow-y-auto">
-            {examMode.top20Questions.map((item: any, idx: number) => {
-              const revealId = `examday-top20-${idx}`;
-              const doneId = `examday-top20-done-${idx}`;
-              const shown = !!showAnswers[revealId];
-              const isDone = !!examDayChecklist[doneId];
+          <div className="space-y-2">
+            {examData.top20Questions.map((q: any, idx: number) => {
+              const checkId = `examday-${idx}`;
+              const checked = !!examDayChecklist[checkId];
               return (
                 <div
                   key={idx}
-                  className={`p-3 rounded-xl border ${
-                    isDone
-                      ? "bg-emerald-50 dark:bg-emerald-900/20 border-emerald-300 dark:border-emerald-800"
-                      : "bg-slate-50 dark:bg-slate-700 border-transparent"
+                  className={`flex items-start gap-3 p-3 rounded-xl ${
+                    checked
+                      ? "bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800"
+                      : "bg-slate-50 dark:bg-slate-700"
                   }`}
                 >
-                  <div className="flex items-start justify-between gap-2 mb-2">
-                    <p className="text-sm font-medium text-slate-800 dark:text-white flex-1">
-                      {idx + 1}. {item.q}
+                  <button
+                    onClick={() => toggleExamDayChecklist(checkId)}
+                    className={`mt-0.5 w-5 h-5 rounded flex items-center justify-center shrink-0 ${
+                      checked
+                        ? "bg-green-500 text-white"
+                        : "bg-slate-200 dark:bg-slate-600"
+                    }`}
+                  >
+                    {checked && <CheckCircle2 size={14} />}
+                  </button>
+                  <span className="text-orange-600 dark:text-orange-400 font-bold text-sm">
+                    {idx + 1}.
+                  </span>
+                  <div className="flex-1">
+                    <p className="text-sm text-slate-800 dark:text-white">
+                      {q.q}
                     </p>
-                    <span className="text-[10px] px-2 py-1 rounded bg-rose-100 text-rose-700 shrink-0">
-                      {item.chapter}
+                    <span className="text-xs text-slate-500 dark:text-slate-400">
+                      Ch {q.chapter}
                     </span>
                   </div>
-                  <button
-                    onClick={() => toggleExamDayChecklist(doneId)}
-                    className={`w-full py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 mb-2 ${
-                      isDone
-                        ? "bg-emerald-600 text-white"
-                        : "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300"
-                    }`}
-                  >
-                    <CheckCircle2 size={14} />
-                    {isDone ? "Marked Done" : "Mark as Done"}
-                  </button>
-                  <button
-                    onClick={() => toggleAnswer(revealId)}
-                    className={`w-full py-1.5 rounded-lg text-xs font-bold flex items-center justify-center gap-2 ${
-                      shown
-                        ? "bg-rose-500 text-white"
-                        : "bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-300"
-                    }`}
-                  >
-                    {shown ? <EyeOff size={14} /> : <Eye size={14} />}
-                    {shown ? "Hide Quick Points" : "Show Quick Points"}
-                  </button>
-                  {shown && (
-                    <p className="text-xs text-slate-700 dark:text-slate-300 mt-2 whitespace-pre-wrap">
-                      {item.quickPoints}
-                    </p>
-                  )}
+                  <span className="px-2 py-1 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded text-xs font-bold">
+                    {q.marks}m
+                  </span>
                 </div>
               );
             })}
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
-          <h4 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
-            <Calendar size={18} className="text-blue-500" /> 15-Min Timeline Sprint
+        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-4">
+          <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">
+            📅 Timeline Rapid Revision
           </h4>
           <div className="space-y-2">
-            {examMode.timelineRapid.map((line: string, i: number) => (
-              <div key={i} className="text-xs bg-blue-50 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200 p-2 rounded">
-                {line}
-              </div>
+            {examData.timelineRapid.map((item: string, idx: number) => (
+              <p key={idx} className="text-sm text-blue-700 dark:text-blue-300">
+                • {item}
+              </p>
             ))}
           </div>
         </div>
 
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
-          <h4 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
-            <Globe size={18} className="text-emerald-500" /> 10-Min Map Sprint
+        <div className="bg-green-50 dark:bg-green-900/20 rounded-2xl p-4">
+          <h4 className="font-bold text-green-800 dark:text-green-200 mb-3">
+            🗺️ Map Work Rapid Practice
           </h4>
           <div className="space-y-2">
-            {examMode.mapRapid.map((line: string, i: number) => (
-              <div key={i} className="text-xs bg-emerald-50 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-200 p-2 rounded">
-                {line}
-              </div>
+            {examData.mapRapid.map((item: string, idx: number) => (
+              <p
+                key={idx}
+                className="text-sm text-green-700 dark:text-green-300"
+              >
+                • {item}
+              </p>
             ))}
           </div>
         </div>
@@ -872,61 +1134,164 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
     );
   };
 
-  const renderLastMin = () => {
-    const lastMin = data.lastMinutePoints;
+  const renderLastMinute = () => {
+    const lastMinData = (data as any).lastMinutePoints;
+    const allShortcodes = (data as any).allShortcodes || [];
+    const recurringMCQs = (data as any).recurringMCQs || [];
+    const mostProbable = (data as any).mostProbable8Markers || [];
+
     return (
       <div className="space-y-4 p-4">
-        <div className="bg-gradient-to-r from-amber-500 to-orange-600 rounded-2xl p-4 text-white">
-          <h3 className="font-black text-lg flex items-center gap-2">⚡ Last Minute Smart Revision</h3>
-          <p className="text-white/90 text-sm mt-1">Rapid revision set for the upcoming History board exam</p>
+        <div className="bg-gradient-to-r from-yellow-500 to-amber-500 rounded-2xl p-4 text-white">
+          <h3 className="font-black text-xl">⚡ Last Minute Revision</h3>
+          <p className="text-white/90 text-sm mt-1">
+            Quick revision before exam hall
+          </p>
         </div>
 
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
-          <h4 className="font-bold text-slate-800 dark:text-white mb-3">🗓️ Key Dates</h4>
-          <div className="space-y-2 max-h-[34vh] overflow-y-auto">
-            {lastMin.importantDates.map((d, i) => {
-              const [year, ...eventParts] = d.split("-");
-              const eventText = eventParts.join("-").trim();
-              return (
-                <div key={i} className="text-xs bg-slate-50 dark:bg-slate-700 p-2 rounded flex gap-2">
-                  <span className="font-bold text-blue-600 w-12 shrink-0">{year.trim()}</span>
-                  <span className="text-slate-600 dark:text-slate-300">{eventText}</span>
+        {allShortcodes.length > 0 && (
+          <div className="bg-gradient-to-r from-violet-50 to-fuchsia-50 dark:from-violet-900/20 dark:to-fuchsia-900/20 border-2 border-violet-300 dark:border-violet-700 rounded-2xl p-4">
+            <h3 className="font-bold text-violet-800 dark:text-violet-200 mb-3 flex items-center gap-2">
+              <Brain size={20} />
+              🧠 ALL MNEMONICS — Master These!
+            </h3>
+            <div className="space-y-2">
+              {allShortcodes.map((item: any, idx: number) => (
+                <div key={idx} className={`${item.color} rounded-xl p-3`}>
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-black text-lg text-slate-800 dark:text-white tracking-wider">
+                      {item.code}
+                    </span>
+                    <span className="text-xs bg-white dark:bg-slate-600 px-2 py-0.5 rounded-full text-slate-600 dark:text-slate-300 font-medium">
+                      {item.ch}
+                    </span>
+                  </div>
+                  <p className="font-bold text-slate-700 dark:text-slate-200 text-sm">
+                    {item.topic}
+                  </p>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                    {item.breakdown}
+                  </p>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
-          <h4 className="font-bold text-slate-800 dark:text-white mb-3">👤 Important Persons</h4>
-          <div className="space-y-2">
-            {lastMin.importantPersons.map((person, i) => (
-              <div key={i} className="text-xs bg-slate-50 dark:bg-slate-700 p-2 rounded text-slate-700 dark:text-slate-300">
-                {person}
-              </div>
-            ))}
+        {mostProbable.length > 0 && (
+          <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 border-2 border-red-300 dark:border-red-800 rounded-2xl p-4">
+            <h3 className="font-bold text-red-800 dark:text-red-200 mb-1 flex items-center gap-2">
+              <AlertTriangle size={20} className="animate-pulse" />
+              HIGHEST PROBABILITY for Q.4 (8 Marks Each)
+            </h3>
+            <div className="space-y-3 mt-3">
+              {mostProbable.map((item: any, idx: number) => (
+                <div
+                  key={idx}
+                  className="bg-white dark:bg-slate-800 rounded-xl p-3 shadow-sm"
+                >
+                  <div className="flex items-start gap-3">
+                    <div
+                      className={`w-2 h-full min-h-[60px] ${item.color} rounded-full shrink-0`}
+                    ></div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between">
+                        <h4 className="font-bold text-slate-800 dark:text-white text-sm">
+                          {item.topic}
+                        </h4>
+                        <span className="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-0.5 rounded text-xs font-bold shrink-0">
+                          {item.pct}%
+                        </span>
+                      </div>
+                      {item.shortcode !== "—" && (
+                        <span className="inline-block mt-1 bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-300 px-2 py-0.5 rounded text-xs font-black tracking-wider">
+                          {item.shortcode}
+                        </span>
+                      )}
+                      <p className="text-xs text-green-600 dark:text-green-400 mt-1 font-medium">
+                        📌 {item.reason}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
-        <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
-          <h4 className="font-bold text-slate-800 dark:text-white mb-3">🔠 Full Forms</h4>
+        {recurringMCQs.length > 0 && (
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-4 shadow-sm">
+            <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+              <BarChart3 size={20} className="text-blue-500" />
+              Recurring MCQ Concepts (EVERY YEAR)
+            </h3>
+            <div className="grid grid-cols-1 gap-2">
+              {recurringMCQs.map((item: any, idx: number) => (
+                <div
+                  key={idx}
+                  className="flex items-center justify-between p-3 bg-slate-50 dark:bg-slate-700 rounded-xl"
+                >
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                      {item.concept}
+                    </p>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                      → {item.answer}
+                    </p>
+                  </div>
+                  <span className="text-yellow-500 text-sm font-bold ml-2">
+                    {item.frequency}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <div className="bg-blue-50 dark:bg-blue-900/20 rounded-2xl p-4">
+          <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-3">
+            📅 Important Dates - MUST MEMORIZE
+          </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-            {lastMin.fullForms.map((item, i) => (
-              <div key={i} className="text-xs bg-slate-50 dark:bg-slate-700 p-2 rounded text-slate-700 dark:text-slate-300">
-                {item}
-              </div>
+            {lastMinData.importantDates.map((date: string, idx: number) => (
+              <p
+                key={idx}
+                className="text-xs text-blue-700 dark:text-blue-300 bg-white dark:bg-slate-800 p-2 rounded"
+              >
+                • {date}
+              </p>
             ))}
           </div>
         </div>
 
-        <div className="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-2xl p-4">
-          <h4 className="font-bold text-emerald-800 dark:text-emerald-200 mb-3">✅ Exam Tips</h4>
+        <div className="bg-purple-50 dark:bg-purple-900/20 rounded-2xl p-4">
+          <h4 className="font-bold text-purple-800 dark:text-purple-200 mb-3">
+            👤 Important Persons
+          </h4>
           <div className="space-y-2">
-            {lastMin.examTips.map((tip, i) => (
-              <div key={i} className="text-sm text-emerald-700 dark:text-emerald-300 flex items-start gap-2">
-                <CheckCircle2 size={14} className="mt-0.5 shrink-0" />
-                <span>{tip}</span>
-              </div>
+            {lastMinData.importantPersons.map((person: string, idx: number) => (
+              <p
+                key={idx}
+                className="text-sm text-purple-700 dark:text-purple-300"
+              >
+                • {person}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div className="bg-amber-50 dark:bg-amber-900/20 rounded-2xl p-4">
+          <h4 className="font-bold text-amber-800 dark:text-amber-200 mb-3">
+            💡 Exam Hall Tips
+          </h4>
+          <div className="space-y-2">
+            {lastMinData.examTips.map((tip: string, idx: number) => (
+              <p
+                key={idx}
+                className="text-sm text-amber-700 dark:text-amber-300"
+              >
+                ✅ {tip}
+              </p>
             ))}
           </div>
         </div>
@@ -934,98 +1299,116 @@ const HistoryBoardCrasher: React.FC<HistoryBoardCrasherProps> = ({
     );
   };
 
-  const daysLeft = (() => {
-    const exam = new Date(data.examDate);
-    const now = new Date();
-    exam.setHours(0, 0, 0, 0);
-    now.setHours(0, 0, 0, 0);
-    return Math.ceil((exam.getTime() - now.getTime()) / (1000 * 60 * 60 * 24));
-  })();
-
   return (
-    <div className="fixed inset-0 bg-slate-100 dark:bg-slate-950 z-50 flex flex-col">
-      {fullscreenContent && (
-        <div className="fixed inset-0 z-[60] bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200">
-          <div className="bg-white dark:bg-slate-900 w-full max-w-2xl max-h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in zoom-in-95 duration-200">
-            <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-800/50">
-              <h3 className="font-bold text-lg text-slate-800 dark:text-white">
-                {fullscreenContent.title}
-              </h3>
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-2">
+      <div className="bg-white dark:bg-slate-900 rounded-2xl w-full max-w-7xl h-[95vh] shadow-2xl flex flex-col overflow-hidden">
+        <div className="bg-gradient-to-r from-orange-600 to-red-600 p-4 shrink-0 safe-area-top">
+          <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center gap-3 flex-1 min-w-0">
               <button
-                onClick={() => setFullscreenContent(null)}
-                className="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-full transition-colors"
+                onClick={onClose}
+                className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center hover:bg-white/30 transition text-white shrink-0"
               >
-                <X size={20} />
+                <X size={24} />
               </button>
+              <div className="min-w-0 flex-1">
+                <h2 className="text-xl font-black text-white truncate">
+                  📜 History Board Crasher
+                </h2>
+                <p className="text-xs text-white/80">
+                  Exam: 9 Mar • 6 Days Left • All PYQs + Timeline + Map
+                </p>
+              </div>
             </div>
-            <div className="p-6 overflow-y-auto">
-              {fullscreenContent.content}
+          </div>
+        </div>
+
+        <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shrink-0">
+          <div className="flex overflow-x-auto no-scrollbar p-2 gap-2">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => {
+                  setActiveTab(tab.id);
+                  setExpandedSection(null);
+                }}
+                className={`px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition shrink-0 ${
+                  activeTab === tab.id
+                    ? `${tab.color} text-white shadow-lg`
+                    : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
+                }`}
+              >
+                {tab.shortLabel}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex-1 overflow-y-auto pb-safe">
+          {activeTab === "overview" && renderOverview()}
+          {activeTab === "imp2026" && renderImpQuestions()}
+          {activeTab === "examday" && renderExamDay()}
+          {activeTab === "ch1" && renderChapter("chapter1")}
+          {activeTab === "ch2" && renderChapter("chapter2")}
+          {activeTab === "ch3" && renderChapter("chapter3")}
+          {activeTab === "ch4" && renderChapter("chapter4")}
+          {activeTab === "ch5" && renderChapter("chapter5")}
+          {activeTab === "ch6" && renderChapter("chapter6")}
+          {activeTab === "ch7" && renderChapter("chapter7")}
+          {activeTab === "ch8" && renderChapter("chapter8")}
+          {activeTab === "ch9" && renderChapter("chapter9")}
+          {activeTab === "ch10" && renderChapter("chapter10")}
+          {activeTab === "ch11" && renderChapter("chapter11")}
+          {activeTab === "ch12" && renderChapter("chapter12")}
+          {activeTab === "lastmin" && renderLastMinute()}
+        </div>
+
+        <div className="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-2 shrink-0 safe-area-bottom">
+          <div className="flex justify-around">
+            {[
+              { id: "examday" as TabType, icon: "🚀", label: "Exam Day" },
+              { id: "imp2026" as TabType, icon: "🔥", label: "Most IMP" },
+              { id: "ch6" as TabType, icon: "🇮🇳", label: "Freedom" },
+              { id: "ch8" as TabType, icon: "⚔️", label: "WWs" },
+              { id: "lastmin" as TabType, icon: "⚡", label: "Last Min" },
+            ].map((item) => (
+              <button
+                key={item.id}
+                onClick={() => {
+                  setActiveTab(item.id);
+                  setExpandedSection(null);
+                }}
+                className={`flex flex-col items-center px-2 py-1 rounded-lg ${
+                  activeTab === item.id
+                    ? "bg-orange-100 dark:bg-orange-900/50 text-orange-600 dark:text-orange-400"
+                    : "text-slate-500 dark:text-slate-400"
+                }`}
+              >
+                <span className="text-lg">{item.icon}</span>
+                <span className="text-[10px] font-bold">{item.label}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {fullscreenContent && (
+          <div className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4">
+            <div className="bg-white dark:bg-slate-900 rounded-2xl w-full max-w-5xl max-h-[90vh] overflow-y-auto">
+              <div className="sticky top-0 bg-gradient-to-r from-orange-600 to-red-600 p-4 flex items-center justify-between">
+                <h3 className="font-bold text-white text-lg">
+                  {fullscreenContent.title}
+                </h3>
+                <button
+                  onClick={() => setFullscreenContent(null)}
+                  className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center hover:bg-white/30 transition text-white"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              <div className="p-6">{fullscreenContent.content}</div>
             </div>
           </div>
-        </div>
-      )}
-
-      {/* Header */}
-      <div className="bg-gradient-to-r from-orange-600 via-red-600 to-amber-600 p-4 text-white shrink-0 safe-area-top">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={onClose}
-            className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center hover:bg-white/30 transition"
-          >
-            <ArrowLeft size={20} />
-          </button>
-          <div className="flex-1">
-            <h1 className="text-lg font-black">📜 History</h1>
-            <p className="text-white/80 text-xs">
-              Board Exam Crasher • 9 Mar 2026
-            </p>
-          </div>
-          <div className={`px-3 py-1 rounded-full text-xs font-bold ${daysLeft <= 3 ? "bg-red-800" : "bg-orange-800"}`}>
-            {daysLeft <= 0 ? "EXAM DAY" : `${daysLeft} DAYS`}
-          </div>
-        </div>
-      </div>
-
-      {/* Tabs */}
-      <div className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shrink-0">
-        <div className="flex overflow-x-auto no-scrollbar p-2 gap-2">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => {
-                setActiveTab(tab.id);
-                setExpandedSection(null);
-              }}
-              className={`px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition shrink-0 ${
-                activeTab === tab.id
-                  ? `${tab.color} text-white shadow-lg`
-                  : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
-              }`}
-            >
-              {tab.shortLabel}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="flex-1 overflow-y-auto pb-safe">
-        {activeTab === "overview" && renderOverview()}
-        {activeTab === "imp2026" && renderImpQuestions()}
-        {activeTab === "examday" && renderExamDayMode()}
-        {activeTab === "ch1" && renderChapter("chapter1")}
-        {activeTab === "ch2" && renderChapter("chapter2")}
-        {activeTab === "ch3" && renderChapter("chapter3")}
-        {activeTab === "ch4" && renderChapter("chapter4")}
-        {activeTab === "ch5" && renderChapter("chapter5")}
-        {activeTab === "ch6" && renderChapter("chapter6")}
-        {activeTab === "ch7" && renderChapter("chapter7")}
-        {activeTab === "ch8" && renderChapter("chapter8")}
-        {activeTab === "ch9" && renderChapter("chapter9")}
-        {activeTab === "ch10" && renderChapter("chapter10")}
-        {activeTab === "ch11" && renderChapter("chapter11")}
-        {activeTab === "ch12" && renderChapter("chapter12")}
-        {activeTab === "lastmin" && renderLastMin()}
+        )}
       </div>
     </div>
   );
